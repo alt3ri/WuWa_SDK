@@ -1,0 +1,53 @@
+﻿#pragma once
+// Package: TsUiSceneDangoActor
+
+#include "Basic.hpp"
+
+#include "TsUiSceneDangoActor_classes.hpp"
+#include "TsUiSceneDangoActor_parameters.hpp"
+
+
+namespace SDK
+{
+
+// Function TsUiSceneDangoActor.TsUiSceneDangoActor_C.ExecuteUbergraph_TsUiSceneDangoActor
+// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsUiSceneDangoActor_C::ExecuteUbergraph_TsUiSceneDangoActor(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsUiSceneDangoActor_C", "ExecuteUbergraph_TsUiSceneDangoActor");
+
+	Params::TsUiSceneDangoActor_C_ExecuteUbergraph_TsUiSceneDangoActor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TsUiSceneDangoActor.TsUiSceneDangoActor_C.ReceiveTick
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsUiSceneDangoActor_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsUiSceneDangoActor_C", "ReceiveTick");
+
+	Params::TsUiSceneDangoActor_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+}
+
