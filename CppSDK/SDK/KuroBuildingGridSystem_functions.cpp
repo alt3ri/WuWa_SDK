@@ -1,0 +1,449 @@
+﻿#pragma once
+// Package: KuroBuildingGridSystem
+
+#include "Basic.hpp"
+
+#include "KuroBuildingGridSystem_classes.hpp"
+#include "KuroBuildingGridSystem_parameters.hpp"
+
+
+namespace SDK
+{
+
+// Function KuroBuildingGridSystem.KuroBuildingGrid.OccupyTarget
+// (RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FKuroBuildingGridCellVector      InCoords                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          InTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DegreeAlongNormal                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AKuroBuildingGrid::OccupyTarget(const struct FKuroBuildingGridCellVector& InCoords, class UObject* InTarget, const float& DegreeAlongNormal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGrid", "OccupyTarget");
+
+	Params::KuroBuildingGrid_OccupyTarget Parms{};
+
+	Parms.InCoords = std::move(InCoords);
+	Parms.InTarget = InTarget;
+	Parms.DegreeAlongNormal = DegreeAlongNormal;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGrid.UnoccupyTarget
+// (RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AKuroBuildingGrid::UnoccupyTarget(class UObject* InTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGrid", "UnoccupyTarget");
+
+	Params::KuroBuildingGrid_UnoccupyTarget Parms{};
+
+	Parms.InTarget = InTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGrid.GetBuildingGridGuidString
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString AKuroBuildingGrid::GetBuildingGridGuidString() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGrid", "GetBuildingGridGuidString");
+
+	Params::KuroBuildingGrid_GetBuildingGridGuidString Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGrid.GetCellIndex
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FKuroBuildingGridCellVector      InCoords                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OutIndex                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AKuroBuildingGrid::GetCellIndex(const struct FKuroBuildingGridCellVector& InCoords, int32* OutIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGrid", "GetCellIndex");
+
+	Params::KuroBuildingGrid_GetCellIndex Parms{};
+
+	Parms.InCoords = std::move(InCoords);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutIndex != nullptr)
+		*OutIndex = Parms.OutIndex;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGrid.GetPosition
+// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FKuroBuildingGridCellVector      InSize                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroBuildingGridCellVector      InCoords                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVectorDouble AKuroBuildingGrid::GetPosition(const struct FKuroBuildingGridCellVector& InSize, const struct FKuroBuildingGridCellVector& InCoords) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGrid", "GetPosition");
+
+	Params::KuroBuildingGrid_GetPosition Parms{};
+
+	Parms.InSize = std::move(InSize);
+	Parms.InCoords = std::move(InCoords);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridPlaceholderInterface.Occupied
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AKuroBuildingGrid*                InGrid                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroBuildingGridCellVector      InCoords                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDegree                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IKuroBuildingGridPlaceholderInterface::Occupied(class AKuroBuildingGrid* InGrid, const struct FKuroBuildingGridCellVector& InCoords, const float& InDegree)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGridPlaceholderInterface", "Occupied");
+
+	Params::KuroBuildingGridPlaceholderInterface_Occupied Parms{};
+
+	Parms.InGrid = InGrid;
+	Parms.InCoords = std::move(InCoords);
+	Parms.InDegree = InDegree;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridPlaceholderInterface.Unoccupied
+// (Native, Public, BlueprintCallable)
+
+void IKuroBuildingGridPlaceholderInterface::Unoccupied()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGridPlaceholderInterface", "Unoccupied");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridPlaceholderInterface.CanBeRemoved
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IKuroBuildingGridPlaceholderInterface::CanBeRemoved() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGridPlaceholderInterface", "CanBeRemoved");
+
+	Params::KuroBuildingGridPlaceholderInterface_CanBeRemoved Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridPlaceholderInterface.GetSize
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FKuroBuildingGridCellVector      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FKuroBuildingGridCellVector IKuroBuildingGridPlaceholderInterface::GetSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGridPlaceholderInterface", "GetSize");
+
+	Params::KuroBuildingGridPlaceholderInterface_GetSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridPlaceholderInterface.GetSizeByDegree
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   Degree                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroBuildingGridCellVector      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FKuroBuildingGridCellVector IKuroBuildingGridPlaceholderInterface::GetSizeByDegree(float* Degree) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBuildingGridPlaceholderInterface", "GetSizeByDegree");
+
+	Params::KuroBuildingGridPlaceholderInterface_GetSizeByDegree Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Degree != nullptr)
+		*Degree = Parms.Degree;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridSubsystem.GetGridCellSize
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroBuildingGridSubsystem::GetGridCellSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroBuildingGridSubsystem", "GetGridCellSize");
+
+	Params::KuroBuildingGridSubsystem_GetGridCellSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridSubsystem.K2_FindBuildingGrid
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           InGuidString                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AKuroBuildingGrid*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AKuroBuildingGrid* UKuroBuildingGridSubsystem::K2_FindBuildingGrid(class UObject* WorldContextObject, const class FString& InGuidString)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroBuildingGridSubsystem", "K2_FindBuildingGrid");
+
+	Params::KuroBuildingGridSubsystem_K2_FindBuildingGrid Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InGuidString = std::move(InGuidString);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridSubsystem.K2_ForEachIntersectingCell
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    InPoint                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  InRadius                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    UseDirMask                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   DirMask                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const class FString& GridGuid, const struct FKuroBuildingGridCellVector& Coords, const int32 CellIndex)>Func_0                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroBuildingGridSubsystem::K2_ForEachIntersectingCell(class UObject* WorldContextObject, const struct FVectorDouble& InPoint, const double& InRadius, const bool UseDirMask, const int32 DirMask, TDelegate<void(const class FString& GridGuid, const struct FKuroBuildingGridCellVector& Coords, const int32 CellIndex)> Func_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroBuildingGridSubsystem", "K2_ForEachIntersectingCell");
+
+	Params::KuroBuildingGridSubsystem_K2_ForEachIntersectingCell Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InPoint = std::move(InPoint);
+	Parms.InRadius = InRadius;
+	Parms.UseDirMask = UseDirMask;
+	Parms.DirMask = DirMask;
+	Parms.Func_0 = Func_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridSubsystem.K2_ProjectPointToGrid
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    InPoint                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          InNormal                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroBuildingGridRaycastResult   OutResult                                              (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroBuildingGridSubsystem::K2_ProjectPointToGrid(class UObject* WorldContextObject, const struct FVectorDouble& InPoint, const struct FVector& InNormal, struct FKuroBuildingGridRaycastResult& OutResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroBuildingGridSubsystem", "K2_ProjectPointToGrid");
+
+	Params::KuroBuildingGridSubsystem_K2_ProjectPointToGrid Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InPoint = std::move(InPoint);
+	Parms.InNormal = std::move(InNormal);
+	Parms.OutResult = std::move(OutResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	OutResult = std::move(Parms.OutResult);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroBuildingGridSystem.KuroBuildingGridSubsystem.K2_RaycastGrid
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    Start                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    End                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroBuildingGridRaycastResult   OutResult                                              (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroBuildingGridSubsystem::K2_RaycastGrid(class UObject* WorldContextObject, const struct FVectorDouble& Start, const struct FVectorDouble& End, struct FKuroBuildingGridRaycastResult& OutResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroBuildingGridSubsystem", "K2_RaycastGrid");
+
+	Params::KuroBuildingGridSubsystem_K2_RaycastGrid Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Start = std::move(Start);
+	Parms.End = std::move(End);
+	Parms.OutResult = std::move(OutResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	OutResult = std::move(Parms.OutResult);
+
+	return Parms.ReturnValue;
+}
+
+}
+

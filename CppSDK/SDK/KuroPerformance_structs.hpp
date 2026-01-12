@@ -90,6 +90,23 @@ enum class EKuroBoostFlags : uint8
 	Boost_MAX                                = 16,
 };
 
+// ScriptStruct KuroPerformance.KuroBoostQueryResult
+// 0x0010 (0x0010 - 0x0000)
+struct FKuroBoostQueryResult final
+{
+public:
+	int32                                         mode;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         target;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         percentage;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         durationLeftInMillisecond;                         // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroBoostQueryResult) == 0x000004, "Wrong alignment on FKuroBoostQueryResult");
+static_assert(sizeof(FKuroBoostQueryResult) == 0x000010, "Wrong size on FKuroBoostQueryResult");
+static_assert(offsetof(FKuroBoostQueryResult, mode) == 0x000000, "Member 'FKuroBoostQueryResult::mode' has a wrong offset!");
+static_assert(offsetof(FKuroBoostQueryResult, target) == 0x000004, "Member 'FKuroBoostQueryResult::target' has a wrong offset!");
+static_assert(offsetof(FKuroBoostQueryResult, percentage) == 0x000008, "Member 'FKuroBoostQueryResult::percentage' has a wrong offset!");
+static_assert(offsetof(FKuroBoostQueryResult, durationLeftInMillisecond) == 0x00000C, "Member 'FKuroBoostQueryResult::durationLeftInMillisecond' has a wrong offset!");
+
 // ScriptStruct KuroPerformance.KuroPerformanceReport
 // 0x0034 (0x0034 - 0x0000)
 struct FKuroPerformanceReport final
@@ -129,23 +146,6 @@ static_assert(offsetof(FKuroPerformanceReport, CurTemperature) == 0x000024, "Mem
 static_assert(offsetof(FKuroPerformanceReport, ThermalStatus) == 0x000028, "Member 'FKuroPerformanceReport::ThermalStatus' has a wrong offset!");
 static_assert(offsetof(FKuroPerformanceReport, ThermalTempBudget) == 0x00002C, "Member 'FKuroPerformanceReport::ThermalTempBudget' has a wrong offset!");
 static_assert(offsetof(FKuroPerformanceReport, PerformanceAdvice) == 0x000030, "Member 'FKuroPerformanceReport::PerformanceAdvice' has a wrong offset!");
-
-// ScriptStruct KuroPerformance.KuroBoostQueryResult
-// 0x0010 (0x0010 - 0x0000)
-struct FKuroBoostQueryResult final
-{
-public:
-	int32                                         mode;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         target;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         percentage;                                        // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         durationLeftInMillisecond;                         // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroBoostQueryResult) == 0x000004, "Wrong alignment on FKuroBoostQueryResult");
-static_assert(sizeof(FKuroBoostQueryResult) == 0x000010, "Wrong size on FKuroBoostQueryResult");
-static_assert(offsetof(FKuroBoostQueryResult, mode) == 0x000000, "Member 'FKuroBoostQueryResult::mode' has a wrong offset!");
-static_assert(offsetof(FKuroBoostQueryResult, target) == 0x000004, "Member 'FKuroBoostQueryResult::target' has a wrong offset!");
-static_assert(offsetof(FKuroBoostQueryResult, percentage) == 0x000008, "Member 'FKuroBoostQueryResult::percentage' has a wrong offset!");
-static_assert(offsetof(FKuroBoostQueryResult, durationLeftInMillisecond) == 0x00000C, "Member 'FKuroBoostQueryResult::durationLeftInMillisecond' has a wrong offset!");
 
 // ScriptStruct KuroPerformance.KuroGameConfig
 // 0x000C (0x000C - 0x0000)

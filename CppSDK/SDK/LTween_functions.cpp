@@ -126,6 +126,56 @@ void ALTweenActor::KillAllTweens(bool callComplete)
 }
 
 
+// Function LTween.LTweenActor.SetGlobalPlayRate
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewPlayRate                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ALTweenActor::SetGlobalPlayRate(float NewPlayRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LTweenActor", "SetGlobalPlayRate");
+
+	Params::LTweenActor_SetGlobalPlayRate Parms{};
+
+	Parms.NewPlayRate = NewPlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LTween.LTweenActor.GetGlobalPlayRate
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ALTweenActor::GetGlobalPlayRate() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LTweenActor", "GetGlobalPlayRate");
+
+	Params::LTweenActor_GetGlobalPlayRate Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LTween.LTweenBPLibrary.ArrayKillIfIsTweening
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:

@@ -21,7 +21,6 @@ public:
 	static bool GetXeSSQualityModeInformation(EXeSSQualityMode QualityMode, float* ScreenPercentage);
 	static bool IsXeSSSupported();
 	static void SetXeSSQualityMode(EXeSSQualityMode QualityMode);
-	static bool ShouldXeSSWarningOldDriver();
 
 public:
 	static class UClass* StaticClass()

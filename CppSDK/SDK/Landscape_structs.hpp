@@ -91,14 +91,15 @@ enum class ELandscapeLayerDisplayMode : uint8
 };
 
 // Enum Landscape.ELandscapeLayerPaintingRestriction
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class ELandscapeLayerPaintingRestriction : uint8
 {
 	None                                     = 0,
 	UseMaxLayers                             = 1,
 	ExistingOnly                             = 2,
 	UseComponentWhitelist                    = 3,
-	ELandscapeLayerPaintingRestriction_MAX   = 4,
+	KuroLayerConstraint                      = 4,
+	ELandscapeLayerPaintingRestriction_MAX   = 5,
 };
 
 // Enum Landscape.ELandscapeImportAlphamapType

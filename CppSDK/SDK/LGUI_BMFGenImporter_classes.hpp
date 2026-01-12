@@ -3,9 +3,9 @@
 
 #include "Basic.hpp"
 
+#include "LGUI_BMFGenImporter_structs.hpp"
 #include "LGUI_structs.hpp"
 #include "LGUI_classes.hpp"
-#include "LGUI_BMFGenImporter_structs.hpp"
 
 
 namespace SDK

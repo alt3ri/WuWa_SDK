@@ -1,0 +1,21 @@
+﻿#pragma once
+// Package: StreamlineReflexBlueprint
+
+#include "Basic.hpp"
+
+
+namespace SDK
+{
+
+// Enum StreamlineReflexBlueprint.EStreamlineReflexMode
+// NumValues: 0x0004
+enum class EStreamlineReflexMode : uint8
+{
+	Off                                      = 0,
+	Enabled                                  = 1,
+	Boost                                    = 3,
+	EStreamlineReflexMode_MAX                = 4,
+};
+
+}
+

@@ -1,0 +1,33 @@
+﻿#pragma once
+// Package: AssetMemoryAnalyzer
+
+#include "Basic.hpp"
+
+#include "Engine_classes.hpp"
+
+
+namespace SDK
+{
+
+// Class AssetMemoryAnalyzer.AssetMemoryAnalyzerSubsystem
+// 0x0030 (0x0068 - 0x0038)
+class UAssetMemoryAnalyzerSubsystem final : public UEngineSubsystem
+{
+public:
+	uint8                                         Pad_38[0x30];                                      // 0x0038(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AssetMemoryAnalyzerSubsystem">();
+	}
+	static class UAssetMemoryAnalyzerSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAssetMemoryAnalyzerSubsystem>();
+	}
+};
+static_assert(alignof(UAssetMemoryAnalyzerSubsystem) == 0x000008, "Wrong alignment on UAssetMemoryAnalyzerSubsystem");
+static_assert(sizeof(UAssetMemoryAnalyzerSubsystem) == 0x000068, "Wrong size on UAssetMemoryAnalyzerSubsystem");
+
+}
+

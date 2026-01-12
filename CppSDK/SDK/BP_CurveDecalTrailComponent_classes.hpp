@@ -1,0 +1,30 @@
+﻿#pragma once
+// Package: BP_CurveDecalTrailComponent
+
+#include "Basic.hpp"
+
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+
+
+namespace SDK
+{
+
+// BlueprintGeneratedClass BP_CurveDecalTrailComponent.BP_CurveDecalTrailComponent_C
+// 0x0000 (0x06E0 - 0x06E0)
+class UBP_CurveDecalTrailComponent_C final : public UKuroCurveTrailDecalComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticBPGeneratedClassImpl<"BP_CurveDecalTrailComponent_C">();
+	}
+	static class UBP_CurveDecalTrailComponent_C* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBP_CurveDecalTrailComponent_C>();
+	}
+};
+static_assert(alignof(UBP_CurveDecalTrailComponent_C) == 0x000010, "Wrong alignment on UBP_CurveDecalTrailComponent_C");
+static_assert(sizeof(UBP_CurveDecalTrailComponent_C) == 0x0006E0, "Wrong size on UBP_CurveDecalTrailComponent_C");
+
+}
+

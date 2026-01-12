@@ -3,9 +3,9 @@
 
 #include "Basic.hpp"
 
+#include "LTween_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "LTween_structs.hpp"
 
 
 namespace SDK::Params
@@ -45,6 +45,28 @@ public:
 static_assert(alignof(LTweenActor_KillAllTweens) == 0x000001, "Wrong alignment on LTweenActor_KillAllTweens");
 static_assert(sizeof(LTweenActor_KillAllTweens) == 0x000001, "Wrong size on LTweenActor_KillAllTweens");
 static_assert(offsetof(LTweenActor_KillAllTweens, callComplete) == 0x000000, "Member 'LTweenActor_KillAllTweens::callComplete' has a wrong offset!");
+
+// Function LTween.LTweenActor.SetGlobalPlayRate
+// 0x0004 (0x0004 - 0x0000)
+struct LTweenActor_SetGlobalPlayRate final
+{
+public:
+	float                                         NewPlayRate;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LTweenActor_SetGlobalPlayRate) == 0x000004, "Wrong alignment on LTweenActor_SetGlobalPlayRate");
+static_assert(sizeof(LTweenActor_SetGlobalPlayRate) == 0x000004, "Wrong size on LTweenActor_SetGlobalPlayRate");
+static_assert(offsetof(LTweenActor_SetGlobalPlayRate, NewPlayRate) == 0x000000, "Member 'LTweenActor_SetGlobalPlayRate::NewPlayRate' has a wrong offset!");
+
+// Function LTween.LTweenActor.GetGlobalPlayRate
+// 0x0004 (0x0004 - 0x0000)
+struct LTweenActor_GetGlobalPlayRate final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LTweenActor_GetGlobalPlayRate) == 0x000004, "Wrong alignment on LTweenActor_GetGlobalPlayRate");
+static_assert(sizeof(LTweenActor_GetGlobalPlayRate) == 0x000004, "Wrong size on LTweenActor_GetGlobalPlayRate");
+static_assert(offsetof(LTweenActor_GetGlobalPlayRate, ReturnValue) == 0x000000, "Member 'LTweenActor_GetGlobalPlayRate::ReturnValue' has a wrong offset!");
 
 // Function LTween.LTweenBPLibrary.ArrayKillIfIsTweening
 // 0x0020 (0x0020 - 0x0000)

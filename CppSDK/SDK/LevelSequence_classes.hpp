@@ -3,40 +3,34 @@
 
 #include "Basic.hpp"
 
-#include "LevelSequence_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
 #include "UMG_classes.hpp"
+#include "LevelSequence_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
 {
 
-// Class LevelSequence.AnimSequenceLevelSequenceLink
-// 0x0030 (0x0060 - 0x0030)
-class UAnimSequenceLevelSequenceLink final : public UAssetUserData
+// Class LevelSequence.LevelSequenceMetaData
+// 0x0000 (0x0030 - 0x0030)
+class ILevelSequenceMetaData final : public IInterface
 {
-public:
-	struct FGuid                                  SkelTrackGuid;                                     // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        PathToLevelSequence;                               // 0x0040(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"AnimSequenceLevelSequenceLink">();
+		return StaticClassImpl<"LevelSequenceMetaData">();
 	}
-	static class UAnimSequenceLevelSequenceLink* GetDefaultObj()
+	static class ILevelSequenceMetaData* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAnimSequenceLevelSequenceLink>();
+		return GetDefaultObjImpl<ILevelSequenceMetaData>();
 	}
 };
-static_assert(alignof(UAnimSequenceLevelSequenceLink) == 0x000008, "Wrong alignment on UAnimSequenceLevelSequenceLink");
-static_assert(sizeof(UAnimSequenceLevelSequenceLink) == 0x000060, "Wrong size on UAnimSequenceLevelSequenceLink");
-static_assert(offsetof(UAnimSequenceLevelSequenceLink, SkelTrackGuid) == 0x000030, "Member 'UAnimSequenceLevelSequenceLink::SkelTrackGuid' has a wrong offset!");
-static_assert(offsetof(UAnimSequenceLevelSequenceLink, PathToLevelSequence) == 0x000040, "Member 'UAnimSequenceLevelSequenceLink::PathToLevelSequence' has a wrong offset!");
+static_assert(alignof(ILevelSequenceMetaData) == 0x000008, "Wrong alignment on ILevelSequenceMetaData");
+static_assert(sizeof(ILevelSequenceMetaData) == 0x000030, "Wrong size on ILevelSequenceMetaData");
 
 // Class LevelSequence.LevelSequenceActor
 // 0x0098 (0x0348 - 0x02B0)
@@ -108,32 +102,34 @@ static_assert(offsetof(ALevelSequenceActor, DefaultInstanceData) == 0x000320, "M
 static_assert(offsetof(ALevelSequenceActor, BurnInInstance) == 0x000328, "Member 'ALevelSequenceActor::BurnInInstance' has a wrong offset!");
 static_assert(offsetof(ALevelSequenceActor, bShowBurnin) == 0x000330, "Member 'ALevelSequenceActor::bShowBurnin' has a wrong offset!");
 
-// Class LevelSequence.DefaultLevelSequenceInstanceData
-// 0x0050 (0x0080 - 0x0030)
-class UDefaultLevelSequenceInstanceData final : public UObject
+// Class LevelSequence.LevelSequenceBurnInOptions
+// 0x0030 (0x0060 - 0x0030)
+class ULevelSequenceBurnInOptions final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 TransformOriginActor;                              // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             TransformOrigin;                                   // 0x0040(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ApplyWorldOrigin;                                  // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bUseBurnIn;                                        // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftClassPath                         BurnInClass;                                       // 0x0038(0x0020)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULevelSequenceBurnInInitSettings*       Settings;                                          // 0x0058(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetBurnIn(const struct FSoftClassPath& InBurnInClass);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"DefaultLevelSequenceInstanceData">();
+		return StaticClassImpl<"LevelSequenceBurnInOptions">();
 	}
-	static class UDefaultLevelSequenceInstanceData* GetDefaultObj()
+	static class ULevelSequenceBurnInOptions* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UDefaultLevelSequenceInstanceData>();
+		return GetDefaultObjImpl<ULevelSequenceBurnInOptions>();
 	}
 };
-static_assert(alignof(UDefaultLevelSequenceInstanceData) == 0x000010, "Wrong alignment on UDefaultLevelSequenceInstanceData");
-static_assert(sizeof(UDefaultLevelSequenceInstanceData) == 0x000080, "Wrong size on UDefaultLevelSequenceInstanceData");
-static_assert(offsetof(UDefaultLevelSequenceInstanceData, TransformOriginActor) == 0x000038, "Member 'UDefaultLevelSequenceInstanceData::TransformOriginActor' has a wrong offset!");
-static_assert(offsetof(UDefaultLevelSequenceInstanceData, TransformOrigin) == 0x000040, "Member 'UDefaultLevelSequenceInstanceData::TransformOrigin' has a wrong offset!");
-static_assert(offsetof(UDefaultLevelSequenceInstanceData, ApplyWorldOrigin) == 0x000070, "Member 'UDefaultLevelSequenceInstanceData::ApplyWorldOrigin' has a wrong offset!");
+static_assert(alignof(ULevelSequenceBurnInOptions) == 0x000008, "Wrong alignment on ULevelSequenceBurnInOptions");
+static_assert(sizeof(ULevelSequenceBurnInOptions) == 0x000060, "Wrong size on ULevelSequenceBurnInOptions");
+static_assert(offsetof(ULevelSequenceBurnInOptions, bUseBurnIn) == 0x000030, "Member 'ULevelSequenceBurnInOptions::bUseBurnIn' has a wrong offset!");
+static_assert(offsetof(ULevelSequenceBurnInOptions, BurnInClass) == 0x000038, "Member 'ULevelSequenceBurnInOptions::BurnInClass' has a wrong offset!");
+static_assert(offsetof(ULevelSequenceBurnInOptions, Settings) == 0x000058, "Member 'ULevelSequenceBurnInOptions::Settings' has a wrong offset!");
 
 // Class LevelSequence.LevelSequence
 // 0x01E0 (0x0248 - 0x0068)
@@ -145,11 +141,11 @@ public:
 	struct FLevelSequenceObjectReferenceMap       ObjectReferences;                                  // 0x0078(0x0050)(Protected, NativeAccessSpecifierProtected)
 	struct FLevelSequenceBindingReferences        BindingReferences;                                 // 0x00C8(0x00A0)(Protected, NativeAccessSpecifierProtected)
 	TMap<class FString, struct FLevelSequenceObject> PossessedObjects;                                  // 0x0168(0x0050)(Deprecated, Protected, NativeAccessSpecifierProtected)
-	class UClass*                                 DirectorClass;                                     // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bOverrideCenterOffset;                             // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UClass*                                 DirectorClass;                                     // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bOverrideCenterOffset;                             // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_1C1[0x3];                                      // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                DefaultCenterOffset;                               // 0x01C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseAnimAudio;                                     // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                DefaultCenterOffset;                               // 0x01C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bUseAnimAudio;                                     // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_1D1[0x7];                                      // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroSequenceConsoleCommandDataAsset*   KuroSequenceConsoleCommandDataAsset;               // 0x01D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroSequenceConsoleCommandDataAsset*   SequenceDataAsset;                                 // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -194,25 +190,58 @@ static_assert(offsetof(ULevelSequence, SequenceDataAsset) == 0x0001E0, "Member '
 static_assert(offsetof(ULevelSequence, AssetUserData) == 0x0001E8, "Member 'ULevelSequence::AssetUserData' has a wrong offset!");
 static_assert(offsetof(ULevelSequence, CustomGuidToBindingGuidMap) == 0x0001F8, "Member 'ULevelSequence::CustomGuidToBindingGuidMap' has a wrong offset!");
 
-// Class LevelSequence.LevelSequenceMetaData
-// 0x0000 (0x0030 - 0x0030)
-class ILevelSequenceMetaData final : public IInterface
+// Class LevelSequence.AnimSequenceLevelSequenceLink
+// 0x0030 (0x0060 - 0x0030)
+class UAnimSequenceLevelSequenceLink final : public UAssetUserData
 {
+public:
+	struct FGuid                                  SkelTrackGuid;                                     // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        PathToLevelSequence;                               // 0x0040(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"LevelSequenceMetaData">();
+		return StaticClassImpl<"AnimSequenceLevelSequenceLink">();
 	}
-	static class ILevelSequenceMetaData* GetDefaultObj()
+	static class UAnimSequenceLevelSequenceLink* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ILevelSequenceMetaData>();
+		return GetDefaultObjImpl<UAnimSequenceLevelSequenceLink>();
 	}
 };
-static_assert(alignof(ILevelSequenceMetaData) == 0x000008, "Wrong alignment on ILevelSequenceMetaData");
-static_assert(sizeof(ILevelSequenceMetaData) == 0x000030, "Wrong size on ILevelSequenceMetaData");
+static_assert(alignof(UAnimSequenceLevelSequenceLink) == 0x000008, "Wrong alignment on UAnimSequenceLevelSequenceLink");
+static_assert(sizeof(UAnimSequenceLevelSequenceLink) == 0x000060, "Wrong size on UAnimSequenceLevelSequenceLink");
+static_assert(offsetof(UAnimSequenceLevelSequenceLink, SkelTrackGuid) == 0x000030, "Member 'UAnimSequenceLevelSequenceLink::SkelTrackGuid' has a wrong offset!");
+static_assert(offsetof(UAnimSequenceLevelSequenceLink, PathToLevelSequence) == 0x000040, "Member 'UAnimSequenceLevelSequenceLink::PathToLevelSequence' has a wrong offset!");
+
+// Class LevelSequence.DefaultLevelSequenceInstanceData
+// 0x0050 (0x0080 - 0x0030)
+class UDefaultLevelSequenceInstanceData final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 TransformOriginActor;                              // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             TransformOrigin;                                   // 0x0040(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ApplyWorldOrigin;                                  // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"DefaultLevelSequenceInstanceData">();
+	}
+	static class UDefaultLevelSequenceInstanceData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDefaultLevelSequenceInstanceData>();
+	}
+};
+static_assert(alignof(UDefaultLevelSequenceInstanceData) == 0x000010, "Wrong alignment on UDefaultLevelSequenceInstanceData");
+static_assert(sizeof(UDefaultLevelSequenceInstanceData) == 0x000080, "Wrong size on UDefaultLevelSequenceInstanceData");
+static_assert(offsetof(UDefaultLevelSequenceInstanceData, TransformOriginActor) == 0x000038, "Member 'UDefaultLevelSequenceInstanceData::TransformOriginActor' has a wrong offset!");
+static_assert(offsetof(UDefaultLevelSequenceInstanceData, TransformOrigin) == 0x000040, "Member 'UDefaultLevelSequenceInstanceData::TransformOrigin' has a wrong offset!");
+static_assert(offsetof(UDefaultLevelSequenceInstanceData, ApplyWorldOrigin) == 0x000070, "Member 'UDefaultLevelSequenceInstanceData::ApplyWorldOrigin' has a wrong offset!");
 
 // Class LevelSequence.KuroSequenceConsoleCommandDataAsset
-// 0x0040 (0x0078 - 0x0038)
+// 0x0048 (0x0080 - 0x0038)
 class UKuroSequenceConsoleCommandDataAsset final : public UDataAsset
 {
 public:
@@ -220,6 +249,9 @@ public:
 	TArray<class FString>                         GlobalConsoleCommands;                             // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FString>                         MobileConsoleCommands;                             // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FString>                         GlobalMobileConsoleCommands;                       // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bMobileLowStreaming;                               // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MobileLowStreamingScale;                           // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -232,11 +264,13 @@ public:
 	}
 };
 static_assert(alignof(UKuroSequenceConsoleCommandDataAsset) == 0x000008, "Wrong alignment on UKuroSequenceConsoleCommandDataAsset");
-static_assert(sizeof(UKuroSequenceConsoleCommandDataAsset) == 0x000078, "Wrong size on UKuroSequenceConsoleCommandDataAsset");
+static_assert(sizeof(UKuroSequenceConsoleCommandDataAsset) == 0x000080, "Wrong size on UKuroSequenceConsoleCommandDataAsset");
 static_assert(offsetof(UKuroSequenceConsoleCommandDataAsset, ConsoleCommands) == 0x000038, "Member 'UKuroSequenceConsoleCommandDataAsset::ConsoleCommands' has a wrong offset!");
 static_assert(offsetof(UKuroSequenceConsoleCommandDataAsset, GlobalConsoleCommands) == 0x000048, "Member 'UKuroSequenceConsoleCommandDataAsset::GlobalConsoleCommands' has a wrong offset!");
 static_assert(offsetof(UKuroSequenceConsoleCommandDataAsset, MobileConsoleCommands) == 0x000058, "Member 'UKuroSequenceConsoleCommandDataAsset::MobileConsoleCommands' has a wrong offset!");
 static_assert(offsetof(UKuroSequenceConsoleCommandDataAsset, GlobalMobileConsoleCommands) == 0x000068, "Member 'UKuroSequenceConsoleCommandDataAsset::GlobalMobileConsoleCommands' has a wrong offset!");
+static_assert(offsetof(UKuroSequenceConsoleCommandDataAsset, bMobileLowStreaming) == 0x000078, "Member 'UKuroSequenceConsoleCommandDataAsset::bMobileLowStreaming' has a wrong offset!");
+static_assert(offsetof(UKuroSequenceConsoleCommandDataAsset, MobileLowStreamingScale) == 0x00007C, "Member 'UKuroSequenceConsoleCommandDataAsset::MobileLowStreamingScale' has a wrong offset!");
 
 // Class LevelSequence.LevelSequenceBurnInInitSettings
 // 0x0000 (0x0030 - 0x0030)
@@ -254,35 +288,6 @@ public:
 };
 static_assert(alignof(ULevelSequenceBurnInInitSettings) == 0x000008, "Wrong alignment on ULevelSequenceBurnInInitSettings");
 static_assert(sizeof(ULevelSequenceBurnInInitSettings) == 0x000030, "Wrong size on ULevelSequenceBurnInInitSettings");
-
-// Class LevelSequence.LevelSequenceBurnInOptions
-// 0x0030 (0x0060 - 0x0030)
-class ULevelSequenceBurnInOptions final : public UObject
-{
-public:
-	bool                                          bUseBurnIn;                                        // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftClassPath                         BurnInClass;                                       // 0x0038(0x0020)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULevelSequenceBurnInInitSettings*       Settings;                                          // 0x0058(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void SetBurnIn(const struct FSoftClassPath& InBurnInClass);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LevelSequenceBurnInOptions">();
-	}
-	static class ULevelSequenceBurnInOptions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULevelSequenceBurnInOptions>();
-	}
-};
-static_assert(alignof(ULevelSequenceBurnInOptions) == 0x000008, "Wrong alignment on ULevelSequenceBurnInOptions");
-static_assert(sizeof(ULevelSequenceBurnInOptions) == 0x000060, "Wrong size on ULevelSequenceBurnInOptions");
-static_assert(offsetof(ULevelSequenceBurnInOptions, bUseBurnIn) == 0x000030, "Member 'ULevelSequenceBurnInOptions::bUseBurnIn' has a wrong offset!");
-static_assert(offsetof(ULevelSequenceBurnInOptions, BurnInClass) == 0x000038, "Member 'ULevelSequenceBurnInOptions::BurnInClass' has a wrong offset!");
-static_assert(offsetof(ULevelSequenceBurnInOptions, Settings) == 0x000058, "Member 'ULevelSequenceBurnInOptions::Settings' has a wrong offset!");
 
 // Class LevelSequence.KuroLevelSequenceActorConfig
 // 0x0020 (0x0050 - 0x0030)
@@ -369,7 +374,7 @@ static_assert(offsetof(ULevelSequenceBurnIn, LevelSequenceActor) == 0x0003C0, "M
 
 // Class LevelSequence.LevelSequenceDirector
 // 0x0008 (0x0038 - 0x0030)
-class ULevelSequenceDirector : public UObject
+class ULevelSequenceDirector final : public UObject
 {
 public:
 	class ULevelSequencePlayer*                   Player;                                            // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -409,13 +414,13 @@ static_assert(alignof(ULegacyLevelSequenceDirectorBlueprint) == 0x000008, "Wrong
 static_assert(sizeof(ULegacyLevelSequenceDirectorBlueprint) == 0x0000A8, "Wrong size on ULegacyLevelSequenceDirectorBlueprint");
 
 // Class LevelSequence.LevelSequencePlayer
-// 0x0138 (0x0828 - 0x06F0)
+// 0x0138 (0x0830 - 0x06F8)
 class ULevelSequencePlayer final : public UMovieSceneSequencePlayer
 {
 public:
-	TMulticastInlineDelegate<void(class UCameraComponent* CameraComponent)> OnCameraCut;                                       // 0x06F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class ULevelSequence* LevelSequence, const struct FGuid& Guid, class UObject* Object)> OnSequenceObjectSpawned;                           // 0x0700(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_710[0x118];                                    // 0x0710(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UCameraComponent* CameraComponent)> OnCameraCut;                                       // 0x06F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class ULevelSequence* LevelSequence, const struct FGuid& Guid, class UObject* Object)> OnSequenceObjectSpawned;                           // 0x0708(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_718[0x118];                                    // 0x0718(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class ULevelSequencePlayer* CreateLevelSequencePlayer(class UObject* WorldContextObject, class ULevelSequence* LevelSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ALevelSequenceActor** OutActor);
@@ -437,9 +442,9 @@ public:
 	}
 };
 static_assert(alignof(ULevelSequencePlayer) == 0x000008, "Wrong alignment on ULevelSequencePlayer");
-static_assert(sizeof(ULevelSequencePlayer) == 0x000828, "Wrong size on ULevelSequencePlayer");
-static_assert(offsetof(ULevelSequencePlayer, OnCameraCut) == 0x0006F0, "Member 'ULevelSequencePlayer::OnCameraCut' has a wrong offset!");
-static_assert(offsetof(ULevelSequencePlayer, OnSequenceObjectSpawned) == 0x000700, "Member 'ULevelSequencePlayer::OnSequenceObjectSpawned' has a wrong offset!");
+static_assert(sizeof(ULevelSequencePlayer) == 0x000830, "Wrong size on ULevelSequencePlayer");
+static_assert(offsetof(ULevelSequencePlayer, OnCameraCut) == 0x0006F8, "Member 'ULevelSequencePlayer::OnCameraCut' has a wrong offset!");
+static_assert(offsetof(ULevelSequencePlayer, OnSequenceObjectSpawned) == 0x000708, "Member 'ULevelSequencePlayer::OnSequenceObjectSpawned' has a wrong offset!");
 
 // Class LevelSequence.SequenceCustomGuidGetterInterface
 // 0x0000 (0x0030 - 0x0030)

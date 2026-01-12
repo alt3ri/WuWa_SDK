@@ -496,7 +496,7 @@ static_assert(offsetof(USMRuntimeSettings, bPreloadDefaultNodes) == 0x000030, "M
 
 // Class SMSystem.ASMBindState
 // 0x0000 (0x0030 - 0x0030)
-class UASMBindState : public UObject
+class UASMBindState final : public UObject
 {
 public:
 	static class UClass* StaticClass()
@@ -513,7 +513,7 @@ static_assert(sizeof(UASMBindState) == 0x000030, "Wrong size on UASMBindState");
 
 // Class SMSystem.ASMAction
 // 0x0000 (0x0030 - 0x0030)
-class UASMAction : public UObject
+class UASMAction final : public UObject
 {
 public:
 	static class UClass* StaticClass()
@@ -530,7 +530,7 @@ static_assert(sizeof(UASMAction) == 0x000030, "Wrong size on UASMAction");
 
 // Class SMSystem.ASMTask
 // 0x0000 (0x0030 - 0x0030)
-class UASMTask : public UObject
+class UASMTask final : public UObject
 {
 public:
 	static class UClass* StaticClass()

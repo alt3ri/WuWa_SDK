@@ -102,6 +102,20 @@ static_assert(offsetof(FCollisionLimitBase, OffsetRotation) == 0x000020, "Member
 static_assert(offsetof(FCollisionLimitBase, Location) == 0x00002C, "Member 'FCollisionLimitBase::Location' has a wrong offset!");
 static_assert(offsetof(FCollisionLimitBase, Rotation) == 0x000040, "Member 'FCollisionLimitBase::Rotation' has a wrong offset!");
 
+// ScriptStruct KawaiiPhysics.SphericalLimit
+// 0x0010 (0x0060 - 0x0050)
+struct FSphericalLimit final : public FCollisionLimitBase
+{
+public:
+	float                                         Radius;                                            // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESphericalLimitType                           LimitType;                                         // 0x0054(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0xB];                                       // 0x0055(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSphericalLimit) == 0x000010, "Wrong alignment on FSphericalLimit");
+static_assert(sizeof(FSphericalLimit) == 0x000060, "Wrong size on FSphericalLimit");
+static_assert(offsetof(FSphericalLimit, Radius) == 0x000050, "Member 'FSphericalLimit::Radius' has a wrong offset!");
+static_assert(offsetof(FSphericalLimit, LimitType) == 0x000054, "Member 'FSphericalLimit::LimitType' has a wrong offset!");
+
 // ScriptStruct KawaiiPhysics.CapsuleLimit
 // 0x0010 (0x0060 - 0x0050)
 struct FCapsuleLimit final : public FCollisionLimitBase
@@ -126,20 +140,6 @@ public:
 static_assert(alignof(FPlanarLimit) == 0x000010, "Wrong alignment on FPlanarLimit");
 static_assert(sizeof(FPlanarLimit) == 0x000060, "Wrong size on FPlanarLimit");
 static_assert(offsetof(FPlanarLimit, Plane) == 0x000050, "Member 'FPlanarLimit::Plane' has a wrong offset!");
-
-// ScriptStruct KawaiiPhysics.SphericalLimit
-// 0x0010 (0x0060 - 0x0050)
-struct FSphericalLimit final : public FCollisionLimitBase
-{
-public:
-	float                                         Radius;                                            // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESphericalLimitType                           LimitType;                                         // 0x0054(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55[0xB];                                       // 0x0055(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSphericalLimit) == 0x000010, "Wrong alignment on FSphericalLimit");
-static_assert(sizeof(FSphericalLimit) == 0x000060, "Wrong size on FSphericalLimit");
-static_assert(offsetof(FSphericalLimit, Radius) == 0x000050, "Member 'FSphericalLimit::Radius' has a wrong offset!");
-static_assert(offsetof(FSphericalLimit, LimitType) == 0x000054, "Member 'FSphericalLimit::LimitType' has a wrong offset!");
 
 // ScriptStruct KawaiiPhysics.KawaiiPhysicsModifyBone
 // 0x00C0 (0x00C0 - 0x0000)

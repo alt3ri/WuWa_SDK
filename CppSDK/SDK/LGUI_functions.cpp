@@ -10,456 +10,6 @@
 namespace SDK
 {
 
-// Function LGUI.UIBaseActor.ActivateAllChildrenInteraction
-// (Final, Native, Public, BlueprintCallable)
-
-void AUIBaseActor::ActivateAllChildrenInteraction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "ActivateAllChildrenInteraction");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.CleanIdleAnimSeqActorCache
-// (Final, Native, Public)
-
-void AUIBaseActor::CleanIdleAnimSeqActorCache()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "CleanIdleAnimSeqActorCache");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.ClearAllSequence
-// (Final, Native, Public)
-
-void AUIBaseActor::ClearAllSequence()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "ClearAllSequence");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.GetLoadStateOfSequenceByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ESequenceLoadState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ESequenceLoadState AUIBaseActor::GetLoadStateOfSequenceByKey(const class FString& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "GetLoadStateOfSequenceByKey");
-
-	Params::UIBaseActor_GetLoadStateOfSequenceByKey Parms{};
-
-	Parms.Key = std::move(Key);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBaseActor.GetSeqInfoByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSequenceInfo                    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FSequenceInfo AUIBaseActor::GetSeqInfoByKey(const class FString& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "GetSeqInfoByKey");
-
-	Params::UIBaseActor_GetSeqInfoByKey Parms{};
-
-	Parms.Key = std::move(Key);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBaseActor.GetSequencePlayContextOfKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USequencePlayContext*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USequencePlayContext* AUIBaseActor::GetSequencePlayContextOfKey(const class FString& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "GetSequencePlayContextOfKey");
-
-	Params::UIBaseActor_GetSequencePlayContextOfKey Parms{};
-
-	Parms.Key = std::move(Key);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBaseActor.GetSequencePlayerByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ALevelSequenceActor*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ALevelSequenceActor* AUIBaseActor::GetSequencePlayerByKey(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "GetSequencePlayerByKey");
-
-	Params::UIBaseActor_GetSequencePlayerByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBaseActor.LoadSequenceAssetAsyncByKey
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(class ULevelSequence* Sequence)>OnLoaded                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::LoadSequenceAssetAsyncByKey(const class FString& Key, const TDelegate<void(class ULevelSequence* Sequence)>& OnLoaded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "LoadSequenceAssetAsyncByKey");
-
-	Params::UIBaseActor_LoadSequenceAssetAsyncByKey Parms{};
-
-	Parms.Key = std::move(Key);
-	Parms.OnLoaded = OnLoaded;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.PauseSequenceByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::PauseSequenceByKey(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "PauseSequenceByKey");
-
-	Params::UIBaseActor_PauseSequenceByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.PlayLevelSequenceByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::PlayLevelSequenceByKey(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "PlayLevelSequenceByKey");
-
-	Params::UIBaseActor_PlayLevelSequenceByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.ReplaySequenceByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::ReplaySequenceByKey(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "ReplaySequenceByKey");
-
-	Params::UIBaseActor_ReplaySequenceByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.ResumeSequenceByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::ResumeSequenceByKey(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "ResumeSequenceByKey");
-
-	Params::UIBaseActor_ResumeSequenceByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.SequenceJumpToEnd
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FSoftObjectPath                  SoftPath                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::SequenceJumpToEnd(const struct FSoftObjectPath& SoftPath)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "SequenceJumpToEnd");
-
-	Params::UIBaseActor_SequenceJumpToEnd Parms{};
-
-	Parms.SoftPath = std::move(SoftPath);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.SequenceJumpToSecondByKey
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameTime                       Time                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::SequenceJumpToSecondByKey(const class FString& Name_0, const struct FFrameTime& Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "SequenceJumpToSecondByKey");
-
-	Params::UIBaseActor_SequenceJumpToSecondByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-	Parms.Time = std::move(Time);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.SequencePlayReverseByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::SequencePlayReverseByKey(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "SequencePlayReverseByKey");
-
-	Params::UIBaseActor_SequencePlayReverseByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.StopSequenceByKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::StopSequenceByKey(const class FString& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "StopSequenceByKey");
-
-	Params::UIBaseActor_StopSequenceByKey Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.ExecuteSequencePlayEvent
-// (Final, Native, Public, BlueprintCallable, Const)
-// Parameters:
-// class FString                           sequenceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           eventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AUIBaseActor::ExecuteSequencePlayEvent(const class FString& sequenceName, const class FString& eventName) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "ExecuteSequencePlayEvent");
-
-	Params::UIBaseActor_ExecuteSequencePlayEvent Parms{};
-
-	Parms.sequenceName = std::move(sequenceName);
-	Parms.eventName = std::move(eventName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBaseActor.GetUIItem
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUIItem*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUIItem* AUIBaseActor::GetUIItem() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBaseActor", "GetUIItem");
-
-	Params::UIBaseActor_GetUIItem Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function LGUI.LGUIBehaviour.AwakeBP
 // (Event, Protected, BlueprintEvent)
 
@@ -956,1666 +506,19 @@ class USceneComponent* ULGUIBehaviour::GetRootSceneComponent() const
 }
 
 
-// Function LGUI.UISelectableComponent.ResetSelectableDelegate
-// (Final, Native, Static, Public, BlueprintCallable)
-
-void UUISelectableComponent::ResetSelectableDelegate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UISelectableComponent", "ResetSelectableDelegate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetSelectableDelegate
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class UUISelectableComponent* SelectableComponent, bool bCreate)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetSelectableDelegate(const TDelegate<void(class UUISelectableComponent* SelectableComponent, bool bCreate)>& Delegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UISelectableComponent", "SetSelectableDelegate");
-
-	Params::UISelectableComponent_SetSelectableDelegate Parms{};
-
-	Parms.Delegate = Delegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetShieldMobileHighlight
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetShieldMobileHighlight(const bool Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UISelectableComponent", "SetShieldMobileHighlight");
-
-	Params::UISelectableComponent_SetShieldMobileHighlight Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetShieldPCPress
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetShieldPCPress(const bool Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UISelectableComponent", "SetShieldPCPress");
-
-	Params::UISelectableComponent_SetShieldPCPress Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.ApplySelectionState
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// bool                                    bImmediateSet                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::ApplySelectionState(bool bImmediateSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "ApplySelectionState");
-
-	Params::UISelectableComponent_ApplySelectionState Parms{};
-
-	Parms.bImmediateSet = bImmediateSet;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.GetCanClickWhenDisable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUISelectableComponent::GetCanClickWhenDisable()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetCanClickWhenDisable");
-
-	Params::UISelectableComponent_GetCanClickWhenDisable Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetSelectionState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableSelectionState             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISelectableSelectionState UUISelectableComponent::GetSelectionState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetSelectionState");
-
-	Params::UISelectableComponent_GetSelectionState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetSelfInteractive
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUISelectableComponent::GetSelfInteractive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetSelfInteractive");
-
-	Params::UISelectableComponent_GetSelfInteractive Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.NotifyFocusListener
-// (Final, Native, Public, BlueprintCallable)
-
-void UUISelectableComponent::NotifyFocusListener()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "NotifyFocusListener");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.NotifyUnFocusListener
-// (Final, Native, Public, BlueprintCallable)
-
-void UUISelectableComponent::NotifyUnFocusListener()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "NotifyUnFocusListener");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.PlayUIAnimationByPlayInfo
-// (Final, Native, Public)
-// Parameters:
-// struct FAnimationPlayInfo               PlayInfo                                               (Parm, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::PlayUIAnimationByPlayInfo(const struct FAnimationPlayInfo& PlayInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "PlayUIAnimationByPlayInfo");
-
-	Params::UISelectableComponent_PlayUIAnimationByPlayInfo Parms{};
-
-	Parms.PlayInfo = std::move(PlayInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetCanClickWhenDisable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    CanClickEnbale                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetCanClickWhenDisable(bool CanClickEnbale)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetCanClickWhenDisable");
-
-	Params::UISelectableComponent_SetCanClickWhenDisable Parms{};
-
-	Parms.CanClickEnbale = CanClickEnbale;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetHighlightedColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FColor                           NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetHighlightedColor(const struct FColor& NewColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetHighlightedColor");
-
-	Params::UISelectableComponent_SetHighlightedColor Parms{};
-
-	Parms.NewColor = std::move(NewColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetHighlightedSprite
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetHighlightedSprite(class ULGUISpriteData_BaseObject* NewSprite)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetHighlightedSprite");
-
-	Params::UISelectableComponent_SetHighlightedSprite Parms{};
-
-	Parms.NewSprite = NewSprite;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetIsCustomAnim
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bIsCustomAnim                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetIsCustomAnim(bool bIsCustomAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetIsCustomAnim");
-
-	Params::UISelectableComponent_SetIsCustomAnim Parms{};
-
-	Parms.bIsCustomAnim = bIsCustomAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetIsCustomTransition
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bIsCustomTransition                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetIsCustomTransition(bool bIsCustomTransition)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetIsCustomTransition");
-
-	Params::UISelectableComponent_SetIsCustomTransition Parms{};
-
-	Parms.bIsCustomTransition = bIsCustomTransition;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationDown
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationDown(EUISelectableNavigationMode value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationDown");
-
-	Params::UISelectableComponent_SetNavigationDown Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationDownExplicit
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationDownExplicit(class UUISelectableComponent* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationDownExplicit");
-
-	Params::UISelectableComponent_SetNavigationDownExplicit Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationGroup
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class UUINavigationGroupComponent*      Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationGroup(class UUINavigationGroupComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationGroup");
-
-	Params::UISelectableComponent_SetNavigationGroup Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationGroupParent
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationGroupParent(class UUISelectableComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationGroupParent");
-
-	Params::UISelectableComponent_SetNavigationGroupParent Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationLeft
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationLeft(EUISelectableNavigationMode value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationLeft");
-
-	Params::UISelectableComponent_SetNavigationLeft Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationLeftExplicit
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationLeftExplicit(class UUISelectableComponent* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationLeftExplicit");
-
-	Params::UISelectableComponent_SetNavigationLeftExplicit Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationNext
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationNext(EUISelectableNavigationMode value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationNext");
-
-	Params::UISelectableComponent_SetNavigationNext Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationNextExplicit
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationNextExplicit(class UUISelectableComponent* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationNextExplicit");
-
-	Params::UISelectableComponent_SetNavigationNextExplicit Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationPrev
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationPrev(EUISelectableNavigationMode value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationPrev");
-
-	Params::UISelectableComponent_SetNavigationPrev Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationPrevExplicit
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationPrevExplicit(class UUISelectableComponent* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationPrevExplicit");
-
-	Params::UISelectableComponent_SetNavigationPrevExplicit Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationRight
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationRight(EUISelectableNavigationMode value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationRight");
-
-	Params::UISelectableComponent_SetNavigationRight Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationRightExplicit
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationRightExplicit(class UUISelectableComponent* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationRightExplicit");
-
-	Params::UISelectableComponent_SetNavigationRightExplicit Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationUp
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationUp(EUISelectableNavigationMode value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationUp");
-
-	Params::UISelectableComponent_SetNavigationUp Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNavigationUpExplicit
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNavigationUpExplicit(class UUISelectableComponent* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNavigationUpExplicit");
-
-	Params::UISelectableComponent_SetNavigationUpExplicit Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNormalColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FColor                           NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNormalColor(const struct FColor& NewColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNormalColor");
-
-	Params::UISelectableComponent_SetNormalColor Parms{};
-
-	Parms.NewColor = std::move(NewColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetNormalSprite
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetNormalSprite(class ULGUISpriteData_BaseObject* NewSprite)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetNormalSprite");
-
-	Params::UISelectableComponent_SetNormalSprite Parms{};
-
-	Parms.NewSprite = NewSprite;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetPressedColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FColor                           NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetPressedColor(const struct FColor& NewColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetPressedColor");
-
-	Params::UISelectableComponent_SetPressedColor Parms{};
-
-	Parms.NewColor = std::move(NewColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetPressedSprite
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetPressedSprite(class ULGUISpriteData_BaseObject* NewSprite)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetPressedSprite");
-
-	Params::UISelectableComponent_SetPressedSprite Parms{};
-
-	Parms.NewSprite = NewSprite;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetScrollView
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUIScrollViewWithScrollbarComponent*Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetScrollView(class UUIScrollViewWithScrollbarComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetScrollView");
-
-	Params::UISelectableComponent_SetScrollView Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetSelectionState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableSelectionState             NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetSelectionState(EUISelectableSelectionState NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetSelectionState");
-
-	Params::UISelectableComponent_SetSelectionState Parms{};
-
-	Parms.NewState = NewState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetSelfInteractive
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InteractiveEnable                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetSelfInteractive(bool InteractiveEnable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetSelfInteractive");
-
-	Params::UISelectableComponent_SetSelfInteractive Parms{};
-
-	Parms.InteractiveEnable = InteractiveEnable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.SetTransitionTarget
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AUIBaseActor*                     value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableComponent::SetTransitionTarget(class AUIBaseActor* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "SetTransitionTarget");
-
-	Params::UISelectableComponent_SetTransitionTarget Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableComponent.GetDisabledSprite
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULGUISpriteData_BaseObject* UUISelectableComponent::GetDisabledSprite() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetDisabledSprite");
-
-	Params::UISelectableComponent_GetDisabledSprite Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetHighlightedColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FColor UUISelectableComponent::GetHighlightedColor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetHighlightedColor");
-
-	Params::UISelectableComponent_GetHighlightedColor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetHighlightedSprite
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULGUISpriteData_BaseObject* UUISelectableComponent::GetHighlightedSprite() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetHighlightedSprite");
-
-	Params::UISelectableComponent_GetHighlightedSprite Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationDown
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISelectableNavigationMode UUISelectableComponent::GetNavigationDown() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationDown");
-
-	Params::UISelectableComponent_GetNavigationDown Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationDownExplicit
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUISelectableComponent* UUISelectableComponent::GetNavigationDownExplicit() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationDownExplicit");
-
-	Params::UISelectableComponent_GetNavigationDownExplicit Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationLeft
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISelectableNavigationMode UUISelectableComponent::GetNavigationLeft() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationLeft");
-
-	Params::UISelectableComponent_GetNavigationLeft Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationLeftExplicit
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUISelectableComponent* UUISelectableComponent::GetNavigationLeftExplicit() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationLeftExplicit");
-
-	Params::UISelectableComponent_GetNavigationLeftExplicit Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationNext
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISelectableNavigationMode UUISelectableComponent::GetNavigationNext() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationNext");
-
-	Params::UISelectableComponent_GetNavigationNext Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationNextExplicit
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUISelectableComponent* UUISelectableComponent::GetNavigationNextExplicit() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationNextExplicit");
-
-	Params::UISelectableComponent_GetNavigationNextExplicit Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationPrev
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISelectableNavigationMode UUISelectableComponent::GetNavigationPrev() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationPrev");
-
-	Params::UISelectableComponent_GetNavigationPrev Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationPrevExplicit
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUISelectableComponent* UUISelectableComponent::GetNavigationPrevExplicit() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationPrevExplicit");
-
-	Params::UISelectableComponent_GetNavigationPrevExplicit Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationRight
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISelectableNavigationMode UUISelectableComponent::GetNavigationRight() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationRight");
-
-	Params::UISelectableComponent_GetNavigationRight Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationRightExplicit
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUISelectableComponent* UUISelectableComponent::GetNavigationRightExplicit() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationRightExplicit");
-
-	Params::UISelectableComponent_GetNavigationRightExplicit Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationUp
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISelectableNavigationMode UUISelectableComponent::GetNavigationUp() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationUp");
-
-	Params::UISelectableComponent_GetNavigationUp Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNavigationUpExplicit
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUISelectableComponent* UUISelectableComponent::GetNavigationUpExplicit() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNavigationUpExplicit");
-
-	Params::UISelectableComponent_GetNavigationUpExplicit Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNormalColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FColor UUISelectableComponent::GetNormalColor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNormalColor");
-
-	Params::UISelectableComponent_GetNormalColor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetNormalSprite
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULGUISpriteData_BaseObject* UUISelectableComponent::GetNormalSprite() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetNormalSprite");
-
-	Params::UISelectableComponent_GetNormalSprite Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetPressedColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FColor UUISelectableComponent::GetPressedColor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetPressedColor");
-
-	Params::UISelectableComponent_GetPressedColor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetPressedSprite
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULGUISpriteData_BaseObject* UUISelectableComponent::GetPressedSprite() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetPressedSprite");
-
-	Params::UISelectableComponent_GetPressedSprite Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetSelectedSprite
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULGUISpriteData_BaseObject* UUISelectableComponent::GetSelectedSprite() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetSelectedSprite");
-
-	Params::UISelectableComponent_GetSelectedSprite Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.GetTransitionTarget
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AUIBaseActor* UUISelectableComponent::GetTransitionTarget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "GetTransitionTarget");
-
-	Params::UISelectableComponent_GetTransitionTarget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISelectableComponent.IsInteractable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUISelectableComponent::IsInteractable() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableComponent", "IsInteractable");
-
-	Params::UISelectableComponent_IsInteractable Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIButtonComponent.OnPointerDown_Implementation
-// (Native, Protected)
-// Parameters:
-// class ULGUIPointerEventData*            eventData                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIButtonComponent::OnPointerDown_Implementation(class ULGUIPointerEventData* eventData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIButtonComponent", "OnPointerDown_Implementation");
-
-	Params::UIButtonComponent_OnPointerDown_Implementation Parms{};
-
-	Parms.eventData = eventData;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIButtonComponent.RegisterClickEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void()>                       InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIButtonComponent::RegisterClickEvent(const TDelegate<void()>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIButtonComponent", "RegisterClickEvent");
-
-	Params::UIButtonComponent_RegisterClickEvent Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIButtonComponent.UnregisterClickEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIButtonComponent::UnregisterClickEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIButtonComponent", "UnregisterClickEvent");
-
-	Params::UIButtonComponent_UnregisterClickEvent Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableButtonComponent.SetForceSelect
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    forceSelect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableButtonComponent::SetForceSelect(bool forceSelect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableButtonComponent", "SetForceSelect");
-
-	Params::UISelectableButtonComponent_SetForceSelect Parms{};
-
-	Parms.forceSelect = forceSelect;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.LGUIBaseRayEmitter.GetClickThreshold
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ULGUIBaseRayEmitter::GetClickThreshold()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIBaseRayEmitter", "GetClickThreshold");
-
-	Params::LGUIBaseRayEmitter_GetClickThreshold Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.LGUIBaseRayEmitter.GetInitialValue
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// float                                   OutClickThreshold                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    OutHoldToDrag                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   OutHoldToDragTime                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULGUIBaseRayEmitter::GetInitialValue(float* OutClickThreshold, bool* OutHoldToDrag, float* OutHoldToDragTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIBaseRayEmitter", "GetInitialValue");
-
-	Params::LGUIBaseRayEmitter_GetInitialValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutClickThreshold != nullptr)
-		*OutClickThreshold = Parms.OutClickThreshold;
-
-	if (OutHoldToDrag != nullptr)
-		*OutHoldToDrag = Parms.OutHoldToDrag;
-
-	if (OutHoldToDragTime != nullptr)
-		*OutHoldToDragTime = Parms.OutHoldToDragTime;
-}
-
-
-// Function LGUI.LGUIBaseRayEmitter.SetClickThreshold
+// Function LGUI.UILayoutElement.SetConstantSize
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULGUIBaseRayEmitter::SetClickThreshold(float value)
+void UUILayoutElement::SetConstantSize(float value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIBaseRayEmitter", "SetClickThreshold");
+		Func = Class->GetFunction("UILayoutElement", "SetConstantSize");
 
-	Params::LGUIBaseRayEmitter_SetClickThreshold Parms{};
+	Params::UILayoutElement_SetConstantSize Parms{};
 
 	Parms.value = value;
 
@@ -2628,25 +531,21 @@ void ULGUIBaseRayEmitter::SetClickThreshold(float value)
 }
 
 
-// Function LGUI.LGUIBaseRayEmitter.SetInitialValue
+// Function LGUI.UILayoutElement.SetLayoutType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   InClickThreshold                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InHoldToDrag                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InHoldToDragTime                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELayoutElementType                      InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULGUIBaseRayEmitter::SetInitialValue(float InClickThreshold, bool InHoldToDrag, float InHoldToDragTime)
+void UUILayoutElement::SetLayoutType(ELayoutElementType InType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIBaseRayEmitter", "SetInitialValue");
+		Func = Class->GetFunction("UILayoutElement", "SetLayoutType");
 
-	Params::LGUIBaseRayEmitter_SetInitialValue Parms{};
+	Params::UILayoutElement_SetLayoutType Parms{};
 
-	Parms.InClickThreshold = InClickThreshold;
-	Parms.InHoldToDrag = InHoldToDrag;
-	Parms.InHoldToDragTime = InHoldToDragTime;
+	Parms.InType = InType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2654,6 +553,131 @@ void ULGUIBaseRayEmitter::SetInitialValue(float InClickThreshold, bool InHoldToD
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILayoutElement.SetRatioSize
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILayoutElement::SetRatioSize(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutElement", "SetRatioSize");
+
+	Params::UILayoutElement_SetRatioSize Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILayoutElement.GetConstantSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUILayoutElement::GetConstantSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutElement", "GetConstantSize");
+
+	Params::UILayoutElement_GetConstantSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILayoutElement.GetIgnoreLayout
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUILayoutElement::GetIgnoreLayout() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutElement", "GetIgnoreLayout");
+
+	Params::UILayoutElement_GetIgnoreLayout Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILayoutElement.GetLayoutType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ELayoutElementType                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ELayoutElementType UUILayoutElement::GetLayoutType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutElement", "GetLayoutType");
+
+	Params::UILayoutElement_GetLayoutType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILayoutElement.GetRatioSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUILayoutElement::GetRatioSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutElement", "GetRatioSize");
+
+	Params::UILayoutElement_GetRatioSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -2842,6 +866,36 @@ struct FVector2D UUIItem::GetPositionInScreen(bool bIsScaledByDPI)
 }
 
 
+// Function LGUI.UIItem.GetPositionInScreenWithPivot
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// bool                                    bIsScaledByDPI                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        SpecifiedPivot                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIItem::GetPositionInScreenWithPivot(bool bIsScaledByDPI, const struct FVector2D& SpecifiedPivot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItem", "GetPositionInScreenWithPivot");
+
+	Params::UIItem_GetPositionInScreenWithPivot Parms{};
+
+	Parms.bIsScaledByDPI = bIsScaledByDPI;
+	Parms.SpecifiedPivot = std::move(SpecifiedPivot);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.UIItem.GetPositionInViewPort
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -2870,6 +924,94 @@ struct FVector2D UUIItem::GetPositionInViewPort(bool bIsScaledByDPI)
 }
 
 
+// Function LGUI.UIItem.GetPositionInViewPortOld
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// bool                                    bIsScaledByDPI                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIItem::GetPositionInViewPortOld(bool bIsScaledByDPI)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItem", "GetPositionInViewPortOld");
+
+	Params::UIItem_GetPositionInViewPortOld Parms{};
+
+	Parms.bIsScaledByDPI = bIsScaledByDPI;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIItem.GetPositionInViewportWithPivot
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// bool                                    bIsScaledByDPI                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        SpecifiedPivot                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIItem::GetPositionInViewportWithPivot(bool bIsScaledByDPI, const struct FVector2D& SpecifiedPivot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItem", "GetPositionInViewportWithPivot");
+
+	Params::UIItem_GetPositionInViewportWithPivot Parms{};
+
+	Parms.bIsScaledByDPI = bIsScaledByDPI;
+	Parms.SpecifiedPivot = std::move(SpecifiedPivot);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIItem.GetPositionInViewportWithPivotNormalized
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// bool                                    bIsScaledByDPI                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        SpecifiedPivot                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIItem::GetPositionInViewportWithPivotNormalized(bool bIsScaledByDPI, const struct FVector2D& SpecifiedPivot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItem", "GetPositionInViewportWithPivotNormalized");
+
+	Params::UIItem_GetPositionInViewportWithPivotNormalized Parms{};
+
+	Parms.bIsScaledByDPI = bIsScaledByDPI;
+	Parms.SpecifiedPivot = std::move(SpecifiedPivot);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.UIItem.GetRenderCanvas
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2883,6 +1025,31 @@ class ULGUICanvas* UUIItem::GetRenderCanvas()
 		Func = Class->GetFunction("UIItem", "GetRenderCanvas");
 
 	Params::UIItem_GetRenderCanvas Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIItem.GetUIWorldPosition
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UUIItem::GetUIWorldPosition()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItem", "GetUIWorldPosition");
+
+	Params::UIItem_GetUIWorldPosition Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5123,6 +3290,31 @@ bool UUIItem::IsUIActiveSelf() const
 }
 
 
+// Function LGUI.UIItem.IsUsedCustomMinMaxAnchor
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIItem::IsUsedCustomMinMaxAnchor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItem", "IsUsedCustomMinMaxAnchor");
+
+	Params::UIItem_IsUsedCustomMinMaxAnchor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.UIBaseRenderable.SetUIRenderAfterBlurPartial
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -5548,6 +3740,56 @@ class UMaterialInstanceDynamic* UUIBatchGeometryRenderable::GetMaterialInstanceD
 }
 
 
+// Function LGUI.UIBatchGeometryRenderable.IsColorRevert
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIBatchGeometryRenderable::IsColorRevert() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBatchGeometryRenderable", "IsColorRevert");
+
+	Params::UIBatchGeometryRenderable_IsColorRevert Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBatchGeometryRenderable.IsGray
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIBatchGeometryRenderable::IsGray() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBatchGeometryRenderable", "IsGray");
+
+	Params::UIBatchGeometryRenderable_IsGray Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.UISpriteBase.SetSizeFromSpriteData
 // (Final, Native, Public, BlueprintCallable)
 
@@ -5619,7 +3861,7 @@ class ULGUISpriteData_BaseObject* UUISpriteBase::GetSprite() const
 }
 
 
-// Function LGUI.UI2DLineRendererBase.LineWidthTo
+// Function LGUI.UIPolygon.EndAngleTo
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5628,14 +3870,14 @@ class ULGUISpriteData_BaseObject* UUISpriteBase::GetSprite() const
 // ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULTweener* UUI2DLineRendererBase::LineWidthTo(float endValue, float duration, float delay, ELTweenEase easeType)
+class ULTweener* UUIPolygon::EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRendererBase", "LineWidthTo");
+		Func = Class->GetFunction("UIPolygon", "EndAngleTo");
 
-	Params::UI2DLineRendererBase_LineWidthTo Parms{};
+	Params::UIPolygon_EndAngleTo Parms{};
 
 	Parms.endValue = endValue;
 	Parms.duration = duration;
@@ -5653,21 +3895,21 @@ class ULTweener* UUI2DLineRendererBase::LineWidthTo(float endValue, float durati
 }
 
 
-// Function LGUI.UI2DLineRendererBase.SetEndType
+// Function LGUI.UIPolygon.SetEndAngle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EUI2DLineRenderer_EndType               newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUI2DLineRendererBase::SetEndType(EUI2DLineRenderer_EndType newValue)
+void UUIPolygon::SetEndAngle(float value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRendererBase", "SetEndType");
+		Func = Class->GetFunction("UIPolygon", "SetEndAngle");
 
-	Params::UI2DLineRendererBase_SetEndType Parms{};
+	Params::UIPolygon_SetEndAngle Parms{};
 
-	Parms.newValue = newValue;
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5678,21 +3920,21 @@ void UUI2DLineRendererBase::SetEndType(EUI2DLineRenderer_EndType newValue)
 }
 
 
-// Function LGUI.UI2DLineRendererBase.SetLineWidth
+// Function LGUI.UIPolygon.SetSides
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUI2DLineRendererBase::SetLineWidth(float newValue)
+void UUIPolygon::SetSides(int32 value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRendererBase", "SetLineWidth");
+		Func = Class->GetFunction("UIPolygon", "SetSides");
 
-	Params::UI2DLineRendererBase_SetLineWidth Parms{};
+	Params::UIPolygon_SetSides Parms{};
 
-	Parms.newValue = newValue;
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5703,21 +3945,21 @@ void UUI2DLineRendererBase::SetLineWidth(float newValue)
 }
 
 
-// Function LGUI.UI2DLineRendererBase.SetLineWidthOffset
+// Function LGUI.UIPolygon.SetStartAngle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUI2DLineRendererBase::SetLineWidthOffset(float newValue)
+void UUIPolygon::SetStartAngle(float value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRendererBase", "SetLineWidthOffset");
+		Func = Class->GetFunction("UIPolygon", "SetStartAngle");
 
-	Params::UI2DLineRendererBase_SetLineWidthOffset Parms{};
+	Params::UIPolygon_SetStartAngle Parms{};
 
-	Parms.newValue = newValue;
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5728,19 +3970,21 @@ void UUI2DLineRendererBase::SetLineWidthOffset(float newValue)
 }
 
 
-// Function LGUI.UI2DLineRendererBase.GetEndType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function LGUI.UIPolygon.SetUVType
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EUI2DLineRenderer_EndType               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUIPolygonUVType                        value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EUI2DLineRenderer_EndType UUI2DLineRendererBase::GetEndType() const
+void UUIPolygon::SetUVType(EUIPolygonUVType value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRendererBase", "GetEndType");
+		Func = Class->GetFunction("UIPolygon", "SetUVType");
 
-	Params::UI2DLineRendererBase_GetEndType Parms{};
+	Params::UIPolygon_SetUVType Parms{};
+
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5748,24 +3992,24 @@ EUI2DLineRenderer_EndType UUI2DLineRendererBase::GetEndType() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function LGUI.UI2DLineRendererBase.GetLineWidth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function LGUI.UIPolygon.SetVertexOffsetArray
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<float>                           value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-float UUI2DLineRendererBase::GetLineWidth() const
+void UUIPolygon::SetVertexOffsetArray(const TArray<float>& value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRendererBase", "GetLineWidth");
+		Func = Class->GetFunction("UIPolygon", "SetVertexOffsetArray");
 
-	Params::UI2DLineRendererBase_GetLineWidth Parms{};
+	Params::UIPolygon_SetVertexOffsetArray Parms{};
+
+	Parms.value = std::move(value);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5773,37 +4017,10 @@ float UUI2DLineRendererBase::GetLineWidth() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function LGUI.UI2DLineRendererBase.GetLineWidthOffset
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUI2DLineRendererBase::GetLineWidthOffset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRendererBase", "GetLineWidthOffset");
-
-	Params::UI2DLineRendererBase_GetLineWidthOffset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIRing.EndAngleTo
+// Function LGUI.UIPolygon.StartAngleTo
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5812,14 +4029,14 @@ float UUI2DLineRendererBase::GetLineWidthOffset() const
 // ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULTweener* UUIRing::EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
+class ULTweener* UUIPolygon::StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "EndAngleTo");
+		Func = Class->GetFunction("UIPolygon", "StartAngleTo");
 
-	Params::UIRing_EndAngleTo Parms{};
+	Params::UIPolygon_StartAngleTo Parms{};
 
 	Parms.endValue = endValue;
 	Parms.duration = duration;
@@ -5837,128 +4054,19 @@ class ULTweener* UUIRing::EndAngleTo(float endValue, float duration, float delay
 }
 
 
-// Function LGUI.UIRing.SetEndAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIRing::SetEndAngle(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "SetEndAngle");
-
-	Params::UIRing_SetEndAngle Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIRing.SetSegment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIRing::SetSegment(int32 newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "SetSegment");
-
-	Params::UIRing_SetSegment Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIRing.SetStartAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIRing::SetStartAngle(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "SetStartAngle");
-
-	Params::UIRing_SetStartAngle Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIRing.StartAngleTo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULTweener* UUIRing::StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "StartAngleTo");
-
-	Params::UIRing_StartAngleTo Parms{};
-
-	Parms.endValue = endValue;
-	Parms.duration = duration;
-	Parms.delay = delay;
-	Parms.easeType = easeType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIRing.GetEndAngle
+// Function LGUI.UIPolygon.GetEndAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUIRing::GetEndAngle() const
+float UUIPolygon::GetEndAngle() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "GetEndAngle");
+		Func = Class->GetFunction("UIPolygon", "GetEndAngle");
 
-	Params::UIRing_GetEndAngle Parms{};
+	Params::UIPolygon_GetEndAngle Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5971,19 +4079,19 @@ float UUIRing::GetEndAngle() const
 }
 
 
-// Function LGUI.UIRing.GetSegment
+// Function LGUI.UIPolygon.GetSides
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UUIRing::GetSegment() const
+int32 UUIPolygon::GetSides() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "GetSegment");
+		Func = Class->GetFunction("UIPolygon", "GetSides");
 
-	Params::UIRing_GetSegment Parms{};
+	Params::UIPolygon_GetSides Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5996,19 +4104,19 @@ int32 UUIRing::GetSegment() const
 }
 
 
-// Function LGUI.UIRing.GetStartAngle
+// Function LGUI.UIPolygon.GetStartAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUIRing::GetStartAngle() const
+float UUIPolygon::GetStartAngle() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIRing", "GetStartAngle");
+		Func = Class->GetFunction("UIPolygon", "GetStartAngle");
 
-	Params::UIRing_GetStartAngle Parms{};
+	Params::UIPolygon_GetStartAngle Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6021,28 +4129,69 @@ float UUIRing::GetStartAngle() const
 }
 
 
-// Function LGUI.LGUIPrefabV2.LoadPrefab
+// Function LGUI.UIPolygon.GetUVType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUIPolygonUVType                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUIPolygonUVType UUIPolygon::GetUVType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygon", "GetUVType");
+
+	Params::UIPolygon_GetUVType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIPolygon.GetVertexOffsetArray
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<float>                     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<float> UUIPolygon::GetVertexOffsetArray() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygon", "GetVertexOffsetArray");
+
+	Params::UIPolygon_GetVertexOffsetArray Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIBaseRayEmitter.GetClickThreshold
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USceneComponent*                  InParent                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bForceUseRuntimeData                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    SetRelativeTransformToIdentity                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class AActor* ULGUIPrefabV2::LoadPrefab(class UObject* WorldContextObject, class USceneComponent* InParent, bool bForceUseRuntimeData, bool SetRelativeTransformToIdentity)
+float ULGUIBaseRayEmitter::GetClickThreshold()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIPrefabV2", "LoadPrefab");
+		Func = Class->GetFunction("LGUIBaseRayEmitter", "GetClickThreshold");
 
-	Params::LGUIPrefabV2_LoadPrefab Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.InParent = InParent;
-	Parms.bForceUseRuntimeData = bForceUseRuntimeData;
-	Parms.SetRelativeTransformToIdentity = SetRelativeTransformToIdentity;
+	Params::LGUIBaseRayEmitter_GetClickThreshold Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6055,32 +4204,651 @@ class AActor* ULGUIPrefabV2::LoadPrefab(class UObject* WorldContextObject, class
 }
 
 
-// Function LGUI.LGUIPrefabV2.LoadPrefabWithTransform
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Function LGUI.LGUIBaseRayEmitter.GetInitialValue
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USceneComponent*                  InParent                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bForceUseRuntimeData                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Rotation                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FVector                          Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   OutClickThreshold                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    OutHoldToDrag                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   OutHoldToDragTime                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class AActor* ULGUIPrefabV2::LoadPrefabWithTransform(class UObject* WorldContextObject, class USceneComponent* InParent, bool bForceUseRuntimeData, const struct FVector& Location, const struct FRotator& Rotation, const struct FVector& Scale)
+void ULGUIBaseRayEmitter::GetInitialValue(float* OutClickThreshold, bool* OutHoldToDrag, float* OutHoldToDragTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIPrefabV2", "LoadPrefabWithTransform");
+		Func = Class->GetFunction("LGUIBaseRayEmitter", "GetInitialValue");
 
-	Params::LGUIPrefabV2_LoadPrefabWithTransform Parms{};
+	Params::LGUIBaseRayEmitter_GetInitialValue Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.InParent = InParent;
-	Parms.bForceUseRuntimeData = bForceUseRuntimeData;
-	Parms.Location = std::move(Location);
-	Parms.Rotation = std::move(Rotation);
-	Parms.Scale = std::move(Scale);
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutClickThreshold != nullptr)
+		*OutClickThreshold = Parms.OutClickThreshold;
+
+	if (OutHoldToDrag != nullptr)
+		*OutHoldToDrag = Parms.OutHoldToDrag;
+
+	if (OutHoldToDragTime != nullptr)
+		*OutHoldToDragTime = Parms.OutHoldToDragTime;
+}
+
+
+// Function LGUI.LGUIBaseRayEmitter.SetClickThreshold
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUIBaseRayEmitter::SetClickThreshold(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUIBaseRayEmitter", "SetClickThreshold");
+
+	Params::LGUIBaseRayEmitter_SetClickThreshold Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUIBaseRayEmitter.SetInitialValue
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InClickThreshold                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InHoldToDrag                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InHoldToDragTime                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUIBaseRayEmitter::SetInitialValue(float InClickThreshold, bool InHoldToDrag, float InHoldToDragTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUIBaseRayEmitter", "SetInitialValue");
+
+	Params::LGUIBaseRayEmitter_SetInitialValue Parms{};
+
+	Parms.InClickThreshold = InClickThreshold;
+	Parms.InHoldToDrag = InHoldToDrag;
+	Parms.InHoldToDragTime = InHoldToDragTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetDecelerationRateDegbug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIScrollViewComponent::GetDecelerationRateDegbug()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetDecelerationRateDegbug");
+
+	Params::UIScrollViewComponent_GetDecelerationRateDegbug Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetElasticityDegbug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIScrollViewComponent::GetElasticityDegbug()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetElasticityDegbug");
+
+	Params::UIScrollViewComponent_GetElasticityDegbug Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetScrollOutOfRangeModulusDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIScrollViewComponent::GetScrollOutOfRangeModulusDebug()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetScrollOutOfRangeModulusDebug");
+
+	Params::UIScrollViewComponent_GetScrollOutOfRangeModulusDebug Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetScrollSensitivityDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIScrollViewComponent::GetScrollSensitivityDebug()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetScrollSensitivityDebug");
+
+	Params::UIScrollViewComponent_GetScrollSensitivityDebug Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetScrollUseDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::GetScrollUseDebug()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetScrollUseDebug");
+
+	Params::UIScrollViewComponent_GetScrollUseDebug Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetDecelerationRateDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetDecelerationRateDebug(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetDecelerationRateDebug");
+
+	Params::UIScrollViewComponent_SetDecelerationRateDebug Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetElasticityDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetElasticityDebug(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetElasticityDebug");
+
+	Params::UIScrollViewComponent_SetElasticityDebug Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetScrollOutOfRangeModulusDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetScrollOutOfRangeModulusDebug(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetScrollOutOfRangeModulusDebug");
+
+	Params::UIScrollViewComponent_SetScrollOutOfRangeModulusDebug Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetScrollSensitivityDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetScrollSensitivityDebug(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetScrollSensitivityDebug");
+
+	Params::UIScrollViewComponent_SetScrollSensitivityDebug Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetScrollUseDebug
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetScrollUseDebug(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetScrollUseDebug");
+
+	Params::UIScrollViewComponent_SetScrollUseDebug Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetCanScroll
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bCanScroll                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetCanScroll(bool bCanScroll)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetCanScroll");
+
+	Params::UIScrollViewComponent_SetCanScroll Parms{};
+
+	Parms.bCanScroll = bCanScroll;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetHorizontal
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetHorizontal(bool Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetHorizontal");
+
+	Params::UIScrollViewComponent_SetHorizontal Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetHorizontalVelocity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetHorizontalVelocity(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetHorizontalVelocity");
+
+	Params::UIScrollViewComponent_SetHorizontalVelocity Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetRayCastTargetForScrollView
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    newRayCastTarget                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetRayCastTargetForScrollView(bool newRayCastTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetRayCastTargetForScrollView");
+
+	Params::UIScrollViewComponent_SetRayCastTargetForScrollView Parms{};
+
+	Parms.newRayCastTarget = newRayCastTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetScrollProgress
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetScrollProgress(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetScrollProgress");
+
+	Params::UIScrollViewComponent_SetScrollProgress Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetScrollProgressIncrement
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetScrollProgressIncrement(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetScrollProgressIncrement");
+
+	Params::UIScrollViewComponent_SetScrollProgressIncrement Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetScrollValue
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetScrollValue(const struct FVector2D& Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetScrollValue");
+
+	Params::UIScrollViewComponent_SetScrollValue Parms{};
+
+	Parms.Value = std::move(Value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetUnderSizeScrollEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetUnderSizeScrollEnabled(bool bEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetUnderSizeScrollEnabled");
+
+	Params::UIScrollViewComponent_SetUnderSizeScrollEnabled Parms{};
+
+	Parms.bEnabled = bEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetVelocity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetVelocity(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetVelocity");
+
+	Params::UIScrollViewComponent_SetVelocity Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetVertical
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetVertical(bool Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetVertical");
+
+	Params::UIScrollViewComponent_SetVertical Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.SetVerticalVelocity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewComponent::SetVerticalVelocity(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "SetVerticalVelocity");
+
+	Params::UIScrollViewComponent_SetVerticalVelocity Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.StopMovement
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIScrollViewComponent::StopMovement()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "StopMovement");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.CheckContentUnderSize
+// (Final, Native, Protected, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::CheckContentUnderSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "CheckContentUnderSize");
+
+	Params::UIScrollViewComponent_CheckContentUnderSize Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6090,6 +4858,1360 @@ class AActor* ULGUIPrefabV2::LoadPrefabWithTransform(class UObject* WorldContext
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetCanScroll
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::GetCanScroll() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "GetCanScroll");
+
+	Params::UIScrollViewComponent_GetCanScroll Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetContent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AUIBaseActor* UUIScrollViewComponent::GetContent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "GetContent");
+
+	Params::UIScrollViewComponent_GetContent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetHorizontal
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::GetHorizontal() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "GetHorizontal");
+
+	Params::UIScrollViewComponent_GetHorizontal Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetRayCastTargetForScrollView
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::GetRayCastTargetForScrollView() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "GetRayCastTargetForScrollView");
+
+	Params::UIScrollViewComponent_GetRayCastTargetForScrollView Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetUnderSizeScrollEnabled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::GetUnderSizeScrollEnabled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "GetUnderSizeScrollEnabled");
+
+	Params::UIScrollViewComponent_GetUnderSizeScrollEnabled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetVelocity
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIScrollViewComponent::GetVelocity() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "GetVelocity");
+
+	Params::UIScrollViewComponent_GetVelocity Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewComponent.GetVertical
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::GetVertical() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "GetVertical");
+
+	Params::UIScrollViewComponent_GetVertical Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.BindParentUIItem
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::BindParentUIItem(class UUISelectableComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "BindParentUIItem");
+
+	Params::UIScrollViewWithScrollbarComponent_BindParentUIItem Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.FindNavigationComponent
+// (Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUINavigationWrapMode                   Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bHasOtherNode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUIScrollViewWithScrollbarComponent::FindNavigationComponent(class UUISelectableComponent* Component, const struct FVector& Direction, EUINavigationWrapMode Mode, bool bHasOtherNode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "FindNavigationComponent");
+
+	Params::UIScrollViewWithScrollbarComponent_FindNavigationComponent Parms{};
+
+	Parms.Component = Component;
+	Parms.Direction = std::move(Direction);
+	Parms.Mode = Mode;
+	Parms.bHasOtherNode = bHasOtherNode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.GetOutOfBottomBoundsType
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EOutOfBoundsType                        OutOfTopOrBottomType                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EOutOfBoundsType                        OutOfLeftOrRightType                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ErrorTolerance                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::GetOutOfBottomBoundsType(class UUIItem* UIItem, EOutOfBoundsType* OutOfTopOrBottomType, EOutOfBoundsType* OutOfLeftOrRightType, float ErrorTolerance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetOutOfBottomBoundsType");
+
+	Params::UIScrollViewWithScrollbarComponent_GetOutOfBottomBoundsType Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.ErrorTolerance = ErrorTolerance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutOfTopOrBottomType != nullptr)
+		*OutOfTopOrBottomType = Parms.OutOfTopOrBottomType;
+
+	if (OutOfLeftOrRightType != nullptr)
+		*OutOfLeftOrRightType = Parms.OutOfLeftOrRightType;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ResetIsChangeNavigation
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIScrollViewWithScrollbarComponent::ResetIsChangeNavigation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ResetIsChangeNavigation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollTo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::ScrollTo(class UUIItem* UIItem, bool bTweenAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollTo");
+
+	Params::UIScrollViewWithScrollbarComponent_ScrollTo Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.bTweenAnim = bTweenAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToBottom
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::ScrollToBottom(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToBottom");
+
+	Params::UIScrollViewWithScrollbarComponent_ScrollToBottom Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.bTweenAnim = bTweenAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (NewPosition != nullptr)
+		*NewPosition = std::move(Parms.NewPosition);
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToEnd
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIScrollViewWithScrollbarComponent::ScrollToEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToLeft
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::ScrollToLeft(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToLeft");
+
+	Params::UIScrollViewWithScrollbarComponent_ScrollToLeft Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.bTweenAnim = bTweenAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (NewPosition != nullptr)
+		*NewPosition = std::move(Parms.NewPosition);
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToRight
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::ScrollToRight(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToRight");
+
+	Params::UIScrollViewWithScrollbarComponent_ScrollToRight Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.bTweenAnim = bTweenAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (NewPosition != nullptr)
+		*NewPosition = std::move(Parms.NewPosition);
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToSelectableComponent
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::ScrollToSelectableComponent(class UUISelectableComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToSelectableComponent");
+
+	Params::UIScrollViewWithScrollbarComponent_ScrollToSelectableComponent Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToTop
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::ScrollToTop(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToTop");
+
+	Params::UIScrollViewWithScrollbarComponent_ScrollToTop Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.bTweenAnim = bTweenAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (NewPosition != nullptr)
+		*NewPosition = std::move(Parms.NewPosition);
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.SetHorizontalScrollbarVisibility
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EScrollViewScrollbarVisibility          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::SetHorizontalScrollbarVisibility(EScrollViewScrollbarVisibility value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "SetHorizontalScrollbarVisibility");
+
+	Params::UIScrollViewWithScrollbarComponent_SetHorizontalScrollbarVisibility Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.SetVerticalScrollbarVisibility
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EScrollViewScrollbarVisibility          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::SetVerticalScrollbarVisibility(EScrollViewScrollbarVisibility value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "SetVerticalScrollbarVisibility");
+
+	Params::UIScrollViewWithScrollbarComponent_SetVerticalScrollbarVisibility Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.UnBindParentUIItem
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIScrollViewWithScrollbarComponent::UnBindParentUIItem(class UUISelectableComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "UnBindParentUIItem");
+
+	Params::UIScrollViewWithScrollbarComponent_UnBindParentUIItem Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.GetHorizontalScrollbar
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AUIBaseActor* UUIScrollViewWithScrollbarComponent::GetHorizontalScrollbar() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetHorizontalScrollbar");
+
+	Params::UIScrollViewWithScrollbarComponent_GetHorizontalScrollbar Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.GetHorizontalScrollbarVisibility
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EScrollViewScrollbarVisibility          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EScrollViewScrollbarVisibility UUIScrollViewWithScrollbarComponent::GetHorizontalScrollbarVisibility() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetHorizontalScrollbarVisibility");
+
+	Params::UIScrollViewWithScrollbarComponent_GetHorizontalScrollbarVisibility Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.GetVerticalScrollbar
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AUIBaseActor* UUIScrollViewWithScrollbarComponent::GetVerticalScrollbar() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetVerticalScrollbar");
+
+	Params::UIScrollViewWithScrollbarComponent_GetVerticalScrollbar Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.GetVerticalScrollbarVisibility
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EScrollViewScrollbarVisibility          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EScrollViewScrollbarVisibility UUIScrollViewWithScrollbarComponent::GetVerticalScrollbarVisibility() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetVerticalScrollbarVisibility");
+
+	Params::UIScrollViewWithScrollbarComponent_GetVerticalScrollbarVisibility Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollViewWithScrollbarComponent.GetViewport
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AUIBaseActor* UUIScrollViewWithScrollbarComponent::GetViewport() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetViewport");
+
+	Params::UIScrollViewWithScrollbarComponent_GetViewport Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.FindNavigationIndex
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUINavigationWrapMode                   WrapMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUINavigationPriorityMode               PriorityMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NavigateTolerance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NavigateToleranceReverse                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIMultiTemplateScrollViewComponent::FindNavigationIndex(class UUISelectableComponent* Component, const struct FVector& Direction, EUINavigationWrapMode WrapMode, EUINavigationPriorityMode PriorityMode, float NavigateTolerance, float NavigateToleranceReverse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "FindNavigationIndex");
+
+	Params::UIMultiTemplateScrollViewComponent_FindNavigationIndex Parms{};
+
+	Parms.Component = Component;
+	Parms.Direction = std::move(Direction);
+	Parms.WrapMode = WrapMode;
+	Parms.PriorityMode = PriorityMode;
+	Parms.NavigateTolerance = NavigateTolerance;
+	Parms.NavigateToleranceReverse = NavigateToleranceReverse;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetGridIndexByChildComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIMultiTemplateScrollViewComponent::GetGridIndexByChildComponent(class UUISelectableComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetGridIndexByChildComponent");
+
+	Params::UIMultiTemplateScrollViewComponent_GetGridIndexByChildComponent Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetGridItem
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIItem*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIItem* UUIMultiTemplateScrollViewComponent::GetGridItem(int32 GridIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetGridItem");
+
+	Params::UIMultiTemplateScrollViewComponent_GetGridItem Parms{};
+
+	Parms.GridIndex = GridIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetGridItemByChildComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIItem*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIItem* UUIMultiTemplateScrollViewComponent::GetGridItemByChildComponent(class UUISelectableComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetGridItemByChildComponent");
+
+	Params::UIMultiTemplateScrollViewComponent_GetGridItemByChildComponent Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetNavigationComponentByGridIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUIMultiTemplateScrollViewComponent::GetNavigationComponentByGridIndex(int32 GridIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetNavigationComponentByGridIndex");
+
+	Params::UIMultiTemplateScrollViewComponent_GetNavigationComponentByGridIndex Parms{};
+
+	Parms.GridIndex = GridIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.IsAllItemDisplayed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIMultiTemplateScrollViewComponent::IsAllItemDisplayed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "IsAllItemDisplayed");
+
+	Params::UIMultiTemplateScrollViewComponent_IsAllItemDisplayed Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.IsInDisplayRange
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    OnlyCheckData                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIMultiTemplateScrollViewComponent::IsInDisplayRange(int32 GridIndex, bool OnlyCheckData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "IsInDisplayRange");
+
+	Params::UIMultiTemplateScrollViewComponent_IsInDisplayRange Parms{};
+
+	Parms.GridIndex = GridIndex;
+	Parms.OnlyCheckData = OnlyCheckData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.Refresh
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIMultiTemplateScrollViewComponent::Refresh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "Refresh");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.RefreshByData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<int32>                           InTemplateIndexArray                                   (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    KeepContentPosition                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ScrollToItemIndex                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::RefreshByData(const TArray<int32>& InTemplateIndexArray, bool KeepContentPosition, int32 ScrollToItemIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "RefreshByData");
+
+	Params::UIMultiTemplateScrollViewComponent_RefreshByData Parms{};
+
+	Parms.InTemplateIndexArray = std::move(InTemplateIndexArray);
+	Parms.KeepContentPosition = KeepContentPosition;
+	Parms.ScrollToItemIndex = ScrollToItemIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.ScrollToGridIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bScrollToTop                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::ScrollToGridIndex(int32 GridIndex, bool bScrollToTop)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "ScrollToGridIndex");
+
+	Params::UIMultiTemplateScrollViewComponent_ScrollToGridIndex Parms{};
+
+	Parms.GridIndex = GridIndex;
+	Parms.bScrollToTop = bScrollToTop;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.TryScrollToGridIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bScrollToTop                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::TryScrollToGridIndex(int32 GridIndex, bool bScrollToTop)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "TryScrollToGridIndex");
+
+	Params::UIMultiTemplateScrollViewComponent_TryScrollToGridIndex Parms{};
+
+	Parms.GridIndex = GridIndex;
+	Parms.bScrollToTop = bScrollToTop;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.CheckScrollViewValid
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIMultiTemplateScrollViewComponent::CheckScrollViewValid() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "CheckScrollViewValid");
+
+	Params::UIMultiTemplateScrollViewComponent_CheckScrollViewValid Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetAreaGridIndexRange
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InAreaIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OutStartGridIndex                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OutEndGridIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::GetAreaGridIndexRange(int32 InAreaIndex, int32* OutStartGridIndex, int32* OutEndGridIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetAreaGridIndexRange");
+
+	Params::UIMultiTemplateScrollViewComponent_GetAreaGridIndexRange Parms{};
+
+	Parms.InAreaIndex = InAreaIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutStartGridIndex != nullptr)
+		*OutStartGridIndex = Parms.OutStartGridIndex;
+
+	if (OutEndGridIndex != nullptr)
+		*OutEndGridIndex = Parms.OutEndGridIndex;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetAreaPadding
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InAreaIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMargin                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FMargin UUIMultiTemplateScrollViewComponent::GetAreaPadding(int32 InAreaIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetAreaPadding");
+
+	Params::UIMultiTemplateScrollViewComponent_GetAreaPadding Parms{};
+
+	Parms.InAreaIndex = InAreaIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetAreaSize
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InAreaIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   OutWidth                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   OutHeight                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::GetAreaSize(int32 InAreaIndex, float* OutWidth, float* OutHeight) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetAreaSize");
+
+	Params::UIMultiTemplateScrollViewComponent_GetAreaSize Parms{};
+
+	Parms.InAreaIndex = InAreaIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutWidth != nullptr)
+		*OutWidth = Parms.OutWidth;
+
+	if (OutHeight != nullptr)
+		*OutHeight = Parms.OutHeight;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetEndDisplayGridIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIMultiTemplateScrollViewComponent::GetEndDisplayGridIndex() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetEndDisplayGridIndex");
+
+	Params::UIMultiTemplateScrollViewComponent_GetEndDisplayGridIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetGridSpacingInArea
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InAreaIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIMultiTemplateScrollViewComponent::GetGridSpacingInArea(int32 InAreaIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetGridSpacingInArea");
+
+	Params::UIMultiTemplateScrollViewComponent_GetGridSpacingInArea Parms{};
+
+	Parms.InAreaIndex = InAreaIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetGridTemplateIndexInArea
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InAreaIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIMultiTemplateScrollViewComponent::GetGridTemplateIndexInArea(int32 InAreaIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetGridTemplateIndexInArea");
+
+	Params::UIMultiTemplateScrollViewComponent_GetGridTemplateIndexInArea Parms{};
+
+	Parms.InAreaIndex = InAreaIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetLineHeightWhenVertical
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InLineIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIMultiTemplateScrollViewComponent::GetLineHeightWhenVertical(int32 InLineIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetLineHeightWhenVertical");
+
+	Params::UIMultiTemplateScrollViewComponent_GetLineHeightWhenVertical Parms{};
+
+	Parms.InLineIndex = InLineIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetLineWidthWhenHorizontal
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InLineIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIMultiTemplateScrollViewComponent::GetLineWidthWhenHorizontal(int32 InLineIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetLineWidthWhenHorizontal");
+
+	Params::UIMultiTemplateScrollViewComponent_GetLineWidthWhenHorizontal Parms{};
+
+	Parms.InLineIndex = InLineIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.GetStartDisplayGridIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIMultiTemplateScrollViewComponent::GetStartDisplayGridIndex() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "GetStartDisplayGridIndex");
+
+	Params::UIMultiTemplateScrollViewComponent_GetStartDisplayGridIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.SetContentOffsetAlignGrid
+// (Final, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bClamp                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bScrollToTop                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::SetContentOffsetAlignGrid(int32 GridIndex, bool bClamp, bool bScrollToTop) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "SetContentOffsetAlignGrid");
+
+	Params::UIMultiTemplateScrollViewComponent_SetContentOffsetAlignGrid Parms{};
+
+	Parms.GridIndex = GridIndex;
+	Parms.bClamp = bClamp;
+	Parms.bScrollToTop = bScrollToTop;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.SetContentOffsetXWhenHorizontal
+// (Final, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// float                                   NewOffset                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bClamp                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::SetContentOffsetXWhenHorizontal(float NewOffset, bool bClamp) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "SetContentOffsetXWhenHorizontal");
+
+	Params::UIMultiTemplateScrollViewComponent_SetContentOffsetXWhenHorizontal Parms{};
+
+	Parms.NewOffset = NewOffset;
+	Parms.bClamp = bClamp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIMultiTemplateScrollViewComponent.SetContentOffsetYWhenVertical
+// (Final, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// float                                   NewOffset                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bClamp                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIMultiTemplateScrollViewComponent::SetContentOffsetYWhenVertical(float NewOffset, bool bClamp) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIMultiTemplateScrollViewComponent", "SetContentOffsetYWhenVertical");
+
+	Params::UIMultiTemplateScrollViewComponent_SetContentOffsetYWhenVertical Parms{};
+
+	Parms.NewOffset = NewOffset;
+	Parms.bClamp = bClamp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -7542,6 +7664,40 @@ void ULGUIBPLibrary::CopySequenceBindingFromParent(class UUIItem* Target, const 
 }
 
 
+// Function LGUI.LGUIBPLibrary.CreateTexture2DFromBuffer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   startPositionX                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   endPositionX                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   startPositionY                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   endPositionY                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture2D*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTexture2D* ULGUIBPLibrary::CreateTexture2DFromBuffer(int32 startPositionX, int32 endPositionX, int32 startPositionY, int32 endPositionY)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "CreateTexture2DFromBuffer");
+
+	Params::LGUIBPLibrary_CreateTexture2DFromBuffer Parms{};
+
+	Parms.startPositionX = startPositionX;
+	Parms.endPositionX = endPositionX;
+	Parms.startPositionY = startPositionY;
+	Parms.endPositionY = endPositionY;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.LGUIBPLibrary.CreateTexture2DFromColors
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -7895,6 +8051,36 @@ TArray<class UActorComponent*> ULGUIBPLibrary::GetComponentsInChildrenWithHirera
 }
 
 
+// Function LGUI.LGUIBPLibrary.GetCorrespondingEditorComponent
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UActorComponent*                  PIEComponent                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UActorComponent>      ComponentClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UActorComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UActorComponent* ULGUIBPLibrary::GetCorrespondingEditorComponent(class UActorComponent* PIEComponent, TSubclassOf<class UActorComponent> ComponentClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "GetCorrespondingEditorComponent");
+
+	Params::LGUIBPLibrary_GetCorrespondingEditorComponent Parms{};
+
+	Parms.PIEComponent = PIEComponent;
+	Parms.ComponentClass = ComponentClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.LGUIBPLibrary.GetFullPathOfActor
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -7987,10 +8173,38 @@ class FString ULGUIBPLibrary::GetRelativePathWithRoot(class UUIItem* Target, cla
 }
 
 
+// Function LGUI.LGUIBPLibrary.GetRootActorMemoryTag
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName ULGUIBPLibrary::GetRootActorMemoryTag(class UUIItem* UIItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "GetRootActorMemoryTag");
+
+	Params::LGUIBPLibrary_GetRootActorMemoryTag Parms{};
+
+	Parms.UIItem = UIItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.LGUIBPLibrary.GetSpriteBorderSize
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   borderLeft                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   borderRight                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   borderTop                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8031,7 +8245,7 @@ void ULGUIBPLibrary::GetSpriteBorderSize(const struct FLGUISpriteInfo& SpriteInf
 // Function LGUI.LGUIBPLibrary.GetSpriteBorderUV
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   borderUV0X                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   borderUV0Y                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   borderUV3X                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8072,7 +8286,7 @@ void ULGUIBPLibrary::GetSpriteBorderUV(const struct FLGUISpriteInfo& SpriteInfo,
 // Function LGUI.LGUIBPLibrary.GetSpriteSize
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   width                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   height                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8105,7 +8319,7 @@ void ULGUIBPLibrary::GetSpriteSize(const struct FLGUISpriteInfo& SpriteInfo, int
 // Function LGUI.LGUIBPLibrary.GetSpriteUV
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FLGUISpriteInfo                  SpriteInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   UV0X                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   UV0Y                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   UV3X                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8325,6 +8539,34 @@ class UUIItem* ULGUIBPLibrary::GetUIItemWithRelativePath(class UUIItem* ParentIt
 }
 
 
+// Function LGUI.LGUIBPLibrary.GetUIWorldPosForceUpdate
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector ULGUIBPLibrary::GetUIWorldPosForceUpdate(class UUIItem* UIItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "GetUIWorldPosForceUpdate");
+
+	Params::LGUIBPLibrary_GetUIWorldPosForceUpdate Parms{};
+
+	Parms.UIItem = UIItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.LGUIBPLibrary.GetWorldUISceneRendering
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -8377,6 +8619,31 @@ class ULTweener* ULGUIBPLibrary::HeightTo(class UUIItem* target, float endValue,
 	Parms.duration = duration;
 	Parms.delay = delay;
 	Parms.ease = ease;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIBPLibrary.IsInAudioEditMode
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULGUIBPLibrary::IsInAudioEditMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "IsInAudioEditMode");
+
+	Params::LGUIBPLibrary_IsInAudioEditMode Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10836,6 +11103,33 @@ void ULGUIBPLibrary::SetLGUIUISceneRendering(class AActor* Actor, bool IsUIScene
 }
 
 
+// Function LGUI.LGUIBPLibrary.SetRootActorMemoryTag
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             MemoryTag                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUIBPLibrary::SetRootActorMemoryTag(class UUIItem* UIItem, class FName MemoryTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "SetRootActorMemoryTag");
+
+	Params::LGUIBPLibrary_SetRootActorMemoryTag Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.MemoryTag = MemoryTag;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.LGUIBPLibrary.SetUIActive
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -10917,6 +11211,33 @@ void ULGUIBPLibrary::SetUIHierarchyIndex(class AActor* Target, int32 index)
 }
 
 
+// Function LGUI.LGUIBPLibrary.SetUIRenderable
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewRenderable                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUIBPLibrary::SetUIRenderable(class UUIItem* UIItem, bool bNewRenderable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "SetUIRenderable");
+
+	Params::LGUIBPLibrary_SetUIRenderable Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.bNewRenderable = bNewRenderable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.LGUIBPLibrary.SimulationLineTrace
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -10978,6 +11299,36 @@ class ULGUIPointerEventData* ULGUIBPLibrary::SimulationLineTraceOnCenterScreen(c
 
 	if (TraceOnlyItems != nullptr)
 		*TraceOnlyItems = std::move(Parms.TraceOnlyItems);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIBPLibrary.SortActorsWithDistance
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class AActor*>                   ActorList                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// class AController*                      Controller                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class AActor*> ULGUIBPLibrary::SortActorsWithDistance(const TArray<class AActor*>& ActorList, class AController* Controller)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "SortActorsWithDistance");
+
+	Params::LGUIBPLibrary_SortActorsWithDistance Parms{};
+
+	Parms.ActorList = std::move(ActorList);
+	Parms.Controller = Controller;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
@@ -11124,6 +11475,25 @@ class ULTweener* ULGUIBPLibrary::StretchTopTo(class UUIItem* target, float endVa
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIBPLibrary.TryInitUIActorsMap
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void ULGUIBPLibrary::TryInitUIActorsMap()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "TryInitUIActorsMap");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -11624,6 +11994,81 @@ bool ULGUICanvas::GetRequireUV3()
 }
 
 
+// Function LGUI.LGUICanvas.GetRequireUV4
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULGUICanvas::GetRequireUV4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICanvas", "GetRequireUV4");
+
+	Params::LGUICanvas_GetRequireUV4 Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUICanvas.GetRequireUV5
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULGUICanvas::GetRequireUV5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICanvas", "GetRequireUV5");
+
+	Params::LGUICanvas_GetRequireUV5 Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUICanvas.GetRequireUV6
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULGUICanvas::GetRequireUV6()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICanvas", "GetRequireUV6");
+
+	Params::LGUICanvas_GetRequireUV6 Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.LGUICanvas.GetRootCanvas
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -12060,6 +12505,33 @@ void ULGUICanvas::SetSortOrder(int32 newValue, bool propagateToChildrenCanvas)
 }
 
 
+// Function LGUI.LGUICanvas.SetSortOrderNew
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    propagateToChildrenCanvas                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUICanvas::SetSortOrderNew(int32 newValue, bool propagateToChildrenCanvas)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICanvas", "SetSortOrderNew");
+
+	Params::LGUICanvas_SetSortOrderNew Parms{};
+
+	Parms.newValue = newValue;
+	Parms.propagateToChildrenCanvas = propagateToChildrenCanvas;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.LGUICanvas.SetSortOrderToHighestOfHierarchy
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -12075,6 +12547,31 @@ void ULGUICanvas::SetSortOrderToHighestOfHierarchy(bool propagateToChildrenCanva
 	Params::LGUICanvas_SetSortOrderToHighestOfHierarchy Parms{};
 
 	Parms.propagateToChildrenCanvas = propagateToChildrenCanvas;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUICanvas.SetUIRenderable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewRenderable                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUICanvas::SetUIRenderable(bool bNewRenderable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICanvas", "SetUIRenderable");
+
+	Params::LGUICanvas_SetUIRenderable Parms{};
+
+	Parms.bNewRenderable = bNewRenderable;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12423,6 +12920,31 @@ bool ULGUICanvas::IsPostTickUpdate() const
 		Func = Class->GetFunction("LGUICanvas", "IsPostTickUpdate");
 
 	Params::LGUICanvas_IsPostTickUpdate Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUICanvas.IsUIRenderable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULGUICanvas::IsUIRenderable() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICanvas", "IsUIRenderable");
+
+	Params::LGUICanvas_IsUIRenderable Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12923,15 +13445,217 @@ bool ULGUICanvasScaler::Project3DToScreen(const struct FVector& Position3D, stru
 }
 
 
-// Function LGUI.UISpriteAnimator.ResetSpriteImporter
+// Function LGUI.LGUIComponentsRegistry.GetComponents
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-void UUISpriteAnimator::ResetSpriteImporter()
+TArray<class AActor*> ULGUIComponentsRegistry::GetComponents()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISpriteAnimator", "ResetSpriteImporter");
+		Func = Class->GetFunction("LGUIComponentsRegistry", "GetComponents");
+
+	Params::LGUIComponentsRegistry_GetComponents Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIComponentsRegistry.SetComponents
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class AActor*>                   NewComponents                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ULGUIComponentsRegistry::SetComponents(const TArray<class AActor*>& NewComponents)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUIComponentsRegistry", "SetComponents");
+
+	Params::LGUIComponentsRegistry_SetComponents Parms{};
+
+	Parms.NewComponents = std::move(NewComponents);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.CollectTweener
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class ULTweener*                        InItem                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableTransitionComponent::CollectTweener(class ULTweener* InItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "CollectTweener");
+
+	Params::UISelectableTransitionComponent_CollectTweener Parms{};
+
+	Parms.InItem = InItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.CollectTweeners
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TSet<class ULTweener*>                  InItems                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUISelectableTransitionComponent::CollectTweeners(const TSet<class ULTweener*>& InItems)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "CollectTweeners");
+
+	Params::UISelectableTransitionComponent_CollectTweeners Parms{};
+
+	Parms.InItems = std::move(InItems);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.OnDisabledBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableTransitionComponent::OnDisabledBP(bool InImmediateSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "OnDisabledBP");
+
+	Params::UISelectableTransitionComponent_OnDisabledBP Parms{};
+
+	Parms.InImmediateSet = InImmediateSet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.OnHighlightedBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableTransitionComponent::OnHighlightedBP(bool InImmediateSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "OnHighlightedBP");
+
+	Params::UISelectableTransitionComponent_OnHighlightedBP Parms{};
+
+	Parms.InImmediateSet = InImmediateSet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.OnNormalBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableTransitionComponent::OnNormalBP(bool InImmediateSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "OnNormalBP");
+
+	Params::UISelectableTransitionComponent_OnNormalBP Parms{};
+
+	Parms.InImmediateSet = InImmediateSet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.OnPressedBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableTransitionComponent::OnPressedBP(bool InImmediateSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "OnPressedBP");
+
+	Params::UISelectableTransitionComponent_OnPressedBP Parms{};
+
+	Parms.InImmediateSet = InImmediateSet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.OnStartCustomTransitionBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class FName                             InTransitionName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableTransitionComponent::OnStartCustomTransitionBP(class FName InTransitionName, bool InImmediateSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "OnStartCustomTransitionBP");
+
+	Params::UISelectableTransitionComponent_OnStartCustomTransitionBP Parms{};
+
+	Parms.InTransitionName = InTransitionName;
+	Parms.InImmediateSet = InImmediateSet;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UISelectableTransitionComponent.StopTransition
+// (Native, Public, BlueprintCallable)
+
+void UUISelectableTransitionComponent::StopTransition()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableTransitionComponent", "StopTransition");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12942,21 +13666,21 @@ void UUISpriteAnimator::ResetSpriteImporter()
 }
 
 
-// Function LGUI.UISpriteAnimator.SetCurFrame
+// Function LGUI.UISelectableStateHolder.SetAllTransitionsEnable
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   newCurFrame                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISpriteAnimator::SetCurFrame(int32 newCurFrame)
+void UUISelectableStateHolder::SetAllTransitionsEnable(bool bEnable)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISpriteAnimator", "SetCurFrame");
+		Func = Class->GetFunction("UISelectableStateHolder", "SetAllTransitionsEnable");
 
-	Params::UISpriteAnimator_SetCurFrame Parms{};
+	Params::UISelectableStateHolder_SetAllTransitionsEnable Parms{};
 
-	Parms.newCurFrame = newCurFrame;
+	Parms.bEnable = bEnable;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12967,19 +13691,44 @@ void UUISpriteAnimator::SetCurFrame(int32 newCurFrame)
 }
 
 
-// Function LGUI.UISpriteAnimator.GetCurFrame
+// Function LGUI.UIEffectTextAnimation_PropertyWithWave.SetFrequency
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_PropertyWithWave::SetFrequency(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithWave", "SetFrequency");
+
+	Params::UIEffectTextAnimation_PropertyWithWave_SetFrequency Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_PropertyWithWave.GetFrequency
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UUISpriteAnimator::GetCurFrame() const
+float UUIEffectTextAnimation_PropertyWithWave::GetFrequency() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISpriteAnimator", "GetCurFrame");
+		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithWave", "GetFrequency");
 
-	Params::UISpriteAnimator_GetCurFrame Parms{};
+	Params::UIEffectTextAnimation_PropertyWithWave_GetFrequency Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12989,748 +13738,6 @@ int32 UUISpriteAnimator::GetCurFrame() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerBeginDrag
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerBeginDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerBeginDrag");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerBeginDrag Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerClick
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerClick(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerClick");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerClick Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDeselect
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIBaseEventData* eventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDeselect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDeselect");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerDeselect Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDown
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDown(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDown");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerDown Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDrag
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDrag");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerDrag Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDragDrop
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDragDrop(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDragDrop");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerDragDrop Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDragEnter
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDragEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDragEnter");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerDragEnter Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDragExit
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDragExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDragExit");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerDragExit Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerEndDrag
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerEndDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerEndDrag");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerEndDrag Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerEnter
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerEnter");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerEnter Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerExit
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerExit");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerExit Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerScroll
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerScroll(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerScroll");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerScroll Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerSelect
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIBaseEventData* eventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerSelect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerSelect");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerSelect Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.RegisterOnPointerUp
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerUp(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerUp");
-
-	Params::UIEventTriggerComponent_RegisterOnPointerUp Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerBeginDrag
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerBeginDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerBeginDrag");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerBeginDrag Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerClick
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerClick(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerClick");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerClick Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDeselect
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerDeselect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDeselect");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerDeselect Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDown
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerDown(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDown");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerDown Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDrag
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDrag");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerDrag Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDragDrop
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerDragDrop(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDragDrop");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerDragDrop Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDragEnter
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerDragEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDragEnter");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerDragEnter Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDragExit
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerDragExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDragExit");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerDragExit Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerEndDrag
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerEndDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerEndDrag");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerEndDrag Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerEnter
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerEnter");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerEnter Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerExit
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerExit");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerExit Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerScroll
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerScroll(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerScroll");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerScroll Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerSelect
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerSelect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerSelect");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerSelect Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerUp
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIEventTriggerComponent::UnregisterOnPointerUp(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerUp");
-
-	Params::UIEventTriggerComponent_UnregisterOnPointerUp Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -14365,21 +14372,21 @@ void ALGUIEventSystemActor::PreDestroy()
 }
 
 
-// Function LGUI.UISelectableTransitionComponent.CollectTweener
-// (Native, Public, BlueprintCallable)
+// Function LGUI.UILayoutBase.SetGridAnimationInterval
+// (Native, Protected, BlueprintCallable)
 // Parameters:
-// class ULTweener*                        InItem                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISelectableTransitionComponent::CollectTweener(class ULTweener* InItem)
+void UUILayoutBase::SetGridAnimationInterval(float value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "CollectTweener");
+		Func = Class->GetFunction("UILayoutBase", "SetGridAnimationInterval");
 
-	Params::UISelectableTransitionComponent_CollectTweener Parms{};
+	Params::UILayoutBase_SetGridAnimationInterval Parms{};
 
-	Parms.InItem = InItem;
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14390,21 +14397,21 @@ void UUISelectableTransitionComponent::CollectTweener(class ULTweener* InItem)
 }
 
 
-// Function LGUI.UISelectableTransitionComponent.CollectTweeners
-// (Native, Public, HasOutParams, BlueprintCallable)
+// Function LGUI.UILayoutBase.SetGridAnimationStartTime
+// (Native, Protected, BlueprintCallable)
 // Parameters:
-// TSet<class ULTweener*>                  InItems                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISelectableTransitionComponent::CollectTweeners(const TSet<class ULTweener*>& InItems)
+void UUILayoutBase::SetGridAnimationStartTime(float value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "CollectTweeners");
+		Func = Class->GetFunction("UILayoutBase", "SetGridAnimationStartTime");
 
-	Params::UISelectableTransitionComponent_CollectTweeners Parms{};
+	Params::UILayoutBase_SetGridAnimationStartTime Parms{};
 
-	Parms.InItems = std::move(InItems);
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14415,124 +14422,353 @@ void UUISelectableTransitionComponent::CollectTweeners(const TSet<class ULTweene
 }
 
 
-// Function LGUI.UISelectableTransitionComponent.OnDisabledBP
-// (Event, Protected, BlueprintEvent)
+// Function LGUI.UILayoutBase.SetInAnimation
+// (Native, Protected, BlueprintCallable)
 // Parameters:
-// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    state                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISelectableTransitionComponent::OnDisabledBP(bool InImmediateSet)
+void UUILayoutBase::SetInAnimation(bool state)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "OnDisabledBP");
+		Func = Class->GetFunction("UILayoutBase", "SetInAnimation");
 
-	Params::UISelectableTransitionComponent_OnDisabledBP Parms{};
+	Params::UILayoutBase_SetInAnimation Parms{};
 
-	Parms.InImmediateSet = InImmediateSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UISelectableTransitionComponent.OnHighlightedBP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableTransitionComponent::OnHighlightedBP(bool InImmediateSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "OnHighlightedBP");
-
-	Params::UISelectableTransitionComponent_OnHighlightedBP Parms{};
-
-	Parms.InImmediateSet = InImmediateSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UISelectableTransitionComponent.OnNormalBP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableTransitionComponent::OnNormalBP(bool InImmediateSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "OnNormalBP");
-
-	Params::UISelectableTransitionComponent_OnNormalBP Parms{};
-
-	Parms.InImmediateSet = InImmediateSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UISelectableTransitionComponent.OnPressedBP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableTransitionComponent::OnPressedBP(bool InImmediateSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "OnPressedBP");
-
-	Params::UISelectableTransitionComponent_OnPressedBP Parms{};
-
-	Parms.InImmediateSet = InImmediateSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UISelectableTransitionComponent.OnStartCustomTransitionBP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class FName                             InTransitionName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InImmediateSet                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableTransitionComponent::OnStartCustomTransitionBP(class FName InTransitionName, bool InImmediateSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "OnStartCustomTransitionBP");
-
-	Params::UISelectableTransitionComponent_OnStartCustomTransitionBP Parms{};
-
-	Parms.InTransitionName = InTransitionName;
-	Parms.InImmediateSet = InImmediateSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UISelectableTransitionComponent.StopTransition
-// (Native, Public, BlueprintCallable)
-
-void UUISelectableTransitionComponent::StopTransition()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableTransitionComponent", "StopTransition");
+	Parms.state = state;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILayoutBase.GetGridAnimationInterval
+// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUILayoutBase::GetGridAnimationInterval() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutBase", "GetGridAnimationInterval");
+
+	Params::UILayoutBase_GetGridAnimationInterval Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILayoutBase.GetGridAnimationStartTime
+// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUILayoutBase::GetGridAnimationStartTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutBase", "GetGridAnimationStartTime");
+
+	Params::UILayoutBase_GetGridAnimationStartTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILayoutBase.GetInAnimation
+// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUILayoutBase::GetInAnimation() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILayoutBase", "GetInAnimation");
+
+	Params::UILayoutBase_GetInAnimation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISizeControlByOther.SetAdditionalHeight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISizeControlByOther::SetAdditionalHeight(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "SetAdditionalHeight");
+
+	Params::UISizeControlByOther_SetAdditionalHeight Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISizeControlByOther.SetAdditionalWidth
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISizeControlByOther::SetAdditionalWidth(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "SetAdditionalWidth");
+
+	Params::UISizeControlByOther_SetAdditionalWidth Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISizeControlByOther.SetControlHeight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISizeControlByOther::SetControlHeight(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "SetControlHeight");
+
+	Params::UISizeControlByOther_SetControlHeight Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISizeControlByOther.SetControlWidth
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISizeControlByOther::SetControlWidth(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "SetControlWidth");
+
+	Params::UISizeControlByOther_SetControlWidth Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISizeControlByOther.SetTargetActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AUIBaseActor*                     NewTargetActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISizeControlByOther::SetTargetActor(class AUIBaseActor* NewTargetActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "SetTargetActor");
+
+	Params::UISizeControlByOther_SetTargetActor Parms{};
+
+	Parms.NewTargetActor = NewTargetActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISizeControlByOther.GetAdditionalHeight
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUISizeControlByOther::GetAdditionalHeight() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "GetAdditionalHeight");
+
+	Params::UISizeControlByOther_GetAdditionalHeight Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISizeControlByOther.GetAdditionalWidth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUISizeControlByOther::GetAdditionalWidth() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "GetAdditionalWidth");
+
+	Params::UISizeControlByOther_GetAdditionalWidth Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISizeControlByOther.GetControlHeight
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUISizeControlByOther::GetControlHeight() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "GetControlHeight");
+
+	Params::UISizeControlByOther_GetControlHeight Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISizeControlByOther.GetControlWidth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUISizeControlByOther::GetControlWidth() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "GetControlWidth");
+
+	Params::UISizeControlByOther_GetControlWidth Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISizeControlByOther.GetTargetActor
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AUIBaseActor* UUISizeControlByOther::GetTargetActor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByOther", "GetTargetActor");
+
+	Params::UISizeControlByOther_GetTargetActor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -14780,21 +15016,21 @@ int32 ULGUIFontData::GetUsedRectNum()
 }
 
 
-// Function LGUI.UISprite.SetFillAmount
+// Function LGUI.UISelectableGroupComponent.OnComponentHighlighted
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISprite::SetFillAmount(float newValue)
+void UUISelectableGroupComponent::OnComponentHighlighted(class UUISelectableComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetFillAmount");
+		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentHighlighted");
 
-	Params::UISprite_SetFillAmount Parms{};
+	Params::UISelectableGroupComponent_OnComponentHighlighted Parms{};
 
-	Parms.newValue = newValue;
+	Parms.Component = Component;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14805,21 +15041,21 @@ void UUISprite::SetFillAmount(float newValue)
 }
 
 
-// Function LGUI.UISprite.SetFillDirectionFlip
+// Function LGUI.UISelectableGroupComponent.OnComponentSelected
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISprite::SetFillDirectionFlip(bool newValue)
+void UUISelectableGroupComponent::OnComponentSelected(class UUISelectableComponent* Component)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetFillDirectionFlip");
+		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentSelected");
 
-	Params::UISprite_SetFillDirectionFlip Parms{};
+	Params::UISelectableGroupComponent_OnComponentSelected Parms{};
 
-	Parms.newValue = newValue;
+	Parms.Component = Component;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14830,328 +15066,41 @@ void UUISprite::SetFillDirectionFlip(bool newValue)
 }
 
 
-// Function LGUI.UISprite.SetFillMethod
+// Function LGUI.UISelectableGroupComponent.OnComponentUnhighlighted
 // (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISpriteFillMethod                     newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISprite::SetFillMethod(EUISpriteFillMethod newValue)
+void UUISelectableGroupComponent::OnComponentUnhighlighted()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetFillMethod");
-
-	Params::UISprite_SetFillMethod Parms{};
-
-	Parms.newValue = newValue;
+		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentUnhighlighted");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.UISprite.SetFillOrigin
+// Function LGUI.UISelectableGroupComponent.OnComponentUnselected
 // (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// uint8                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUISprite::SetFillOrigin(uint8 newValue)
+void UUISelectableGroupComponent::OnComponentUnselected()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetFillOrigin");
-
-	Params::UISprite_SetFillOrigin Parms{};
-
-	Parms.newValue = newValue;
+		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentUnselected");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISprite.SetOffsetX
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISprite::SetOffsetX(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetOffsetX");
-
-	Params::UISprite_SetOffsetX Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISprite.SetOffsetY
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISprite::SetOffsetY(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetOffsetY");
-
-	Params::UISprite_SetOffsetY Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISprite.SetSpriteType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISpriteType                           newType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISprite::SetSpriteType(EUISpriteType newType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetSpriteType");
-
-	Params::UISprite_SetSpriteType Parms{};
-
-	Parms.newType = newType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISprite.SetTileOffset
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FLinearColor                     In                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISprite::SetTileOffset(const struct FLinearColor& In)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetTileOffset");
-
-	Params::UISprite_SetTileOffset Parms{};
-
-	Parms.In = std::move(In);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISprite.SetTileX
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISprite::SetTileX(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetTileX");
-
-	Params::UISprite_SetTileX Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISprite.SetTileY
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISprite::SetTileY(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "SetTileY");
-
-	Params::UISprite_SetTileY Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISprite.GetFillAmount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUISprite::GetFillAmount() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "GetFillAmount");
-
-	Params::UISprite_GetFillAmount Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISprite.GetFillDirectionFlip
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUISprite::GetFillDirectionFlip() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "GetFillDirectionFlip");
-
-	Params::UISprite_GetFillDirectionFlip Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISprite.GetFillMethod
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISpriteFillMethod                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISpriteFillMethod UUISprite::GetFillMethod() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "GetFillMethod");
-
-	Params::UISprite_GetFillMethod Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISprite.GetFillOrigin
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 UUISprite::GetFillOrigin() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "GetFillOrigin");
-
-	Params::UISprite_GetFillOrigin Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISprite.GetSpriteType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISpriteType                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISpriteType UUISprite::GetSpriteType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISprite", "GetSpriteType");
-
-	Params::UISprite_GetSpriteType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -15412,6 +15361,234 @@ bool ULGUIImageSequencePlayer::GetLoop() const
 }
 
 
+// Function LGUI.UIEffectTextAnimation_PropertyWithEase.SetEaseCurve
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCurveFloat*                      value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_PropertyWithEase::SetEaseCurve(class UCurveFloat* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "SetEaseCurve");
+
+	Params::UIEffectTextAnimation_PropertyWithEase_SetEaseCurve Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_PropertyWithEase.SetEaseType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ELTweenEase                             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_PropertyWithEase::SetEaseType(ELTweenEase value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "SetEaseType");
+
+	Params::UIEffectTextAnimation_PropertyWithEase_SetEaseType Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_PropertyWithEase.GetCurveFloat
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UCurveFloat*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCurveFloat* UUIEffectTextAnimation_PropertyWithEase::GetCurveFloat() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "GetCurveFloat");
+
+	Params::UIEffectTextAnimation_PropertyWithEase_GetCurveFloat Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_PropertyWithEase.GetEaseType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ELTweenEase                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ELTweenEase UUIEffectTextAnimation_PropertyWithEase::GetEaseType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "GetEaseType");
+
+	Params::UIEffectTextAnimation_PropertyWithEase_GetEaseType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_ColorProperty.SetColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FColor                           value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_ColorProperty::SetColor(const struct FColor& value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "SetColor");
+
+	Params::UIEffectTextAnimation_ColorProperty_SetColor Parms{};
+
+	Parms.value = std::move(value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_ColorProperty.SetUseHSV
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_ColorProperty::SetUseHSV(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "SetUseHSV");
+
+	Params::UIEffectTextAnimation_ColorProperty_SetUseHSV Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_ColorProperty.GetColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor UUIEffectTextAnimation_ColorProperty::GetColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "GetColor");
+
+	Params::UIEffectTextAnimation_ColorProperty_GetColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_ColorProperty.GetUseHSV
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIEffectTextAnimation_ColorProperty::GetUseHSV() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "GetUseHSV");
+
+	Params::UIEffectTextAnimation_ColorProperty_GetUseHSV Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIManagerActor.GetDynamicSpriteAtlasMgr
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIDynamicSpriteAtlasMgr*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIDynamicSpriteAtlasMgr* ALGUIManagerActor::GetDynamicSpriteAtlasMgr(class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIManagerActor", "GetDynamicSpriteAtlasMgr");
+
+	Params::LGUIManagerActor_GetDynamicSpriteAtlasMgr Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.LGUIManagerActor.GetGlobalUiBlurIndex
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -15428,6 +15605,62 @@ int32 ALGUIManagerActor::GetGlobalUiBlurIndex(class UObject* WorldContextObject)
 	Params::LGUIManagerActor_GetGlobalUiBlurIndex Parms{};
 
 	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIManagerActor.GetSequencerManager
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContext                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USequencerManager*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USequencerManager* ALGUIManagerActor::GetSequencerManager(const class UObject* WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIManagerActor", "GetSequencerManager");
+
+	Params::LGUIManagerActor_GetSequencerManager Parms{};
+
+	Parms.WorldContext = WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIManagerActor.GetUISpineManager
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContext                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUISpineManager*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISpineManager* ALGUIManagerActor::GetUISpineManager(const class UObject* WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIManagerActor", "GetUISpineManager");
+
+	Params::LGUIManagerActor_GetUISpineManager Parms{};
+
+	Parms.WorldContext = WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15464,6 +15697,233 @@ void ALGUIManagerActor::SetDebugRootLayer(class UObject* WorldContextObj, class 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUIManagerActor.SetGlobalPlayRate
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContext                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   PlayRate                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ALGUIManagerActor::SetGlobalPlayRate(const class UObject* WorldContext, float PlayRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIManagerActor", "SetGlobalPlayRate");
+
+	Params::LGUIManagerActor_SetGlobalPlayRate Parms{};
+
+	Parms.WorldContext = WorldContext;
+	Parms.PlayRate = PlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_Selector.SetOffset
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_Selector::SetOffset(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_Selector", "SetOffset");
+
+	Params::UIEffectTextAnimation_Selector_SetOffset Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_Selector.GetOffset
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIEffectTextAnimation_Selector::GetOffset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_Selector", "GetOffset");
+
+	Params::UIEffectTextAnimation_Selector_GetOffset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.SetFlipDirection
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_RichTextTagSelector::SetFlipDirection(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "SetFlipDirection");
+
+	Params::UIEffectTextAnimation_RichTextTagSelector_SetFlipDirection Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.SetRange
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_RichTextTagSelector::SetRange(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "SetRange");
+
+	Params::UIEffectTextAnimation_RichTextTagSelector_SetRange Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.SetTagName
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_RichTextTagSelector::SetTagName(const class FName& value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "SetTagName");
+
+	Params::UIEffectTextAnimation_RichTextTagSelector_SetTagName Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.GetFlipDirection
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIEffectTextAnimation_RichTextTagSelector::GetFlipDirection() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "GetFlipDirection");
+
+	Params::UIEffectTextAnimation_RichTextTagSelector_GetFlipDirection Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.GetRange
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIEffectTextAnimation_RichTextTagSelector::GetRange() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "GetRange");
+
+	Params::UIEffectTextAnimation_RichTextTagSelector_GetRange Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.GetTagName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class FName                       ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class FName UUIEffectTextAnimation_RichTextTagSelector::GetTagName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "GetTagName");
+
+	Params::UIEffectTextAnimation_RichTextTagSelector_GetTagName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -15583,21 +16043,21 @@ class ULTweener* ULGUIPlayTween::GetTweener() const
 }
 
 
-// Function LGUI.UIInputAdaptZone.OnMouseMoved
-// (Final, Native, Protected)
+// Function LGUI.UIExtendToggleTextureTransition.SetAllTransitionStateTexture
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture*                         Texture                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIInputAdaptZone::OnMouseMoved(float Value)
+void UUIExtendToggleTextureTransition::SetAllTransitionStateTexture(class UTexture* Texture)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIInputAdaptZone", "OnMouseMoved");
+		Func = Class->GetFunction("UIExtendToggleTextureTransition", "SetAllTransitionStateTexture");
 
-	Params::UIInputAdaptZone_OnMouseMoved Parms{};
+	Params::UIExtendToggleTextureTransition_SetAllTransitionStateTexture Parms{};
 
-	Parms.Value = Value;
+	Parms.Texture = Texture;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15608,21 +16068,25 @@ void UUIInputAdaptZone::OnMouseMoved(float Value)
 }
 
 
-// Function LGUI.UIInputAdaptZone.OnPressAnyKey
-// (Final, Native, Protected, HasOutParams)
+// Function LGUI.UIExtendToggleTextureTransition.SetTargetStateTexture
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FKey                             Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EToggleTransitionState                  State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture*                         Texture                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ForceNoTriggerOnChange                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIInputAdaptZone::OnPressAnyKey(const struct FKey& Key)
+void UUIExtendToggleTextureTransition::SetTargetStateTexture(EToggleTransitionState State, class UTexture* Texture, bool ForceNoTriggerOnChange)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIInputAdaptZone", "OnPressAnyKey");
+		Func = Class->GetFunction("UIExtendToggleTextureTransition", "SetTargetStateTexture");
 
-	Params::UIInputAdaptZone_OnPressAnyKey Parms{};
+	Params::UIExtendToggleTextureTransition_SetTargetStateTexture Parms{};
 
-	Parms.Key = std::move(Key);
+	Parms.State = State;
+	Parms.Texture = Texture;
+	Parms.ForceNoTriggerOnChange = ForceNoTriggerOnChange;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15633,46 +16097,38 @@ void UUIInputAdaptZone::OnPressAnyKey(const struct FKey& Key)
 }
 
 
-// Function LGUI.UIInputAdaptZone.OnTouchBegin
-// (Final, Native, Protected, HasDefaults)
-// Parameters:
-// ETouchIndex                             TouchIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function LGUI.UISelectableComponent.ResetSelectableDelegate
+// (Final, Native, Static, Public, BlueprintCallable)
 
-void UUIInputAdaptZone::OnTouchBegin(ETouchIndex TouchIndex, const struct FVector& Location)
+void UUISelectableComponent::ResetSelectableDelegate()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIInputAdaptZone", "OnTouchBegin");
-
-	Params::UIInputAdaptZone_OnTouchBegin Parms{};
-
-	Parms.TouchIndex = TouchIndex;
-	Parms.Location = std::move(Location);
+		Func = StaticClass()->GetFunction("UISelectableComponent", "ResetSelectableDelegate");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.UIExtendToggleGroup.BindOnExtendToggleGroupActive
+// Function LGUI.UISelectableComponent.SetSelectableDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(class UUIExtendToggleGroup* ExtendToggleGroup, bool bCreate)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(class UUISelectableComponent* SelectableComponent, bool bCreate)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UUIExtendToggleGroup::BindOnExtendToggleGroupActive(const TDelegate<void(class UUIExtendToggleGroup* ExtendToggleGroup, bool bCreate)>& Delegate)
+void UUISelectableComponent::SetSelectableDelegate(const TDelegate<void(class UUISelectableComponent* SelectableComponent, bool bCreate)>& Delegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIExtendToggleGroup", "BindOnExtendToggleGroupActive");
+		Func = StaticClass()->GetFunction("UISelectableComponent", "SetSelectableDelegate");
 
-	Params::UIExtendToggleGroup_BindOnExtendToggleGroupActive Parms{};
+	Params::UISelectableComponent_SetSelectableDelegate Parms{};
 
 	Parms.Delegate = Delegate;
 
@@ -15685,140 +16141,71 @@ void UUIExtendToggleGroup::BindOnExtendToggleGroupActive(const TDelegate<void(cl
 }
 
 
-// Function LGUI.UIExtendToggleGroup.UnBindOnExtendToggleGroupActive
+// Function LGUI.UISelectableComponent.SetShieldMobileHighlight
 // (Final, Native, Static, Public, BlueprintCallable)
-
-void UUIExtendToggleGroup::UnBindOnExtendToggleGroupActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIExtendToggleGroup", "UnBindOnExtendToggleGroupActive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIExtendToggleGroup.GetAllowNoneSelect
-// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UUIExtendToggleGroup::GetAllowNoneSelect()
+void UUISelectableComponent::SetShieldMobileHighlight(const bool Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleGroup", "GetAllowNoneSelect");
+		Func = StaticClass()->GetFunction("UISelectableComponent", "SetShieldMobileHighlight");
 
-	Params::UIExtendToggleGroup_GetAllowNoneSelect Parms{};
+	Params::UISelectableComponent_SetShieldMobileHighlight Parms{};
+
+	Parms.Value = Value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function LGUI.UIExtendToggleGroup.SetAllowNoneSelect
-// (Final, Native, Public, BlueprintCallable)
+// Function LGUI.UISelectableComponent.SetShieldPCPress
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bAllowNoneSelection                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIExtendToggleGroup::SetAllowNoneSelect(bool bAllowNoneSelection)
+void UUISelectableComponent::SetShieldPCPress(const bool Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleGroup", "SetAllowNoneSelect");
+		Func = StaticClass()->GetFunction("UISelectableComponent", "SetShieldPCPress");
 
-	Params::UIExtendToggleGroup_SetAllowNoneSelect Parms{};
+	Params::UISelectableComponent_SetShieldPCPress Parms{};
 
-	Parms.bAllowNoneSelection = bAllowNoneSelection;
+	Parms.Value = Value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.UIExtendToggleGroup.SetGroupEnable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bInEnable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIExtendToggleGroup::SetGroupEnable(bool bInEnable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleGroup", "SetGroupEnable");
-
-	Params::UIExtendToggleGroup_SetGroupEnable Parms{};
-
-	Parms.bInEnable = bInEnable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIExtendToggleGroup.GetCurSelection
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUIExtendToggle*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUIExtendToggle* UUIExtendToggleGroup::GetCurSelection() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleGroup", "GetCurSelection");
-
-	Params::UIExtendToggleGroup_GetCurSelection Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILayoutBase.SetGridAnimationInterval
+// Function LGUI.UISelectableComponent.ApplySelectionState
 // (Native, Protected, BlueprintCallable)
 // Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bImmediateSet                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUILayoutBase::SetGridAnimationInterval(float value)
+void UUISelectableComponent::ApplySelectionState(bool bImmediateSet)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutBase", "SetGridAnimationInterval");
+		Func = Class->GetFunction("UISelectableComponent", "ApplySelectionState");
 
-	Params::UILayoutBase_SetGridAnimationInterval Parms{};
+	Params::UISelectableComponent_ApplySelectionState Parms{};
 
-	Parms.value = value;
+	Parms.bImmediateSet = bImmediateSet;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15829,119 +16216,19 @@ void UUILayoutBase::SetGridAnimationInterval(float value)
 }
 
 
-// Function LGUI.UILayoutBase.SetGridAnimationStartTime
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILayoutBase::SetGridAnimationStartTime(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutBase", "SetGridAnimationStartTime");
-
-	Params::UILayoutBase_SetGridAnimationStartTime Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutBase.SetInAnimation
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// bool                                    state                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILayoutBase::SetInAnimation(bool state)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutBase", "SetInAnimation");
-
-	Params::UILayoutBase_SetInAnimation Parms{};
-
-	Parms.state = state;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutBase.GetGridAnimationInterval
-// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUILayoutBase::GetGridAnimationInterval() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutBase", "GetGridAnimationInterval");
-
-	Params::UILayoutBase_GetGridAnimationInterval Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILayoutBase.GetGridAnimationStartTime
-// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUILayoutBase::GetGridAnimationStartTime() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutBase", "GetGridAnimationStartTime");
-
-	Params::UILayoutBase_GetGridAnimationStartTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILayoutBase.GetInAnimation
-// (Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Function LGUI.UISelectableComponent.GetCanClickWhenDisable
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UUILayoutBase::GetInAnimation() const
+bool UUISelectableComponent::GetCanClickWhenDisable()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutBase", "GetInAnimation");
+		Func = Class->GetFunction("UISelectableComponent", "GetCanClickWhenDisable");
 
-	Params::UILayoutBase_GetInAnimation Parms{};
+	Params::UISelectableComponent_GetCanClickWhenDisable Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15954,94 +16241,19 @@ bool UUILayoutBase::GetInAnimation() const
 }
 
 
-// Function LGUI.UILayoutWithAnimation.CancelAnimation
+// Function LGUI.UISelectableComponent.GetSelectionState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    callComplete                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUISelectableSelectionState             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUILayoutWithAnimation::CancelAnimation(bool callComplete)
+EUISelectableSelectionState UUISelectableComponent::GetSelectionState()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutWithAnimation", "CancelAnimation");
+		Func = Class->GetFunction("UISelectableComponent", "GetSelectionState");
 
-	Params::UILayoutWithAnimation_CancelAnimation Parms{};
-
-	Parms.callComplete = callComplete;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutWithAnimation.SetAnimationDuration
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILayoutWithAnimation::SetAnimationDuration(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutWithAnimation", "SetAnimationDuration");
-
-	Params::UILayoutWithAnimation_SetAnimationDuration Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutWithAnimation.SetAnimationType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUILayoutChangePositionAnimationType    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILayoutWithAnimation::SetAnimationType(EUILayoutChangePositionAnimationType value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutWithAnimation", "SetAnimationType");
-
-	Params::UILayoutWithAnimation_SetAnimationType Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutWithAnimation.GetAnimationDuration
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUILayoutWithAnimation::GetAnimationDuration() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutWithAnimation", "GetAnimationDuration");
-
-	Params::UILayoutWithAnimation_GetAnimationDuration Parms{};
+	Params::UISelectableComponent_GetSelectionState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16054,419 +16266,19 @@ float UUILayoutWithAnimation::GetAnimationDuration() const
 }
 
 
-// Function LGUI.UILayoutWithAnimation.GetAnimationType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUILayoutChangePositionAnimationType    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUILayoutChangePositionAnimationType UUILayoutWithAnimation::GetAnimationType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutWithAnimation", "GetAnimationType");
-
-	Params::UILayoutWithAnimation_GetAnimationType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.SetAlign
+// Function LGUI.UISelectableComponent.GetSelfInteractive
 // (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ELGUILayoutAlignmentType                value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetAlign(ELGUILayoutAlignmentType value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetAlign");
-
-	Params::UIGridLayout_SetAlign Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetCellSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                        value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetCellSize(const struct FVector2D& value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetCellSize");
-
-	Params::UIGridLayout_SetCellSize Parms{};
-
-	Parms.value = std::move(value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetDependOnSizeOrCount
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetDependOnSizeOrCount(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetDependOnSizeOrCount");
-
-	Params::UIGridLayout_SetDependOnSizeOrCount Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetExpendChildSize
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetExpendChildSize(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetExpendChildSize");
-
-	Params::UIGridLayout_SetExpendChildSize Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetHeightFitToChildren
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetHeightFitToChildren(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetHeightFitToChildren");
-
-	Params::UIGridLayout_SetHeightFitToChildren Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetHorizontalOrVertical
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetHorizontalOrVertical(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetHorizontalOrVertical");
-
-	Params::UIGridLayout_SetHorizontalOrVertical Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetLastLineCanAlign
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetLastLineCanAlign(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetLastLineCanAlign");
-
-	Params::UIGridLayout_SetLastLineCanAlign Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetLineCount
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetLineCount(int32 value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetLineCount");
-
-	Params::UIGridLayout_SetLineCount Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetMaxItemCountInOneLine
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetMaxItemCountInOneLine(int32 value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetMaxItemCountInOneLine");
-
-	Params::UIGridLayout_SetMaxItemCountInOneLine Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetPadding
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FMargin                          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetPadding(const struct FMargin& value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetPadding");
-
-	Params::UIGridLayout_SetPadding Parms{};
-
-	Parms.value = std::move(value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetSpacing
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                        value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetSpacing(const struct FVector2D& value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetSpacing");
-
-	Params::UIGridLayout_SetSpacing Parms{};
-
-	Parms.value = std::move(value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.SetWidthFitToChildren
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIGridLayout::SetWidthFitToChildren(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "SetWidthFitToChildren");
-
-	Params::UIGridLayout_SetWidthFitToChildren Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIGridLayout.GetActuralRange
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UUIGridLayout::GetActuralRange() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetActuralRange");
-
-	Params::UIGridLayout_GetActuralRange Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetAlign
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ELGUILayoutAlignmentType                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ELGUILayoutAlignmentType UUIGridLayout::GetAlign() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetAlign");
-
-	Params::UIGridLayout_GetAlign Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetCellSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UUIGridLayout::GetCellSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetCellSize");
-
-	Params::UIGridLayout_GetCellSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetDependOnSizeOrCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UUIGridLayout::GetDependOnSizeOrCount() const
+bool UUISelectableComponent::GetSelfInteractive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetDependOnSizeOrCount");
+		Func = Class->GetFunction("UISelectableComponent", "GetSelfInteractive");
 
-	Params::UIGridLayout_GetDependOnSizeOrCount Parms{};
+	Params::UISelectableComponent_GetSelfInteractive Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16479,336 +16291,1651 @@ bool UUIGridLayout::GetDependOnSizeOrCount() const
 }
 
 
-// Function LGUI.UIGridLayout.GetExpendChildSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function LGUI.UISelectableComponent.NotifyFocusListener
+// (Final, Native, Public, BlueprintCallable)
 
-bool UUIGridLayout::GetExpendChildSize() const
+void UUISelectableComponent::NotifyFocusListener()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetExpendChildSize");
-
-	Params::UIGridLayout_GetExpendChildSize Parms{};
+		Func = Class->GetFunction("UISelectableComponent", "NotifyFocusListener");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetHeightFitToChildren
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIGridLayout::GetHeightFitToChildren() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetHeightFitToChildren");
-
-	Params::UIGridLayout_GetHeightFitToChildren Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetHorizontalOrVertical
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIGridLayout::GetHorizontalOrVertical() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetHorizontalOrVertical");
-
-	Params::UIGridLayout_GetHorizontalOrVertical Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetLastLineCanAlign
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIGridLayout::GetLastLineCanAlign() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetLastLineCanAlign");
-
-	Params::UIGridLayout_GetLastLineCanAlign Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetLineCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UUIGridLayout::GetLineCount() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetLineCount");
-
-	Params::UIGridLayout_GetLineCount Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetMaxItemCountInOneLine
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UUIGridLayout::GetMaxItemCountInOneLine() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetMaxItemCountInOneLine");
-
-	Params::UIGridLayout_GetMaxItemCountInOneLine Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetPadding
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FMargin                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FMargin UUIGridLayout::GetPadding() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetPadding");
-
-	Params::UIGridLayout_GetPadding Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetSpacing
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UUIGridLayout::GetSpacing() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetSpacing");
-
-	Params::UIGridLayout_GetSpacing Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIGridLayout.GetWidthFitToChildren
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIGridLayout::GetWidthFitToChildren() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIGridLayout", "GetWidthFitToChildren");
-
-	Params::UIGridLayout_GetWidthFitToChildren Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UINavigationBehaviour.OnCheckCanSetNavigationBP
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUINavigationBehaviour::OnCheckCanSetNavigationBP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationBehaviour", "OnCheckCanSetNavigationBP");
-
-	Params::UINavigationBehaviour_OnCheckCanSetNavigationBP Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UINavigationBehaviour.OnCheckLoopScrollChangeNavigationBP
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUINavigationBehaviour::OnCheckLoopScrollChangeNavigationBP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationBehaviour", "OnCheckLoopScrollChangeNavigationBP");
-
-	Params::UINavigationBehaviour_OnCheckLoopScrollChangeNavigationBP Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UINavigationBehaviour.OnNotifyInteractiveBP
-// (Event, Protected, BlueprintEvent)
-
-void UUINavigationBehaviour::OnNotifyInteractiveBP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyInteractiveBP");
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.UINavigationBehaviour.OnNotifyNavigationEnterBP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ULGUIPointerEventData*            eventData                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function LGUI.UISelectableComponent.NotifyUnFocusListener
+// (Final, Native, Public, BlueprintCallable)
 
-void UUINavigationBehaviour::OnNotifyNavigationEnterBP(class ULGUIPointerEventData* eventData)
+void UUISelectableComponent::NotifyUnFocusListener()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyNavigationEnterBP");
+		Func = Class->GetFunction("UISelectableComponent", "NotifyUnFocusListener");
 
-	Params::UINavigationBehaviour_OnNotifyNavigationEnterBP Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.PlayUIAnimationByPlayInfo
+// (Final, Native, Public)
+// Parameters:
+// struct FAnimationPlayInfo               PlayInfo                                               (Parm, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::PlayUIAnimationByPlayInfo(const struct FAnimationPlayInfo& PlayInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "PlayUIAnimationByPlayInfo");
+
+	Params::UISelectableComponent_PlayUIAnimationByPlayInfo Parms{};
+
+	Parms.PlayInfo = std::move(PlayInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetCanClickWhenDisable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    CanClickEnbale                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetCanClickWhenDisable(bool CanClickEnbale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetCanClickWhenDisable");
+
+	Params::UISelectableComponent_SetCanClickWhenDisable Parms{};
+
+	Parms.CanClickEnbale = CanClickEnbale;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetHighlightedColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FColor                           NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetHighlightedColor(const struct FColor& NewColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetHighlightedColor");
+
+	Params::UISelectableComponent_SetHighlightedColor Parms{};
+
+	Parms.NewColor = std::move(NewColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetHighlightedSprite
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetHighlightedSprite(class ULGUISpriteData_BaseObject* NewSprite)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetHighlightedSprite");
+
+	Params::UISelectableComponent_SetHighlightedSprite Parms{};
+
+	Parms.NewSprite = NewSprite;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetIsCustomAnim
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsCustomAnim                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetIsCustomAnim(bool bIsCustomAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetIsCustomAnim");
+
+	Params::UISelectableComponent_SetIsCustomAnim Parms{};
+
+	Parms.bIsCustomAnim = bIsCustomAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetIsCustomTransition
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsCustomTransition                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetIsCustomTransition(bool bIsCustomTransition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetIsCustomTransition");
+
+	Params::UISelectableComponent_SetIsCustomTransition Parms{};
+
+	Parms.bIsCustomTransition = bIsCustomTransition;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationDown
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationDown(EUISelectableNavigationMode value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationDown");
+
+	Params::UISelectableComponent_SetNavigationDown Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationDownExplicit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationDownExplicit(class UUISelectableComponent* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationDownExplicit");
+
+	Params::UISelectableComponent_SetNavigationDownExplicit Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationGroup
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class UUINavigationGroupComponent*      Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationGroup(class UUINavigationGroupComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationGroup");
+
+	Params::UISelectableComponent_SetNavigationGroup Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationGroupParent
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationGroupParent(class UUISelectableComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationGroupParent");
+
+	Params::UISelectableComponent_SetNavigationGroupParent Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationLeft
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationLeft(EUISelectableNavigationMode value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationLeft");
+
+	Params::UISelectableComponent_SetNavigationLeft Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationLeftExplicit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationLeftExplicit(class UUISelectableComponent* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationLeftExplicit");
+
+	Params::UISelectableComponent_SetNavigationLeftExplicit Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationNext
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationNext(EUISelectableNavigationMode value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationNext");
+
+	Params::UISelectableComponent_SetNavigationNext Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationNextExplicit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationNextExplicit(class UUISelectableComponent* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationNextExplicit");
+
+	Params::UISelectableComponent_SetNavigationNextExplicit Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationPrev
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationPrev(EUISelectableNavigationMode value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationPrev");
+
+	Params::UISelectableComponent_SetNavigationPrev Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationPrevExplicit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationPrevExplicit(class UUISelectableComponent* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationPrevExplicit");
+
+	Params::UISelectableComponent_SetNavigationPrevExplicit Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationRight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationRight(EUISelectableNavigationMode value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationRight");
+
+	Params::UISelectableComponent_SetNavigationRight Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationRightExplicit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationRightExplicit(class UUISelectableComponent* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationRightExplicit");
+
+	Params::UISelectableComponent_SetNavigationRightExplicit Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationUp
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISelectableNavigationMode             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationUp(EUISelectableNavigationMode value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationUp");
+
+	Params::UISelectableComponent_SetNavigationUp Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNavigationUpExplicit
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUISelectableComponent*           value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNavigationUpExplicit(class UUISelectableComponent* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNavigationUpExplicit");
+
+	Params::UISelectableComponent_SetNavigationUpExplicit Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNormalColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FColor                           NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNormalColor(const struct FColor& NewColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNormalColor");
+
+	Params::UISelectableComponent_SetNormalColor Parms{};
+
+	Parms.NewColor = std::move(NewColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetNormalSprite
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetNormalSprite(class ULGUISpriteData_BaseObject* NewSprite)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetNormalSprite");
+
+	Params::UISelectableComponent_SetNormalSprite Parms{};
+
+	Parms.NewSprite = NewSprite;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetPressedColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FColor                           NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetPressedColor(const struct FColor& NewColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetPressedColor");
+
+	Params::UISelectableComponent_SetPressedColor Parms{};
+
+	Parms.NewColor = std::move(NewColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetPressedSprite
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetPressedSprite(class ULGUISpriteData_BaseObject* NewSprite)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetPressedSprite");
+
+	Params::UISelectableComponent_SetPressedSprite Parms{};
+
+	Parms.NewSprite = NewSprite;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetScrollView
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUIScrollViewWithScrollbarComponent*Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetScrollView(class UUIScrollViewWithScrollbarComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetScrollView");
+
+	Params::UISelectableComponent_SetScrollView Parms{};
+
+	Parms.Component = Component;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetSelectionState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISelectableSelectionState             NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetSelectionState(EUISelectableSelectionState NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetSelectionState");
+
+	Params::UISelectableComponent_SetSelectionState Parms{};
+
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetSelfInteractive
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InteractiveEnable                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetSelfInteractive(bool InteractiveEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetSelfInteractive");
+
+	Params::UISelectableComponent_SetSelfInteractive Parms{};
+
+	Parms.InteractiveEnable = InteractiveEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.SetTransitionTarget
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AUIBaseActor*                     value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISelectableComponent::SetTransitionTarget(class AUIBaseActor* value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "SetTransitionTarget");
+
+	Params::UISelectableComponent_SetTransitionTarget Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISelectableComponent.GetDisabledSprite
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUISpriteData_BaseObject* UUISelectableComponent::GetDisabledSprite() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetDisabledSprite");
+
+	Params::UISelectableComponent_GetDisabledSprite Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetHighlightedColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor UUISelectableComponent::GetHighlightedColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetHighlightedColor");
+
+	Params::UISelectableComponent_GetHighlightedColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetHighlightedSprite
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUISpriteData_BaseObject* UUISelectableComponent::GetHighlightedSprite() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetHighlightedSprite");
+
+	Params::UISelectableComponent_GetHighlightedSprite Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationDown
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISelectableNavigationMode UUISelectableComponent::GetNavigationDown() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationDown");
+
+	Params::UISelectableComponent_GetNavigationDown Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationDownExplicit
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUISelectableComponent::GetNavigationDownExplicit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationDownExplicit");
+
+	Params::UISelectableComponent_GetNavigationDownExplicit Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationLeft
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISelectableNavigationMode UUISelectableComponent::GetNavigationLeft() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationLeft");
+
+	Params::UISelectableComponent_GetNavigationLeft Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationLeftExplicit
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUISelectableComponent::GetNavigationLeftExplicit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationLeftExplicit");
+
+	Params::UISelectableComponent_GetNavigationLeftExplicit Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationNext
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISelectableNavigationMode UUISelectableComponent::GetNavigationNext() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationNext");
+
+	Params::UISelectableComponent_GetNavigationNext Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationNextExplicit
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUISelectableComponent::GetNavigationNextExplicit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationNextExplicit");
+
+	Params::UISelectableComponent_GetNavigationNextExplicit Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationPrev
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISelectableNavigationMode UUISelectableComponent::GetNavigationPrev() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationPrev");
+
+	Params::UISelectableComponent_GetNavigationPrev Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationPrevExplicit
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUISelectableComponent::GetNavigationPrevExplicit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationPrevExplicit");
+
+	Params::UISelectableComponent_GetNavigationPrevExplicit Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationRight
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISelectableNavigationMode UUISelectableComponent::GetNavigationRight() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationRight");
+
+	Params::UISelectableComponent_GetNavigationRight Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationRightExplicit
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUISelectableComponent::GetNavigationRightExplicit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationRightExplicit");
+
+	Params::UISelectableComponent_GetNavigationRightExplicit Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationUp
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISelectableNavigationMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISelectableNavigationMode UUISelectableComponent::GetNavigationUp() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationUp");
+
+	Params::UISelectableComponent_GetNavigationUp Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNavigationUpExplicit
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUISelectableComponent* UUISelectableComponent::GetNavigationUpExplicit() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNavigationUpExplicit");
+
+	Params::UISelectableComponent_GetNavigationUpExplicit Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNormalColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor UUISelectableComponent::GetNormalColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNormalColor");
+
+	Params::UISelectableComponent_GetNormalColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetNormalSprite
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUISpriteData_BaseObject* UUISelectableComponent::GetNormalSprite() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetNormalSprite");
+
+	Params::UISelectableComponent_GetNormalSprite Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetPressedColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor UUISelectableComponent::GetPressedColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetPressedColor");
+
+	Params::UISelectableComponent_GetPressedColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetPressedSprite
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUISpriteData_BaseObject* UUISelectableComponent::GetPressedSprite() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetPressedSprite");
+
+	Params::UISelectableComponent_GetPressedSprite Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetSelectedSprite
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUISpriteData_BaseObject* UUISelectableComponent::GetSelectedSprite() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetSelectedSprite");
+
+	Params::UISelectableComponent_GetSelectedSprite Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.GetTransitionTarget
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AUIBaseActor* UUISelectableComponent::GetTransitionTarget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "GetTransitionTarget");
+
+	Params::UISelectableComponent_GetTransitionTarget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISelectableComponent.IsInteractable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUISelectableComponent::IsInteractable() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "IsInteractable");
+
+	Params::UISelectableComponent_IsInteractable Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIButtonComponent.OnPointerDown_Implementation
+// (Native, Protected)
+// Parameters:
+// class ULGUIPointerEventData*            eventData                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIButtonComponent::OnPointerDown_Implementation(class ULGUIPointerEventData* eventData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIButtonComponent", "OnPointerDown_Implementation");
+
+	Params::UIButtonComponent_OnPointerDown_Implementation Parms{};
 
 	Parms.eventData = eventData;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LGUI.UINavigationBehaviour.OnNotifyNavigationSelectBP
-// (Event, Protected, BlueprintEvent)
+// Function LGUI.UIButtonComponent.RegisterClickEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class ULGUIPointerEventData*            eventData                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void()>                       InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UUINavigationBehaviour::OnNotifyNavigationSelectBP(class ULGUIPointerEventData* eventData)
+struct FLGUIDelegateHandleWrapper UUIButtonComponent::RegisterClickEvent(const TDelegate<void()>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyNavigationSelectBP");
+		Func = Class->GetFunction("UIButtonComponent", "RegisterClickEvent");
 
-	Params::UINavigationBehaviour_OnNotifyNavigationSelectBP Parms{};
+	Params::UIButtonComponent_RegisterClickEvent Parms{};
 
-	Parms.eventData = eventData;
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function LGUI.UINavigationBehaviour.OnNotifyNotInteractiveBP
-// (Event, Protected, BlueprintEvent)
+// Function LGUI.UIButtonComponent.UnregisterClickEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UUINavigationBehaviour::OnNotifyNotInteractiveBP()
+void UUIButtonComponent::UnregisterClickEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyNotInteractiveBP");
+		Func = Class->GetFunction("UIButtonComponent", "UnregisterClickEvent");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::UIButtonComponent_UnregisterClickEvent Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIExtendButtonComponent.SetDelegateForHelpClick
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(int32 helpGroupId)>      delegateObj                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUIExtendButtonComponent::SetDelegateForHelpClick(const TDelegate<void(int32 helpGroupId)>& delegateObj)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIExtendButtonComponent", "SetDelegateForHelpClick");
+
+	Params::UIExtendButtonComponent_SetDelegateForHelpClick Parms{};
+
+	Parms.delegateObj = delegateObj;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.SetEnd
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_RangeSelector::SetEnd(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetEnd");
+
+	Params::UIEffectTextAnimation_RangeSelector_SetEnd Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.SetFlipDirection
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_RangeSelector::SetFlipDirection(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetFlipDirection");
+
+	Params::UIEffectTextAnimation_RangeSelector_SetFlipDirection Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.SetRange
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_RangeSelector::SetRange(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetRange");
+
+	Params::UIEffectTextAnimation_RangeSelector_SetRange Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.SetStart
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIEffectTextAnimation_RangeSelector::SetStart(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetStart");
+
+	Params::UIEffectTextAnimation_RangeSelector_SetStart Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.GetEnd
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIEffectTextAnimation_RangeSelector::GetEnd() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetEnd");
+
+	Params::UIEffectTextAnimation_RangeSelector_GetEnd Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.GetFlipDirection
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIEffectTextAnimation_RangeSelector::GetFlipDirection() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetFlipDirection");
+
+	Params::UIEffectTextAnimation_RangeSelector_GetFlipDirection Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.GetRange
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIEffectTextAnimation_RangeSelector::GetRange() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetRange");
+
+	Params::UIEffectTextAnimation_RangeSelector_GetRange Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEffectTextAnimation_RangeSelector.GetStart
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIEffectTextAnimation_RangeSelector::GetStart() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetStart");
+
+	Params::UIEffectTextAnimation_RangeSelector_GetStart Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIExtendToggleSpriteTransition.SetAllStateSprite
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIExtendToggleSpriteTransition::SetAllStateSprite(class ULGUISpriteData_BaseObject* NewSprite)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggleSpriteTransition", "SetAllStateSprite");
+
+	Params::UIExtendToggleSpriteTransition_SetAllStateSprite Parms{};
+
+	Parms.NewSprite = NewSprite;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIExtendToggleSpriteTransition.SetStateSprite
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EToggleTransitionState                  State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ForceNoTriggerOnChange                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIExtendToggleSpriteTransition::SetStateSprite(EToggleTransitionState State, class ULGUISpriteData_BaseObject* NewSprite, bool ForceNoTriggerOnChange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggleSpriteTransition", "SetStateSprite");
+
+	Params::UIExtendToggleSpriteTransition_SetStateSprite Parms{};
+
+	Parms.State = State;
+	Parms.NewSprite = NewSprite;
+	Parms.ForceNoTriggerOnChange = ForceNoTriggerOnChange;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -16913,221 +18040,6 @@ void ULGUIPlayTweenSequenceComponent::Stop()
 }
 
 
-// Function LGUI.UIInturnAnimController.OnItemAnimFinish
-// (Final, Native, Protected)
-
-void UUIInturnAnimController::OnItemAnimFinish()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "OnItemAnimFinish");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIInturnAnimController.Play
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           NewAnimName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AssignNum                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsScrollViewItem                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIInturnAnimController::Play(const class FString& NewAnimName, int32 AssignNum, bool bIsScrollViewItem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "Play");
-
-	Params::UIInturnAnimController_Play Parms{};
-
-	Parms.NewAnimName = std::move(NewAnimName);
-	Parms.AssignNum = AssignNum;
-	Parms.bIsScrollViewItem = bIsScrollViewItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIInturnAnimController.PlayInEditor
-// (Final, Native, Public, BlueprintCallable)
-
-void UUIInturnAnimController::PlayInEditor()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "PlayInEditor");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIInturnAnimController.PlayWithActors
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// TArray<TWeakObjectPtr<class AUIBaseActor>>SpecChildren                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-// class FString                           NewAnimName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIInturnAnimController::PlayWithActors(const TArray<TWeakObjectPtr<class AUIBaseActor>>& SpecChildren, const class FString& NewAnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "PlayWithActors");
-
-	Params::UIInturnAnimController_PlayWithActors Parms{};
-
-	Parms.SpecChildren = std::move(SpecChildren);
-	Parms.NewAnimName = std::move(NewAnimName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIInturnAnimController.PlayWithItems
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<class UUIItem*>                  SpecChildren                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// class FString                           NewAnimName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIInturnAnimController::PlayWithItems(const TArray<class UUIItem*>& SpecChildren, const class FString& NewAnimName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "PlayWithItems");
-
-	Params::UIInturnAnimController_PlayWithItems Parms{};
-
-	Parms.SpecChildren = std::move(SpecChildren);
-	Parms.NewAnimName = std::move(NewAnimName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIInturnAnimController.SetItemDefaultAlphaZero
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    IsItemDefaultAlphaZero                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIInturnAnimController::SetItemDefaultAlphaZero(bool IsItemDefaultAlphaZero)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "SetItemDefaultAlphaZero");
-
-	Params::UIInturnAnimController_SetItemDefaultAlphaZero Parms{};
-
-	Parms.IsItemDefaultAlphaZero = IsItemDefaultAlphaZero;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIInturnAnimController.Stop
-// (Final, Native, Public, BlueprintCallable)
-
-void UUIInturnAnimController::Stop()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "Stop");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIInturnAnimController.GetItemDefaultAlphaZero
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIInturnAnimController::GetItemDefaultAlphaZero() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "GetItemDefaultAlphaZero");
-
-	Params::UIInturnAnimController_GetItemDefaultAlphaZero Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIInturnAnimController.IsPlaying
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIInturnAnimController::IsPlaying() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIInturnAnimController", "IsPlaying");
-
-	Params::UIInturnAnimController_IsPlaying Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function LGUI.LGUIPointerClickInterface.OnPointerClick
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -17144,6 +18056,171 @@ bool ILGUIPointerClickInterface::OnPointerClick(class ULGUIPointerEventData* eve
 	Params::LGUIPointerClickInterface_OnPointerClick Parms{};
 
 	Parms.eventData = eventData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIExtendToggle.SetAllTransitionsEnable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bIsEnable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIExtendToggle::SetAllTransitionsEnable(bool bIsEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggle", "SetAllTransitionsEnable");
+
+	Params::UIExtendToggle_SetAllTransitionsEnable Parms{};
+
+	Parms.bIsEnable = bIsEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIExtendToggle.SetToggleGroup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           TogGroupActor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIExtendToggle::SetToggleGroup(class AActor* TogGroupActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggle", "SetToggleGroup");
+
+	Params::UIExtendToggle_SetToggleGroup Parms{};
+
+	Parms.TogGroupActor = TogGroupActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIExtendToggle.SetToggleState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EToggleState                            State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFireEvent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIngnoreAnim                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bJumpToLastFrame                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EToggleChangeStateResult                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EToggleChangeStateResult UUIExtendToggle::SetToggleState(EToggleState State, bool bFireEvent, bool bIngnoreAnim, bool bJumpToLastFrame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggle", "SetToggleState");
+
+	Params::UIExtendToggle_SetToggleState Parms{};
+
+	Parms.State = State;
+	Parms.bFireEvent = bFireEvent;
+	Parms.bIngnoreAnim = bIngnoreAnim;
+	Parms.bJumpToLastFrame = bJumpToLastFrame;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIExtendToggle.SetToggleStateForce
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EToggleState                            State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFireEvent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIngnoreAnim                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bJumpToLastFrame                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIExtendToggle::SetToggleStateForce(EToggleState State, bool bFireEvent, bool bIngnoreAnim, bool bJumpToLastFrame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggle", "SetToggleStateForce");
+
+	Params::UIExtendToggle_SetToggleStateForce Parms{};
+
+	Parms.State = State;
+	Parms.bFireEvent = bFireEvent;
+	Parms.bIngnoreAnim = bIngnoreAnim;
+	Parms.bJumpToLastFrame = bJumpToLastFrame;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIExtendToggle.GetToggleGroup
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUIExtendToggleGroup*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIExtendToggleGroup* UUIExtendToggle::GetToggleGroup() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggle", "GetToggleGroup");
+
+	Params::UIExtendToggle_GetToggleGroup Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIExtendToggle.GetToggleState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EToggleState                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EToggleState UUIExtendToggle::GetToggleState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggle", "GetToggleState");
+
+	Params::UIExtendToggle_GetToggleState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -17368,6 +18445,328 @@ bool ILGUIPointerDragInterface::OnPointerEndDrag(class ULGUIPointerEventData* ev
 	Params::LGUIPointerDragInterface_OnPointerEndDrag Parms{};
 
 	Parms.eventData = eventData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.Refresh
+// (Final, Native, Public, BlueprintCallable)
+
+void UUILoopScrollViewComponent::Refresh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "Refresh");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.RefreshByData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AUIBaseActor*                     UIItem                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   GridNum                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    KeepContentPosition                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILoopScrollViewComponent::RefreshByData(class AUIBaseActor* UIItem, int32 GridNum, bool KeepContentPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "RefreshByData");
+
+	Params::UILoopScrollViewComponent_RefreshByData Parms{};
+
+	Parms.UIItem = UIItem;
+	Parms.GridNum = GridNum;
+	Parms.KeepContentPosition = KeepContentPosition;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.ResetPreview
+// (Final, Native, Public)
+
+void UUILoopScrollViewComponent::ResetPreview()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "ResetPreview");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.ScrollToGridIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILoopScrollViewComponent::ScrollToGridIndex(int32 GridIndex, bool bTweenAnim)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "ScrollToGridIndex");
+
+	Params::UILoopScrollViewComponent_ScrollToGridIndex Parms{};
+
+	Parms.GridIndex = GridIndex;
+	Parms.bTweenAnim = bTweenAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.ScrollToNextLine
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bReversed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILoopScrollViewComponent::ScrollToNextLine(bool bReversed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "ScrollToNextLine");
+
+	Params::UILoopScrollViewComponent_ScrollToNextLine Parms{};
+
+	Parms.bReversed = bReversed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.SetGridAnimationInterval
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILoopScrollViewComponent::SetGridAnimationInterval(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "SetGridAnimationInterval");
+
+	Params::UILoopScrollViewComponent_SetGridAnimationInterval Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.SetGridAnimationStartTime
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILoopScrollViewComponent::SetGridAnimationStartTime(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "SetGridAnimationStartTime");
+
+	Params::UILoopScrollViewComponent_SetGridAnimationStartTime Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.SetInAnimation
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    state                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILoopScrollViewComponent::SetInAnimation(bool state)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "SetInAnimation");
+
+	Params::UILoopScrollViewComponent_SetInAnimation Parms{};
+
+	Parms.state = state;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.SetNavigationIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUILoopScrollViewComponent::SetNavigationIndex(int32 GridIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "SetNavigationIndex");
+
+	Params::UILoopScrollViewComponent_SetNavigationIndex Parms{};
+
+	Parms.GridIndex = GridIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.GetGrid
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AUIBaseActor* UUILoopScrollViewComponent::GetGrid(int32 GridIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "GetGrid");
+
+	Params::UILoopScrollViewComponent_GetGrid Parms{};
+
+	Parms.GridIndex = GridIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.GetGridAnimationInterval
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUILoopScrollViewComponent::GetGridAnimationInterval() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "GetGridAnimationInterval");
+
+	Params::UILoopScrollViewComponent_GetGridAnimationInterval Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.GetGridAnimationStartTime
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUILoopScrollViewComponent::GetGridAnimationStartTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "GetGridAnimationStartTime");
+
+	Params::UILoopScrollViewComponent_GetGridAnimationStartTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UILoopScrollViewComponent.GetInAnimation
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUILoopScrollViewComponent::GetInAnimation() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UILoopScrollViewComponent", "GetInAnimation");
+
+	Params::UILoopScrollViewComponent_GetInAnimation Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -17698,15 +19097,15 @@ bool ILGUIPointerSelectDeselectInterface::OnPointerSelect(class ULGUIBaseEventDa
 }
 
 
-// Function LGUI.UINiagaraActor.ActivateSystem
-// (Final, Native, Public, BlueprintCallable)
+// Function LGUI.UIInturnAnimController.OnItemAnimFinish
+// (Final, Native, Protected)
 
-void AUINiagaraActor::ActivateSystem()
+void UUIInturnAnimController::OnItemAnimFinish()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagaraActor", "ActivateSystem");
+		Func = Class->GetFunction("UIInturnAnimController", "OnItemAnimFinish");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -17717,15 +19116,44 @@ void AUINiagaraActor::ActivateSystem()
 }
 
 
-// Function LGUI.UINiagaraActor.DeactivateSystem
+// Function LGUI.UIInturnAnimController.Play
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           NewAnimName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   AssignNum                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsScrollViewItem                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUINiagaraActor::DeactivateSystem()
+void UUIInturnAnimController::Play(const class FString& NewAnimName, int32 AssignNum, bool bIsScrollViewItem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagaraActor", "DeactivateSystem");
+		Func = Class->GetFunction("UIInturnAnimController", "Play");
+
+	Params::UIInturnAnimController_Play Parms{};
+
+	Parms.NewAnimName = std::move(NewAnimName);
+	Parms.AssignNum = AssignNum;
+	Parms.bIsScrollViewItem = bIsScrollViewItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIInturnAnimController.PlayInEditor
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIInturnAnimController::PlayInEditor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIInturnAnimController", "PlayInEditor");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -17736,15 +19164,94 @@ void AUINiagaraActor::DeactivateSystem()
 }
 
 
-// Function LGUI.UINiagaraActor.SwitchToStop
-// (Final, Native, Public, BlueprintCallable)
+// Function LGUI.UIInturnAnimController.PlayWithActors
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// TArray<TWeakObjectPtr<class AUIBaseActor>>SpecChildren                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// class FString                           NewAnimName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUINiagaraActor::SwitchToStop()
+void UUIInturnAnimController::PlayWithActors(const TArray<TWeakObjectPtr<class AUIBaseActor>>& SpecChildren, const class FString& NewAnimName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagaraActor", "SwitchToStop");
+		Func = Class->GetFunction("UIInturnAnimController", "PlayWithActors");
+
+	Params::UIInturnAnimController_PlayWithActors Parms{};
+
+	Parms.SpecChildren = std::move(SpecChildren);
+	Parms.NewAnimName = std::move(NewAnimName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIInturnAnimController.PlayWithItems
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class UUIItem*>                  SpecChildren                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// class FString                           NewAnimName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIInturnAnimController::PlayWithItems(const TArray<class UUIItem*>& SpecChildren, const class FString& NewAnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIInturnAnimController", "PlayWithItems");
+
+	Params::UIInturnAnimController_PlayWithItems Parms{};
+
+	Parms.SpecChildren = std::move(SpecChildren);
+	Parms.NewAnimName = std::move(NewAnimName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIInturnAnimController.SetItemDefaultAlphaZero
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    IsItemDefaultAlphaZero                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIInturnAnimController::SetItemDefaultAlphaZero(bool IsItemDefaultAlphaZero)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIInturnAnimController", "SetItemDefaultAlphaZero");
+
+	Params::UIInturnAnimController_SetItemDefaultAlphaZero Parms{};
+
+	Parms.IsItemDefaultAlphaZero = IsItemDefaultAlphaZero;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIInturnAnimController.Stop
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIInturnAnimController::Stop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIInturnAnimController", "Stop");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -17755,19 +19262,606 @@ void AUINiagaraActor::SwitchToStop()
 }
 
 
-// Function LGUI.UINiagaraActor.GetUINiagara
+// Function LGUI.UIInturnAnimController.GetItemDefaultAlphaZero
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UUINiagara*                       ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUINiagara* AUINiagaraActor::GetUINiagara() const
+bool UUIInturnAnimController::GetItemDefaultAlphaZero() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagaraActor", "GetUINiagara");
+		Func = Class->GetFunction("UIInturnAnimController", "GetItemDefaultAlphaZero");
 
-	Params::UINiagaraActor_GetUINiagara Parms{};
+	Params::UIInturnAnimController_GetItemDefaultAlphaZero Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIInturnAnimController.IsPlaying
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIInturnAnimController::IsPlaying() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIInturnAnimController", "IsPlaying");
+
+	Params::UIInturnAnimController_IsPlaying Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIPrefabV2.LoadPrefab
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USceneComponent*                  InParent                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bForceUseRuntimeData                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    SetRelativeTransformToIdentity                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* ULGUIPrefabV2::LoadPrefab(class UObject* WorldContextObject, class USceneComponent* InParent, bool bForceUseRuntimeData, bool SetRelativeTransformToIdentity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUIPrefabV2", "LoadPrefab");
+
+	Params::LGUIPrefabV2_LoadPrefab Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InParent = InParent;
+	Parms.bForceUseRuntimeData = bForceUseRuntimeData;
+	Parms.SetRelativeTransformToIdentity = SetRelativeTransformToIdentity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUIPrefabV2.LoadPrefabWithTransform
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USceneComponent*                  InParent                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bForceUseRuntimeData                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FRotator                         Rotation                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FVector                          Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* ULGUIPrefabV2::LoadPrefabWithTransform(class UObject* WorldContextObject, class USceneComponent* InParent, bool bForceUseRuntimeData, const struct FVector& Location, const struct FRotator& Rotation, const struct FVector& Scale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUIPrefabV2", "LoadPrefabWithTransform");
+
+	Params::LGUIPrefabV2_LoadPrefabWithTransform Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InParent = InParent;
+	Parms.bForceUseRuntimeData = bForceUseRuntimeData;
+	Parms.Location = std::move(Location);
+	Parms.Rotation = std::move(Rotation);
+	Parms.Scale = std::move(Scale);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UINiagara.ActivateSystem
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Reset                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::ActivateSystem(bool Reset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "ActivateSystem");
+
+	Params::UINiagara_ActivateSystem Parms{};
+
+	Parms.Reset = Reset;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.DeactivateSystem
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINiagara::DeactivateSystem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "DeactivateSystem");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.GetIsActive
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUINiagara::GetIsActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "GetIsActive");
+
+	Params::UINiagara_GetIsActive Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UINiagara.GetNiagaraComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULGUINiagaraComponent*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUINiagaraComponent* UUINiagara::GetNiagaraComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "GetNiagaraComponent");
+
+	Params::UINiagara_GetNiagaraComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UINiagara.IsCircleClipEnable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUINiagara::IsCircleClipEnable()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "IsCircleClipEnable");
+
+	Params::UINiagara_IsCircleClipEnable Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UINiagara.ReinitializeSystem
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINiagara::ReinitializeSystem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "ReinitializeSystem");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.ResetOverrideParameters
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINiagara::ResetOverrideParameters()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "ResetOverrideParameters");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.ResetOverrideParametersAndActivate
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINiagara::ResetOverrideParametersAndActivate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "ResetOverrideParametersAndActivate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetCircleClipEnable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetCircleClipEnable(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetCircleClipEnable");
+
+	Params::UINiagara_SetCircleClipEnable Parms{};
+
+	Parms.Enable = Enable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetCircleClipParameters
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FCircleClipParameters            NewCircleClipParameters                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetCircleClipParameters(const struct FCircleClipParameters& NewCircleClipParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetCircleClipParameters");
+
+	Params::UINiagara_SetCircleClipParameters Parms{};
+
+	Parms.NewCircleClipParameters = std::move(NewCircleClipParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraEmitterCustomTexture
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           InEmitterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           InVariableName                                         (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture*                         InTexture                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraEmitterCustomTexture(const class FString& InEmitterName, const class FString& InVariableName, class UTexture* InTexture)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraEmitterCustomTexture");
+
+	Params::UINiagara_SetNiagaraEmitterCustomTexture Parms{};
+
+	Parms.InEmitterName = std::move(InEmitterName);
+	Parms.InVariableName = std::move(InVariableName);
+	Parms.InTexture = InTexture;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraEmitterFloatParam
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           InEmitterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           InVariableName                                         (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraEmitterFloatParam(const class FString& InEmitterName, const class FString& InVariableName, float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraEmitterFloatParam");
+
+	Params::UINiagara_SetNiagaraEmitterFloatParam Parms{};
+
+	Parms.InEmitterName = std::move(InEmitterName);
+	Parms.InVariableName = std::move(InVariableName);
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraEmitterVectorParam
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FString                           InEmitterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           InVariableName                                         (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector4                         InVector                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraEmitterVectorParam(const class FString& InEmitterName, const class FString& InVariableName, const struct FVector4& InVector)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraEmitterVectorParam");
+
+	Params::UINiagara_SetNiagaraEmitterVectorParam Parms{};
+
+	Parms.InEmitterName = std::move(InEmitterName);
+	Parms.InVariableName = std::move(InVariableName);
+	Parms.InVector = std::move(InVector);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraSystem
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UNiagaraSystem*                   InSystem                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraSystem(class UNiagaraSystem* InSystem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraSystem");
+
+	Params::UINiagara_SetNiagaraSystem Parms{};
+
+	Parms.InSystem = InSystem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraUIActive
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    active                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInResetNiagara                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraUIActive(bool active, bool bInResetNiagara)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraUIActive");
+
+	Params::UINiagara_SetNiagaraUIActive Parms{};
+
+	Parms.active = active;
+	Parms.bInResetNiagara = bInResetNiagara;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraVarFloat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           VarName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraVarFloat(const class FString& VarName, float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraVarFloat");
+
+	Params::UINiagara_SetNiagaraVarFloat Parms{};
+
+	Parms.VarName = std::move(VarName);
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraVarInt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           VarName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraVarInt(const class FString& VarName, int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraVarInt");
+
+	Params::UINiagara_SetNiagaraVarInt Parms{};
+
+	Parms.VarName = std::move(VarName);
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SetNiagaraVarLinearColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FString                           VarName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLinearColor                     Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINiagara::SetNiagaraVarLinearColor(const class FString& VarName, const struct FLinearColor& Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SetNiagaraVarLinearColor");
+
+	Params::UINiagara_SetNiagaraVarLinearColor Parms{};
+
+	Parms.VarName = std::move(VarName);
+	Parms.Value = std::move(Value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.SwitchToStop
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINiagara::SwitchToStop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "SwitchToStop");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.GetCircleClipParameters
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FCircleClipParameters            ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FCircleClipParameters UUINiagara::GetCircleClipParameters() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "GetCircleClipParameters");
+
+	Params::UINiagara_GetCircleClipParameters Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -17930,259 +20024,6 @@ float ULGUIScreenSpaceInteraction::GetHoldToDragTime() const
 }
 
 
-// Function LGUI.UIScrollbarComponent.ResetScrollbarDelegate
-// (Final, Native, Static, Private, BlueprintCallable)
-
-void UUIScrollbarComponent::ResetScrollbarDelegate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollbarComponent", "ResetScrollbarDelegate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollbarComponent.SetScrollbarDelegate
-// (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(class UUIScrollbarComponent* ScrollbarComponent, bool ativeOrInactive)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UUIScrollbarComponent::SetScrollbarDelegate(const TDelegate<void(class UUIScrollbarComponent* ScrollbarComponent, bool ativeOrInactive)>& Delegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollbarComponent", "SetScrollbarDelegate");
-
-	Params::UIScrollbarComponent_SetScrollbarDelegate Parms{};
-
-	Parms.Delegate = Delegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollbarComponent.ChangeSchedule
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ELGUINavigationDirection                InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollbarComponent::ChangeSchedule(ELGUINavigationDirection InDirection)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "ChangeSchedule");
-
-	Params::UIScrollbarComponent_ChangeSchedule Parms{};
-
-	Parms.InDirection = InDirection;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollbarComponent.RegisterSlideEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(float InFloat)>          InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIScrollbarComponent::RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "RegisterSlideEvent");
-
-	Params::UIScrollbarComponent_RegisterSlideEvent Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollbarComponent.SetSize
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InSize                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollbarComponent::SetSize(float InSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "SetSize");
-
-	Params::UIScrollbarComponent_SetSize Parms{};
-
-	Parms.InSize = InSize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollbarComponent.SetValue
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollbarComponent::SetValue(float InValue, bool FireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "SetValue");
-
-	Params::UIScrollbarComponent_SetValue Parms{};
-
-	Parms.InValue = InValue;
-	Parms.FireEvent = FireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollbarComponent.SetValueAndSize
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InSize                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollbarComponent::SetValueAndSize(float InValue, float InSize, bool FireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "SetValueAndSize");
-
-	Params::UIScrollbarComponent_SetValueAndSize Parms{};
-
-	Parms.InValue = InValue;
-	Parms.InSize = InSize;
-	Parms.FireEvent = FireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollbarComponent.UnregisterSlideEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIScrollbarComponent::UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "UnregisterSlideEvent");
-
-	Params::UIScrollbarComponent_UnregisterSlideEvent Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollbarComponent.GetSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIScrollbarComponent::GetSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "GetSize");
-
-	Params::UIScrollbarComponent_GetSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollbarComponent.GetValue
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIScrollbarComponent::GetValue() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollbarComponent", "GetValue");
-
-	Params::UIScrollbarComponent_GetValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function LGUI.LGUIScreenSpaceInteractionForNoneUI.SetClickThreshold
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -18333,22 +20174,377 @@ float ULGUIScreenSpaceInteractionForNoneUI::GetHoldToDragTime() const
 }
 
 
-// Function LGUI.UISliderComponent.RegisterSlideEvent
+// Function LGUI.UISafeZone.SetWidthAndHeightRadio
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Left                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Right                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Top                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Bottom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISafeZone::SetWidthAndHeightRadio(float Left, float Right, float Top, float Bottom)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISafeZone", "SetWidthAndHeightRadio");
+
+	Params::UISafeZone_SetWidthAndHeightRadio Parms{};
+
+	Parms.Left = Left;
+	Parms.Right = Right;
+	Parms.Top = Top;
+	Parms.Bottom = Bottom;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UI2DLineRendererBase.LineWidthTo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULTweener* UUI2DLineRendererBase::LineWidthTo(float endValue, float duration, float delay, ELTweenEase easeType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRendererBase", "LineWidthTo");
+
+	Params::UI2DLineRendererBase_LineWidthTo Parms{};
+
+	Parms.endValue = endValue;
+	Parms.duration = duration;
+	Parms.delay = delay;
+	Parms.easeType = easeType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UI2DLineRendererBase.SetEndType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUI2DLineRenderer_EndType               newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUI2DLineRendererBase::SetEndType(EUI2DLineRenderer_EndType newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRendererBase", "SetEndType");
+
+	Params::UI2DLineRendererBase_SetEndType Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UI2DLineRendererBase.SetLineWidth
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUI2DLineRendererBase::SetLineWidth(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRendererBase", "SetLineWidth");
+
+	Params::UI2DLineRendererBase_SetLineWidth Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UI2DLineRendererBase.SetLineWidthOffset
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUI2DLineRendererBase::SetLineWidthOffset(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRendererBase", "SetLineWidthOffset");
+
+	Params::UI2DLineRendererBase_SetLineWidthOffset Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UI2DLineRendererBase.GetEndType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUI2DLineRenderer_EndType               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUI2DLineRenderer_EndType UUI2DLineRendererBase::GetEndType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRendererBase", "GetEndType");
+
+	Params::UI2DLineRendererBase_GetEndType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UI2DLineRendererBase.GetLineWidth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUI2DLineRendererBase::GetLineWidth() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRendererBase", "GetLineWidth");
+
+	Params::UI2DLineRendererBase_GetLineWidth Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UI2DLineRendererBase.GetLineWidthOffset
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUI2DLineRendererBase::GetLineWidthOffset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRendererBase", "GetLineWidthOffset");
+
+	Params::UI2DLineRendererBase_GetLineWidthOffset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIPolygonLine.EndAngleTo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULTweener* UUIPolygonLine::EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygonLine", "EndAngleTo");
+
+	Params::UIPolygonLine_EndAngleTo Parms{};
+
+	Parms.endValue = endValue;
+	Parms.duration = duration;
+	Parms.delay = delay;
+	Parms.easeType = easeType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIPolygonLine.SetEndAngle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIPolygonLine::SetEndAngle(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygonLine", "SetEndAngle");
+
+	Params::UIPolygonLine_SetEndAngle Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIPolygonLine.SetSides
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIPolygonLine::SetSides(int32 value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygonLine", "SetSides");
+
+	Params::UIPolygonLine_SetSides Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIPolygonLine.SetStartAngle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIPolygonLine::SetStartAngle(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygonLine", "SetStartAngle");
+
+	Params::UIPolygonLine_SetStartAngle Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIPolygonLine.SetVertexOffsetArray
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(float InFloat)>          InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+// TArray<float>                           value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-struct FLGUIDelegateHandleWrapper UUISliderComponent::RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate)
+void UUIPolygonLine::SetVertexOffsetArray(const TArray<float>& value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "RegisterSlideEvent");
+		Func = Class->GetFunction("UIPolygonLine", "SetVertexOffsetArray");
 
-	Params::UISliderComponent_RegisterSlideEvent Parms{};
+	Params::UIPolygonLine_SetVertexOffsetArray Parms{};
 
-	Parms.InDelegate = InDelegate;
+	Parms.value = std::move(value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIPolygonLine.StartAngleTo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULTweener* UUIPolygonLine::StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygonLine", "StartAngleTo");
+
+	Params::UIPolygonLine_StartAngleTo Parms{};
+
+	Parms.endValue = endValue;
+	Parms.duration = duration;
+	Parms.delay = delay;
+	Parms.easeType = easeType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18361,156 +20557,19 @@ struct FLGUIDelegateHandleWrapper UUISliderComponent::RegisterSlideEvent(const T
 }
 
 
-// Function LGUI.UISliderComponent.SetMaxValue
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InMaxValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    KeepRelativeValue                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISliderComponent::SetMaxValue(float InMaxValue, bool KeepRelativeValue, bool FireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "SetMaxValue");
-
-	Params::UISliderComponent_SetMaxValue Parms{};
-
-	Parms.InMaxValue = InMaxValue;
-	Parms.KeepRelativeValue = KeepRelativeValue;
-	Parms.FireEvent = FireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISliderComponent.SetMinValue
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InMinValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    KeepRelativeValue                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISliderComponent::SetMinValue(float InMinValue, bool KeepRelativeValue, bool FireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "SetMinValue");
-
-	Params::UISliderComponent_SetMinValue Parms{};
-
-	Parms.InMinValue = InMinValue;
-	Parms.KeepRelativeValue = KeepRelativeValue;
-	Parms.FireEvent = FireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISliderComponent.SetProgressIncrement
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   incrementValue                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    needRound                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISliderComponent::SetProgressIncrement(float incrementValue, bool needRound)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "SetProgressIncrement");
-
-	Params::UISliderComponent_SetProgressIncrement Parms{};
-
-	Parms.incrementValue = incrementValue;
-	Parms.needRound = needRound;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISliderComponent.SetValue
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISliderComponent::SetValue(float InValue, bool FireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "SetValue");
-
-	Params::UISliderComponent_SetValue Parms{};
-
-	Parms.InValue = InValue;
-	Parms.FireEvent = FireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISliderComponent.UnregisterSlideEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUISliderComponent::UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "UnregisterSlideEvent");
-
-	Params::UISliderComponent_UnregisterSlideEvent Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISliderComponent.GetMaxValue
+// Function LGUI.UIPolygonLine.GetEndAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUISliderComponent::GetMaxValue() const
+float UUIPolygonLine::GetEndAngle() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "GetMaxValue");
+		Func = Class->GetFunction("UIPolygonLine", "GetEndAngle");
 
-	Params::UISliderComponent_GetMaxValue Parms{};
+	Params::UIPolygonLine_GetEndAngle Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18523,19 +20582,19 @@ float UUISliderComponent::GetMaxValue() const
 }
 
 
-// Function LGUI.UISliderComponent.GetMinValue
+// Function LGUI.UIPolygonLine.GetSides
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUISliderComponent::GetMinValue() const
+int32 UUIPolygonLine::GetSides() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "GetMinValue");
+		Func = Class->GetFunction("UIPolygonLine", "GetSides");
 
-	Params::UISliderComponent_GetMinValue Parms{};
+	Params::UIPolygonLine_GetSides Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18548,19 +20607,44 @@ float UUISliderComponent::GetMinValue() const
 }
 
 
-// Function LGUI.UISliderComponent.GetValue
+// Function LGUI.UIPolygonLine.GetStartAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUISliderComponent::GetValue() const
+float UUIPolygonLine::GetStartAngle() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISliderComponent", "GetValue");
+		Func = Class->GetFunction("UIPolygonLine", "GetStartAngle");
 
-	Params::UISliderComponent_GetValue Parms{};
+	Params::UIPolygonLine_GetStartAngle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIPolygonLine.GetVertexOffsetArray
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<float>                     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<float> UUIPolygonLine::GetVertexOffsetArray() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPolygonLine", "GetVertexOffsetArray");
+
+	Params::UIPolygonLine_GetVertexOffsetArray Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -18601,7 +20685,7 @@ class UTexture2D* ULGUISpriteData_BaseObject::GetAtlasTexture()
 // Function LGUI.LGUISpriteData_BaseObject.GetSpriteInfo
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// struct FLGUISpriteInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FLGUISpriteInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FLGUISpriteInfo ULGUISpriteData_BaseObject::GetSpriteInfo()
 {
@@ -18645,6 +20729,158 @@ bool ULGUISpriteData_BaseObject::IsIndividual() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UINavigationGroupComponent.ResetNavigateGroupDelegate
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UUINavigationGroupComponent::ResetNavigateGroupDelegate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UINavigationGroupComponent", "ResetNavigateGroupDelegate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINavigationGroupComponent.SetNavigateGroupDelegate
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class UUINavigationGroupComponent* NavigationGroupComponent, EUINavigationGroupMode mode)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUINavigationGroupComponent::SetNavigateGroupDelegate(const TDelegate<void(class UUINavigationGroupComponent* NavigationGroupComponent, EUINavigationGroupMode mode)>& Delegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UINavigationGroupComponent", "SetNavigateGroupDelegate");
+
+	Params::UINavigationGroupComponent_SetNavigateGroupDelegate Parms{};
+
+	Parms.Delegate = Delegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINavigationGroupComponent.SetNavigateTolerance
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                                   Tolerance                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINavigationGroupComponent::SetNavigateTolerance(const float Tolerance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UINavigationGroupComponent", "SetNavigateTolerance");
+
+	Params::UINavigationGroupComponent_SetNavigateTolerance Parms{};
+
+	Parms.Tolerance = Tolerance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINavigationGroupComponent.GetRootNavigationGrade
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class UUISelectableComponent*>   Result                                                 (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UUINavigationGroupComponent::GetRootNavigationGrade(TArray<class UUISelectableComponent*>* Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationGroupComponent", "GetRootNavigationGrade");
+
+	Params::UINavigationGroupComponent_GetRootNavigationGrade Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Result != nullptr)
+		*Result = std::move(Parms.Result);
+}
+
+
+// Function LGUI.UINavigationGroupComponent.Navigate
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINavigationGroupComponent::Navigate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationGroupComponent", "Navigate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINavigationGroupComponent.NavigateToNextGroup
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINavigationGroupComponent::NavigateToNextGroup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationGroupComponent", "NavigateToNextGroup");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINavigationGroupComponent.NavigateToPrevGroup
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINavigationGroupComponent::NavigateToPrevGroup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationGroupComponent", "NavigateToPrevGroup");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -18747,6 +20983,556 @@ bool ULGUISpriteData::HavePackingTag() const
 		Func = Class->GetFunction("LGUISpriteData", "HavePackingTag");
 
 	Params::LGUISpriteData_HavePackingTag Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBaseActor.ActivateAllChildrenInteraction
+// (Final, Native, Public, BlueprintCallable)
+
+void AUIBaseActor::ActivateAllChildrenInteraction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "ActivateAllChildrenInteraction");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.CleanIdleAnimSeqActorCache
+// (Final, Native, Public)
+
+void AUIBaseActor::CleanIdleAnimSeqActorCache()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "CleanIdleAnimSeqActorCache");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.ClearAllSequence
+// (Final, Native, Public)
+
+void AUIBaseActor::ClearAllSequence()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "ClearAllSequence");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.GetLoadStateOfSequenceByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ESequenceLoadState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ESequenceLoadState AUIBaseActor::GetLoadStateOfSequenceByKey(const class FString& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "GetLoadStateOfSequenceByKey");
+
+	Params::UIBaseActor_GetLoadStateOfSequenceByKey Parms{};
+
+	Parms.Key = std::move(Key);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBaseActor.GetSeqInfoByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSequenceInfo                    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FSequenceInfo AUIBaseActor::GetSeqInfoByKey(const class FString& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "GetSeqInfoByKey");
+
+	Params::UIBaseActor_GetSeqInfoByKey Parms{};
+
+	Parms.Key = std::move(Key);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBaseActor.GetSequencePlayContextOfKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USequencePlayContext*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USequencePlayContext* AUIBaseActor::GetSequencePlayContextOfKey(const class FString& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "GetSequencePlayContextOfKey");
+
+	Params::UIBaseActor_GetSequencePlayContextOfKey Parms{};
+
+	Parms.Key = std::move(Key);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBaseActor.GetSequencePlayerByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ALevelSequenceActor*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ALevelSequenceActor* AUIBaseActor::GetSequencePlayerByKey(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "GetSequencePlayerByKey");
+
+	Params::UIBaseActor_GetSequencePlayerByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBaseActor.LoadSequenceAssetAsyncByKey
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(class ULevelSequence* Sequence)>OnLoaded                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::LoadSequenceAssetAsyncByKey(const class FString& Key, const TDelegate<void(class ULevelSequence* Sequence)>& OnLoaded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "LoadSequenceAssetAsyncByKey");
+
+	Params::UIBaseActor_LoadSequenceAssetAsyncByKey Parms{};
+
+	Parms.Key = std::move(Key);
+	Parms.OnLoaded = OnLoaded;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.PauseSequenceByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::PauseSequenceByKey(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "PauseSequenceByKey");
+
+	Params::UIBaseActor_PauseSequenceByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.PlayLevelSequenceByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::PlayLevelSequenceByKey(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "PlayLevelSequenceByKey");
+
+	Params::UIBaseActor_PlayLevelSequenceByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.ReplaySequenceByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::ReplaySequenceByKey(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "ReplaySequenceByKey");
+
+	Params::UIBaseActor_ReplaySequenceByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.ResumeSequenceByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::ResumeSequenceByKey(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "ResumeSequenceByKey");
+
+	Params::UIBaseActor_ResumeSequenceByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.SequenceJumpToEnd
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FSoftObjectPath                  SoftPath                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::SequenceJumpToEnd(const struct FSoftObjectPath& SoftPath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "SequenceJumpToEnd");
+
+	Params::UIBaseActor_SequenceJumpToEnd Parms{};
+
+	Parms.SoftPath = std::move(SoftPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.SequenceJumpToSecondByKey
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FFrameTime                       Time                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::SequenceJumpToSecondByKey(const class FString& Name_0, const struct FFrameTime& Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "SequenceJumpToSecondByKey");
+
+	Params::UIBaseActor_SequenceJumpToSecondByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+	Parms.Time = std::move(Time);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.SequencePlayReverseByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::SequencePlayReverseByKey(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "SequencePlayReverseByKey");
+
+	Params::UIBaseActor_SequencePlayReverseByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.StopSequenceByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::StopSequenceByKey(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "StopSequenceByKey");
+
+	Params::UIBaseActor_StopSequenceByKey Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.ExecuteSequencePlayEvent
+// (Final, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// class FString                           sequenceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           eventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AUIBaseActor::ExecuteSequencePlayEvent(const class FString& sequenceName, const class FString& eventName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "ExecuteSequencePlayEvent");
+
+	Params::UIBaseActor_ExecuteSequencePlayEvent Parms{};
+
+	Parms.sequenceName = std::move(sequenceName);
+	Parms.eventName = std::move(eventName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBaseActor.GetUIItem
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUIItem*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIItem* AUIBaseActor::GetUIItem() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBaseActor", "GetUIItem");
+
+	Params::UIBaseActor_GetUIItem Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISizeControlByAspectRatio.SetAspectRatio
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISizeControlByAspectRatio::SetAspectRatio(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByAspectRatio", "SetAspectRatio");
+
+	Params::UISizeControlByAspectRatio_SetAspectRatio Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISizeControlByAspectRatio.SetControlMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISizeControlByAspectRatioMode         value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISizeControlByAspectRatio::SetControlMode(EUISizeControlByAspectRatioMode value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByAspectRatio", "SetControlMode");
+
+	Params::UISizeControlByAspectRatio_SetControlMode Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISizeControlByAspectRatio.GetAspectRatio
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUISizeControlByAspectRatio::GetAspectRatio() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByAspectRatio", "GetAspectRatio");
+
+	Params::UISizeControlByAspectRatio_GetAspectRatio Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISizeControlByAspectRatio.GetControlMode
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISizeControlByAspectRatioMode         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISizeControlByAspectRatioMode UUISizeControlByAspectRatio::GetControlMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISizeControlByAspectRatio", "GetControlMode");
+
+	Params::UISizeControlByAspectRatio_GetControlMode Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -19159,56 +21945,6 @@ ELGUIWorldSpaceInteractionSource ULGUIWorldSpaceInteractionForNoneUI::GetInterac
 }
 
 
-// Function LGUI.UISpriteSequencePlayer.SetSpriteSequence
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TArray<class ULGUISpriteData_BaseObject*>value                                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UUISpriteSequencePlayer::SetSpriteSequence(const TArray<class ULGUISpriteData_BaseObject*>& value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISpriteSequencePlayer", "SetSpriteSequence");
-
-	Params::UISpriteSequencePlayer_SetSpriteSequence Parms{};
-
-	Parms.value = std::move(value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISpriteSequencePlayer.GetSpriteSequence
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<class ULGUISpriteData_BaseObject*>ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-const TArray<class ULGUISpriteData_BaseObject*> UUISpriteSequencePlayer::GetSpriteSequence() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISpriteSequencePlayer", "GetSpriteSequence");
-
-	Params::UISpriteSequencePlayer_GetSpriteSequence Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function LGUI.SequencePlayContext.ExecutePlay
 // (Final, Native, Public, BlueprintCallable)
 
@@ -19415,6 +22151,2495 @@ void USequencerManager::ClearInvalidBind(class ALevelSequenceActor* SeqActor)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.SequencerManager.SetGlobalPlayRate
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewPlayRate                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USequencerManager::SetGlobalPlayRate(float NewPlayRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SequencerManager", "SetGlobalPlayRate");
+
+	Params::SequencerManager_SetGlobalPlayRate Parms{};
+
+	Parms.NewPlayRate = NewPlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.SequencerManager.GetGlobalPlayRate
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USequencerManager::GetGlobalPlayRate() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SequencerManager", "GetGlobalPlayRate");
+
+	Params::SequencerManager_GetGlobalPlayRate Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISprite.SetFillAmount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetFillAmount(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetFillAmount");
+
+	Params::UISprite_SetFillAmount Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetFillDirectionFlip
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetFillDirectionFlip(bool newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetFillDirectionFlip");
+
+	Params::UISprite_SetFillDirectionFlip Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetFillMethod
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISpriteFillMethod                     newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetFillMethod(EUISpriteFillMethod newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetFillMethod");
+
+	Params::UISprite_SetFillMethod Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetFillOrigin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// uint8                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetFillOrigin(uint8 newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetFillOrigin");
+
+	Params::UISprite_SetFillOrigin Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetOffsetX
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetOffsetX(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetOffsetX");
+
+	Params::UISprite_SetOffsetX Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetOffsetY
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetOffsetY(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetOffsetY");
+
+	Params::UISprite_SetOffsetY Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetSpriteType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISpriteType                           newType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetSpriteType(EUISpriteType newType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetSpriteType");
+
+	Params::UISprite_SetSpriteType Parms{};
+
+	Parms.newType = newType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetTileOffset
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FLinearColor                     In                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetTileOffset(const struct FLinearColor& In)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetTileOffset");
+
+	Params::UISprite_SetTileOffset Parms{};
+
+	Parms.In = std::move(In);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetTileX
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetTileX(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetTileX");
+
+	Params::UISprite_SetTileX Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.SetTileY
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISprite::SetTileY(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "SetTileY");
+
+	Params::UISprite_SetTileY Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISprite.GetFillAmount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUISprite::GetFillAmount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "GetFillAmount");
+
+	Params::UISprite_GetFillAmount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISprite.GetFillDirectionFlip
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUISprite::GetFillDirectionFlip() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "GetFillDirectionFlip");
+
+	Params::UISprite_GetFillDirectionFlip Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISprite.GetFillMethod
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISpriteFillMethod                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISpriteFillMethod UUISprite::GetFillMethod() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "GetFillMethod");
+
+	Params::UISprite_GetFillMethod Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISprite.GetFillOrigin
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 UUISprite::GetFillOrigin() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "GetFillOrigin");
+
+	Params::UISprite_GetFillOrigin Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISprite.GetSpriteType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISpriteType                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISpriteType UUISprite::GetSpriteType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISprite", "GetSpriteType");
+
+	Params::UISprite_GetSpriteType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISpineManager.SetGlobalPlayRate
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewPlayRate                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISpineManager::SetGlobalPlayRate(float NewPlayRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpineManager", "SetGlobalPlayRate");
+
+	Params::UISpineManager_SetGlobalPlayRate Parms{};
+
+	Parms.NewPlayRate = NewPlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISpineManager.GetGlobalPlayRate
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   NewPlayRate                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUISpineManager::GetGlobalPlayRate(float NewPlayRate) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpineManager", "GetGlobalPlayRate");
+
+	Params::UISpineManager_GetGlobalPlayRate Parms{};
+
+	Parms.NewPlayRate = NewPlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UI2DLineRaw.AdjustSize
+// (Final, Native, Public, BlueprintCallable)
+
+void UUI2DLineRaw::AdjustSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRaw", "AdjustSize");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UI2DLineRaw.SetPoints
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<struct FVector2D>                InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bAdjustSize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUI2DLineRaw::SetPoints(const TArray<struct FVector2D>& InPoints, bool bAdjustSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI2DLineRaw", "SetPoints");
+
+	Params::UI2DLineRaw_SetPoints Parms{};
+
+	Parms.InPoints = std::move(InPoints);
+	Parms.bAdjustSize = bAdjustSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.SpriteTransitionUtil.SetColorTweener
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UUISprite*                        Sprite                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSpriteTransitionOfState         Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class ULTweener*                        Tweener                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpriteTransitionUtil::SetColorTweener(class UUISprite* Sprite, const struct FSpriteTransitionOfState& Info, class ULTweener** Tweener)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SpriteTransitionUtil", "SetColorTweener");
+
+	Params::SpriteTransitionUtil_SetColorTweener Parms{};
+
+	Parms.Sprite = Sprite;
+	Parms.Info = std::move(Info);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Tweener != nullptr)
+		*Tweener = Parms.Tweener;
+}
+
+
+// Function LGUI.SpriteTransitionUtil.SetSpriteByTransitionInfo
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UUISprite*                        Sprite                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSpriteTransitionOfState         Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USpriteTransitionUtil::SetSpriteByTransitionInfo(class UUISprite* Sprite, const struct FSpriteTransitionOfState& Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SpriteTransitionUtil", "SetSpriteByTransitionInfo");
+
+	Params::SpriteTransitionUtil_SetSpriteByTransitionInfo Parms{};
+
+	Parms.Sprite = Sprite;
+	Parms.Info = std::move(Info);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.SpriteTransitionUtil.SetSpriteSize
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UUISprite*                        Sprite                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSnapSize                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpriteTransitionUtil::SetSpriteSize(class UUISprite* Sprite, bool bSnapSize, float Width, float Height)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SpriteTransitionUtil", "SetSpriteSize");
+
+	Params::SpriteTransitionUtil_SetSpriteSize Parms{};
+
+	Parms.Sprite = Sprite;
+	Parms.bSnapSize = bSnapSize;
+	Parms.Width = Width;
+	Parms.Height = Height;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIAndroidBackComponent.ClearAndroidBackComponent
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UUIAndroidBackComponent::ClearAndroidBackComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIAndroidBackComponent", "ClearAndroidBackComponent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIAndroidBackComponent.GetActiveAndroidBackComponentSize
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIAndroidBackComponent::GetActiveAndroidBackComponentSize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIAndroidBackComponent", "GetActiveAndroidBackComponentSize");
+
+	Params::UIAndroidBackComponent_GetActiveAndroidBackComponentSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIAndroidBackComponent.GetTopActiveAndroidBack
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UUIAndroidBackComponent*          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIAndroidBackComponent* UUIAndroidBackComponent::GetTopActiveAndroidBack()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIAndroidBackComponent", "GetTopActiveAndroidBack");
+
+	Params::UIAndroidBackComponent_GetTopActiveAndroidBack Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIArtText.CheckTextValid
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIArtText::CheckTextValid()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "CheckTextValid");
+
+	Params::UIArtText_CheckTextValid Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIArtText.SetArtTextData
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class ULGUIArtTextData*                 NewArtTextData                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIArtText::SetArtTextData(class ULGUIArtTextData* NewArtTextData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "SetArtTextData");
+
+	Params::UIArtText_SetArtTextData Parms{};
+
+	Parms.NewArtTextData = NewArtTextData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIArtText.SetHorizontalAlign
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// EUIArtTextHorizontalAlign               NewHorizontalAlign                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIArtText::SetHorizontalAlign(const EUIArtTextHorizontalAlign NewHorizontalAlign)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "SetHorizontalAlign");
+
+	Params::UIArtText_SetHorizontalAlign Parms{};
+
+	Parms.NewHorizontalAlign = NewHorizontalAlign;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIArtText.SetIsWidthControlledByText
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIArtText::SetIsWidthControlledByText(const bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "SetIsWidthControlledByText");
+
+	Params::UIArtText_SetIsWidthControlledByText Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIArtText.SetSize
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewSize                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIArtText::SetSize(const float NewSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "SetSize");
+
+	Params::UIArtText_SetSize Parms{};
+
+	Parms.NewSize = NewSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIArtText.SetSpace
+// (Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        NewSpace                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIArtText::SetSpace(const struct FVector2D& NewSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "SetSpace");
+
+	Params::UIArtText_SetSpace Parms{};
+
+	Parms.NewSpace = std::move(NewSpace);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIArtText.SetText
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           NewText                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIArtText::SetText(const class FString& NewText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "SetText");
+
+	Params::UIArtText_SetText Parms{};
+
+	Parms.NewText = std::move(NewText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIArtText.GetArtTextData
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULGUIArtTextData*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUIArtTextData* UUIArtText::GetArtTextData() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "GetArtTextData");
+
+	Params::UIArtText_GetArtTextData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIArtText.GetHorizontalAlign
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUIArtTextHorizontalAlign               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUIArtTextHorizontalAlign UUIArtText::GetHorizontalAlign() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "GetHorizontalAlign");
+
+	Params::UIArtText_GetHorizontalAlign Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIArtText.GetIsWidthControlledByText
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIArtText::GetIsWidthControlledByText() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "GetIsWidthControlledByText");
+
+	Params::UIArtText_GetIsWidthControlledByText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIArtText.GetSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIArtText::GetSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "GetSize");
+
+	Params::UIArtText_GetSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIArtText.GetSpace
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIArtText::GetSpace() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "GetSpace");
+
+	Params::UIArtText_GetSpace Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIArtText.GetText
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UUIArtText::GetText() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIArtText", "GetText");
+
+	Params::UIArtText_GetText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISpriteAnimator.ResetSpriteImporter
+// (Final, Native, Public, BlueprintCallable)
+
+void UUISpriteAnimator::ResetSpriteImporter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpriteAnimator", "ResetSpriteImporter");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISpriteAnimator.SetCurFrame
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newCurFrame                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISpriteAnimator::SetCurFrame(float newCurFrame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpriteAnimator", "SetCurFrame");
+
+	Params::UISpriteAnimator_SetCurFrame Parms{};
+
+	Parms.newCurFrame = newCurFrame;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISpriteAnimator.GetCurFrame
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUISpriteAnimator::GetCurFrame() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpriteAnimator", "GetCurFrame");
+
+	Params::UISpriteAnimator_GetCurFrame Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIAudioManager.PlayAudioEventByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           EventKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIAudioManager::PlayAudioEventByKey(const class FString& EventKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIAudioManager", "PlayAudioEventByKey");
+
+	Params::UIAudioManager_PlayAudioEventByKey Parms{};
+
+	Parms.EventKey = std::move(EventKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIAudioManager.StopAudioEventAll
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIAudioManager::StopAudioEventAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIAudioManager", "StopAudioEventAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIAudioManager.StopAudioEventAllOnThisActor
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIAudioManager::StopAudioEventAllOnThisActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIAudioManager", "StopAudioEventAllOnThisActor");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIAudioManager.StopAudioEventByKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           EventKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIAudioManager::StopAudioEventByKey(const class FString& EventKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIAudioManager", "StopAudioEventByKey");
+
+	Params::UIAudioManager_StopAudioEventByKey Parms{};
+
+	Parms.EventKey = std::move(EventKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIPostProcessRenderable.SetMaskTexture
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTexture2D*                       newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIPostProcessRenderable::SetMaskTexture(class UTexture2D* newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPostProcessRenderable", "SetMaskTexture");
+
+	Params::UIPostProcessRenderable_SetMaskTexture Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIPostProcessRenderable.GetMaskTexture
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTexture2D*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTexture2D* UUIPostProcessRenderable::GetMaskTexture() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIPostProcessRenderable", "GetMaskTexture");
+
+	Params::UIPostProcessRenderable_GetMaskTexture Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBackgroundBlur.SetApplyAlphaToBlur
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBackgroundBlur::SetApplyAlphaToBlur(bool newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "SetApplyAlphaToBlur");
+
+	Params::UIBackgroundBlur_SetApplyAlphaToBlur Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBackgroundBlur.SetBlurStrength
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBackgroundBlur::SetBlurStrength(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "SetBlurStrength");
+
+	Params::UIBackgroundBlur_SetBlurStrength Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBackgroundBlur.SetMaxDownSampleLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBackgroundBlur::SetMaxDownSampleLevel(int32 newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "SetMaxDownSampleLevel");
+
+	Params::UIBackgroundBlur_SetMaxDownSampleLevel Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBackgroundBlur.SetStrengthTexture
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTexture2D*                       newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBackgroundBlur::SetStrengthTexture(class UTexture2D* newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "SetStrengthTexture");
+
+	Params::UIBackgroundBlur_SetStrengthTexture Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBackgroundBlur.GetApplyAlphaToBlur
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIBackgroundBlur::GetApplyAlphaToBlur() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "GetApplyAlphaToBlur");
+
+	Params::UIBackgroundBlur_GetApplyAlphaToBlur Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBackgroundBlur.GetBlurStrength
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIBackgroundBlur::GetBlurStrength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "GetBlurStrength");
+
+	Params::UIBackgroundBlur_GetBlurStrength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBackgroundBlur.GetMaxDownSampleLevel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIBackgroundBlur::GetMaxDownSampleLevel() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "GetMaxDownSampleLevel");
+
+	Params::UIBackgroundBlur_GetMaxDownSampleLevel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBackgroundBlur.GetStrengthTexture
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTexture2D*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTexture2D* UUIBackgroundBlur::GetStrengthTexture() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundBlur", "GetStrengthTexture");
+
+	Params::UIBackgroundBlur_GetStrengthTexture Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBackgroundPixelate.SetApplyAlphaToStrength
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBackgroundPixelate::SetApplyAlphaToStrength(bool newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundPixelate", "SetApplyAlphaToStrength");
+
+	Params::UIBackgroundPixelate_SetApplyAlphaToStrength Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBackgroundPixelate.SetPixelateStrength
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBackgroundPixelate::SetPixelateStrength(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundPixelate", "SetPixelateStrength");
+
+	Params::UIBackgroundPixelate_SetPixelateStrength Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBackgroundPixelate.GetApplyAlphaToStrength
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIBackgroundPixelate::GetApplyAlphaToStrength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundPixelate", "GetApplyAlphaToStrength");
+
+	Params::UIBackgroundPixelate_GetApplyAlphaToStrength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIBackgroundPixelate.GetPixelateStrength
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIBackgroundPixelate::GetPixelateStrength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBackgroundPixelate", "GetPixelateStrength");
+
+	Params::UIBackgroundPixelate_GetPixelateStrength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISpriteSequencePlayer.SetSpriteSequence
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<class ULGUISpriteData_BaseObject*>value                                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UUISpriteSequencePlayer::SetSpriteSequence(const TArray<class ULGUISpriteData_BaseObject*>& value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpriteSequencePlayer", "SetSpriteSequence");
+
+	Params::UISpriteSequencePlayer_SetSpriteSequence Parms{};
+
+	Parms.value = std::move(value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISpriteSequencePlayer.GetSpriteSequence
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<class ULGUISpriteData_BaseObject*>ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+const TArray<class ULGUISpriteData_BaseObject*> UUISpriteSequencePlayer::GetSpriteSequence() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpriteSequencePlayer", "GetSpriteSequence");
+
+	Params::UISpriteSequencePlayer_GetSpriteSequence Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.LGUICreateGeometryHelper.AddTriangle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   index0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   index1                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   index2                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUICreateGeometryHelper::AddTriangle(int32 index0, int32 index1, int32 index2)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddTriangle");
+
+	Params::LGUICreateGeometryHelper_AddTriangle Parms{};
+
+	Parms.index0 = index0;
+	Parms.index1 = index1;
+	Parms.index2 = index2;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUICreateGeometryHelper.AddVertexFull
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector                          position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FColor                           color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        uv0                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        uv1                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        uv2                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        uv3                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          normal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          tangent                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUICreateGeometryHelper::AddVertexFull(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0, const struct FVector2D& uv1, const struct FVector2D& uv2, const struct FVector2D& uv3, const struct FVector& normal, const struct FVector& tangent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddVertexFull");
+
+	Params::LGUICreateGeometryHelper_AddVertexFull Parms{};
+
+	Parms.position = std::move(position);
+	Parms.color = std::move(color);
+	Parms.uv0 = std::move(uv0);
+	Parms.uv1 = std::move(uv1);
+	Parms.uv2 = std::move(uv2);
+	Parms.uv3 = std::move(uv3);
+	Parms.normal = std::move(normal);
+	Parms.tangent = std::move(tangent);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUICreateGeometryHelper.AddVertexSimple
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector                          position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FColor                           color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        uv0                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUICreateGeometryHelper::AddVertexSimple(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddVertexSimple");
+
+	Params::LGUICreateGeometryHelper_AddVertexSimple Parms{};
+
+	Parms.position = std::move(position);
+	Parms.color = std::move(color);
+	Parms.uv0 = std::move(uv0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUICreateGeometryHelper.AddVertexStruct
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FLGUIGeometryVertex              vertex                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ULGUICreateGeometryHelper::AddVertexStruct(const struct FLGUIGeometryVertex& vertex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddVertexStruct");
+
+	Params::LGUICreateGeometryHelper_AddVertexStruct Parms{};
+
+	Parms.vertex = std::move(vertex);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUIUpdateGeometryHelper.BeginUpdateVertices
+// (Final, Native, Public, BlueprintCallable)
+
+void ULGUIUpdateGeometryHelper::BeginUpdateVertices()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUIUpdateGeometryHelper", "BeginUpdateVertices");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUIUpdateGeometryHelper.EndUpdateVertices
+// (Final, Native, Public, BlueprintCallable)
+
+void ULGUIUpdateGeometryHelper::EndUpdateVertices()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUIUpdateGeometryHelper", "EndUpdateVertices");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextAdditionalUVModifier.SetAdditionalUV
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   AdditionalUVChannel                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        UV                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITextAdditionalUVModifier::SetAdditionalUV(int32 AdditionalUVChannel, const struct FVector2D& UV)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextAdditionalUVModifier", "SetAdditionalUV");
+
+	Params::UITextAdditionalUVModifier_SetAdditionalUV Parms{};
+
+	Parms.AdditionalUVChannel = AdditionalUVChannel;
+	Parms.UV = std::move(UV);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBatchGeometryRenderable_BP.MarkRebuildGeometry_BP
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIBatchGeometryRenderable_BP::MarkRebuildGeometry_BP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "MarkRebuildGeometry_BP");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBatchGeometryRenderable_BP.MarkVertexChanged_BP
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIBatchGeometryRenderable_BP::MarkVertexChanged_BP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "MarkVertexChanged_BP");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIBatchGeometryRenderable_BP.OnBeforeCreateOrUpdateGeometry_BP
+// (Event, Protected, BlueprintEvent)
+
+void UUIBatchGeometryRenderable_BP::OnBeforeCreateOrUpdateGeometry_BP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "OnBeforeCreateOrUpdateGeometry_BP");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function LGUI.UIBatchGeometryRenderable_BP.OnCreateGeometry_BP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ULGUICreateGeometryHelper*        InCreateGeometryHelper                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBatchGeometryRenderable_BP::OnCreateGeometry_BP(class ULGUICreateGeometryHelper* InCreateGeometryHelper)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "OnCreateGeometry_BP");
+
+	Params::UIBatchGeometryRenderable_BP_OnCreateGeometry_BP Parms{};
+
+	Parms.InCreateGeometryHelper = InCreateGeometryHelper;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UIBatchGeometryRenderable_BP.OnUpdateGeometry_BP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ULGUIUpdateGeometryHelper*        InUpdateGoemetryHelper                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InVertexPositionChanged                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InVertexUVChanged                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InVertexColorChanged                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIBatchGeometryRenderable_BP::OnUpdateGeometry_BP(class ULGUIUpdateGeometryHelper* InUpdateGoemetryHelper, bool InVertexPositionChanged, bool InVertexUVChanged, bool InVertexColorChanged)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "OnUpdateGeometry_BP");
+
+	Params::UIBatchGeometryRenderable_BP_OnUpdateGeometry_BP Parms{};
+
+	Parms.InUpdateGoemetryHelper = InUpdateGoemetryHelper;
+	Parms.InVertexPositionChanged = InVertexPositionChanged;
+	Parms.InVertexUVChanged = InVertexUVChanged;
+	Parms.InVertexColorChanged = InVertexColorChanged;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.TextureTransitionUtil.SetTextureByTransitionInfo
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UUITexture*                       Texture                                                (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTextureTransitionOfState        Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UTextureTransitionUtil::SetTextureByTransitionInfo(class UUITexture* Texture, const struct FTextureTransitionOfState& Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TextureTransitionUtil", "SetTextureByTransitionInfo");
+
+	Params::TextureTransitionUtil_SetTextureByTransitionInfo Parms{};
+
+	Parms.Texture = Texture;
+	Parms.Info = std::move(Info);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.TextureTransitionUtil.SetTextureSize
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UUITexture*                       Texture                                                (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsSnapSize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextureTransitionUtil::SetTextureSize(class UUITexture* Texture, bool bIsSnapSize, float Width, float Height)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TextureTransitionUtil", "SetTextureSize");
+
+	Params::TextureTransitionUtil_SetTextureSize Parms{};
+
+	Parms.Texture = Texture;
+	Parms.bIsSnapSize = bIsSnapSize;
+	Parms.Width = Width;
+	Parms.Height = Height;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIComboBox.CreateComboBoxFromArray
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class FString>                   InItemNameArray                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(int32 InSelectIndex, const class FString& InSelectItem)>InCallback                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// class AUIBaseActor*                     InParentActor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InSelectedItemIndex                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EComboBoxPosition                       InPosition                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIComboBox*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIComboBox* UUIComboBox::CreateComboBoxFromArray(const TArray<class FString>& InItemNameArray, const TDelegate<void(int32 InSelectIndex, const class FString& InSelectItem)>& InCallback, class AUIBaseActor* InParentActor, int32 InSelectedItemIndex, EComboBoxPosition InPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIComboBox", "CreateComboBoxFromArray");
+
+	Params::UIComboBox_CreateComboBoxFromArray Parms{};
+
+	Parms.InItemNameArray = std::move(InItemNameArray);
+	Parms.InCallback = InCallback;
+	Parms.InParentActor = InParentActor;
+	Parms.InSelectedItemIndex = InSelectedItemIndex;
+	Parms.InPosition = InPosition;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITextureBase.OnDynamicAtlasSlotBuilt
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FDynamicAtlasSlotManagedHandle   ManagedHandle                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUITextureBase::OnDynamicAtlasSlotBuilt(const struct FDynamicAtlasSlotManagedHandle& ManagedHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextureBase", "OnDynamicAtlasSlotBuilt");
+
+	Params::UITextureBase_OnDynamicAtlasSlotBuilt Parms{};
+
+	Parms.ManagedHandle = std::move(ManagedHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextureBase.SetDynamicAtlasTextureAsync
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FString                           InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSoftObjectPath                  InSoftObjectPath                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITextureBase::SetDynamicAtlasTextureAsync(const class FString& InAtlasTag, const struct FSoftObjectPath& InSoftObjectPath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextureBase", "SetDynamicAtlasTextureAsync");
+
+	Params::UITextureBase_SetDynamicAtlasTextureAsync Parms{};
+
+	Parms.InAtlasTag = std::move(InAtlasTag);
+	Parms.InSoftObjectPath = std::move(InSoftObjectPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextureBase.SetSizeFromTexture
+// (Final, Native, Public, BlueprintCallable)
+
+void UUITextureBase::SetSizeFromTexture()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextureBase", "SetSizeFromTexture");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextureBase.SetTexture
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UTexture*                         newTexture                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITextureBase::SetTexture(class UTexture* newTexture)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextureBase", "SetTexture");
+
+	Params::UITextureBase_SetTexture Parms{};
+
+	Parms.newTexture = newTexture;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextureBase.GetTexture
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTexture*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTexture* UUITextureBase::GetTexture() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextureBase", "GetTexture");
+
+	Params::UITextureBase_GetTexture Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.SetCurFrame
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newCurFrame                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetCurFrame(float newCurFrame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetCurFrame");
+
+	Params::UITexture_SetCurFrame Parms{};
+
+	Parms.newCurFrame = newCurFrame;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetFillAmount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetFillAmount(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetFillAmount");
+
+	Params::UITexture_SetFillAmount Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetFillDirectionFlip
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetFillDirectionFlip(bool newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetFillDirectionFlip");
+
+	Params::UITexture_SetFillDirectionFlip Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetFillMethod
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUISpriteFillMethod                     newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetFillMethod(EUISpriteFillMethod newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetFillMethod");
+
+	Params::UITexture_SetFillMethod Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetFillOrigin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// uint8                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetFillOrigin(uint8 newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetFillOrigin");
+
+	Params::UITexture_SetFillOrigin Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetSpriteData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FLGUISpriteInfo                  newSpriteData                                          (Parm, NativeAccessSpecifierPublic)
+
+void UUITexture::SetSpriteData(const struct FLGUISpriteInfo& newSpriteData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetSpriteData");
+
+	Params::UITexture_SetSpriteData Parms{};
+
+	Parms.newSpriteData = std::move(newSpriteData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetTextureData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ULGUITextureData*                 NewTextureData                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetTextureData(class ULGUITextureData* NewTextureData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetTextureData");
+
+	Params::UITexture_SetTextureData Parms{};
+
+	Parms.NewTextureData = NewTextureData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetTextureType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EUITextureType                          newType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetTextureType(EUITextureType newType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetTextureType");
+
+	Params::UITexture_SetTextureType Parms{};
+
+	Parms.newType = newType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.SetUVRect
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector4                         newUVRect                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITexture::SetUVRect(const struct FVector4& newUVRect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "SetUVRect");
+
+	Params::UITexture_SetUVRect Parms{};
+
+	Parms.newUVRect = std::move(newUVRect);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITexture.GetFillAmount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUITexture::GetFillAmount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetFillAmount");
+
+	Params::UITexture_GetFillAmount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.GetFillDirectionFlip
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUITexture::GetFillDirectionFlip() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetFillDirectionFlip");
+
+	Params::UITexture_GetFillDirectionFlip Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.GetFillMethod
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUISpriteFillMethod                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUISpriteFillMethod UUITexture::GetFillMethod() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetFillMethod");
+
+	Params::UITexture_GetFillMethod Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.GetFillOrigin
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 UUITexture::GetFillOrigin() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetFillOrigin");
+
+	Params::UITexture_GetFillOrigin Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.GetSpriteData
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FLGUISpriteInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FLGUISpriteInfo UUITexture::GetSpriteData() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetSpriteData");
+
+	Params::UITexture_GetSpriteData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.GetTextureData
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULGUITextureData*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULGUITextureData* UUITexture::GetTextureData() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetTextureData");
+
+	Params::UITexture_GetTextureData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.GetTextureType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EUITextureType                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EUITextureType UUITexture::GetTextureType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetTextureType");
+
+	Params::UITexture_GetTextureType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITexture.GetUVRect
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector4                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector4 UUITexture::GetUVRect() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITexture", "GetUVRect");
+
+	Params::UITexture_GetUVRect Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -20065,6 +25290,31 @@ void UUIText::SetFilterAnoRichTag(bool bFilter)
 }
 
 
+// Function LGUI.UIText.SetFilterHyperLinks
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewFilterHyperLinks                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIText::SetFilterHyperLinks(bool bNewFilterHyperLinks)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "SetFilterHyperLinks");
+
+	Params::UIText_SetFilterHyperLinks Parms{};
+
+	Parms.bNewFilterHyperLinks = bNewFilterHyperLinks;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.UIText.SetFont
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -20080,6 +25330,31 @@ void UUIText::SetFont(class ULGUIFontData_BaseObject* newFont)
 	Params::UIText_SetFont Parms{};
 
 	Parms.newFont = newFont;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIText.SetFontOutlineColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FColor                           NewOutlineColor                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIText::SetFontOutlineColor(const struct FColor& NewOutlineColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "SetFontOutlineColor");
+
+	Params::UIText_SetFontOutlineColor Parms{};
+
+	Parms.NewOutlineColor = std::move(NewOutlineColor);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21044,2177 +26319,19 @@ bool UUIText::IsFilterAnoRichTag() const
 }
 
 
-// Function LGUI.UI2DLineRaw.AdjustSize
-// (Final, Native, Public, BlueprintCallable)
-
-void UUI2DLineRaw::AdjustSize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRaw", "AdjustSize");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UI2DLineRaw.SetPoints
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<struct FVector2D>                InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bAdjustSize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUI2DLineRaw::SetPoints(const TArray<struct FVector2D>& InPoints, bool bAdjustSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI2DLineRaw", "SetPoints");
-
-	Params::UI2DLineRaw_SetPoints Parms{};
-
-	Parms.InPoints = std::move(InPoints);
-	Parms.bAdjustSize = bAdjustSize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIAndroidBackComponent.ClearAndroidBackComponent
-// (Final, Native, Static, Public, BlueprintCallable)
-
-void UUIAndroidBackComponent::ClearAndroidBackComponent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIAndroidBackComponent", "ClearAndroidBackComponent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIAndroidBackComponent.GetActiveAndroidBackComponentSize
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UUIAndroidBackComponent::GetActiveAndroidBackComponentSize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIAndroidBackComponent", "GetActiveAndroidBackComponentSize");
-
-	Params::UIAndroidBackComponent_GetActiveAndroidBackComponentSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIAndroidBackComponent.GetTopActiveAndroidBack
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UUIAndroidBackComponent*          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUIAndroidBackComponent* UUIAndroidBackComponent::GetTopActiveAndroidBack()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIAndroidBackComponent", "GetTopActiveAndroidBack");
-
-	Params::UIAndroidBackComponent_GetTopActiveAndroidBack Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIArtText.CheckTextValid
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIArtText::CheckTextValid()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "CheckTextValid");
-
-	Params::UIArtText_CheckTextValid Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIArtText.SetArtTextData
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class ULGUIArtTextData*                 NewArtTextData                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIArtText::SetArtTextData(class ULGUIArtTextData* NewArtTextData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "SetArtTextData");
-
-	Params::UIArtText_SetArtTextData Parms{};
-
-	Parms.NewArtTextData = NewArtTextData;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIArtText.SetHorizontalAlign
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// EUIArtTextHorizontalAlign               NewHorizontalAlign                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIArtText::SetHorizontalAlign(const EUIArtTextHorizontalAlign NewHorizontalAlign)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "SetHorizontalAlign");
-
-	Params::UIArtText_SetHorizontalAlign Parms{};
-
-	Parms.NewHorizontalAlign = NewHorizontalAlign;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIArtText.SetIsWidthControlledByText
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIArtText::SetIsWidthControlledByText(const bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "SetIsWidthControlledByText");
-
-	Params::UIArtText_SetIsWidthControlledByText Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIArtText.SetSize
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewSize                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIArtText::SetSize(const float NewSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "SetSize");
-
-	Params::UIArtText_SetSize Parms{};
-
-	Parms.NewSize = NewSize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIArtText.SetSpace
-// (Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                        NewSpace                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIArtText::SetSpace(const struct FVector2D& NewSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "SetSpace");
-
-	Params::UIArtText_SetSpace Parms{};
-
-	Parms.NewSpace = std::move(NewSpace);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIArtText.SetText
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           NewText                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIArtText::SetText(const class FString& NewText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "SetText");
-
-	Params::UIArtText_SetText Parms{};
-
-	Parms.NewText = std::move(NewText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIArtText.GetArtTextData
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULGUIArtTextData*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULGUIArtTextData* UUIArtText::GetArtTextData() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "GetArtTextData");
-
-	Params::UIArtText_GetArtTextData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIArtText.GetHorizontalAlign
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUIArtTextHorizontalAlign               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUIArtTextHorizontalAlign UUIArtText::GetHorizontalAlign() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "GetHorizontalAlign");
-
-	Params::UIArtText_GetHorizontalAlign Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIArtText.GetIsWidthControlledByText
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIArtText::GetIsWidthControlledByText() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "GetIsWidthControlledByText");
-
-	Params::UIArtText_GetIsWidthControlledByText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIArtText.GetSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIArtText::GetSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "GetSize");
-
-	Params::UIArtText_GetSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIArtText.GetSpace
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UUIArtText::GetSpace() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "GetSpace");
-
-	Params::UIArtText_GetSpace Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIArtText.GetText
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UUIArtText::GetText() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIArtText", "GetText");
-
-	Params::UIArtText_GetText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextureBase.OnDynamicAtlasSlotBuilt
-// (Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FDynamicAtlasSlotManagedHandle   ManagedHandle                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UUITextureBase::OnDynamicAtlasSlotBuilt(const struct FDynamicAtlasSlotManagedHandle& ManagedHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextureBase", "OnDynamicAtlasSlotBuilt");
-
-	Params::UITextureBase_OnDynamicAtlasSlotBuilt Parms{};
-
-	Parms.ManagedHandle = std::move(ManagedHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextureBase.SetDynamicAtlasTextureAsync
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FString                           InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSoftObjectPath                  InSoftObjectPath                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITextureBase::SetDynamicAtlasTextureAsync(const class FString& InAtlasTag, const struct FSoftObjectPath& InSoftObjectPath)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextureBase", "SetDynamicAtlasTextureAsync");
-
-	Params::UITextureBase_SetDynamicAtlasTextureAsync Parms{};
-
-	Parms.InAtlasTag = std::move(InAtlasTag);
-	Parms.InSoftObjectPath = std::move(InSoftObjectPath);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextureBase.SetSizeFromTexture
-// (Final, Native, Public, BlueprintCallable)
-
-void UUITextureBase::SetSizeFromTexture()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextureBase", "SetSizeFromTexture");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextureBase.SetTexture
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UTexture*                         newTexture                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITextureBase::SetTexture(class UTexture* newTexture)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextureBase", "SetTexture");
-
-	Params::UITextureBase_SetTexture Parms{};
-
-	Parms.newTexture = newTexture;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextureBase.GetTexture
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UTexture*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTexture* UUITextureBase::GetTexture() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextureBase", "GetTexture");
-
-	Params::UITextureBase_GetTexture Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPostProcessRenderable.SetMaskTexture
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTexture2D*                       newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPostProcessRenderable::SetMaskTexture(class UTexture2D* newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPostProcessRenderable", "SetMaskTexture");
-
-	Params::UIPostProcessRenderable_SetMaskTexture Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPostProcessRenderable.GetMaskTexture
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UTexture2D*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTexture2D* UUIPostProcessRenderable::GetMaskTexture() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPostProcessRenderable", "GetMaskTexture");
-
-	Params::UIPostProcessRenderable_GetMaskTexture Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBackgroundBlur.SetApplyAlphaToBlur
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBackgroundBlur::SetApplyAlphaToBlur(bool newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "SetApplyAlphaToBlur");
-
-	Params::UIBackgroundBlur_SetApplyAlphaToBlur Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBackgroundBlur.SetBlurStrength
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBackgroundBlur::SetBlurStrength(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "SetBlurStrength");
-
-	Params::UIBackgroundBlur_SetBlurStrength Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBackgroundBlur.SetMaxDownSampleLevel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBackgroundBlur::SetMaxDownSampleLevel(int32 newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "SetMaxDownSampleLevel");
-
-	Params::UIBackgroundBlur_SetMaxDownSampleLevel Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBackgroundBlur.SetStrengthTexture
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTexture2D*                       newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBackgroundBlur::SetStrengthTexture(class UTexture2D* newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "SetStrengthTexture");
-
-	Params::UIBackgroundBlur_SetStrengthTexture Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBackgroundBlur.GetApplyAlphaToBlur
+// Function LGUI.UIText.IsFilterHyperLinks
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UUIBackgroundBlur::GetApplyAlphaToBlur() const
+bool UUIText::IsFilterHyperLinks() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "GetApplyAlphaToBlur");
+		Func = Class->GetFunction("UIText", "IsFilterHyperLinks");
 
-	Params::UIBackgroundBlur_GetApplyAlphaToBlur Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBackgroundBlur.GetBlurStrength
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIBackgroundBlur::GetBlurStrength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "GetBlurStrength");
-
-	Params::UIBackgroundBlur_GetBlurStrength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBackgroundBlur.GetMaxDownSampleLevel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UUIBackgroundBlur::GetMaxDownSampleLevel() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "GetMaxDownSampleLevel");
-
-	Params::UIBackgroundBlur_GetMaxDownSampleLevel Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBackgroundBlur.GetStrengthTexture
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UTexture2D*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTexture2D* UUIBackgroundBlur::GetStrengthTexture() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundBlur", "GetStrengthTexture");
-
-	Params::UIBackgroundBlur_GetStrengthTexture Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextInputComponent.ActivateInputText
-// (Final, Native, Public, BlueprintCallable)
-
-void UUITextInputComponent::ActivateInputText()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "ActivateInputText");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.ClearCustomInputTypeEvent
-// (Final, Native, Public, BlueprintCallable)
-
-void UUITextInputComponent::ClearCustomInputTypeEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "ClearCustomInputTypeEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.DeactivateInputText
-// (Final, Native, Public, BlueprintCallable)
-
-void UUITextInputComponent::DeactivateInputText()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "DeactivateInputText");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.IsInputActive
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUITextInputComponent::IsInputActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "IsInputActive");
-
-	Params::UITextInputComponent_IsInputActive Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextInputComponent.RegisterInputActivateEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(bool InActivate)>        InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUITextInputComponent::RegisterInputActivateEvent(const TDelegate<void(bool InActivate)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "RegisterInputActivateEvent");
-
-	Params::UITextInputComponent_RegisterInputActivateEvent Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextInputComponent.RegisterSubmitEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(const class FString& InString)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUITextInputComponent::RegisterSubmitEvent(const TDelegate<void(const class FString& InString)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "RegisterSubmitEvent");
-
-	Params::UITextInputComponent_RegisterSubmitEvent Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextInputComponent.RegisterValueChangeEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(const class FString& InString)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUITextInputComponent::RegisterValueChangeEvent(const TDelegate<void(const class FString& InString)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "RegisterValueChangeEvent");
-
-	Params::UITextInputComponent_RegisterValueChangeEvent Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextInputComponent.SetCustomInputTypeFunction
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(const class FString& InString)>InFunction                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UUITextInputComponent::SetCustomInputTypeFunction(const TDelegate<void(const class FString& InString)>& InFunction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "SetCustomInputTypeFunction");
-
-	Params::UITextInputComponent_SetCustomInputTypeFunction Parms{};
-
-	Parms.InFunction = InFunction;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.SetInputType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ELGUITextInputType                      newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITextInputComponent::SetInputType(ELGUITextInputType newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "SetInputType");
-
-	Params::UITextInputComponent_SetInputType Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.SetText
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           InText                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InFireEvent                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITextInputComponent::SetText(const class FString& InText, bool InFireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "SetText");
-
-	Params::UITextInputComponent_SetText Parms{};
-
-	Parms.InText = std::move(InText);
-	Parms.InFireEvent = InFireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.UnregisterInputActivateEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUITextInputComponent::UnregisterInputActivateEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "UnregisterInputActivateEvent");
-
-	Params::UITextInputComponent_UnregisterInputActivateEvent Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.UnregisterSubmitEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUITextInputComponent::UnregisterSubmitEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "UnregisterSubmitEvent");
-
-	Params::UITextInputComponent_UnregisterSubmitEvent Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.UnregisterValueChangeEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUITextInputComponent::UnregisterValueChangeEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "UnregisterValueChangeEvent");
-
-	Params::UITextInputComponent_UnregisterValueChangeEvent Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextInputComponent.GetInputType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ELGUITextInputType                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ELGUITextInputType UUITextInputComponent::GetInputType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "GetInputType");
-
-	Params::UITextInputComponent_GetInputType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextInputComponent.GetText
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UUITextInputComponent::GetText() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "GetText");
-
-	Params::UITextInputComponent_GetText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITextInputComponent.GetTextComponent
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UUIText*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUIText* UUITextInputComponent::GetTextComponent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextInputComponent", "GetTextComponent");
-
-	Params::UITextInputComponent_GetTextComponent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.SpriteTransitionUtil.SetSpriteByTransitionInfo
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UUISprite*                        Sprite                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSpriteTransitionOfState         Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USpriteTransitionUtil::SetSpriteByTransitionInfo(class UUISprite* Sprite, const struct FSpriteTransitionOfState& Info)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SpriteTransitionUtil", "SetSpriteByTransitionInfo");
-
-	Params::SpriteTransitionUtil_SetSpriteByTransitionInfo Parms{};
-
-	Parms.Sprite = Sprite;
-	Parms.Info = std::move(Info);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.SpriteTransitionUtil.SetSpriteSize
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UUISprite*                        Sprite                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSnapSize                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpriteTransitionUtil::SetSpriteSize(class UUISprite* Sprite, bool bSnapSize, float Width, float Height)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SpriteTransitionUtil", "SetSpriteSize");
-
-	Params::SpriteTransitionUtil_SetSpriteSize Parms{};
-
-	Parms.Sprite = Sprite;
-	Parms.bSnapSize = bSnapSize;
-	Parms.Width = Width;
-	Parms.Height = Height;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBackgroundPixelate.SetApplyAlphaToStrength
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBackgroundPixelate::SetApplyAlphaToStrength(bool newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundPixelate", "SetApplyAlphaToStrength");
-
-	Params::UIBackgroundPixelate_SetApplyAlphaToStrength Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBackgroundPixelate.SetPixelateStrength
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBackgroundPixelate::SetPixelateStrength(float newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundPixelate", "SetPixelateStrength");
-
-	Params::UIBackgroundPixelate_SetPixelateStrength Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBackgroundPixelate.GetApplyAlphaToStrength
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIBackgroundPixelate::GetApplyAlphaToStrength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundPixelate", "GetApplyAlphaToStrength");
-
-	Params::UIBackgroundPixelate_GetApplyAlphaToStrength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIBackgroundPixelate.GetPixelateStrength
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIBackgroundPixelate::GetPixelateStrength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBackgroundPixelate", "GetPixelateStrength");
-
-	Params::UIBackgroundPixelate_GetPixelateStrength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIViewTweenParams.GetTweenAlpha
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIViewTweenParams::GetTweenAlpha() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIViewTweenParams", "GetTweenAlpha");
-
-	Params::UIViewTweenParams_GetTweenAlpha Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIViewTweenParams.GetTweenSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIViewTweenParams::GetTweenSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIViewTweenParams", "GetTweenSize");
-
-	Params::UIViewTweenParams_GetTweenSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIViewTweenParams.GetTweenTime
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIViewTweenParams::GetTweenTime() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIViewTweenParams", "GetTweenTime");
-
-	Params::UIViewTweenParams_GetTweenTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIViewTweenParams.GetViewNameBlackList
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<class FString> UUIViewTweenParams::GetViewNameBlackList() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIViewTweenParams", "GetViewNameBlackList");
-
-	Params::UIViewTweenParams_GetViewNameBlackList Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.LGUICreateGeometryHelper.AddTriangle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   index0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   index1                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   index2                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULGUICreateGeometryHelper::AddTriangle(int32 index0, int32 index1, int32 index2)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddTriangle");
-
-	Params::LGUICreateGeometryHelper_AddTriangle Parms{};
-
-	Parms.index0 = index0;
-	Parms.index1 = index1;
-	Parms.index2 = index2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.LGUICreateGeometryHelper.AddVertexFull
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector                          position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColor                           color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        uv0                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        uv1                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        uv2                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        uv3                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          normal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          tangent                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULGUICreateGeometryHelper::AddVertexFull(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0, const struct FVector2D& uv1, const struct FVector2D& uv2, const struct FVector2D& uv3, const struct FVector& normal, const struct FVector& tangent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddVertexFull");
-
-	Params::LGUICreateGeometryHelper_AddVertexFull Parms{};
-
-	Parms.position = std::move(position);
-	Parms.color = std::move(color);
-	Parms.uv0 = std::move(uv0);
-	Parms.uv1 = std::move(uv1);
-	Parms.uv2 = std::move(uv2);
-	Parms.uv3 = std::move(uv3);
-	Parms.normal = std::move(normal);
-	Parms.tangent = std::move(tangent);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.LGUICreateGeometryHelper.AddVertexSimple
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector                          position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColor                           color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        uv0                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULGUICreateGeometryHelper::AddVertexSimple(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddVertexSimple");
-
-	Params::LGUICreateGeometryHelper_AddVertexSimple Parms{};
-
-	Parms.position = std::move(position);
-	Parms.color = std::move(color);
-	Parms.uv0 = std::move(uv0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.LGUICreateGeometryHelper.AddVertexStruct
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FLGUIGeometryVertex              vertex                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ULGUICreateGeometryHelper::AddVertexStruct(const struct FLGUIGeometryVertex& vertex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUICreateGeometryHelper", "AddVertexStruct");
-
-	Params::LGUICreateGeometryHelper_AddVertexStruct Parms{};
-
-	Parms.vertex = std::move(vertex);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.LGUIUpdateGeometryHelper.BeginUpdateVertices
-// (Final, Native, Public, BlueprintCallable)
-
-void ULGUIUpdateGeometryHelper::BeginUpdateVertices()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIUpdateGeometryHelper", "BeginUpdateVertices");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.LGUIUpdateGeometryHelper.EndUpdateVertices
-// (Final, Native, Public, BlueprintCallable)
-
-void ULGUIUpdateGeometryHelper::EndUpdateVertices()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LGUIUpdateGeometryHelper", "EndUpdateVertices");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextureTransitionComponent.SetAllStateTexture
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTexture*                         NewTexture                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITextureTransitionComponent::SetAllStateTexture(class UTexture* NewTexture)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextureTransitionComponent", "SetAllStateTexture");
-
-	Params::UITextureTransitionComponent_SetAllStateTexture Parms{};
-
-	Parms.NewTexture = NewTexture;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITextureTransitionComponent.SetStateTexture
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISelectableSelectionState             State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTexture*                         NewTexture                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITextureTransitionComponent::SetStateTexture(EUISelectableSelectionState State, class UTexture* NewTexture)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITextureTransitionComponent", "SetStateTexture");
-
-	Params::UITextureTransitionComponent_SetStateTexture Parms{};
-
-	Parms.State = State;
-	Parms.NewTexture = NewTexture;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBatchGeometryRenderable_BP.MarkRebuildGeometry_BP
-// (Final, Native, Public, BlueprintCallable)
-
-void UUIBatchGeometryRenderable_BP::MarkRebuildGeometry_BP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "MarkRebuildGeometry_BP");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBatchGeometryRenderable_BP.MarkVertexChanged_BP
-// (Final, Native, Public, BlueprintCallable)
-
-void UUIBatchGeometryRenderable_BP::MarkVertexChanged_BP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "MarkVertexChanged_BP");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIBatchGeometryRenderable_BP.OnBeforeCreateOrUpdateGeometry_BP
-// (Event, Protected, BlueprintEvent)
-
-void UUIBatchGeometryRenderable_BP::OnBeforeCreateOrUpdateGeometry_BP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "OnBeforeCreateOrUpdateGeometry_BP");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function LGUI.UIBatchGeometryRenderable_BP.OnCreateGeometry_BP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ULGUICreateGeometryHelper*        InCreateGeometryHelper                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBatchGeometryRenderable_BP::OnCreateGeometry_BP(class ULGUICreateGeometryHelper* InCreateGeometryHelper)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "OnCreateGeometry_BP");
-
-	Params::UIBatchGeometryRenderable_BP_OnCreateGeometry_BP Parms{};
-
-	Parms.InCreateGeometryHelper = InCreateGeometryHelper;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UIBatchGeometryRenderable_BP.OnUpdateGeometry_BP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ULGUIUpdateGeometryHelper*        InUpdateGoemetryHelper                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InVertexPositionChanged                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InVertexUVChanged                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InVertexColorChanged                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIBatchGeometryRenderable_BP::OnUpdateGeometry_BP(class ULGUIUpdateGeometryHelper* InUpdateGoemetryHelper, bool InVertexPositionChanged, bool InVertexUVChanged, bool InVertexColorChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIBatchGeometryRenderable_BP", "OnUpdateGeometry_BP");
-
-	Params::UIBatchGeometryRenderable_BP_OnUpdateGeometry_BP Parms{};
-
-	Parms.InUpdateGoemetryHelper = InUpdateGoemetryHelper;
-	Parms.InVertexPositionChanged = InVertexPositionChanged;
-	Parms.InVertexUVChanged = InVertexUVChanged;
-	Parms.InVertexColorChanged = InVertexColorChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UIComboBox.CreateComboBoxFromArray
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<class FString>                   InItemNameArray                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 InSelectIndex, const class FString& InSelectItem)>InCallback                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class AUIBaseActor*                     InParentActor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InSelectedItemIndex                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EComboBoxPosition                       InPosition                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UUIComboBox*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUIComboBox* UUIComboBox::CreateComboBoxFromArray(const TArray<class FString>& InItemNameArray, const TDelegate<void(int32 InSelectIndex, const class FString& InSelectItem)>& InCallback, class AUIBaseActor* InParentActor, int32 InSelectedItemIndex, EComboBoxPosition InPosition)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIComboBox", "CreateComboBoxFromArray");
-
-	Params::UIComboBox_CreateComboBoxFromArray Parms{};
-
-	Parms.InItemNameArray = std::move(InItemNameArray);
-	Parms.InCallback = InCallback;
-	Parms.InParentActor = InParentActor;
-	Parms.InSelectedItemIndex = InSelectedItemIndex;
-	Parms.InPosition = InPosition;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.SetAlign
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ELGUILayoutAlignmentType                value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIVerticalLayout::SetAlign(ELGUILayoutAlignmentType value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "SetAlign");
-
-	Params::UIVerticalLayout_SetAlign Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIVerticalLayout.SetExpendChildrenHeight
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIVerticalLayout::SetExpendChildrenHeight(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "SetExpendChildrenHeight");
-
-	Params::UIVerticalLayout_SetExpendChildrenHeight Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIVerticalLayout.SetExpendChildrenWidth
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIVerticalLayout::SetExpendChildrenWidth(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "SetExpendChildrenWidth");
-
-	Params::UIVerticalLayout_SetExpendChildrenWidth Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIVerticalLayout.SetHeightFitToChildren
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIVerticalLayout::SetHeightFitToChildren(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "SetHeightFitToChildren");
-
-	Params::UIVerticalLayout_SetHeightFitToChildren Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIVerticalLayout.SetPadding
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FMargin                          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIVerticalLayout::SetPadding(const struct FMargin& value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "SetPadding");
-
-	Params::UIVerticalLayout_SetPadding Parms{};
-
-	Parms.value = std::move(value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIVerticalLayout.SetSpacing
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIVerticalLayout::SetSpacing(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "SetSpacing");
-
-	Params::UIVerticalLayout_SetSpacing Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIVerticalLayout.SetWidthFitToChildren
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIVerticalLayout::SetWidthFitToChildren(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "SetWidthFitToChildren");
-
-	Params::UIVerticalLayout_SetWidthFitToChildren Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetActuralRange
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIVerticalLayout::GetActuralRange() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetActuralRange");
-
-	Params::UIVerticalLayout_GetActuralRange Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetAlign
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ELGUILayoutAlignmentType                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ELGUILayoutAlignmentType UUIVerticalLayout::GetAlign() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetAlign");
-
-	Params::UIVerticalLayout_GetAlign Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetExpendChildrenHeight
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIVerticalLayout::GetExpendChildrenHeight() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetExpendChildrenHeight");
-
-	Params::UIVerticalLayout_GetExpendChildrenHeight Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetExpendChildrenWidth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIVerticalLayout::GetExpendChildrenWidth() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetExpendChildrenWidth");
-
-	Params::UIVerticalLayout_GetExpendChildrenWidth Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetHeightFitToChildren
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIVerticalLayout::GetHeightFitToChildren() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetHeightFitToChildren");
-
-	Params::UIVerticalLayout_GetHeightFitToChildren Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetPadding
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FMargin                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FMargin UUIVerticalLayout::GetPadding() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetPadding");
-
-	Params::UIVerticalLayout_GetPadding Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetSpacing
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIVerticalLayout::GetSpacing() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetSpacing");
-
-	Params::UIVerticalLayout_GetSpacing Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIVerticalLayout.GetWidthFitToChildren
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIVerticalLayout::GetWidthFitToChildren() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIVerticalLayout", "GetWidthFitToChildren");
-
-	Params::UIVerticalLayout_GetWidthFitToChildren Parms{};
+	Params::UIText_IsFilterHyperLinks Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23377,21 +26494,21 @@ int32 UUICustomDepthStencilMask::GetStencilValue() const
 }
 
 
-// Function LGUI.UITexture.SetCurFrame
+// Function LGUI.UILayoutWithAnimation.CancelAnimation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   newCurFrame                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    callComplete                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUITexture::SetCurFrame(float newCurFrame)
+void UUILayoutWithAnimation::CancelAnimation(bool callComplete)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetCurFrame");
+		Func = Class->GetFunction("UILayoutWithAnimation", "CancelAnimation");
 
-	Params::UITexture_SetCurFrame Parms{};
+	Params::UILayoutWithAnimation_CancelAnimation Parms{};
 
-	Parms.newCurFrame = newCurFrame;
+	Parms.callComplete = callComplete;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23402,21 +26519,21 @@ void UUITexture::SetCurFrame(float newCurFrame)
 }
 
 
-// Function LGUI.UITexture.SetFillAmount
+// Function LGUI.UILayoutWithAnimation.SetAnimationDuration
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUITexture::SetFillAmount(float newValue)
+void UUILayoutWithAnimation::SetAnimationDuration(float value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetFillAmount");
+		Func = Class->GetFunction("UILayoutWithAnimation", "SetAnimationDuration");
 
-	Params::UITexture_SetFillAmount Parms{};
+	Params::UILayoutWithAnimation_SetAnimationDuration Parms{};
 
-	Parms.newValue = newValue;
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23427,21 +26544,21 @@ void UUITexture::SetFillAmount(float newValue)
 }
 
 
-// Function LGUI.UITexture.SetFillDirectionFlip
+// Function LGUI.UILayoutWithAnimation.SetAnimationType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUILayoutChangePositionAnimationType    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUITexture::SetFillDirectionFlip(bool newValue)
+void UUILayoutWithAnimation::SetAnimationType(EUILayoutChangePositionAnimationType value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetFillDirectionFlip");
+		Func = Class->GetFunction("UILayoutWithAnimation", "SetAnimationType");
 
-	Params::UITexture_SetFillDirectionFlip Parms{};
+	Params::UILayoutWithAnimation_SetAnimationType Parms{};
 
-	Parms.newValue = newValue;
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23452,169 +26569,19 @@ void UUITexture::SetFillDirectionFlip(bool newValue)
 }
 
 
-// Function LGUI.UITexture.SetFillMethod
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISpriteFillMethod                     newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITexture::SetFillMethod(EUISpriteFillMethod newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetFillMethod");
-
-	Params::UITexture_SetFillMethod Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITexture.SetFillOrigin
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// uint8                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITexture::SetFillOrigin(uint8 newValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetFillOrigin");
-
-	Params::UITexture_SetFillOrigin Parms{};
-
-	Parms.newValue = newValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITexture.SetSpriteData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FLGUISpriteInfo                  newSpriteData                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUITexture::SetSpriteData(const struct FLGUISpriteInfo& newSpriteData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetSpriteData");
-
-	Params::UITexture_SetSpriteData Parms{};
-
-	Parms.newSpriteData = std::move(newSpriteData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITexture.SetTextureData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ULGUITextureData*                 NewTextureData                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITexture::SetTextureData(class ULGUITextureData* NewTextureData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetTextureData");
-
-	Params::UITexture_SetTextureData Parms{};
-
-	Parms.NewTextureData = NewTextureData;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITexture.SetTextureType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUITextureType                          newType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITexture::SetTextureType(EUITextureType newType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetTextureType");
-
-	Params::UITexture_SetTextureType Parms{};
-
-	Parms.newType = newType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITexture.SetUVRect
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector4                         newUVRect                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUITexture::SetUVRect(const struct FVector4& newUVRect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "SetUVRect");
-
-	Params::UITexture_SetUVRect Parms{};
-
-	Parms.newUVRect = std::move(newUVRect);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UITexture.GetFillAmount
+// Function LGUI.UILayoutWithAnimation.GetAnimationDuration
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUITexture::GetFillAmount() const
+float UUILayoutWithAnimation::GetAnimationDuration() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetFillAmount");
+		Func = Class->GetFunction("UILayoutWithAnimation", "GetAnimationDuration");
 
-	Params::UITexture_GetFillAmount Parms{};
+	Params::UILayoutWithAnimation_GetAnimationDuration Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23627,19 +26594,19 @@ float UUITexture::GetFillAmount() const
 }
 
 
-// Function LGUI.UITexture.GetFillDirectionFlip
+// Function LGUI.UILayoutWithAnimation.GetAnimationType
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUILayoutChangePositionAnimationType    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UUITexture::GetFillDirectionFlip() const
+EUILayoutChangePositionAnimationType UUILayoutWithAnimation::GetAnimationType() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetFillDirectionFlip");
+		Func = Class->GetFunction("UILayoutWithAnimation", "GetAnimationType");
 
-	Params::UITexture_GetFillDirectionFlip Parms{};
+	Params::UILayoutWithAnimation_GetAnimationType Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23647,246 +26614,6 @@ bool UUITexture::GetFillDirectionFlip() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITexture.GetFillMethod
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISpriteFillMethod                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISpriteFillMethod UUITexture::GetFillMethod() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetFillMethod");
-
-	Params::UITexture_GetFillMethod Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITexture.GetFillOrigin
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 UUITexture::GetFillOrigin() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetFillOrigin");
-
-	Params::UITexture_GetFillOrigin Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITexture.GetSpriteData
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FLGUISpriteInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUISpriteInfo UUITexture::GetSpriteData() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetSpriteData");
-
-	Params::UITexture_GetSpriteData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITexture.GetTextureData
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULGUITextureData*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULGUITextureData* UUITexture::GetTextureData() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetTextureData");
-
-	Params::UITexture_GetTextureData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITexture.GetTextureType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUITextureType                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUITextureType UUITexture::GetTextureType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetTextureType");
-
-	Params::UITexture_GetTextureType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UITexture.GetUVRect
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector4                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector4 UUITexture::GetUVRect() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UITexture", "GetUVRect");
-
-	Params::UITexture_GetUVRect Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.ViewportUITexture.GetSceneCapture
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class USceneCaptureComponent2D*         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USceneCaptureComponent2D* UViewportUITexture::GetSceneCapture() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ViewportUITexture", "GetSceneCapture");
-
-	Params::ViewportUITexture_GetSceneCapture Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.ViewportUITexture.ViewPointToWorld
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        InViewPoint                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutWorldLocation                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutWorldDirection                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UViewportUITexture::ViewPointToWorld(const struct FVector2D& InViewPoint, struct FVector* OutWorldLocation, struct FVector* OutWorldDirection) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ViewportUITexture", "ViewPointToWorld");
-
-	Params::ViewportUITexture_ViewPointToWorld Parms{};
-
-	Parms.InViewPoint = std::move(InViewPoint);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutWorldLocation != nullptr)
-		*OutWorldLocation = std::move(Parms.OutWorldLocation);
-
-	if (OutWorldDirection != nullptr)
-		*OutWorldDirection = std::move(Parms.OutWorldDirection);
-}
-
-
-// Function LGUI.ViewportUITexture.WorldToViewPoint
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          InWorldLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        OutViewPoint                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UViewportUITexture::WorldToViewPoint(const struct FVector& InWorldLocation, struct FVector2D* OutViewPoint) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ViewportUITexture", "WorldToViewPoint");
-
-	Params::ViewportUITexture_WorldToViewPoint Parms{};
-
-	Parms.InWorldLocation = std::move(InWorldLocation);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutViewPoint != nullptr)
-		*OutViewPoint = std::move(Parms.OutViewPoint);
 
 	return Parms.ReturnValue;
 }
@@ -23987,151 +26714,19 @@ void UUICustomMesh::ReadStaticMeshData(class UStaticMesh* MeshComponent)
 }
 
 
-// Function LGUI.UIToggleComponent.RegisterToggleEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(bool InBool)>            InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLGUIDelegateHandleWrapper UUIToggleComponent::RegisterToggleEvent(const TDelegate<void(bool InBool)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "RegisterToggleEvent");
-
-	Params::UIToggleComponent_RegisterToggleEvent Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIToggleComponent.SetState
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    newState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    fireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIToggleComponent::SetState(bool newState, bool fireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "SetState");
-
-	Params::UIToggleComponent_SetState Parms{};
-
-	Parms.newState = newState;
-	Parms.fireEvent = fireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIToggleComponent.SetToggleGroup
+// Function LGUI.ViewportUITextureActor.GetUITexture
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UUIToggleGroupComponent*          InGroupComp                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UViewportUITexture*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIToggleComponent::SetToggleGroup(class UUIToggleGroupComponent* InGroupComp)
+class UViewportUITexture* AViewportUITextureActor::GetUITexture()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "SetToggleGroup");
+		Func = Class->GetFunction("ViewportUITextureActor", "GetUITexture");
 
-	Params::UIToggleComponent_SetToggleGroup Parms{};
-
-	Parms.InGroupComp = InGroupComp;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIToggleComponent.SetValue
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    fireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIToggleComponent::SetValue(bool newValue, bool fireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "SetValue");
-
-	Params::UIToggleComponent_SetValue Parms{};
-
-	Parms.newValue = newValue;
-	Parms.fireEvent = fireEvent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIToggleComponent.UnregisterToggleEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUIToggleComponent::UnregisterToggleEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "UnregisterToggleEvent");
-
-	Params::UIToggleComponent_UnregisterToggleEvent Parms{};
-
-	Parms.InDelegateHandle = std::move(InDelegateHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIToggleComponent.GetIndexInGroup
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UUIToggleComponent::GetIndexInGroup() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "GetIndexInGroup");
-
-	Params::UIToggleComponent_GetIndexInGroup Parms{};
+	Params::ViewportUITextureActor_GetUITexture Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24144,19 +26739,21 @@ int32 UUIToggleComponent::GetIndexInGroup() const
 }
 
 
-// Function LGUI.UIToggleComponent.GetState
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function LGUI.UIDirectMeshRenderable.SetCustormUIMaterial
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInterface*               NewMaterial                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UUIToggleComponent::GetState() const
+void UUIDirectMeshRenderable::SetCustormUIMaterial(class UMaterialInterface* NewMaterial)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "GetState");
+		Func = Class->GetFunction("UIDirectMeshRenderable", "SetCustormUIMaterial");
 
-	Params::UIToggleComponent_GetState Parms{};
+	Params::UIDirectMeshRenderable_SetCustormUIMaterial Parms{};
+
+	Parms.NewMaterial = NewMaterial;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24164,58 +26761,6 @@ bool UUIToggleComponent::GetState() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIToggleComponent.GetToggleGroupActor
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* UUIToggleComponent::GetToggleGroupActor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "GetToggleGroupActor");
-
-	Params::UIToggleComponent_GetToggleGroupActor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIToggleComponent.GetValue
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIToggleComponent::GetValue() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIToggleComponent", "GetValue");
-
-	Params::UIToggleComponent_GetValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -24257,344 +26802,19 @@ void UUIDraggableComponent::NotifyNavigateToPrev()
 }
 
 
-// Function LGUI.UIScrollViewComponent.GetDecelerationRateDegbug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIScrollViewComponent::GetDecelerationRateDegbug()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetDecelerationRateDegbug");
-
-	Params::UIScrollViewComponent_GetDecelerationRateDegbug Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetElasticityDegbug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIScrollViewComponent::GetElasticityDegbug()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetElasticityDegbug");
-
-	Params::UIScrollViewComponent_GetElasticityDegbug Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetScrollOutOfRangeModulusDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIScrollViewComponent::GetScrollOutOfRangeModulusDebug()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetScrollOutOfRangeModulusDebug");
-
-	Params::UIScrollViewComponent_GetScrollOutOfRangeModulusDebug Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetScrollSensitivityDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIScrollViewComponent::GetScrollSensitivityDebug()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetScrollSensitivityDebug");
-
-	Params::UIScrollViewComponent_GetScrollSensitivityDebug Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetScrollUseDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIScrollViewComponent::GetScrollUseDebug()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "GetScrollUseDebug");
-
-	Params::UIScrollViewComponent_GetScrollUseDebug Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetDecelerationRateDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetDecelerationRateDebug(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetDecelerationRateDebug");
-
-	Params::UIScrollViewComponent_SetDecelerationRateDebug Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetElasticityDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetElasticityDebug(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetElasticityDebug");
-
-	Params::UIScrollViewComponent_SetElasticityDebug Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetScrollOutOfRangeModulusDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetScrollOutOfRangeModulusDebug(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetScrollOutOfRangeModulusDebug");
-
-	Params::UIScrollViewComponent_SetScrollOutOfRangeModulusDebug Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetScrollSensitivityDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetScrollSensitivityDebug(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetScrollSensitivityDebug");
-
-	Params::UIScrollViewComponent_SetScrollSensitivityDebug Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetScrollUseDebug
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetScrollUseDebug(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIScrollViewComponent", "SetScrollUseDebug");
-
-	Params::UIScrollViewComponent_SetScrollUseDebug Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetCanScroll
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bCanScroll                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetCanScroll(bool bCanScroll)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetCanScroll");
-
-	Params::UIScrollViewComponent_SetCanScroll Parms{};
-
-	Parms.bCanScroll = bCanScroll;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetHorizontal
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetHorizontal(bool Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetHorizontal");
-
-	Params::UIScrollViewComponent_SetHorizontal Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetRayCastTargetForScrollView
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    newRayCastTarget                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetRayCastTargetForScrollView(bool newRayCastTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetRayCastTargetForScrollView");
-
-	Params::UIScrollViewComponent_SetRayCastTargetForScrollView Parms{};
-
-	Parms.newRayCastTarget = newRayCastTarget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetScrollProgress
-// (Final, Native, Public, BlueprintCallable)
+// Function LGUI.UIInputAdaptZone.OnMouseMoved
+// (Final, Native, Protected)
 // Parameters:
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIScrollViewComponent::SetScrollProgress(float Value)
+void UUIInputAdaptZone::OnMouseMoved(float Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetScrollProgress");
+		Func = Class->GetFunction("UIInputAdaptZone", "OnMouseMoved");
 
-	Params::UIScrollViewComponent_SetScrollProgress Parms{};
+	Params::UIInputAdaptZone_OnMouseMoved Parms{};
 
 	Parms.Value = Value;
 
@@ -24607,21 +26827,21 @@ void UUIScrollViewComponent::SetScrollProgress(float Value)
 }
 
 
-// Function LGUI.UIScrollViewComponent.SetScrollProgressIncrement
-// (Final, Native, Public, BlueprintCallable)
+// Function LGUI.UIInputAdaptZone.OnPressAnyKey
+// (Final, Native, Protected, HasOutParams)
 // Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKey                             Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIScrollViewComponent::SetScrollProgressIncrement(float Value)
+void UUIInputAdaptZone::OnPressAnyKey(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetScrollProgressIncrement");
+		Func = Class->GetFunction("UIInputAdaptZone", "OnPressAnyKey");
 
-	Params::UIScrollViewComponent_SetScrollProgressIncrement Parms{};
+	Params::UIInputAdaptZone_OnPressAnyKey Parms{};
 
-	Parms.Value = Value;
+	Parms.Key = std::move(Key);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24632,21 +26852,23 @@ void UUIScrollViewComponent::SetScrollProgressIncrement(float Value)
 }
 
 
-// Function LGUI.UIScrollViewComponent.SetScrollValue
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Function LGUI.UIInputAdaptZone.OnTouchBegin
+// (Final, Native, Protected, HasDefaults)
 // Parameters:
-// struct FVector2D                        Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ETouchIndex                             TouchIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIScrollViewComponent::SetScrollValue(const struct FVector2D& Value)
+void UUIInputAdaptZone::OnTouchBegin(ETouchIndex TouchIndex, const struct FVector& Location)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetScrollValue");
+		Func = Class->GetFunction("UIInputAdaptZone", "OnTouchBegin");
 
-	Params::UIScrollViewComponent_SetScrollValue Parms{};
+	Params::UIInputAdaptZone_OnTouchBegin Parms{};
 
-	Parms.Value = std::move(Value);
+	Parms.TouchIndex = TouchIndex;
+	Parms.Location = std::move(Location);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24654,1086 +26876,6 @@ void UUIScrollViewComponent::SetScrollValue(const struct FVector2D& Value)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetUnderSizeScrollEnabled
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetUnderSizeScrollEnabled(bool bEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetUnderSizeScrollEnabled");
-
-	Params::UIScrollViewComponent_SetUnderSizeScrollEnabled Parms{};
-
-	Parms.bEnabled = bEnabled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetVelocity
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetVelocity(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetVelocity");
-
-	Params::UIScrollViewComponent_SetVelocity Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.SetVertical
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewComponent::SetVertical(bool Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "SetVertical");
-
-	Params::UIScrollViewComponent_SetVertical Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.StopMovement
-// (Final, Native, Public, BlueprintCallable)
-
-void UUIScrollViewComponent::StopMovement()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "StopMovement");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewComponent.CheckContentUnderSize
-// (Final, Native, Protected, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIScrollViewComponent::CheckContentUnderSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "CheckContentUnderSize");
-
-	Params::UIScrollViewComponent_CheckContentUnderSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetCanScroll
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIScrollViewComponent::GetCanScroll() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "GetCanScroll");
-
-	Params::UIScrollViewComponent_GetCanScroll Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetContent
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AUIBaseActor* UUIScrollViewComponent::GetContent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "GetContent");
-
-	Params::UIScrollViewComponent_GetContent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetHorizontal
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIScrollViewComponent::GetHorizontal() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "GetHorizontal");
-
-	Params::UIScrollViewComponent_GetHorizontal Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetRayCastTargetForScrollView
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIScrollViewComponent::GetRayCastTargetForScrollView() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "GetRayCastTargetForScrollView");
-
-	Params::UIScrollViewComponent_GetRayCastTargetForScrollView Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetUnderSizeScrollEnabled
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIScrollViewComponent::GetUnderSizeScrollEnabled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "GetUnderSizeScrollEnabled");
-
-	Params::UIScrollViewComponent_GetUnderSizeScrollEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewComponent.GetVertical
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIScrollViewComponent::GetVertical() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewComponent", "GetVertical");
-
-	Params::UIScrollViewComponent_GetVertical Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.BindParentUIItem
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::BindParentUIItem(class UUISelectableComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "BindParentUIItem");
-
-	Params::UIScrollViewWithScrollbarComponent_BindParentUIItem Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.FindNavigationComponent
-// (Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EUINavigationWrapMode                   Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bHasOtherNode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UUISelectableComponent*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UUISelectableComponent* UUIScrollViewWithScrollbarComponent::FindNavigationComponent(class UUISelectableComponent* Component, const struct FVector& Direction, EUINavigationWrapMode Mode, bool bHasOtherNode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "FindNavigationComponent");
-
-	Params::UIScrollViewWithScrollbarComponent_FindNavigationComponent Parms{};
-
-	Parms.Component = Component;
-	Parms.Direction = std::move(Direction);
-	Parms.Mode = Mode;
-	Parms.bHasOtherNode = bHasOtherNode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.GetOutOfBottomBoundsType
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EOutOfBoundsType                        OutOfTopOrBottomType                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EOutOfBoundsType                        OutOfLeftOrRightType                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ErrorTolerance                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::GetOutOfBottomBoundsType(class UUIItem* UIItem, EOutOfBoundsType* OutOfTopOrBottomType, EOutOfBoundsType* OutOfLeftOrRightType, float ErrorTolerance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetOutOfBottomBoundsType");
-
-	Params::UIScrollViewWithScrollbarComponent_GetOutOfBottomBoundsType Parms{};
-
-	Parms.UIItem = UIItem;
-	Parms.ErrorTolerance = ErrorTolerance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutOfTopOrBottomType != nullptr)
-		*OutOfTopOrBottomType = Parms.OutOfTopOrBottomType;
-
-	if (OutOfLeftOrRightType != nullptr)
-		*OutOfLeftOrRightType = Parms.OutOfLeftOrRightType;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.ResetIsChangeNavigation
-// (Final, Native, Public, BlueprintCallable)
-
-void UUIScrollViewWithScrollbarComponent::ResetIsChangeNavigation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ResetIsChangeNavigation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollTo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::ScrollTo(class UUIItem* UIItem, bool bTweenAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollTo");
-
-	Params::UIScrollViewWithScrollbarComponent_ScrollTo Parms{};
-
-	Parms.UIItem = UIItem;
-	Parms.bTweenAnim = bTweenAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToBottom
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::ScrollToBottom(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToBottom");
-
-	Params::UIScrollViewWithScrollbarComponent_ScrollToBottom Parms{};
-
-	Parms.UIItem = UIItem;
-	Parms.bTweenAnim = bTweenAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (NewPosition != nullptr)
-		*NewPosition = std::move(Parms.NewPosition);
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToLeft
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::ScrollToLeft(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToLeft");
-
-	Params::UIScrollViewWithScrollbarComponent_ScrollToLeft Parms{};
-
-	Parms.UIItem = UIItem;
-	Parms.bTweenAnim = bTweenAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (NewPosition != nullptr)
-		*NewPosition = std::move(Parms.NewPosition);
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToRight
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::ScrollToRight(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToRight");
-
-	Params::UIScrollViewWithScrollbarComponent_ScrollToRight Parms{};
-
-	Parms.UIItem = UIItem;
-	Parms.bTweenAnim = bTweenAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (NewPosition != nullptr)
-		*NewPosition = std::move(Parms.NewPosition);
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToSelectableComponent
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::ScrollToSelectableComponent(class UUISelectableComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToSelectableComponent");
-
-	Params::UIScrollViewWithScrollbarComponent_ScrollToSelectableComponent Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.ScrollToTop
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector2D                        NewPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UUIItem*                          UIItem                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::ScrollToTop(struct FVector2D* NewPosition, class UUIItem* UIItem, bool bTweenAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "ScrollToTop");
-
-	Params::UIScrollViewWithScrollbarComponent_ScrollToTop Parms{};
-
-	Parms.UIItem = UIItem;
-	Parms.bTweenAnim = bTweenAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (NewPosition != nullptr)
-		*NewPosition = std::move(Parms.NewPosition);
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.SetHorizontalScrollbarVisibility
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EScrollViewScrollbarVisibility          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::SetHorizontalScrollbarVisibility(EScrollViewScrollbarVisibility value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "SetHorizontalScrollbarVisibility");
-
-	Params::UIScrollViewWithScrollbarComponent_SetHorizontalScrollbarVisibility Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.SetVerticalScrollbarVisibility
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EScrollViewScrollbarVisibility          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::SetVerticalScrollbarVisibility(EScrollViewScrollbarVisibility value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "SetVerticalScrollbarVisibility");
-
-	Params::UIScrollViewWithScrollbarComponent_SetVerticalScrollbarVisibility Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.UnBindParentUIItem
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIScrollViewWithScrollbarComponent::UnBindParentUIItem(class UUISelectableComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "UnBindParentUIItem");
-
-	Params::UIScrollViewWithScrollbarComponent_UnBindParentUIItem Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.GetHorizontalScrollbar
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AUIBaseActor* UUIScrollViewWithScrollbarComponent::GetHorizontalScrollbar() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetHorizontalScrollbar");
-
-	Params::UIScrollViewWithScrollbarComponent_GetHorizontalScrollbar Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.GetHorizontalScrollbarVisibility
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EScrollViewScrollbarVisibility          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EScrollViewScrollbarVisibility UUIScrollViewWithScrollbarComponent::GetHorizontalScrollbarVisibility() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetHorizontalScrollbarVisibility");
-
-	Params::UIScrollViewWithScrollbarComponent_GetHorizontalScrollbarVisibility Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.GetVerticalScrollbar
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AUIBaseActor* UUIScrollViewWithScrollbarComponent::GetVerticalScrollbar() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetVerticalScrollbar");
-
-	Params::UIScrollViewWithScrollbarComponent_GetVerticalScrollbar Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.GetVerticalScrollbarVisibility
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EScrollViewScrollbarVisibility          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EScrollViewScrollbarVisibility UUIScrollViewWithScrollbarComponent::GetVerticalScrollbarVisibility() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetVerticalScrollbarVisibility");
-
-	Params::UIScrollViewWithScrollbarComponent_GetVerticalScrollbarVisibility Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIScrollViewWithScrollbarComponent.GetViewport
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AUIBaseActor* UUIScrollViewWithScrollbarComponent::GetViewport() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIScrollViewWithScrollbarComponent", "GetViewport");
-
-	Params::UIScrollViewWithScrollbarComponent_GetViewport Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.Refresh
-// (Final, Native, Public, BlueprintCallable)
-
-void UUILoopScrollViewComponent::Refresh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "Refresh");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.RefreshByData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AUIBaseActor*                     UIItem                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   GridNum                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    KeepContentPosition                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILoopScrollViewComponent::RefreshByData(class AUIBaseActor* UIItem, int32 GridNum, bool KeepContentPosition)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "RefreshByData");
-
-	Params::UILoopScrollViewComponent_RefreshByData Parms{};
-
-	Parms.UIItem = UIItem;
-	Parms.GridNum = GridNum;
-	Parms.KeepContentPosition = KeepContentPosition;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.ResetPreview
-// (Final, Native, Public)
-
-void UUILoopScrollViewComponent::ResetPreview()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "ResetPreview");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.ScrollToGridIndex
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTweenAnim                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILoopScrollViewComponent::ScrollToGridIndex(int32 GridIndex, bool bTweenAnim)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "ScrollToGridIndex");
-
-	Params::UILoopScrollViewComponent_ScrollToGridIndex Parms{};
-
-	Parms.GridIndex = GridIndex;
-	Parms.bTweenAnim = bTweenAnim;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.ScrollToNextLine
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bReversed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILoopScrollViewComponent::ScrollToNextLine(bool bReversed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "ScrollToNextLine");
-
-	Params::UILoopScrollViewComponent_ScrollToNextLine Parms{};
-
-	Parms.bReversed = bReversed;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.SetGridAnimationInterval
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILoopScrollViewComponent::SetGridAnimationInterval(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "SetGridAnimationInterval");
-
-	Params::UILoopScrollViewComponent_SetGridAnimationInterval Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.SetGridAnimationStartTime
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILoopScrollViewComponent::SetGridAnimationStartTime(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "SetGridAnimationStartTime");
-
-	Params::UILoopScrollViewComponent_SetGridAnimationStartTime Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.SetInAnimation
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    state                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILoopScrollViewComponent::SetInAnimation(bool state)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "SetInAnimation");
-
-	Params::UILoopScrollViewComponent_SetInAnimation Parms{};
-
-	Parms.state = state;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.SetNavigationIndex
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILoopScrollViewComponent::SetNavigationIndex(int32 GridIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "SetNavigationIndex");
-
-	Params::UILoopScrollViewComponent_SetNavigationIndex Parms{};
-
-	Parms.GridIndex = GridIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.GetGrid
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   GridIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AUIBaseActor* UUILoopScrollViewComponent::GetGrid(int32 GridIndex) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "GetGrid");
-
-	Params::UILoopScrollViewComponent_GetGrid Parms{};
-
-	Parms.GridIndex = GridIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.GetGridAnimationInterval
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUILoopScrollViewComponent::GetGridAnimationInterval() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "GetGridAnimationInterval");
-
-	Params::UILoopScrollViewComponent_GetGridAnimationInterval Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.GetGridAnimationStartTime
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUILoopScrollViewComponent::GetGridAnimationStartTime() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "GetGridAnimationStartTime");
-
-	Params::UILoopScrollViewComponent_GetGridAnimationStartTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILoopScrollViewComponent.GetInAnimation
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUILoopScrollViewComponent::GetInAnimation() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILoopScrollViewComponent", "GetInAnimation");
-
-	Params::UILoopScrollViewComponent_GetInAnimation Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -26246,6 +27388,336 @@ EUIDropdownVerticalPosition UUIDropdownComponent::GetVerticalPosition() const
 }
 
 
+// Function LGUI.UIFrameAnimController.Pause
+// (Final, Native, Protected, BlueprintCallable)
+
+void UUIFrameAnimController::Pause()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIFrameAnimController", "Pause");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIFrameAnimController.Play
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// bool                                    bLooping                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIFrameAnimController::Play(bool bLooping)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIFrameAnimController", "Play");
+
+	Params::UIFrameAnimController_Play Parms{};
+
+	Parms.bLooping = bLooping;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIFrameAnimController.Resume
+// (Final, Native, Protected, BlueprintCallable)
+
+void UUIFrameAnimController::Resume()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIFrameAnimController", "Resume");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIFrameAnimController.Stop
+// (Final, Native, Protected, BlueprintCallable)
+
+void UUIFrameAnimController::Stop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIFrameAnimController", "Stop");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.GeometryHandle.SetAdditionalUV
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   AdditionalUVChannel                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        UV                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGeometryHandle::SetAdditionalUV(int32 AdditionalUVChannel, const struct FVector2D& UV)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GeometryHandle", "SetAdditionalUV");
+
+	Params::GeometryHandle_SetAdditionalUV Parms{};
+
+	Parms.AdditionalUVChannel = AdditionalUVChannel;
+	Parms.UV = std::move(UV);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.GeometryHandle.IsGeometryValid
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGeometryHandle::IsGeometryValid() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GeometryHandle", "IsGeometryValid");
+
+	Params::GeometryHandle_IsGeometryValid Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynamicBatchMesh.AddBatchGeometryRenderable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUIBatchGeometryRenderable*       Renderable                                             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGeometryHandle*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGeometryHandle* UUIDynamicBatchMesh::AddBatchGeometryRenderable(class UUIBatchGeometryRenderable* Renderable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicBatchMesh", "AddBatchGeometryRenderable");
+
+	Params::UIDynamicBatchMesh_AddBatchGeometryRenderable Parms{};
+
+	Parms.Renderable = Renderable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynamicBatchMesh.AddContainerNode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          ContainerNode                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bClearTransformChanged                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIDynamicBatchMesh::AddContainerNode(class UUIItem* ContainerNode, bool bClearTransformChanged)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicBatchMesh", "AddContainerNode");
+
+	Params::UIDynamicBatchMesh_AddContainerNode Parms{};
+
+	Parms.ContainerNode = ContainerNode;
+	Parms.bClearTransformChanged = bClearTransformChanged;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIDynamicBatchMesh.ClearAllGeometries
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIDynamicBatchMesh::ClearAllGeometries()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicBatchMesh", "ClearAllGeometries");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIDynamicBatchMesh.MarkAllItemGeometryDirty
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUIItem*                          ContainerNode                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIDynamicBatchMesh::MarkAllItemGeometryDirty(class UUIItem* ContainerNode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicBatchMesh", "MarkAllItemGeometryDirty");
+
+	Params::UIDynamicBatchMesh_MarkAllItemGeometryDirty Parms{};
+
+	Parms.ContainerNode = ContainerNode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIDynamicSpriteAtlasMgr.GetSpriteData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           SpritePath                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIDynSpriteData*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIDynSpriteData* UUIDynamicSpriteAtlasMgr::GetSpriteData(const class FString& SpritePath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicSpriteAtlasMgr", "GetSpriteData");
+
+	Params::UIDynamicSpriteAtlasMgr_GetSpriteData Parms{};
+
+	Parms.SpritePath = std::move(SpritePath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynamicSpriteAtlasMgr.OnDynamicAtlasExpandCallback
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// struct FTextureExpandParam              TextureExpandParam                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUIDynamicSpriteAtlasMgr::OnDynamicAtlasExpandCallback(const struct FTextureExpandParam& TextureExpandParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicSpriteAtlasMgr", "OnDynamicAtlasExpandCallback");
+
+	Params::UIDynamicSpriteAtlasMgr_OnDynamicAtlasExpandCallback Parms{};
+
+	Parms.TextureExpandParam = std::move(TextureExpandParam);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIDynamicSpriteAtlasMgr.OnDynamicAtlasSlotBuilt
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// TArray<struct FDynamicAtlasSlotManagedHandle>Handles                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUIDynamicSpriteAtlasMgr::OnDynamicAtlasSlotBuilt(const TArray<struct FDynamicAtlasSlotManagedHandle>& Handles)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicSpriteAtlasMgr", "OnDynamicAtlasSlotBuilt");
+
+	Params::UIDynamicSpriteAtlasMgr_OnDynamicAtlasSlotBuilt Parms{};
+
+	Parms.Handles = std::move(Handles);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIDynamicSpriteAtlasMgr.TestRebuildAtlas
+// (Final, Native, Public, BlueprintCallable)
+
+void UUIDynamicSpriteAtlasMgr::TestRebuildAtlas()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynamicSpriteAtlasMgr", "TestRebuildAtlas");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.UIDynmaicTextureAtlasMgr.OnDynamicAtlasExpandCallback
 // (Final, Native, Private, HasOutParams)
 // Parameters:
@@ -26268,201 +27740,6 @@ void UUIDynmaicTextureAtlasMgr::OnDynamicAtlasExpandCallback(const struct FTextu
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINavigationTextChangeListener.OnNotifyTextChangeBP
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class FString                           NotifyText                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINavigationTextChangeListener::OnNotifyTextChangeBP(const class FString& NotifyText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationTextChangeListener", "OnNotifyTextChangeBP");
-
-	Params::UINavigationTextChangeListener_OnNotifyTextChangeBP Parms{};
-
-	Parms.NotifyText = std::move(NotifyText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function LGUI.UILayoutElement.SetConstantSize
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILayoutElement::SetConstantSize(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutElement", "SetConstantSize");
-
-	Params::UILayoutElement_SetConstantSize Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutElement.SetLayoutType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ELayoutElementType                      InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILayoutElement::SetLayoutType(ELayoutElementType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutElement", "SetLayoutType");
-
-	Params::UILayoutElement_SetLayoutType Parms{};
-
-	Parms.InType = InType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutElement.SetRatioSize
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUILayoutElement::SetRatioSize(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutElement", "SetRatioSize");
-
-	Params::UILayoutElement_SetRatioSize Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UILayoutElement.GetConstantSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUILayoutElement::GetConstantSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutElement", "GetConstantSize");
-
-	Params::UILayoutElement_GetConstantSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILayoutElement.GetIgnoreLayout
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUILayoutElement::GetIgnoreLayout() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutElement", "GetIgnoreLayout");
-
-	Params::UILayoutElement_GetIgnoreLayout Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILayoutElement.GetLayoutType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ELayoutElementType                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ELayoutElementType UUILayoutElement::GetLayoutType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutElement", "GetLayoutType");
-
-	Params::UILayoutElement_GetLayoutType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UILayoutElement.GetRatioSize
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUILayoutElement::GetRatioSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UILayoutElement", "GetRatioSize");
-
-	Params::UILayoutElement_GetRatioSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -26536,6 +27813,34 @@ class AUIBaseActor* UUIDynScrollViewComponent::GetRealUsingItem(int32 ItemIndex)
 		Func = Class->GetFunction("UIDynScrollViewComponent", "GetRealUsingItem");
 
 	Params::UIDynScrollViewComponent_GetRealUsingItem Parms{};
+
+	Parms.ItemIndex = ItemIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.IsItemInViewportByIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ItemIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIDynScrollViewComponent::IsItemInViewportByIndex(int32 ItemIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "IsItemInViewportByIndex");
+
+	Params::UIDynScrollViewComponent_IsItemInViewportByIndex Parms{};
 
 	Parms.ItemIndex = ItemIndex;
 
@@ -26700,6 +28005,35 @@ void UUIDynScrollViewComponent::ScrollToItemIndex(int32 ItemIndex, bool bScrollT
 	Parms.bScrollToTop = bScrollToTop;
 	Parms.Offset = Offset;
 	Parms.bTweenAnim = bTweenAnim;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.ScrollToItemIndexForNavigation
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ItemIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bScrollToTop                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIDynScrollViewComponent::ScrollToItemIndexForNavigation(int32 ItemIndex, bool bScrollToTop, float Offset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "ScrollToItemIndexForNavigation");
+
+	Params::UIDynScrollViewComponent_ScrollToItemIndexForNavigation Parms{};
+
+	Parms.ItemIndex = ItemIndex;
+	Parms.bScrollToTop = bScrollToTop;
+	Parms.Offset = Offset;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26908,6 +28242,86 @@ void UUIDynScrollViewComponent::SetInAnimation(bool state)
 }
 
 
+// Function LGUI.UIDynScrollViewComponent.SetScrollItemState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ItemIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EScrollItemState                        State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIDynScrollViewComponent::SetScrollItemState(int32 ItemIndex, EScrollItemState State)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "SetScrollItemState");
+
+	Params::UIDynScrollViewComponent_SetScrollItemState Parms{};
+
+	Parms.ItemIndex = ItemIndex;
+	Parms.State = State;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.GetEndItemIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIDynScrollViewComponent::GetEndItemIndex() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "GetEndItemIndex");
+
+	Params::UIDynScrollViewComponent_GetEndItemIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.GetGridActorIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AUIBaseActor*                     InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIDynScrollViewComponent::GetGridActorIndex(class AUIBaseActor* InActor) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "GetGridActorIndex");
+
+	Params::UIDynScrollViewComponent_GetGridActorIndex Parms{};
+
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.UIDynScrollViewComponent.GetGridAnimationInterval
 // (Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -27070,6 +28484,109 @@ bool UUIDynScrollViewComponent::GetItemIndex(int32 DisplayIndex, int32* ItemInde
 
 	if (ItemIndex != nullptr)
 		*ItemIndex = Parms.ItemIndex;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.GetScrollItemState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ItemIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EScrollItemState                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EScrollItemState UUIDynScrollViewComponent::GetScrollItemState(int32 ItemIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "GetScrollItemState");
+
+	Params::UIDynScrollViewComponent_GetScrollItemState Parms{};
+
+	Parms.ItemIndex = ItemIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.GetStartItemIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIDynScrollViewComponent::GetStartItemIndex() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "GetStartItemIndex");
+
+	Params::UIDynScrollViewComponent_GetStartItemIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.IsAllDisplayItemUpdateCompleted
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIDynScrollViewComponent::IsAllDisplayItemUpdateCompleted() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "IsAllDisplayItemUpdateCompleted");
+
+	Params::UIDynScrollViewComponent_IsAllDisplayItemUpdateCompleted Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIDynScrollViewComponent.IsAllItemDisplayed
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIDynScrollViewComponent::IsAllItemDisplayed() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIDynScrollViewComponent", "IsAllItemDisplayed");
+
+	Params::UIDynScrollViewComponent_IsAllItemDisplayed Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
@@ -27575,56 +29092,6 @@ struct FVector2D UUIEffectShadow::GetShadowOffset() const
 }
 
 
-// Function LGUI.UIEffectTextAnimation_Selector.SetOffset
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_Selector::SetOffset(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_Selector", "SetOffset");
-
-	Params::UIEffectTextAnimation_Selector_SetOffset Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_Selector.GetOffset
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIEffectTextAnimation_Selector::GetOffset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_Selector", "GetOffset");
-
-	Params::UIEffectTextAnimation_Selector_GetOffset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function LGUI.UIEffectTextAnimation.SetProperties
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -27818,106 +29285,6 @@ float UUIEffectTextAnimation::GetSelectorOffset() const
 		Func = Class->GetFunction("UIEffectTextAnimation", "GetSelectorOffset");
 
 	Params::UIEffectTextAnimation_GetSelectorOffset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_PropertyWithEase.SetEaseCurve
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCurveFloat*                      value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_PropertyWithEase::SetEaseCurve(class UCurveFloat* value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "SetEaseCurve");
-
-	Params::UIEffectTextAnimation_PropertyWithEase_SetEaseCurve Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_PropertyWithEase.SetEaseType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ELTweenEase                             value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_PropertyWithEase::SetEaseType(ELTweenEase value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "SetEaseType");
-
-	Params::UIEffectTextAnimation_PropertyWithEase_SetEaseType Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_PropertyWithEase.GetCurveFloat
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UCurveFloat*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCurveFloat* UUIEffectTextAnimation_PropertyWithEase::GetCurveFloat() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "GetCurveFloat");
-
-	Params::UIEffectTextAnimation_PropertyWithEase_GetCurveFloat Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_PropertyWithEase.GetEaseType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ELTweenEase                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ELTweenEase UUIEffectTextAnimation_PropertyWithEase::GetEaseType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithEase", "GetEaseType");
-
-	Params::UIEffectTextAnimation_PropertyWithEase_GetEaseType Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -28580,106 +29947,6 @@ float UUIEffectTextAnimation_AlphaProperty::GetAlpha() const
 }
 
 
-// Function LGUI.UIEffectTextAnimation_ColorProperty.SetColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FColor                           value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_ColorProperty::SetColor(const struct FColor& value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "SetColor");
-
-	Params::UIEffectTextAnimation_ColorProperty_SetColor Parms{};
-
-	Parms.value = std::move(value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_ColorProperty.SetUseHSV
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_ColorProperty::SetUseHSV(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "SetUseHSV");
-
-	Params::UIEffectTextAnimation_ColorProperty_SetUseHSV Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_ColorProperty.GetColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FColor UUIEffectTextAnimation_ColorProperty::GetColor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "GetColor");
-
-	Params::UIEffectTextAnimation_ColorProperty_GetColor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_ColorProperty.GetUseHSV
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIEffectTextAnimation_ColorProperty::GetUseHSV() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_ColorProperty", "GetUseHSV");
-
-	Params::UIEffectTextAnimation_ColorProperty_GetUseHSV Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function LGUI.UIEffectTextAnimation_ColorRandomProperty.SetMax
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -28880,56 +30147,6 @@ bool UUIEffectTextAnimation_ColorRandomProperty::GetUseHSV() const
 }
 
 
-// Function LGUI.UIEffectTextAnimation_PropertyWithWave.SetFrequency
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_PropertyWithWave::SetFrequency(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithWave", "SetFrequency");
-
-	Params::UIEffectTextAnimation_PropertyWithWave_SetFrequency Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_PropertyWithWave.GetFrequency
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIEffectTextAnimation_PropertyWithWave::GetFrequency() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_PropertyWithWave", "GetFrequency");
-
-	Params::UIEffectTextAnimation_PropertyWithWave_GetFrequency Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function LGUI.UIEffectTextAnimation_PositionWaveProperty.SetPosition
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -29068,206 +30285,6 @@ struct FVector UUIEffectTextAnimation_ScaleWaveProperty::GetScale() const
 		Func = Class->GetFunction("UIEffectTextAnimation_ScaleWaveProperty", "GetScale");
 
 	Params::UIEffectTextAnimation_ScaleWaveProperty_GetScale Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.SetEnd
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_RangeSelector::SetEnd(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetEnd");
-
-	Params::UIEffectTextAnimation_RangeSelector_SetEnd Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.SetFlipDirection
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_RangeSelector::SetFlipDirection(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetFlipDirection");
-
-	Params::UIEffectTextAnimation_RangeSelector_SetFlipDirection Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.SetRange
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_RangeSelector::SetRange(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetRange");
-
-	Params::UIEffectTextAnimation_RangeSelector_SetRange Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.SetStart
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_RangeSelector::SetStart(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "SetStart");
-
-	Params::UIEffectTextAnimation_RangeSelector_SetStart Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.GetEnd
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIEffectTextAnimation_RangeSelector::GetEnd() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetEnd");
-
-	Params::UIEffectTextAnimation_RangeSelector_GetEnd Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.GetFlipDirection
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIEffectTextAnimation_RangeSelector::GetFlipDirection() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetFlipDirection");
-
-	Params::UIEffectTextAnimation_RangeSelector_GetFlipDirection Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.GetRange
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIEffectTextAnimation_RangeSelector::GetRange() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetRange");
-
-	Params::UIEffectTextAnimation_RangeSelector_GetRange Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RangeSelector.GetStart
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIEffectTextAnimation_RangeSelector::GetStart() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RangeSelector", "GetStart");
-
-	Params::UIEffectTextAnimation_RangeSelector_GetStart Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29430,94 +30447,22 @@ float UUIEffectTextAnimation_RandomSelector::GetStart() const
 }
 
 
-// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.SetFlipDirection
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_RichTextTagSelector::SetFlipDirection(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "SetFlipDirection");
-
-	Params::UIEffectTextAnimation_RichTextTagSelector_SetFlipDirection Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.SetRange
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIEffectTextAnimation_RichTextTagSelector::SetRange(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "SetRange");
-
-	Params::UIEffectTextAnimation_RichTextTagSelector_SetRange Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.SetTagName
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerBeginDrag
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UUIEffectTextAnimation_RichTextTagSelector::SetTagName(const class FName& value)
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerBeginDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "SetTagName");
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerBeginDrag");
 
-	Params::UIEffectTextAnimation_RichTextTagSelector_SetTagName Parms{};
+	Params::UIEventTriggerComponent_RegisterOnPointerBeginDrag Parms{};
 
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.GetFlipDirection
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUIEffectTextAnimation_RichTextTagSelector::GetFlipDirection() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "GetFlipDirection");
-
-	Params::UIEffectTextAnimation_RichTextTagSelector_GetFlipDirection Parms{};
+	Parms.InDelegate = InDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29530,19 +30475,22 @@ bool UUIEffectTextAnimation_RichTextTagSelector::GetFlipDirection() const
 }
 
 
-// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.GetRange
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerClick
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-float UUIEffectTextAnimation_RichTextTagSelector::GetRange() const
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerClick(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "GetRange");
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerClick");
 
-	Params::UIEffectTextAnimation_RichTextTagSelector_GetRange Parms{};
+	Params::UIEventTriggerComponent_RegisterOnPointerClick Parms{};
+
+	Parms.InDelegate = InDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29555,19 +30503,22 @@ float UUIEffectTextAnimation_RichTextTagSelector::GetRange() const
 }
 
 
-// Function LGUI.UIEffectTextAnimation_RichTextTagSelector.GetTagName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDeselect
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FName                       ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(class ULGUIBaseEventData* eventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-const class FName UUIEffectTextAnimation_RichTextTagSelector::GetTagName() const
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDeselect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIEffectTextAnimation_RichTextTagSelector", "GetTagName");
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDeselect");
 
-	Params::UIEffectTextAnimation_RichTextTagSelector_GetTagName Parms{};
+	Params::UIEventTriggerComponent_RegisterOnPointerDeselect Parms{};
+
+	Parms.InDelegate = InDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29580,21 +30531,679 @@ const class FName UUIEffectTextAnimation_RichTextTagSelector::GetTagName() const
 }
 
 
-// Function LGUI.UIExtendButtonComponent.SetDelegateForHelpClick
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDown
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDown(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDown");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerDown Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDrag
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDrag");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerDrag Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDragDrop
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDragDrop(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDragDrop");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerDragDrop Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDragEnter
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDragEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDragEnter");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerDragEnter Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerDragExit
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerDragExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerDragExit");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerDragExit Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerEndDrag
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerEndDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerEndDrag");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerEndDrag Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerEnter
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerEnter");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerEnter Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerExit
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerExit");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerExit Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerScroll
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerScroll(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerScroll");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerScroll Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerSelect
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIBaseEventData* eventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerSelect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerSelect");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerSelect Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.RegisterOnPointerUp
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(class ULGUIPointerEventData* pointerEventData)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIEventTriggerComponent::RegisterOnPointerUp(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "RegisterOnPointerUp");
+
+	Params::UIEventTriggerComponent_RegisterOnPointerUp Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerBeginDrag
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerBeginDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerBeginDrag");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerBeginDrag Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerClick
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerClick(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerClick");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerClick Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDeselect
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerDeselect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDeselect");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerDeselect Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDown
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerDown(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDown");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerDown Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDrag
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDrag");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerDrag Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDragDrop
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerDragDrop(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDragDrop");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerDragDrop Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDragEnter
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerDragEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDragEnter");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerDragEnter Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerDragExit
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerDragExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerDragExit");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerDragExit Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerEndDrag
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerEndDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerEndDrag");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerEndDrag Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerEnter
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerEnter");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerEnter Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerExit
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerExit");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerExit Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerScroll
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerScroll(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerScroll");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerScroll Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerSelect
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerSelect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerSelect");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerSelect Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIEventTriggerComponent.UnregisterOnPointerUp
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIEventTriggerComponent::UnregisterOnPointerUp(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIEventTriggerComponent", "UnregisterOnPointerUp");
+
+	Params::UIEventTriggerComponent_UnregisterOnPointerUp Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIExtendToggleGroup.BindOnExtendToggleGroupActive
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(int32 helpGroupId)>      delegateObj                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(class UUIExtendToggleGroup* ExtendToggleGroup, bool bCreate)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UUIExtendButtonComponent::SetDelegateForHelpClick(const TDelegate<void(int32 helpGroupId)>& delegateObj)
+void UUIExtendToggleGroup::BindOnExtendToggleGroupActive(const TDelegate<void(class UUIExtendToggleGroup* ExtendToggleGroup, bool bCreate)>& Delegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIExtendButtonComponent", "SetDelegateForHelpClick");
+		Func = StaticClass()->GetFunction("UIExtendToggleGroup", "BindOnExtendToggleGroupActive");
 
-	Params::UIExtendButtonComponent_SetDelegateForHelpClick Parms{};
+	Params::UIExtendToggleGroup_BindOnExtendToggleGroupActive Parms{};
 
-	Parms.delegateObj = delegateObj;
+	Parms.Delegate = Delegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29605,74 +31214,38 @@ void UUIExtendButtonComponent::SetDelegateForHelpClick(const TDelegate<void(int3
 }
 
 
-// Function LGUI.UIExtendToggle.SetAllTransitionsEnable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bIsEnable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function LGUI.UIExtendToggleGroup.UnBindOnExtendToggleGroupActive
+// (Final, Native, Static, Public, BlueprintCallable)
 
-void UUIExtendToggle::SetAllTransitionsEnable(bool bIsEnable)
+void UUIExtendToggleGroup::UnBindOnExtendToggleGroupActive()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggle", "SetAllTransitionsEnable");
-
-	Params::UIExtendToggle_SetAllTransitionsEnable Parms{};
-
-	Parms.bIsEnable = bIsEnable;
+		Func = StaticClass()->GetFunction("UIExtendToggleGroup", "UnBindOnExtendToggleGroupActive");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.UIExtendToggle.SetToggleGroup
+// Function LGUI.UIExtendToggleGroup.GetAllowNoneSelect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           TogGroupActor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIExtendToggle::SetToggleGroup(class AActor* TogGroupActor)
+bool UUIExtendToggleGroup::GetAllowNoneSelect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggle", "SetToggleGroup");
+		Func = Class->GetFunction("UIExtendToggleGroup", "GetAllowNoneSelect");
 
-	Params::UIExtendToggle_SetToggleGroup Parms{};
-
-	Parms.TogGroupActor = TogGroupActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIExtendToggle.SetToggleState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EToggleState                            State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFireEvent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EToggleChangeStateResult                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EToggleChangeStateResult UUIExtendToggle::SetToggleState(EToggleState State, bool bFireEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggle", "SetToggleState");
-
-	Params::UIExtendToggle_SetToggleState Parms{};
-
-	Parms.State = State;
-	Parms.bFireEvent = bFireEvent;
+	Params::UIExtendToggleGroup_GetAllowNoneSelect Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29685,25 +31258,21 @@ EToggleChangeStateResult UUIExtendToggle::SetToggleState(EToggleState State, boo
 }
 
 
-// Function LGUI.UIExtendToggle.SetToggleStateForce
+// Function LGUI.UIExtendToggleGroup.SetAllowNoneSelect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EToggleState                            State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFireEvent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIngnoreAnim                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAllowNoneSelection                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIExtendToggle::SetToggleStateForce(EToggleState State, bool bFireEvent, bool bIngnoreAnim)
+void UUIExtendToggleGroup::SetAllowNoneSelect(bool bAllowNoneSelection)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggle", "SetToggleStateForce");
+		Func = Class->GetFunction("UIExtendToggleGroup", "SetAllowNoneSelect");
 
-	Params::UIExtendToggle_SetToggleStateForce Parms{};
+	Params::UIExtendToggleGroup_SetAllowNoneSelect Parms{};
 
-	Parms.State = State;
-	Parms.bFireEvent = bFireEvent;
-	Parms.bIngnoreAnim = bIngnoreAnim;
+	Parms.bAllowNoneSelection = bAllowNoneSelection;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29714,19 +31283,44 @@ void UUIExtendToggle::SetToggleStateForce(EToggleState State, bool bFireEvent, b
 }
 
 
-// Function LGUI.UIExtendToggle.GetToggleGroup
+// Function LGUI.UIExtendToggleGroup.SetGroupEnable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bInEnable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIExtendToggleGroup::SetGroupEnable(bool bInEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIExtendToggleGroup", "SetGroupEnable");
+
+	Params::UIExtendToggleGroup_SetGroupEnable Parms{};
+
+	Parms.bInEnable = bInEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIExtendToggleGroup.GetCurSelection
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UUIExtendToggleGroup*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUIExtendToggle*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUIExtendToggleGroup* UUIExtendToggle::GetToggleGroup() const
+class UUIExtendToggle* UUIExtendToggleGroup::GetCurSelection() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggle", "GetToggleGroup");
+		Func = Class->GetFunction("UIExtendToggleGroup", "GetCurSelection");
 
-	Params::UIExtendToggle_GetToggleGroup Parms{};
+	Params::UIExtendToggleGroup_GetCurSelection Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29736,139 +31330,6 @@ class UUIExtendToggleGroup* UUIExtendToggle::GetToggleGroup() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIExtendToggle.GetToggleState
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EToggleState                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EToggleState UUIExtendToggle::GetToggleState() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggle", "GetToggleState");
-
-	Params::UIExtendToggle_GetToggleState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIExtendToggleSpriteTransition.SetAllStateSprite
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIExtendToggleSpriteTransition::SetAllStateSprite(class ULGUISpriteData_BaseObject* NewSprite)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleSpriteTransition", "SetAllStateSprite");
-
-	Params::UIExtendToggleSpriteTransition_SetAllStateSprite Parms{};
-
-	Parms.NewSprite = NewSprite;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIExtendToggleSpriteTransition.SetStateSprite
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EToggleTransitionState                  State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULGUISpriteData_BaseObject*       NewSprite                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ForceNoTriggerOnChange                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIExtendToggleSpriteTransition::SetStateSprite(EToggleTransitionState State, class ULGUISpriteData_BaseObject* NewSprite, bool ForceNoTriggerOnChange)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleSpriteTransition", "SetStateSprite");
-
-	Params::UIExtendToggleSpriteTransition_SetStateSprite Parms{};
-
-	Parms.State = State;
-	Parms.NewSprite = NewSprite;
-	Parms.ForceNoTriggerOnChange = ForceNoTriggerOnChange;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIExtendToggleTextureTransition.SetAllTransitionStateTexture
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTexture*                         Texture                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIExtendToggleTextureTransition::SetAllTransitionStateTexture(class UTexture* Texture)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleTextureTransition", "SetAllTransitionStateTexture");
-
-	Params::UIExtendToggleTextureTransition_SetAllTransitionStateTexture Parms{};
-
-	Parms.Texture = Texture;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIExtendToggleTextureTransition.SetTargetStateTexture
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EToggleTransitionState                  State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTexture*                         Texture                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ForceNoTriggerOnChange                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIExtendToggleTextureTransition::SetTargetStateTexture(EToggleTransitionState State, class UTexture* Texture, bool ForceNoTriggerOnChange)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIExtendToggleTextureTransition", "SetTargetStateTexture");
-
-	Params::UIExtendToggleTextureTransition_SetTargetStateTexture Parms{};
-
-	Parms.State = State;
-	Parms.Texture = Texture;
-	Parms.ForceNoTriggerOnChange = ForceNoTriggerOnChange;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -29910,40 +31371,21 @@ class UUIFlyoutMenu* UUIFlyoutMenu::CreateFlyoutMenuFromArray(const TArray<class
 }
 
 
-// Function LGUI.UIFrameAnimController.Pause
-// (Final, Native, Protected, BlueprintCallable)
-
-void UUIFrameAnimController::Pause()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIFrameAnimController", "Pause");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIFrameAnimController.Play
-// (Final, Native, Protected, BlueprintCallable)
+// Function LGUI.UIGridLayout.SetAlign
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bLooping                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELGUILayoutAlignmentType                value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIFrameAnimController::Play(bool bLooping)
+void UUIGridLayout::SetAlign(ELGUILayoutAlignmentType value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIFrameAnimController", "Play");
+		Func = Class->GetFunction("UIGridLayout", "SetAlign");
 
-	Params::UIFrameAnimController_Play Parms{};
+	Params::UIGridLayout_SetAlign Parms{};
 
-	Parms.bLooping = bLooping;
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29954,41 +31396,630 @@ void UUIFrameAnimController::Play(bool bLooping)
 }
 
 
-// Function LGUI.UIFrameAnimController.Resume
-// (Final, Native, Protected, BlueprintCallable)
+// Function LGUI.UIGridLayout.SetCellScale
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIFrameAnimController::Resume()
+void UUIGridLayout::SetCellScale(const struct FVector2D& value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIFrameAnimController", "Resume");
+		Func = Class->GetFunction("UIGridLayout", "SetCellScale");
+
+	Params::UIGridLayout_SetCellScale Parms{};
+
+	Parms.value = std::move(value);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.UIFrameAnimController.Stop
-// (Final, Native, Protected, BlueprintCallable)
+// Function LGUI.UIGridLayout.SetCellSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIFrameAnimController::Stop()
+void UUIGridLayout::SetCellSize(const struct FVector2D& value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIFrameAnimController", "Stop");
+		Func = Class->GetFunction("UIGridLayout", "SetCellSize");
+
+	Params::UIGridLayout_SetCellSize Parms{};
+
+	Parms.value = std::move(value);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetDependOnSizeOrCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetDependOnSizeOrCount(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetDependOnSizeOrCount");
+
+	Params::UIGridLayout_SetDependOnSizeOrCount Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetExpendChildSize
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetExpendChildSize(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetExpendChildSize");
+
+	Params::UIGridLayout_SetExpendChildSize Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetHeightFitToChildren
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetHeightFitToChildren(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetHeightFitToChildren");
+
+	Params::UIGridLayout_SetHeightFitToChildren Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetHorizontalOrVertical
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUIGridLayoutStartCorner                startCorner                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetHorizontalOrVertical(bool value, EUIGridLayoutStartCorner startCorner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetHorizontalOrVertical");
+
+	Params::UIGridLayout_SetHorizontalOrVertical Parms{};
+
+	Parms.value = value;
+	Parms.startCorner = startCorner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetLastLineCanAlign
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetLastLineCanAlign(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetLastLineCanAlign");
+
+	Params::UIGridLayout_SetLastLineCanAlign Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetLineCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetLineCount(int32 value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetLineCount");
+
+	Params::UIGridLayout_SetLineCount Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetMaxItemCountInOneLine
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetMaxItemCountInOneLine(int32 value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetMaxItemCountInOneLine");
+
+	Params::UIGridLayout_SetMaxItemCountInOneLine Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetPadding
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FMargin                          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetPadding(const struct FMargin& value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetPadding");
+
+	Params::UIGridLayout_SetPadding Parms{};
+
+	Parms.value = std::move(value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetSpacing
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector2D                        value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetSpacing(const struct FVector2D& value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetSpacing");
+
+	Params::UIGridLayout_SetSpacing Parms{};
+
+	Parms.value = std::move(value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.SetWidthFitToChildren
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIGridLayout::SetWidthFitToChildren(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "SetWidthFitToChildren");
+
+	Params::UIGridLayout_SetWidthFitToChildren Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIGridLayout.GetActuralRange
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIGridLayout::GetActuralRange() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetActuralRange");
+
+	Params::UIGridLayout_GetActuralRange Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetAlign
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ELGUILayoutAlignmentType                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ELGUILayoutAlignmentType UUIGridLayout::GetAlign() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetAlign");
+
+	Params::UIGridLayout_GetAlign Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetCellSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIGridLayout::GetCellSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetCellSize");
+
+	Params::UIGridLayout_GetCellSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetDependOnSizeOrCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIGridLayout::GetDependOnSizeOrCount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetDependOnSizeOrCount");
+
+	Params::UIGridLayout_GetDependOnSizeOrCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetExpendChildSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIGridLayout::GetExpendChildSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetExpendChildSize");
+
+	Params::UIGridLayout_GetExpendChildSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetHeightFitToChildren
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIGridLayout::GetHeightFitToChildren() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetHeightFitToChildren");
+
+	Params::UIGridLayout_GetHeightFitToChildren Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetHorizontalOrVertical
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIGridLayout::GetHorizontalOrVertical() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetHorizontalOrVertical");
+
+	Params::UIGridLayout_GetHorizontalOrVertical Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetLastLineCanAlign
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIGridLayout::GetLastLineCanAlign() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetLastLineCanAlign");
+
+	Params::UIGridLayout_GetLastLineCanAlign Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetLineCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIGridLayout::GetLineCount() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetLineCount");
+
+	Params::UIGridLayout_GetLineCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetMaxItemCountInOneLine
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIGridLayout::GetMaxItemCountInOneLine() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetMaxItemCountInOneLine");
+
+	Params::UIGridLayout_GetMaxItemCountInOneLine Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetPadding
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FMargin                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FMargin UUIGridLayout::GetPadding() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetPadding");
+
+	Params::UIGridLayout_GetPadding Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetSpacing
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UUIGridLayout::GetSpacing() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetSpacing");
+
+	Params::UIGridLayout_GetSpacing Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIGridLayout.GetWidthFitToChildren
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIGridLayout::GetWidthFitToChildren() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIGridLayout", "GetWidthFitToChildren");
+
+	Params::UIGridLayout_GetWidthFitToChildren Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -30717,15 +32748,443 @@ struct FVector2D UUIMultiTemplateLayout::GetSpacing() const
 }
 
 
-// Function LGUI.UINavigationGroupComponent.ResetNavigateGroupDelegate
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function LGUI.UINavigationBehaviour.OnCheckCanSetNavigationBP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUINavigationGroupComponent::ResetNavigateGroupDelegate()
+bool UUINavigationBehaviour::OnCheckCanSetNavigationBP()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UINavigationGroupComponent", "ResetNavigateGroupDelegate");
+		Func = Class->GetFunction("UINavigationBehaviour", "OnCheckCanSetNavigationBP");
+
+	Params::UINavigationBehaviour_OnCheckCanSetNavigationBP Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UINavigationBehaviour.OnCheckLoopScrollChangeNavigationBP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUINavigationBehaviour::OnCheckLoopScrollChangeNavigationBP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationBehaviour", "OnCheckLoopScrollChangeNavigationBP");
+
+	Params::UINavigationBehaviour_OnCheckLoopScrollChangeNavigationBP Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UINavigationBehaviour.OnNotifyInteractiveBP
+// (Event, Protected, BlueprintEvent)
+
+void UUINavigationBehaviour::OnNotifyInteractiveBP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyInteractiveBP");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function LGUI.UINavigationBehaviour.OnNotifyNavigationEnterBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ULGUIPointerEventData*            eventData                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINavigationBehaviour::OnNotifyNavigationEnterBP(class ULGUIPointerEventData* eventData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyNavigationEnterBP");
+
+	Params::UINavigationBehaviour_OnNotifyNavigationEnterBP Parms{};
+
+	Parms.eventData = eventData;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UINavigationBehaviour.OnNotifyNavigationSelectBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ULGUIPointerEventData*            eventData                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINavigationBehaviour::OnNotifyNavigationSelectBP(class ULGUIPointerEventData* eventData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyNavigationSelectBP");
+
+	Params::UINavigationBehaviour_OnNotifyNavigationSelectBP Parms{};
+
+	Parms.eventData = eventData;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UINavigationBehaviour.OnNotifyNotInteractiveBP
+// (Event, Protected, BlueprintEvent)
+
+void UUINavigationBehaviour::OnNotifyNotInteractiveBP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationBehaviour", "OnNotifyNotInteractiveBP");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function LGUI.UINavigationTextChangeListener.OnNotifyTextChangeBP
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class FString                           NotifyText                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUINavigationTextChangeListener::OnNotifyTextChangeBP(const class FString& NotifyText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINavigationTextChangeListener", "OnNotifyTextChangeBP");
+
+	Params::UINavigationTextChangeListener_OnNotifyTextChangeBP Parms{};
+
+	Parms.NotifyText = std::move(NotifyText);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LGUI.UINiagaraActor.ActivateSystem
+// (Final, Native, Public, BlueprintCallable)
+
+void AUINiagaraActor::ActivateSystem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagaraActor", "ActivateSystem");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagaraActor.DeactivateSystem
+// (Final, Native, Public, BlueprintCallable)
+
+void AUINiagaraActor::DeactivateSystem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagaraActor", "DeactivateSystem");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagaraActor.SwitchToStop
+// (Final, Native, Public, BlueprintCallable)
+
+void AUINiagaraActor::SwitchToStop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagaraActor", "SwitchToStop");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagaraActor.GetUINiagara
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUINiagara*                       ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUINiagara* AUINiagaraActor::GetUINiagara() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagaraActor", "GetUINiagara");
+
+	Params::UINiagaraActor_GetUINiagara Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIRing.EndAngleTo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULTweener* UUIRing::EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "EndAngleTo");
+
+	Params::UIRing_EndAngleTo Parms{};
+
+	Parms.endValue = endValue;
+	Parms.duration = duration;
+	Parms.delay = delay;
+	Parms.easeType = easeType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIRing.SetEndAngle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIRing::SetEndAngle(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "SetEndAngle");
+
+	Params::UIRing_SetEndAngle Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIRing.SetSegment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIRing::SetSegment(int32 newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "SetSegment");
+
+	Params::UIRing_SetSegment Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIRing.SetStartAngle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIRing::SetStartAngle(float newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "SetStartAngle");
+
+	Params::UIRing_SetStartAngle Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIRing.StartAngleTo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULTweener* UUIRing::StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "StartAngleTo");
+
+	Params::UIRing_StartAngleTo Parms{};
+
+	Parms.endValue = endValue;
+	Parms.duration = duration;
+	Parms.delay = delay;
+	Parms.easeType = easeType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIRing.GetEndAngle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIRing::GetEndAngle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "GetEndAngle");
+
+	Params::UIRing_GetEndAngle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIRing.GetSegment
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIRing::GetSegment() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "GetSegment");
+
+	Params::UIRing_GetSegment Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIRing.GetStartAngle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIRing::GetStartAngle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIRing", "GetStartAngle");
+
+	Params::UIRing_GetStartAngle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIScrollbarComponent.ResetScrollbarDelegate
+// (Final, Native, Static, Private, BlueprintCallable)
+
+void UUIScrollbarComponent::ResetScrollbarDelegate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIScrollbarComponent", "ResetScrollbarDelegate");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -30736,19 +33195,19 @@ void UUINavigationGroupComponent::ResetNavigateGroupDelegate()
 }
 
 
-// Function LGUI.UINavigationGroupComponent.SetNavigateGroupDelegate
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Function LGUI.UIScrollbarComponent.SetScrollbarDelegate
+// (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(class UUINavigationGroupComponent* NavigationGroupComponent, EUINavigationGroupMode mode)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(class UUIScrollbarComponent* ScrollbarComponent, bool ativeOrInactive)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UUINavigationGroupComponent::SetNavigateGroupDelegate(const TDelegate<void(class UUINavigationGroupComponent* NavigationGroupComponent, EUINavigationGroupMode mode)>& Delegate)
+void UUIScrollbarComponent::SetScrollbarDelegate(const TDelegate<void(class UUIScrollbarComponent* ScrollbarComponent, bool ativeOrInactive)>& Delegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UINavigationGroupComponent", "SetNavigateGroupDelegate");
+		Func = StaticClass()->GetFunction("UIScrollbarComponent", "SetScrollbarDelegate");
 
-	Params::UINavigationGroupComponent_SetNavigateGroupDelegate Parms{};
+	Params::UIScrollbarComponent_SetScrollbarDelegate Parms{};
 
 	Parms.Delegate = Delegate;
 
@@ -30761,171 +33220,47 @@ void UUINavigationGroupComponent::SetNavigateGroupDelegate(const TDelegate<void(
 }
 
 
-// Function LGUI.UINavigationGroupComponent.SetNavigateTolerance
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function LGUI.UIScrollbarComponent.ChangeSchedule
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   Tolerance                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELGUINavigationDirection                InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUINavigationGroupComponent::SetNavigateTolerance(const float Tolerance)
+void UUIScrollbarComponent::ChangeSchedule(ELGUINavigationDirection InDirection)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UINavigationGroupComponent", "SetNavigateTolerance");
+		Func = Class->GetFunction("UIScrollbarComponent", "ChangeSchedule");
 
-	Params::UINavigationGroupComponent_SetNavigateTolerance Parms{};
+	Params::UIScrollbarComponent_ChangeSchedule Parms{};
 
-	Parms.Tolerance = Tolerance;
+	Parms.InDirection = InDirection;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.UINavigationGroupComponent.GetRootNavigationGrade
+// Function LGUI.UIScrollbarComponent.RegisterSlideEvent
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UUISelectableComponent*>   Result                                                 (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// TDelegate<void(float InFloat)>          InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UUINavigationGroupComponent::GetRootNavigationGrade(TArray<class UUISelectableComponent*>* Result)
+struct FLGUIDelegateHandleWrapper UUIScrollbarComponent::RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationGroupComponent", "GetRootNavigationGrade");
+		Func = Class->GetFunction("UIScrollbarComponent", "RegisterSlideEvent");
 
-	Params::UINavigationGroupComponent_GetRootNavigationGrade Parms{};
+	Params::UIScrollbarComponent_RegisterSlideEvent Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Result != nullptr)
-		*Result = std::move(Parms.Result);
-}
-
-
-// Function LGUI.UINavigationGroupComponent.Navigate
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINavigationGroupComponent::Navigate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationGroupComponent", "Navigate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINavigationGroupComponent.NavigateToNextGroup
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINavigationGroupComponent::NavigateToNextGroup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationGroupComponent", "NavigateToNextGroup");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINavigationGroupComponent.NavigateToPrevGroup
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINavigationGroupComponent::NavigateToPrevGroup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINavigationGroupComponent", "NavigateToPrevGroup");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.ActivateSystem
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Reset                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINiagara::ActivateSystem(bool Reset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "ActivateSystem");
-
-	Params::UINiagara_ActivateSystem Parms{};
-
-	Parms.Reset = Reset;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.DeactivateSystem
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINiagara::DeactivateSystem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "DeactivateSystem");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.GetIsActive
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUINiagara::GetIsActive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "GetIsActive");
-
-	Params::UINiagara_GetIsActive Parms{};
+	Parms.InDelegate = InDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -30938,103 +33273,21 @@ bool UUINiagara::GetIsActive()
 }
 
 
-// Function LGUI.UINiagara.IsCircleClipEnable
+// Function LGUI.UIScrollbarComponent.SetSize
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InSize                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UUINiagara::IsCircleClipEnable()
+void UUIScrollbarComponent::SetSize(float InSize)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "IsCircleClipEnable");
+		Func = Class->GetFunction("UIScrollbarComponent", "SetSize");
 
-	Params::UINiagara_IsCircleClipEnable Parms{};
+	Params::UIScrollbarComponent_SetSize Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UINiagara.ReinitializeSystem
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINiagara::ReinitializeSystem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "ReinitializeSystem");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.ResetOverrideParameters
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINiagara::ResetOverrideParameters()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "ResetOverrideParameters");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.ResetOverrideParametersAndActivate
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINiagara::ResetOverrideParametersAndActivate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "ResetOverrideParametersAndActivate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.SetCircleClipEnable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINiagara::SetCircleClipEnable(bool Enable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetCircleClipEnable");
-
-	Params::UINiagara_SetCircleClipEnable Parms{};
-
-	Parms.Enable = Enable;
+	Parms.InSize = InSize;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31045,79 +33298,23 @@ void UUINiagara::SetCircleClipEnable(bool Enable)
 }
 
 
-// Function LGUI.UINiagara.SetCircleClipParameters
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FCircleClipParameters            NewCircleClipParameters                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UUINiagara::SetCircleClipParameters(const struct FCircleClipParameters& NewCircleClipParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetCircleClipParameters");
-
-	Params::UINiagara_SetCircleClipParameters Parms{};
-
-	Parms.NewCircleClipParameters = std::move(NewCircleClipParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.SetNiagaraEmitterCustomTexture
+// Function LGUI.UIScrollbarComponent.SetValue
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InEmitterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InVariableName                                         (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTexture*                         InTexture                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUINiagara::SetNiagaraEmitterCustomTexture(const class FString& InEmitterName, const class FString& InVariableName, class UTexture* InTexture)
+void UUIScrollbarComponent::SetValue(float InValue, bool FireEvent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetNiagaraEmitterCustomTexture");
+		Func = Class->GetFunction("UIScrollbarComponent", "SetValue");
 
-	Params::UINiagara_SetNiagaraEmitterCustomTexture Parms{};
+	Params::UIScrollbarComponent_SetValue Parms{};
 
-	Parms.InEmitterName = std::move(InEmitterName);
-	Parms.InVariableName = std::move(InVariableName);
-	Parms.InTexture = InTexture;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.SetNiagaraEmitterFloatParam
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           InEmitterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InVariableName                                         (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINiagara::SetNiagaraEmitterFloatParam(const class FString& InEmitterName, const class FString& InVariableName, float InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetNiagaraEmitterFloatParam");
-
-	Params::UINiagara_SetNiagaraEmitterFloatParam Parms{};
-
-	Parms.InEmitterName = std::move(InEmitterName);
-	Parms.InVariableName = std::move(InVariableName);
 	Parms.InValue = InValue;
+	Parms.FireEvent = FireEvent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31128,50 +33325,25 @@ void UUINiagara::SetNiagaraEmitterFloatParam(const class FString& InEmitterName,
 }
 
 
-// Function LGUI.UINiagara.SetNiagaraEmitterVectorParam
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FString                           InEmitterName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InVariableName                                         (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector4                         InVector                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINiagara::SetNiagaraEmitterVectorParam(const class FString& InEmitterName, const class FString& InVariableName, const struct FVector4& InVector)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetNiagaraEmitterVectorParam");
-
-	Params::UINiagara_SetNiagaraEmitterVectorParam Parms{};
-
-	Parms.InEmitterName = std::move(InEmitterName);
-	Parms.InVariableName = std::move(InVariableName);
-	Parms.InVector = std::move(InVector);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.SetNiagaraSystem
+// Function LGUI.UIScrollbarComponent.SetValueAndSize
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UNiagaraSystem*                   InSystem                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InSize                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUINiagara::SetNiagaraSystem(class UNiagaraSystem* InSystem)
+void UUIScrollbarComponent::SetValueAndSize(float InValue, float InSize, bool FireEvent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetNiagaraSystem");
+		Func = Class->GetFunction("UIScrollbarComponent", "SetValueAndSize");
 
-	Params::UINiagara_SetNiagaraSystem Parms{};
+	Params::UIScrollbarComponent_SetValueAndSize Parms{};
 
-	Parms.InSystem = InSystem;
+	Parms.InValue = InValue;
+	Parms.InSize = InSize;
+	Parms.FireEvent = FireEvent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31182,280 +33354,21 @@ void UUINiagara::SetNiagaraSystem(class UNiagaraSystem* InSystem)
 }
 
 
-// Function LGUI.UINiagara.SetNiagaraUIActive
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    active                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInResetNiagara                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINiagara::SetNiagaraUIActive(bool active, bool bInResetNiagara)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetNiagaraUIActive");
-
-	Params::UINiagara_SetNiagaraUIActive Parms{};
-
-	Parms.active = active;
-	Parms.bInResetNiagara = bInResetNiagara;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.SetNiagaraVarFloat
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           VarName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINiagara::SetNiagaraVarFloat(const class FString& VarName, float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetNiagaraVarFloat");
-
-	Params::UINiagara_SetNiagaraVarFloat Parms{};
-
-	Parms.VarName = std::move(VarName);
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.SetNiagaraVarLinearColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FString                           VarName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUINiagara::SetNiagaraVarLinearColor(const class FString& VarName, const struct FLinearColor& Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SetNiagaraVarLinearColor");
-
-	Params::UINiagara_SetNiagaraVarLinearColor Parms{};
-
-	Parms.VarName = std::move(VarName);
-	Parms.Value = std::move(Value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.SwitchToStop
-// (Final, Native, Public, BlueprintCallable)
-
-void UUINiagara::SwitchToStop()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "SwitchToStop");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UINiagara.GetCircleClipParameters
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FCircleClipParameters            ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FCircleClipParameters UUINiagara::GetCircleClipParameters() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UINiagara", "GetCircleClipParameters");
-
-	Params::UINiagara_GetCircleClipParameters Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygon.EndAngleTo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULTweener* UUIPolygon::EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "EndAngleTo");
-
-	Params::UIPolygon_EndAngleTo Parms{};
-
-	Parms.endValue = endValue;
-	Parms.duration = duration;
-	Parms.delay = delay;
-	Parms.easeType = easeType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygon.SetEndAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPolygon::SetEndAngle(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "SetEndAngle");
-
-	Params::UIPolygon_SetEndAngle Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPolygon.SetSides
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPolygon::SetSides(int32 value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "SetSides");
-
-	Params::UIPolygon_SetSides Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPolygon.SetStartAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPolygon::SetStartAngle(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "SetStartAngle");
-
-	Params::UIPolygon_SetStartAngle Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPolygon.SetUVType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUIPolygonUVType                        value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPolygon::SetUVType(EUIPolygonUVType value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "SetUVType");
-
-	Params::UIPolygon_SetUVType Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPolygon.SetVertexOffsetArray
+// Function LGUI.UIScrollbarComponent.UnregisterSlideEvent
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<float>                           value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UUIPolygon::SetVertexOffsetArray(const TArray<float>& value)
+void UUIScrollbarComponent::UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "SetVertexOffsetArray");
+		Func = Class->GetFunction("UIScrollbarComponent", "UnregisterSlideEvent");
 
-	Params::UIPolygon_SetVertexOffsetArray Parms{};
+	Params::UIScrollbarComponent_UnregisterSlideEvent Parms{};
 
-	Parms.value = std::move(value);
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31466,53 +33379,19 @@ void UUIPolygon::SetVertexOffsetArray(const TArray<float>& value)
 }
 
 
-// Function LGUI.UIPolygon.StartAngleTo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULTweener* UUIPolygon::StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "StartAngleTo");
-
-	Params::UIPolygon_StartAngleTo Parms{};
-
-	Parms.endValue = endValue;
-	Parms.duration = duration;
-	Parms.delay = delay;
-	Parms.easeType = easeType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygon.GetEndAngle
+// Function LGUI.UIScrollbarComponent.GetSize
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUIPolygon::GetEndAngle() const
+float UUIScrollbarComponent::GetSize() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "GetEndAngle");
+		Func = Class->GetFunction("UIScrollbarComponent", "GetSize");
 
-	Params::UIPolygon_GetEndAngle Parms{};
+	Params::UIScrollbarComponent_GetSize Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31525,44 +33404,19 @@ float UUIPolygon::GetEndAngle() const
 }
 
 
-// Function LGUI.UIPolygon.GetSides
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UUIPolygon::GetSides() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "GetSides");
-
-	Params::UIPolygon_GetSides Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygon.GetStartAngle
+// Function LGUI.UIScrollbarComponent.GetValue
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUIPolygon::GetStartAngle() const
+float UUIScrollbarComponent::GetValue() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "GetStartAngle");
+		Func = Class->GetFunction("UIScrollbarComponent", "GetValue");
 
-	Params::UIPolygon_GetStartAngle Parms{};
+	Params::UIScrollbarComponent_GetValue Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31575,105 +33429,21 @@ float UUIPolygon::GetStartAngle() const
 }
 
 
-// Function LGUI.UIPolygon.GetUVType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUIPolygonUVType                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUIPolygonUVType UUIPolygon::GetUVType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "GetUVType");
-
-	Params::UIPolygon_GetUVType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygon.GetVertexOffsetArray
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<float>                     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<float> UUIPolygon::GetVertexOffsetArray() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygon", "GetVertexOffsetArray");
-
-	Params::UIPolygon_GetVertexOffsetArray Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygonLine.EndAngleTo
+// Function LGUI.UISelectableButtonComponent.SetForceSelect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    forceSelect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULTweener* UUIPolygonLine::EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
+void UUISelectableButtonComponent::SetForceSelect(bool forceSelect)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "EndAngleTo");
+		Func = Class->GetFunction("UISelectableButtonComponent", "SetForceSelect");
 
-	Params::UIPolygonLine_EndAngleTo Parms{};
+	Params::UISelectableButtonComponent_SetForceSelect Parms{};
 
-	Parms.endValue = endValue;
-	Parms.duration = duration;
-	Parms.delay = delay;
-	Parms.easeType = easeType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygonLine.SetEndAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPolygonLine::SetEndAngle(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "SetEndAngle");
-
-	Params::UIPolygonLine_SetEndAngle Parms{};
-
-	Parms.value = value;
+	Parms.forceSelect = forceSelect;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31684,103 +33454,22 @@ void UUIPolygonLine::SetEndAngle(float value)
 }
 
 
-// Function LGUI.UIPolygonLine.SetSides
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPolygonLine::SetSides(int32 value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "SetSides");
-
-	Params::UIPolygonLine_SetSides Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPolygonLine.SetStartAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUIPolygonLine::SetStartAngle(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "SetStartAngle");
-
-	Params::UIPolygonLine_SetStartAngle Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPolygonLine.SetVertexOffsetArray
+// Function LGUI.UISliderComponent.RegisterSlideEvent
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<float>                           value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(float InFloat)>          InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UUIPolygonLine::SetVertexOffsetArray(const TArray<float>& value)
+struct FLGUIDelegateHandleWrapper UUISliderComponent::RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "SetVertexOffsetArray");
+		Func = Class->GetFunction("UISliderComponent", "RegisterSlideEvent");
 
-	Params::UIPolygonLine_SetVertexOffsetArray Parms{};
+	Params::UISliderComponent_RegisterSlideEvent Parms{};
 
-	Parms.value = std::move(value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UIPolygonLine.StartAngleTo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   endValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ELTweenEase                             easeType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULTweener* UUIPolygonLine::StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "StartAngleTo");
-
-	Params::UIPolygonLine_StartAngleTo Parms{};
-
-	Parms.endValue = endValue;
-	Parms.duration = duration;
-	Parms.delay = delay;
-	Parms.easeType = easeType;
+	Parms.InDelegate = InDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31793,19 +33482,185 @@ class ULTweener* UUIPolygonLine::StartAngleTo(float endValue, float duration, fl
 }
 
 
-// Function LGUI.UIPolygonLine.GetEndAngle
+// Function LGUI.UISliderComponent.SetMaxValue
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InMaxValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    KeepRelativeValue                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISliderComponent::SetMaxValue(float InMaxValue, bool KeepRelativeValue, bool FireEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISliderComponent", "SetMaxValue");
+
+	Params::UISliderComponent_SetMaxValue Parms{};
+
+	Parms.InMaxValue = InMaxValue;
+	Parms.KeepRelativeValue = KeepRelativeValue;
+	Parms.FireEvent = FireEvent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISliderComponent.SetMinValue
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InMinValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    KeepRelativeValue                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISliderComponent::SetMinValue(float InMinValue, bool KeepRelativeValue, bool FireEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISliderComponent", "SetMinValue");
+
+	Params::UISliderComponent_SetMinValue Parms{};
+
+	Parms.InMinValue = InMinValue;
+	Parms.KeepRelativeValue = KeepRelativeValue;
+	Parms.FireEvent = FireEvent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISliderComponent.SetProgressIncrement
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   incrementValue                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    needRound                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    NeedAudio                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISliderComponent::SetProgressIncrement(float incrementValue, bool needRound, bool NeedAudio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISliderComponent", "SetProgressIncrement");
+
+	Params::UISliderComponent_SetProgressIncrement Parms{};
+
+	Parms.incrementValue = incrementValue;
+	Parms.needRound = needRound;
+	Parms.NeedAudio = NeedAudio;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISliderComponent.SetValue
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISliderComponent::SetValue(float InValue, bool FireEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISliderComponent", "SetValue");
+
+	Params::UISliderComponent_SetValue Parms{};
+
+	Parms.InValue = InValue;
+	Parms.FireEvent = FireEvent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISliderComponent.SetValueWithAudio
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    FireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISliderComponent::SetValueWithAudio(float InValue, bool FireEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISliderComponent", "SetValueWithAudio");
+
+	Params::UISliderComponent_SetValueWithAudio Parms{};
+
+	Parms.InValue = InValue;
+	Parms.FireEvent = FireEvent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISliderComponent.UnregisterSlideEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUISliderComponent::UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISliderComponent", "UnregisterSlideEvent");
+
+	Params::UISliderComponent_UnregisterSlideEvent Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISliderComponent.GetMaxValue
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUIPolygonLine::GetEndAngle() const
+float UUISliderComponent::GetMaxValue() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "GetEndAngle");
+		Func = Class->GetFunction("UISliderComponent", "GetMaxValue");
 
-	Params::UIPolygonLine_GetEndAngle Parms{};
+	Params::UISliderComponent_GetMaxValue Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31818,44 +33673,19 @@ float UUIPolygonLine::GetEndAngle() const
 }
 
 
-// Function LGUI.UIPolygonLine.GetSides
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UUIPolygonLine::GetSides() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "GetSides");
-
-	Params::UIPolygonLine_GetSides Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UIPolygonLine.GetStartAngle
+// Function LGUI.UISliderComponent.GetMinValue
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUIPolygonLine::GetStartAngle() const
+float UUISliderComponent::GetMinValue() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "GetStartAngle");
+		Func = Class->GetFunction("UISliderComponent", "GetMinValue");
 
-	Params::UIPolygonLine_GetStartAngle Parms{};
+	Params::UISliderComponent_GetMinValue Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31868,513 +33698,19 @@ float UUIPolygonLine::GetStartAngle() const
 }
 
 
-// Function LGUI.UIPolygonLine.GetVertexOffsetArray
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<float>                     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<float> UUIPolygonLine::GetVertexOffsetArray() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UIPolygonLine", "GetVertexOffsetArray");
-
-	Params::UIPolygonLine_GetVertexOffsetArray Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISafeZone.SetWidthAndHeightRadio
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Left                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Right                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Top                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Bottom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISafeZone::SetWidthAndHeightRadio(float Left, float Right, float Top, float Bottom)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISafeZone", "SetWidthAndHeightRadio");
-
-	Params::UISafeZone_SetWidthAndHeightRadio Parms{};
-
-	Parms.Left = Left;
-	Parms.Right = Right;
-	Parms.Top = Top;
-	Parms.Bottom = Bottom;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableGroupComponent.OnComponentHighlighted
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableGroupComponent::OnComponentHighlighted(class UUISelectableComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentHighlighted");
-
-	Params::UISelectableGroupComponent_OnComponentHighlighted Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableGroupComponent.OnComponentSelected
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UUISelectableComponent*           Component                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableGroupComponent::OnComponentSelected(class UUISelectableComponent* Component)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentSelected");
-
-	Params::UISelectableGroupComponent_OnComponentSelected Parms{};
-
-	Parms.Component = Component;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableGroupComponent.OnComponentUnhighlighted
-// (Final, Native, Public, BlueprintCallable)
-
-void UUISelectableGroupComponent::OnComponentUnhighlighted()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentUnhighlighted");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableGroupComponent.OnComponentUnselected
-// (Final, Native, Public, BlueprintCallable)
-
-void UUISelectableGroupComponent::OnComponentUnselected()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableGroupComponent", "OnComponentUnselected");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISelectableStateHolder.SetAllTransitionsEnable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISelectableStateHolder::SetAllTransitionsEnable(bool bEnable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISelectableStateHolder", "SetAllTransitionsEnable");
-
-	Params::UISelectableStateHolder_SetAllTransitionsEnable Parms{};
-
-	Parms.bEnable = bEnable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByAspectRatio.SetAspectRatio
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISizeControlByAspectRatio::SetAspectRatio(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByAspectRatio", "SetAspectRatio");
-
-	Params::UISizeControlByAspectRatio_SetAspectRatio Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByAspectRatio.SetControlMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EUISizeControlByAspectRatioMode         value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISizeControlByAspectRatio::SetControlMode(EUISizeControlByAspectRatioMode value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByAspectRatio", "SetControlMode");
-
-	Params::UISizeControlByAspectRatio_SetControlMode Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByAspectRatio.GetAspectRatio
+// Function LGUI.UISliderComponent.GetValue
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UUISizeControlByAspectRatio::GetAspectRatio() const
+float UUISliderComponent::GetValue() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByAspectRatio", "GetAspectRatio");
+		Func = Class->GetFunction("UISliderComponent", "GetValue");
 
-	Params::UISizeControlByAspectRatio_GetAspectRatio Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISizeControlByAspectRatio.GetControlMode
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EUISizeControlByAspectRatioMode         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EUISizeControlByAspectRatioMode UUISizeControlByAspectRatio::GetControlMode() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByAspectRatio", "GetControlMode");
-
-	Params::UISizeControlByAspectRatio_GetControlMode Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISizeControlByOther.SetAdditionalHeight
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISizeControlByOther::SetAdditionalHeight(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "SetAdditionalHeight");
-
-	Params::UISizeControlByOther_SetAdditionalHeight Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByOther.SetAdditionalWidth
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISizeControlByOther::SetAdditionalWidth(float value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "SetAdditionalWidth");
-
-	Params::UISizeControlByOther_SetAdditionalWidth Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByOther.SetControlHeight
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISizeControlByOther::SetControlHeight(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "SetControlHeight");
-
-	Params::UISizeControlByOther_SetControlHeight Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByOther.SetControlWidth
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISizeControlByOther::SetControlWidth(bool value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "SetControlWidth");
-
-	Params::UISizeControlByOther_SetControlWidth Parms{};
-
-	Parms.value = value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByOther.SetTargetActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AUIBaseActor*                     NewTargetActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUISizeControlByOther::SetTargetActor(class AUIBaseActor* NewTargetActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "SetTargetActor");
-
-	Params::UISizeControlByOther_SetTargetActor Parms{};
-
-	Parms.NewTargetActor = NewTargetActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LGUI.UISizeControlByOther.GetAdditionalHeight
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUISizeControlByOther::GetAdditionalHeight() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "GetAdditionalHeight");
-
-	Params::UISizeControlByOther_GetAdditionalHeight Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISizeControlByOther.GetAdditionalWidth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUISizeControlByOther::GetAdditionalWidth() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "GetAdditionalWidth");
-
-	Params::UISizeControlByOther_GetAdditionalWidth Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISizeControlByOther.GetControlHeight
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUISizeControlByOther::GetControlHeight() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "GetControlHeight");
-
-	Params::UISizeControlByOther_GetControlHeight Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISizeControlByOther.GetControlWidth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UUISizeControlByOther::GetControlWidth() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "GetControlWidth");
-
-	Params::UISizeControlByOther_GetControlWidth Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LGUI.UISizeControlByOther.GetTargetActor
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AUIBaseActor*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AUIBaseActor* UUISizeControlByOther::GetTargetActor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISizeControlByOther", "GetTargetActor");
-
-	Params::UISizeControlByOther_GetTargetActor Parms{};
+	Params::UISliderComponent_GetValue Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -32431,31 +33767,12 @@ void UUISpineRenderable::AfterSkeletonUpdate(class USpineSkeletonComponent* Skel
 }
 
 
-// Function LGUI.UISpineRenderable.TestPlayPreviewAnimInRuntime
-// (Final, Native, Public)
-
-void UUISpineRenderable::TestPlayPreviewAnimInRuntime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISpineRenderable", "TestPlayPreviewAnimInRuntime");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function LGUI.UISpineRenderable.GetMeshesNum
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UUISpineRenderable::GetMeshesNum() const
+int32 UUISpineRenderable::GetMeshesNum()
 {
 	static class UFunction* Func = nullptr;
 
@@ -32476,11 +33793,11 @@ int32 UUISpineRenderable::GetMeshesNum() const
 
 
 // Function LGUI.UISpineRenderable.GetTotalVerticeNum
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UUISpineRenderable::GetTotalVerticeNum() const
+int32 UUISpineRenderable::GetTotalVerticeNum()
 {
 	static class UFunction* Func = nullptr;
 
@@ -32497,6 +33814,75 @@ int32 UUISpineRenderable::GetTotalVerticeNum() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UISpineRenderable.OnSpineAnimationEnd
+// (Final, Native, Public)
+// Parameters:
+// class UTrackEntry*                      entry                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISpineRenderable::OnSpineAnimationEnd(class UTrackEntry* entry)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpineRenderable", "OnSpineAnimationEnd");
+
+	Params::UISpineRenderable_OnSpineAnimationEnd Parms{};
+
+	Parms.entry = entry;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISpineRenderable.OnSpineAnimationStart
+// (Final, Native, Public)
+// Parameters:
+// class UTrackEntry*                      entry                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUISpineRenderable::OnSpineAnimationStart(class UTrackEntry* entry)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpineRenderable", "OnSpineAnimationStart");
+
+	Params::UISpineRenderable_OnSpineAnimationStart Parms{};
+
+	Parms.entry = entry;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UISpineRenderable.TestPlayPreviewAnimInRuntime
+// (Final, Native, Public)
+
+void UUISpineRenderable::TestPlayPreviewAnimInRuntime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISpineRenderable", "TestPlayPreviewAnimInRuntime");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -32854,6 +34240,424 @@ EUIStaticMeshVertexColorType UUIStaticMesh::GetVertexColorType() const
 }
 
 
+// Function LGUI.UITextInputComponent.SetShowKeyboardDelegate
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(bool state)>             InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUITextInputComponent::SetShowKeyboardDelegate(const TDelegate<void(bool state)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UITextInputComponent", "SetShowKeyboardDelegate");
+
+	Params::UITextInputComponent_SetShowKeyboardDelegate Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.ActivateInputText
+// (Final, Native, Public, BlueprintCallable)
+
+void UUITextInputComponent::ActivateInputText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "ActivateInputText");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.ClearCustomInputTypeEvent
+// (Final, Native, Public, BlueprintCallable)
+
+void UUITextInputComponent::ClearCustomInputTypeEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "ClearCustomInputTypeEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.DeactivateInputText
+// (Final, Native, Public, BlueprintCallable)
+
+void UUITextInputComponent::DeactivateInputText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "DeactivateInputText");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.IsInputActive
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUITextInputComponent::IsInputActive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "IsInputActive");
+
+	Params::UITextInputComponent_IsInputActive Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITextInputComponent.RegisterInputActivateEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(bool InActivate)>        InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUITextInputComponent::RegisterInputActivateEvent(const TDelegate<void(bool InActivate)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "RegisterInputActivateEvent");
+
+	Params::UITextInputComponent_RegisterInputActivateEvent Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITextInputComponent.RegisterSubmitEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(const class FString& InString)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUITextInputComponent::RegisterSubmitEvent(const TDelegate<void(const class FString& InString)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "RegisterSubmitEvent");
+
+	Params::UITextInputComponent_RegisterSubmitEvent Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITextInputComponent.RegisterValueChangeEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(const class FString& InString)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUITextInputComponent::RegisterValueChangeEvent(const TDelegate<void(const class FString& InString)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "RegisterValueChangeEvent");
+
+	Params::UITextInputComponent_RegisterValueChangeEvent Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITextInputComponent.SetCustomInputTypeFunction
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(const class FString& InString)>InFunction                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UUITextInputComponent::SetCustomInputTypeFunction(const TDelegate<void(const class FString& InString)>& InFunction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "SetCustomInputTypeFunction");
+
+	Params::UITextInputComponent_SetCustomInputTypeFunction Parms{};
+
+	Parms.InFunction = InFunction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.SetInputType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ELGUITextInputType                      newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITextInputComponent::SetInputType(ELGUITextInputType newValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "SetInputType");
+
+	Params::UITextInputComponent_SetInputType Parms{};
+
+	Parms.newValue = newValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.SetText
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           InText                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InFireEvent                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUITextInputComponent::SetText(const class FString& InText, bool InFireEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "SetText");
+
+	Params::UITextInputComponent_SetText Parms{};
+
+	Parms.InText = std::move(InText);
+	Parms.InFireEvent = InFireEvent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.UnregisterInputActivateEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUITextInputComponent::UnregisterInputActivateEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "UnregisterInputActivateEvent");
+
+	Params::UITextInputComponent_UnregisterInputActivateEvent Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.UnregisterSubmitEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUITextInputComponent::UnregisterSubmitEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "UnregisterSubmitEvent");
+
+	Params::UITextInputComponent_UnregisterSubmitEvent Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.UnregisterValueChangeEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUITextInputComponent::UnregisterValueChangeEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "UnregisterValueChangeEvent");
+
+	Params::UITextInputComponent_UnregisterValueChangeEvent Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UITextInputComponent.GetInputType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ELGUITextInputType                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ELGUITextInputType UUITextInputComponent::GetInputType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "GetInputType");
+
+	Params::UITextInputComponent_GetInputType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITextInputComponent.GetText
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UUITextInputComponent::GetText() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "GetText");
+
+	Params::UITextInputComponent_GetText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UITextInputComponent.GetTextComponent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UUIText*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UUIText* UUITextInputComponent::GetTextComponent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UITextInputComponent", "GetTextComponent");
+
+	Params::UITextInputComponent_GetTextComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.UITextureBase_BP.MarkRebuildGeometry_BP
 // (Final, Native, Public, BlueprintCallable)
 
@@ -32952,61 +34756,287 @@ void UUITextureBase_BP::OnUpdateGeometry_BP(class ULGUIUpdateGeometryHelper* InU
 }
 
 
-// Function LGUI.TextureTransitionUtil.SetTextureByTransitionInfo
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Function LGUI.UITextureTransitionComponent.SetAllStateTexture
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UUITexture*                       Texture                                                (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTextureTransitionOfState        Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class UTexture*                         NewTexture                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTextureTransitionUtil::SetTextureByTransitionInfo(class UUITexture* Texture, const struct FTextureTransitionOfState& Info)
+void UUITextureTransitionComponent::SetAllStateTexture(class UTexture* NewTexture)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TextureTransitionUtil", "SetTextureByTransitionInfo");
+		Func = Class->GetFunction("UITextureTransitionComponent", "SetAllStateTexture");
 
-	Params::TextureTransitionUtil_SetTextureByTransitionInfo Parms{};
+	Params::UITextureTransitionComponent_SetAllStateTexture Parms{};
 
-	Parms.Texture = Texture;
-	Parms.Info = std::move(Info);
+	Parms.NewTexture = NewTexture;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function LGUI.TextureTransitionUtil.SetTextureSize
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function LGUI.UITextureTransitionComponent.SetStateTexture
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UUITexture*                       Texture                                                (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsSnapSize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EUISelectableSelectionState             State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture*                         NewTexture                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTextureTransitionUtil::SetTextureSize(class UUITexture* Texture, bool bIsSnapSize, float Width, float Height)
+void UUITextureTransitionComponent::SetStateTexture(EUISelectableSelectionState State, class UTexture* NewTexture)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TextureTransitionUtil", "SetTextureSize");
+		Func = Class->GetFunction("UITextureTransitionComponent", "SetStateTexture");
 
-	Params::TextureTransitionUtil_SetTextureSize Parms{};
+	Params::UITextureTransitionComponent_SetStateTexture Parms{};
 
-	Parms.Texture = Texture;
-	Parms.bIsSnapSize = bIsSnapSize;
-	Parms.Width = Width;
-	Parms.Height = Height;
+	Parms.State = State;
+	Parms.NewTexture = NewTexture;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIToggleComponent.RegisterToggleEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(bool InBool)>            InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FLGUIDelegateHandleWrapper       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLGUIDelegateHandleWrapper UUIToggleComponent::RegisterToggleEvent(const TDelegate<void(bool InBool)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "RegisterToggleEvent");
+
+	Params::UIToggleComponent_RegisterToggleEvent Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIToggleComponent.SetState
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    newState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    fireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIToggleComponent::SetState(bool newState, bool fireEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "SetState");
+
+	Params::UIToggleComponent_SetState Parms{};
+
+	Parms.newState = newState;
+	Parms.fireEvent = fireEvent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIToggleComponent.SetToggleGroup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUIToggleGroupComponent*          InGroupComp                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIToggleComponent::SetToggleGroup(class UUIToggleGroupComponent* InGroupComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "SetToggleGroup");
+
+	Params::UIToggleComponent_SetToggleGroup Parms{};
+
+	Parms.InGroupComp = InGroupComp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIToggleComponent.SetValue
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    newValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    fireEvent                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIToggleComponent::SetValue(bool newValue, bool fireEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "SetValue");
+
+	Params::UIToggleComponent_SetValue Parms{};
+
+	Parms.newValue = newValue;
+	Parms.fireEvent = fireEvent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIToggleComponent.UnregisterToggleEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FLGUIDelegateHandleWrapper       InDelegateHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIToggleComponent::UnregisterToggleEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "UnregisterToggleEvent");
+
+	Params::UIToggleComponent_UnregisterToggleEvent Parms{};
+
+	Parms.InDelegateHandle = std::move(InDelegateHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIToggleComponent.GetIndexInGroup
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIToggleComponent::GetIndexInGroup() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "GetIndexInGroup");
+
+	Params::UIToggleComponent_GetIndexInGroup Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIToggleComponent.GetState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIToggleComponent::GetState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "GetState");
+
+	Params::UIToggleComponent_GetState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIToggleComponent.GetToggleGroupActor
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* UUIToggleComponent::GetToggleGroupActor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "GetToggleGroupActor");
+
+	Params::UIToggleComponent_GetToggleGroupActor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIToggleComponent.GetValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIToggleComponent::GetValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIToggleComponent", "GetValue");
+
+	Params::UIToggleComponent_GetValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -33326,19 +35356,21 @@ int32 UUIToggleGroupComponent::GetToggleIndex(const class UUIToggleComponent* In
 }
 
 
-// Function LGUI.ViewportUITextureActor.GetUITexture
+// Function LGUI.UIVerticalLayout.SetAlign
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UViewportUITexture*               ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ELGUILayoutAlignmentType                value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UViewportUITexture* AViewportUITextureActor::GetUITexture()
+void UUIVerticalLayout::SetAlign(ELGUILayoutAlignmentType value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ViewportUITextureActor", "GetUITexture");
+		Func = Class->GetFunction("UIVerticalLayout", "SetAlign");
 
-	Params::ViewportUITextureActor_GetUITexture Parms{};
+	Params::UIVerticalLayout_SetAlign Parms{};
+
+	Parms.value = value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -33346,6 +35378,544 @@ class UViewportUITexture* AViewportUITextureActor::GetUITexture()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIVerticalLayout.SetExpendChildrenHeight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIVerticalLayout::SetExpendChildrenHeight(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "SetExpendChildrenHeight");
+
+	Params::UIVerticalLayout_SetExpendChildrenHeight Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIVerticalLayout.SetExpendChildrenWidth
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIVerticalLayout::SetExpendChildrenWidth(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "SetExpendChildrenWidth");
+
+	Params::UIVerticalLayout_SetExpendChildrenWidth Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIVerticalLayout.SetHeightFitToChildren
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIVerticalLayout::SetHeightFitToChildren(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "SetHeightFitToChildren");
+
+	Params::UIVerticalLayout_SetHeightFitToChildren Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIVerticalLayout.SetPadding
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FMargin                          value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UUIVerticalLayout::SetPadding(const struct FMargin& value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "SetPadding");
+
+	Params::UIVerticalLayout_SetPadding Parms{};
+
+	Parms.value = std::move(value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIVerticalLayout.SetSpacing
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIVerticalLayout::SetSpacing(float value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "SetSpacing");
+
+	Params::UIVerticalLayout_SetSpacing Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIVerticalLayout.SetWidthFitToChildren
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIVerticalLayout::SetWidthFitToChildren(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "SetWidthFitToChildren");
+
+	Params::UIVerticalLayout_SetWidthFitToChildren Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetActuralRange
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIVerticalLayout::GetActuralRange() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetActuralRange");
+
+	Params::UIVerticalLayout_GetActuralRange Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetAlign
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ELGUILayoutAlignmentType                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ELGUILayoutAlignmentType UUIVerticalLayout::GetAlign() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetAlign");
+
+	Params::UIVerticalLayout_GetAlign Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetExpendChildrenHeight
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIVerticalLayout::GetExpendChildrenHeight() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetExpendChildrenHeight");
+
+	Params::UIVerticalLayout_GetExpendChildrenHeight Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetExpendChildrenWidth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIVerticalLayout::GetExpendChildrenWidth() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetExpendChildrenWidth");
+
+	Params::UIVerticalLayout_GetExpendChildrenWidth Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetHeightFitToChildren
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIVerticalLayout::GetHeightFitToChildren() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetHeightFitToChildren");
+
+	Params::UIVerticalLayout_GetHeightFitToChildren Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetPadding
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FMargin                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FMargin UUIVerticalLayout::GetPadding() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetPadding");
+
+	Params::UIVerticalLayout_GetPadding Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetSpacing
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIVerticalLayout::GetSpacing() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetSpacing");
+
+	Params::UIVerticalLayout_GetSpacing Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIVerticalLayout.GetWidthFitToChildren
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIVerticalLayout::GetWidthFitToChildren() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIVerticalLayout", "GetWidthFitToChildren");
+
+	Params::UIVerticalLayout_GetWidthFitToChildren Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIViewTweenParams.GetTweenAlpha
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIViewTweenParams::GetTweenAlpha() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIViewTweenParams", "GetTweenAlpha");
+
+	Params::UIViewTweenParams_GetTweenAlpha Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIViewTweenParams.GetTweenSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIViewTweenParams::GetTweenSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIViewTweenParams", "GetTweenSize");
+
+	Params::UIViewTweenParams_GetTweenSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIViewTweenParams.GetTweenTime
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UUIViewTweenParams::GetTweenTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIViewTweenParams", "GetTweenTime");
+
+	Params::UIViewTweenParams_GetTweenTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIViewTweenParams.GetViewNameBlackList
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<class FString>             ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<class FString> UUIViewTweenParams::GetViewNameBlackList() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIViewTweenParams", "GetViewNameBlackList");
+
+	Params::UIViewTweenParams_GetViewNameBlackList Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.ViewportUITexture.GetSceneCapture
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class USceneCaptureComponent2D*         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USceneCaptureComponent2D* UViewportUITexture::GetSceneCapture() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViewportUITexture", "GetSceneCapture");
+
+	Params::ViewportUITexture_GetSceneCapture Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.ViewportUITexture.ViewPointToWorld
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        InViewPoint                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          OutWorldLocation                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          OutWorldDirection                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UViewportUITexture::ViewPointToWorld(const struct FVector2D& InViewPoint, struct FVector* OutWorldLocation, struct FVector* OutWorldDirection) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViewportUITexture", "ViewPointToWorld");
+
+	Params::ViewportUITexture_ViewPointToWorld Parms{};
+
+	Parms.InViewPoint = std::move(InViewPoint);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutWorldLocation != nullptr)
+		*OutWorldLocation = std::move(Parms.OutWorldLocation);
+
+	if (OutWorldDirection != nullptr)
+		*OutWorldDirection = std::move(Parms.OutWorldDirection);
+}
+
+
+// Function LGUI.ViewportUITexture.WorldToViewPoint
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          InWorldLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        OutViewPoint                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UViewportUITexture::WorldToViewPoint(const struct FVector& InWorldLocation, struct FVector2D* OutViewPoint) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViewportUITexture", "WorldToViewPoint");
+
+	Params::ViewportUITexture_WorldToViewPoint Parms{};
+
+	Parms.InWorldLocation = std::move(InWorldLocation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutViewPoint != nullptr)
+		*OutViewPoint = std::move(Parms.OutViewPoint);
 
 	return Parms.ReturnValue;
 }

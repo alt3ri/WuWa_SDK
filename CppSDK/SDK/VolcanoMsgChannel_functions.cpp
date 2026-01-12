@@ -1,0 +1,109 @@
+﻿#pragma once
+// Package: VolcanoMsgChannel
+
+#include "Basic.hpp"
+
+#include "VolcanoMsgChannel_classes.hpp"
+#include "VolcanoMsgChannel_parameters.hpp"
+
+
+namespace SDK
+{
+
+// Function VolcanoMsgChannel.VolcanoPipeWrapper.InitSDK
+// (Final, Native, Public, BlueprintCallable)
+
+void UVolcanoPipeWrapper::InitSDK()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VolcanoPipeWrapper", "InitSDK");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function VolcanoMsgChannel.VolcanoPipeWrapper.SendMcBinary
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<uint8>                           bin                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UVolcanoPipeWrapper::SendMcBinary(const TArray<uint8>& bin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VolcanoPipeWrapper", "SendMcBinary");
+
+	Params::VolcanoPipeWrapper_SendMcBinary Parms{};
+
+	Parms.bin = std::move(bin);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function VolcanoMsgChannel.VolcanoPipeWrapper.SendMcBinaryWithKey
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<uint8>                           bin                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UVolcanoPipeWrapper::SendMcBinaryWithKey(const class FString& Key, const TArray<uint8>& bin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VolcanoPipeWrapper", "SendMcBinaryWithKey");
+
+	Params::VolcanoPipeWrapper_SendMcBinaryWithKey Parms{};
+
+	Parms.Key = std::move(Key);
+	Parms.bin = std::move(bin);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function VolcanoMsgChannel.VolcanoPipeWrapper.SendMcString
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           msg                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVolcanoPipeWrapper::SendMcString(const class FString& msg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VolcanoPipeWrapper", "SendMcString");
+
+	Params::VolcanoPipeWrapper_SendMcString Parms{};
+
+	Parms.msg = std::move(msg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+}
+

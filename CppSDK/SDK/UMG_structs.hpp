@@ -3,13 +3,13 @@
 
 #include "Basic.hpp"
 
-#include "PropertyPath_structs.hpp"
+#include "MovieScene_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "PropertyPath_structs.hpp"
 #include "Slate_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "MovieScene_structs.hpp"
-#include "Engine_structs.hpp"
 #include "MovieSceneTracks_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -206,16 +206,33 @@ enum class EWidgetInteractionSource : uint8
 	EWidgetInteractionSource_MAX             = 4,
 };
 
-// ScriptStruct UMG.MovieScene2DTransformMask
-// 0x0004 (0x0004 - 0x0000)
-struct FMovieScene2DTransformMask final
+// ScriptStruct UMG.DynamicPropertyPath
+// 0x0000 (0x0028 - 0x0028)
+struct FDynamicPropertyPath final : public FCachedPropertyPath
+{
+};
+static_assert(alignof(FDynamicPropertyPath) == 0x000008, "Wrong alignment on FDynamicPropertyPath");
+static_assert(sizeof(FDynamicPropertyPath) == 0x000028, "Wrong size on FDynamicPropertyPath");
+
+// ScriptStruct UMG.DelegateRuntimeBinding
+// 0x0058 (0x0058 - 0x0000)
+struct FDelegateRuntimeBinding final
 {
 public:
-	uint32                                        Mask;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FString                                 ObjectName;                                        // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PropertyName;                                      // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FunctionName;                                      // 0x001C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDynamicPropertyPath                   SourcePath;                                        // 0x0028(0x0028)(NativeAccessSpecifierPublic)
+	EBindingKind                                  Kind;                                              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FMovieScene2DTransformMask) == 0x000004, "Wrong alignment on FMovieScene2DTransformMask");
-static_assert(sizeof(FMovieScene2DTransformMask) == 0x000004, "Wrong size on FMovieScene2DTransformMask");
-static_assert(offsetof(FMovieScene2DTransformMask, Mask) == 0x000000, "Member 'FMovieScene2DTransformMask::Mask' has a wrong offset!");
+static_assert(alignof(FDelegateRuntimeBinding) == 0x000008, "Wrong alignment on FDelegateRuntimeBinding");
+static_assert(sizeof(FDelegateRuntimeBinding) == 0x000058, "Wrong size on FDelegateRuntimeBinding");
+static_assert(offsetof(FDelegateRuntimeBinding, ObjectName) == 0x000000, "Member 'FDelegateRuntimeBinding::ObjectName' has a wrong offset!");
+static_assert(offsetof(FDelegateRuntimeBinding, PropertyName) == 0x000010, "Member 'FDelegateRuntimeBinding::PropertyName' has a wrong offset!");
+static_assert(offsetof(FDelegateRuntimeBinding, FunctionName) == 0x00001C, "Member 'FDelegateRuntimeBinding::FunctionName' has a wrong offset!");
+static_assert(offsetof(FDelegateRuntimeBinding, SourcePath) == 0x000028, "Member 'FDelegateRuntimeBinding::SourcePath' has a wrong offset!");
+static_assert(offsetof(FDelegateRuntimeBinding, Kind) == 0x000050, "Member 'FDelegateRuntimeBinding::Kind' has a wrong offset!");
 
 // ScriptStruct UMG.PaintContext
 // 0x0030 (0x0030 - 0x0000)
@@ -227,20 +244,6 @@ public:
 static_assert(alignof(FPaintContext) == 0x000008, "Wrong alignment on FPaintContext");
 static_assert(sizeof(FPaintContext) == 0x000030, "Wrong size on FPaintContext");
 
-// ScriptStruct UMG.NamedSlotBinding
-// 0x0018 (0x0018 - 0x0000)
-struct FNamedSlotBinding final
-{
-public:
-	class FName                                   Name;                                              // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                Content;                                           // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FNamedSlotBinding) == 0x000008, "Wrong alignment on FNamedSlotBinding");
-static_assert(sizeof(FNamedSlotBinding) == 0x000018, "Wrong size on FNamedSlotBinding");
-static_assert(offsetof(FNamedSlotBinding, Name) == 0x000000, "Member 'FNamedSlotBinding::Name' has a wrong offset!");
-static_assert(offsetof(FNamedSlotBinding, Content) == 0x000010, "Member 'FNamedSlotBinding::Content' has a wrong offset!");
-
 // ScriptStruct UMG.EventReply
 // 0x00C0 (0x00C0 - 0x0000)
 struct alignas(0x08) FEventReply final
@@ -251,36 +254,16 @@ public:
 static_assert(alignof(FEventReply) == 0x000008, "Wrong alignment on FEventReply");
 static_assert(sizeof(FEventReply) == 0x0000C0, "Wrong size on FEventReply");
 
-// ScriptStruct UMG.RadialBoxSettings
-// 0x000C (0x000C - 0x0000)
-struct FRadialBoxSettings final
+// ScriptStruct UMG.MovieScene2DTransformMask
+// 0x0004 (0x0004 - 0x0000)
+struct FMovieScene2DTransformMask final
 {
 public:
-	bool                                          bDistributeItemsEvenly;                            // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AngleBetweenItems;                                 // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartingAngle;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        Mask;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-static_assert(alignof(FRadialBoxSettings) == 0x000004, "Wrong alignment on FRadialBoxSettings");
-static_assert(sizeof(FRadialBoxSettings) == 0x00000C, "Wrong size on FRadialBoxSettings");
-static_assert(offsetof(FRadialBoxSettings, bDistributeItemsEvenly) == 0x000000, "Member 'FRadialBoxSettings::bDistributeItemsEvenly' has a wrong offset!");
-static_assert(offsetof(FRadialBoxSettings, AngleBetweenItems) == 0x000004, "Member 'FRadialBoxSettings::AngleBetweenItems' has a wrong offset!");
-static_assert(offsetof(FRadialBoxSettings, StartingAngle) == 0x000008, "Member 'FRadialBoxSettings::StartingAngle' has a wrong offset!");
-
-// ScriptStruct UMG.ShapedTextOptions
-// 0x0003 (0x0003 - 0x0000)
-struct FShapedTextOptions final
-{
-public:
-	uint8                                         bOverride_TextShapingMethod : 1;                   // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_TextFlowDirection : 1;                   // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	ETextShapingMethod                            TextShapingMethod;                                 // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETextFlowDirection                            TextFlowDirection;                                 // 0x0002(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FShapedTextOptions) == 0x000001, "Wrong alignment on FShapedTextOptions");
-static_assert(sizeof(FShapedTextOptions) == 0x000003, "Wrong size on FShapedTextOptions");
-static_assert(offsetof(FShapedTextOptions, TextShapingMethod) == 0x000001, "Member 'FShapedTextOptions::TextShapingMethod' has a wrong offset!");
-static_assert(offsetof(FShapedTextOptions, TextFlowDirection) == 0x000002, "Member 'FShapedTextOptions::TextFlowDirection' has a wrong offset!");
+static_assert(alignof(FMovieScene2DTransformMask) == 0x000004, "Wrong alignment on FMovieScene2DTransformMask");
+static_assert(sizeof(FMovieScene2DTransformMask) == 0x000004, "Wrong size on FMovieScene2DTransformMask");
+static_assert(offsetof(FMovieScene2DTransformMask, Mask) == 0x000000, "Member 'FMovieScene2DTransformMask::Mask' has a wrong offset!");
 
 // ScriptStruct UMG.WidgetTransform
 // 0x001C (0x001C - 0x0000)
@@ -299,6 +282,21 @@ static_assert(offsetof(FWidgetTransform, Scale) == 0x000008, "Member 'FWidgetTra
 static_assert(offsetof(FWidgetTransform, Shear) == 0x000010, "Member 'FWidgetTransform::Shear' has a wrong offset!");
 static_assert(offsetof(FWidgetTransform, Angle) == 0x000018, "Member 'FWidgetTransform::Angle' has a wrong offset!");
 
+// ScriptStruct UMG.ShapedTextOptions
+// 0x0003 (0x0003 - 0x0000)
+struct FShapedTextOptions final
+{
+public:
+	uint8                                         bOverride_TextShapingMethod : 1;                   // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_TextFlowDirection : 1;                   // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	ETextShapingMethod                            TextShapingMethod;                                 // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETextFlowDirection                            TextFlowDirection;                                 // 0x0002(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FShapedTextOptions) == 0x000001, "Wrong alignment on FShapedTextOptions");
+static_assert(sizeof(FShapedTextOptions) == 0x000003, "Wrong size on FShapedTextOptions");
+static_assert(offsetof(FShapedTextOptions, TextShapingMethod) == 0x000001, "Member 'FShapedTextOptions::TextShapingMethod' has a wrong offset!");
+static_assert(offsetof(FShapedTextOptions, TextFlowDirection) == 0x000002, "Member 'FShapedTextOptions::TextFlowDirection' has a wrong offset!");
+
 // ScriptStruct UMG.AnchorData
 // 0x0028 (0x0028 - 0x0000)
 struct FAnchorData final
@@ -313,14 +311,6 @@ static_assert(sizeof(FAnchorData) == 0x000028, "Wrong size on FAnchorData");
 static_assert(offsetof(FAnchorData, Offsets) == 0x000000, "Member 'FAnchorData::Offsets' has a wrong offset!");
 static_assert(offsetof(FAnchorData, Anchors) == 0x000010, "Member 'FAnchorData::Anchors' has a wrong offset!");
 static_assert(offsetof(FAnchorData, Alignment) == 0x000020, "Member 'FAnchorData::Alignment' has a wrong offset!");
-
-// ScriptStruct UMG.DynamicPropertyPath
-// 0x0000 (0x0028 - 0x0028)
-struct FDynamicPropertyPath final : public FCachedPropertyPath
-{
-};
-static_assert(alignof(FDynamicPropertyPath) == 0x000008, "Wrong alignment on FDynamicPropertyPath");
-static_assert(sizeof(FDynamicPropertyPath) == 0x000028, "Wrong size on FDynamicPropertyPath");
 
 // ScriptStruct UMG.MovieSceneMarginSectionTemplate
 // 0x0288 (0x02C8 - 0x0040)
@@ -352,6 +342,22 @@ public:
 static_assert(alignof(FMovieSceneWidgetMaterialSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneWidgetMaterialSectionTemplate");
 static_assert(sizeof(FMovieSceneWidgetMaterialSectionTemplate) == 0x000090, "Wrong size on FMovieSceneWidgetMaterialSectionTemplate");
 static_assert(offsetof(FMovieSceneWidgetMaterialSectionTemplate, BrushPropertyNamePath) == 0x000080, "Member 'FMovieSceneWidgetMaterialSectionTemplate::BrushPropertyNamePath' has a wrong offset!");
+
+// ScriptStruct UMG.RadialBoxSettings
+// 0x000C (0x000C - 0x0000)
+struct FRadialBoxSettings final
+{
+public:
+	bool                                          bDistributeItemsEvenly;                            // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AngleBetweenItems;                                 // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartingAngle;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRadialBoxSettings) == 0x000004, "Wrong alignment on FRadialBoxSettings");
+static_assert(sizeof(FRadialBoxSettings) == 0x00000C, "Wrong size on FRadialBoxSettings");
+static_assert(offsetof(FRadialBoxSettings, bDistributeItemsEvenly) == 0x000000, "Member 'FRadialBoxSettings::bDistributeItemsEvenly' has a wrong offset!");
+static_assert(offsetof(FRadialBoxSettings, AngleBetweenItems) == 0x000004, "Member 'FRadialBoxSettings::AngleBetweenItems' has a wrong offset!");
+static_assert(offsetof(FRadialBoxSettings, StartingAngle) == 0x000008, "Member 'FRadialBoxSettings::StartingAngle' has a wrong offset!");
 
 // ScriptStruct UMG.RichTextStyleRow
 // 0x0288 (0x0290 - 0x0008)
@@ -413,6 +419,20 @@ static_assert(alignof(FSlateChildSize) == 0x000004, "Wrong alignment on FSlateCh
 static_assert(sizeof(FSlateChildSize) == 0x000008, "Wrong size on FSlateChildSize");
 static_assert(offsetof(FSlateChildSize, Value) == 0x000000, "Member 'FSlateChildSize::Value' has a wrong offset!");
 static_assert(offsetof(FSlateChildSize, SizeRule) == 0x000004, "Member 'FSlateChildSize::SizeRule' has a wrong offset!");
+
+// ScriptStruct UMG.NamedSlotBinding
+// 0x0018 (0x0018 - 0x0000)
+struct FNamedSlotBinding final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                Content;                                           // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FNamedSlotBinding) == 0x000008, "Wrong alignment on FNamedSlotBinding");
+static_assert(sizeof(FNamedSlotBinding) == 0x000018, "Wrong size on FNamedSlotBinding");
+static_assert(offsetof(FNamedSlotBinding, Name) == 0x000000, "Member 'FNamedSlotBinding::Name' has a wrong offset!");
+static_assert(offsetof(FNamedSlotBinding, Content) == 0x000010, "Member 'FNamedSlotBinding::Content' has a wrong offset!");
 
 // ScriptStruct UMG.AnimationEventBinding
 // 0x0040 (0x0040 - 0x0000)
@@ -481,26 +501,6 @@ static_assert(offsetof(FBlueprintWidgetAnimationDelegateBinding, Action) == 0x00
 static_assert(offsetof(FBlueprintWidgetAnimationDelegateBinding, AnimationToBind) == 0x000004, "Member 'FBlueprintWidgetAnimationDelegateBinding::AnimationToBind' has a wrong offset!");
 static_assert(offsetof(FBlueprintWidgetAnimationDelegateBinding, FunctionNameToBind) == 0x000010, "Member 'FBlueprintWidgetAnimationDelegateBinding::FunctionNameToBind' has a wrong offset!");
 static_assert(offsetof(FBlueprintWidgetAnimationDelegateBinding, UserTag) == 0x00001C, "Member 'FBlueprintWidgetAnimationDelegateBinding::UserTag' has a wrong offset!");
-
-// ScriptStruct UMG.DelegateRuntimeBinding
-// 0x0058 (0x0058 - 0x0000)
-struct FDelegateRuntimeBinding final
-{
-public:
-	class FString                                 ObjectName;                                        // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PropertyName;                                      // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   FunctionName;                                      // 0x001C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDynamicPropertyPath                   SourcePath;                                        // 0x0028(0x0028)(NativeAccessSpecifierPublic)
-	EBindingKind                                  Kind;                                              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FDelegateRuntimeBinding) == 0x000008, "Wrong alignment on FDelegateRuntimeBinding");
-static_assert(sizeof(FDelegateRuntimeBinding) == 0x000058, "Wrong size on FDelegateRuntimeBinding");
-static_assert(offsetof(FDelegateRuntimeBinding, ObjectName) == 0x000000, "Member 'FDelegateRuntimeBinding::ObjectName' has a wrong offset!");
-static_assert(offsetof(FDelegateRuntimeBinding, PropertyName) == 0x000010, "Member 'FDelegateRuntimeBinding::PropertyName' has a wrong offset!");
-static_assert(offsetof(FDelegateRuntimeBinding, FunctionName) == 0x00001C, "Member 'FDelegateRuntimeBinding::FunctionName' has a wrong offset!");
-static_assert(offsetof(FDelegateRuntimeBinding, SourcePath) == 0x000028, "Member 'FDelegateRuntimeBinding::SourcePath' has a wrong offset!");
-static_assert(offsetof(FDelegateRuntimeBinding, Kind) == 0x000050, "Member 'FDelegateRuntimeBinding::Kind' has a wrong offset!");
 
 // ScriptStruct UMG.WidgetComponentInstanceData
 // 0x0010 (0x00C8 - 0x00B8)

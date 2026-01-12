@@ -886,6 +886,19 @@ static_assert(alignof(NiagaraComponent_IsPaused) == 0x000001, "Wrong alignment o
 static_assert(sizeof(NiagaraComponent_IsPaused) == 0x000001, "Wrong size on NiagaraComponent_IsPaused");
 static_assert(offsetof(NiagaraComponent_IsPaused, ReturnValue) == 0x000000, "Member 'NiagaraComponent_IsPaused::ReturnValue' has a wrong offset!");
 
+// Function Niagara.NiagaraParticleCallbackHandler.ReceiveParticleData
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraParticleCallbackHandler_ReceiveParticleData final
+{
+public:
+	TArray<struct FBasicParticleData>             Data;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraParticleCallbackHandler_ReceiveParticleData) == 0x000008, "Wrong alignment on NiagaraParticleCallbackHandler_ReceiveParticleData");
+static_assert(sizeof(NiagaraParticleCallbackHandler_ReceiveParticleData) == 0x000018, "Wrong size on NiagaraParticleCallbackHandler_ReceiveParticleData");
+static_assert(offsetof(NiagaraParticleCallbackHandler_ReceiveParticleData, Data) == 0x000000, "Member 'NiagaraParticleCallbackHandler_ReceiveParticleData::Data' has a wrong offset!");
+static_assert(offsetof(NiagaraParticleCallbackHandler_ReceiveParticleData, NiagaraSystem) == 0x000010, "Member 'NiagaraParticleCallbackHandler_ReceiveParticleData::NiagaraSystem' has a wrong offset!");
+
 // Function Niagara.NiagaraActor.OnNiagaraSystemFinished
 // 0x0008 (0x0008 - 0x0000)
 struct NiagaraActor_OnNiagaraSystemFinished final
@@ -907,6 +920,617 @@ public:
 static_assert(alignof(NiagaraActor_SetDestroyOnSystemFinish) == 0x000001, "Wrong alignment on NiagaraActor_SetDestroyOnSystemFinish");
 static_assert(sizeof(NiagaraActor_SetDestroyOnSystemFinish) == 0x000001, "Wrong size on NiagaraActor_SetDestroyOnSystemFinish");
 static_assert(offsetof(NiagaraActor_SetDestroyOnSystemFinish, bShouldDestroyOnSystemFinish) == 0x000000, "Member 'NiagaraActor_SetDestroyOnSystemFinish::bShouldDestroyOnSystemFinish' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelLibrary.GetDataChannelElementCount
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraDataChannelLibrary_GetDataChannelElementCount final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UNiagaraDataChannelAsset*         Channel;                                           // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraDataChannelSearchParameters    SearchParams;                                      // 0x0010(0x0018)(Parm, NoDestructor, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
+	bool                                          bReadPreviousFrame;                                // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x002C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelLibrary_GetDataChannelElementCount) == 0x000008, "Wrong alignment on NiagaraDataChannelLibrary_GetDataChannelElementCount");
+static_assert(sizeof(NiagaraDataChannelLibrary_GetDataChannelElementCount) == 0x000030, "Wrong size on NiagaraDataChannelLibrary_GetDataChannelElementCount");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetDataChannelElementCount, WorldContextObject) == 0x000000, "Member 'NiagaraDataChannelLibrary_GetDataChannelElementCount::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetDataChannelElementCount, Channel) == 0x000008, "Member 'NiagaraDataChannelLibrary_GetDataChannelElementCount::Channel' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetDataChannelElementCount, SearchParams) == 0x000010, "Member 'NiagaraDataChannelLibrary_GetDataChannelElementCount::SearchParams' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetDataChannelElementCount, bReadPreviousFrame) == 0x000028, "Member 'NiagaraDataChannelLibrary_GetDataChannelElementCount::bReadPreviousFrame' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetDataChannelElementCount, ReturnValue) == 0x00002C, "Member 'NiagaraDataChannelLibrary_GetDataChannelElementCount::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelLibrary.GetNiagaraDataChannel
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraDataChannelLibrary_GetNiagaraDataChannel final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UNiagaraDataChannelAsset*         Channel;                                           // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraDataChannelHandler*             ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelLibrary_GetNiagaraDataChannel) == 0x000008, "Wrong alignment on NiagaraDataChannelLibrary_GetNiagaraDataChannel");
+static_assert(sizeof(NiagaraDataChannelLibrary_GetNiagaraDataChannel) == 0x000018, "Wrong size on NiagaraDataChannelLibrary_GetNiagaraDataChannel");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetNiagaraDataChannel, WorldContextObject) == 0x000000, "Member 'NiagaraDataChannelLibrary_GetNiagaraDataChannel::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetNiagaraDataChannel, Channel) == 0x000008, "Member 'NiagaraDataChannelLibrary_GetNiagaraDataChannel::Channel' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_GetNiagaraDataChannel, ReturnValue) == 0x000010, "Member 'NiagaraDataChannelLibrary_GetNiagaraDataChannel::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelLibrary.ReadFromNiagaraDataChannel
+// 0x0038 (0x0038 - 0x0000)
+struct NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UNiagaraDataChannelAsset*         Channel;                                           // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraDataChannelSearchParameters    SearchParams;                                      // 0x0010(0x0018)(Parm, NoDestructor, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
+	bool                                          bReadPreviousFrame;                                // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraDataChannelReader*              ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel) == 0x000008, "Wrong alignment on NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel");
+static_assert(sizeof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel) == 0x000038, "Wrong size on NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel, WorldContextObject) == 0x000000, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel, Channel) == 0x000008, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel::Channel' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel, SearchParams) == 0x000010, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel::SearchParams' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel, bReadPreviousFrame) == 0x000028, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel::bReadPreviousFrame' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel, ReturnValue) == 0x000030, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannel::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelLibrary.ReadFromNiagaraDataChannelSingle
+// 0x0038 (0x0038 - 0x0000)
+struct NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UNiagaraDataChannelAsset*         Channel;                                           // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FNiagaraDataChannelSearchParameters    SearchParams;                                      // 0x0018(0x0018)(Parm, NoDestructor, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
+	bool                                          bReadPreviousFrame;                                // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENiagartaDataChannelReadResult                ReadResult;                                        // 0x0031(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle) == 0x000008, "Wrong alignment on NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle");
+static_assert(sizeof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle) == 0x000038, "Wrong size on NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle, WorldContextObject) == 0x000000, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle, Channel) == 0x000008, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle::Channel' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle, Index_0) == 0x000010, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle, SearchParams) == 0x000018, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle::SearchParams' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle, bReadPreviousFrame) == 0x000030, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle::bReadPreviousFrame' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle, ReadResult) == 0x000031, "Member 'NiagaraDataChannelLibrary_ReadFromNiagaraDataChannelSingle::ReadResult' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelLibrary.WriteToNiagaraDataChannel
+// 0x0048 (0x0048 - 0x0000)
+struct NiagaraDataChannelLibrary_WriteToNiagaraDataChannel final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UNiagaraDataChannelAsset*         Channel;                                           // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraDataChannelSearchParameters    SearchParams;                                      // 0x0010(0x0018)(Parm, NoDestructor, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToGame;                                    // 0x002C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToCPU;                                     // 0x002D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToGPU;                                     // 0x002E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 DebugSource;                                       // 0x0030(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraDataChannelWriter*              ReturnValue;                                       // 0x0040(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel) == 0x000008, "Wrong alignment on NiagaraDataChannelLibrary_WriteToNiagaraDataChannel");
+static_assert(sizeof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel) == 0x000048, "Wrong size on NiagaraDataChannelLibrary_WriteToNiagaraDataChannel");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, WorldContextObject) == 0x000000, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, Channel) == 0x000008, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::Channel' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, SearchParams) == 0x000010, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::SearchParams' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, Count) == 0x000028, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::Count' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, bVisibleToGame) == 0x00002C, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::bVisibleToGame' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, bVisibleToCPU) == 0x00002D, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::bVisibleToCPU' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, bVisibleToGPU) == 0x00002E, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::bVisibleToGPU' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, DebugSource) == 0x000030, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::DebugSource' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannel, ReturnValue) == 0x000040, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannel::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelLibrary.WriteToNiagaraDataChannelSingle
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UNiagaraDataChannelAsset*         Channel;                                           // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraDataChannelSearchParameters    SearchParams;                                      // 0x0010(0x0018)(Parm, NoDestructor, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToBlueprint;                               // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToNiagaraCPU;                              // 0x0029(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToNiagaraGPU;                              // 0x002A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B[0x5];                                       // 0x002B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle) == 0x000008, "Wrong alignment on NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle");
+static_assert(sizeof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle) == 0x000030, "Wrong size on NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle, WorldContextObject) == 0x000000, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle, Channel) == 0x000008, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle::Channel' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle, SearchParams) == 0x000010, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle::SearchParams' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle, bVisibleToBlueprint) == 0x000028, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle::bVisibleToBlueprint' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle, bVisibleToNiagaraCPU) == 0x000029, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle::bVisibleToNiagaraCPU' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle, bVisibleToNiagaraGPU) == 0x00002A, "Member 'NiagaraDataChannelLibrary_WriteToNiagaraDataChannelSingle::bVisibleToNiagaraGPU' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelHandler.GetDataChannelReader
+// 0x0008 (0x0008 - 0x0000)
+struct NiagaraDataChannelHandler_GetDataChannelReader final
+{
+public:
+	class UNiagaraDataChannelReader*              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelHandler_GetDataChannelReader) == 0x000008, "Wrong alignment on NiagaraDataChannelHandler_GetDataChannelReader");
+static_assert(sizeof(NiagaraDataChannelHandler_GetDataChannelReader) == 0x000008, "Wrong size on NiagaraDataChannelHandler_GetDataChannelReader");
+static_assert(offsetof(NiagaraDataChannelHandler_GetDataChannelReader, ReturnValue) == 0x000000, "Member 'NiagaraDataChannelHandler_GetDataChannelReader::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelHandler.GetDataChannelWriter
+// 0x0008 (0x0008 - 0x0000)
+struct NiagaraDataChannelHandler_GetDataChannelWriter final
+{
+public:
+	class UNiagaraDataChannelWriter*              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelHandler_GetDataChannelWriter) == 0x000008, "Wrong alignment on NiagaraDataChannelHandler_GetDataChannelWriter");
+static_assert(sizeof(NiagaraDataChannelHandler_GetDataChannelWriter) == 0x000008, "Wrong size on NiagaraDataChannelHandler_GetDataChannelWriter");
+static_assert(offsetof(NiagaraDataChannelHandler_GetDataChannelWriter, ReturnValue) == 0x000000, "Member 'NiagaraDataChannelHandler_GetDataChannelWriter::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.InitAccess
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelReader_InitAccess final
+{
+public:
+	struct FNiagaraDataChannelSearchParameters    SearchParams;                                      // 0x0000(0x0018)(Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bReadPrevFrameData;                                // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0019(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelReader_InitAccess) == 0x000008, "Wrong alignment on NiagaraDataChannelReader_InitAccess");
+static_assert(sizeof(NiagaraDataChannelReader_InitAccess) == 0x000020, "Wrong size on NiagaraDataChannelReader_InitAccess");
+static_assert(offsetof(NiagaraDataChannelReader_InitAccess, SearchParams) == 0x000000, "Member 'NiagaraDataChannelReader_InitAccess::SearchParams' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_InitAccess, bReadPrevFrameData) == 0x000018, "Member 'NiagaraDataChannelReader_InitAccess::bReadPrevFrameData' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_InitAccess, ReturnValue) == 0x000019, "Member 'NiagaraDataChannelReader_InitAccess::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.Num
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraDataChannelReader_Num final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_Num) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_Num");
+static_assert(sizeof(NiagaraDataChannelReader_Num) == 0x000004, "Wrong size on NiagaraDataChannelReader_Num");
+static_assert(offsetof(NiagaraDataChannelReader_Num, ReturnValue) == 0x000000, "Member 'NiagaraDataChannelReader_Num::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadBool
+// 0x0014 (0x0014 - 0x0000)
+struct NiagaraDataChannelReader_ReadBool final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadBool) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadBool");
+static_assert(sizeof(NiagaraDataChannelReader_ReadBool) == 0x000014, "Wrong size on NiagaraDataChannelReader_ReadBool");
+static_assert(offsetof(NiagaraDataChannelReader_ReadBool, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadBool::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadBool, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadBool::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadBool, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadBool::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadBool, ReturnValue) == 0x000011, "Member 'NiagaraDataChannelReader_ReadBool::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadEnum
+// 0x0014 (0x0014 - 0x0000)
+struct NiagaraDataChannelReader_ReadEnum final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadEnum) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadEnum");
+static_assert(sizeof(NiagaraDataChannelReader_ReadEnum) == 0x000014, "Wrong size on NiagaraDataChannelReader_ReadEnum");
+static_assert(offsetof(NiagaraDataChannelReader_ReadEnum, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadEnum::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadEnum, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadEnum::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadEnum, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadEnum::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadEnum, ReturnValue) == 0x000011, "Member 'NiagaraDataChannelReader_ReadEnum::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadFloat
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelReader_ReadFloat final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadFloat) == 0x000008, "Wrong alignment on NiagaraDataChannelReader_ReadFloat");
+static_assert(sizeof(NiagaraDataChannelReader_ReadFloat) == 0x000020, "Wrong size on NiagaraDataChannelReader_ReadFloat");
+static_assert(offsetof(NiagaraDataChannelReader_ReadFloat, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadFloat::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadFloat, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadFloat::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadFloat, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadFloat::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadFloat, ReturnValue) == 0x000018, "Member 'NiagaraDataChannelReader_ReadFloat::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadID
+// 0x001C (0x001C - 0x0000)
+struct NiagaraDataChannelReader_ReadID final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FNiagaraID                             ReturnValue;                                       // 0x0014(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadID) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadID");
+static_assert(sizeof(NiagaraDataChannelReader_ReadID) == 0x00001C, "Wrong size on NiagaraDataChannelReader_ReadID");
+static_assert(offsetof(NiagaraDataChannelReader_ReadID, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadID::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadID, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadID::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadID, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadID::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadID, ReturnValue) == 0x000014, "Member 'NiagaraDataChannelReader_ReadID::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadInt
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraDataChannelReader_ReadInt final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadInt) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadInt");
+static_assert(sizeof(NiagaraDataChannelReader_ReadInt) == 0x000018, "Wrong size on NiagaraDataChannelReader_ReadInt");
+static_assert(offsetof(NiagaraDataChannelReader_ReadInt, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadInt::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadInt, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadInt::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadInt, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadInt::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadInt, ReturnValue) == 0x000014, "Member 'NiagaraDataChannelReader_ReadInt::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadLinearColor
+// 0x0024 (0x0024 - 0x0000)
+struct NiagaraDataChannelReader_ReadLinearColor final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           ReturnValue;                                       // 0x0014(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadLinearColor) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadLinearColor");
+static_assert(sizeof(NiagaraDataChannelReader_ReadLinearColor) == 0x000024, "Wrong size on NiagaraDataChannelReader_ReadLinearColor");
+static_assert(offsetof(NiagaraDataChannelReader_ReadLinearColor, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadLinearColor::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadLinearColor, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadLinearColor::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadLinearColor, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadLinearColor::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadLinearColor, ReturnValue) == 0x000014, "Member 'NiagaraDataChannelReader_ReadLinearColor::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadPosition
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelReader_ReadPosition final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x0014(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadPosition) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadPosition");
+static_assert(sizeof(NiagaraDataChannelReader_ReadPosition) == 0x000020, "Wrong size on NiagaraDataChannelReader_ReadPosition");
+static_assert(offsetof(NiagaraDataChannelReader_ReadPosition, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadPosition::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadPosition, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadPosition::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadPosition, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadPosition::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadPosition, ReturnValue) == 0x000014, "Member 'NiagaraDataChannelReader_ReadPosition::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadQuat
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraDataChannelReader_ReadQuat final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadQuat) == 0x000010, "Wrong alignment on NiagaraDataChannelReader_ReadQuat");
+static_assert(sizeof(NiagaraDataChannelReader_ReadQuat) == 0x000030, "Wrong size on NiagaraDataChannelReader_ReadQuat");
+static_assert(offsetof(NiagaraDataChannelReader_ReadQuat, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadQuat::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadQuat, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadQuat::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadQuat, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadQuat::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadQuat, ReturnValue) == 0x000020, "Member 'NiagaraDataChannelReader_ReadQuat::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadSpawnInfo
+// 0x0024 (0x0024 - 0x0000)
+struct NiagaraDataChannelReader_ReadSpawnInfo final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FNiagaraSpawnInfo                      ReturnValue;                                       // 0x0014(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadSpawnInfo) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadSpawnInfo");
+static_assert(sizeof(NiagaraDataChannelReader_ReadSpawnInfo) == 0x000024, "Wrong size on NiagaraDataChannelReader_ReadSpawnInfo");
+static_assert(offsetof(NiagaraDataChannelReader_ReadSpawnInfo, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadSpawnInfo::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadSpawnInfo, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadSpawnInfo::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadSpawnInfo, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadSpawnInfo::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadSpawnInfo, ReturnValue) == 0x000014, "Member 'NiagaraDataChannelReader_ReadSpawnInfo::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadVector
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelReader_ReadVector final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x0014(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadVector) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadVector");
+static_assert(sizeof(NiagaraDataChannelReader_ReadVector) == 0x000020, "Wrong size on NiagaraDataChannelReader_ReadVector");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadVector::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadVector::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadVector::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector, ReturnValue) == 0x000014, "Member 'NiagaraDataChannelReader_ReadVector::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadVector2D
+// 0x001C (0x001C - 0x0000)
+struct NiagaraDataChannelReader_ReadVector2D final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              ReturnValue;                                       // 0x0014(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadVector2D) == 0x000004, "Wrong alignment on NiagaraDataChannelReader_ReadVector2D");
+static_assert(sizeof(NiagaraDataChannelReader_ReadVector2D) == 0x00001C, "Wrong size on NiagaraDataChannelReader_ReadVector2D");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector2D, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadVector2D::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector2D, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadVector2D::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector2D, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadVector2D::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector2D, ReturnValue) == 0x000014, "Member 'NiagaraDataChannelReader_ReadVector2D::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelReader.ReadVector4
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraDataChannelReader_ReadVector4 final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsValid;                                           // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelReader_ReadVector4) == 0x000010, "Wrong alignment on NiagaraDataChannelReader_ReadVector4");
+static_assert(sizeof(NiagaraDataChannelReader_ReadVector4) == 0x000030, "Wrong size on NiagaraDataChannelReader_ReadVector4");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector4, VarName) == 0x000000, "Member 'NiagaraDataChannelReader_ReadVector4::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector4, Index_0) == 0x00000C, "Member 'NiagaraDataChannelReader_ReadVector4::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector4, IsValid) == 0x000010, "Member 'NiagaraDataChannelReader_ReadVector4::IsValid' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelReader_ReadVector4, ReturnValue) == 0x000020, "Member 'NiagaraDataChannelReader_ReadVector4::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.InitWrite
+// 0x0038 (0x0038 - 0x0000)
+struct NiagaraDataChannelWriter_InitWrite final
+{
+public:
+	struct FNiagaraDataChannelSearchParameters    SearchParams;                                      // 0x0000(0x0018)(Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	int32                                         Count;                                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToGame;                                    // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToCPU;                                     // 0x001D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibleToGPU;                                     // 0x001E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 DebugSource;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelWriter_InitWrite) == 0x000008, "Wrong alignment on NiagaraDataChannelWriter_InitWrite");
+static_assert(sizeof(NiagaraDataChannelWriter_InitWrite) == 0x000038, "Wrong size on NiagaraDataChannelWriter_InitWrite");
+static_assert(offsetof(NiagaraDataChannelWriter_InitWrite, SearchParams) == 0x000000, "Member 'NiagaraDataChannelWriter_InitWrite::SearchParams' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_InitWrite, Count) == 0x000018, "Member 'NiagaraDataChannelWriter_InitWrite::Count' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_InitWrite, bVisibleToGame) == 0x00001C, "Member 'NiagaraDataChannelWriter_InitWrite::bVisibleToGame' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_InitWrite, bVisibleToCPU) == 0x00001D, "Member 'NiagaraDataChannelWriter_InitWrite::bVisibleToCPU' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_InitWrite, bVisibleToGPU) == 0x00001E, "Member 'NiagaraDataChannelWriter_InitWrite::bVisibleToGPU' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_InitWrite, DebugSource) == 0x000020, "Member 'NiagaraDataChannelWriter_InitWrite::DebugSource' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_InitWrite, ReturnValue) == 0x000030, "Member 'NiagaraDataChannelWriter_InitWrite::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteBool
+// 0x0014 (0x0014 - 0x0000)
+struct NiagaraDataChannelWriter_WriteBool final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InData;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteBool) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteBool");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteBool) == 0x000014, "Wrong size on NiagaraDataChannelWriter_WriteBool");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteBool, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteBool::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteBool, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteBool::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteBool, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteBool::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteEnum
+// 0x0014 (0x0014 - 0x0000)
+struct NiagaraDataChannelWriter_WriteEnum final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         InData;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteEnum) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteEnum");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteEnum) == 0x000014, "Wrong size on NiagaraDataChannelWriter_WriteEnum");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteEnum, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteEnum::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteEnum, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteEnum::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteEnum, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteEnum::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteFloat
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraDataChannelWriter_WriteFloat final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        InData;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteFloat) == 0x000008, "Wrong alignment on NiagaraDataChannelWriter_WriteFloat");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteFloat) == 0x000018, "Wrong size on NiagaraDataChannelWriter_WriteFloat");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteFloat, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteFloat::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteFloat, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteFloat::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteFloat, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteFloat::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteID
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraDataChannelWriter_WriteID final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraID                             InData;                                            // 0x0010(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteID) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteID");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteID) == 0x000018, "Wrong size on NiagaraDataChannelWriter_WriteID");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteID, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteID::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteID, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteID::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteID, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteID::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteInt
+// 0x0014 (0x0014 - 0x0000)
+struct NiagaraDataChannelWriter_WriteInt final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InData;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteInt) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteInt");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteInt) == 0x000014, "Wrong size on NiagaraDataChannelWriter_WriteInt");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteInt, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteInt::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteInt, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteInt::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteInt, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteInt::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteLinearColor
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelWriter_WriteLinearColor final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           InData;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteLinearColor) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteLinearColor");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteLinearColor) == 0x000020, "Wrong size on NiagaraDataChannelWriter_WriteLinearColor");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteLinearColor, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteLinearColor::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteLinearColor, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteLinearColor::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteLinearColor, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteLinearColor::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WritePosition
+// 0x001C (0x001C - 0x0000)
+struct NiagaraDataChannelWriter_WritePosition final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InData;                                            // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WritePosition) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WritePosition");
+static_assert(sizeof(NiagaraDataChannelWriter_WritePosition) == 0x00001C, "Wrong size on NiagaraDataChannelWriter_WritePosition");
+static_assert(offsetof(NiagaraDataChannelWriter_WritePosition, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WritePosition::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WritePosition, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WritePosition::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WritePosition, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WritePosition::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteQuat
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelWriter_WriteQuat final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuat                                  InData;                                            // 0x0010(0x0010)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteQuat) == 0x000010, "Wrong alignment on NiagaraDataChannelWriter_WriteQuat");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteQuat) == 0x000020, "Wrong size on NiagaraDataChannelWriter_WriteQuat");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteQuat, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteQuat::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteQuat, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteQuat::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteQuat, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteQuat::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteSpawnInfo
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelWriter_WriteSpawnInfo final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraSpawnInfo                      InData;                                            // 0x0010(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteSpawnInfo) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteSpawnInfo");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteSpawnInfo) == 0x000020, "Wrong size on NiagaraDataChannelWriter_WriteSpawnInfo");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteSpawnInfo, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteSpawnInfo::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteSpawnInfo, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteSpawnInfo::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteSpawnInfo, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteSpawnInfo::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteVector
+// 0x001C (0x001C - 0x0000)
+struct NiagaraDataChannelWriter_WriteVector final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InData;                                            // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteVector) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteVector");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteVector) == 0x00001C, "Wrong size on NiagaraDataChannelWriter_WriteVector");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteVector::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteVector::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteVector::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteVector2D
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraDataChannelWriter_WriteVector2D final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              InData;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteVector2D) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_WriteVector2D");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteVector2D) == 0x000018, "Wrong size on NiagaraDataChannelWriter_WriteVector2D");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector2D, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteVector2D::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector2D, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteVector2D::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector2D, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteVector2D::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.WriteVector4
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataChannelWriter_WriteVector4 final
+{
+public:
+	class FName                                   VarName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector4                               InData;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_WriteVector4) == 0x000010, "Wrong alignment on NiagaraDataChannelWriter_WriteVector4");
+static_assert(sizeof(NiagaraDataChannelWriter_WriteVector4) == 0x000020, "Wrong size on NiagaraDataChannelWriter_WriteVector4");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector4, VarName) == 0x000000, "Member 'NiagaraDataChannelWriter_WriteVector4::VarName' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector4, Index_0) == 0x00000C, "Member 'NiagaraDataChannelWriter_WriteVector4::Index_0' has a wrong offset!");
+static_assert(offsetof(NiagaraDataChannelWriter_WriteVector4, InData) == 0x000010, "Member 'NiagaraDataChannelWriter_WriteVector4::InData' has a wrong offset!");
+
+// Function Niagara.NiagaraDataChannelWriter.Num
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraDataChannelWriter_Num final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraDataChannelWriter_Num) == 0x000004, "Wrong alignment on NiagaraDataChannelWriter_Num");
+static_assert(sizeof(NiagaraDataChannelWriter_Num) == 0x000004, "Wrong size on NiagaraDataChannelWriter_Num");
+static_assert(offsetof(NiagaraDataChannelWriter_Num, ReturnValue) == 0x000000, "Member 'NiagaraDataChannelWriter_Num::ReturnValue' has a wrong offset!");
 
 // Function Niagara.NiagaraDataInterfaceArrayFunctionLibrary.GetNiagaraArrayBool
 // 0x0028 (0x0028 - 0x0000)
@@ -1163,19 +1787,6 @@ static_assert(sizeof(NiagaraDataInterfaceArrayFunctionLibrary_SetNiagaraArrayVec
 static_assert(offsetof(NiagaraDataInterfaceArrayFunctionLibrary_SetNiagaraArrayVector4, NiagaraSystem) == 0x000000, "Member 'NiagaraDataInterfaceArrayFunctionLibrary_SetNiagaraArrayVector4::NiagaraSystem' has a wrong offset!");
 static_assert(offsetof(NiagaraDataInterfaceArrayFunctionLibrary_SetNiagaraArrayVector4, OverrideName) == 0x000008, "Member 'NiagaraDataInterfaceArrayFunctionLibrary_SetNiagaraArrayVector4::OverrideName' has a wrong offset!");
 static_assert(offsetof(NiagaraDataInterfaceArrayFunctionLibrary_SetNiagaraArrayVector4, ArrayData) == 0x000018, "Member 'NiagaraDataInterfaceArrayFunctionLibrary_SetNiagaraArrayVector4::ArrayData' has a wrong offset!");
-
-// Function Niagara.NiagaraParticleCallbackHandler.ReceiveParticleData
-// 0x0018 (0x0018 - 0x0000)
-struct NiagaraParticleCallbackHandler_ReceiveParticleData final
-{
-public:
-	TArray<struct FBasicParticleData>             Data;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(NiagaraParticleCallbackHandler_ReceiveParticleData) == 0x000008, "Wrong alignment on NiagaraParticleCallbackHandler_ReceiveParticleData");
-static_assert(sizeof(NiagaraParticleCallbackHandler_ReceiveParticleData) == 0x000018, "Wrong size on NiagaraParticleCallbackHandler_ReceiveParticleData");
-static_assert(offsetof(NiagaraParticleCallbackHandler_ReceiveParticleData, Data) == 0x000000, "Member 'NiagaraParticleCallbackHandler_ReceiveParticleData::Data' has a wrong offset!");
-static_assert(offsetof(NiagaraParticleCallbackHandler_ReceiveParticleData, NiagaraSystem) == 0x000010, "Member 'NiagaraParticleCallbackHandler_ReceiveParticleData::NiagaraSystem' has a wrong offset!");
 
 // Function Niagara.NiagaraDataInterfaceGrid2DCollection.FillRawTexture2D
 // 0x0020 (0x0020 - 0x0000)

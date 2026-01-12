@@ -10,6 +10,56 @@
 namespace SDK
 {
 
+// Function KuroInteractionEffect.KuroEnviInteractionComponent.GetEnviInteractionData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FKuroEnviInteractionData         ReturnValue                                            (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+struct FKuroEnviInteractionData UKuroEnviInteractionComponent::GetEnviInteractionData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroEnviInteractionComponent", "GetEnviInteractionData");
+
+	Params::KuroEnviInteractionComponent_GetEnviInteractionData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroInteractionEffect.KuroEnviInteractionComponent.GetRainWalkOcclusionParam
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroEnviInteractionComponent::GetRainWalkOcclusionParam()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroEnviInteractionComponent", "GetRainWalkOcclusionParam");
+
+	Params::KuroEnviInteractionComponent_GetRainWalkOcclusionParam Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroInteractionEffect.KuroEnviInteractionComponent.RegisterComponentToSystem
 // (Final, Native, Public, BlueprintCallable)
 
@@ -69,6 +119,37 @@ void UKuroEnviInteractionComponent::SetNiagaraCompShiftColor(class UNiagaraCompo
 	Params::KuroEnviInteractionComponent_SetNiagaraCompShiftColor Parms{};
 
 	Parms.NiagaraComponent = NiagaraComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInteractionEffect.KuroEnviInteractionComponent.UpdateRainOcclusion
+// (Final, Native, Private, BlueprintCallable)
+// Parameters:
+// bool                                    Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTraceBaseElement*                Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  Frame                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroEnviInteractionComponent::UpdateRainOcclusion(bool Result, class UTraceBaseElement* Element, double Frame, double Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroEnviInteractionComponent", "UpdateRainOcclusion");
+
+	Params::KuroEnviInteractionComponent_UpdateRainOcclusion Parms{};
+
+	Parms.Result = Result;
+	Parms.Element = Element;
+	Parms.Frame = Frame;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -158,6 +239,62 @@ void UKuroInteractionEffectSystem::RegisterSPModelCharacterEIComp(class UNiagara
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionFoliage
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           FoliageTypeName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroInteractionEffectSystem::SearchInteractionFoliage(const class FString& FoliageTypeName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "SearchInteractionFoliage");
+
+	Params::KuroInteractionEffectSystem_SearchInteractionFoliage Parms{};
+
+	Parms.FoliageTypeName = std::move(FoliageTypeName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionPlacementTriggerActor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UStaticMesh*                      PlacementMesh                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FSoftObjectPath UKuroInteractionEffectSystem::SearchInteractionPlacementTriggerActor(class UStaticMesh* PlacementMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "SearchInteractionPlacementTriggerActor");
+
+	Params::KuroInteractionEffectSystem_SearchInteractionPlacementTriggerActor Parms{};
+
+	Parms.PlacementMesh = PlacementMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

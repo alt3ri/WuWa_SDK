@@ -1,0 +1,70 @@
+﻿#pragma once
+// Package: KuroAI
+
+#include "Basic.hpp"
+
+#include "KuroAI_classes.hpp"
+#include "KuroAI_parameters.hpp"
+
+
+namespace SDK
+{
+
+// Function KuroAI.KuroAILibrary.GetCurrentRootNode
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UBehaviorTreeComponent*           BTComp                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBTNode*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UBTNode* UKuroAILibrary::GetCurrentRootNode(class UBehaviorTreeComponent* BTComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroAILibrary", "GetCurrentRootNode");
+
+	Params::KuroAILibrary_GetCurrentRootNode Parms{};
+
+	Parms.BTComp = BTComp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroAI.KuroAILibrary.ResetRandomNode
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UBehaviorTreeComponent*           BTComp                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBTNode*                          Node                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<int32>                           WeightsOverride                                        (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroAILibrary::ResetRandomNode(class UBehaviorTreeComponent* BTComp, class UBTNode* Node, const TArray<int32>& WeightsOverride)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroAILibrary", "ResetRandomNode");
+
+	Params::KuroAILibrary_ResetRandomNode Parms{};
+
+	Parms.BTComp = BTComp;
+	Parms.Node = Node;
+	Parms.WeightsOverride = std::move(WeightsOverride);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+}
+

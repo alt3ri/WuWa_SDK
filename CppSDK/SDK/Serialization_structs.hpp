@@ -9,31 +9,6 @@
 namespace SDK
 {
 
-// ScriptStruct Serialization.StructSerializerObjectTestStruct
-// 0x00C0 (0x00C0 - 0x0000)
-struct FStructSerializerObjectTestStruct final
-{
-public:
-	class UClass*                                 Class;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UMetaData>                  SubClass;                                          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftClassPtr<class UClass>                   SoftClass;                                         // 0x0010(0x0030)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                Object;                                            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UMetaData>               WeakObject;                                        // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UMetaData>               SoftObject;                                        // 0x0050(0x0030)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftClassPath                         ClassPath;                                         // 0x0080(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        ObjectPath;                                        // 0x00A0(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FStructSerializerObjectTestStruct) == 0x000008, "Wrong alignment on FStructSerializerObjectTestStruct");
-static_assert(sizeof(FStructSerializerObjectTestStruct) == 0x0000C0, "Wrong size on FStructSerializerObjectTestStruct");
-static_assert(offsetof(FStructSerializerObjectTestStruct, Class) == 0x000000, "Member 'FStructSerializerObjectTestStruct::Class' has a wrong offset!");
-static_assert(offsetof(FStructSerializerObjectTestStruct, SubClass) == 0x000008, "Member 'FStructSerializerObjectTestStruct::SubClass' has a wrong offset!");
-static_assert(offsetof(FStructSerializerObjectTestStruct, SoftClass) == 0x000010, "Member 'FStructSerializerObjectTestStruct::SoftClass' has a wrong offset!");
-static_assert(offsetof(FStructSerializerObjectTestStruct, Object) == 0x000040, "Member 'FStructSerializerObjectTestStruct::Object' has a wrong offset!");
-static_assert(offsetof(FStructSerializerObjectTestStruct, WeakObject) == 0x000048, "Member 'FStructSerializerObjectTestStruct::WeakObject' has a wrong offset!");
-static_assert(offsetof(FStructSerializerObjectTestStruct, SoftObject) == 0x000050, "Member 'FStructSerializerObjectTestStruct::SoftObject' has a wrong offset!");
-static_assert(offsetof(FStructSerializerObjectTestStruct, ClassPath) == 0x000080, "Member 'FStructSerializerObjectTestStruct::ClassPath' has a wrong offset!");
-static_assert(offsetof(FStructSerializerObjectTestStruct, ObjectPath) == 0x0000A0, "Member 'FStructSerializerObjectTestStruct::ObjectPath' has a wrong offset!");
-
 // ScriptStruct Serialization.StructSerializerNumericTestStruct
 // 0x0030 (0x0030 - 0x0000)
 struct FStructSerializerNumericTestStruct final
@@ -86,6 +61,31 @@ static_assert(alignof(FStructSerializerBooleanTestStruct) == 0x000001, "Wrong al
 static_assert(sizeof(FStructSerializerBooleanTestStruct) == 0x000003, "Wrong size on FStructSerializerBooleanTestStruct");
 static_assert(offsetof(FStructSerializerBooleanTestStruct, BoolFalse) == 0x000000, "Member 'FStructSerializerBooleanTestStruct::BoolFalse' has a wrong offset!");
 static_assert(offsetof(FStructSerializerBooleanTestStruct, BoolTrue) == 0x000001, "Member 'FStructSerializerBooleanTestStruct::BoolTrue' has a wrong offset!");
+
+// ScriptStruct Serialization.StructSerializerObjectTestStruct
+// 0x00C0 (0x00C0 - 0x0000)
+struct FStructSerializerObjectTestStruct final
+{
+public:
+	class UClass*                                 Class;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMetaData>                  SubClass;                                          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   SoftClass;                                         // 0x0010(0x0030)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Object;                                            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UMetaData>               WeakObject;                                        // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UMetaData>               SoftObject;                                        // 0x0050(0x0030)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftClassPath                         ClassPath;                                         // 0x0080(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        ObjectPath;                                        // 0x00A0(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FStructSerializerObjectTestStruct) == 0x000008, "Wrong alignment on FStructSerializerObjectTestStruct");
+static_assert(sizeof(FStructSerializerObjectTestStruct) == 0x0000C0, "Wrong size on FStructSerializerObjectTestStruct");
+static_assert(offsetof(FStructSerializerObjectTestStruct, Class) == 0x000000, "Member 'FStructSerializerObjectTestStruct::Class' has a wrong offset!");
+static_assert(offsetof(FStructSerializerObjectTestStruct, SubClass) == 0x000008, "Member 'FStructSerializerObjectTestStruct::SubClass' has a wrong offset!");
+static_assert(offsetof(FStructSerializerObjectTestStruct, SoftClass) == 0x000010, "Member 'FStructSerializerObjectTestStruct::SoftClass' has a wrong offset!");
+static_assert(offsetof(FStructSerializerObjectTestStruct, Object) == 0x000040, "Member 'FStructSerializerObjectTestStruct::Object' has a wrong offset!");
+static_assert(offsetof(FStructSerializerObjectTestStruct, WeakObject) == 0x000048, "Member 'FStructSerializerObjectTestStruct::WeakObject' has a wrong offset!");
+static_assert(offsetof(FStructSerializerObjectTestStruct, SoftObject) == 0x000050, "Member 'FStructSerializerObjectTestStruct::SoftObject' has a wrong offset!");
+static_assert(offsetof(FStructSerializerObjectTestStruct, ClassPath) == 0x000080, "Member 'FStructSerializerObjectTestStruct::ClassPath' has a wrong offset!");
+static_assert(offsetof(FStructSerializerObjectTestStruct, ObjectPath) == 0x0000A0, "Member 'FStructSerializerObjectTestStruct::ObjectPath' has a wrong offset!");
 
 // ScriptStruct Serialization.StructSerializerBuiltinTestStruct
 // 0x00A0 (0x00A0 - 0x0000)
@@ -142,23 +142,6 @@ static_assert(offsetof(FStructSerializerArrayTestStruct, StaticFloatArray) == 0x
 static_assert(offsetof(FStructSerializerArrayTestStruct, VectorArray) == 0x000040, "Member 'FStructSerializerArrayTestStruct::VectorArray' has a wrong offset!");
 static_assert(offsetof(FStructSerializerArrayTestStruct, StructArray) == 0x000050, "Member 'FStructSerializerArrayTestStruct::StructArray' has a wrong offset!");
 
-// ScriptStruct Serialization.StructSerializerSetTestStruct
-// 0x0140 (0x0140 - 0x0000)
-struct FStructSerializerSetTestStruct final
-{
-public:
-	TSet<class FString>                           StrSet;                                            // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-	TSet<int32>                                   IntSet;                                            // 0x0050(0x0050)(NativeAccessSpecifierPublic)
-	TSet<class FName>                             NameSet;                                           // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
-	TSet<struct FStructSerializerBuiltinTestStruct> StructSet;                                         // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FStructSerializerSetTestStruct) == 0x000008, "Wrong alignment on FStructSerializerSetTestStruct");
-static_assert(sizeof(FStructSerializerSetTestStruct) == 0x000140, "Wrong size on FStructSerializerSetTestStruct");
-static_assert(offsetof(FStructSerializerSetTestStruct, StrSet) == 0x000000, "Member 'FStructSerializerSetTestStruct::StrSet' has a wrong offset!");
-static_assert(offsetof(FStructSerializerSetTestStruct, IntSet) == 0x000050, "Member 'FStructSerializerSetTestStruct::IntSet' has a wrong offset!");
-static_assert(offsetof(FStructSerializerSetTestStruct, NameSet) == 0x0000A0, "Member 'FStructSerializerSetTestStruct::NameSet' has a wrong offset!");
-static_assert(offsetof(FStructSerializerSetTestStruct, StructSet) == 0x0000F0, "Member 'FStructSerializerSetTestStruct::StructSet' has a wrong offset!");
-
 // ScriptStruct Serialization.StructSerializerMapTestStruct
 // 0x0140 (0x0140 - 0x0000)
 struct FStructSerializerMapTestStruct final
@@ -175,6 +158,23 @@ static_assert(offsetof(FStructSerializerMapTestStruct, IntToStr) == 0x000000, "M
 static_assert(offsetof(FStructSerializerMapTestStruct, StrToStr) == 0x000050, "Member 'FStructSerializerMapTestStruct::StrToStr' has a wrong offset!");
 static_assert(offsetof(FStructSerializerMapTestStruct, StrToVec) == 0x0000A0, "Member 'FStructSerializerMapTestStruct::StrToVec' has a wrong offset!");
 static_assert(offsetof(FStructSerializerMapTestStruct, StrToStruct) == 0x0000F0, "Member 'FStructSerializerMapTestStruct::StrToStruct' has a wrong offset!");
+
+// ScriptStruct Serialization.StructSerializerSetTestStruct
+// 0x0140 (0x0140 - 0x0000)
+struct FStructSerializerSetTestStruct final
+{
+public:
+	TSet<class FString>                           StrSet;                                            // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+	TSet<int32>                                   IntSet;                                            // 0x0050(0x0050)(NativeAccessSpecifierPublic)
+	TSet<class FName>                             NameSet;                                           // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
+	TSet<struct FStructSerializerBuiltinTestStruct> StructSet;                                         // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FStructSerializerSetTestStruct) == 0x000008, "Wrong alignment on FStructSerializerSetTestStruct");
+static_assert(sizeof(FStructSerializerSetTestStruct) == 0x000140, "Wrong size on FStructSerializerSetTestStruct");
+static_assert(offsetof(FStructSerializerSetTestStruct, StrSet) == 0x000000, "Member 'FStructSerializerSetTestStruct::StrSet' has a wrong offset!");
+static_assert(offsetof(FStructSerializerSetTestStruct, IntSet) == 0x000050, "Member 'FStructSerializerSetTestStruct::IntSet' has a wrong offset!");
+static_assert(offsetof(FStructSerializerSetTestStruct, NameSet) == 0x0000A0, "Member 'FStructSerializerSetTestStruct::NameSet' has a wrong offset!");
+static_assert(offsetof(FStructSerializerSetTestStruct, StructSet) == 0x0000F0, "Member 'FStructSerializerSetTestStruct::StructSet' has a wrong offset!");
 
 // ScriptStruct Serialization.StructSerializerTestStruct
 // 0x0480 (0x0480 - 0x0000)

@@ -135,6 +135,31 @@ void UCineCameraComponent::SetCurrentFocalLength(float InFocalLength)
 }
 
 
+// Function CinematicCamera.CineCameraComponent.SetCurrentFocalLengthExtra
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InFocalLength                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCineCameraComponent::SetCurrentFocalLengthExtra(float InFocalLength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CineCameraComponent", "SetCurrentFocalLengthExtra");
+
+	Params::CineCameraComponent_SetCurrentFocalLengthExtra Parms{};
+
+	Parms.InFocalLength = InFocalLength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function CinematicCamera.CineCameraComponent.SetFilmbackPresetByName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:

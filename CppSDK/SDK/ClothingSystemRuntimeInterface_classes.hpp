@@ -3,9 +3,9 @@
 
 #include "Basic.hpp"
 
-#include "ClothingSystemRuntimeInterface_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ClothingSystemRuntimeInterface_structs.hpp"
 
 
 namespace SDK

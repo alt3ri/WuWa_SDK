@@ -3,8 +3,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "MovieScene_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "MovieSceneTracks_structs.hpp"
 
 
@@ -197,17 +197,6 @@ static_assert(alignof(MovieSceneParameterSection_GetParameterNames) == 0x000008,
 static_assert(sizeof(MovieSceneParameterSection_GetParameterNames) == 0x000050, "Wrong size on MovieSceneParameterSection_GetParameterNames");
 static_assert(offsetof(MovieSceneParameterSection_GetParameterNames, ParameterNames) == 0x000000, "Member 'MovieSceneParameterSection_GetParameterNames::ParameterNames' has a wrong offset!");
 
-// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
-// 0x0030 (0x0030 - 0x0000)
-struct MovieSceneTransformOrigin_BP_GetTransformOrigin final
-{
-public:
-	struct FTransform                             ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MovieSceneTransformOrigin_BP_GetTransformOrigin) == 0x000010, "Wrong alignment on MovieSceneTransformOrigin_BP_GetTransformOrigin");
-static_assert(sizeof(MovieSceneTransformOrigin_BP_GetTransformOrigin) == 0x000030, "Wrong size on MovieSceneTransformOrigin_BP_GetTransformOrigin");
-static_assert(offsetof(MovieSceneTransformOrigin_BP_GetTransformOrigin, ReturnValue) == 0x000000, "Member 'MovieSceneTransformOrigin_BP_GetTransformOrigin::ReturnValue' has a wrong offset!");
-
 // Function MovieSceneTracks.MovieScene3DConstraintSection.SetConstraintBindingID
 // 0x0018 (0x0018 - 0x0000)
 struct MovieScene3DConstraintSection_SetConstraintBindingID final
@@ -229,6 +218,17 @@ public:
 static_assert(alignof(MovieScene3DConstraintSection_GetConstraintBindingID) == 0x000004, "Wrong alignment on MovieScene3DConstraintSection_GetConstraintBindingID");
 static_assert(sizeof(MovieScene3DConstraintSection_GetConstraintBindingID) == 0x000018, "Wrong size on MovieScene3DConstraintSection_GetConstraintBindingID");
 static_assert(offsetof(MovieScene3DConstraintSection_GetConstraintBindingID, ReturnValue) == 0x000000, "Member 'MovieScene3DConstraintSection_GetConstraintBindingID::ReturnValue' has a wrong offset!");
+
+// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
+// 0x0030 (0x0030 - 0x0000)
+struct MovieSceneTransformOrigin_BP_GetTransformOrigin final
+{
+public:
+	struct FTransform                             ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MovieSceneTransformOrigin_BP_GetTransformOrigin) == 0x000010, "Wrong alignment on MovieSceneTransformOrigin_BP_GetTransformOrigin");
+static_assert(sizeof(MovieSceneTransformOrigin_BP_GetTransformOrigin) == 0x000030, "Wrong size on MovieSceneTransformOrigin_BP_GetTransformOrigin");
+static_assert(offsetof(MovieSceneTransformOrigin_BP_GetTransformOrigin, ReturnValue) == 0x000000, "Member 'MovieSceneTransformOrigin_BP_GetTransformOrigin::ReturnValue' has a wrong offset!");
 
 // Function MovieSceneTracks.MovieSceneAudioSection.SetSound
 // 0x0008 (0x0008 - 0x0000)

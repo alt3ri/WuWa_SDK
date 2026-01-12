@@ -171,6 +171,35 @@ public:
 static_assert(alignof(UKuroActorManager) == 0x000008, "Wrong alignment on UKuroActorManager");
 static_assert(sizeof(UKuroActorManager) == 0x000030, "Wrong size on UKuroActorManager");
 
+// Class KuroUtility.KuroActorPartitionVolume
+// 0x00B8 (0x03A0 - 0x02E8)
+class AKuroActorPartitionVolume final : public AVolume
+{
+public:
+	class FName                                   VolumeId;                                          // 0x02E8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EActorPartitionVolumeType                     Type;                                              // 0x02F4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2F5[0x3];                                      // 0x02F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class FString>                           ExcludeActorType;                                  // 0x02F8(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TSet<class FString>                           ExcludeActorName;                                  // 0x0348(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_398[0x8];                                      // 0x0398(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroActorPartitionVolume">();
+	}
+	static class AKuroActorPartitionVolume* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroActorPartitionVolume>();
+	}
+};
+static_assert(alignof(AKuroActorPartitionVolume) == 0x000008, "Wrong alignment on AKuroActorPartitionVolume");
+static_assert(sizeof(AKuroActorPartitionVolume) == 0x0003A0, "Wrong size on AKuroActorPartitionVolume");
+static_assert(offsetof(AKuroActorPartitionVolume, VolumeId) == 0x0002E8, "Member 'AKuroActorPartitionVolume::VolumeId' has a wrong offset!");
+static_assert(offsetof(AKuroActorPartitionVolume, Type) == 0x0002F4, "Member 'AKuroActorPartitionVolume::Type' has a wrong offset!");
+static_assert(offsetof(AKuroActorPartitionVolume, ExcludeActorType) == 0x0002F8, "Member 'AKuroActorPartitionVolume::ExcludeActorType' has a wrong offset!");
+static_assert(offsetof(AKuroActorPartitionVolume, ExcludeActorName) == 0x000348, "Member 'AKuroActorPartitionVolume::ExcludeActorName' has a wrong offset!");
+
 // Class KuroUtility.KuroApplicationLibrary
 // 0x0000 (0x0030 - 0x0030)
 class UKuroApplicationLibrary final : public UBlueprintFunctionLibrary
@@ -178,6 +207,7 @@ class UKuroApplicationLibrary final : public UBlueprintFunctionLibrary
 public:
 	static bool AddApplicationLifetimeDelegate(const TDelegate<void(int32 Type)>& InDelegate);
 	static bool AddEditorPreEndPIEDelegate(const TDelegate<void(bool bSimulateInEditor)>& InDelegate);
+	static bool AddWindowActivationDelegate(const TDelegate<void(bool Activated)>& InDelegate);
 	static bool Test(int32 Type);
 	static bool UnBind();
 
@@ -239,7 +269,7 @@ static_assert(offsetof(UKuroBooleanEventBinder, Callback) == 0x000030, "Member '
 
 // Class KuroUtility.KuroBpDataAsset
 // 0x0000 (0x0038 - 0x0038)
-class UKuroBpDataAsset : public UPrimaryDataAsset
+class UKuroBpDataAsset final : public UPrimaryDataAsset
 {
 public:
 	static class UClass* StaticClass()
@@ -426,6 +456,51 @@ public:
 static_assert(alignof(UKuroCompressLibrary) == 0x000008, "Wrong alignment on UKuroCompressLibrary");
 static_assert(sizeof(UKuroCompressLibrary) == 0x000030, "Wrong size on UKuroCompressLibrary");
 
+// Class KuroUtility.KuroDemoInteractiveActor
+// 0x0000 (0x02B0 - 0x02B0)
+class AKuroDemoInteractiveActor final : public AActor
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroDemoInteractiveActor">();
+	}
+	static class AKuroDemoInteractiveActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroDemoInteractiveActor>();
+	}
+};
+static_assert(alignof(AKuroDemoInteractiveActor) == 0x000008, "Wrong alignment on AKuroDemoInteractiveActor");
+static_assert(sizeof(AKuroDemoInteractiveActor) == 0x0002B0, "Wrong size on AKuroDemoInteractiveActor");
+
+// Class KuroUtility.KuroDemoInteractSubSystem
+// 0x0070 (0x00A8 - 0x0038)
+class UKuroDemoInteractSubSystem final : public UWorldSubsystem
+{
+public:
+	TMulticastInlineDelegate<void(class FName ActorKey)> OnDemoInteractiveActorAdd;                         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName ActorKey)> OnDemoInteractiveActorRemove;                      // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMap<class FName, class AActor*>              DemoInteractiveActorMap;                           // 0x0058(0x0050)(NativeAccessSpecifierPrivate)
+
+public:
+	class AActor* GetDemoInteractiveActor(class FName ActorKey);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroDemoInteractSubSystem">();
+	}
+	static class UKuroDemoInteractSubSystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroDemoInteractSubSystem>();
+	}
+};
+static_assert(alignof(UKuroDemoInteractSubSystem) == 0x000008, "Wrong alignment on UKuroDemoInteractSubSystem");
+static_assert(sizeof(UKuroDemoInteractSubSystem) == 0x0000A8, "Wrong size on UKuroDemoInteractSubSystem");
+static_assert(offsetof(UKuroDemoInteractSubSystem, OnDemoInteractiveActorAdd) == 0x000038, "Member 'UKuroDemoInteractSubSystem::OnDemoInteractiveActorAdd' has a wrong offset!");
+static_assert(offsetof(UKuroDemoInteractSubSystem, OnDemoInteractiveActorRemove) == 0x000048, "Member 'UKuroDemoInteractSubSystem::OnDemoInteractiveActorRemove' has a wrong offset!");
+static_assert(offsetof(UKuroDemoInteractSubSystem, DemoInteractiveActorMap) == 0x000058, "Member 'UKuroDemoInteractSubSystem::DemoInteractiveActorMap' has a wrong offset!");
+
 // Class KuroUtility.KuroEntityActor
 // 0x0008 (0x02B8 - 0x02B0)
 class AKuroEntityActor final : public AKuroActor
@@ -493,15 +568,6 @@ class UKuroMathLibrary final : public UBlueprintFunctionLibrary
 public:
 	static int64 BitwiseLeftShift(int64 Source, int32 Bit);
 	static int64 BitwiseRightShift(int64 Source, int32 Bit);
-	static int32 IntBitwiseAnd(int32 Num1, int32 Num2);
-	static int32 IntBitwiseNot(int32 Num);
-	static int32 IntBitwiseOr(int32 Num1, int32 Num2);
-	static int32 IntBitwiseXOr(int32 Num1, int32 Num2);
-	static int64 KuroStringToInt64(const class FString& StringNum);
-	static int64 LongBitwiseAnd(int64 Num1, int64 Num2);
-	static int64 LongBitwiseNot(int64 Num);
-	static int64 LongBitwiseOr(int64 Num1, int64 Num2);
-	static int64 LongBitwiseXOr(int64 Num1, int64 Num2);
 	static struct FVector2D Max(const struct FVector2D& A, const struct FVector2D& B);
 	static struct FVector2D Min(const struct FVector2D& A, const struct FVector2D& B);
 
@@ -665,6 +731,8 @@ public:
 	static class FString GetCustomChannel();
 	static bool GetDeviceIsEmulator();
 	static bool GetDeviceIsRooted();
+	static class FString GetHarmonyOSVersion();
+	static bool IsHarmonyOS();
 	static void OpenAppWithUrl(const class FString& schema, const class FString& failSchema);
 
 public:
@@ -711,6 +779,7 @@ public:
 	static struct FArrayBuffer ArrayToBuffer(TArray<uint8>* InArray);
 	static class FString Base64Decode(const class FString& inString);
 	static class FString Base64Encode(const class FString& inString);
+	static class FString Base64EncodeBinary(const struct FArrayBuffer& InBuffer);
 	static class FString Base64EncodeWithConvertToUTF8(const class FString& inString);
 	static class FString Base64EncodeWithSpecifyChar(const TArray<uint8>& ByteArray, const class FString& SpecifyChar);
 	static class FString Base64EncodeWithSpecifyCharWithConvertToUTF8(const class FString& inString, const class FString& SpecifyChar);
@@ -727,6 +796,7 @@ public:
 	static void DestroyObject(class UObject* Object);
 	static bool DirectoryExists(const class FString& Path);
 	static void DoGameViewPortMouseEnter(class UGameViewportClient* InViewport, int32 x, int32 y);
+	static void DumpStackTrace(const class FString& Str);
 	static bool EncompassesPoint(class AVolume* Volume, const struct FVector& Point, float SphereRadius);
 	static bool ExecProcess(const class FString& URL, const class FString& Params_0, int32* ReturnCode, class FString* OutStd, class FString* OutErr);
 	static bool ExecuteFunctionByName(class UObject* Object, const class FString& FunctionName, class FString* Result);
@@ -755,6 +825,10 @@ public:
 	static class FString GetDeviceCPU();
 	static TArray<class FString> GetDirectories(const class FString& Path);
 	static class FString GetDiskSerialNo();
+	static bool GetEnableMobileLowStreaming(class ULevelSequence* Sequence);
+	static class FString GetFileAccessTime(const class FString& Path);
+	static class FString GetFileCreationTime(const class FString& Path);
+	static class FString GetFileModificationTime(const class FString& Path);
 	static TArray<class FString> GetFiles(const class FString& Path, const class FString& Extension);
 	static TArray<class FString> GetFilesRecursive(const class FString& Path, const class FString& Filter, bool Files, bool Directories);
 	static struct FVector GetFirstLocationFromSeqTrack(class UMovieScene3DTransformTrack* TransformTrack);
@@ -762,9 +836,11 @@ public:
 	static class FString GetGPUInfo();
 	static class FString GetLevelPath(const class UObject* WorldContextObject);
 	static class AActor* GetLevelPrefabShowActor(class AActor* Actor);
+	static bool GetLocalAdapterAddressesUint32(TArray<int32>* OutAddresses);
 	static void GetLocalHostAddresses(TArray<class FString>* OutAddresses, const bool bAppendPort);
 	static class FString GetMacAddress();
 	static TArray<struct FVector> GetNavPointData(class UObject* WorldContextObject, int32 XNumber, int32 YNumber, int32 Dis, class ANavigationData* NavData, const struct FVector& Point, const struct FVector& QueryExtent, TSubclassOf<class UNavigationQueryFilter> FilterClass);
+	static class FString GetOSVersion();
 	static float GetPIEStartTimeInSeconds();
 	static float GetPlatformTimeInSeconds();
 	static class FString GetProcessorId();
@@ -777,7 +853,10 @@ public:
 	static int64 GetTotalPhysicalMemory();
 	static class UMovieSceneTrack* GetTrackByClass(const TArray<class UMovieSceneTrack*>& Tracks, TSubclassOf<class UMovieSceneTrack> Class_0);
 	static class FString GetVendorInfo();
+	static int32 GetVideoMemoryGB();
 	static struct FVector2D GetViewPortMousePosition();
+	static bool GetViewPortMousePosition2(struct FVector2D* MousePos);
+	static class FString GetWholeStatUnitInfo(float Timespan);
 	static class FString HashStringWithSHA1(const class FString& inString);
 	static void IcmpPing(const class FString& IpAddress, float Timeout, const TDelegate<void(const class FString& Address, float Time, int32 responseState)>& InDelegate);
 	static bool IsEditor(const class UObject* WorldContextObject);
@@ -802,6 +881,7 @@ public:
 	static void PerceptionConfigureSense(class UAIPerceptionComponent* AIPerception, class UAISenseConfig* AISenseConfig);
 	static void RegisterCustomCommandProcessor(const class FString& Category, const TDelegate<void(const class FString& Command)>& Processor);
 	static void RemoveFromRoot(class UObject* InObject);
+	static void ResetHttpMaxFlushTimeSeconds();
 	static bool SaveBufferToFile(const class FString& Path, const struct FArrayBuffer& InBuffer);
 	static bool SaveStringToFile(const class FString& SaveText, const class FString& FileName, const bool bWithBom);
 	static void SetActorModify(class AActor* Actor);
@@ -846,6 +926,31 @@ public:
 static_assert(alignof(UKuroStaticLibrary) == 0x000008, "Wrong alignment on UKuroStaticLibrary");
 static_assert(sizeof(UKuroStaticLibrary) == 0x000030, "Wrong size on UKuroStaticLibrary");
 
+// Class KuroUtility.KuroFFXFSR3BlueprintLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroFFXFSR3BlueprintLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void DumpAMDGPUInfos();
+	static bool IsDeviceAMD();
+	static bool IsGlobalSwitchOn();
+	static bool IsSupported();
+	static bool SupportFI();
+	static bool SupportFSR3();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroFFXFSR3BlueprintLibrary">();
+	}
+	static class UKuroFFXFSR3BlueprintLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroFFXFSR3BlueprintLibrary>();
+	}
+};
+static_assert(alignof(UKuroFFXFSR3BlueprintLibrary) == 0x000008, "Wrong alignment on UKuroFFXFSR3BlueprintLibrary");
+static_assert(sizeof(UKuroFFXFSR3BlueprintLibrary) == 0x000030, "Wrong size on UKuroFFXFSR3BlueprintLibrary");
+
 // Class KuroUtility.KuroStaticPS5Library
 // 0x0000 (0x0030 - 0x0030)
 class UKuroStaticPS5Library final : public UBlueprintFunctionLibrary
@@ -859,6 +964,7 @@ public:
 	static int32 CheckUserPremium(class FString* userId);
 	static void ClearJoinSessionDelegate();
 	static void ClearJoinSessionHandle();
+	static int32 CloseWebBrowser();
 	static class FString CreatePlayerSession(int32 joinableUserType, class FString* playerId);
 	static void CreateTrophyContextAsync(const class FString& userId, int32 serviceLabel, const class FString& optionsLong, const TDelegate<void(int32 ret, int32 result)>& callback);
 	static void CreateTrophyHandleAsync(const TDelegate<void(int32 ret, int32 result)>& callback);
@@ -909,6 +1015,7 @@ public:
 	static void SetPlayerSessionJoinableUserType(int32 joinableUserType);
 	static int32 ShowPsStoreIcon(int32 position);
 	static void TerminateMessageDialog();
+	static int32 TerminateWebBrowser();
 	static int32 UdsEventPropertyArraySetString(int64 proPtr, class FString* key, TArray<class FString>* value);
 	static int32 UdsEventPropertyObjectSetBool(int64 proPtr, class FString* key, bool value);
 	static int32 UdsEventPropertyObjectSetFloat32(int64 proPtr, class FString* key, float value);
@@ -1142,6 +1249,8 @@ public:
 	void RemovePrerequisiteActorComponent(const ETickingGroup TickingGroup, class UActorComponent* ActorComp, int32 Priority);
 	bool RemoveTick(const ETickingGroup TickingGroup);
 	void SetCharacterMovementProxyTickFunction(const ETickingGroup TickingGroup, class UCharacterMovementComponent* MoveComp, int32 Priority);
+	void SetGamePrerequisiteTickFunction(const ETickingGroup TickingGroup, int32 Priority);
+	void SetSkeletalMeshComponentPrerequisite(const ETickingGroup TickingGroup, int32 Priority, class USkeletalMeshComponent* SkeletalComp);
 	void SetSkeletalMeshProxyTickFunction(const ETickingGroup TickingGroup, class USkeletalMeshComponent* SkeletalComp, int32 Priority);
 	void SetTickFunctionCompletionCallbackInMainThread(const ETickingGroup TickingGroup, int32 Priority);
 

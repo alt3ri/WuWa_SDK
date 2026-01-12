@@ -3,8 +3,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "HoudiniNiagara_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params

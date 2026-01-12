@@ -47,20 +47,6 @@ enum class EKuroAudioVolumeChannel : uint8
 	EKuroAudioVolumeChannel_MAX              = 3,
 };
 
-// ScriptStruct KuroAudio.KuroDynamicReverbParam
-// 0x0008 (0x0008 - 0x0000)
-struct FKuroDynamicReverbParam final
-{
-public:
-	uint8                                         HorizontalHitCount;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         VerticalHitDistance;                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroDynamicReverbParam) == 0x000004, "Wrong alignment on FKuroDynamicReverbParam");
-static_assert(sizeof(FKuroDynamicReverbParam) == 0x000008, "Wrong size on FKuroDynamicReverbParam");
-static_assert(offsetof(FKuroDynamicReverbParam, HorizontalHitCount) == 0x000000, "Member 'FKuroDynamicReverbParam::HorizontalHitCount' has a wrong offset!");
-static_assert(offsetof(FKuroDynamicReverbParam, VerticalHitDistance) == 0x000004, "Member 'FKuroDynamicReverbParam::VerticalHitDistance' has a wrong offset!");
-
 // ScriptStruct KuroAudio.KuroAudioEnvironmentInfo
 // 0x0018 (0x0018 - 0x0000)
 struct FKuroAudioEnvironmentInfo final

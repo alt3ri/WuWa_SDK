@@ -10,6 +10,25 @@
 namespace SDK
 {
 
+// Function KuroCloudGame.KuroCloudGameWrapper.ClipBoardPaste
+// (Final, Native, Static, Public)
+
+void UKuroCloudGameWrapper::ClipBoardPaste()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroCloudGameWrapper", "ClipBoardPaste");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroCloudGame.KuroCloudGameWrapper.SendDataToPipeBinary
 // (Final, Native, Static, Public)
 // Parameters:

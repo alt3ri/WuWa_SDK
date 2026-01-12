@@ -4,8 +4,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "JsEnv_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "JsEnv_structs.hpp"
 #include "KuroNetwork_structs.hpp"
 
 
@@ -22,6 +22,8 @@ public:
 	static void Post(const class FString& URL, const TMap<class FString, class FString>& HeaderParam, const class FString& Content, TDelegate<void(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data)> Handle, float InTimeoutSecs);
 	static void PostAli(const TMap<class FString, class FString>& QueryParameter, TDelegate<void(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data)> Handle, float InTimeoutSecs);
 	static void PostRpt(const class FString& ContentStr, bool IsGlobal, TDelegate<void(const class FString& Data, int32 LocalErrorCode, int32 RemoteErrorCode, int32 HttpResponseCode, bool bConnectedSuccessfully)> Handle, float InTimeoutSecs);
+	static void PostRpt1(const class FString& ContentStr, const class FString& Content1Str, bool IsGlobal, TDelegate<void(const class FString& Data, int32 LocalErrorCode, int32 RemoteErrorCode, int32 HttpResponseCode, bool bConnectedSuccessfully)> Handle, float InTimeoutSecs);
+	static void PostRpt2(const class FString& Url, const class FString& ContentStr, const class FString& Content1Str, TDelegate<void(const class FString& Data, int32 LocalErrorCode, int32 RemoteErrorCode, int32 HttpResponseCode, bool bConnectedSuccessfully)> Handle, float InTimeoutSecs);
 
 public:
 	static class UClass* StaticClass()
@@ -37,11 +39,11 @@ static_assert(alignof(UKuroHttp) == 0x000008, "Wrong alignment on UKuroHttp");
 static_assert(sizeof(UKuroHttp) == 0x000030, "Wrong size on UKuroHttp");
 
 // Class KuroNetwork.KuroHttpServerRequestProxy
-// 0x0080 (0x00B0 - 0x0030)
+// 0x00C0 (0x00F0 - 0x0030)
 class UKuroHttpServerRequestProxy final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x80];                                      // 0x0030(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xC0];                                      // 0x0030(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool GetHeader(const class FString& Key, TArray<class FString>* OutHeader);
@@ -59,7 +61,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroHttpServerRequestProxy) == 0x000008, "Wrong alignment on UKuroHttpServerRequestProxy");
-static_assert(sizeof(UKuroHttpServerRequestProxy) == 0x0000B0, "Wrong size on UKuroHttpServerRequestProxy");
+static_assert(sizeof(UKuroHttpServerRequestProxy) == 0x0000F0, "Wrong size on UKuroHttpServerRequestProxy");
 
 // Class KuroNetwork.KuroHttpServerRouterProxy
 // 0x0088 (0x00B8 - 0x0030)
@@ -89,7 +91,7 @@ static_assert(sizeof(UKuroHttpServerRouterProxy) == 0x0000B8, "Wrong size on UKu
 static_assert(offsetof(UKuroHttpServerRouterProxy, HttpRequestDelegate) == 0x000030, "Member 'UKuroHttpServerRouterProxy::HttpRequestDelegate' has a wrong offset!");
 
 // Class KuroNetwork.KuroKcpClient
-// 0x0318 (0x0348 - 0x0030)
+// 0x03A0 (0x03D0 - 0x0030)
 class UKuroKcpClient final : public UObject
 {
 public:
@@ -98,15 +100,28 @@ public:
 	TDelegate<void(int32 SeqNo, int16 RpdId, uint16 MessageId, const struct FArrayBuffer& MessageBuffer)> OnRecResp;                                         // 0x0048(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void(int32 SeqNo, int16 RpdId, uint32 ErrorCode, const struct FArrayBuffer& StringBuffer)> OnRecException;                                    // 0x0070(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void(int32 SeqNo, uint16 MessageId, const struct FArrayBuffer& MessageBuffer)> OnRecPush;                                         // 0x0098(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(int32 Code1, int32 Code2, int32 Code3, int32 Code4, int32 Code5)> OnError;                                           // 0x00C0(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint32                                        RemoteMtu;                                         // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseNewResolveIp;                                   // 0x00EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsMultiThreaded;                                   // 0x00ED(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsTickDrivenOutside;                               // 0x00EE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OpenSendVerify;                                    // 0x00EF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F0[0x258];                                     // 0x00F0(0x0258)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TDelegate<void(uint32 ErrorCode)>             OnRecTcpException;                                 // 0x00C0(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Code1, int32 Code2, int32 Code3, int32 Code4, int32 Code5)> OnError;                                           // 0x00E8(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	uint32                                        RemoteMtu;                                         // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseNewResolveIp;                                   // 0x0114(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsMultiThreaded;                                   // 0x0115(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsTickDrivenOutside;                               // 0x0116(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OpenSendVerify;                                    // 0x0117(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTcpConnected;                                    // 0x0118(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTcpConnectFailed;                                // 0x0128(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	class UKuroTcpClient*                         TcpClient;                                         // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_140[0x290];                                    // 0x0140(0x0290)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void CloseTcpConnect();
+	bool Connect(const class FString& Addr, const int32 Port, const bool CrcCheckDisable);
+	void Disconnect();
+	class FString GetDebugString(const struct FArrayBuffer& ArrayBuffer, const class FString& Separator, int16 MsgId, int32 SeqNo);
+	void HandleKcpConnect(const uint32 NeedCrcCheck, const uint32 Conv);
+	void HandleTcpConnected();
+	void HandleTcpConnectFailed();
+	bool SendM(int8 MsgType, int32 SeqNo, int16 RpcId, int16 MsgId, const struct FArrayBuffer& ArrayBuffer, bool UseKcp);
+	void SendTcpMessage(int16 RpcId, int16 MsgId, const struct FArrayBuffer& ArrayBuffer);
 	void SetEnType(uint8 Type, int16 MsgId);
 	bool SetK(uint8 Type, const struct FArrayBuffer& KeyBuffer);
 	void SetKcpMtu(int32 Mtu);
@@ -114,7 +129,10 @@ public:
 	void SetKcpSegmentSize(int32 SegmentSize);
 	void SetKcpStream(bool bStream);
 	void SetKcpWndSize(int32 SndWnd, int32 RcvWnd);
+	void StartTcpConnect(const int32 Port);
 	void TickOutside(float DeltaSeconds);
+
+	bool IsTcpConnectStart() const;
 
 public:
 	static class UClass* StaticClass()
@@ -127,24 +145,28 @@ public:
 	}
 };
 static_assert(alignof(UKuroKcpClient) == 0x000008, "Wrong alignment on UKuroKcpClient");
-static_assert(sizeof(UKuroKcpClient) == 0x000348, "Wrong size on UKuroKcpClient");
+static_assert(sizeof(UKuroKcpClient) == 0x0003D0, "Wrong size on UKuroKcpClient");
 static_assert(offsetof(UKuroKcpClient, OnConnectSuccess) == 0x000038, "Member 'UKuroKcpClient::OnConnectSuccess' has a wrong offset!");
 static_assert(offsetof(UKuroKcpClient, OnRecResp) == 0x000048, "Member 'UKuroKcpClient::OnRecResp' has a wrong offset!");
 static_assert(offsetof(UKuroKcpClient, OnRecException) == 0x000070, "Member 'UKuroKcpClient::OnRecException' has a wrong offset!");
 static_assert(offsetof(UKuroKcpClient, OnRecPush) == 0x000098, "Member 'UKuroKcpClient::OnRecPush' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnError) == 0x0000C0, "Member 'UKuroKcpClient::OnError' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, RemoteMtu) == 0x0000E8, "Member 'UKuroKcpClient::RemoteMtu' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, UseNewResolveIp) == 0x0000EC, "Member 'UKuroKcpClient::UseNewResolveIp' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, IsMultiThreaded) == 0x0000ED, "Member 'UKuroKcpClient::IsMultiThreaded' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, IsTickDrivenOutside) == 0x0000EE, "Member 'UKuroKcpClient::IsTickDrivenOutside' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OpenSendVerify) == 0x0000EF, "Member 'UKuroKcpClient::OpenSendVerify' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, OnRecTcpException) == 0x0000C0, "Member 'UKuroKcpClient::OnRecTcpException' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, OnError) == 0x0000E8, "Member 'UKuroKcpClient::OnError' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, RemoteMtu) == 0x000110, "Member 'UKuroKcpClient::RemoteMtu' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, UseNewResolveIp) == 0x000114, "Member 'UKuroKcpClient::UseNewResolveIp' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, IsMultiThreaded) == 0x000115, "Member 'UKuroKcpClient::IsMultiThreaded' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, IsTickDrivenOutside) == 0x000116, "Member 'UKuroKcpClient::IsTickDrivenOutside' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, OpenSendVerify) == 0x000117, "Member 'UKuroKcpClient::OpenSendVerify' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, OnTcpConnected) == 0x000118, "Member 'UKuroKcpClient::OnTcpConnected' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, OnTcpConnectFailed) == 0x000128, "Member 'UKuroKcpClient::OnTcpConnectFailed' has a wrong offset!");
+static_assert(offsetof(UKuroKcpClient, TcpClient) == 0x000138, "Member 'UKuroKcpClient::TcpClient' has a wrong offset!");
 
 // Class KuroNetwork.KuroKcpTestWorker
-// 0x0250 (0x0280 - 0x0030)
+// 0x0260 (0x0290 - 0x0030)
 class UKuroKcpTestWorker final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x250];                                     // 0x0030(0x0250)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x260];                                     // 0x0030(0x0260)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnConnectSuccess();
@@ -163,7 +185,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroKcpTestWorker) == 0x000008, "Wrong alignment on UKuroKcpTestWorker");
-static_assert(sizeof(UKuroKcpTestWorker) == 0x000280, "Wrong size on UKuroKcpTestWorker");
+static_assert(sizeof(UKuroKcpTestWorker) == 0x000290, "Wrong size on UKuroKcpTestWorker");
 
 // Class KuroNetwork.KuroNetworkChange
 // 0x0020 (0x0050 - 0x0030)
@@ -198,7 +220,8 @@ public:
 	static void DetectionFinish(bool bSuccess);
 	static class FString GetCurrentProxyAddress();
 	static class FString GetDetectionConfig(const class FString& ServerName);
-	static int32 ResolveDomainName(const class FString& DomainName);
+	static void ResolveDomainFinish();
+	static void ResolveDomainName(const class FString& DomainName, TDelegate<void(int32 ErrorCode)> Callback);
 	static void SetCDNConfig(const class FString& CDNConfig);
 	static void TestUdpReachable(const class FString& IpAddress, const TArray<int32>& Ports, TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate);
 
@@ -248,6 +271,39 @@ static_assert(offsetof(UKuroNetworkSetting, RptUrl) == 0x000060, "Member 'UKuroN
 static_assert(offsetof(UKuroNetworkSetting, RptUrlGlobal) == 0x000070, "Member 'UKuroNetworkSetting::RptUrlGlobal' has a wrong offset!");
 static_assert(offsetof(UKuroNetworkSetting, EnableDump) == 0x000080, "Member 'UKuroNetworkSetting::EnableDump' has a wrong offset!");
 static_assert(offsetof(UKuroNetworkSetting, UseNativeMethod) == 0x000081, "Member 'UKuroNetworkSetting::UseNativeMethod' has a wrong offset!");
+
+// Class KuroNetwork.KuroTcpClient
+// 0x0070 (0x00A0 - 0x0030)
+class alignas(0x10) UKuroTcpClient final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x30];                                      // 0x0030(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          IsTickDrivenOutside;                               // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0x2F];                                      // 0x0061(0x002F)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 RecvData;                                          // 0x0090(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	void CloseSocket();
+	void Connect(const class FString& Addr, int32 Port);
+	void Disconnect();
+	void Send(const TArray<uint8>& Data);
+	void ShutDownSocket();
+	void TickOutside(float DeltaSeconds);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroTcpClient">();
+	}
+	static class UKuroTcpClient* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroTcpClient>();
+	}
+};
+static_assert(alignof(UKuroTcpClient) == 0x000010, "Wrong alignment on UKuroTcpClient");
+static_assert(sizeof(UKuroTcpClient) == 0x0000A0, "Wrong size on UKuroTcpClient");
+static_assert(offsetof(UKuroTcpClient, IsTickDrivenOutside) == 0x000060, "Member 'UKuroTcpClient::IsTickDrivenOutside' has a wrong offset!");
+static_assert(offsetof(UKuroTcpClient, RecvData) == 0x000090, "Member 'UKuroTcpClient::RecvData' has a wrong offset!");
 
 // Class KuroNetwork.SendHttpRequest
 // 0x0020 (0x0058 - 0x0038)

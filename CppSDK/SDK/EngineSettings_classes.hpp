@@ -56,7 +56,7 @@ static_assert(offsetof(UConsoleSettings, AutoCompleteCVarColor) == 0x00006C, "Me
 static_assert(offsetof(UConsoleSettings, AutoCompleteFadedColor) == 0x000070, "Member 'UConsoleSettings::AutoCompleteFadedColor' has a wrong offset!");
 
 // Class EngineSettings.GameMapsSettings
-// 0x0108 (0x0138 - 0x0030)
+// 0x0118 (0x0148 - 0x0030)
 class UGameMapsSettings final : public UObject
 {
 public:
@@ -70,12 +70,13 @@ public:
 	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSoftClassPath                         GameInstanceClass;                                 // 0x0068(0x0020)(Edit, ZeroConstructor, Config, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 LevelActorRegularConfigPath;                       // 0x0088(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        GameDefaultMap;                                    // 0x0098(0x0020)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FSoftObjectPath                        ServerDefaultMap;                                  // 0x00B8(0x0020)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FSoftClassPath                         GlobalDefaultGameMode;                             // 0x00D8(0x0020)(Edit, ZeroConstructor, Config, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FSoftClassPath                         GlobalDefaultServerGameMode;                       // 0x00F8(0x0020)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<struct FGameModeName>                  GameModeMapPrefixes;                               // 0x0118(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, NativeAccessSpecifierPrivate)
-	TArray<struct FGameModeName>                  GameModeClassAliases;                              // 0x0128(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, NativeAccessSpecifierPrivate)
+	class FString                                 PrefabLevelActorRegularConfigPath;                 // 0x0098(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        GameDefaultMap;                                    // 0x00A8(0x0020)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FSoftObjectPath                        ServerDefaultMap;                                  // 0x00C8(0x0020)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FSoftClassPath                         GlobalDefaultGameMode;                             // 0x00E8(0x0020)(Edit, ZeroConstructor, Config, NoClear, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FSoftClassPath                         GlobalDefaultServerGameMode;                       // 0x0108(0x0020)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FGameModeName>                  GameModeMapPrefixes;                               // 0x0128(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, NativeAccessSpecifierPrivate)
+	TArray<struct FGameModeName>                  GameModeClassAliases;                              // 0x0138(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, NativeAccessSpecifierPrivate)
 
 public:
 	static class UGameMapsSettings* GetGameMapsSettings();
@@ -95,7 +96,7 @@ public:
 	}
 };
 static_assert(alignof(UGameMapsSettings) == 0x000008, "Wrong alignment on UGameMapsSettings");
-static_assert(sizeof(UGameMapsSettings) == 0x000138, "Wrong size on UGameMapsSettings");
+static_assert(sizeof(UGameMapsSettings) == 0x000148, "Wrong size on UGameMapsSettings");
 static_assert(offsetof(UGameMapsSettings, LocalMapOptions) == 0x000030, "Member 'UGameMapsSettings::LocalMapOptions' has a wrong offset!");
 static_assert(offsetof(UGameMapsSettings, TransitionMap) == 0x000040, "Member 'UGameMapsSettings::TransitionMap' has a wrong offset!");
 static_assert(offsetof(UGameMapsSettings, bUseSplitscreen) == 0x000060, "Member 'UGameMapsSettings::bUseSplitscreen' has a wrong offset!");
@@ -105,12 +106,13 @@ static_assert(offsetof(UGameMapsSettings, FourPlayerSplitscreenLayout) == 0x0000
 static_assert(offsetof(UGameMapsSettings, bOffsetPlayerGamepadIds) == 0x000064, "Member 'UGameMapsSettings::bOffsetPlayerGamepadIds' has a wrong offset!");
 static_assert(offsetof(UGameMapsSettings, GameInstanceClass) == 0x000068, "Member 'UGameMapsSettings::GameInstanceClass' has a wrong offset!");
 static_assert(offsetof(UGameMapsSettings, LevelActorRegularConfigPath) == 0x000088, "Member 'UGameMapsSettings::LevelActorRegularConfigPath' has a wrong offset!");
-static_assert(offsetof(UGameMapsSettings, GameDefaultMap) == 0x000098, "Member 'UGameMapsSettings::GameDefaultMap' has a wrong offset!");
-static_assert(offsetof(UGameMapsSettings, ServerDefaultMap) == 0x0000B8, "Member 'UGameMapsSettings::ServerDefaultMap' has a wrong offset!");
-static_assert(offsetof(UGameMapsSettings, GlobalDefaultGameMode) == 0x0000D8, "Member 'UGameMapsSettings::GlobalDefaultGameMode' has a wrong offset!");
-static_assert(offsetof(UGameMapsSettings, GlobalDefaultServerGameMode) == 0x0000F8, "Member 'UGameMapsSettings::GlobalDefaultServerGameMode' has a wrong offset!");
-static_assert(offsetof(UGameMapsSettings, GameModeMapPrefixes) == 0x000118, "Member 'UGameMapsSettings::GameModeMapPrefixes' has a wrong offset!");
-static_assert(offsetof(UGameMapsSettings, GameModeClassAliases) == 0x000128, "Member 'UGameMapsSettings::GameModeClassAliases' has a wrong offset!");
+static_assert(offsetof(UGameMapsSettings, PrefabLevelActorRegularConfigPath) == 0x000098, "Member 'UGameMapsSettings::PrefabLevelActorRegularConfigPath' has a wrong offset!");
+static_assert(offsetof(UGameMapsSettings, GameDefaultMap) == 0x0000A8, "Member 'UGameMapsSettings::GameDefaultMap' has a wrong offset!");
+static_assert(offsetof(UGameMapsSettings, ServerDefaultMap) == 0x0000C8, "Member 'UGameMapsSettings::ServerDefaultMap' has a wrong offset!");
+static_assert(offsetof(UGameMapsSettings, GlobalDefaultGameMode) == 0x0000E8, "Member 'UGameMapsSettings::GlobalDefaultGameMode' has a wrong offset!");
+static_assert(offsetof(UGameMapsSettings, GlobalDefaultServerGameMode) == 0x000108, "Member 'UGameMapsSettings::GlobalDefaultServerGameMode' has a wrong offset!");
+static_assert(offsetof(UGameMapsSettings, GameModeMapPrefixes) == 0x000128, "Member 'UGameMapsSettings::GameModeMapPrefixes' has a wrong offset!");
+static_assert(offsetof(UGameMapsSettings, GameModeClassAliases) == 0x000138, "Member 'UGameMapsSettings::GameModeClassAliases' has a wrong offset!");
 
 // Class EngineSettings.GameNetworkManagerSettings
 // 0x0030 (0x0060 - 0x0030)

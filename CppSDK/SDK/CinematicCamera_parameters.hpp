@@ -64,6 +64,17 @@ static_assert(alignof(CineCameraComponent_SetCurrentFocalLength) == 0x000004, "W
 static_assert(sizeof(CineCameraComponent_SetCurrentFocalLength) == 0x000004, "Wrong size on CineCameraComponent_SetCurrentFocalLength");
 static_assert(offsetof(CineCameraComponent_SetCurrentFocalLength, InFocalLength) == 0x000000, "Member 'CineCameraComponent_SetCurrentFocalLength::InFocalLength' has a wrong offset!");
 
+// Function CinematicCamera.CineCameraComponent.SetCurrentFocalLengthExtra
+// 0x0004 (0x0004 - 0x0000)
+struct CineCameraComponent_SetCurrentFocalLengthExtra final
+{
+public:
+	float                                         InFocalLength;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CineCameraComponent_SetCurrentFocalLengthExtra) == 0x000004, "Wrong alignment on CineCameraComponent_SetCurrentFocalLengthExtra");
+static_assert(sizeof(CineCameraComponent_SetCurrentFocalLengthExtra) == 0x000004, "Wrong size on CineCameraComponent_SetCurrentFocalLengthExtra");
+static_assert(offsetof(CineCameraComponent_SetCurrentFocalLengthExtra, InFocalLength) == 0x000000, "Member 'CineCameraComponent_SetCurrentFocalLengthExtra::InFocalLength' has a wrong offset!");
+
 // Function CinematicCamera.CineCameraComponent.SetFilmbackPresetByName
 // 0x0010 (0x0010 - 0x0000)
 struct CineCameraComponent_SetFilmbackPresetByName final

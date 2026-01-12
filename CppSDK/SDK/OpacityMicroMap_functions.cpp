@@ -1,0 +1,40 @@
+﻿#pragma once
+// Package: OpacityMicroMap
+
+#include "Basic.hpp"
+
+#include "OpacityMicroMap_classes.hpp"
+#include "OpacityMicroMap_parameters.hpp"
+
+
+namespace SDK
+{
+
+// Function OpacityMicroMap.OMMBlueprintLibrary.RecreateStaticRaytracedMeshes
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ForceDisableOpacityMicromapsInput                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UOMMBlueprintLibrary::RecreateStaticRaytracedMeshes(const class UObject* WorldContextObject, bool ForceDisableOpacityMicromapsInput)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("OMMBlueprintLibrary", "RecreateStaticRaytracedMeshes");
+
+	Params::OMMBlueprintLibrary_RecreateStaticRaytracedMeshes Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ForceDisableOpacityMicromapsInput = ForceDisableOpacityMicromapsInput;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+}
+

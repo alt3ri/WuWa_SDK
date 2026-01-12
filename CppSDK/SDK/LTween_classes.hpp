@@ -12,13 +12,15 @@ namespace SDK
 {
 
 // Class LTween.LTweenActor
-// 0x0058 (0x0308 - 0x02B0)
+// 0x0060 (0x0310 - 0x02B0)
 class ALTweenActor final : public AActor
 {
 public:
 	TArray<class ULTweener*>                      tweenerList;                                       // 0x02B0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_2C0[0x38];                                     // 0x02C0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ULTweener*>                      reserveTweenerList;                                // 0x02F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	float                                         GlobalPlayRate;                                    // 0x0308(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_30C[0x4];                                      // 0x030C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class ALTweenActor* GetLTweenInstance(class UObject* WorldContextObject);
@@ -27,6 +29,9 @@ public:
 	void DisableTick();
 	void EnableTick();
 	void KillAllTweens(bool callComplete);
+	void SetGlobalPlayRate(float NewPlayRate);
+
+	float GetGlobalPlayRate() const;
 
 public:
 	static class UClass* StaticClass()
@@ -39,9 +44,10 @@ public:
 	}
 };
 static_assert(alignof(ALTweenActor) == 0x000008, "Wrong alignment on ALTweenActor");
-static_assert(sizeof(ALTweenActor) == 0x000308, "Wrong size on ALTweenActor");
+static_assert(sizeof(ALTweenActor) == 0x000310, "Wrong size on ALTweenActor");
 static_assert(offsetof(ALTweenActor, tweenerList) == 0x0002B0, "Member 'ALTweenActor::tweenerList' has a wrong offset!");
 static_assert(offsetof(ALTweenActor, reserveTweenerList) == 0x0002F8, "Member 'ALTweenActor::reserveTweenerList' has a wrong offset!");
+static_assert(offsetof(ALTweenActor, GlobalPlayRate) == 0x000308, "Member 'ALTweenActor::GlobalPlayRate' has a wrong offset!");
 
 // Class LTween.LTweenBPLibrary
 // 0x0000 (0x0030 - 0x0030)

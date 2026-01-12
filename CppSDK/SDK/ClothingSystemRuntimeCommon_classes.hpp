@@ -3,14 +3,40 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 #include "ClothingSystemRuntimeInterface_classes.hpp"
+#include "CoreUObject_classes.hpp"
 #include "ClothingSystemRuntimeCommon_structs.hpp"
 
 
 namespace SDK
 {
+
+// Class ClothingSystemRuntimeCommon.ClothLODDataCommon_Legacy
+// 0x0160 (0x0190 - 0x0030)
+class UClothLODDataCommon_Legacy final : public UObject
+{
+public:
+	class UClothPhysicalMeshDataBase_Legacy*      PhysicalMeshData;                                  // 0x0030(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FClothPhysicalMeshData                 ClothPhysicalMeshData;                             // 0x0038(0x00F8)(NativeAccessSpecifierPublic)
+	struct FClothCollisionData                    CollisionData;                                     // 0x0130(0x0040)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_170[0x20];                                     // 0x0170(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ClothLODDataCommon_Legacy">();
+	}
+	static class UClothLODDataCommon_Legacy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothLODDataCommon_Legacy>();
+	}
+};
+static_assert(alignof(UClothLODDataCommon_Legacy) == 0x000008, "Wrong alignment on UClothLODDataCommon_Legacy");
+static_assert(sizeof(UClothLODDataCommon_Legacy) == 0x000190, "Wrong size on UClothLODDataCommon_Legacy");
+static_assert(offsetof(UClothLODDataCommon_Legacy, PhysicalMeshData) == 0x000030, "Member 'UClothLODDataCommon_Legacy::PhysicalMeshData' has a wrong offset!");
+static_assert(offsetof(UClothLODDataCommon_Legacy, ClothPhysicalMeshData) == 0x000038, "Member 'UClothLODDataCommon_Legacy::ClothPhysicalMeshData' has a wrong offset!");
+static_assert(offsetof(UClothLODDataCommon_Legacy, CollisionData) == 0x000130, "Member 'UClothLODDataCommon_Legacy::CollisionData' has a wrong offset!");
 
 // Class ClothingSystemRuntimeCommon.ClothConfigCommon
 // 0x0000 (0x0030 - 0x0030)
@@ -109,32 +135,6 @@ static_assert(offsetof(UClothingAssetCommon, UsedBoneIndices) == 0x000100, "Memb
 static_assert(offsetof(UClothingAssetCommon, ReferenceBoneIndex) == 0x000110, "Member 'UClothingAssetCommon::ReferenceBoneIndex' has a wrong offset!");
 static_assert(offsetof(UClothingAssetCommon, CustomData) == 0x000118, "Member 'UClothingAssetCommon::CustomData' has a wrong offset!");
 static_assert(offsetof(UClothingAssetCommon, ClothConfig) == 0x000120, "Member 'UClothingAssetCommon::ClothConfig' has a wrong offset!");
-
-// Class ClothingSystemRuntimeCommon.ClothLODDataCommon_Legacy
-// 0x0160 (0x0190 - 0x0030)
-class UClothLODDataCommon_Legacy final : public UObject
-{
-public:
-	class UClothPhysicalMeshDataBase_Legacy*      PhysicalMeshData;                                  // 0x0030(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FClothPhysicalMeshData                 ClothPhysicalMeshData;                             // 0x0038(0x00F8)(NativeAccessSpecifierPublic)
-	struct FClothCollisionData                    CollisionData;                                     // 0x0130(0x0040)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_170[0x20];                                     // 0x0170(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ClothLODDataCommon_Legacy">();
-	}
-	static class UClothLODDataCommon_Legacy* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothLODDataCommon_Legacy>();
-	}
-};
-static_assert(alignof(UClothLODDataCommon_Legacy) == 0x000008, "Wrong alignment on UClothLODDataCommon_Legacy");
-static_assert(sizeof(UClothLODDataCommon_Legacy) == 0x000190, "Wrong size on UClothLODDataCommon_Legacy");
-static_assert(offsetof(UClothLODDataCommon_Legacy, PhysicalMeshData) == 0x000030, "Member 'UClothLODDataCommon_Legacy::PhysicalMeshData' has a wrong offset!");
-static_assert(offsetof(UClothLODDataCommon_Legacy, ClothPhysicalMeshData) == 0x000038, "Member 'UClothLODDataCommon_Legacy::ClothPhysicalMeshData' has a wrong offset!");
-static_assert(offsetof(UClothLODDataCommon_Legacy, CollisionData) == 0x000130, "Member 'UClothLODDataCommon_Legacy::CollisionData' has a wrong offset!");
 
 }
 

@@ -3,9 +3,9 @@
 
 #include "Basic.hpp"
 
+#include "InputCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "HeadMountedDisplay_structs.hpp"
-#include "InputCore_structs.hpp"
 
 
 namespace SDK::Params

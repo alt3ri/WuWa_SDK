@@ -3,15 +3,15 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "AkAudio_structs.hpp"
+#include "WwiseResourceLoader_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "WwiseResourceLoader_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -713,7 +713,7 @@ static_assert(alignof(UAkFolder) == 0x000008, "Wrong alignment on UAkFolder");
 static_assert(sizeof(UAkFolder) == 0x000058, "Wrong size on UAkFolder");
 
 // Class AkAudio.DrawPortalComponent
-// 0x0000 (0x0500 - 0x0500)
+// 0x0000 (0x0530 - 0x0530)
 class UDrawPortalComponent final : public UPrimitiveComponent
 {
 public:
@@ -727,10 +727,10 @@ public:
 	}
 };
 static_assert(alignof(UDrawPortalComponent) == 0x000010, "Wrong alignment on UDrawPortalComponent");
-static_assert(sizeof(UDrawPortalComponent) == 0x000500, "Wrong size on UDrawPortalComponent");
+static_assert(sizeof(UDrawPortalComponent) == 0x000530, "Wrong size on UDrawPortalComponent");
 
 // Class AkAudio.DrawRoomComponent
-// 0x0000 (0x0500 - 0x0500)
+// 0x0000 (0x0530 - 0x0530)
 class UDrawRoomComponent final : public UPrimitiveComponent
 {
 public:
@@ -744,7 +744,7 @@ public:
 	}
 };
 static_assert(alignof(UDrawRoomComponent) == 0x000010, "Wrong alignment on UDrawRoomComponent");
-static_assert(sizeof(UDrawRoomComponent) == 0x000500, "Wrong size on UDrawRoomComponent");
+static_assert(sizeof(UDrawRoomComponent) == 0x000530, "Wrong size on UDrawRoomComponent");
 
 // Class AkAudio.AkEffectShareSet
 // 0x0068 (0x00C0 - 0x0058)
@@ -1162,48 +1162,6 @@ static_assert(offsetof(UAkIOSInitializationSettings, CommonSettings) == 0x000038
 static_assert(offsetof(UAkIOSInitializationSettings, AudioSession) == 0x0000B0, "Member 'UAkIOSInitializationSettings::AudioSession' has a wrong offset!");
 static_assert(offsetof(UAkIOSInitializationSettings, CommunicationSettings) == 0x0000C0, "Member 'UAkIOSInitializationSettings::CommunicationSettings' has a wrong offset!");
 static_assert(offsetof(UAkIOSInitializationSettings, AdvancedSettings) == 0x0000E0, "Member 'UAkIOSInitializationSettings::AdvancedSettings' has a wrong offset!");
-
-// Class AkAudio.MovieSceneAkAudioEventSection
-// 0x0090 (0x0188 - 0x00F8)
-class UMovieSceneAkAudioEventSection final : public UMovieSceneSection
-{
-public:
-	uint8                                         Pad_F8[0x28];                                      // 0x00F8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          Event;                                             // 0x0120(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          RetriggerEvent;                                    // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_129[0x3];                                      // 0x0129(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ScrubTailLengthMs;                                 // 0x012C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          StopAtSectionEnd;                                  // 0x0130(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_131[0x7];                                      // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 EventName;                                         // 0x0138(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         MaxSourceDuration;                                 // 0x0148(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_14C[0x4];                                      // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 MaxDurationSourceID;                               // 0x0150(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<struct FAkExternalSourceInfo>          ExternalSources;                                   // 0x0160(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	int32                                         FadeOutMs;                                         // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_174[0x14];                                     // 0x0174(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneAkAudioEventSection">();
-	}
-	static class UMovieSceneAkAudioEventSection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneAkAudioEventSection>();
-	}
-};
-static_assert(alignof(UMovieSceneAkAudioEventSection) == 0x000008, "Wrong alignment on UMovieSceneAkAudioEventSection");
-static_assert(sizeof(UMovieSceneAkAudioEventSection) == 0x000188, "Wrong size on UMovieSceneAkAudioEventSection");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, Event) == 0x000120, "Member 'UMovieSceneAkAudioEventSection::Event' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, RetriggerEvent) == 0x000128, "Member 'UMovieSceneAkAudioEventSection::RetriggerEvent' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, ScrubTailLengthMs) == 0x00012C, "Member 'UMovieSceneAkAudioEventSection::ScrubTailLengthMs' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, StopAtSectionEnd) == 0x000130, "Member 'UMovieSceneAkAudioEventSection::StopAtSectionEnd' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, EventName) == 0x000138, "Member 'UMovieSceneAkAudioEventSection::EventName' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, MaxSourceDuration) == 0x000148, "Member 'UMovieSceneAkAudioEventSection::MaxSourceDuration' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, MaxDurationSourceID) == 0x000150, "Member 'UMovieSceneAkAudioEventSection::MaxDurationSourceID' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, ExternalSources) == 0x000160, "Member 'UMovieSceneAkAudioEventSection::ExternalSources' has a wrong offset!");
-static_assert(offsetof(UMovieSceneAkAudioEventSection, FadeOutMs) == 0x000170, "Member 'UMovieSceneAkAudioEventSection::FadeOutMs' has a wrong offset!");
 
 // Class AkAudio.AkIOSPlatformInfo
 // 0x0000 (0x0078 - 0x0078)
@@ -2300,6 +2258,48 @@ static_assert(alignof(UAkWwiseTreeSelector) == 0x000008, "Wrong alignment on UAk
 static_assert(sizeof(UAkWwiseTreeSelector) == 0x0001D0, "Wrong size on UAkWwiseTreeSelector");
 static_assert(offsetof(UAkWwiseTreeSelector, OnSelectionChanged) == 0x000170, "Member 'UAkWwiseTreeSelector::OnSelectionChanged' has a wrong offset!");
 static_assert(offsetof(UAkWwiseTreeSelector, OnItemDragged) == 0x000180, "Member 'UAkWwiseTreeSelector::OnItemDragged' has a wrong offset!");
+
+// Class AkAudio.MovieSceneAkAudioEventSection
+// 0x0090 (0x0188 - 0x00F8)
+class UMovieSceneAkAudioEventSection final : public UMovieSceneSection
+{
+public:
+	uint8                                         Pad_F8[0x28];                                      // 0x00F8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkAudioEvent*                          Event;                                             // 0x0120(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          RetriggerEvent;                                    // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_129[0x3];                                      // 0x0129(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ScrubTailLengthMs;                                 // 0x012C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          StopAtSectionEnd;                                  // 0x0130(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_131[0x7];                                      // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 EventName;                                         // 0x0138(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MaxSourceDuration;                                 // 0x0148(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_14C[0x4];                                      // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MaxDurationSourceID;                               // 0x0150(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FAkExternalSourceInfo>          ExternalSources;                                   // 0x0160(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	int32                                         FadeOutMs;                                         // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_174[0x14];                                     // 0x0174(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneAkAudioEventSection">();
+	}
+	static class UMovieSceneAkAudioEventSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneAkAudioEventSection>();
+	}
+};
+static_assert(alignof(UMovieSceneAkAudioEventSection) == 0x000008, "Wrong alignment on UMovieSceneAkAudioEventSection");
+static_assert(sizeof(UMovieSceneAkAudioEventSection) == 0x000188, "Wrong size on UMovieSceneAkAudioEventSection");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, Event) == 0x000120, "Member 'UMovieSceneAkAudioEventSection::Event' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, RetriggerEvent) == 0x000128, "Member 'UMovieSceneAkAudioEventSection::RetriggerEvent' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, ScrubTailLengthMs) == 0x00012C, "Member 'UMovieSceneAkAudioEventSection::ScrubTailLengthMs' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, StopAtSectionEnd) == 0x000130, "Member 'UMovieSceneAkAudioEventSection::StopAtSectionEnd' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, EventName) == 0x000138, "Member 'UMovieSceneAkAudioEventSection::EventName' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, MaxSourceDuration) == 0x000148, "Member 'UMovieSceneAkAudioEventSection::MaxSourceDuration' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, MaxDurationSourceID) == 0x000150, "Member 'UMovieSceneAkAudioEventSection::MaxDurationSourceID' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, ExternalSources) == 0x000160, "Member 'UMovieSceneAkAudioEventSection::ExternalSources' has a wrong offset!");
+static_assert(offsetof(UMovieSceneAkAudioEventSection, FadeOutMs) == 0x000170, "Member 'UMovieSceneAkAudioEventSection::FadeOutMs' has a wrong offset!");
 
 // Class AkAudio.MovieSceneAkTrack
 // 0x0018 (0x0098 - 0x0080)

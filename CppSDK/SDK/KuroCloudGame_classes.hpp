@@ -19,6 +19,7 @@ public:
 	TDelegate<void(const int32 Width, const int32 Height)> CloudGameOnChangeResolutionDelegate;               // 0x0080(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 
 public:
+	static void ClipBoardPaste();
 	static void SendDataToPipeBinary(const class FString& Data);
 	static void SendDataToPipeBinaryWithKey(const class FString& Key, const class FString& Data);
 

@@ -1,0 +1,36 @@
+﻿#pragma once
+// Package: MFRCModule
+
+#include "Basic.hpp"
+
+
+namespace SDK
+{
+
+// Enum MFRCModule.MFRCImageType
+// NumValues: 0x0006
+enum class EMFRCImageType : uint8
+{
+	NONE                                     = 0,
+	MAIN                                     = 1,
+	DEPTH                                    = 2,
+	MOTION                                   = 3,
+	UI                                       = 4,
+	MFRCImageType_MAX                        = 5,
+};
+
+// Enum MFRCModule.MFRCActorState
+// NumValues: 0x0007
+enum class EMFRCActorState : uint8
+{
+	NONE                                     = 0,
+	INIT                                     = 1,
+	READY                                    = 2,
+	START                                    = 3,
+	STOP                                     = 4,
+	SHUTDOWN                                 = 5,
+	MFRCActorState_MAX                       = 6,
+};
+
+}
+

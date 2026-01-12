@@ -92,14 +92,181 @@ void AKuroPointCloudActor::UpdateIsm()
 }
 
 
+// Function KuroPointCloud.KuroPointCloudCache.GetMetaDataFloat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroPointCloudCache::GetMetaDataFloat(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "GetMetaDataFloat");
+
+	Params::KuroPointCloudCache_GetMetaDataFloat Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.GetMetaDataInt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPointCloudCache::GetMetaDataInt(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "GetMetaDataInt");
+
+	Params::KuroPointCloudCache_GetMetaDataInt Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.HasMetaDataFloat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPointCloudCache::HasMetaDataFloat(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "HasMetaDataFloat");
+
+	Params::KuroPointCloudCache_HasMetaDataFloat Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.HasMetaDataInt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPointCloudCache::HasMetaDataInt(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "HasMetaDataInt");
+
+	Params::KuroPointCloudCache_HasMetaDataInt Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.SetMetaDataFloat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroPointCloudCache::SetMetaDataFloat(class FName Name_0, float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "SetMetaDataFloat");
+
+	Params::KuroPointCloudCache_SetMetaDataFloat Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.SetMetaDataInt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroPointCloudCache::SetMetaDataInt(class FName Name_0, int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "SetMetaDataInt");
+
+	Params::KuroPointCloudCache_SetMetaDataInt Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroPointCloud.KuroPointCloudCache.UpdateFromData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FQuat>                    Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroPointCloudCache::UpdateFromData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales)
+bool UKuroPointCloudCache::UpdateFromData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,30 +285,41 @@ void UKuroPointCloudCache::UpdateFromData(const TArray<struct FVector>& Position
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function KuroPointCloud.KuroPointCloudCache.UpdateFromDataWithIndices
+// Function KuroPointCloud.KuroPointCloudCache.UpdateFromDataEx
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FQuat>                    Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<float>                           Ages                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<int32>                           Indices                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FKuroPointCloudCacheCustomFloat>CustomFloats                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<float>                           CurveStartTimes                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FKuroPointCloudCacheCustomFloat>CurveCustomFloats                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroPointCloudCache::UpdateFromDataWithIndices(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<int32>& Indices)
+bool UKuroPointCloudCache::UpdateFromDataEx(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<float>& Ages, const TArray<int32>& Indices, const TArray<struct FKuroPointCloudCacheCustomFloat>& CustomFloats, const TArray<float>& CurveStartTimes, const TArray<struct FKuroPointCloudCacheCustomFloat>& CurveCustomFloats)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroPointCloudCache", "UpdateFromDataWithIndices");
+		Func = Class->GetFunction("KuroPointCloudCache", "UpdateFromDataEx");
 
-	Params::KuroPointCloudCache_UpdateFromDataWithIndices Parms{};
+	Params::KuroPointCloudCache_UpdateFromDataEx Parms{};
 
 	Parms.Positions = std::move(Positions);
 	Parms.Rotations = std::move(Rotations);
 	Parms.Scales = std::move(Scales);
+	Parms.Ages = std::move(Ages);
 	Parms.Indices = std::move(Indices);
+	Parms.CustomFloats = std::move(CustomFloats);
+	Parms.CurveStartTimes = std::move(CurveStartTimes);
+	Parms.CurveCustomFloats = std::move(CurveCustomFloats);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -149,6 +327,68 @@ void UKuroPointCloudCache::UpdateFromDataWithIndices(const TArray<struct FVector
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.CheckConsistency
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    Verbosity                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPointCloudCache::CheckConsistency(bool Verbosity) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "CheckConsistency");
+
+	Params::KuroPointCloudCache_CheckConsistency Parms{};
+
+	Parms.Verbosity = Verbosity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudFunctionLibrary.SetNiagaraKuroPointCloudCache
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UNiagaraComponent*                NiagaraComponent                                       (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UKuroPointCloudCache*             KuroPointCloudCache                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ParameterName                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPointCloudFunctionLibrary::SetNiagaraKuroPointCloudCache(class UNiagaraComponent* NiagaraComponent, class UKuroPointCloudCache* KuroPointCloudCache, class FName ParameterName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPointCloudFunctionLibrary", "SetNiagaraKuroPointCloudCache");
+
+	Params::KuroPointCloudFunctionLibrary_SetNiagaraKuroPointCloudCache Parms{};
+
+	Parms.NiagaraComponent = NiagaraComponent;
+	Parms.KuroPointCloudCache = KuroPointCloudCache;
+	Parms.ParameterName = ParameterName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -242,6 +482,31 @@ struct FBox UKuroPointCloudInstance::GetBound() const
 		Func = Class->GetFunction("KuroPointCloudInstance", "GetBound");
 
 	Params::KuroPointCloudInstance_GetBound Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudInstance.GetPointCloudCache
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UKuroPointCloudCache*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKuroPointCloudCache* UKuroPointCloudInstance::GetPointCloudCache() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudInstance", "GetPointCloudCache");
+
+	Params::KuroPointCloudInstance_GetPointCloudCache Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -502,6 +767,63 @@ void UKuroPointCloudWorldComponent::SetInstance(class UKuroPointCloudInstance* I
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudWorldComponent.GetNumDynamicPoints
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPointCloudWorldComponent::GetNumDynamicPoints() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudWorldComponent", "GetNumDynamicPoints");
+
+	Params::KuroPointCloudWorldComponent_GetNumDynamicPoints Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudWorldComponent.SampleDynamicPoint
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       OutTransform                                           (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPointCloudWorldComponent::SampleDynamicPoint(int32 Index_0, struct FTransform* OutTransform) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudWorldComponent", "SampleDynamicPoint");
+
+	Params::KuroPointCloudWorldComponent_SampleDynamicPoint Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutTransform != nullptr)
+		*OutTransform = std::move(Parms.OutTransform);
+
+	return Parms.ReturnValue;
 }
 
 

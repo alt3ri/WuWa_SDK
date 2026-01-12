@@ -18,16 +18,6 @@ enum class ExpandMode : uint8
 	ExpandMode_MAX                           = 4,
 };
 
-// ScriptStruct KuroDynamicAtlas.TextureExpandParam
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FTextureExpandParam final
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FTextureExpandParam) == 0x000008, "Wrong alignment on FTextureExpandParam");
-static_assert(sizeof(FTextureExpandParam) == 0x000020, "Wrong size on FTextureExpandParam");
-
 // ScriptStruct KuroDynamicAtlas.DynamicAtlasSlotManagedHandle
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FDynamicAtlasSlotManagedHandle final
@@ -37,6 +27,16 @@ public:
 };
 static_assert(alignof(FDynamicAtlasSlotManagedHandle) == 0x000008, "Wrong alignment on FDynamicAtlasSlotManagedHandle");
 static_assert(sizeof(FDynamicAtlasSlotManagedHandle) == 0x000010, "Wrong size on FDynamicAtlasSlotManagedHandle");
+
+// ScriptStruct KuroDynamicAtlas.TextureExpandParam
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FTextureExpandParam final
+{
+public:
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FTextureExpandParam) == 0x000008, "Wrong alignment on FTextureExpandParam");
+static_assert(sizeof(FTextureExpandParam) == 0x000020, "Wrong size on FTextureExpandParam");
 
 // ScriptStruct KuroDynamicAtlas.DynamicTextureAtlasSetting
 // 0x0038 (0x0038 - 0x0000)

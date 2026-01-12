@@ -10,6 +10,31 @@
 namespace SDK
 {
 
+// Function KuroPakKey.KuroPakKeyLibrary.BindPakMountedCallback
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TDelegate<void(const class FString& Tag)>Callback                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroPakKeyLibrary::BindPakMountedCallback(TDelegate<void(const class FString& Tag)> Callback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakKeyLibrary", "BindPakMountedCallback");
+
+	Params::KuroPakKeyLibrary_BindPakMountedCallback Parms{};
+
+	Parms.Callback = Callback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroPakKey.KuroPakKeyLibrary.GetUpdateInterval
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -139,31 +164,6 @@ bool UKuroPakKeyLibrary::NeedExtPakKeys()
 }
 
 
-// Function KuroPakKey.KuroPakKeyLibrary.SetCompleteCallback
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TDelegate<void(bool Success)>           Callback                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UKuroPakKeyLibrary::SetCompleteCallback(TDelegate<void(bool Success)> Callback)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroPakKeyLibrary", "SetCompleteCallback");
-
-	Params::KuroPakKeyLibrary_SetCompleteCallback Parms{};
-
-	Parms.Callback = Callback;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function KuroPakKey.KuroPakKeyLibrary.SetLoadCallback
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -214,15 +214,15 @@ void UKuroPakKeyLibrary::SetRSAPublicKey(const class FString& PublicKey)
 }
 
 
-// Function KuroPakKey.KuroPakKeyLibrary.UnbindCallback
+// Function KuroPakKey.KuroPakKeyLibrary.UnbindLoadCallback
 // (Final, Native, Static, Public, BlueprintCallable)
 
-void UKuroPakKeyLibrary::UnbindCallback()
+void UKuroPakKeyLibrary::UnbindLoadCallback()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroPakKeyLibrary", "UnbindCallback");
+		Func = StaticClass()->GetFunction("KuroPakKeyLibrary", "UnbindLoadCallback");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -233,15 +233,15 @@ void UKuroPakKeyLibrary::UnbindCallback()
 }
 
 
-// Function KuroPakKey.KuroPakKeyLibrary.UnbindLoadCallback
+// Function KuroPakKey.KuroPakKeyLibrary.UnbindPakMountedCallback
 // (Final, Native, Static, Public, BlueprintCallable)
 
-void UKuroPakKeyLibrary::UnbindLoadCallback()
+void UKuroPakKeyLibrary::UnbindPakMountedCallback()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroPakKeyLibrary", "UnbindLoadCallback");
+		Func = StaticClass()->GetFunction("KuroPakKeyLibrary", "UnbindPakMountedCallback");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

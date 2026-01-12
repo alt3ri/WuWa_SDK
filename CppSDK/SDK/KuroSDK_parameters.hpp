@@ -9,6 +9,35 @@
 namespace SDK::Params
 {
 
+// Function KuroSDK.KuroSDKManager.CallPlugin
+// 0x0020 (0x0020 - 0x0000)
+struct KuroSDKManager_CallPlugin final
+{
+public:
+	class FString                                 data;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_CallPlugin) == 0x000008, "Wrong alignment on KuroSDKManager_CallPlugin");
+static_assert(sizeof(KuroSDKManager_CallPlugin) == 0x000020, "Wrong size on KuroSDKManager_CallPlugin");
+static_assert(offsetof(KuroSDKManager_CallPlugin, data) == 0x000000, "Member 'KuroSDKManager_CallPlugin::data' has a wrong offset!");
+static_assert(offsetof(KuroSDKManager_CallPlugin, ReturnValue) == 0x000010, "Member 'KuroSDKManager_CallPlugin::ReturnValue' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.CallPluginAsync
+// 0x0040 (0x0040 - 0x0000)
+struct KuroSDKManager_CallPluginAsync final
+{
+public:
+	class FString                                 data;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& Result)>  callback;                                          // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroSDKManager_CallPluginAsync) == 0x000008, "Wrong alignment on KuroSDKManager_CallPluginAsync");
+static_assert(sizeof(KuroSDKManager_CallPluginAsync) == 0x000040, "Wrong size on KuroSDKManager_CallPluginAsync");
+static_assert(offsetof(KuroSDKManager_CallPluginAsync, data) == 0x000000, "Member 'KuroSDKManager_CallPluginAsync::data' has a wrong offset!");
+static_assert(offsetof(KuroSDKManager_CallPluginAsync, callback) == 0x000010, "Member 'KuroSDKManager_CallPluginAsync::callback' has a wrong offset!");
+static_assert(offsetof(KuroSDKManager_CallPluginAsync, ReturnValue) == 0x000038, "Member 'KuroSDKManager_CallPluginAsync::ReturnValue' has a wrong offset!");
+
 // Function KuroSDK.KuroSDKManager.CheckPhotoPermission
 // 0x0001 (0x0001 - 0x0000)
 struct KuroSDKManager_CheckPhotoPermission final
@@ -19,6 +48,39 @@ public:
 static_assert(alignof(KuroSDKManager_CheckPhotoPermission) == 0x000001, "Wrong alignment on KuroSDKManager_CheckPhotoPermission");
 static_assert(sizeof(KuroSDKManager_CheckPhotoPermission) == 0x000001, "Wrong size on KuroSDKManager_CheckPhotoPermission");
 static_assert(offsetof(KuroSDKManager_CheckPhotoPermission, ReturnValue) == 0x000000, "Member 'KuroSDKManager_CheckPhotoPermission::ReturnValue' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.CloseWebView
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSDKManager_CloseWebView final
+{
+public:
+	class FString                                 identifier;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_CloseWebView) == 0x000008, "Wrong alignment on KuroSDKManager_CloseWebView");
+static_assert(sizeof(KuroSDKManager_CloseWebView) == 0x000010, "Wrong size on KuroSDKManager_CloseWebView");
+static_assert(offsetof(KuroSDKManager_CloseWebView, identifier) == 0x000000, "Member 'KuroSDKManager_CloseWebView::identifier' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.DoInitSdkProcedure
+// 0x0001 (0x0001 - 0x0000)
+struct KuroSDKManager_DoInitSdkProcedure final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_DoInitSdkProcedure) == 0x000001, "Wrong alignment on KuroSDKManager_DoInitSdkProcedure");
+static_assert(sizeof(KuroSDKManager_DoInitSdkProcedure) == 0x000001, "Wrong size on KuroSDKManager_DoInitSdkProcedure");
+static_assert(offsetof(KuroSDKManager_DoInitSdkProcedure, ReturnValue) == 0x000000, "Member 'KuroSDKManager_DoInitSdkProcedure::ReturnValue' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.FreePlugin
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSDKManager_FreePlugin final
+{
+public:
+	class FString                                 data;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_FreePlugin) == 0x000008, "Wrong alignment on KuroSDKManager_FreePlugin");
+static_assert(sizeof(KuroSDKManager_FreePlugin) == 0x000010, "Wrong size on KuroSDKManager_FreePlugin");
+static_assert(offsetof(KuroSDKManager_FreePlugin, data) == 0x000000, "Member 'KuroSDKManager_FreePlugin::data' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKManager.Get
 // 0x0008 (0x0008 - 0x0000)
@@ -78,14 +140,14 @@ static_assert(sizeof(KuroSDKManager_GetBasicInfo) == 0x000048, "Wrong size on Ku
 static_assert(offsetof(KuroSDKManager_GetBasicInfo, ReturnValue) == 0x000000, "Member 'KuroSDKManager_GetBasicInfo::ReturnValue' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKManager.GetChannelId
-// 0x0004 (0x0004 - 0x0000)
+// 0x0010 (0x0010 - 0x0000)
 struct KuroSDKManager_GetChannelId final
 {
 public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSDKManager_GetChannelId) == 0x000004, "Wrong alignment on KuroSDKManager_GetChannelId");
-static_assert(sizeof(KuroSDKManager_GetChannelId) == 0x000004, "Wrong size on KuroSDKManager_GetChannelId");
+static_assert(alignof(KuroSDKManager_GetChannelId) == 0x000008, "Wrong alignment on KuroSDKManager_GetChannelId");
+static_assert(sizeof(KuroSDKManager_GetChannelId) == 0x000010, "Wrong size on KuroSDKManager_GetChannelId");
 static_assert(offsetof(KuroSDKManager_GetChannelId, ReturnValue) == 0x000000, "Member 'KuroSDKManager_GetChannelId::ReturnValue' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKManager.GetChannelName
@@ -303,7 +365,7 @@ static_assert(sizeof(KuroSDKManager_OpenDefaultWebView) == 0x000010, "Wrong size
 static_assert(offsetof(KuroSDKManager_OpenDefaultWebView, url) == 0x000000, "Member 'KuroSDKManager_OpenDefaultWebView::url' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKManager.OpenWebView
-// 0x0038 (0x0038 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct KuroSDKManager_OpenWebView final
 {
 public:
@@ -313,16 +375,18 @@ public:
 	bool                                          transparent;                                       // 0x0021(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          webAccelerated;                                    // 0x0022(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 data;                                              // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 identifier;                                        // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 data;                                              // 0x0038(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroSDKManager_OpenWebView) == 0x000008, "Wrong alignment on KuroSDKManager_OpenWebView");
-static_assert(sizeof(KuroSDKManager_OpenWebView) == 0x000038, "Wrong size on KuroSDKManager_OpenWebView");
+static_assert(sizeof(KuroSDKManager_OpenWebView) == 0x000048, "Wrong size on KuroSDKManager_OpenWebView");
 static_assert(offsetof(KuroSDKManager_OpenWebView, title) == 0x000000, "Member 'KuroSDKManager_OpenWebView::title' has a wrong offset!");
 static_assert(offsetof(KuroSDKManager_OpenWebView, url) == 0x000010, "Member 'KuroSDKManager_OpenWebView::url' has a wrong offset!");
 static_assert(offsetof(KuroSDKManager_OpenWebView, isLandscape) == 0x000020, "Member 'KuroSDKManager_OpenWebView::isLandscape' has a wrong offset!");
 static_assert(offsetof(KuroSDKManager_OpenWebView, transparent) == 0x000021, "Member 'KuroSDKManager_OpenWebView::transparent' has a wrong offset!");
 static_assert(offsetof(KuroSDKManager_OpenWebView, webAccelerated) == 0x000022, "Member 'KuroSDKManager_OpenWebView::webAccelerated' has a wrong offset!");
-static_assert(offsetof(KuroSDKManager_OpenWebView, data) == 0x000028, "Member 'KuroSDKManager_OpenWebView::data' has a wrong offset!");
+static_assert(offsetof(KuroSDKManager_OpenWebView, identifier) == 0x000028, "Member 'KuroSDKManager_OpenWebView::identifier' has a wrong offset!");
+static_assert(offsetof(KuroSDKManager_OpenWebView, data) == 0x000038, "Member 'KuroSDKManager_OpenWebView::data' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKManager.QueryProductInfo
 // 0x0010 (0x0010 - 0x0000)
@@ -414,6 +478,39 @@ static_assert(sizeof(KuroSDKManager_Share) == 0x000020, "Wrong size on KuroSDKMa
 static_assert(offsetof(KuroSDKManager_Share, imageData) == 0x000000, "Member 'KuroSDKManager_Share::imageData' has a wrong offset!");
 static_assert(offsetof(KuroSDKManager_Share, sKuroSDKEventParameter) == 0x000010, "Member 'KuroSDKManager_Share::sKuroSDKEventParameter' has a wrong offset!");
 
+// Function KuroSDK.KuroSDKManager.ShowVirtualKeyboard
+// 0x0001 (0x0001 - 0x0000)
+struct KuroSDKManager_ShowVirtualKeyboard final
+{
+public:
+	bool                                          state;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_ShowVirtualKeyboard) == 0x000001, "Wrong alignment on KuroSDKManager_ShowVirtualKeyboard");
+static_assert(sizeof(KuroSDKManager_ShowVirtualKeyboard) == 0x000001, "Wrong size on KuroSDKManager_ShowVirtualKeyboard");
+static_assert(offsetof(KuroSDKManager_ShowVirtualKeyboard, state) == 0x000000, "Member 'KuroSDKManager_ShowVirtualKeyboard::state' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.UpdateChannelEvent
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSDKManager_UpdateChannelEvent final
+{
+public:
+	class FString                                 data;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_UpdateChannelEvent) == 0x000008, "Wrong alignment on KuroSDKManager_UpdateChannelEvent");
+static_assert(sizeof(KuroSDKManager_UpdateChannelEvent) == 0x000010, "Wrong size on KuroSDKManager_UpdateChannelEvent");
+static_assert(offsetof(KuroSDKManager_UpdateChannelEvent, data) == 0x000000, "Member 'KuroSDKManager_UpdateChannelEvent::data' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.WriteExternalAchievements
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSDKManager_WriteExternalAchievements final
+{
+public:
+	class FString                                 data;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_WriteExternalAchievements) == 0x000008, "Wrong alignment on KuroSDKManager_WriteExternalAchievements");
+static_assert(sizeof(KuroSDKManager_WriteExternalAchievements) == 0x000010, "Wrong size on KuroSDKManager_WriteExternalAchievements");
+static_assert(offsetof(KuroSDKManager_WriteExternalAchievements, data) == 0x000000, "Member 'KuroSDKManager_WriteExternalAchievements::data' has a wrong offset!");
+
 // Function KuroSDK.KuroSDKStaticLibrary.Get
 // 0x0008 (0x0008 - 0x0000)
 struct KuroSDKStaticLibrary_Get final
@@ -448,6 +545,17 @@ public:
 static_assert(alignof(KuroSDKStaticLibrary_GetAndroidGalleryExternalFilePath) == 0x000008, "Wrong alignment on KuroSDKStaticLibrary_GetAndroidGalleryExternalFilePath");
 static_assert(sizeof(KuroSDKStaticLibrary_GetAndroidGalleryExternalFilePath) == 0x000010, "Wrong size on KuroSDKStaticLibrary_GetAndroidGalleryExternalFilePath");
 static_assert(offsetof(KuroSDKStaticLibrary_GetAndroidGalleryExternalFilePath, ReturnValue) == 0x000000, "Member 'KuroSDKStaticLibrary_GetAndroidGalleryExternalFilePath::ReturnValue' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKStaticLibrary.GetChannelId
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSDKStaticLibrary_GetChannelId final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKStaticLibrary_GetChannelId) == 0x000008, "Wrong alignment on KuroSDKStaticLibrary_GetChannelId");
+static_assert(sizeof(KuroSDKStaticLibrary_GetChannelId) == 0x000010, "Wrong size on KuroSDKStaticLibrary_GetChannelId");
+static_assert(offsetof(KuroSDKStaticLibrary_GetChannelId, ReturnValue) == 0x000000, "Member 'KuroSDKStaticLibrary_GetChannelId::ReturnValue' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKStaticLibrary.GetCurrentLoginInfo
 // 0x0058 (0x0058 - 0x0000)
@@ -541,7 +649,7 @@ static_assert(sizeof(KuroSDKStaticLibrary_OpenDefaultWebView) == 0x000010, "Wron
 static_assert(offsetof(KuroSDKStaticLibrary_OpenDefaultWebView, url) == 0x000000, "Member 'KuroSDKStaticLibrary_OpenDefaultWebView::url' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKStaticLibrary.OpenWebView
-// 0x0038 (0x0038 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct KuroSDKStaticLibrary_OpenWebView final
 {
 public:
@@ -551,16 +659,18 @@ public:
 	bool                                          transparent;                                       // 0x0021(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          webAccelerated;                                    // 0x0022(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 data;                                              // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 identifier;                                        // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 data;                                              // 0x0038(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroSDKStaticLibrary_OpenWebView) == 0x000008, "Wrong alignment on KuroSDKStaticLibrary_OpenWebView");
-static_assert(sizeof(KuroSDKStaticLibrary_OpenWebView) == 0x000038, "Wrong size on KuroSDKStaticLibrary_OpenWebView");
+static_assert(sizeof(KuroSDKStaticLibrary_OpenWebView) == 0x000048, "Wrong size on KuroSDKStaticLibrary_OpenWebView");
 static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, title) == 0x000000, "Member 'KuroSDKStaticLibrary_OpenWebView::title' has a wrong offset!");
 static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, url) == 0x000010, "Member 'KuroSDKStaticLibrary_OpenWebView::url' has a wrong offset!");
 static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, isLandScape) == 0x000020, "Member 'KuroSDKStaticLibrary_OpenWebView::isLandScape' has a wrong offset!");
 static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, transparent) == 0x000021, "Member 'KuroSDKStaticLibrary_OpenWebView::transparent' has a wrong offset!");
 static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, webAccelerated) == 0x000022, "Member 'KuroSDKStaticLibrary_OpenWebView::webAccelerated' has a wrong offset!");
-static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, data) == 0x000028, "Member 'KuroSDKStaticLibrary_OpenWebView::data' has a wrong offset!");
+static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, identifier) == 0x000028, "Member 'KuroSDKStaticLibrary_OpenWebView::identifier' has a wrong offset!");
+static_assert(offsetof(KuroSDKStaticLibrary_OpenWebView, data) == 0x000038, "Member 'KuroSDKStaticLibrary_OpenWebView::data' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKStaticLibrary.SetIfGlobalSdk
 // 0x0001 (0x0001 - 0x0000)
@@ -598,6 +708,17 @@ static_assert(alignof(KuroSDKStaticLibrary_ShareTexture) == 0x000008, "Wrong ali
 static_assert(sizeof(KuroSDKStaticLibrary_ShareTexture) == 0x000020, "Wrong size on KuroSDKStaticLibrary_ShareTexture");
 static_assert(offsetof(KuroSDKStaticLibrary_ShareTexture, texturePath) == 0x000000, "Member 'KuroSDKStaticLibrary_ShareTexture::texturePath' has a wrong offset!");
 static_assert(offsetof(KuroSDKStaticLibrary_ShareTexture, sKuroSDKEventParameter) == 0x000010, "Member 'KuroSDKStaticLibrary_ShareTexture::sKuroSDKEventParameter' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKStaticLibrary.ShowVirtualKeyboard
+// 0x0001 (0x0001 - 0x0000)
+struct KuroSDKStaticLibrary_ShowVirtualKeyboard final
+{
+public:
+	bool                                          state;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKStaticLibrary_ShowVirtualKeyboard) == 0x000001, "Wrong alignment on KuroSDKStaticLibrary_ShowVirtualKeyboard");
+static_assert(sizeof(KuroSDKStaticLibrary_ShowVirtualKeyboard) == 0x000001, "Wrong size on KuroSDKStaticLibrary_ShowVirtualKeyboard");
+static_assert(offsetof(KuroSDKStaticLibrary_ShowVirtualKeyboard, state) == 0x000000, "Member 'KuroSDKStaticLibrary_ShowVirtualKeyboard::state' has a wrong offset!");
 
 }
 

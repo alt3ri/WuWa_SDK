@@ -3,8 +3,8 @@
 
 #include "Basic.hpp"
 
-#include "ControlRig_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ControlRig_structs.hpp"
 
 
 namespace SDK::Params

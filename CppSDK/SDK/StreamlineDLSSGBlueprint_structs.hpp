@@ -1,0 +1,23 @@
+﻿#pragma once
+// Package: StreamlineDLSSGBlueprint
+
+#include "Basic.hpp"
+
+
+namespace SDK
+{
+
+// Enum StreamlineDLSSGBlueprint.EStreamlineDLSSGMode
+// NumValues: 0x0006
+enum class EStreamlineDLSSGMode : uint8
+{
+	Off                                      = 0,
+	Auto                                     = 251,
+	On2X                                     = 17,
+	On3X                                     = 23,
+	On4X                                     = 31,
+	EStreamlineDLSSGMode_MAX                 = 252,
+};
+
+}
+

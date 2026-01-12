@@ -1,0 +1,73 @@
+﻿#pragma once
+// Package: KuroNavMeshCookData
+
+#include "Basic.hpp"
+
+#include "KuroNavMeshCookData_classes.hpp"
+#include "KuroNavMeshCookData_parameters.hpp"
+
+
+namespace SDK
+{
+
+// Function KuroNavMeshCookData.NavMeshCookDataSubsystem.D_MultiQueryNavBoundaryEdges
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<struct FBox>                     QueryBoundsArr                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavMeshCookDataSubsystem::D_MultiQueryNavBoundaryEdges(const TArray<struct FBox>& QueryBoundsArr)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavMeshCookDataSubsystem", "D_MultiQueryNavBoundaryEdges");
+
+	Params::NavMeshCookDataSubsystem_D_MultiQueryNavBoundaryEdges Parms{};
+
+	Parms.QueryBoundsArr = std::move(QueryBoundsArr);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroNavMeshCookData.NavMeshCookDataSubsystem.D_QueryNavBoundaryEdges
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FBox                             QueryBounds                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// TArray<struct FVectorDouble>            OutBoundaryEdgesDouble                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavMeshCookDataSubsystem::D_QueryNavBoundaryEdges(const struct FBox& QueryBounds, TArray<struct FVectorDouble>* OutBoundaryEdgesDouble)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavMeshCookDataSubsystem", "D_QueryNavBoundaryEdges");
+
+	Params::NavMeshCookDataSubsystem_D_QueryNavBoundaryEdges Parms{};
+
+	Parms.QueryBounds = std::move(QueryBounds);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutBoundaryEdgesDouble != nullptr)
+		*OutBoundaryEdgesDouble = std::move(Parms.OutBoundaryEdgesDouble);
+
+	return Parms.ReturnValue;
+}
+
+}
+

@@ -1,0 +1,192 @@
+﻿#pragma once
+// Package: KuroBuildingGridSystem
+
+#include "Basic.hpp"
+
+#include "DeveloperSettings_classes.hpp"
+#include "KuroBuildingGridSystem_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
+#include "Engine_classes.hpp"
+
+
+namespace SDK
+{
+
+// Class KuroBuildingGridSystem.KuroBuildingGrid
+// 0x0150 (0x0400 - 0x02B0)
+class alignas(0x10) AKuroBuildingGrid final : public AActor
+{
+public:
+	class UPrimitiveComponent*                    RenderingComp;                                     // 0x02B0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, DuplicateTransient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FKuroBuildingGridCellVector            GridSize;                                          // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<struct FKuroBuildingGridCellVector>    BlockCoords;                                       // 0x02C0(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	struct FGuid                                  BuildingGridSpawnGuid;                             // 0x02D0(0x0010)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2E0[0x120];                                    // 0x02E0(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool OccupyTarget(const struct FKuroBuildingGridCellVector& InCoords, class UObject* InTarget, const float& DegreeAlongNormal);
+	bool UnoccupyTarget(class UObject* InTarget);
+
+	class FString GetBuildingGridGuidString() const;
+	bool GetCellIndex(const struct FKuroBuildingGridCellVector& InCoords, int32* OutIndex) const;
+	struct FVectorDouble GetPosition(const struct FKuroBuildingGridCellVector& InSize, const struct FKuroBuildingGridCellVector& InCoords) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBuildingGrid">();
+	}
+	static class AKuroBuildingGrid* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroBuildingGrid>();
+	}
+};
+static_assert(alignof(AKuroBuildingGrid) == 0x000010, "Wrong alignment on AKuroBuildingGrid");
+static_assert(sizeof(AKuroBuildingGrid) == 0x000400, "Wrong size on AKuroBuildingGrid");
+static_assert(offsetof(AKuroBuildingGrid, RenderingComp) == 0x0002B0, "Member 'AKuroBuildingGrid::RenderingComp' has a wrong offset!");
+static_assert(offsetof(AKuroBuildingGrid, GridSize) == 0x0002B8, "Member 'AKuroBuildingGrid::GridSize' has a wrong offset!");
+static_assert(offsetof(AKuroBuildingGrid, BlockCoords) == 0x0002C0, "Member 'AKuroBuildingGrid::BlockCoords' has a wrong offset!");
+static_assert(offsetof(AKuroBuildingGrid, BuildingGridSpawnGuid) == 0x0002D0, "Member 'AKuroBuildingGrid::BuildingGridSpawnGuid' has a wrong offset!");
+
+// Class KuroBuildingGridSystem.KuroBuildingGridPersistentPlaceholder
+// 0x0008 (0x0038 - 0x0030)
+class UKuroBuildingGridPersistentPlaceholder final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBuildingGridPersistentPlaceholder">();
+	}
+	static class UKuroBuildingGridPersistentPlaceholder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroBuildingGridPersistentPlaceholder>();
+	}
+};
+static_assert(alignof(UKuroBuildingGridPersistentPlaceholder) == 0x000008, "Wrong alignment on UKuroBuildingGridPersistentPlaceholder");
+static_assert(sizeof(UKuroBuildingGridPersistentPlaceholder) == 0x000038, "Wrong size on UKuroBuildingGridPersistentPlaceholder");
+
+// Class KuroBuildingGridSystem.KuroBuildingGridPlaceholderComponent
+// 0x0010 (0x00D0 - 0x00C0)
+class UKuroBuildingGridPlaceholderComponent final : public UActorComponent
+{
+public:
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroBuildingGridCellVector            GridSize;                                          // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBuildingGridPlaceholderComponent">();
+	}
+	static class UKuroBuildingGridPlaceholderComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroBuildingGridPlaceholderComponent>();
+	}
+};
+static_assert(alignof(UKuroBuildingGridPlaceholderComponent) == 0x000008, "Wrong alignment on UKuroBuildingGridPlaceholderComponent");
+static_assert(sizeof(UKuroBuildingGridPlaceholderComponent) == 0x0000D0, "Wrong size on UKuroBuildingGridPlaceholderComponent");
+static_assert(offsetof(UKuroBuildingGridPlaceholderComponent, GridSize) == 0x0000C8, "Member 'UKuroBuildingGridPlaceholderComponent::GridSize' has a wrong offset!");
+
+// Class KuroBuildingGridSystem.KuroBuildingGridPlaceholderInterface
+// 0x0000 (0x0030 - 0x0030)
+class IKuroBuildingGridPlaceholderInterface final : public IInterface
+{
+public:
+	void Occupied(class AKuroBuildingGrid* InGrid, const struct FKuroBuildingGridCellVector& InCoords, const float& InDegree);
+	void Unoccupied();
+
+	bool CanBeRemoved() const;
+	struct FKuroBuildingGridCellVector GetSize() const;
+	struct FKuroBuildingGridCellVector GetSizeByDegree(float* Degree) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBuildingGridPlaceholderInterface">();
+	}
+	static class IKuroBuildingGridPlaceholderInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IKuroBuildingGridPlaceholderInterface>();
+	}
+};
+static_assert(alignof(IKuroBuildingGridPlaceholderInterface) == 0x000008, "Wrong alignment on IKuroBuildingGridPlaceholderInterface");
+static_assert(sizeof(IKuroBuildingGridPlaceholderInterface) == 0x000030, "Wrong size on IKuroBuildingGridPlaceholderInterface");
+
+// Class KuroBuildingGridSystem.KuroBuildingGridRenderingComponent
+// 0x0010 (0x0590 - 0x0580)
+class UKuroBuildingGridRenderingComponent final : public UDebugDrawComponent
+{
+public:
+	uint8                                         Pad_580[0x10];                                     // 0x0580(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBuildingGridRenderingComponent">();
+	}
+	static class UKuroBuildingGridRenderingComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroBuildingGridRenderingComponent>();
+	}
+};
+static_assert(alignof(UKuroBuildingGridRenderingComponent) == 0x000010, "Wrong alignment on UKuroBuildingGridRenderingComponent");
+static_assert(sizeof(UKuroBuildingGridRenderingComponent) == 0x000590, "Wrong size on UKuroBuildingGridRenderingComponent");
+
+// Class KuroBuildingGridSystem.KuroBuildingGridSettings
+// 0x0008 (0x0050 - 0x0048)
+class UKuroBuildingGridSettings final : public UDeveloperSettings
+{
+public:
+	float                                         CellSize;                                          // 0x0048(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         Threshold;                                         // 0x004C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBuildingGridSettings">();
+	}
+	static class UKuroBuildingGridSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroBuildingGridSettings>();
+	}
+};
+static_assert(alignof(UKuroBuildingGridSettings) == 0x000008, "Wrong alignment on UKuroBuildingGridSettings");
+static_assert(sizeof(UKuroBuildingGridSettings) == 0x000050, "Wrong size on UKuroBuildingGridSettings");
+static_assert(offsetof(UKuroBuildingGridSettings, CellSize) == 0x000048, "Member 'UKuroBuildingGridSettings::CellSize' has a wrong offset!");
+static_assert(offsetof(UKuroBuildingGridSettings, Threshold) == 0x00004C, "Member 'UKuroBuildingGridSettings::Threshold' has a wrong offset!");
+
+// Class KuroBuildingGridSystem.KuroBuildingGridSubsystem
+// 0x0058 (0x0090 - 0x0038)
+class UKuroBuildingGridSubsystem final : public UWorldSubsystem
+{
+public:
+	uint8                                         Pad_38[0x50];                                      // 0x0038(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroBuildingGridPersistentPlaceholder* PersistentPlaceholder;                             // 0x0088(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static float GetGridCellSize();
+	static class AKuroBuildingGrid* K2_FindBuildingGrid(class UObject* WorldContextObject, const class FString& InGuidString);
+	static void K2_ForEachIntersectingCell(class UObject* WorldContextObject, const struct FVectorDouble& InPoint, const double& InRadius, const bool UseDirMask, const int32 DirMask, TDelegate<void(const class FString& GridGuid, const struct FKuroBuildingGridCellVector& Coords, const int32 CellIndex)> Func_0);
+	static bool K2_ProjectPointToGrid(class UObject* WorldContextObject, const struct FVectorDouble& InPoint, const struct FVector& InNormal, struct FKuroBuildingGridRaycastResult& OutResult);
+	static bool K2_RaycastGrid(class UObject* WorldContextObject, const struct FVectorDouble& Start, const struct FVectorDouble& End, struct FKuroBuildingGridRaycastResult& OutResult);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBuildingGridSubsystem">();
+	}
+	static class UKuroBuildingGridSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroBuildingGridSubsystem>();
+	}
+};
+static_assert(alignof(UKuroBuildingGridSubsystem) == 0x000008, "Wrong alignment on UKuroBuildingGridSubsystem");
+static_assert(sizeof(UKuroBuildingGridSubsystem) == 0x000090, "Wrong size on UKuroBuildingGridSubsystem");
+static_assert(offsetof(UKuroBuildingGridSubsystem, PersistentPlaceholder) == 0x000088, "Member 'UKuroBuildingGridSubsystem::PersistentPlaceholder' has a wrong offset!");
+
+}
+

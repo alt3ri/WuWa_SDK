@@ -378,26 +378,6 @@ void UMovieSceneParameterSection::GetParameterNames(TSet<class FName>* Parameter
 }
 
 
-// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
-// (Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FTransform IMovieSceneTransformOrigin::BP_GetTransformOrigin() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneTransformOrigin", "BP_GetTransformOrigin");
-
-	Params::MovieSceneTransformOrigin_BP_GetTransformOrigin Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function MovieSceneTracks.MovieScene3DConstraintSection.SetConstraintBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -443,6 +423,26 @@ const struct FMovieSceneObjectBindingID UMovieScene3DConstraintSection::GetConst
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
+// (Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform IMovieSceneTransformOrigin::BP_GetTransformOrigin() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneTransformOrigin", "BP_GetTransformOrigin");
+
+	Params::MovieSceneTransformOrigin_BP_GetTransformOrigin Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }

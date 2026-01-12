@@ -14,41 +14,6 @@
 namespace SDK
 {
 
-// Class MediaAssets.MediaPlaylist
-// 0x0010 (0x0040 - 0x0030)
-class UMediaPlaylist final : public UObject
-{
-public:
-	TArray<class UMediaSource*>                   Items;                                             // 0x0030(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	bool Add(class UMediaSource* MediaSource);
-	bool AddFile(const class FString& FilePath);
-	bool AddUrl(const class FString& Url);
-	class UMediaSource* Get(int32 Index_0);
-	class UMediaSource* GetNext(int32* InOutIndex);
-	class UMediaSource* GetPrevious(int32* InOutIndex);
-	class UMediaSource* GetRandom(int32* OutIndex);
-	void Insert(class UMediaSource* MediaSource, int32 Index_0);
-	int32 Num();
-	bool Remove(class UMediaSource* MediaSource);
-	bool RemoveAt(int32 Index_0);
-	bool Replace(int32 Index_0, class UMediaSource* Replacement);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MediaPlaylist">();
-	}
-	static class UMediaPlaylist* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaPlaylist>();
-	}
-};
-static_assert(alignof(UMediaPlaylist) == 0x000008, "Wrong alignment on UMediaPlaylist");
-static_assert(sizeof(UMediaPlaylist) == 0x000040, "Wrong size on UMediaPlaylist");
-static_assert(offsetof(UMediaPlaylist, Items) == 0x000030, "Member 'UMediaPlaylist::Items' has a wrong offset!");
-
 // Class MediaAssets.MediaSource
 // 0x0058 (0x0088 - 0x0030)
 class UMediaSource : public UObject
@@ -99,6 +64,41 @@ public:
 static_assert(alignof(UBaseMediaSource) == 0x000008, "Wrong alignment on UBaseMediaSource");
 static_assert(sizeof(UBaseMediaSource) == 0x000098, "Wrong size on UBaseMediaSource");
 static_assert(offsetof(UBaseMediaSource, PlayerName) == 0x000088, "Member 'UBaseMediaSource::PlayerName' has a wrong offset!");
+
+// Class MediaAssets.MediaPlaylist
+// 0x0010 (0x0040 - 0x0030)
+class UMediaPlaylist final : public UObject
+{
+public:
+	TArray<class UMediaSource*>                   Items;                                             // 0x0030(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	bool Add(class UMediaSource* MediaSource);
+	bool AddFile(const class FString& FilePath);
+	bool AddUrl(const class FString& Url);
+	class UMediaSource* Get(int32 Index_0);
+	class UMediaSource* GetNext(int32* InOutIndex);
+	class UMediaSource* GetPrevious(int32* InOutIndex);
+	class UMediaSource* GetRandom(int32* OutIndex);
+	void Insert(class UMediaSource* MediaSource, int32 Index_0);
+	int32 Num();
+	bool Remove(class UMediaSource* MediaSource);
+	bool RemoveAt(int32 Index_0);
+	bool Replace(int32 Index_0, class UMediaSource* Replacement);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MediaPlaylist">();
+	}
+	static class UMediaPlaylist* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMediaPlaylist>();
+	}
+};
+static_assert(alignof(UMediaPlaylist) == 0x000008, "Wrong alignment on UMediaPlaylist");
+static_assert(sizeof(UMediaPlaylist) == 0x000040, "Wrong size on UMediaPlaylist");
+static_assert(offsetof(UMediaPlaylist, Items) == 0x000030, "Member 'UMediaPlaylist::Items' has a wrong offset!");
 
 // Class MediaAssets.FileMediaSource
 // 0x0028 (0x00C0 - 0x0098)
@@ -389,24 +389,24 @@ static_assert(offsetof(UMediaSoundComponent, RateAdjustmentRange) == 0x0006EC, "
 static_assert(offsetof(UMediaSoundComponent, MediaPlayer) == 0x000700, "Member 'UMediaSoundComponent::MediaPlayer' has a wrong offset!");
 
 // Class MediaAssets.MediaTexture
-// 0x00D8 (0x0210 - 0x0138)
+// 0x00D8 (0x0220 - 0x0148)
 class UMediaTexture final : public UTexture
 {
 public:
-	ETextureAddress                               AddressX;                                          // 0x0138(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETextureAddress                               AddressY;                                          // 0x0139(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AutoClear;                                         // 0x013A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13B[0x1];                                      // 0x013B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           ClearColor;                                        // 0x013C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EnableGenMips;                                     // 0x014C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         NumMips;                                           // 0x014D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          NewStyleOutput;                                    // 0x014E(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMediaTextureOutputFormat                     OutputFormat;                                      // 0x014F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentAspectRatio;                                // 0x0150(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, TextExportTransient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMediaTextureOrientation                      CurrentOrientation;                                // 0x0154(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, TextExportTransient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_155[0x3];                                      // 0x0155(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMediaPlayer*                           MediaPlayer;                                       // 0x0158(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_160[0xB0];                                     // 0x0160(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ETextureAddress                               AddressX;                                          // 0x0148(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETextureAddress                               AddressY;                                          // 0x0149(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AutoClear;                                         // 0x014A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14B[0x1];                                      // 0x014B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           ClearColor;                                        // 0x014C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          EnableGenMips;                                     // 0x015C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         NumMips;                                           // 0x015D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          NewStyleOutput;                                    // 0x015E(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMediaTextureOutputFormat                     OutputFormat;                                      // 0x015F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentAspectRatio;                                // 0x0160(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, TextExportTransient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMediaTextureOrientation                      CurrentOrientation;                                // 0x0164(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, TextExportTransient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_165[0x3];                                      // 0x0165(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMediaPlayer*                           MediaPlayer;                                       // 0x0168(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_170[0xB0];                                     // 0x0170(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetMediaPlayer(class UMediaPlayer* NewMediaPlayer);
@@ -427,18 +427,18 @@ public:
 	}
 };
 static_assert(alignof(UMediaTexture) == 0x000008, "Wrong alignment on UMediaTexture");
-static_assert(sizeof(UMediaTexture) == 0x000210, "Wrong size on UMediaTexture");
-static_assert(offsetof(UMediaTexture, AddressX) == 0x000138, "Member 'UMediaTexture::AddressX' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, AddressY) == 0x000139, "Member 'UMediaTexture::AddressY' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, AutoClear) == 0x00013A, "Member 'UMediaTexture::AutoClear' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, ClearColor) == 0x00013C, "Member 'UMediaTexture::ClearColor' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, EnableGenMips) == 0x00014C, "Member 'UMediaTexture::EnableGenMips' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, NumMips) == 0x00014D, "Member 'UMediaTexture::NumMips' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, NewStyleOutput) == 0x00014E, "Member 'UMediaTexture::NewStyleOutput' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, OutputFormat) == 0x00014F, "Member 'UMediaTexture::OutputFormat' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, CurrentAspectRatio) == 0x000150, "Member 'UMediaTexture::CurrentAspectRatio' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, CurrentOrientation) == 0x000154, "Member 'UMediaTexture::CurrentOrientation' has a wrong offset!");
-static_assert(offsetof(UMediaTexture, MediaPlayer) == 0x000158, "Member 'UMediaTexture::MediaPlayer' has a wrong offset!");
+static_assert(sizeof(UMediaTexture) == 0x000220, "Wrong size on UMediaTexture");
+static_assert(offsetof(UMediaTexture, AddressX) == 0x000148, "Member 'UMediaTexture::AddressX' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, AddressY) == 0x000149, "Member 'UMediaTexture::AddressY' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, AutoClear) == 0x00014A, "Member 'UMediaTexture::AutoClear' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, ClearColor) == 0x00014C, "Member 'UMediaTexture::ClearColor' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, EnableGenMips) == 0x00015C, "Member 'UMediaTexture::EnableGenMips' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, NumMips) == 0x00015D, "Member 'UMediaTexture::NumMips' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, NewStyleOutput) == 0x00015E, "Member 'UMediaTexture::NewStyleOutput' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, OutputFormat) == 0x00015F, "Member 'UMediaTexture::OutputFormat' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, CurrentAspectRatio) == 0x000160, "Member 'UMediaTexture::CurrentAspectRatio' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, CurrentOrientation) == 0x000164, "Member 'UMediaTexture::CurrentOrientation' has a wrong offset!");
+static_assert(offsetof(UMediaTexture, MediaPlayer) == 0x000168, "Member 'UMediaTexture::MediaPlayer' has a wrong offset!");
 
 // Class MediaAssets.PlatformMediaSource
 // 0x0008 (0x0090 - 0x0088)

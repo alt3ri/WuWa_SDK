@@ -363,6 +363,33 @@ static_assert(offsetof(FJoinabilitySettings, bJoinViaPresenceFriendsOnly) == 0x0
 static_assert(offsetof(FJoinabilitySettings, MaxPlayers) == 0x000010, "Member 'FJoinabilitySettings::MaxPlayers' has a wrong offset!");
 static_assert(offsetof(FJoinabilitySettings, MaxPartySize) == 0x000014, "Member 'FJoinabilitySettings::MaxPartySize' has a wrong offset!");
 
+// ScriptStruct CoreUObject.ARFilter
+// 0x00F0 (0x00F0 - 0x0000)
+struct FARFilter final
+{
+public:
+	TArray<class FName>                           PackageNames;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class FName>                           PackagePaths;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class FName>                           ObjectPaths;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class FName>                           ClassNames;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_40[0x50];                                      // 0x0040(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class FName>                             RecursiveClassesExclusionSet;                      // 0x0090(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          bRecursivePaths;                                   // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRecursiveClasses;                                 // 0x00E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeOnlyOnDiskAssets;                          // 0x00E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E3[0xD];                                       // 0x00E3(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FARFilter) == 0x000008, "Wrong alignment on FARFilter");
+static_assert(sizeof(FARFilter) == 0x0000F0, "Wrong size on FARFilter");
+static_assert(offsetof(FARFilter, PackageNames) == 0x000000, "Member 'FARFilter::PackageNames' has a wrong offset!");
+static_assert(offsetof(FARFilter, PackagePaths) == 0x000010, "Member 'FARFilter::PackagePaths' has a wrong offset!");
+static_assert(offsetof(FARFilter, ObjectPaths) == 0x000020, "Member 'FARFilter::ObjectPaths' has a wrong offset!");
+static_assert(offsetof(FARFilter, ClassNames) == 0x000030, "Member 'FARFilter::ClassNames' has a wrong offset!");
+static_assert(offsetof(FARFilter, RecursiveClassesExclusionSet) == 0x000090, "Member 'FARFilter::RecursiveClassesExclusionSet' has a wrong offset!");
+static_assert(offsetof(FARFilter, bRecursivePaths) == 0x0000E0, "Member 'FARFilter::bRecursivePaths' has a wrong offset!");
+static_assert(offsetof(FARFilter, bRecursiveClasses) == 0x0000E1, "Member 'FARFilter::bRecursiveClasses' has a wrong offset!");
+static_assert(offsetof(FARFilter, bIncludeOnlyOnDiskAssets) == 0x0000E2, "Member 'FARFilter::bIncludeOnlyOnDiskAssets' has a wrong offset!");
+
 // ScriptStruct CoreUObject.UniqueNetIdWrapper
 // 0x0001 (0x0001 - 0x0000)
 struct FUniqueNetIdWrapper
@@ -373,27 +400,30 @@ public:
 static_assert(alignof(FUniqueNetIdWrapper) == 0x000001, "Wrong alignment on FUniqueNetIdWrapper");
 static_assert(sizeof(FUniqueNetIdWrapper) == 0x000001, "Wrong size on FUniqueNetIdWrapper");
 
-// ScriptStruct CoreUObject.SoftObjectPath
-// 0x0020 (0x0020 - 0x0000)
-struct FSoftObjectPath
+// ScriptStruct CoreUObject.FrameNumber
+// 0x0004 (0x0004 - 0x0000)
+struct FFrameNumber final
 {
 public:
-	class FName                                   AssetPathName;                                     // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SubPathString;                                     // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSoftObjectPath) == 0x000008, "Wrong alignment on FSoftObjectPath");
-static_assert(sizeof(FSoftObjectPath) == 0x000020, "Wrong size on FSoftObjectPath");
-static_assert(offsetof(FSoftObjectPath, AssetPathName) == 0x000000, "Member 'FSoftObjectPath::AssetPathName' has a wrong offset!");
-static_assert(offsetof(FSoftObjectPath, SubPathString) == 0x000010, "Member 'FSoftObjectPath::SubPathString' has a wrong offset!");
+static_assert(alignof(FFrameNumber) == 0x000004, "Wrong alignment on FFrameNumber");
+static_assert(sizeof(FFrameNumber) == 0x000004, "Wrong size on FFrameNumber");
+static_assert(offsetof(FFrameNumber, Value) == 0x000000, "Member 'FFrameNumber::Value' has a wrong offset!");
 
-// ScriptStruct CoreUObject.SoftClassPath
-// 0x0000 (0x0020 - 0x0020)
-struct FSoftClassPath final : public FSoftObjectPath
+// ScriptStruct CoreUObject.FrameNumberRangeBound
+// 0x0008 (0x0008 - 0x0000)
+struct FFrameNumberRangeBound final
 {
+public:
+	ERangeBoundTypes                              Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFrameNumber                           Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSoftClassPath) == 0x000008, "Wrong alignment on FSoftClassPath");
-static_assert(sizeof(FSoftClassPath) == 0x000020, "Wrong size on FSoftClassPath");
+static_assert(alignof(FFrameNumberRangeBound) == 0x000004, "Wrong alignment on FFrameNumberRangeBound");
+static_assert(sizeof(FFrameNumberRangeBound) == 0x000008, "Wrong size on FFrameNumberRangeBound");
+static_assert(offsetof(FFrameNumberRangeBound, Type) == 0x000000, "Member 'FFrameNumberRangeBound::Type' has a wrong offset!");
+static_assert(offsetof(FFrameNumberRangeBound, Value) == 0x000004, "Member 'FFrameNumberRangeBound::Value' has a wrong offset!");
 
 // ScriptStruct CoreUObject.Guid
 // 0x0010 (0x0010 - 0x0000)
@@ -411,6 +441,33 @@ static_assert(offsetof(FGuid, A) == 0x000000, "Member 'FGuid::A' has a wrong off
 static_assert(offsetof(FGuid, B) == 0x000004, "Member 'FGuid::B' has a wrong offset!");
 static_assert(offsetof(FGuid, C) == 0x000008, "Member 'FGuid::C' has a wrong offset!");
 static_assert(offsetof(FGuid, D) == 0x00000C, "Member 'FGuid::D' has a wrong offset!");
+
+// ScriptStruct CoreUObject.Int32RangeBound
+// 0x0008 (0x0008 - 0x0000)
+struct FInt32RangeBound final
+{
+public:
+	ERangeBoundTypes                              Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FInt32RangeBound) == 0x000004, "Wrong alignment on FInt32RangeBound");
+static_assert(sizeof(FInt32RangeBound) == 0x000008, "Wrong size on FInt32RangeBound");
+static_assert(offsetof(FInt32RangeBound, Type) == 0x000000, "Member 'FInt32RangeBound::Type' has a wrong offset!");
+static_assert(offsetof(FInt32RangeBound, Value) == 0x000004, "Member 'FInt32RangeBound::Value' has a wrong offset!");
+
+// ScriptStruct CoreUObject.Int32Range
+// 0x0010 (0x0010 - 0x0000)
+struct FInt32Range final
+{
+public:
+	struct FInt32RangeBound                       LowerBound;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInt32RangeBound                       UpperBound;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FInt32Range) == 0x000004, "Wrong alignment on FInt32Range");
+static_assert(sizeof(FInt32Range) == 0x000010, "Wrong size on FInt32Range");
+static_assert(offsetof(FInt32Range, LowerBound) == 0x000000, "Member 'FInt32Range::LowerBound' has a wrong offset!");
+static_assert(offsetof(FInt32Range, UpperBound) == 0x000008, "Member 'FInt32Range::UpperBound' has a wrong offset!");
 
 // ScriptStruct CoreUObject.Vector
 // 0x000C (0x000C - 0x0000)
@@ -530,6 +587,24 @@ static_assert(offsetof(FVector, X) == 0x000000, "Member 'FVector::X' has a wrong
 static_assert(offsetof(FVector, Y) == 0x000004, "Member 'FVector::Y' has a wrong offset!");
 static_assert(offsetof(FVector, Z) == 0x000008, "Member 'FVector::Z' has a wrong offset!");
 
+// ScriptStruct CoreUObject.AutomationEvent
+// 0x0038 (0x0038 - 0x0000)
+struct FAutomationEvent final
+{
+public:
+	EAutomationEventType                          Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Message;                                           // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Context;                                           // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  Artifact;                                          // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FAutomationEvent) == 0x000008, "Wrong alignment on FAutomationEvent");
+static_assert(sizeof(FAutomationEvent) == 0x000038, "Wrong size on FAutomationEvent");
+static_assert(offsetof(FAutomationEvent, Type) == 0x000000, "Member 'FAutomationEvent::Type' has a wrong offset!");
+static_assert(offsetof(FAutomationEvent, Message) == 0x000008, "Member 'FAutomationEvent::Message' has a wrong offset!");
+static_assert(offsetof(FAutomationEvent, Context) == 0x000018, "Member 'FAutomationEvent::Context' has a wrong offset!");
+static_assert(offsetof(FAutomationEvent, Artifact) == 0x000028, "Member 'FAutomationEvent::Artifact' has a wrong offset!");
+
 // ScriptStruct CoreUObject.VectorDouble
 // 0x0018 (0x0018 - 0x0000)
 struct FVectorDouble final
@@ -545,19 +620,25 @@ static_assert(offsetof(FVectorDouble, X) == 0x000000, "Member 'FVectorDouble::X'
 static_assert(offsetof(FVectorDouble, Y) == 0x000008, "Member 'FVectorDouble::Y' has a wrong offset!");
 static_assert(offsetof(FVectorDouble, Z) == 0x000010, "Member 'FVectorDouble::Z' has a wrong offset!");
 
-// ScriptStruct CoreUObject.FloatRangeBound
-// 0x0008 (0x0008 - 0x0000)
-struct FFloatRangeBound final
+// ScriptStruct CoreUObject.AssetData
+// 0x0068 (0x0068 - 0x0000)
+struct alignas(0x08) FAssetData final
 {
 public:
-	ERangeBoundTypes                              Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ObjectPath;                                        // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PackageName;                                       // 0x000C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PackagePath;                                       // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AssetName;                                         // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AssetClass;                                        // 0x0030(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x2C];                                      // 0x003C(0x002C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FFloatRangeBound) == 0x000004, "Wrong alignment on FFloatRangeBound");
-static_assert(sizeof(FFloatRangeBound) == 0x000008, "Wrong size on FFloatRangeBound");
-static_assert(offsetof(FFloatRangeBound, Type) == 0x000000, "Member 'FFloatRangeBound::Type' has a wrong offset!");
-static_assert(offsetof(FFloatRangeBound, Value) == 0x000004, "Member 'FFloatRangeBound::Value' has a wrong offset!");
+static_assert(alignof(FAssetData) == 0x000008, "Wrong alignment on FAssetData");
+static_assert(sizeof(FAssetData) == 0x000068, "Wrong size on FAssetData");
+static_assert(offsetof(FAssetData, ObjectPath) == 0x000000, "Member 'FAssetData::ObjectPath' has a wrong offset!");
+static_assert(offsetof(FAssetData, PackageName) == 0x00000C, "Member 'FAssetData::PackageName' has a wrong offset!");
+static_assert(offsetof(FAssetData, PackagePath) == 0x000018, "Member 'FAssetData::PackagePath' has a wrong offset!");
+static_assert(offsetof(FAssetData, AssetName) == 0x000024, "Member 'FAssetData::AssetName' has a wrong offset!");
+static_assert(offsetof(FAssetData, AssetClass) == 0x000030, "Member 'FAssetData::AssetClass' has a wrong offset!");
 
 // ScriptStruct CoreUObject.Vector2D
 // 0x0008 (0x0008 - 0x0000)
@@ -671,19 +752,6 @@ static_assert(sizeof(FVector2D) == 0x000008, "Wrong size on FVector2D");
 static_assert(offsetof(FVector2D, X) == 0x000000, "Member 'FVector2D::X' has a wrong offset!");
 static_assert(offsetof(FVector2D, Y) == 0x000004, "Member 'FVector2D::Y' has a wrong offset!");
 
-// ScriptStruct CoreUObject.FloatInterval
-// 0x0008 (0x0008 - 0x0000)
-struct FFloatInterval final
-{
-public:
-	float                                         Min;                                               // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Max;                                               // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FFloatInterval) == 0x000004, "Wrong alignment on FFloatInterval");
-static_assert(sizeof(FFloatInterval) == 0x000008, "Wrong size on FFloatInterval");
-static_assert(offsetof(FFloatInterval, Min) == 0x000000, "Member 'FFloatInterval::Min' has a wrong offset!");
-static_assert(offsetof(FFloatInterval, Max) == 0x000004, "Member 'FFloatInterval::Max' has a wrong offset!");
-
 // ScriptStruct CoreUObject.Vector2DDouble
 // 0x0010 (0x0010 - 0x0000)
 struct FVector2DDouble final
@@ -696,33 +764,6 @@ static_assert(alignof(FVector2DDouble) == 0x000008, "Wrong alignment on FVector2
 static_assert(sizeof(FVector2DDouble) == 0x000010, "Wrong size on FVector2DDouble");
 static_assert(offsetof(FVector2DDouble, X) == 0x000000, "Member 'FVector2DDouble::X' has a wrong offset!");
 static_assert(offsetof(FVector2DDouble, Y) == 0x000008, "Member 'FVector2DDouble::Y' has a wrong offset!");
-
-// ScriptStruct CoreUObject.ARFilter
-// 0x00F0 (0x00F0 - 0x0000)
-struct FARFilter final
-{
-public:
-	TArray<class FName>                           PackageNames;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<class FName>                           PackagePaths;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<class FName>                           ObjectPaths;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<class FName>                           ClassNames;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                         Pad_40[0x50];                                      // 0x0040(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class FName>                             RecursiveClassesExclusionSet;                      // 0x0090(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          bRecursivePaths;                                   // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRecursiveClasses;                                 // 0x00E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeOnlyOnDiskAssets;                          // 0x00E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E3[0xD];                                       // 0x00E3(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FARFilter) == 0x000008, "Wrong alignment on FARFilter");
-static_assert(sizeof(FARFilter) == 0x0000F0, "Wrong size on FARFilter");
-static_assert(offsetof(FARFilter, PackageNames) == 0x000000, "Member 'FARFilter::PackageNames' has a wrong offset!");
-static_assert(offsetof(FARFilter, PackagePaths) == 0x000010, "Member 'FARFilter::PackagePaths' has a wrong offset!");
-static_assert(offsetof(FARFilter, ObjectPaths) == 0x000020, "Member 'FARFilter::ObjectPaths' has a wrong offset!");
-static_assert(offsetof(FARFilter, ClassNames) == 0x000030, "Member 'FARFilter::ClassNames' has a wrong offset!");
-static_assert(offsetof(FARFilter, RecursiveClassesExclusionSet) == 0x000090, "Member 'FARFilter::RecursiveClassesExclusionSet' has a wrong offset!");
-static_assert(offsetof(FARFilter, bRecursivePaths) == 0x0000E0, "Member 'FARFilter::bRecursivePaths' has a wrong offset!");
-static_assert(offsetof(FARFilter, bRecursiveClasses) == 0x0000E1, "Member 'FARFilter::bRecursiveClasses' has a wrong offset!");
-static_assert(offsetof(FARFilter, bIncludeOnlyOnDiskAssets) == 0x0000E2, "Member 'FARFilter::bIncludeOnlyOnDiskAssets' has a wrong offset!");
 
 // ScriptStruct CoreUObject.TwoVectors
 // 0x0018 (0x0018 - 0x0000)
@@ -737,6 +778,32 @@ static_assert(sizeof(FTwoVectors) == 0x000018, "Wrong size on FTwoVectors");
 static_assert(offsetof(FTwoVectors, v1) == 0x000000, "Member 'FTwoVectors::v1' has a wrong offset!");
 static_assert(offsetof(FTwoVectors, v2) == 0x00000C, "Member 'FTwoVectors::v2' has a wrong offset!");
 
+// ScriptStruct CoreUObject.FloatInterval
+// 0x0008 (0x0008 - 0x0000)
+struct FFloatInterval final
+{
+public:
+	float                                         Min;                                               // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Max;                                               // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FFloatInterval) == 0x000004, "Wrong alignment on FFloatInterval");
+static_assert(sizeof(FFloatInterval) == 0x000008, "Wrong size on FFloatInterval");
+static_assert(offsetof(FFloatInterval, Min) == 0x000000, "Member 'FFloatInterval::Min' has a wrong offset!");
+static_assert(offsetof(FFloatInterval, Max) == 0x000004, "Member 'FFloatInterval::Max' has a wrong offset!");
+
+// ScriptStruct CoreUObject.FrameNumberRange
+// 0x0010 (0x0010 - 0x0000)
+struct FFrameNumberRange final
+{
+public:
+	struct FFrameNumberRangeBound                 LowerBound;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFrameNumberRangeBound                 UpperBound;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FFrameNumberRange) == 0x000004, "Wrong alignment on FFrameNumberRange");
+static_assert(sizeof(FFrameNumberRange) == 0x000010, "Wrong size on FFrameNumberRange");
+static_assert(offsetof(FFrameNumberRange, LowerBound) == 0x000000, "Member 'FFrameNumberRange::LowerBound' has a wrong offset!");
+static_assert(offsetof(FFrameNumberRange, UpperBound) == 0x000008, "Member 'FFrameNumberRange::UpperBound' has a wrong offset!");
+
 // ScriptStruct CoreUObject.Plane
 // 0x0004 (0x0010 - 0x000C)
 struct alignas(0x10) FPlane final : public FVector
@@ -748,32 +815,16 @@ static_assert(alignof(FPlane) == 0x000010, "Wrong alignment on FPlane");
 static_assert(sizeof(FPlane) == 0x000010, "Wrong size on FPlane");
 static_assert(offsetof(FPlane, W) == 0x00000C, "Member 'FPlane::W' has a wrong offset!");
 
-// ScriptStruct CoreUObject.Int32RangeBound
-// 0x0008 (0x0008 - 0x0000)
-struct FInt32RangeBound final
+// ScriptStruct CoreUObject.PrimaryAssetType
+// 0x000C (0x000C - 0x0000)
+struct FPrimaryAssetType final
 {
 public:
-	ERangeBoundTypes                              Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FInt32RangeBound) == 0x000004, "Wrong alignment on FInt32RangeBound");
-static_assert(sizeof(FInt32RangeBound) == 0x000008, "Wrong size on FInt32RangeBound");
-static_assert(offsetof(FInt32RangeBound, Type) == 0x000000, "Member 'FInt32RangeBound::Type' has a wrong offset!");
-static_assert(offsetof(FInt32RangeBound, Value) == 0x000004, "Member 'FInt32RangeBound::Value' has a wrong offset!");
-
-// ScriptStruct CoreUObject.Int32Range
-// 0x0010 (0x0010 - 0x0000)
-struct FInt32Range final
-{
-public:
-	struct FInt32RangeBound                       LowerBound;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInt32RangeBound                       UpperBound;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FInt32Range) == 0x000004, "Wrong alignment on FInt32Range");
-static_assert(sizeof(FInt32Range) == 0x000010, "Wrong size on FInt32Range");
-static_assert(offsetof(FInt32Range, LowerBound) == 0x000000, "Member 'FInt32Range::LowerBound' has a wrong offset!");
-static_assert(offsetof(FInt32Range, UpperBound) == 0x000008, "Member 'FInt32Range::UpperBound' has a wrong offset!");
+static_assert(alignof(FPrimaryAssetType) == 0x000004, "Wrong alignment on FPrimaryAssetType");
+static_assert(sizeof(FPrimaryAssetType) == 0x00000C, "Wrong size on FPrimaryAssetType");
+static_assert(offsetof(FPrimaryAssetType, Name) == 0x000000, "Member 'FPrimaryAssetType::Name' has a wrong offset!");
 
 // ScriptStruct CoreUObject.Rotator
 // 0x000C (0x000C - 0x0000)
@@ -789,6 +840,28 @@ static_assert(sizeof(FRotator) == 0x00000C, "Wrong size on FRotator");
 static_assert(offsetof(FRotator, Pitch) == 0x000000, "Member 'FRotator::Pitch' has a wrong offset!");
 static_assert(offsetof(FRotator, Yaw) == 0x000004, "Member 'FRotator::Yaw' has a wrong offset!");
 static_assert(offsetof(FRotator, Roll) == 0x000008, "Member 'FRotator::Roll' has a wrong offset!");
+
+// ScriptStruct CoreUObject.SoftObjectPath
+// 0x0020 (0x0020 - 0x0000)
+struct FSoftObjectPath
+{
+public:
+	class FName                                   AssetPathName;                                     // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SubPathString;                                     // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSoftObjectPath) == 0x000008, "Wrong alignment on FSoftObjectPath");
+static_assert(sizeof(FSoftObjectPath) == 0x000020, "Wrong size on FSoftObjectPath");
+static_assert(offsetof(FSoftObjectPath, AssetPathName) == 0x000000, "Member 'FSoftObjectPath::AssetPathName' has a wrong offset!");
+static_assert(offsetof(FSoftObjectPath, SubPathString) == 0x000010, "Member 'FSoftObjectPath::SubPathString' has a wrong offset!");
+
+// ScriptStruct CoreUObject.SoftClassPath
+// 0x0000 (0x0020 - 0x0020)
+struct FSoftClassPath final : public FSoftObjectPath
+{
+};
+static_assert(alignof(FSoftClassPath) == 0x000008, "Wrong alignment on FSoftClassPath");
+static_assert(sizeof(FSoftClassPath) == 0x000020, "Wrong size on FSoftClassPath");
 
 // ScriptStruct CoreUObject.Quat
 // 0x0010 (0x0010 - 0x0000)
@@ -824,25 +897,32 @@ static_assert(offsetof(FPackedNormal, Y) == 0x000001, "Member 'FPackedNormal::Y'
 static_assert(offsetof(FPackedNormal, Z) == 0x000002, "Member 'FPackedNormal::Z' has a wrong offset!");
 static_assert(offsetof(FPackedNormal, W) == 0x000003, "Member 'FPackedNormal::W' has a wrong offset!");
 
-// ScriptStruct CoreUObject.InterpCurvePointVector
-// 0x002C (0x002C - 0x0000)
-struct FInterpCurvePointVector final
+// ScriptStruct CoreUObject.FloatRangeBound
+// 0x0008 (0x0008 - 0x0000)
+struct FFloatRangeBound final
 {
 public:
-	float                                         InVal;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                OutVal;                                            // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ArriveTangent;                                     // 0x0010(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LeaveTangent;                                      // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EInterpCurveMode                              InterpMode;                                        // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ERangeBoundTypes                              Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FInterpCurvePointVector) == 0x000004, "Wrong alignment on FInterpCurvePointVector");
-static_assert(sizeof(FInterpCurvePointVector) == 0x00002C, "Wrong size on FInterpCurvePointVector");
-static_assert(offsetof(FInterpCurvePointVector, InVal) == 0x000000, "Member 'FInterpCurvePointVector::InVal' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointVector, OutVal) == 0x000004, "Member 'FInterpCurvePointVector::OutVal' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointVector, ArriveTangent) == 0x000010, "Member 'FInterpCurvePointVector::ArriveTangent' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointVector, LeaveTangent) == 0x00001C, "Member 'FInterpCurvePointVector::LeaveTangent' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointVector, InterpMode) == 0x000028, "Member 'FInterpCurvePointVector::InterpMode' has a wrong offset!");
+static_assert(alignof(FFloatRangeBound) == 0x000004, "Wrong alignment on FFloatRangeBound");
+static_assert(sizeof(FFloatRangeBound) == 0x000008, "Wrong size on FFloatRangeBound");
+static_assert(offsetof(FFloatRangeBound, Type) == 0x000000, "Member 'FFloatRangeBound::Type' has a wrong offset!");
+static_assert(offsetof(FFloatRangeBound, Value) == 0x000004, "Member 'FFloatRangeBound::Value' has a wrong offset!");
+
+// ScriptStruct CoreUObject.FloatRange
+// 0x0010 (0x0010 - 0x0000)
+struct FFloatRange final
+{
+public:
+	struct FFloatRangeBound                       LowerBound;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFloatRangeBound                       UpperBound;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FFloatRange) == 0x000004, "Wrong alignment on FFloatRange");
+static_assert(sizeof(FFloatRange) == 0x000010, "Wrong size on FFloatRange");
+static_assert(offsetof(FFloatRange, LowerBound) == 0x000000, "Member 'FFloatRange::LowerBound' has a wrong offset!");
+static_assert(offsetof(FFloatRange, UpperBound) == 0x000008, "Member 'FFloatRange::UpperBound' has a wrong offset!");
 
 // ScriptStruct CoreUObject.PackedRGB10A2N
 // 0x0004 (0x0004 - 0x0000)
@@ -855,18 +935,32 @@ static_assert(alignof(FPackedRGB10A2N) == 0x000004, "Wrong alignment on FPackedR
 static_assert(sizeof(FPackedRGB10A2N) == 0x000004, "Wrong size on FPackedRGB10A2N");
 static_assert(offsetof(FPackedRGB10A2N, Packed) == 0x000000, "Member 'FPackedRGB10A2N::Packed' has a wrong offset!");
 
-// ScriptStruct CoreUObject.Int32Interval
-// 0x0008 (0x0008 - 0x0000)
-struct FInt32Interval final
+// ScriptStruct CoreUObject.PolyglotTextData
+// 0x00B8 (0x00B8 - 0x0000)
+struct FPolyglotTextData final
 {
 public:
-	int32                                         Min;                                               // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Max;                                               // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELocalizedTextSourceCategory                  Category;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 NativeCulture;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Namespace;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 NativeString;                                      // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            LocalizedStrings;                                  // 0x0048(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          bIsMinimalPatch;                                   // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CachedText;                                        // 0x00A0(0x0018)(Transient, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FInt32Interval) == 0x000004, "Wrong alignment on FInt32Interval");
-static_assert(sizeof(FInt32Interval) == 0x000008, "Wrong size on FInt32Interval");
-static_assert(offsetof(FInt32Interval, Min) == 0x000000, "Member 'FInt32Interval::Min' has a wrong offset!");
-static_assert(offsetof(FInt32Interval, Max) == 0x000004, "Member 'FInt32Interval::Max' has a wrong offset!");
+static_assert(alignof(FPolyglotTextData) == 0x000008, "Wrong alignment on FPolyglotTextData");
+static_assert(sizeof(FPolyglotTextData) == 0x0000B8, "Wrong size on FPolyglotTextData");
+static_assert(offsetof(FPolyglotTextData, Category) == 0x000000, "Member 'FPolyglotTextData::Category' has a wrong offset!");
+static_assert(offsetof(FPolyglotTextData, NativeCulture) == 0x000008, "Member 'FPolyglotTextData::NativeCulture' has a wrong offset!");
+static_assert(offsetof(FPolyglotTextData, Namespace) == 0x000018, "Member 'FPolyglotTextData::Namespace' has a wrong offset!");
+static_assert(offsetof(FPolyglotTextData, Key) == 0x000028, "Member 'FPolyglotTextData::Key' has a wrong offset!");
+static_assert(offsetof(FPolyglotTextData, NativeString) == 0x000038, "Member 'FPolyglotTextData::NativeString' has a wrong offset!");
+static_assert(offsetof(FPolyglotTextData, LocalizedStrings) == 0x000048, "Member 'FPolyglotTextData::LocalizedStrings' has a wrong offset!");
+static_assert(offsetof(FPolyglotTextData, bIsMinimalPatch) == 0x000098, "Member 'FPolyglotTextData::bIsMinimalPatch' has a wrong offset!");
+static_assert(offsetof(FPolyglotTextData, CachedText) == 0x0000A0, "Member 'FPolyglotTextData::CachedText' has a wrong offset!");
 
 // ScriptStruct CoreUObject.PackedRGBA16N
 // 0x0008 (0x0008 - 0x0000)
@@ -881,45 +975,18 @@ static_assert(sizeof(FPackedRGBA16N) == 0x000008, "Wrong size on FPackedRGBA16N"
 static_assert(offsetof(FPackedRGBA16N, XY) == 0x000000, "Member 'FPackedRGBA16N::XY' has a wrong offset!");
 static_assert(offsetof(FPackedRGBA16N, ZW) == 0x000004, "Member 'FPackedRGBA16N::ZW' has a wrong offset!");
 
-// ScriptStruct CoreUObject.PrimaryAssetType
-// 0x000C (0x000C - 0x0000)
-struct FPrimaryAssetType final
+// ScriptStruct CoreUObject.Int32Interval
+// 0x0008 (0x0008 - 0x0000)
+struct FInt32Interval final
 {
 public:
-	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Min;                                               // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Max;                                               // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPrimaryAssetType) == 0x000004, "Wrong alignment on FPrimaryAssetType");
-static_assert(sizeof(FPrimaryAssetType) == 0x00000C, "Wrong size on FPrimaryAssetType");
-static_assert(offsetof(FPrimaryAssetType, Name) == 0x000000, "Member 'FPrimaryAssetType::Name' has a wrong offset!");
-
-// ScriptStruct CoreUObject.PrimaryAssetId
-// 0x0018 (0x0018 - 0x0000)
-struct FPrimaryAssetId final
-{
-public:
-	struct FPrimaryAssetType                      PrimaryAssetType;                                  // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PrimaryAssetName;                                  // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FPrimaryAssetId) == 0x000004, "Wrong alignment on FPrimaryAssetId");
-static_assert(sizeof(FPrimaryAssetId) == 0x000018, "Wrong size on FPrimaryAssetId");
-static_assert(offsetof(FPrimaryAssetId, PrimaryAssetType) == 0x000000, "Member 'FPrimaryAssetId::PrimaryAssetType' has a wrong offset!");
-static_assert(offsetof(FPrimaryAssetId, PrimaryAssetName) == 0x00000C, "Member 'FPrimaryAssetId::PrimaryAssetName' has a wrong offset!");
-
-// ScriptStruct CoreUObject.AssetBundleEntry
-// 0x0038 (0x0038 - 0x0000)
-struct FAssetBundleEntry final
-{
-public:
-	struct FPrimaryAssetId                        BundleScope;                                       // 0x0000(0x0018)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   BundleName;                                        // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSoftObjectPath>                BundleAssets;                                      // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FAssetBundleEntry) == 0x000008, "Wrong alignment on FAssetBundleEntry");
-static_assert(sizeof(FAssetBundleEntry) == 0x000038, "Wrong size on FAssetBundleEntry");
-static_assert(offsetof(FAssetBundleEntry, BundleScope) == 0x000000, "Member 'FAssetBundleEntry::BundleScope' has a wrong offset!");
-static_assert(offsetof(FAssetBundleEntry, BundleName) == 0x000018, "Member 'FAssetBundleEntry::BundleName' has a wrong offset!");
-static_assert(offsetof(FAssetBundleEntry, BundleAssets) == 0x000028, "Member 'FAssetBundleEntry::BundleAssets' has a wrong offset!");
+static_assert(alignof(FInt32Interval) == 0x000004, "Wrong alignment on FInt32Interval");
+static_assert(sizeof(FInt32Interval) == 0x000008, "Wrong size on FInt32Interval");
+static_assert(offsetof(FInt32Interval, Min) == 0x000000, "Member 'FInt32Interval::Min' has a wrong offset!");
+static_assert(offsetof(FInt32Interval, Max) == 0x000004, "Member 'FInt32Interval::Max' has a wrong offset!");
 
 // ScriptStruct CoreUObject.IntPoint
 // 0x0008 (0x0008 - 0x0000)
@@ -933,6 +1000,16 @@ static_assert(alignof(FIntPoint) == 0x000004, "Wrong alignment on FIntPoint");
 static_assert(sizeof(FIntPoint) == 0x000008, "Wrong size on FIntPoint");
 static_assert(offsetof(FIntPoint, X) == 0x000000, "Member 'FIntPoint::X' has a wrong offset!");
 static_assert(offsetof(FIntPoint, Y) == 0x000004, "Member 'FIntPoint::Y' has a wrong offset!");
+
+// ScriptStruct CoreUObject.FallbackStruct
+// 0x0001 (0x0001 - 0x0000)
+struct FFallbackStruct final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FFallbackStruct) == 0x000001, "Wrong alignment on FFallbackStruct");
+static_assert(sizeof(FFallbackStruct) == 0x000001, "Wrong size on FFallbackStruct");
 
 // ScriptStruct CoreUObject.IntVector
 // 0x000C (0x000C - 0x0000)
@@ -949,25 +1026,18 @@ static_assert(offsetof(FIntVector, X) == 0x000000, "Member 'FIntVector::X' has a
 static_assert(offsetof(FIntVector, Y) == 0x000004, "Member 'FIntVector::Y' has a wrong offset!");
 static_assert(offsetof(FIntVector, Z) == 0x000008, "Member 'FIntVector::Z' has a wrong offset!");
 
-// ScriptStruct CoreUObject.InterpCurvePointTwoVectors
-// 0x0050 (0x0050 - 0x0000)
-struct FInterpCurvePointTwoVectors final
+// ScriptStruct CoreUObject.PrimaryAssetId
+// 0x0018 (0x0018 - 0x0000)
+struct FPrimaryAssetId final
 {
 public:
-	float                                         InVal;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTwoVectors                            OutVal;                                            // 0x0004(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTwoVectors                            ArriveTangent;                                     // 0x001C(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTwoVectors                            LeaveTangent;                                      // 0x0034(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	EInterpCurveMode                              InterpMode;                                        // 0x004C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FPrimaryAssetType                      PrimaryAssetType;                                  // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PrimaryAssetName;                                  // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FInterpCurvePointTwoVectors) == 0x000004, "Wrong alignment on FInterpCurvePointTwoVectors");
-static_assert(sizeof(FInterpCurvePointTwoVectors) == 0x000050, "Wrong size on FInterpCurvePointTwoVectors");
-static_assert(offsetof(FInterpCurvePointTwoVectors, InVal) == 0x000000, "Member 'FInterpCurvePointTwoVectors::InVal' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointTwoVectors, OutVal) == 0x000004, "Member 'FInterpCurvePointTwoVectors::OutVal' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointTwoVectors, ArriveTangent) == 0x00001C, "Member 'FInterpCurvePointTwoVectors::ArriveTangent' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointTwoVectors, LeaveTangent) == 0x000034, "Member 'FInterpCurvePointTwoVectors::LeaveTangent' has a wrong offset!");
-static_assert(offsetof(FInterpCurvePointTwoVectors, InterpMode) == 0x00004C, "Member 'FInterpCurvePointTwoVectors::InterpMode' has a wrong offset!");
+static_assert(alignof(FPrimaryAssetId) == 0x000004, "Wrong alignment on FPrimaryAssetId");
+static_assert(sizeof(FPrimaryAssetId) == 0x000018, "Wrong size on FPrimaryAssetId");
+static_assert(offsetof(FPrimaryAssetId, PrimaryAssetType) == 0x000000, "Member 'FPrimaryAssetId::PrimaryAssetType' has a wrong offset!");
+static_assert(offsetof(FPrimaryAssetId, PrimaryAssetName) == 0x00000C, "Member 'FPrimaryAssetId::PrimaryAssetName' has a wrong offset!");
 
 // ScriptStruct CoreUObject.Color
 // 0x0004 (0x0004 - 0x0000)
@@ -1019,22 +1089,6 @@ static_assert(offsetof(FBox, Min) == 0x000000, "Member 'FBox::Min' has a wrong o
 static_assert(offsetof(FBox, Max) == 0x00000C, "Member 'FBox::Max' has a wrong offset!");
 static_assert(offsetof(FBox, IsValid) == 0x000018, "Member 'FBox::IsValid' has a wrong offset!");
 
-// ScriptStruct CoreUObject.InterpCurveVector
-// 0x0018 (0x0018 - 0x0000)
-struct FInterpCurveVector final
-{
-public:
-	TArray<struct FInterpCurvePointVector>        Points;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bIsLooped;                                         // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LoopKeyOffset;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FInterpCurveVector) == 0x000008, "Wrong alignment on FInterpCurveVector");
-static_assert(sizeof(FInterpCurveVector) == 0x000018, "Wrong size on FInterpCurveVector");
-static_assert(offsetof(FInterpCurveVector, Points) == 0x000000, "Member 'FInterpCurveVector::Points' has a wrong offset!");
-static_assert(offsetof(FInterpCurveVector, bIsLooped) == 0x000010, "Member 'FInterpCurveVector::bIsLooped' has a wrong offset!");
-static_assert(offsetof(FInterpCurveVector, LoopKeyOffset) == 0x000014, "Member 'FInterpCurveVector::LoopKeyOffset' has a wrong offset!");
-
 // ScriptStruct CoreUObject.Box2D
 // 0x0014 (0x0014 - 0x0000)
 struct FBox2D final
@@ -1051,22 +1105,18 @@ static_assert(offsetof(FBox2D, Min) == 0x000000, "Member 'FBox2D::Min' has a wro
 static_assert(offsetof(FBox2D, Max) == 0x000008, "Member 'FBox2D::Max' has a wrong offset!");
 static_assert(offsetof(FBox2D, bIsValid) == 0x000010, "Member 'FBox2D::bIsValid' has a wrong offset!");
 
-// ScriptStruct CoreUObject.Transform
-// 0x0030 (0x0030 - 0x0000)
-struct FTransform final
+// ScriptStruct CoreUObject.TopLevelAssetPath
+// 0x0018 (0x0018 - 0x0000)
+struct FTopLevelAssetPath final
 {
 public:
-	struct FQuat                                  Rotation;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, SaveGame, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Translation;                                       // 0x0010(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Scale3D;                                           // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   PackageName;                                       // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   AssetName;                                         // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-static_assert(alignof(FTransform) == 0x000010, "Wrong alignment on FTransform");
-static_assert(sizeof(FTransform) == 0x000030, "Wrong size on FTransform");
-static_assert(offsetof(FTransform, Rotation) == 0x000000, "Member 'FTransform::Rotation' has a wrong offset!");
-static_assert(offsetof(FTransform, Translation) == 0x000010, "Member 'FTransform::Translation' has a wrong offset!");
-static_assert(offsetof(FTransform, Scale3D) == 0x000020, "Member 'FTransform::Scale3D' has a wrong offset!");
+static_assert(alignof(FTopLevelAssetPath) == 0x000004, "Wrong alignment on FTopLevelAssetPath");
+static_assert(sizeof(FTopLevelAssetPath) == 0x000018, "Wrong size on FTopLevelAssetPath");
+static_assert(offsetof(FTopLevelAssetPath, PackageName) == 0x000000, "Member 'FTopLevelAssetPath::PackageName' has a wrong offset!");
+static_assert(offsetof(FTopLevelAssetPath, AssetName) == 0x00000C, "Member 'FTopLevelAssetPath::AssetName' has a wrong offset!");
 
 // ScriptStruct CoreUObject.BoxSphereBounds
 // 0x001C (0x001C - 0x0000)
@@ -1195,6 +1245,42 @@ static_assert(offsetof(FInterpCurveVector2D, Points) == 0x000000, "Member 'FInte
 static_assert(offsetof(FInterpCurveVector2D, bIsLooped) == 0x000010, "Member 'FInterpCurveVector2D::bIsLooped' has a wrong offset!");
 static_assert(offsetof(FInterpCurveVector2D, LoopKeyOffset) == 0x000014, "Member 'FInterpCurveVector2D::LoopKeyOffset' has a wrong offset!");
 
+// ScriptStruct CoreUObject.InterpCurvePointVector
+// 0x002C (0x002C - 0x0000)
+struct FInterpCurvePointVector final
+{
+public:
+	float                                         InVal;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OutVal;                                            // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ArriveTangent;                                     // 0x0010(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LeaveTangent;                                      // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInterpCurveMode                              InterpMode;                                        // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FInterpCurvePointVector) == 0x000004, "Wrong alignment on FInterpCurvePointVector");
+static_assert(sizeof(FInterpCurvePointVector) == 0x00002C, "Wrong size on FInterpCurvePointVector");
+static_assert(offsetof(FInterpCurvePointVector, InVal) == 0x000000, "Member 'FInterpCurvePointVector::InVal' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointVector, OutVal) == 0x000004, "Member 'FInterpCurvePointVector::OutVal' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointVector, ArriveTangent) == 0x000010, "Member 'FInterpCurvePointVector::ArriveTangent' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointVector, LeaveTangent) == 0x00001C, "Member 'FInterpCurvePointVector::LeaveTangent' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointVector, InterpMode) == 0x000028, "Member 'FInterpCurvePointVector::InterpMode' has a wrong offset!");
+
+// ScriptStruct CoreUObject.InterpCurveVector
+// 0x0018 (0x0018 - 0x0000)
+struct FInterpCurveVector final
+{
+public:
+	TArray<struct FInterpCurvePointVector>        Points;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bIsLooped;                                         // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LoopKeyOffset;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FInterpCurveVector) == 0x000008, "Wrong alignment on FInterpCurveVector");
+static_assert(sizeof(FInterpCurveVector) == 0x000018, "Wrong size on FInterpCurveVector");
+static_assert(offsetof(FInterpCurveVector, Points) == 0x000000, "Member 'FInterpCurveVector::Points' has a wrong offset!");
+static_assert(offsetof(FInterpCurveVector, bIsLooped) == 0x000010, "Member 'FInterpCurveVector::bIsLooped' has a wrong offset!");
+static_assert(offsetof(FInterpCurveVector, LoopKeyOffset) == 0x000014, "Member 'FInterpCurveVector::LoopKeyOffset' has a wrong offset!");
+
 // ScriptStruct CoreUObject.InterpCurvePointQuat
 // 0x0050 (0x0050 - 0x0000)
 struct FInterpCurvePointQuat final
@@ -1231,6 +1317,26 @@ static_assert(sizeof(FInterpCurveQuat) == 0x000018, "Wrong size on FInterpCurveQ
 static_assert(offsetof(FInterpCurveQuat, Points) == 0x000000, "Member 'FInterpCurveQuat::Points' has a wrong offset!");
 static_assert(offsetof(FInterpCurveQuat, bIsLooped) == 0x000010, "Member 'FInterpCurveQuat::bIsLooped' has a wrong offset!");
 static_assert(offsetof(FInterpCurveQuat, LoopKeyOffset) == 0x000014, "Member 'FInterpCurveQuat::LoopKeyOffset' has a wrong offset!");
+
+// ScriptStruct CoreUObject.InterpCurvePointTwoVectors
+// 0x0050 (0x0050 - 0x0000)
+struct FInterpCurvePointTwoVectors final
+{
+public:
+	float                                         InVal;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTwoVectors                            OutVal;                                            // 0x0004(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTwoVectors                            ArriveTangent;                                     // 0x001C(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTwoVectors                            LeaveTangent;                                      // 0x0034(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	EInterpCurveMode                              InterpMode;                                        // 0x004C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FInterpCurvePointTwoVectors) == 0x000004, "Wrong alignment on FInterpCurvePointTwoVectors");
+static_assert(sizeof(FInterpCurvePointTwoVectors) == 0x000050, "Wrong size on FInterpCurvePointTwoVectors");
+static_assert(offsetof(FInterpCurvePointTwoVectors, InVal) == 0x000000, "Member 'FInterpCurvePointTwoVectors::InVal' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointTwoVectors, OutVal) == 0x000004, "Member 'FInterpCurvePointTwoVectors::OutVal' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointTwoVectors, ArriveTangent) == 0x00001C, "Member 'FInterpCurvePointTwoVectors::ArriveTangent' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointTwoVectors, LeaveTangent) == 0x000034, "Member 'FInterpCurvePointTwoVectors::LeaveTangent' has a wrong offset!");
+static_assert(offsetof(FInterpCurvePointTwoVectors, InterpMode) == 0x00004C, "Member 'FInterpCurvePointTwoVectors::InterpMode' has a wrong offset!");
 
 // ScriptStruct CoreUObject.InterpCurveTwoVectors
 // 0x0018 (0x0018 - 0x0000)
@@ -1284,6 +1390,23 @@ static_assert(offsetof(FInterpCurveLinearColor, Points) == 0x000000, "Member 'FI
 static_assert(offsetof(FInterpCurveLinearColor, bIsLooped) == 0x000010, "Member 'FInterpCurveLinearColor::bIsLooped' has a wrong offset!");
 static_assert(offsetof(FInterpCurveLinearColor, LoopKeyOffset) == 0x000014, "Member 'FInterpCurveLinearColor::LoopKeyOffset' has a wrong offset!");
 
+// ScriptStruct CoreUObject.Transform
+// 0x0030 (0x0030 - 0x0000)
+struct FTransform final
+{
+public:
+	struct FQuat                                  Rotation;                                          // 0x0000(0x0010)(Edit, BlueprintVisible, SaveGame, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Translation;                                       // 0x0010(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Scale3D;                                           // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FTransform) == 0x000010, "Wrong alignment on FTransform");
+static_assert(sizeof(FTransform) == 0x000030, "Wrong size on FTransform");
+static_assert(offsetof(FTransform, Rotation) == 0x000000, "Member 'FTransform::Rotation' has a wrong offset!");
+static_assert(offsetof(FTransform, Translation) == 0x000010, "Member 'FTransform::Translation' has a wrong offset!");
+static_assert(offsetof(FTransform, Scale3D) == 0x000020, "Member 'FTransform::Scale3D' has a wrong offset!");
+
 // ScriptStruct CoreUObject.TransformDouble
 // 0x0040 (0x0040 - 0x0000)
 struct FTransformDouble final
@@ -1322,17 +1445,6 @@ public:
 };
 static_assert(alignof(FDateTime) == 0x000008, "Wrong alignment on FDateTime");
 static_assert(sizeof(FDateTime) == 0x000008, "Wrong size on FDateTime");
-
-// ScriptStruct CoreUObject.FrameNumber
-// 0x0004 (0x0004 - 0x0000)
-struct FFrameNumber final
-{
-public:
-	int32                                         Value;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FFrameNumber) == 0x000004, "Wrong alignment on FFrameNumber");
-static_assert(sizeof(FFrameNumber) == 0x000004, "Wrong size on FFrameNumber");
-static_assert(offsetof(FFrameNumber, Value) == 0x000000, "Member 'FFrameNumber::Value' has a wrong offset!");
 
 // ScriptStruct CoreUObject.FrameRate
 // 0x0008 (0x0008 - 0x0000)
@@ -1403,101 +1515,6 @@ public:
 static_assert(alignof(FTimespan) == 0x000008, "Wrong alignment on FTimespan");
 static_assert(sizeof(FTimespan) == 0x000008, "Wrong size on FTimespan");
 
-// ScriptStruct CoreUObject.FallbackStruct
-// 0x0001 (0x0001 - 0x0000)
-struct FFallbackStruct final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FFallbackStruct) == 0x000001, "Wrong alignment on FFallbackStruct");
-static_assert(sizeof(FFallbackStruct) == 0x000001, "Wrong size on FFallbackStruct");
-
-// ScriptStruct CoreUObject.FloatRange
-// 0x0010 (0x0010 - 0x0000)
-struct FFloatRange final
-{
-public:
-	struct FFloatRangeBound                       LowerBound;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFloatRangeBound                       UpperBound;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FFloatRange) == 0x000004, "Wrong alignment on FFloatRange");
-static_assert(sizeof(FFloatRange) == 0x000010, "Wrong size on FFloatRange");
-static_assert(offsetof(FFloatRange, LowerBound) == 0x000000, "Member 'FFloatRange::LowerBound' has a wrong offset!");
-static_assert(offsetof(FFloatRange, UpperBound) == 0x000008, "Member 'FFloatRange::UpperBound' has a wrong offset!");
-
-// ScriptStruct CoreUObject.FrameNumberRangeBound
-// 0x0008 (0x0008 - 0x0000)
-struct FFrameNumberRangeBound final
-{
-public:
-	ERangeBoundTypes                              Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFrameNumber                           Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FFrameNumberRangeBound) == 0x000004, "Wrong alignment on FFrameNumberRangeBound");
-static_assert(sizeof(FFrameNumberRangeBound) == 0x000008, "Wrong size on FFrameNumberRangeBound");
-static_assert(offsetof(FFrameNumberRangeBound, Type) == 0x000000, "Member 'FFrameNumberRangeBound::Type' has a wrong offset!");
-static_assert(offsetof(FFrameNumberRangeBound, Value) == 0x000004, "Member 'FFrameNumberRangeBound::Value' has a wrong offset!");
-
-// ScriptStruct CoreUObject.FrameNumberRange
-// 0x0010 (0x0010 - 0x0000)
-struct FFrameNumberRange final
-{
-public:
-	struct FFrameNumberRangeBound                 LowerBound;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFrameNumberRangeBound                 UpperBound;                                        // 0x0008(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FFrameNumberRange) == 0x000004, "Wrong alignment on FFrameNumberRange");
-static_assert(sizeof(FFrameNumberRange) == 0x000010, "Wrong size on FFrameNumberRange");
-static_assert(offsetof(FFrameNumberRange, LowerBound) == 0x000000, "Member 'FFrameNumberRange::LowerBound' has a wrong offset!");
-static_assert(offsetof(FFrameNumberRange, UpperBound) == 0x000008, "Member 'FFrameNumberRange::UpperBound' has a wrong offset!");
-
-// ScriptStruct CoreUObject.PolyglotTextData
-// 0x00B8 (0x00B8 - 0x0000)
-struct FPolyglotTextData final
-{
-public:
-	ELocalizedTextSourceCategory                  Category;                                          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 NativeCulture;                                     // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Namespace;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Key;                                               // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 NativeString;                                      // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            LocalizedStrings;                                  // 0x0048(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          bIsMinimalPatch;                                   // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CachedText;                                        // 0x00A0(0x0018)(Transient, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FPolyglotTextData) == 0x000008, "Wrong alignment on FPolyglotTextData");
-static_assert(sizeof(FPolyglotTextData) == 0x0000B8, "Wrong size on FPolyglotTextData");
-static_assert(offsetof(FPolyglotTextData, Category) == 0x000000, "Member 'FPolyglotTextData::Category' has a wrong offset!");
-static_assert(offsetof(FPolyglotTextData, NativeCulture) == 0x000008, "Member 'FPolyglotTextData::NativeCulture' has a wrong offset!");
-static_assert(offsetof(FPolyglotTextData, Namespace) == 0x000018, "Member 'FPolyglotTextData::Namespace' has a wrong offset!");
-static_assert(offsetof(FPolyglotTextData, Key) == 0x000028, "Member 'FPolyglotTextData::Key' has a wrong offset!");
-static_assert(offsetof(FPolyglotTextData, NativeString) == 0x000038, "Member 'FPolyglotTextData::NativeString' has a wrong offset!");
-static_assert(offsetof(FPolyglotTextData, LocalizedStrings) == 0x000048, "Member 'FPolyglotTextData::LocalizedStrings' has a wrong offset!");
-static_assert(offsetof(FPolyglotTextData, bIsMinimalPatch) == 0x000098, "Member 'FPolyglotTextData::bIsMinimalPatch' has a wrong offset!");
-static_assert(offsetof(FPolyglotTextData, CachedText) == 0x0000A0, "Member 'FPolyglotTextData::CachedText' has a wrong offset!");
-
-// ScriptStruct CoreUObject.AutomationEvent
-// 0x0038 (0x0038 - 0x0000)
-struct FAutomationEvent final
-{
-public:
-	EAutomationEventType                          Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Message;                                           // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Context;                                           // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  Artifact;                                          // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FAutomationEvent) == 0x000008, "Wrong alignment on FAutomationEvent");
-static_assert(sizeof(FAutomationEvent) == 0x000038, "Wrong size on FAutomationEvent");
-static_assert(offsetof(FAutomationEvent, Type) == 0x000000, "Member 'FAutomationEvent::Type' has a wrong offset!");
-static_assert(offsetof(FAutomationEvent, Message) == 0x000008, "Member 'FAutomationEvent::Message' has a wrong offset!");
-static_assert(offsetof(FAutomationEvent, Context) == 0x000018, "Member 'FAutomationEvent::Context' has a wrong offset!");
-static_assert(offsetof(FAutomationEvent, Artifact) == 0x000028, "Member 'FAutomationEvent::Artifact' has a wrong offset!");
-
 // ScriptStruct CoreUObject.AutomationExecutionEntry
 // 0x0058 (0x0058 - 0x0000)
 struct FAutomationExecutionEntry final
@@ -1516,6 +1533,22 @@ static_assert(offsetof(FAutomationExecutionEntry, Filename) == 0x000038, "Member
 static_assert(offsetof(FAutomationExecutionEntry, LineNumber) == 0x000048, "Member 'FAutomationExecutionEntry::LineNumber' has a wrong offset!");
 static_assert(offsetof(FAutomationExecutionEntry, Timestamp) == 0x000050, "Member 'FAutomationExecutionEntry::Timestamp' has a wrong offset!");
 
+// ScriptStruct CoreUObject.AssetBundleEntry
+// 0x0038 (0x0038 - 0x0000)
+struct FAssetBundleEntry final
+{
+public:
+	struct FPrimaryAssetId                        BundleScope;                                       // 0x0000(0x0018)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   BundleName;                                        // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSoftObjectPath>                BundleAssets;                                      // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FAssetBundleEntry) == 0x000008, "Wrong alignment on FAssetBundleEntry");
+static_assert(sizeof(FAssetBundleEntry) == 0x000038, "Wrong size on FAssetBundleEntry");
+static_assert(offsetof(FAssetBundleEntry, BundleScope) == 0x000000, "Member 'FAssetBundleEntry::BundleScope' has a wrong offset!");
+static_assert(offsetof(FAssetBundleEntry, BundleName) == 0x000018, "Member 'FAssetBundleEntry::BundleName' has a wrong offset!");
+static_assert(offsetof(FAssetBundleEntry, BundleAssets) == 0x000028, "Member 'FAssetBundleEntry::BundleAssets' has a wrong offset!");
+
 // ScriptStruct CoreUObject.AssetBundleData
 // 0x0010 (0x0010 - 0x0000)
 struct FAssetBundleData final
@@ -1526,26 +1559,6 @@ public:
 static_assert(alignof(FAssetBundleData) == 0x000008, "Wrong alignment on FAssetBundleData");
 static_assert(sizeof(FAssetBundleData) == 0x000010, "Wrong size on FAssetBundleData");
 static_assert(offsetof(FAssetBundleData, Bundles) == 0x000000, "Member 'FAssetBundleData::Bundles' has a wrong offset!");
-
-// ScriptStruct CoreUObject.AssetData
-// 0x0068 (0x0068 - 0x0000)
-struct alignas(0x08) FAssetData final
-{
-public:
-	class FName                                   ObjectPath;                                        // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PackageName;                                       // 0x000C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PackagePath;                                       // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AssetName;                                         // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AssetClass;                                        // 0x0030(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x2C];                                      // 0x003C(0x002C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FAssetData) == 0x000008, "Wrong alignment on FAssetData");
-static_assert(sizeof(FAssetData) == 0x000068, "Wrong size on FAssetData");
-static_assert(offsetof(FAssetData, ObjectPath) == 0x000000, "Member 'FAssetData::ObjectPath' has a wrong offset!");
-static_assert(offsetof(FAssetData, PackageName) == 0x00000C, "Member 'FAssetData::PackageName' has a wrong offset!");
-static_assert(offsetof(FAssetData, PackagePath) == 0x000018, "Member 'FAssetData::PackagePath' has a wrong offset!");
-static_assert(offsetof(FAssetData, AssetName) == 0x000024, "Member 'FAssetData::AssetName' has a wrong offset!");
-static_assert(offsetof(FAssetData, AssetClass) == 0x000030, "Member 'FAssetData::AssetClass' has a wrong offset!");
 
 }
 

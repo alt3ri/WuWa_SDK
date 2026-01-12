@@ -3,9 +3,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "MovieScene_classes.hpp"
 #include "MovieSceneTracks_classes.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK

@@ -1,0 +1,106 @@
+﻿#pragma once
+// Package: KuroLevelStateMachine
+
+#include "Basic.hpp"
+
+#include "KuroLevelStateMachine_classes.hpp"
+#include "KuroLevelStateMachine_parameters.hpp"
+
+
+namespace SDK
+{
+
+// Function KuroLevelStateMachine.KuroLevelStateMachineComponent.HasState
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             StateName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroLevelStateMachineComponent::HasState(class FName StateName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelStateMachineComponent", "HasState");
+
+	Params::KuroLevelStateMachineComponent_HasState Parms{};
+
+	Parms.StateName = StateName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroLevelStateMachine.KuroLevelStateMachineComponent.SetState
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             StateName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   PlayRate                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroLevelStateMachineComponent::SetState(class FName StateName, float PlayRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelStateMachineComponent", "SetState");
+
+	Params::KuroLevelStateMachineComponent_SetState Parms{};
+
+	Parms.StateName = StateName;
+	Parms.PlayRate = PlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroLevelStateMachine.KuroLevelStateMachineComponent.Start
+// (Native, Public, BlueprintCallable)
+
+void UKuroLevelStateMachineComponent::Start()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelStateMachineComponent", "Start");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroLevelStateMachine.KuroLevelStateMachineComponent.Stop
+// (Native, Public, BlueprintCallable)
+
+void UKuroLevelStateMachineComponent::Stop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelStateMachineComponent", "Stop");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+}
+

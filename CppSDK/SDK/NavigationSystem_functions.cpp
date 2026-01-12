@@ -35,6 +35,33 @@ void ANavModifierVolume::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
 }
 
 
+// Function NavigationSystem.NavigationDataChunkTileVariantsActor.OnDataLayerStateChanged
+// (Final, Native, Protected)
+// Parameters:
+// class UDataLayer*                       DataLayer                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EDataLayerState                         State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ANavigationDataChunkTileVariantsActor::OnDataLayerStateChanged(const class UDataLayer* DataLayer, EDataLayerState State)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavigationDataChunkTileVariantsActor", "OnDataLayerStateChanged");
+
+	Params::NavigationDataChunkTileVariantsActor_OnDataLayerStateChanged Parms{};
+
+	Parms.DataLayer = DataLayer;
+	Parms.State = State;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function NavigationSystem.NavigationPath.EnableDebugDrawing
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -237,6 +264,38 @@ bool UNavigationPath::IsValid() const
 }
 
 
+// Function NavigationSystem.NavigationSystemV1.CreateAndUseStreamingDungeonNavSystem
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UWorld*                           WPWorld                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UWorld*                           DungeonWorld                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UNavigationSystemConfig*          NavigationSystemConfig                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavigationSystemV1::CreateAndUseStreamingDungeonNavSystem(class UWorld* WPWorld, class UWorld* DungeonWorld, class UNavigationSystemConfig* NavigationSystemConfig)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "CreateAndUseStreamingDungeonNavSystem");
+
+	Params::NavigationSystemV1_CreateAndUseStreamingDungeonNavSystem Parms{};
+
+	Parms.WPWorld = WPWorld;
+	Parms.DungeonWorld = DungeonWorld;
+	Parms.NavigationSystemConfig = NavigationSystemConfig;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function NavigationSystem.NavigationSystemV1.D_FindPathToLocationSynchronously
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -275,6 +334,48 @@ class UNavigationPath* UNavigationSystemV1::D_FindPathToLocationSynchronously(cl
 }
 
 
+// Function NavigationSystem.NavigationSystemV1.D_GetNearestPolyAreaID
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    Point                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    QueryExtent                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   AreaID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UNavigationQueryFilter>FilterClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ANavigationData*                  NavData                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Querier                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavigationSystemV1::D_GetNearestPolyAreaID(class UObject* WorldContextObject, const struct FVectorDouble& Point, const struct FVectorDouble& QueryExtent, int32* AreaID, TSubclassOf<class UNavigationQueryFilter> FilterClass, class ANavigationData* NavData, const class UObject* Querier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "D_GetNearestPolyAreaID");
+
+	Params::NavigationSystemV1_D_GetNearestPolyAreaID Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Point = std::move(Point);
+	Parms.QueryExtent = std::move(QueryExtent);
+	Parms.FilterClass = FilterClass;
+	Parms.NavData = NavData;
+	Parms.Querier = Querier;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (AreaID != nullptr)
+		*AreaID = Parms.AreaID;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function NavigationSystem.NavigationSystemV1.D_IsStraightReachable
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -308,6 +409,48 @@ bool UNavigationSystemV1::D_IsStraightReachable(class UObject* WorldContextObjec
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function NavigationSystem.NavigationSystemV1.D_K2_BatchProjectPointToNavigation
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVectorDouble>            Points                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FNavBatchProjectionResult>ProjectedLocationsResults                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// class ANavigationData*                  NavData                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UNavigationQueryFilter>FilterClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    QueryExtent                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  MaxError                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavigationSystemV1::D_K2_BatchProjectPointToNavigation(class UObject* WorldContextObject, const TArray<struct FVectorDouble>& Points, TArray<struct FNavBatchProjectionResult>* ProjectedLocationsResults, class ANavigationData* NavData, TSubclassOf<class UNavigationQueryFilter> FilterClass, const struct FVectorDouble& QueryExtent, const double MaxError)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "D_K2_BatchProjectPointToNavigation");
+
+	Params::NavigationSystemV1_D_K2_BatchProjectPointToNavigation Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Points = std::move(Points);
+	Parms.NavData = NavData;
+	Parms.FilterClass = FilterClass;
+	Parms.QueryExtent = std::move(QueryExtent);
+	Parms.MaxError = MaxError;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ProjectedLocationsResults != nullptr)
+		*ProjectedLocationsResults = std::move(Parms.ProjectedLocationsResults);
 
 	return Parms.ReturnValue;
 }
@@ -439,6 +582,74 @@ bool UNavigationSystemV1::D_NavigationGetWaterDeep(class UObject* WorldContextOb
 }
 
 
+// Function NavigationSystem.NavigationSystemV1.D_NavigationGetWaterSurface
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    Pos                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    Extend                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   WaterTop                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           PathfindingContext                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UNavigationQueryFilter>FilterClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavigationSystemV1::D_NavigationGetWaterSurface(class UObject* WorldContextObject, const struct FVectorDouble& Pos, const struct FVectorDouble& Extend, float* WaterTop, class AActor* PathfindingContext, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "D_NavigationGetWaterSurface");
+
+	Params::NavigationSystemV1_D_NavigationGetWaterSurface Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Pos = std::move(Pos);
+	Parms.Extend = std::move(Extend);
+	Parms.PathfindingContext = PathfindingContext;
+	Parms.FilterClass = FilterClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (WaterTop != nullptr)
+		*WaterTop = Parms.WaterTop;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function NavigationSystem.NavigationSystemV1.DestroyStreamingDungeonNavSystem
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UWorld*                           WorldOwner                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavigationSystemV1::DestroyStreamingDungeonNavSystem(class UWorld* WorldOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "DestroyStreamingDungeonNavSystem");
+
+	Params::NavigationSystemV1_DestroyStreamingDungeonNavSystem Parms{};
+
+	Parms.WorldOwner = WorldOwner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function NavigationSystem.NavigationSystemV1.FindLongPathToLocationSynchronously
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -539,6 +750,31 @@ class UNavigationPath* UNavigationSystemV1::FindPathToLocationSynchronously(clas
 	Parms.PathfindingContext = PathfindingContext;
 	Parms.FilterClass = FilterClass;
 	Parms.bReturnPartial = bReturnPartial;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function NavigationSystem.NavigationSystemV1.GetNavigationInvokeMode
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// ENavigationSystemInvokeMode             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ENavigationSystemInvokeMode UNavigationSystemV1::GetNavigationInvokeMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "GetNavigationInvokeMode");
+
+	Params::NavigationSystemV1_GetNavigationInvokeMode Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1231,6 +1467,34 @@ void UNavigationSystemV1::SetGameLoadingFlag(class UObject* WorldContextObject, 
 }
 
 
+// Function NavigationSystem.NavigationSystemV1.SetNavigationInvokeMode
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// ENavigationSystemInvokeMode             Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavigationSystemV1::SetNavigationInvokeMode(ENavigationSystemInvokeMode Mode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "SetNavigationInvokeMode");
+
+	Params::NavigationSystemV1_SetNavigationInvokeMode Parms{};
+
+	Parms.Mode = Mode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function NavigationSystem.NavigationSystemV1.SimpleMoveToActor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1512,6 +1776,31 @@ void UNavRelevantComponent::SetNavigationRelevancy(bool bRelevant)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function NavigationSystem.NavMeshTileVariantFileSubsystem.IsStreamingCompleted
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavMeshTileVariantFileSubsystem::IsStreamingCompleted()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavMeshTileVariantFileSubsystem", "IsStreamingCompleted");
+
+	Params::NavMeshTileVariantFileSubsystem_IsStreamingCompleted Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

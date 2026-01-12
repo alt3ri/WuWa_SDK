@@ -3,8 +3,8 @@
 
 #include "Basic.hpp"
 
-#include "HoudiniNiagara_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "HoudiniNiagara_structs.hpp"
 #include "Niagara_classes.hpp"
 
 
