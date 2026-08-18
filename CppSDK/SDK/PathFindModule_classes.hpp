@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "NavigationSystem_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "NavigationSystem_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -158,7 +158,7 @@ public:
 DUMPER7_ASSERTS_AKuroNavMeshPartitionDebugInfo;
 
 // Class PathFindModule.NavMeshPartitionRenderingComponent
-// 0x0000 (0x0580 - 0x0580)
+// 0x0000 (0x05A0 - 0x05A0)
 class UNavMeshPartitionRenderingComponent final : public UNavMeshRenderingComponent
 {
 public:

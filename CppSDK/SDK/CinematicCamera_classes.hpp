@@ -81,7 +81,7 @@ DUMPER7_ASSERTS_ACameraRig_Rail;
 
 // Class CinematicCamera.CineCameraActor
 // 0x0070 (0x0D00 - 0x0C90)
-class ACineCameraActor : public ACameraActor
+class ACineCameraActor final : public ACameraActor
 {
 public:
 	struct FCameraLookatTrackingSettings          LookatTrackingSettings;                            // 0x0C90(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)

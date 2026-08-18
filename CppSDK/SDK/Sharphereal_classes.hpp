@@ -70,11 +70,11 @@ public:
 DUMPER7_ASSERTS_UCSharpGeneratedClass;
 
 // Class Sharphereal.DelegateProxy
-// 0x0078 (0x00A8 - 0x0030)
+// 0x0080 (0x00B0 - 0x0030)
 class UDelegateProxy final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x78];                                      // 0x0030(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x80];                                      // 0x0030(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ProxyFunction0();
@@ -246,7 +246,7 @@ public:
 DUMPER7_ASSERTS_UJsBridgetBlueprintFunctionLibrary;
 
 // Class Sharphereal.KooSharpRuntimeSettings
-// 0x0180 (0x01C8 - 0x0048)
+// 0x01C8 (0x0210 - 0x0048)
 class UKooSharpRuntimeSettings final : public UDeveloperSettings
 {
 public:
@@ -260,24 +260,31 @@ public:
 	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 MonoDebuggerLogFile;                               // 0x00C8(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 MonoGCDebugArgs;                                   // 0x00D8(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForMemory;                           // 0x00E8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForJIT;                              // 0x00F8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForGC;                               // 0x0108(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<EKooSharpBuildConfiguration>           EnableLogJitAddress;                               // 0x0118(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<class FString>                         ExtraMonoOptions;                                  // 0x0128(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	bool                                          bEnableCSharpEnvironment;                          // 0x0138(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseMMapLoadDLL;                                   // 0x0139(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13A[0x6];                                      // 0x013A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ScriptProjectName;                                 // 0x0140(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ScriptAssembliesPath;                              // 0x0150(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ScriptAssembliesEditorPath;                        // 0x0160(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ScriptAssembliesNonShippingPath;                   // 0x0170(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMonoAotMode                                  MonoAOTMode;                                       // 0x0180(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181[0x7];                                      // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         EditorPreloadAssemblies;                           // 0x0188(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<class FString>                         RuntimeLoadAssemblies;                             // 0x0198(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<class FString>                         ExtraEnvironment;                                  // 0x01A8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<class FString>                         NoUseDangerousInternalCall;                        // 0x01B8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	class FString                                 MonoGCParams;                                      // 0x00E8(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForMemory;                           // 0x00F8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForJIT;                              // 0x0108(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForInvoke;                           // 0x0118(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForGC;                               // 0x0128(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForMethodTrace;                      // 0x0138(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         MonoMethodTraceSkipClasses;                        // 0x0148(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableLogJitAddress;                               // 0x0158(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         ExtraMonoOptions;                                  // 0x0168(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	bool                                          bEnableCSharpEnvironment;                          // 0x0178(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseMMapLoadDLL;                                   // 0x0179(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17A[0x6];                                      // 0x017A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ScriptProjectName;                                 // 0x0180(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ScriptAssembliesPath;                              // 0x0190(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ScriptAssembliesEditorPath;                        // 0x01A0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ScriptAssembliesNonShippingPath;                   // 0x01B0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMonoAotMode                                  MonoAOTMode;                                       // 0x01C0(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisableNonClientAOTRegistration;                  // 0x01C1(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisableClientAOTRegistration;                     // 0x01C2(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C3[0x5];                                      // 0x01C3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         EditorPreloadAssemblies;                           // 0x01C8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         RuntimeLoadAssemblies;                             // 0x01D8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         ExtraEnvironment;                                  // 0x01E8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         NoUseDangerousInternalCall;                        // 0x01F8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	uint8                                         Pad_208[0x8];                                      // 0x0208(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

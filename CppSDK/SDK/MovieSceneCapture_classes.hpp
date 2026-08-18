@@ -47,70 +47,6 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneCaptureProtocolBase;
 
-// Class MovieSceneCapture.MovieSceneAudioCaptureProtocolBase
-// 0x0000 (0x0060 - 0x0060)
-class UMovieSceneAudioCaptureProtocolBase : public UMovieSceneCaptureProtocolBase
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieSceneAudioCaptureProtocolBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieSceneAudioCaptureProtocolBase")
-	}
-	static class UMovieSceneAudioCaptureProtocolBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneAudioCaptureProtocolBase>();
-	}
-};
-DUMPER7_ASSERTS_UMovieSceneAudioCaptureProtocolBase;
-
-// Class MovieSceneCapture.NullAudioCaptureProtocol
-// 0x0000 (0x0060 - 0x0060)
-class UNullAudioCaptureProtocol final : public UMovieSceneAudioCaptureProtocolBase
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NullAudioCaptureProtocol")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NullAudioCaptureProtocol")
-	}
-	static class UNullAudioCaptureProtocol* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNullAudioCaptureProtocol>();
-	}
-};
-DUMPER7_ASSERTS_UNullAudioCaptureProtocol;
-
-// Class MovieSceneCapture.MasterAudioSubmixCaptureProtocol
-// 0x0038 (0x0098 - 0x0060)
-class UMasterAudioSubmixCaptureProtocol final : public UMovieSceneAudioCaptureProtocolBase
-{
-public:
-	class FString                                 FileName;                                          // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_70[0x28];                                      // 0x0070(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MasterAudioSubmixCaptureProtocol")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MasterAudioSubmixCaptureProtocol")
-	}
-	static class UMasterAudioSubmixCaptureProtocol* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMasterAudioSubmixCaptureProtocol>();
-	}
-};
-DUMPER7_ASSERTS_UMasterAudioSubmixCaptureProtocol;
-
 // Class MovieSceneCapture.MovieSceneImageCaptureProtocolBase
 // 0x0000 (0x0060 - 0x0060)
 class UMovieSceneImageCaptureProtocolBase : public UMovieSceneCaptureProtocolBase
@@ -130,39 +66,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieSceneImageCaptureProtocolBase;
-
-// Class MovieSceneCapture.CompositionGraphCaptureProtocol
-// 0x0070 (0x00D0 - 0x0060)
-class UCompositionGraphCaptureProtocol final : public UMovieSceneImageCaptureProtocolBase
-{
-public:
-	struct FCompositionGraphCapturePasses         IncludeRenderPasses;                               // 0x0060(0x0010)(Edit, BlueprintVisible, Config, NativeAccessSpecifierPublic)
-	bool                                          bCaptureFramesInHDR;                               // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         HDRCompressionQuality;                             // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHDRCaptureGamut                              CaptureGamut;                                      // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        PostProcessingMaterial;                            // 0x0080(0x0020)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDisableScreenPercentage;                          // 0x00A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     PostProcessingMaterialPtr;                         // 0x00A8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_B0[0x20];                                      // 0x00B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CompositionGraphCaptureProtocol")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CompositionGraphCaptureProtocol")
-	}
-	static class UCompositionGraphCaptureProtocol* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCompositionGraphCaptureProtocol>();
-	}
-};
-DUMPER7_ASSERTS_UCompositionGraphCaptureProtocol;
 
 // Class MovieSceneCapture.FrameGrabberProtocol
 // 0x0010 (0x0070 - 0x0060)
@@ -209,6 +112,154 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UImageSequenceProtocol;
+
+// Class MovieSceneCapture.ImageSequenceProtocol_EXR
+// 0x0010 (0x00F0 - 0x00E0)
+class UImageSequenceProtocol_EXR final : public UImageSequenceProtocol
+{
+public:
+	bool                                          bCompressed;                                       // 0x00E0(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHDRCaptureGamut                              CaptureGamut;                                      // 0x00E1(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E2[0xE];                                       // 0x00E2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ImageSequenceProtocol_EXR")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ImageSequenceProtocol_EXR")
+	}
+	static class UImageSequenceProtocol_EXR* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UImageSequenceProtocol_EXR>();
+	}
+};
+DUMPER7_ASSERTS_UImageSequenceProtocol_EXR;
+
+// Class MovieSceneCapture.MovieSceneAudioCaptureProtocolBase
+// 0x0000 (0x0060 - 0x0060)
+class UMovieSceneAudioCaptureProtocolBase : public UMovieSceneCaptureProtocolBase
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieSceneAudioCaptureProtocolBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieSceneAudioCaptureProtocolBase")
+	}
+	static class UMovieSceneAudioCaptureProtocolBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneAudioCaptureProtocolBase>();
+	}
+};
+DUMPER7_ASSERTS_UMovieSceneAudioCaptureProtocolBase;
+
+// Class MovieSceneCapture.VideoCaptureProtocol
+// 0x0018 (0x0088 - 0x0070)
+class UVideoCaptureProtocol final : public UFrameGrabberProtocol
+{
+public:
+	bool                                          bUseCompression;                                   // 0x0070(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CompressionQuality;                                // 0x0074(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_78[0x10];                                      // 0x0078(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("VideoCaptureProtocol")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"VideoCaptureProtocol")
+	}
+	static class UVideoCaptureProtocol* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UVideoCaptureProtocol>();
+	}
+};
+DUMPER7_ASSERTS_UVideoCaptureProtocol;
+
+// Class MovieSceneCapture.NullAudioCaptureProtocol
+// 0x0000 (0x0060 - 0x0060)
+class UNullAudioCaptureProtocol final : public UMovieSceneAudioCaptureProtocolBase
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NullAudioCaptureProtocol")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NullAudioCaptureProtocol")
+	}
+	static class UNullAudioCaptureProtocol* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNullAudioCaptureProtocol>();
+	}
+};
+DUMPER7_ASSERTS_UNullAudioCaptureProtocol;
+
+// Class MovieSceneCapture.MasterAudioSubmixCaptureProtocol
+// 0x0038 (0x0098 - 0x0060)
+class UMasterAudioSubmixCaptureProtocol final : public UMovieSceneAudioCaptureProtocolBase
+{
+public:
+	class FString                                 FileName;                                          // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_70[0x28];                                      // 0x0070(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MasterAudioSubmixCaptureProtocol")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MasterAudioSubmixCaptureProtocol")
+	}
+	static class UMasterAudioSubmixCaptureProtocol* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMasterAudioSubmixCaptureProtocol>();
+	}
+};
+DUMPER7_ASSERTS_UMasterAudioSubmixCaptureProtocol;
+
+// Class MovieSceneCapture.CompositionGraphCaptureProtocol
+// 0x0070 (0x00D0 - 0x0060)
+class UCompositionGraphCaptureProtocol final : public UMovieSceneImageCaptureProtocolBase
+{
+public:
+	struct FCompositionGraphCapturePasses         IncludeRenderPasses;                               // 0x0060(0x0010)(Edit, BlueprintVisible, Config, NativeAccessSpecifierPublic)
+	bool                                          bCaptureFramesInHDR;                               // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         HDRCompressionQuality;                             // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHDRCaptureGamut                              CaptureGamut;                                      // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        PostProcessingMaterial;                            // 0x0080(0x0020)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisableScreenPercentage;                          // 0x00A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     PostProcessingMaterialPtr;                         // 0x00A8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_B0[0x20];                                      // 0x00B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CompositionGraphCaptureProtocol")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CompositionGraphCaptureProtocol")
+	}
+	static class UCompositionGraphCaptureProtocol* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCompositionGraphCaptureProtocol>();
+	}
+};
+DUMPER7_ASSERTS_UCompositionGraphCaptureProtocol;
 
 // Class MovieSceneCapture.CompressedImageSequenceProtocol
 // 0x0008 (0x00E8 - 0x00E0)
@@ -293,31 +344,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UImageSequenceProtocol_JPG;
-
-// Class MovieSceneCapture.ImageSequenceProtocol_EXR
-// 0x0010 (0x00F0 - 0x00E0)
-class UImageSequenceProtocol_EXR final : public UImageSequenceProtocol
-{
-public:
-	bool                                          bCompressed;                                       // 0x00E0(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHDRCaptureGamut                              CaptureGamut;                                      // 0x00E1(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E2[0xE];                                       // 0x00E2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ImageSequenceProtocol_EXR")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ImageSequenceProtocol_EXR")
-	}
-	static class UImageSequenceProtocol_EXR* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UImageSequenceProtocol_EXR>();
-	}
-};
-DUMPER7_ASSERTS_UImageSequenceProtocol_EXR;
 
 // Class MovieSceneCapture.MovieSceneCaptureInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -514,31 +540,5 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UUserDefinedImageCaptureProtocol;
-
-// Class MovieSceneCapture.VideoCaptureProtocol
-// 0x0018 (0x0088 - 0x0070)
-class UVideoCaptureProtocol final : public UFrameGrabberProtocol
-{
-public:
-	bool                                          bUseCompression;                                   // 0x0070(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CompressionQuality;                                // 0x0074(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_78[0x10];                                      // 0x0078(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("VideoCaptureProtocol")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"VideoCaptureProtocol")
-	}
-	static class UVideoCaptureProtocol* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UVideoCaptureProtocol>();
-	}
-};
-DUMPER7_ASSERTS_UVideoCaptureProtocol;
 
 SDK_NAMESPACE_END

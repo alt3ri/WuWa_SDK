@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "MovieScene_structs.hpp"
 
 
@@ -1206,17 +1206,6 @@ public:
 };
 DUMPER7_ASSERTS_FRegisteredComponents;
 
-// ScriptStruct LGUI.AnchorInfo
-// 0x0020 (0x0020 - 0x0000)
-struct FAnchorInfo final
-{
-public:
-	class AUIBaseActor*                           TargetActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AnchorBone;                                        // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              Offset;                                            // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAnchorInfo;
-
 // ScriptStruct LGUI.LGUIDelegateHandleWrapper
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FLGUIDelegateHandleWrapper final
@@ -1259,37 +1248,6 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLGUIDrawableEvent;
-
-// ScriptStruct LGUI.TextTransitionInfoOfState
-// 0x0018 (0x0018 - 0x0000)
-struct FTextTransitionInfoOfState final
-{
-public:
-	struct FColor                                 FontColor;                                         // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 OutlineColor;                                      // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Size;                                              // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUITextFontStyle                              fontStyle;                                         // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bGradualChange : 1;                                // 0x000D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GradualDuration;                                   // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSetFontColor;                                     // 0x0014(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSetOutlineColor;                                  // 0x0015(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSetFontSize;                                      // 0x0016(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSetFontStyle;                                     // 0x0017(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTextTransitionInfoOfState;
-
-// ScriptStruct LGUI.TextTransitionInfo
-// 0x0060 (0x0060 - 0x0000)
-struct FTextTransitionInfo final
-{
-public:
-	struct FTextTransitionInfoOfState             NormalTransition;                                  // 0x0000(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTextTransitionInfoOfState             HighlightedTransition;                             // 0x0018(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTextTransitionInfoOfState             PressedTransition;                                 // 0x0030(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTextTransitionInfoOfState             DisabledTransition;                                // 0x0048(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTextTransitionInfo;
 
 // ScriptStruct LGUI.LGUIDrawableEvent_Rotator
 // 0x0018 (0x0030 - 0x0018)
@@ -1778,7 +1736,7 @@ public:
 DUMPER7_ASSERTS_FSequenceInfo;
 
 // ScriptStruct LGUI.SpineRenderBuffer
-// 0x00C8 (0x00C8 - 0x0000)
+// 0x00D8 (0x00D8 - 0x0000)
 struct FSpineRenderBuffer final
 {
 public:
@@ -1789,21 +1747,9 @@ public:
 	uint8                                         Pad_40[0x10];                                      // 0x0040(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMaterialInterface*>             SpineMaterials;                                    // 0x0050(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 	TMap<int32, struct FLinearColor>              MeshColorMap;                                      // 0x0060(0x0050)(Transient, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B0[0x18];                                      // 0x00B0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B0[0x28];                                      // 0x00B0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSpineRenderBuffer;
-
-// ScriptStruct LGUI.SpineAudioControl
-// 0x0010 (0x0010 - 0x0000)
-struct FSpineAudioControl final
-{
-public:
-	class UAkAudioEvent*                          StartAkEvent;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInterruptOnEnd;                                   // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         FadeOutMs;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSpineAudioControl;
 
 // ScriptStruct LGUI.AudioControl
 // 0x0010 (0x0010 - 0x0000)
@@ -1816,6 +1762,18 @@ public:
 	int32                                         FadeOutMs;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAudioControl;
+
+// ScriptStruct LGUI.SpineAudioControl
+// 0x0010 (0x0010 - 0x0000)
+struct FSpineAudioControl final
+{
+public:
+	class UAkAudioEvent*                          StartAkEvent;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInterruptOnEnd;                                   // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FadeOutMs;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSpineAudioControl;
 
 // ScriptStruct LGUI.UIAudioDataAssetInfo
 // 0x0178 (0x0178 - 0x0000)
@@ -2006,6 +1964,25 @@ public:
 };
 DUMPER7_ASSERTS_FExtendToggleSpriteTransitionState;
 
+// ScriptStruct LGUI.TextTransitionInfoOfState
+// 0x0018 (0x0018 - 0x0000)
+struct FTextTransitionInfoOfState final
+{
+public:
+	struct FColor                                 FontColor;                                         // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 OutlineColor;                                      // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Size;                                              // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUITextFontStyle                              fontStyle;                                         // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bGradualChange : 1;                                // 0x000D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GradualDuration;                                   // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSetFontColor;                                     // 0x0014(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSetOutlineColor;                                  // 0x0015(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSetFontSize;                                      // 0x0016(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSetFontStyle;                                     // 0x0017(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTextTransitionInfoOfState;
+
 // ScriptStruct LGUI.ExtendToggleTextTransitionState
 // 0x00DB (0x00DC - 0x0001)
 struct FExtendToggleTextTransitionState final : public FToggleTransitionEditSetting
@@ -2107,6 +2084,34 @@ public:
 };
 DUMPER7_ASSERTS_FCircleClipParameters;
 
+// ScriptStruct LGUI.NiagaraTransitionOfState
+// 0x0018 (0x0018 - 0x0000)
+struct FNiagaraTransitionOfState final
+{
+public:
+	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 Color;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bActivate;                                         // 0x000C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bResetOnActivate;                                  // 0x000D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bGradualChange : 1;                                // 0x000E(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GradualDuration;                                   // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FNiagaraTransitionOfState;
+
+// ScriptStruct LGUI.NiagaraTransitionInfo
+// 0x0060 (0x0060 - 0x0000)
+struct FNiagaraTransitionInfo final
+{
+public:
+	struct FNiagaraTransitionOfState              NormalTransition;                                  // 0x0000(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FNiagaraTransitionOfState              HighlightedTransition;                             // 0x0018(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FNiagaraTransitionOfState              PressedTransition;                                 // 0x0030(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FNiagaraTransitionOfState              DisabledTransition;                                // 0x0048(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FNiagaraTransitionInfo;
+
 // ScriptStruct LGUI.DeviceMarginSelection
 // 0x000C (0x000C - 0x0000)
 struct FDeviceMarginSelection final
@@ -2139,6 +2144,17 @@ public:
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimationPlayInfo;
+
+// ScriptStruct LGUI.AnchorInfo
+// 0x0020 (0x0020 - 0x0000)
+struct FAnchorInfo final
+{
+public:
+	class AUIBaseActor*                           TargetActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AnchorBone;                                        // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Offset;                                            // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAnchorInfo;
 
 // ScriptStruct LGUI.SpriteTransitionInfo
 // 0x0080 (0x0080 - 0x0000)
@@ -2181,6 +2197,18 @@ public:
 	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCacheMeshData;
+
+// ScriptStruct LGUI.TextTransitionInfo
+// 0x0060 (0x0060 - 0x0000)
+struct FTextTransitionInfo final
+{
+public:
+	struct FTextTransitionInfoOfState             NormalTransition;                                  // 0x0000(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTextTransitionInfoOfState             HighlightedTransition;                             // 0x0018(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTextTransitionInfoOfState             PressedTransition;                                 // 0x0030(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTextTransitionInfoOfState             DisabledTransition;                                // 0x0048(0x0018)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTextTransitionInfo;
 
 // ScriptStruct LGUI.TextureTransitionInfo
 // 0x00A0 (0x00A0 - 0x0000)

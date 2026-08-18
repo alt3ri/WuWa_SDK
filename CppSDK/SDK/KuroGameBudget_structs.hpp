@@ -112,6 +112,15 @@ enum class EKuroPlatformFlags : uint8
 	EKuroPlatformFlags_MAX                   = 5,
 };
 
+// ScriptStruct KuroGameBudget.GameBudgetAllocatorAfterTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FGameBudgetAllocatorAfterTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGameBudgetAllocatorAfterTickFunction;
+
 // ScriptStruct KuroGameBudget.KuroGameBudgetBlueprint
 // 0x0048 (0x0048 - 0x0000)
 struct alignas(0x08) FKuroGameBudgetBlueprint final
@@ -130,7 +139,8 @@ public:
 	bool                                          bSyncComponentTick;                                // 0x0011(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseBoundsCalculateDistance;                       // 0x0012(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseScreenRadiusCalculateTickInterval;             // 0x0013(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x34];                                      // 0x0014(0x0034)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bUseWasRecentlyPassVisibilityTest;                 // 0x0014(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x33];                                      // 0x0015(0x0033)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FKuroGameBudgetBlueprint;
 
@@ -171,15 +181,6 @@ public:
 	struct FGameBudgetBoundsScreenRadiusConfig    ScreenRadiusConfig;                                // 0x0008(0x0008)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGameBudgetAllocatorTickDetailConfig;
-
-// ScriptStruct KuroGameBudget.GameBudgetAllocatorAfterTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FGameBudgetAllocatorAfterTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGameBudgetAllocatorAfterTickFunction;
 
 // ScriptStruct KuroGameBudget.GameBudgetAllocatorTickFunction
 // 0x0008 (0x0030 - 0x0028)

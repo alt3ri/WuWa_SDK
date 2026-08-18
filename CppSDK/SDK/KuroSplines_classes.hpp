@@ -16,15 +16,15 @@
 SDK_NAMESPACE_START
 
 // Class KuroSplines.KuroMoveSplineComponent
-// 0x0050 (0x06C0 - 0x0670)
+// 0x0050 (0x06E0 - 0x0690)
 class UKuroMoveSplineComponent final : public USplineComponent
 {
 public:
-	TArray<int32>                                 MoveStates;                                        // 0x0670(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 MoveSpeeds;                                        // 0x0680(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 IgnorePoints;                                      // 0x0690(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 StayTimes;                                         // 0x06A0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 IsHides;                                           // 0x06B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 MoveStates;                                        // 0x0690(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 MoveSpeeds;                                        // 0x06A0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 IgnorePoints;                                      // 0x06B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 StayTimes;                                         // 0x06C0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 IsHides;                                           // 0x06D0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	int32 GetIgnorePoint(int32 Index_0);
@@ -50,13 +50,13 @@ public:
 DUMPER7_ASSERTS_UKuroMoveSplineComponent;
 
 // Class KuroSplines.KuroParkourSplineComponent
-// 0x0030 (0x06A0 - 0x0670)
+// 0x0030 (0x06C0 - 0x0690)
 class UKuroParkourSplineComponent final : public USplineComponent
 {
 public:
-	TArray<float>                                 RadiusGroup;                                       // 0x0670(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<float>                                 ModifiedTimes;                                     // 0x0680(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 BuffIds;                                           // 0x0690(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 RadiusGroup;                                       // 0x0690(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 ModifiedTimes;                                     // 0x06A0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 BuffIds;                                           // 0x06B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	int32 GetBuffId(int32 Index_0);

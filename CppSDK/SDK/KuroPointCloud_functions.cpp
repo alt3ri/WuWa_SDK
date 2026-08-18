@@ -16,88 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function KuroPointCloud.KuroPointCloudActor.BuildKdTreeData
-// (Final, Native, Public, BlueprintCallable)
-
-void AKuroPointCloudActor::BuildKdTreeData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroPointCloudActor", "BuildKdTreeData");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroPointCloud.KuroPointCloudActor.ClearMark
-// (Final, Native, Public, BlueprintCallable)
-
-void AKuroPointCloudActor::ClearMark()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroPointCloudActor", "ClearMark");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroPointCloud.KuroPointCloudActor.MarkPointsInBox
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FBox&                      BoxWS                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void AKuroPointCloudActor::MarkPointsInBox(const struct FBox& BoxWS)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroPointCloudActor", "MarkPointsInBox");
-
-	Params::KuroPointCloudActor_MarkPointsInBox Parms{};
-
-	Parms.BoxWS = std::move(BoxWS);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroPointCloud.KuroPointCloudActor.UpdateIsm
-// (Final, Native, Public, BlueprintCallable)
-
-void AKuroPointCloudActor::UpdateIsm()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroPointCloudActor", "UpdateIsm");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function KuroPointCloud.KuroPointCloudCache.GetMetaDataFloat
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -366,6 +284,88 @@ bool UKuroPointCloudCache::CheckConsistency(bool Verbosity) const
 }
 
 
+// Function KuroPointCloud.KuroPointCloudActor.BuildKdTreeData
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroPointCloudActor::BuildKdTreeData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudActor", "BuildKdTreeData");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudActor.ClearMark
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroPointCloudActor::ClearMark()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudActor", "ClearMark");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudActor.MarkPointsInBox
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FBox&                      BoxWS                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AKuroPointCloudActor::MarkPointsInBox(const struct FBox& BoxWS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudActor", "MarkPointsInBox");
+
+	Params::KuroPointCloudActor_MarkPointsInBox Parms{};
+
+	Parms.BoxWS = std::move(BoxWS);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudActor.UpdateIsm
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroPointCloudActor::UpdateIsm()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudActor", "UpdateIsm");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroPointCloud.KuroPointCloudFunctionLibrary.BindPointCloudComponent
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -455,163 +455,6 @@ bool UKuroPointCloudFunctionLibrary::SetNiagaraKuroPointCloudCollectionName(clas
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.BuildFromPointData
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const TArray<struct FIntPoint>&         InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const struct FTransform&                InPlaneToWorld                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   MaxHeight                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKuroVirtualPointCloud2DQTree::BuildFromPointData(const TArray<struct FIntPoint>& InPoints, const struct FTransform& InPlaneToWorld, int32 MaxHeight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "BuildFromPointData");
-
-	Params::KuroVirtualPointCloud2DQTree_BuildFromPointData Parms{};
-
-	Parms.InPoints = std::move(InPoints);
-	Parms.InPlaneToWorld = std::move(InPlaneToWorld);
-	Parms.MaxHeight = MaxHeight;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.Reset
-// (Final, Native, Public, BlueprintCallable)
-
-void UKuroVirtualPointCloud2DQTree::Reset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "Reset");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetRotation
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FQuat                            ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FQuat UKuroVirtualPointCloud2DQTree::GetRotation() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "GetRotation");
-
-	Params::KuroVirtualPointCloud2DQTree_GetRotation Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetWorldBound
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FBox UKuroVirtualPointCloud2DQTree::GetWorldBound() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "GetWorldBound");
-
-	Params::KuroVirtualPointCloud2DQTree_GetWorldBound Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.SphereQuery
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FVector&                   SphereCenter                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   SphereRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FIntPoint>*               OutResult                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UKuroVirtualPointCloud2DQTree::SphereQuery(const struct FVector& SphereCenter, float SphereRadius, TArray<struct FIntPoint>* OutResult) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "SphereQuery");
-
-	Params::KuroVirtualPointCloud2DQTree_SphereQuery Parms{};
-
-	Parms.SphereCenter = std::move(SphereCenter);
-	Parms.SphereRadius = SphereRadius;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutResult != nullptr)
-		*OutResult = std::move(Parms.OutResult);
-}
-
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.TransformPointToWorld
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FIntPoint&                 Point                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector UKuroVirtualPointCloud2DQTree::TransformPointToWorld(const struct FIntPoint& Point) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "TransformPointToWorld");
-
-	Params::KuroVirtualPointCloud2DQTree_TransformPointToWorld Parms{};
-
-	Parms.Point = std::move(Point);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -1642,6 +1485,163 @@ void UKuroPointCloudWorldSystem::SetStreamingConfig(class UKuroPointCloudStreami
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.BuildFromPointData
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const TArray<struct FIntPoint>&         InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FTransform&                InPlaneToWorld                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   MaxHeight                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroVirtualPointCloud2DQTree::BuildFromPointData(const TArray<struct FIntPoint>& InPoints, const struct FTransform& InPlaneToWorld, int32 MaxHeight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "BuildFromPointData");
+
+	Params::KuroVirtualPointCloud2DQTree_BuildFromPointData Parms{};
+
+	Parms.InPoints = std::move(InPoints);
+	Parms.InPlaneToWorld = std::move(InPlaneToWorld);
+	Parms.MaxHeight = MaxHeight;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.Reset
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroVirtualPointCloud2DQTree::Reset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "Reset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetRotation
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FQuat                            ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FQuat UKuroVirtualPointCloud2DQTree::GetRotation() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "GetRotation");
+
+	Params::KuroVirtualPointCloud2DQTree_GetRotation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetWorldBound
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FBox UKuroVirtualPointCloud2DQTree::GetWorldBound() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "GetWorldBound");
+
+	Params::KuroVirtualPointCloud2DQTree_GetWorldBound Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.SphereQuery
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FVector&                   SphereCenter                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   SphereRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FIntPoint>*               OutResult                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroVirtualPointCloud2DQTree::SphereQuery(const struct FVector& SphereCenter, float SphereRadius, TArray<struct FIntPoint>* OutResult) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "SphereQuery");
+
+	Params::KuroVirtualPointCloud2DQTree_SphereQuery Parms{};
+
+	Parms.SphereCenter = std::move(SphereCenter);
+	Parms.SphereRadius = SphereRadius;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutResult != nullptr)
+		*OutResult = std::move(Parms.OutResult);
+}
+
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.TransformPointToWorld
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FIntPoint&                 Point                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UKuroVirtualPointCloud2DQTree::TransformPointToWorld(const struct FIntPoint& Point) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroVirtualPointCloud2DQTree", "TransformPointToWorld");
+
+	Params::KuroVirtualPointCloud2DQTree_TransformPointToWorld Parms{};
+
+	Parms.Point = std::move(Point);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

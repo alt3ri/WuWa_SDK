@@ -573,6 +573,264 @@ void AKuroCSCloth::StopSimulation()
 }
 
 
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.ApplyRenderTargetAndCustomDataToMeshActorArray
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::ApplyRenderTargetAndCustomDataToMeshActorArray()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "ApplyRenderTargetAndCustomDataToMeshActorArray");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.BuildAndStart
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::BuildAndStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "BuildAndStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.DrawDebugInitPhysicsPoints
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::DrawDebugInitPhysicsPoints()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "DrawDebugInitPhysicsPoints");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.InitializeDynamicPinManager
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::InitializeDynamicPinManager()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "InitializeDynamicPinManager");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.RebuildInstances
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::RebuildInstances()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "RebuildInstances");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.StartSimulation
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::StartSimulation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "StartSimulation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.StopAndRelease
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::StopAndRelease()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "StopAndRelease");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.StopSimulation
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroCSClothDynamicPinManager::StopSimulation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "StopSimulation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.TickDynamicPinManager
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroCSClothDynamicPinManager::TickDynamicPinManager(float InDeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "TickDynamicPinManager");
+
+	Params::KuroCSClothDynamicPinManager_TickDynamicPinManager Parms{};
+
+	Parms.InDeltaTime = InDeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.GetActorAtlasSlotIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AKuroCSClothDynamicPinManager::GetActorAtlasSlotIndex(class AActor* Actor) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "GetActorAtlasSlotIndex");
+
+	Params::KuroCSClothDynamicPinManager_GetActorAtlasSlotIndex Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.GetActorAtlasTileUVOffset
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D AKuroCSClothDynamicPinManager::GetActorAtlasTileUVOffset(class AActor* Actor) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "GetActorAtlasTileUVOffset");
+
+	Params::KuroCSClothDynamicPinManager_GetActorAtlasTileUVOffset Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.GetActorAtlasTileUVScale
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D AKuroCSClothDynamicPinManager::GetActorAtlasTileUVScale() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroCSClothDynamicPinManager", "GetActorAtlasTileUVScale");
+
+	Params::KuroCSClothDynamicPinManager_GetActorAtlasTileUVScale Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroComputeShader.KuroCSClothWindComponent.CreateAtlasManager
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

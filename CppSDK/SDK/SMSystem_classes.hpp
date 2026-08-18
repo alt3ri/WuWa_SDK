@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SMSystem_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
+#include "SMSystem_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -76,6 +76,42 @@ public:
 };
 DUMPER7_ASSERTS_ISMStateMachineInterface;
 
+// Class SMSystem.SMNodeInstance
+// 0x0020 (0x0050 - 0x0030)
+class USMNodeInstance : public UObject
+{
+public:
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  TemplateGuid;                                      // 0x0040(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	class UObject* GetContext() const;
+	const struct FGuid GetGuid() const;
+	TScriptInterface<class ISMStateMachineNetworkedInterface> GetNetworkInterface() const;
+	class FString GetNodeName() const;
+	class USMStateMachineInstance* GetOwningStateMachineNodeInstance() const;
+	class USMInstance* GetStateMachineInstance(bool bTopMostInstance) const;
+	float GetTimeInState() const;
+	bool HasUpdated() const;
+	bool IsActive() const;
+	bool IsInEndState() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SMNodeInstance")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SMNodeInstance")
+	}
+	static class USMNodeInstance* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USMNodeInstance>();
+	}
+};
+DUMPER7_ASSERTS_USMNodeInstance;
+
 // Class SMSystem.SMStateMachineNetworkedInterface
 // 0x0000 (0x0000 - 0x0000)
 class ISMStateMachineNetworkedInterface final
@@ -109,6 +145,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ISMStateMachineNetworkedInterface;
+
+// Class SMSystem.SMNodeBlueprintGeneratedClass
+// 0x0000 (0x0338 - 0x0338)
+class USMNodeBlueprintGeneratedClass final : public UBlueprintGeneratedClass
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SMNodeBlueprintGeneratedClass")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SMNodeBlueprintGeneratedClass")
+	}
+	static class USMNodeBlueprintGeneratedClass* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USMNodeBlueprintGeneratedClass>();
+	}
+};
+DUMPER7_ASSERTS_USMNodeBlueprintGeneratedClass;
 
 // Class SMSystem.SMBlueprint
 // 0x0008 (0x00B0 - 0x00A8)
@@ -177,62 +233,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USMBlueprintGeneratedClass;
-
-// Class SMSystem.SMNodeBlueprintGeneratedClass
-// 0x0000 (0x0338 - 0x0338)
-class USMNodeBlueprintGeneratedClass final : public UBlueprintGeneratedClass
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SMNodeBlueprintGeneratedClass")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SMNodeBlueprintGeneratedClass")
-	}
-	static class USMNodeBlueprintGeneratedClass* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USMNodeBlueprintGeneratedClass>();
-	}
-};
-DUMPER7_ASSERTS_USMNodeBlueprintGeneratedClass;
-
-// Class SMSystem.SMNodeInstance
-// 0x0020 (0x0050 - 0x0030)
-class USMNodeInstance : public UObject
-{
-public:
-	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGuid                                  TemplateGuid;                                      // 0x0040(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	class UObject* GetContext() const;
-	const struct FGuid GetGuid() const;
-	TScriptInterface<class ISMStateMachineNetworkedInterface> GetNetworkInterface() const;
-	class FString GetNodeName() const;
-	class USMStateMachineInstance* GetOwningStateMachineNodeInstance() const;
-	class USMInstance* GetStateMachineInstance(bool bTopMostInstance) const;
-	float GetTimeInState() const;
-	bool HasUpdated() const;
-	bool IsActive() const;
-	bool IsInEndState() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SMNodeInstance")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SMNodeInstance")
-	}
-	static class USMNodeInstance* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USMNodeInstance>();
-	}
-};
-DUMPER7_ASSERTS_USMNodeInstance;
 
 // Class SMSystem.SMStateInstance_Base
 // 0x00A0 (0x00F0 - 0x0050)
@@ -522,7 +522,7 @@ DUMPER7_ASSERTS_USMRuntimeSettings;
 
 // Class SMSystem.ASMBindState
 // 0x0000 (0x0030 - 0x0030)
-class UASMBindState : public UObject
+class UASMBindState final : public UObject
 {
 public:
 	static class UClass* StaticClass()
@@ -542,7 +542,7 @@ DUMPER7_ASSERTS_UASMBindState;
 
 // Class SMSystem.ASMAction
 // 0x0000 (0x0030 - 0x0030)
-class UASMAction : public UObject
+class UASMAction final : public UObject
 {
 public:
 	static class UClass* StaticClass()
@@ -562,7 +562,7 @@ DUMPER7_ASSERTS_UASMAction;
 
 // Class SMSystem.ASMTask
 // 0x0000 (0x0030 - 0x0030)
-class UASMTask : public UObject
+class UASMTask final : public UObject
 {
 public:
 	static class UClass* StaticClass()

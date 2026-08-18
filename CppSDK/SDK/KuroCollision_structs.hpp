@@ -14,13 +14,25 @@
 SDK_NAMESPACE_START
 
 // Enum KuroCollision.ECollisionClusterSerializeVersion
-// NumValues: 0x0003
+// NumValues: 0x0004
 enum class ECollisionClusterSerializeVersion : uint8
 {
 	Origin                                   = 0,
 	Tags                                     = 1,
-	ECollisionClusterSerializeVersion_MAX    = 2,
+	UseBodySetupDefault                      = 2,
+	ECollisionClusterSerializeVersion_MAX    = 3,
 };
+
+// ScriptStruct KuroCollision.CollisionClusterCollectedSource
+// 0x0020 (0x0020 - 0x0000)
+struct FCollisionClusterCollectedSource final
+{
+public:
+	class FString                                 ActorLabel;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ActorName;                                         // 0x0010(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCollisionClusterCollectedSource;
 
 // ScriptStruct KuroCollision.KuroBodySetupInfo
 // 0x0010 (0x0010 - 0x0000)

@@ -16,32 +16,200 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function MagtModule.MagtBufferTXManager.GetAverageBufferTX
+// Function MagtModule.MagtAdaptivePerformance.Get
+// 0x0008 (0x0008 - 0x0000)
+struct MagtAdaptivePerformance_Get final
+{
+public:
+	class UMagtAdaptivePerformance*               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_Get;
+
+// Function MagtModule.MagtAdaptivePerformance.ApplyScenario
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_ApplyScenario final
+{
+public:
+	EMagtAPScenario                               Scenario;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_ApplyScenario;
+
+// Function MagtModule.MagtAdaptivePerformance.Initialize
+// 0x0010 (0x0010 - 0x0000)
+struct MagtAdaptivePerformance_Initialize final
+{
+public:
+	class UMagtAdaptivePerformanceSettings*       InSettings;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_Initialize;
+
+// Function MagtModule.MagtAdaptivePerformance.InitializeWithDefaults
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_InitializeWithDefaults final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_InitializeWithDefaults;
+
+// Function MagtModule.MagtAdaptivePerformance.SetQualityGroupLevel
+// 0x0014 (0x0014 - 0x0000)
+struct MagtAdaptivePerformance_SetQualityGroupLevel final
+{
+public:
+	class FName                                   GroupName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Level;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_SetQualityGroupLevel;
+
+// Function MagtModule.MagtAdaptivePerformance.Start
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_Start final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_Start;
+
+// Function MagtModule.MagtAdaptivePerformance.GetAllQualityGroupLevels
+// 0x0050 (0x0050 - 0x0000)
+struct MagtAdaptivePerformance_GetAllQualityGroupLevels final
+{
+public:
+	TMap<class FName, int32>                      ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_GetAllQualityGroupLevels;
+
+// Function MagtModule.MagtAdaptivePerformance.GetCurrentAdvice
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_GetCurrentAdvice final
+{
+public:
+	EMagtAPWorkloadAdvice                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_GetCurrentAdvice;
+
+// Function MagtModule.MagtAdaptivePerformance.GetCurrentPerfReport
+// 0x0040 (0x0040 - 0x0000)
+struct MagtAdaptivePerformance_GetCurrentPerfReport final
+{
+public:
+	struct FMagtAPPerfReport                      ReturnValue;                                       // 0x0000(0x0040)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_GetCurrentPerfReport;
+
+// Function MagtModule.MagtAdaptivePerformance.GetCurrentScenario
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_GetCurrentScenario final
+{
+public:
+	EMagtAPScenario                               ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_GetCurrentScenario;
+
+// Function MagtModule.MagtAdaptivePerformance.GetQualityGroupLevel
+// 0x0010 (0x0010 - 0x0000)
+struct MagtAdaptivePerformance_GetQualityGroupLevel final
+{
+public:
+	class FName                                   GroupName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_GetQualityGroupLevel;
+
+// Function MagtModule.MagtAdaptivePerformance.GetRemainingCooldownTime
 // 0x0004 (0x0004 - 0x0000)
-struct MagtBufferTXManager_GetAverageBufferTX final
+struct MagtAdaptivePerformance_GetRemainingCooldownTime final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MagtBufferTXManager_GetAverageBufferTX;
+DUMPER7_ASSERTS_MagtAdaptivePerformance_GetRemainingCooldownTime;
 
-// Function MagtModule.MagtBufferTXManager.GetBufferTXVariance
+// Function MagtModule.MagtAdaptivePerformance.IsInCooldown
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_IsInCooldown final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_IsInCooldown;
+
+// Function MagtModule.MagtAdaptivePerformance.IsInitialized
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_IsInitialized final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_IsInitialized;
+
+// Function MagtModule.MagtAdaptivePerformance.IsRunning
+// 0x0001 (0x0001 - 0x0000)
+struct MagtAdaptivePerformance_IsRunning final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformance_IsRunning;
+
+// Function MagtModule.MagtAdaptivePerformanceSettings.FindQualityGroupByName
+// 0x00A8 (0x00A8 - 0x0000)
+struct MagtAdaptivePerformanceSettings_FindQualityGroupByName final
+{
+public:
+	class FName                                   GroupName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMagtAPQualityGroup                    OutGroup;                                          // 0x0010(0x0090)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00A0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformanceSettings_FindQualityGroupByName;
+
+// Function MagtModule.MagtAdaptivePerformanceSettings.GetPowerThreshold
+// 0x000C (0x000C - 0x0000)
+struct MagtAdaptivePerformanceSettings_GetPowerThreshold final
+{
+public:
+	int32                                         ThermalStatus;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMagtAPPowerThreshold                  ReturnValue;                                       // 0x0004(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformanceSettings_GetPowerThreshold;
+
+// Function MagtModule.MagtAdaptivePerformanceSettings.ValidateSettings
+// 0x0018 (0x0018 - 0x0000)
+struct MagtAdaptivePerformanceSettings_ValidateSettings final
+{
+public:
+	TArray<class FString>                         OutErrors;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MagtAdaptivePerformanceSettings_ValidateSettings;
+
+// Function MagtModule.MagtBufferTXManager.SetBufferTxAvgWindow
+// 0x0008 (0x0008 - 0x0000)
+struct MagtBufferTXManager_SetBufferTxAvgWindow final
+{
+public:
+	int32                                         WindowMs;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MagtBufferTXManager_SetBufferTxAvgWindow;
+
+// Function MagtModule.MagtBufferTXManager.GetBufferTxAvg
 // 0x0004 (0x0004 - 0x0000)
-struct MagtBufferTXManager_GetBufferTXVariance final
+struct MagtBufferTXManager_GetBufferTxAvg final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MagtBufferTXManager_GetBufferTXVariance;
-
-// Function MagtModule.MagtBufferTXManager.GetHistoryCount
-// 0x0004 (0x0004 - 0x0000)
-struct MagtBufferTXManager_GetHistoryCount final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MagtBufferTXManager_GetHistoryCount;
+DUMPER7_ASSERTS_MagtBufferTXManager_GetBufferTxAvg;
 
 // Function MagtModule.MagtBufferTXManager.GetLatestBufferTX
 // 0x0004 (0x0004 - 0x0000)
@@ -52,41 +220,32 @@ public:
 };
 DUMPER7_ASSERTS_MagtBufferTXManager_GetLatestBufferTX;
 
-// Function MagtModule.MagtBufferTXManager.GetMaxBufferTX
-// 0x0004 (0x0004 - 0x0000)
-struct MagtBufferTXManager_GetMaxBufferTX final
+// Function MagtModule.MagtCallbackManager.GetMagtCallbackManager
+// 0x0008 (0x0008 - 0x0000)
+struct MagtCallbackManager_GetMagtCallbackManager final
 {
 public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMagtCallbackManager*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MagtBufferTXManager_GetMaxBufferTX;
+DUMPER7_ASSERTS_MagtCallbackManager_GetMagtCallbackManager;
 
-// Function MagtModule.MagtBufferTXManager.GetMinBufferTX
-// 0x0004 (0x0004 - 0x0000)
-struct MagtBufferTXManager_GetMinBufferTX final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MagtBufferTXManager_GetMinBufferTX;
-
-// Function MagtModule.MagtBufferTXManager.IsBufferTXIncreasing
+// Function MagtModule.MagtCallbackManager.RegisterPerformanceCallbacks
 // 0x0001 (0x0001 - 0x0000)
-struct MagtBufferTXManager_IsBufferTXIncreasing final
+struct MagtCallbackManager_RegisterPerformanceCallbacks final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MagtBufferTXManager_IsBufferTXIncreasing;
+DUMPER7_ASSERTS_MagtCallbackManager_RegisterPerformanceCallbacks;
 
-// Function MagtModule.MagtBufferTXManager.IsBufferTXStable
+// Function MagtModule.MagtCallbackManager.IsRegistered
 // 0x0001 (0x0001 - 0x0000)
-struct MagtBufferTXManager_IsBufferTXStable final
+struct MagtCallbackManager_IsRegistered final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_MagtBufferTXManager_IsBufferTXStable;
+DUMPER7_ASSERTS_MagtCallbackManager_IsRegistered;
 
 // Function MagtModule.MagtMipsCounter.Initialize
 // 0x0008 (0x0008 - 0x0000)

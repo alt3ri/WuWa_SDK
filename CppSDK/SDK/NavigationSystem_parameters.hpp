@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "NavigationSystem_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "NavigationSystem_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -26,6 +26,24 @@ public:
 	TSubclassOf<class UNavArea>                   NewAreaClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_NavModifierVolume_SetAreaClass;
+
+// Function NavigationSystem.NavRelevantComponent.SetNavigationRelevancy
+// 0x0001 (0x0001 - 0x0000)
+struct NavRelevantComponent_SetNavigationRelevancy final
+{
+public:
+	bool                                          bRelevant;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavRelevantComponent_SetNavigationRelevancy;
+
+// Function NavigationSystem.NavModifierComponent.SetAreaClass
+// 0x0008 (0x0008 - 0x0000)
+struct NavModifierComponent_SetAreaClass final
+{
+public:
+	TSubclassOf<class UNavArea>                   NewAreaClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavModifierComponent_SetAreaClass;
 
 // Function NavigationSystem.NavigationDataChunkTileVariantsActor.OnDataLayerStateChanged
 // 0x0010 (0x0010 - 0x0000)
@@ -706,15 +724,6 @@ public:
 };
 DUMPER7_ASSERTS_NavigationSystemV1_UnregisterNavigationInvoker;
 
-// Function NavigationSystem.NavRelevantComponent.SetNavigationRelevancy
-// 0x0001 (0x0001 - 0x0000)
-struct NavRelevantComponent_SetNavigationRelevancy final
-{
-public:
-	bool                                          bRelevant;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavRelevantComponent_SetNavigationRelevancy;
-
 // Function NavigationSystem.NavMeshTileVariantFileSubsystem.IsStreamingCompleted
 // 0x0001 (0x0001 - 0x0000)
 struct NavMeshTileVariantFileSubsystem_IsStreamingCompleted final
@@ -723,15 +732,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_NavMeshTileVariantFileSubsystem_IsStreamingCompleted;
-
-// Function NavigationSystem.NavModifierComponent.SetAreaClass
-// 0x0008 (0x0008 - 0x0000)
-struct NavModifierComponent_SetAreaClass final
-{
-public:
-	TSubclassOf<class UNavArea>                   NewAreaClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavModifierComponent_SetAreaClass;
 
 // Function NavigationSystem.RecastNavMesh.K2_ReplaceAreaInTileBounds
 // 0x0038 (0x0038 - 0x0000)

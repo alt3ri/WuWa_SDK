@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SHotPatchGamepad_structs.hpp"
 #include "Engine_structs.hpp"
 #include "LGUI_classes.hpp"
+#include "SHotPatchGamepad_structs.hpp"
 
 
 SDK_NAMESPACE_START

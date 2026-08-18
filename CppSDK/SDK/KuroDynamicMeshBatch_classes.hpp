@@ -162,29 +162,6 @@ public:
 };
 DUMPER7_ASSERTS_APropBatchActor;
 
-// Class KuroDynamicMeshBatch.PropGroupDataAsset
-// 0x0010 (0x0048 - 0x0038)
-class UPropGroupDataAsset final : public UPrimaryDataAsset
-{
-public:
-	TArray<struct FPropGroup>                     PropGroups;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PropGroupDataAsset")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PropGroupDataAsset")
-	}
-	static class UPropGroupDataAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPropGroupDataAsset>();
-	}
-};
-DUMPER7_ASSERTS_UPropGroupDataAsset;
-
 // Class KuroDynamicMeshBatch.PropBatchComponent
 // 0x0010 (0x0230 - 0x0220)
 class UPropBatchComponent final : public USceneComponent
@@ -213,5 +190,28 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPropBatchComponent;
+
+// Class KuroDynamicMeshBatch.PropGroupDataAsset
+// 0x0010 (0x0048 - 0x0038)
+class UPropGroupDataAsset final : public UPrimaryDataAsset
+{
+public:
+	TArray<struct FPropGroup>                     PropGroups;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PropGroupDataAsset")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PropGroupDataAsset")
+	}
+	static class UPropGroupDataAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPropGroupDataAsset>();
+	}
+};
+DUMPER7_ASSERTS_UPropGroupDataAsset;
 
 SDK_NAMESPACE_END

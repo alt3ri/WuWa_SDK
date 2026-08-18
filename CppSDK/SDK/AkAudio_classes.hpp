@@ -12,14 +12,14 @@
 
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "AkAudio_structs.hpp"
-#include "UMG_classes.hpp"
+#include "WwiseResourceLoader_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "WwiseResourceLoader_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -59,6 +59,54 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkPortalComponent;
+
+// Class AkAudio.AkPlatformInitializationSettingsBase
+// 0x0000 (0x0030 - 0x0030)
+class UAkPlatformInitializationSettingsBase : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkPlatformInitializationSettingsBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkPlatformInitializationSettingsBase")
+	}
+	static class UAkPlatformInitializationSettingsBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkPlatformInitializationSettingsBase>();
+	}
+};
+DUMPER7_ASSERTS_UAkPlatformInitializationSettingsBase;
+
+// Class AkAudio.AkMacInitializationSettings
+// 0x00F0 (0x0120 - 0x0030)
+class UAkMacInitializationSettings final : public UAkPlatformInitializationSettingsBase
+{
+public:
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkMacAdvancedInitializationSettings   AdvancedSettings;                                  // 0x00C8(0x0058)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+
+public:
+	void MigrateMultiCoreRendering(bool NewValue);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkMacInitializationSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkMacInitializationSettings")
+	}
+	static class UAkMacInitializationSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkMacInitializationSettings>();
+	}
+};
+DUMPER7_ASSERTS_UAkMacInitializationSettings;
 
 // Class AkAudio.AkAcousticPortal
 // 0x0010 (0x02F8 - 0x02E8)
@@ -124,50 +172,28 @@ public:
 };
 DUMPER7_ASSERTS_UAkAudioType;
 
-// Class AkAudio.AkGroupValue
-// 0x0028 (0x0080 - 0x0058)
-class UAkGroupValue : public UAkAudioType
+// Class AkAudio.AkAcousticTexture
+// 0x0010 (0x0068 - 0x0058)
+class UAkAcousticTexture final : public UAkAudioType
 {
 public:
-	struct FWwiseGroupValueCookedData             GroupValueCookedData;                              // 0x0058(0x0018)(Edit, Transient, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        GroupShortID;                                      // 0x0070(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FWwiseAcousticTextureCookedData        AcousticTextureCookedData;                         // 0x0058(0x0010)(Edit, Transient, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("AkGroupValue")
+		STATIC_CLASS_IMPL("AkAcousticTexture")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"AkGroupValue")
+		STATIC_NAME_IMPL(L"AkAcousticTexture")
 	}
-	static class UAkGroupValue* GetDefaultObj()
+	static class UAkAcousticTexture* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAkGroupValue>();
+		return GetDefaultObjImpl<UAkAcousticTexture>();
 	}
 };
-DUMPER7_ASSERTS_UAkGroupValue;
-
-// Class AkAudio.AkStateValue
-// 0x0000 (0x0080 - 0x0080)
-class UAkStateValue final : public UAkGroupValue
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkStateValue")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkStateValue")
-	}
-	static class UAkStateValue* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkStateValue>();
-	}
-};
-DUMPER7_ASSERTS_UAkStateValue;
+DUMPER7_ASSERTS_UAkAcousticTexture;
 
 // Class AkAudio.AkSettings
 // 0x0348 (0x0378 - 0x0030)
@@ -237,29 +263,6 @@ public:
 };
 DUMPER7_ASSERTS_UAkSettings;
 
-// Class AkAudio.AkAcousticTexture
-// 0x0010 (0x0068 - 0x0058)
-class UAkAcousticTexture final : public UAkAudioType
-{
-public:
-	struct FWwiseAcousticTextureCookedData        AcousticTextureCookedData;                         // 0x0058(0x0010)(Edit, Transient, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkAcousticTexture")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkAcousticTexture")
-	}
-	static class UAkAcousticTexture* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkAcousticTexture>();
-	}
-};
-DUMPER7_ASSERTS_UAkAcousticTexture;
-
 // Class AkAudio.AkAcousticTextureSetComponent
 // 0x0010 (0x0230 - 0x0220)
 class UAkAcousticTextureSetComponent : public USceneComponent
@@ -282,52 +285,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkAcousticTextureSetComponent;
-
-// Class AkAudio.AkPlatformInitializationSettingsBase
-// 0x0000 (0x0030 - 0x0030)
-class UAkPlatformInitializationSettingsBase : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkPlatformInitializationSettingsBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkPlatformInitializationSettingsBase")
-	}
-	static class UAkPlatformInitializationSettingsBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkPlatformInitializationSettingsBase>();
-	}
-};
-DUMPER7_ASSERTS_UAkPlatformInitializationSettingsBase;
-
-// Class AkAudio.AkPS5InitializationSettings
-// 0x00F8 (0x0128 - 0x0030)
-class UAkPS5InitializationSettings : public UAkPlatformInitializationSettingsBase
-{
-public:
-	struct FAkCommonInitializationSettings        CommonSettings;                                    // 0x0030(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A0(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkPS5AdvancedInitializationSettings   AdvancedSettings;                                  // 0x00C0(0x0064)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkPS5InitializationSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkPS5InitializationSettings")
-	}
-	static class UAkPS5InitializationSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkPS5InitializationSettings>();
-	}
-};
-DUMPER7_ASSERTS_UAkPS5InitializationSettings;
 
 // Class AkAudio.AkAmbientSound
 // 0x0040 (0x02F0 - 0x02B0)
@@ -360,6 +317,34 @@ public:
 };
 DUMPER7_ASSERTS_AAkAmbientSound;
 
+// Class AkAudio.AkAndroidInitializationSettings
+// 0x00F8 (0x0128 - 0x0030)
+class UAkAndroidInitializationSettings final : public UAkPlatformInitializationSettingsBase
+{
+public:
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAndroidAdvancedInitializationSettings AdvancedSettings;                                // 0x00C8(0x0060)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+
+public:
+	void MigrateMultiCoreRendering(bool NewValue);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkAndroidInitializationSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkAndroidInitializationSettings")
+	}
+	static class UAkAndroidInitializationSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkAndroidInitializationSettings>();
+	}
+};
+DUMPER7_ASSERTS_UAkAndroidInitializationSettings;
+
 // Class AkAudio.AkSpotReflector
 // 0x0038 (0x02E8 - 0x02B0)
 class AAkSpotReflector final : public AActor
@@ -390,34 +375,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AAkSpotReflector;
-
-// Class AkAudio.AkAndroidInitializationSettings
-// 0x00F8 (0x0128 - 0x0030)
-class UAkAndroidInitializationSettings final : public UAkPlatformInitializationSettingsBase
-{
-public:
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAndroidAdvancedInitializationSettings AdvancedSettings;                                // 0x00C8(0x0060)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-
-public:
-	void MigrateMultiCoreRendering(bool NewValue);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkAndroidInitializationSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkAndroidInitializationSettings")
-	}
-	static class UAkAndroidInitializationSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkAndroidInitializationSettings>();
-	}
-};
-DUMPER7_ASSERTS_UAkAndroidInitializationSettings;
 
 // Class AkAudio.AkPlatformInfo
 // 0x0048 (0x0078 - 0x0030)
@@ -461,6 +418,80 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkAndroidPlatformInfo;
+
+// Class AkAudio.AkGameObject
+// 0x0020 (0x0240 - 0x0220)
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UAkGameObject : public USceneComponent
+{
+public:
+	class UAkAudioEvent*                          AkAudioEvent;                                      // 0x0218(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EventName;                                         // 0x0220(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_230[0x8];                                      // 0x0230(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	int32 PostAkEvent(class UAkAudioEvent* AkEvent, int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback, const class FString& InEventName);
+	void PostAkEventAsync(const class UObject* WorldContextObject, class UAkAudioEvent* AkEvent, int32* PlayingID, int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback, const struct FLatentActionInfo& LatentInfo);
+	int32 PostAssociatedAkEvent(int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback);
+	void PostAssociatedAkEventAsync(const class UObject* WorldContextObject, int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback, const struct FLatentActionInfo& LatentInfo, int32* PlayingID);
+	void Stop();
+
+	void GetRTPCValue(class UAkRtpc* RTPCValue, ERTPCValueType InputValueType, float* Value, ERTPCValueType* OutputValueType, const class FString& RTPC, int32 PlayingID) const;
+	void SetRTPCValue(class UAkRtpc* RTPCValue, float Value, int32 InterpolationTimeMs, const class FString& RTPC) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkGameObject")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkGameObject")
+	}
+	static class UAkGameObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkGameObject>();
+	}
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_UAkGameObject;
+
+// Class AkAudio.AkRoomComponent
+// 0x0030 (0x0270 - 0x0240)
+class UAkRoomComponent final : public UAkGameObject
+{
+public:
+	bool                                          bEnable;                                           // 0x0238(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDynamic;                                          // 0x0239(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23A[0x2];                                      // 0x023A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Priority;                                          // 0x023C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallOcclusion;                                     // 0x0240(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AuxSendLevel;                                      // 0x0244(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AutoPost;                                          // 0x0248(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, SimpleDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_249[0xF];                                      // 0x0249(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkAcousticTextureSetComponent*         GeometryComponent;                                 // 0x0258(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_260[0x10];                                     // 0x0260(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetGeometryComponent(class UAkAcousticTextureSetComponent* textureSetComponent);
+
+	class UPrimitiveComponent* GetPrimitiveParent() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkRoomComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkRoomComponent")
+	}
+	static class UAkRoomComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkRoomComponent>();
+	}
+};
+DUMPER7_ASSERTS_UAkRoomComponent;
 
 // Class AkAudio.AkAudioBank
 // 0x0008 (0x0060 - 0x0058)
@@ -526,99 +557,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkAudioEvent;
-
-// Class AkAudio.AkGameObject
-// 0x0020 (0x0240 - 0x0220)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UAkGameObject : public USceneComponent
-{
-public:
-	class UAkAudioEvent*                          AkAudioEvent;                                      // 0x0218(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 EventName;                                         // 0x0220(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_230[0x8];                                      // 0x0230(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	int32 PostAkEvent(class UAkAudioEvent* AkEvent, int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback, const class FString& InEventName);
-	void PostAkEventAsync(const class UObject* WorldContextObject, class UAkAudioEvent* AkEvent, int32* PlayingID, int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback, const struct FLatentActionInfo& LatentInfo);
-	int32 PostAssociatedAkEvent(int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback);
-	void PostAssociatedAkEventAsync(const class UObject* WorldContextObject, int32 CallbackMask, const TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)>& PostEventCallback, const struct FLatentActionInfo& LatentInfo, int32* PlayingID);
-	void Stop();
-
-	void GetRTPCValue(class UAkRtpc* RTPCValue, ERTPCValueType InputValueType, float* Value, ERTPCValueType* OutputValueType, const class FString& RTPC, int32 PlayingID) const;
-	void SetRTPCValue(class UAkRtpc* RTPCValue, float Value, int32 InterpolationTimeMs, const class FString& RTPC) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkGameObject")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkGameObject")
-	}
-	static class UAkGameObject* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkGameObject>();
-	}
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_UAkGameObject;
-
-// Class AkAudio.AkSlider
-// 0x0470 (0x05E0 - 0x0170)
-class UAkSlider final : public UWidget
-{
-public:
-	float                                         Value;                                             // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             ValueDelegate;                                     // 0x0178(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	struct FSliderStyle                           WidgetStyle;                                       // 0x01A0(0x0370)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	EOrientation                                  Orientation;                                       // 0x0510(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           SliderBarColor;                                    // 0x0514(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           SliderHandleColor;                                 // 0x0524(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IndentHandle;                                      // 0x0534(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Locked;                                            // 0x0535(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_536[0x2];                                      // 0x0536(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StepSize;                                          // 0x0538(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsFocusable;                                       // 0x053C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_53D[0x3];                                      // 0x053D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkPropertyToControl                   ThePropertyToControl;                              // 0x0540(0x0010)(Edit, EditConst, NativeAccessSpecifierPublic)
-	struct FAkWwiseItemToControl                  ItemToControl;                                     // 0x0550(0x0040)(Edit, Config, EditConst, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float Value)>   OnValueChanged;                                    // 0x0590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGuid& ItemDroppedID)> OnItemDropped;                 // 0x05A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& PropertyDropped)> OnPropertyDropped;          // 0x05B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C0[0x20];                                     // 0x05C0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetAkSliderItemId(const struct FGuid& ItemId);
-	void SetAkSliderItemProperty(const class FString& ItemProperty);
-	void SetIndentHandle(bool InValue);
-	void SetLocked(bool InValue);
-	void SetSliderBarColor(const struct FLinearColor& InValue);
-	void SetSliderHandleColor(const struct FLinearColor& InValue);
-	void SetStepSize(float InValue);
-	void SetValue(float InValue);
-
-	const struct FGuid GetAkSliderItemId() const;
-	const class FString GetAkSliderItemProperty() const;
-	float GetValue() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkSlider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkSlider")
-	}
-	static class UAkSlider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkSlider>();
-	}
-};
-DUMPER7_ASSERTS_UAkSlider;
 
 // Class AkAudio.AkComponent
 // 0x0160 (0x03A0 - 0x0240)
@@ -851,34 +789,6 @@ public:
 };
 DUMPER7_ASSERTS_UAkMediaAsset;
 
-// Class AkAudio.AkWinGDKInitializationSettings
-// 0x00F0 (0x0120 - 0x0030)
-class UAkWinGDKInitializationSettings : public UAkPlatformInitializationSettingsBase
-{
-public:
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkWinGDKAdvancedInitializationSettings AdvancedSettings;                                 // 0x00C8(0x0058)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-
-public:
-	void MigrateMultiCoreRendering(bool NewValue);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkWinGDKInitializationSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkWinGDKInitializationSettings")
-	}
-	static class UAkWinGDKInitializationSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkWinGDKInitializationSettings>();
-	}
-};
-DUMPER7_ASSERTS_UAkWinGDKInitializationSettings;
-
 // Class AkAudio.AkLocalizedMediaAsset
 // 0x0000 (0x0080 - 0x0080)
 class UAkLocalizedMediaAsset final : public UAkMediaAsset
@@ -939,8 +849,32 @@ public:
 };
 DUMPER7_ASSERTS_UAkFolder;
 
+// Class AkAudio.AkItemBoolPropertiesConv
+// 0x0000 (0x0030 - 0x0030)
+class UAkItemBoolPropertiesConv final : public UBlueprintFunctionLibrary
+{
+public:
+	static class FString Conv_FAkBoolPropertyToControlToString(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl);
+	static class FText Conv_FAkBoolPropertyToControlToText(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkItemBoolPropertiesConv")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkItemBoolPropertiesConv")
+	}
+	static class UAkItemBoolPropertiesConv* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkItemBoolPropertiesConv>();
+	}
+};
+DUMPER7_ASSERTS_UAkItemBoolPropertiesConv;
+
 // Class AkAudio.DrawPortalComponent
-// 0x0000 (0x0570 - 0x0570)
+// 0x0000 (0x0590 - 0x0590)
 class UDrawPortalComponent final : public UPrimitiveComponent
 {
 public:
@@ -959,39 +893,8 @@ public:
 };
 DUMPER7_ASSERTS_UDrawPortalComponent;
 
-// Class AkAudio.AkWwiseTree
-// 0x0040 (0x01B0 - 0x0170)
-class UAkWwiseTree final : public UWidget
-{
-public:
-	TMulticastInlineDelegate<void(const struct FGuid& ItemSelectedID)> OnSelectionChanged;           // 0x0170(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGuid& ItemDraggedID, const class FString& ItemDraggedName)> OnItemDragged; // 0x0180(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_190[0x20];                                     // 0x0190(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetSearchText(const class FString& newText);
-
-	class FString GetSearchText() const;
-	struct FAkWwiseObjectDetails GetSelectedItem() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkWwiseTree")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkWwiseTree")
-	}
-	static class UAkWwiseTree* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkWwiseTree>();
-	}
-};
-DUMPER7_ASSERTS_UAkWwiseTree;
-
 // Class AkAudio.DrawRoomComponent
-// 0x0000 (0x0570 - 0x0570)
+// 0x0000 (0x0590 - 0x0590)
 class UDrawRoomComponent final : public UPrimitiveComponent
 {
 public:
@@ -1009,6 +912,56 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDrawRoomComponent;
+
+// Class AkAudio.AkCallbackInfo
+// 0x0008 (0x0038 - 0x0030)
+class UAkCallbackInfo : public UObject
+{
+public:
+	class UAkComponent*                           AkComponent;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkCallbackInfo")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkCallbackInfo")
+	}
+	static class UAkCallbackInfo* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkCallbackInfo>();
+	}
+};
+DUMPER7_ASSERTS_UAkCallbackInfo;
+
+// Class AkAudio.AkMusicSyncCallbackInfo
+// 0x0040 (0x0078 - 0x0038)
+class UAkMusicSyncCallbackInfo final : public UAkCallbackInfo
+{
+public:
+	int32                                         PlayingID;                                         // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAkSegmentInfo                         SegmentInfo;                                       // 0x003C(0x0024)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	EAkCallbackType                               MusicSyncType;                                     // 0x0060(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 UserCueName;                                       // 0x0068(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkMusicSyncCallbackInfo")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkMusicSyncCallbackInfo")
+	}
+	static class UAkMusicSyncCallbackInfo* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkMusicSyncCallbackInfo>();
+	}
+};
+DUMPER7_ASSERTS_UAkMusicSyncCallbackInfo;
 
 // Class AkAudio.AkEffectShareSet
 // 0x0068 (0x00C0 - 0x0058)
@@ -1033,26 +986,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkEffectShareSet;
-
-// Class AkAudio.AkWin64PlatformInfo
-// 0x0000 (0x0078 - 0x0078)
-class UAkWin64PlatformInfo : public UAkPlatformInfo
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkWin64PlatformInfo")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkWin64PlatformInfo")
-	}
-	static class UAkWin64PlatformInfo* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkWin64PlatformInfo>();
-	}
-};
-DUMPER7_ASSERTS_UAkWin64PlatformInfo;
 
 // Class AkAudio.AkGameplayStatics
 // 0x0000 (0x0030 - 0x0030)
@@ -1145,29 +1078,6 @@ public:
 };
 DUMPER7_ASSERTS_UAkGameplayStatics;
 
-// Class AkAudio.AkCallbackInfo
-// 0x0008 (0x0038 - 0x0030)
-class UAkCallbackInfo : public UObject
-{
-public:
-	class UAkComponent*                           AkComponent;                                       // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkCallbackInfo")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkCallbackInfo")
-	}
-	static class UAkCallbackInfo* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkCallbackInfo>();
-	}
-};
-DUMPER7_ASSERTS_UAkCallbackInfo;
-
 // Class AkAudio.AkEventCallbackInfo
 // 0x0008 (0x0040 - 0x0038)
 class UAkEventCallbackInfo : public UAkCallbackInfo
@@ -1191,6 +1101,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkEventCallbackInfo;
+
+// Class AkAudio.AkIOSInitializationSettings
+// 0x0100 (0x0130 - 0x0030)
+class UAkIOSInitializationSettings final : public UAkPlatformInitializationSettingsBase
+{
+public:
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAudioSession                        AudioSession;                                      // 0x00A8(0x000C)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00B8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkIOSAdvancedInitializationSettings   AdvancedSettings;                                  // 0x00D8(0x0058)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkIOSInitializationSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkIOSInitializationSettings")
+	}
+	static class UAkIOSInitializationSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkIOSInitializationSettings>();
+	}
+};
+DUMPER7_ASSERTS_UAkIOSInitializationSettings;
 
 // Class AkAudio.AkMIDIEventCallbackInfo
 // 0x0010 (0x0050 - 0x0040)
@@ -1280,33 +1217,6 @@ public:
 };
 DUMPER7_ASSERTS_UAkDurationCallbackInfo;
 
-// Class AkAudio.AkMusicSyncCallbackInfo
-// 0x0040 (0x0078 - 0x0038)
-class UAkMusicSyncCallbackInfo final : public UAkCallbackInfo
-{
-public:
-	int32                                         PlayingID;                                         // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAkSegmentInfo                         SegmentInfo;                                       // 0x003C(0x0024)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	EAkCallbackType                               MusicSyncType;                                     // 0x0060(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 UserCueName;                                       // 0x0068(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkMusicSyncCallbackInfo")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkMusicSyncCallbackInfo")
-	}
-	static class UAkMusicSyncCallbackInfo* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkMusicSyncCallbackInfo>();
-	}
-};
-DUMPER7_ASSERTS_UAkMusicSyncCallbackInfo;
-
 // Class AkAudio.AkGeometryComponent
 // 0x0190 (0x03C0 - 0x0230)
 class UAkGeometryComponent final : public UAkAcousticTextureSetComponent
@@ -1350,6 +1260,31 @@ public:
 };
 DUMPER7_ASSERTS_UAkGeometryComponent;
 
+// Class AkAudio.AkGroupValue
+// 0x0028 (0x0080 - 0x0058)
+class UAkGroupValue : public UAkAudioType
+{
+public:
+	struct FWwiseGroupValueCookedData             GroupValueCookedData;                              // 0x0058(0x0018)(Edit, Transient, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        GroupShortID;                                      // 0x0070(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkGroupValue")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkGroupValue")
+	}
+	static class UAkGroupValue* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkGroupValue>();
+	}
+};
+DUMPER7_ASSERTS_UAkGroupValue;
+
 // Class AkAudio.AkInitBank
 // 0x0050 (0x00A8 - 0x0058)
 class UAkInitBank final : public UAkAudioType
@@ -1374,33 +1309,6 @@ public:
 };
 DUMPER7_ASSERTS_UAkInitBank;
 
-// Class AkAudio.AkIOSInitializationSettings
-// 0x0100 (0x0130 - 0x0030)
-class UAkIOSInitializationSettings final : public UAkPlatformInitializationSettingsBase
-{
-public:
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAudioSession                        AudioSession;                                      // 0x00A8(0x000C)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00B8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkIOSAdvancedInitializationSettings   AdvancedSettings;                                  // 0x00D8(0x0058)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkIOSInitializationSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkIOSInitializationSettings")
-	}
-	static class UAkIOSInitializationSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkIOSInitializationSettings>();
-	}
-};
-DUMPER7_ASSERTS_UAkIOSInitializationSettings;
-
 // Class AkAudio.AkIOSPlatformInfo
 // 0x0000 (0x0078 - 0x0078)
 class UAkIOSPlatformInfo final : public UAkPlatformInfo
@@ -1420,30 +1328,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkIOSPlatformInfo;
-
-// Class AkAudio.AkItemBoolPropertiesConv
-// 0x0000 (0x0030 - 0x0030)
-class UAkItemBoolPropertiesConv final : public UBlueprintFunctionLibrary
-{
-public:
-	static class FString Conv_FAkBoolPropertyToControlToString(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl);
-	static class FText Conv_FAkBoolPropertyToControlToText(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkItemBoolPropertiesConv")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkItemBoolPropertiesConv")
-	}
-	static class UAkItemBoolPropertiesConv* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkItemBoolPropertiesConv>();
-	}
-};
-DUMPER7_ASSERTS_UAkItemBoolPropertiesConv;
 
 // Class AkAudio.AkItemBoolProperties
 // 0x0040 (0x01B0 - 0x0170)
@@ -1568,41 +1452,6 @@ public:
 };
 DUMPER7_ASSERTS_UAkLateReverbComponent;
 
-// Class AkAudio.AkSettingsPerUser
-// 0x0050 (0x0080 - 0x0030)
-class UAkSettingsPerUser final : public UObject
-{
-public:
-	struct FDirectoryPath                         WwiseWindowsInstallationPath;                      // 0x0030(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FFilePath                              WwiseMacInstallationPath;                          // 0x0040(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FDirectoryPath                         GeneratedSoundBanksFolderUserOverride;             // 0x0050(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
-	class FString                                 WaapiIPAddress;                                    // 0x0060(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        WaapiPort;                                         // 0x0070(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoConnectToWAAPI;                               // 0x0074(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AutoSyncSelection;                                 // 0x0075(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_76[0x2];                                       // 0x0076(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        WaapiTranslatorTimeout;                            // 0x0078(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SuppressGeneratedSoundBanksPathWarnings;           // 0x007C(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SoundDataGenerationSkipLanguage;                   // 0x007D(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AskForWwiseAssetReload;                            // 0x007E(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7F[0x1];                                       // 0x007F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkSettingsPerUser")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkSettingsPerUser")
-	}
-	static class UAkSettingsPerUser* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkSettingsPerUser>();
-	}
-};
-DUMPER7_ASSERTS_UAkSettingsPerUser;
-
 // Class AkAudio.AkLinuxArm64InitializationSettings
 // 0x00E8 (0x0118 - 0x0030)
 class UAkLinuxArm64InitializationSettings final : public UAkPlatformInitializationSettingsBase
@@ -1650,26 +1499,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkLinuxArm64PlatformInfo;
-
-// Class AkAudio.AkDPXInitializationSettings
-// 0x0000 (0x0128 - 0x0128)
-class UAkDPXInitializationSettings final : public UAkPS5InitializationSettings
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkDPXInitializationSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkDPXInitializationSettings")
-	}
-	static class UAkDPXInitializationSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkDPXInitializationSettings>();
-	}
-};
-DUMPER7_ASSERTS_UAkDPXInitializationSettings;
 
 // Class AkAudio.AkLinuxInitializationSettings
 // 0x00E8 (0x0118 - 0x0030)
@@ -1719,34 +1548,6 @@ public:
 };
 DUMPER7_ASSERTS_UAkLinuxPlatformInfo;
 
-// Class AkAudio.AkMacInitializationSettings
-// 0x00F0 (0x0120 - 0x0030)
-class UAkMacInitializationSettings final : public UAkPlatformInitializationSettingsBase
-{
-public:
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkMacAdvancedInitializationSettings   AdvancedSettings;                                  // 0x00C8(0x0058)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-
-public:
-	void MigrateMultiCoreRendering(bool NewValue);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkMacInitializationSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkMacInitializationSettings")
-	}
-	static class UAkMacInitializationSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkMacInitializationSettings>();
-	}
-};
-DUMPER7_ASSERTS_UAkMacInitializationSettings;
-
 // Class AkAudio.AkMacPlatformInfo
 // 0x0000 (0x0078 - 0x0078)
 class UAkMacPlatformInfo final : public UAkPlatformInfo
@@ -1766,29 +1567,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkMacPlatformInfo;
-
-// Class AkAudio.AkRtpc
-// 0x0010 (0x0068 - 0x0058)
-class UAkRtpc final : public UAkAudioType
-{
-public:
-	struct FWwiseGameParameterCookedData          GameParameterCookedData;                           // 0x0058(0x0010)(Edit, Transient, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AkRtpc")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AkRtpc")
-	}
-	static class UAkRtpc* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAkRtpc>();
-	}
-};
-DUMPER7_ASSERTS_UAkRtpc;
 
 // Class AkAudio.AkOpenHarmonyInitializationSettings
 // 0x00F0 (0x0120 - 0x0030)
@@ -1837,6 +1615,52 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkOpenHarmonyPlatformInfo;
+
+// Class AkAudio.AkPS5InitializationSettings
+// 0x00F8 (0x0128 - 0x0030)
+class UAkPS5InitializationSettings : public UAkPlatformInitializationSettingsBase
+{
+public:
+	struct FAkCommonInitializationSettings        CommonSettings;                                    // 0x0030(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A0(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkPS5AdvancedInitializationSettings   AdvancedSettings;                                  // 0x00C0(0x0064)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkPS5InitializationSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkPS5InitializationSettings")
+	}
+	static class UAkPS5InitializationSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkPS5InitializationSettings>();
+	}
+};
+DUMPER7_ASSERTS_UAkPS5InitializationSettings;
+
+// Class AkAudio.AkDPXInitializationSettings
+// 0x0000 (0x0128 - 0x0128)
+class UAkDPXInitializationSettings final : public UAkPS5InitializationSettings
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkDPXInitializationSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkDPXInitializationSettings")
+	}
+	static class UAkDPXInitializationSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkDPXInitializationSettings>();
+	}
+};
+DUMPER7_ASSERTS_UAkDPXInitializationSettings;
 
 // Class AkAudio.AkPS5PlatformInfo
 // 0x0000 (0x0078 - 0x0078)
@@ -1889,42 +1713,119 @@ public:
 };
 DUMPER7_ASSERTS_AAkReverbVolume;
 
-// Class AkAudio.AkRoomComponent
-// 0x0030 (0x0270 - 0x0240)
-class UAkRoomComponent final : public UAkGameObject
+// Class AkAudio.AkRtpc
+// 0x0010 (0x0068 - 0x0058)
+class UAkRtpc final : public UAkAudioType
 {
 public:
-	bool                                          bEnable;                                           // 0x0238(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDynamic;                                          // 0x0239(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23A[0x2];                                      // 0x023A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Priority;                                          // 0x023C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallOcclusion;                                     // 0x0240(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AuxSendLevel;                                      // 0x0244(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AutoPost;                                          // 0x0248(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, SimpleDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_249[0xF];                                      // 0x0249(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAcousticTextureSetComponent*         GeometryComponent;                                 // 0x0258(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_260[0x10];                                     // 0x0260(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetGeometryComponent(class UAkAcousticTextureSetComponent* textureSetComponent);
-
-	class UPrimitiveComponent* GetPrimitiveParent() const;
+	struct FWwiseGameParameterCookedData          GameParameterCookedData;                           // 0x0058(0x0010)(Edit, Transient, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("AkRoomComponent")
+		STATIC_CLASS_IMPL("AkRtpc")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"AkRoomComponent")
+		STATIC_NAME_IMPL(L"AkRtpc")
 	}
-	static class UAkRoomComponent* GetDefaultObj()
+	static class UAkRtpc* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAkRoomComponent>();
+		return GetDefaultObjImpl<UAkRtpc>();
 	}
 };
-DUMPER7_ASSERTS_UAkRoomComponent;
+DUMPER7_ASSERTS_UAkRtpc;
+
+// Class AkAudio.AkSettingsPerUser
+// 0x0050 (0x0080 - 0x0030)
+class UAkSettingsPerUser final : public UObject
+{
+public:
+	struct FDirectoryPath                         WwiseWindowsInstallationPath;                      // 0x0030(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FFilePath                              WwiseMacInstallationPath;                          // 0x0040(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FDirectoryPath                         GeneratedSoundBanksFolderUserOverride;             // 0x0050(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
+	class FString                                 WaapiIPAddress;                                    // 0x0060(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        WaapiPort;                                         // 0x0070(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoConnectToWAAPI;                               // 0x0074(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AutoSyncSelection;                                 // 0x0075(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_76[0x2];                                       // 0x0076(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        WaapiTranslatorTimeout;                            // 0x0078(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SuppressGeneratedSoundBanksPathWarnings;           // 0x007C(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SoundDataGenerationSkipLanguage;                   // 0x007D(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AskForWwiseAssetReload;                            // 0x007E(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7F[0x1];                                       // 0x007F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkSettingsPerUser")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkSettingsPerUser")
+	}
+	static class UAkSettingsPerUser* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkSettingsPerUser>();
+	}
+};
+DUMPER7_ASSERTS_UAkSettingsPerUser;
+
+// Class AkAudio.AkSlider
+// 0x0470 (0x05E0 - 0x0170)
+class UAkSlider final : public UWidget
+{
+public:
+	float                                         Value;                                             // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             ValueDelegate;                                     // 0x0178(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	struct FSliderStyle                           WidgetStyle;                                       // 0x01A0(0x0370)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	EOrientation                                  Orientation;                                       // 0x0510(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           SliderBarColor;                                    // 0x0514(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           SliderHandleColor;                                 // 0x0524(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IndentHandle;                                      // 0x0534(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Locked;                                            // 0x0535(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_536[0x2];                                      // 0x0536(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StepSize;                                          // 0x0538(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsFocusable;                                       // 0x053C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_53D[0x3];                                      // 0x053D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAkPropertyToControl                   ThePropertyToControl;                              // 0x0540(0x0010)(Edit, EditConst, NativeAccessSpecifierPublic)
+	struct FAkWwiseItemToControl                  ItemToControl;                                     // 0x0550(0x0040)(Edit, Config, EditConst, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Value)>   OnValueChanged;                                    // 0x0590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemDroppedID)> OnItemDropped;                 // 0x05A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& PropertyDropped)> OnPropertyDropped;          // 0x05B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C0[0x20];                                     // 0x05C0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAkSliderItemId(const struct FGuid& ItemId);
+	void SetAkSliderItemProperty(const class FString& ItemProperty);
+	void SetIndentHandle(bool InValue);
+	void SetLocked(bool InValue);
+	void SetSliderBarColor(const struct FLinearColor& InValue);
+	void SetSliderHandleColor(const struct FLinearColor& InValue);
+	void SetStepSize(float InValue);
+	void SetValue(float InValue);
+
+	const struct FGuid GetAkSliderItemId() const;
+	const class FString GetAkSliderItemProperty() const;
+	float GetValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkSlider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkSlider")
+	}
+	static class UAkSlider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkSlider>();
+	}
+};
+DUMPER7_ASSERTS_UAkSlider;
 
 // Class AkAudio.AkSpatialAudioVolume
 // 0x0018 (0x0300 - 0x02E8)
@@ -1950,6 +1851,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AAkSpatialAudioVolume;
+
+// Class AkAudio.AkStateValue
+// 0x0000 (0x0080 - 0x0080)
+class UAkStateValue final : public UAkGroupValue
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkStateValue")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkStateValue")
+	}
+	static class UAkStateValue* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkStateValue>();
+	}
+};
+DUMPER7_ASSERTS_UAkStateValue;
 
 // Class AkAudio.AkSubmixInputComponent
 // 0x0050 (0x0420 - 0x03D0)
@@ -2264,6 +2185,26 @@ public:
 };
 DUMPER7_ASSERTS_UAkWin32PlatformInfo;
 
+// Class AkAudio.AkWin64PlatformInfo
+// 0x0000 (0x0078 - 0x0078)
+class UAkWin64PlatformInfo : public UAkPlatformInfo
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkWin64PlatformInfo")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkWin64PlatformInfo")
+	}
+	static class UAkWin64PlatformInfo* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkWin64PlatformInfo>();
+	}
+};
+DUMPER7_ASSERTS_UAkWin64PlatformInfo;
+
 // Class AkAudio.AkWindowsPlatformInfo
 // 0x0000 (0x0078 - 0x0078)
 class UAkWindowsPlatformInfo final : public UAkWin64PlatformInfo
@@ -2283,6 +2224,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkWindowsPlatformInfo;
+
+// Class AkAudio.AkWinGDKInitializationSettings
+// 0x00F0 (0x0120 - 0x0030)
+class UAkWinGDKInitializationSettings : public UAkPlatformInitializationSettingsBase
+{
+public:
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0030(0x0078)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkWinGDKAdvancedInitializationSettings AdvancedSettings;                                 // 0x00C8(0x0058)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+
+public:
+	void MigrateMultiCoreRendering(bool NewValue);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkWinGDKInitializationSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkWinGDKInitializationSettings")
+	}
+	static class UAkWinGDKInitializationSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkWinGDKInitializationSettings>();
+	}
+};
+DUMPER7_ASSERTS_UAkWinGDKInitializationSettings;
 
 // Class AkAudio.AkWinAnvilInitializationSettings
 // 0x0000 (0x0120 - 0x0120)
@@ -2343,6 +2312,37 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAkWinAnvilPlatformInfo;
+
+// Class AkAudio.AkWwiseTree
+// 0x0040 (0x01B0 - 0x0170)
+class UAkWwiseTree final : public UWidget
+{
+public:
+	TMulticastInlineDelegate<void(const struct FGuid& ItemSelectedID)> OnSelectionChanged;           // 0x0170(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemDraggedID, const class FString& ItemDraggedName)> OnItemDragged; // 0x0180(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_190[0x20];                                     // 0x0190(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetSearchText(const class FString& newText);
+
+	class FString GetSearchText() const;
+	struct FAkWwiseObjectDetails GetSelectedItem() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AkWwiseTree")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AkWwiseTree")
+	}
+	static class UAkWwiseTree* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAkWwiseTree>();
+	}
+};
+DUMPER7_ASSERTS_UAkWwiseTree;
 
 // Class AkAudio.AkWwiseTreeSelector
 // 0x0060 (0x01D0 - 0x0170)

@@ -16,15 +16,65 @@
 
 SDK_NAMESPACE_START
 
-// Function MagtModule.MagtBufferTXManager.ClearHistory
-// (Final, Native, Public, BlueprintCallable)
+// Function MagtModule.MagtAdaptivePerformance.Get
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMagtAdaptivePerformance*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMagtBufferTXManager::ClearHistory()
+class UMagtAdaptivePerformance* UMagtAdaptivePerformance::Get()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "ClearHistory");
+		Func = StaticClass()->GetFunction("MagtAdaptivePerformance", "Get");
+
+	Params::MagtAdaptivePerformance_Get Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.ApplyScenario
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EMagtAPScenario                         Scenario                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMagtAdaptivePerformance::ApplyScenario(EMagtAPScenario Scenario)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "ApplyScenario");
+
+	Params::MagtAdaptivePerformance_ApplyScenario Parms{};
+
+	Parms.Scenario = Scenario;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.ForceEvaluation
+// (Final, Native, Public, BlueprintCallable)
+
+void UMagtAdaptivePerformance::ForceEvaluation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "ForceEvaluation");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -35,19 +85,22 @@ void UMagtBufferTXManager::ClearHistory()
 }
 
 
-// Function MagtModule.MagtBufferTXManager.GetAverageBufferTX
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function MagtModule.MagtAdaptivePerformance.Initialize
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMagtAdaptivePerformanceSettings* InSettings                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMagtBufferTXManager::GetAverageBufferTX() const
+bool UMagtAdaptivePerformance::Initialize(class UMagtAdaptivePerformanceSettings* InSettings)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "GetAverageBufferTX");
+		Func = Class->GetFunction("MagtAdaptivePerformance", "Initialize");
 
-	Params::MagtBufferTXManager_GetAverageBufferTX Parms{};
+	Params::MagtAdaptivePerformance_Initialize Parms{};
+
+	Parms.InSettings = InSettings;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -60,19 +113,19 @@ float UMagtBufferTXManager::GetAverageBufferTX() const
 }
 
 
-// Function MagtModule.MagtBufferTXManager.GetBufferTXVariance
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function MagtModule.MagtAdaptivePerformance.InitializeWithDefaults
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UMagtBufferTXManager::GetBufferTXVariance() const
+bool UMagtAdaptivePerformance::InitializeWithDefaults()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "GetBufferTXVariance");
+		Func = Class->GetFunction("MagtAdaptivePerformance", "InitializeWithDefaults");
 
-	Params::MagtBufferTXManager_GetBufferTXVariance Parms{};
+	Params::MagtAdaptivePerformance_InitializeWithDefaults Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85,19 +138,495 @@ float UMagtBufferTXManager::GetBufferTXVariance() const
 }
 
 
-// Function MagtModule.MagtBufferTXManager.GetHistoryCount
+// Function MagtModule.MagtAdaptivePerformance.ResetToDefault
+// (Final, Native, Public, BlueprintCallable)
+
+void UMagtAdaptivePerformance::ResetToDefault()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "ResetToDefault");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.SetQualityGroupLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             GroupName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtAdaptivePerformance::SetQualityGroupLevel(class FName GroupName, int32 Level)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "SetQualityGroupLevel");
+
+	Params::MagtAdaptivePerformance_SetQualityGroupLevel Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.Level = Level;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.Start
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtAdaptivePerformance::Start()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "Start");
+
+	Params::MagtAdaptivePerformance_Start Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.StartAdaptiveControl
+// (Final, Native, Public, BlueprintCallable)
+
+void UMagtAdaptivePerformance::StartAdaptiveControl()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "StartAdaptiveControl");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.Stop
+// (Final, Native, Public, BlueprintCallable)
+
+void UMagtAdaptivePerformance::Stop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "Stop");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.StopAdaptiveControl
+// (Final, Native, Public, BlueprintCallable)
+
+void UMagtAdaptivePerformance::StopAdaptiveControl()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "StopAdaptiveControl");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.GetAllQualityGroupLevels
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
+// TMap<class FName, int32>                ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+TMap<class FName, int32> UMagtAdaptivePerformance::GetAllQualityGroupLevels() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "GetAllQualityGroupLevels");
+
+	Params::MagtAdaptivePerformance_GetAllQualityGroupLevels Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.GetCurrentAdvice
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EMagtAPWorkloadAdvice                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMagtAPWorkloadAdvice UMagtAdaptivePerformance::GetCurrentAdvice() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "GetCurrentAdvice");
+
+	Params::MagtAdaptivePerformance_GetCurrentAdvice Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.GetCurrentPerfReport
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FMagtAPPerfReport                ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FMagtAPPerfReport UMagtAdaptivePerformance::GetCurrentPerfReport() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "GetCurrentPerfReport");
+
+	Params::MagtAdaptivePerformance_GetCurrentPerfReport Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.GetCurrentScenario
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EMagtAPScenario                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMagtAPScenario UMagtAdaptivePerformance::GetCurrentScenario() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "GetCurrentScenario");
+
+	Params::MagtAdaptivePerformance_GetCurrentScenario Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.GetQualityGroupLevel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             GroupName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMagtBufferTXManager::GetHistoryCount() const
+int32 UMagtAdaptivePerformance::GetQualityGroupLevel(class FName GroupName) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "GetHistoryCount");
+		Func = Class->GetFunction("MagtAdaptivePerformance", "GetQualityGroupLevel");
 
-	Params::MagtBufferTXManager_GetHistoryCount Parms{};
+	Params::MagtAdaptivePerformance_GetQualityGroupLevel Parms{};
+
+	Parms.GroupName = GroupName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.GetRemainingCooldownTime
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UMagtAdaptivePerformance::GetRemainingCooldownTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "GetRemainingCooldownTime");
+
+	Params::MagtAdaptivePerformance_GetRemainingCooldownTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.IsInCooldown
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtAdaptivePerformance::IsInCooldown() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "IsInCooldown");
+
+	Params::MagtAdaptivePerformance_IsInCooldown Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.IsInitialized
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtAdaptivePerformance::IsInitialized() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "IsInitialized");
+
+	Params::MagtAdaptivePerformance_IsInitialized Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformance.IsRunning
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtAdaptivePerformance::IsRunning() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformance", "IsRunning");
+
+	Params::MagtAdaptivePerformance_IsRunning Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformanceSettings.FindQualityGroupByName
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             GroupName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMagtAPQualityGroup*             OutGroup                                               (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtAdaptivePerformanceSettings::FindQualityGroupByName(class FName GroupName, struct FMagtAPQualityGroup* OutGroup) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformanceSettings", "FindQualityGroupByName");
+
+	Params::MagtAdaptivePerformanceSettings_FindQualityGroupByName Parms{};
+
+	Parms.GroupName = GroupName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutGroup != nullptr)
+		*OutGroup = std::move(Parms.OutGroup);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformanceSettings.GetPowerThreshold
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ThermalStatus                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMagtAPPowerThreshold            ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FMagtAPPowerThreshold UMagtAdaptivePerformanceSettings::GetPowerThreshold(int32 ThermalStatus) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformanceSettings", "GetPowerThreshold");
+
+	Params::MagtAdaptivePerformanceSettings_GetPowerThreshold Parms{};
+
+	Parms.ThermalStatus = ThermalStatus;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtAdaptivePerformanceSettings.ValidateSettings
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class FString>*                  OutErrors                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtAdaptivePerformanceSettings::ValidateSettings(TArray<class FString>* OutErrors) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtAdaptivePerformanceSettings", "ValidateSettings");
+
+	Params::MagtAdaptivePerformanceSettings_ValidateSettings Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutErrors != nullptr)
+		*OutErrors = std::move(Parms.OutErrors);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtBufferTXManager.SetBufferTxAvgWindow
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   WindowMs                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtBufferTXManager::SetBufferTxAvgWindow(int32 WindowMs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtBufferTXManager", "SetBufferTxAvgWindow");
+
+	Params::MagtBufferTXManager_SetBufferTxAvgWindow Parms{};
+
+	Parms.WindowMs = WindowMs;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtBufferTXManager.GetBufferTxAvg
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UMagtBufferTXManager::GetBufferTxAvg() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtBufferTXManager", "GetBufferTxAvg");
+
+	Params::MagtBufferTXManager_GetBufferTxAvg Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -135,19 +664,44 @@ int32 UMagtBufferTXManager::GetLatestBufferTX() const
 }
 
 
-// Function MagtModule.MagtBufferTXManager.GetMaxBufferTX
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function MagtModule.MagtCallbackManager.GetMagtCallbackManager
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMagtCallbackManager*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UMagtBufferTXManager::GetMaxBufferTX() const
+class UMagtCallbackManager* UMagtCallbackManager::GetMagtCallbackManager()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "GetMaxBufferTX");
+		Func = StaticClass()->GetFunction("MagtCallbackManager", "GetMagtCallbackManager");
 
-	Params::MagtBufferTXManager_GetMaxBufferTX Parms{};
+	Params::MagtCallbackManager_GetMagtCallbackManager Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MagtModule.MagtCallbackManager.RegisterPerformanceCallbacks
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMagtCallbackManager::RegisterPerformanceCallbacks()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MagtCallbackManager", "RegisterPerformanceCallbacks");
+
+	Params::MagtCallbackManager_RegisterPerformanceCallbacks Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -160,69 +714,38 @@ int32 UMagtBufferTXManager::GetMaxBufferTX() const
 }
 
 
-// Function MagtModule.MagtBufferTXManager.GetMinBufferTX
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function MagtModule.MagtCallbackManager.UnregisterPerformanceCallbacks
+// (Final, Native, Public, BlueprintCallable)
 
-int32 UMagtBufferTXManager::GetMinBufferTX() const
+void UMagtCallbackManager::UnregisterPerformanceCallbacks()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "GetMinBufferTX");
-
-	Params::MagtBufferTXManager_GetMinBufferTX Parms{};
+		Func = Class->GetFunction("MagtCallbackManager", "UnregisterPerformanceCallbacks");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function MagtModule.MagtBufferTXManager.IsBufferTXIncreasing
+// Function MagtModule.MagtCallbackManager.IsRegistered
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMagtBufferTXManager::IsBufferTXIncreasing() const
+bool UMagtCallbackManager::IsRegistered() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "IsBufferTXIncreasing");
+		Func = Class->GetFunction("MagtCallbackManager", "IsRegistered");
 
-	Params::MagtBufferTXManager_IsBufferTXIncreasing Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MagtModule.MagtBufferTXManager.IsBufferTXStable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMagtBufferTXManager::IsBufferTXStable() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MagtBufferTXManager", "IsBufferTXStable");
-
-	Params::MagtBufferTXManager_IsBufferTXStable Parms{};
+	Params::MagtCallbackManager_IsRegistered Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

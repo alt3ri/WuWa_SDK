@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "KuroAnim_classes.hpp"
-#include "KuroVehicle_structs.hpp"
 #include "KuroGAS_classes.hpp"
+#include "KuroVehicle_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
@@ -64,7 +64,7 @@ DUMPER7_ASSERTS_UKuroAnimInstanceVehicle;
 
 // Class KuroVehicle.KuroBaseVehicle
 // 0x0030 (0x06B0 - 0x0680)
-class AKuroBaseVehicle : public ABaseCharacter
+class AKuroBaseVehicle final : public ABaseCharacter
 {
 public:
 	class UKuroVehicleMovementComponent*          VehicleMovementComponent;                          // 0x0680(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

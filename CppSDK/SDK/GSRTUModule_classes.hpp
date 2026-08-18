@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GSRTUModule_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "GSRTUModule_structs.hpp"
 
 
 SDK_NAMESPACE_START

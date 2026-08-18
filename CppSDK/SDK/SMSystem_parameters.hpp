@@ -10,39 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "SMSystem_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SMSystem_structs.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
-
-// Function SMSystem.SMStateMachineNetworkedInterface.HasAuthority
-// 0x0001 (0x0001 - 0x0000)
-struct SMStateMachineNetworkedInterface_HasAuthority final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SMStateMachineNetworkedInterface_HasAuthority;
-
-// Function SMSystem.SMStateMachineNetworkedInterface.IsConfiguredForNetworking
-// 0x0001 (0x0001 - 0x0000)
-struct SMStateMachineNetworkedInterface_IsConfiguredForNetworking final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SMStateMachineNetworkedInterface_IsConfiguredForNetworking;
-
-// Function SMSystem.SMStateMachineNetworkedInterface.IsSimulatedProxy
-// 0x0001 (0x0001 - 0x0000)
-struct SMStateMachineNetworkedInterface_IsSimulatedProxy final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SMStateMachineNetworkedInterface_IsSimulatedProxy;
 
 // Function SMSystem.SMNodeInstance.GetContext
 // 0x0008 (0x0008 - 0x0000)
@@ -135,6 +108,33 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SMNodeInstance_IsInEndState;
+
+// Function SMSystem.SMStateMachineNetworkedInterface.HasAuthority
+// 0x0001 (0x0001 - 0x0000)
+struct SMStateMachineNetworkedInterface_HasAuthority final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SMStateMachineNetworkedInterface_HasAuthority;
+
+// Function SMSystem.SMStateMachineNetworkedInterface.IsConfiguredForNetworking
+// 0x0001 (0x0001 - 0x0000)
+struct SMStateMachineNetworkedInterface_IsConfiguredForNetworking final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SMStateMachineNetworkedInterface_IsConfiguredForNetworking;
+
+// Function SMSystem.SMStateMachineNetworkedInterface.IsSimulatedProxy
+// 0x0001 (0x0001 - 0x0000)
+struct SMStateMachineNetworkedInterface_IsSimulatedProxy final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SMStateMachineNetworkedInterface_IsSimulatedProxy;
 
 // Function SMSystem.SMStateInstance_Base.SetActive
 // 0x0003 (0x0003 - 0x0000)

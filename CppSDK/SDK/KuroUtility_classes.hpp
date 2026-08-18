@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroUtility_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "KuroNetwork_structs.hpp"
+#include "KuroUtility_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
@@ -363,7 +363,7 @@ DUMPER7_ASSERTS_UKuroBooleanEventBinder;
 
 // Class KuroUtility.KuroBpDataAsset
 // 0x0000 (0x0038 - 0x0038)
-class UKuroBpDataAsset : public UPrimaryDataAsset
+class UKuroBpDataAsset final : public UPrimaryDataAsset
 {
 public:
 	static class UClass* StaticClass()
@@ -852,6 +852,32 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroMemoryLibrary;
+
+// Class KuroUtility.KuroMemProbeLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroMemProbeLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class FString GetMemProbeDir();
+	static void MemDumpSmaps(const class FString& Marker);
+	static void MemSnapshot(const class FString& Marker);
+	static void MemSnapshotFull(const class FString& Marker);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroMemProbeLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroMemProbeLibrary")
+	}
+	static class UKuroMemProbeLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroMemProbeLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroMemProbeLibrary;
 
 // Class KuroUtility.KuroMeshTextureFunctionLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -1473,6 +1499,7 @@ public:
 	static struct FXboxInviteInfo GetLastXboxInviteInfo();
 	static void GetXboxAchievementsAsync(int64 UserHandle, int64 Xuid, EXboxAchievementType AchievementType, bool bUnlockedOnly, EXboxAchievementOrderBy OrderBy, int32 SkipItems, int32 MaxItems);
 	static struct FXboxAvoidListResult GetXboxAvoidList(int64 UserHandle);
+	static void GetXboxAvoidListAsync(int64 UserHandle, TDelegate<void(const struct FXboxAvoidListResult& Result)> Callback);
 	static bool GetXboxClassicGamertag(int64 UserHandle, class FString* OutGamertag);
 	static bool GetXboxDefaultUserHandle(int64* OutUserHandle);
 	static struct FXboxUserHandleResult GetXboxDefaultUserHandleStruct();
@@ -1572,6 +1599,7 @@ public:
 	static void SendFileToTencentCOS(const class FString& Path, const class FString& RemoteURI, const class FString& SecretID, const class FString& SecretKey, const class FString& BucketName, const class FString& Region);
 	static void SendLogToTencentCOS(const TDelegate<void(int32 State, float Rate)>& OnProgress);
 	static void SetAdmissibleValue(int32 SingleLogSizeInMb);
+	static void SetCloudPath(const class FString& Name_0);
 	static void SetFilesToSend(const TArray<class FString>& FilePaths);
 	static void SetHandleFunc(const TDelegate<void(const TArray<class FString>& FileNames)>& PrepareFunc, const TDelegate<void(const TArray<class FString>& SendedFiles)>& PostSend);
 	static void SetIsAutoSend(bool bIsAutoSend);

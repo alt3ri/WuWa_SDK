@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "NavigationSystem_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "NavigationSystem_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -58,6 +58,26 @@ public:
 };
 DUMPER7_ASSERTS_ANavigationData;
 
+// Class NavigationSystem.AbstractNavData
+// 0x0000 (0x04E0 - 0x04E0)
+class AAbstractNavData final : public ANavigationData
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AbstractNavData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AbstractNavData")
+	}
+	static class AAbstractNavData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AAbstractNavData>();
+	}
+};
+DUMPER7_ASSERTS_AAbstractNavData;
+
 // Class NavigationSystem.NavModifierVolume
 // 0x0018 (0x0300 - 0x02E8)
 class ANavModifierVolume : public AVolume
@@ -87,153 +107,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ANavModifierVolume;
-
-// Class NavigationSystem.AbstractNavData
-// 0x0000 (0x04E0 - 0x04E0)
-class AAbstractNavData final : public ANavigationData
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AbstractNavData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AbstractNavData")
-	}
-	static class AAbstractNavData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AAbstractNavData>();
-	}
-};
-DUMPER7_ASSERTS_AAbstractNavData;
-
-// Class NavigationSystem.NavTestRenderingComponent
-// 0x0000 (0x0570 - 0x0570)
-class UNavTestRenderingComponent final : public UPrimitiveComponent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavTestRenderingComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavTestRenderingComponent")
-	}
-	static class UNavTestRenderingComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNavTestRenderingComponent>();
-	}
-};
-DUMPER7_ASSERTS_UNavTestRenderingComponent;
-
-// Class NavigationSystem.NavMeshRenderingComponent
-// 0x0010 (0x0580 - 0x0570)
-class UNavMeshRenderingComponent : public UPrimitiveComponent
-{
-public:
-	uint8                                         Pad_570[0x10];                                     // 0x0570(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavMeshRenderingComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavMeshRenderingComponent")
-	}
-	static class UNavMeshRenderingComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNavMeshRenderingComponent>();
-	}
-};
-DUMPER7_ASSERTS_UNavMeshRenderingComponent;
-
-// Class NavigationSystem.KuroNavOverrideVolume
-// 0x0008 (0x0308 - 0x0300)
-class AKuroNavOverrideVolume final : public ANavModifierVolume
-{
-public:
-	float                                         AgentMaxClimb;                                     // 0x0300(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroNavOverrideVolume")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroNavOverrideVolume")
-	}
-	static class AKuroNavOverrideVolume* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKuroNavOverrideVolume>();
-	}
-};
-DUMPER7_ASSERTS_AKuroNavOverrideVolume;
-
-// Class NavigationSystem.NavigationGraph
-// 0x0000 (0x04E0 - 0x04E0)
-class ANavigationGraph final : public ANavigationData
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavigationGraph")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavigationGraph")
-	}
-	static class ANavigationGraph* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ANavigationGraph>();
-	}
-};
-DUMPER7_ASSERTS_ANavigationGraph;
-
-// Class NavigationSystem.NavigationPartitionPathBase
-// 0x0000 (0x0030 - 0x0030)
-class UNavigationPartitionPathBase : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavigationPartitionPathBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavigationPartitionPathBase")
-	}
-	static class UNavigationPartitionPathBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNavigationPartitionPathBase>();
-	}
-};
-DUMPER7_ASSERTS_UNavigationPartitionPathBase;
-
-// Class NavigationSystem.CrowdManagerBase
-// 0x0000 (0x0030 - 0x0030)
-class UCrowdManagerBase : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrowdManagerBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrowdManagerBase")
-	}
-	static class UCrowdManagerBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrowdManagerBase>();
-	}
-};
-DUMPER7_ASSERTS_UCrowdManagerBase;
 
 // Class NavigationSystem.NavArea
 // 0x0018 (0x0050 - 0x0038)
@@ -277,6 +150,151 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNavArea;
+
+// Class NavigationSystem.NavMeshRenderingComponent
+// 0x0010 (0x05A0 - 0x0590)
+class UNavMeshRenderingComponent : public UPrimitiveComponent
+{
+public:
+	uint8                                         Pad_590[0x10];                                     // 0x0590(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavMeshRenderingComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavMeshRenderingComponent")
+	}
+	static class UNavMeshRenderingComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNavMeshRenderingComponent>();
+	}
+};
+DUMPER7_ASSERTS_UNavMeshRenderingComponent;
+
+// Class NavigationSystem.NavRelevantComponent
+// 0x0030 (0x00F0 - 0x00C0)
+class UNavRelevantComponent : public UActorComponent
+{
+public:
+	uint8                                         Pad_C0[0x24];                                      // 0x00C0(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bAttachToOwnersRoot : 1;                           // 0x00E4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_E5[0x3];                                       // 0x00E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                CachedNavParent;                                   // 0x00E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void SetNavigationRelevancy(bool bRelevant);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavRelevantComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavRelevantComponent")
+	}
+	static class UNavRelevantComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNavRelevantComponent>();
+	}
+};
+DUMPER7_ASSERTS_UNavRelevantComponent;
+
+// Class NavigationSystem.NavModifierComponent
+// 0x0060 (0x0150 - 0x00F0)
+class alignas(0x10) UNavModifierComponent final : public UNavRelevantComponent
+{
+public:
+	TSubclassOf<class UNavArea>                   AreaClass;                                         // 0x00F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                FailsafeExtent;                                    // 0x00F8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bIncludeAgentHeight : 1;                           // 0x0104(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, Config, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_105[0x4B];                                     // 0x0105(0x004B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavModifierComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavModifierComponent")
+	}
+	static class UNavModifierComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNavModifierComponent>();
+	}
+};
+DUMPER7_ASSERTS_UNavModifierComponent;
+
+// Class NavigationSystem.NavigationPartitionPathBase
+// 0x0000 (0x0030 - 0x0030)
+class UNavigationPartitionPathBase : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavigationPartitionPathBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavigationPartitionPathBase")
+	}
+	static class UNavigationPartitionPathBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNavigationPartitionPathBase>();
+	}
+};
+DUMPER7_ASSERTS_UNavigationPartitionPathBase;
+
+// Class NavigationSystem.CrowdManagerBase
+// 0x0000 (0x0030 - 0x0030)
+class UCrowdManagerBase : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrowdManagerBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrowdManagerBase")
+	}
+	static class UCrowdManagerBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrowdManagerBase>();
+	}
+};
+DUMPER7_ASSERTS_UCrowdManagerBase;
+
+// Class NavigationSystem.KuroNavOverrideVolume
+// 0x0008 (0x0308 - 0x0300)
+class AKuroNavOverrideVolume final : public ANavModifierVolume
+{
+public:
+	float                                         AgentMaxClimb;                                     // 0x0300(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroNavOverrideVolume")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroNavOverrideVolume")
+	}
+	static class AKuroNavOverrideVolume* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroNavOverrideVolume>();
+	}
+};
+DUMPER7_ASSERTS_AKuroNavOverrideVolume;
 
 // Class NavigationSystem.NavArea_Default
 // 0x0000 (0x0050 - 0x0050)
@@ -592,6 +610,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ANavigationDataChunkTileVariantsActor;
+
+// Class NavigationSystem.NavigationGraph
+// 0x0000 (0x04E0 - 0x04E0)
+class ANavigationGraph final : public ANavigationData
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavigationGraph")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavigationGraph")
+	}
+	static class ANavigationGraph* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ANavigationGraph>();
+	}
+};
+DUMPER7_ASSERTS_ANavigationGraph;
 
 // Class NavigationSystem.NavigationGraphNode
 // 0x0000 (0x02B0 - 0x02B0)
@@ -953,13 +991,13 @@ public:
 DUMPER7_ASSERTS_ANavigationTestingActor;
 
 // Class NavigationSystem.NavLinkComponent
-// 0x0020 (0x0590 - 0x0570)
+// 0x0020 (0x05B0 - 0x0590)
 class UNavLinkComponent final : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_570[0x8];                                      // 0x0570(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FNavigationLink>                Links;                                             // 0x0578(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_588[0x8];                                      // 0x0588(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_590[0x8];                                      // 0x0590(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FNavigationLink>                Links;                                             // 0x0598(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5A8[0x8];                                      // 0x05A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -976,35 +1014,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNavLinkComponent;
-
-// Class NavigationSystem.NavRelevantComponent
-// 0x0030 (0x00F0 - 0x00C0)
-class UNavRelevantComponent : public UActorComponent
-{
-public:
-	uint8                                         Pad_C0[0x24];                                      // 0x00C0(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bAttachToOwnersRoot : 1;                           // 0x00E4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_E5[0x3];                                       // 0x00E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                CachedNavParent;                                   // 0x00E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	void SetNavigationRelevancy(bool bRelevant);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavRelevantComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavRelevantComponent")
-	}
-	static class UNavRelevantComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNavRelevantComponent>();
-	}
-};
-DUMPER7_ASSERTS_UNavRelevantComponent;
 
 // Class NavigationSystem.NavLinkCustomComponent
 // 0x00B0 (0x01A0 - 0x00F0)
@@ -1110,7 +1119,7 @@ public:
 DUMPER7_ASSERTS_INavLinkHostInterface;
 
 // Class NavigationSystem.NavLinkRenderingComponent
-// 0x0000 (0x0570 - 0x0570)
+// 0x0000 (0x0590 - 0x0590)
 class UNavLinkRenderingComponent final : public UPrimitiveComponent
 {
 public:
@@ -1200,35 +1209,6 @@ public:
 };
 DUMPER7_ASSERTS_UNavMeshTileVariantFileSubsystem;
 
-// Class NavigationSystem.NavModifierComponent
-// 0x0060 (0x0150 - 0x00F0)
-class alignas(0x10) UNavModifierComponent final : public UNavRelevantComponent
-{
-public:
-	TSubclassOf<class UNavArea>                   AreaClass;                                         // 0x00F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                FailsafeExtent;                                    // 0x00F8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bIncludeAgentHeight : 1;                           // 0x0104(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, Config, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_105[0x4B];                                     // 0x0105(0x004B)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavModifierComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavModifierComponent")
-	}
-	static class UNavModifierComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNavModifierComponent>();
-	}
-};
-DUMPER7_ASSERTS_UNavModifierComponent;
-
 // Class NavigationSystem.NavNodeInterface
 // 0x0000 (0x0000 - 0x0000)
 class INavNodeInterface final
@@ -1283,6 +1263,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ANavSystemConfigOverride;
+
+// Class NavigationSystem.NavTestRenderingComponent
+// 0x0000 (0x0590 - 0x0590)
+class UNavTestRenderingComponent final : public UPrimitiveComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavTestRenderingComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavTestRenderingComponent")
+	}
+	static class UNavTestRenderingComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNavTestRenderingComponent>();
+	}
+};
+DUMPER7_ASSERTS_UNavTestRenderingComponent;
 
 // Class NavigationSystem.RecastNavMeshDataChunk
 // 0x0020 (0x0060 - 0x0040)

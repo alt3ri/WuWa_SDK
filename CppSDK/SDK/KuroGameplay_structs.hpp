@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "KuroCurve_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroCurve_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -118,15 +118,15 @@ enum class EKuroEasingFuncType : uint8
 	KEF_MAX                                  = 15,
 };
 
-// ScriptStruct KuroGameplay.KuroParameterFloat
-// 0x0010 (0x0010 - 0x0000)
-struct FKuroParameterFloat final
+// ScriptStruct KuroGameplay.KuroParameterLinearColor
+// 0x001C (0x001C - 0x0000)
+struct FKuroParameterLinearColor final
 {
 public:
 	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Value;                                             // 0x000C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FKuroParameterFloat;
+DUMPER7_ASSERTS_FKuroParameterLinearColor;
 
 // ScriptStruct KuroGameplay.EffectModelNiagaraExtraState
 // 0x00F0 (0x00F0 - 0x0000)
@@ -200,6 +200,17 @@ public:
 };
 DUMPER7_ASSERTS_FKuroEffectPostProcessSkyBoxSetting;
 
+// ScriptStruct KuroGameplay.KuroAttachTargetAxisFilter
+// 0x0003 (0x0003 - 0x0000)
+struct FKuroAttachTargetAxisFilter final
+{
+public:
+	bool                                          bIgnoreTargetX;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetY;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetZ;                                    // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroAttachTargetAxisFilter;
+
 // ScriptStruct KuroGameplay.KuroSceneTeamItem
 // 0x0008 (0x0008 - 0x0000)
 struct FKuroSceneTeamItem final
@@ -211,15 +222,15 @@ public:
 };
 DUMPER7_ASSERTS_FKuroSceneTeamItem;
 
-// ScriptStruct KuroGameplay.KuroParameterLinearColor
-// 0x001C (0x001C - 0x0000)
-struct FKuroParameterLinearColor final
+// ScriptStruct KuroGameplay.KuroParameterFloat
+// 0x0010 (0x0010 - 0x0000)
+struct FKuroParameterFloat final
 {
 public:
 	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Value;                                             // 0x000C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FKuroParameterLinearColor;
+DUMPER7_ASSERTS_FKuroParameterFloat;
 
 // ScriptStruct KuroGameplay.KuroParameterVector
 // 0x0018 (0x0018 - 0x0000)

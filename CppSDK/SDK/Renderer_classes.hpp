@@ -12,118 +12,11 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Renderer_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Renderer_structs.hpp"
 
 
 SDK_NAMESPACE_START
-
-// Class Renderer.KuroCaptureEventManager
-// 0x0010 (0x0040 - 0x0030)
-class UKuroCaptureEventManager final : public UObject
-{
-public:
-	TMulticastInlineDelegate<void()>              OnSceneColorCaptured;                              // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-
-public:
-	static class UKuroCaptureEventManager* Get();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroCaptureEventManager")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroCaptureEventManager")
-	}
-	static class UKuroCaptureEventManager* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroCaptureEventManager>();
-	}
-};
-DUMPER7_ASSERTS_UKuroCaptureEventManager;
-
-// Class Renderer.DebugViewOverdrawSettings
-// 0x0010 (0x0040 - 0x0030)
-class UDebugViewOverdrawSettings final : public UObject
-{
-public:
-	struct FLinearColor                           OverdrawColor;                                     // 0x0030(0x0010)(ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DebugViewOverdrawSettings")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DebugViewOverdrawSettings")
-	}
-	static class UDebugViewOverdrawSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDebugViewOverdrawSettings>();
-	}
-};
-DUMPER7_ASSERTS_UDebugViewOverdrawSettings;
-
-// Class Renderer.SparseVolumeTextureViewerComponent
-// 0x0040 (0x05B0 - 0x0570)
-class USparseVolumeTextureViewerComponent final : public UPrimitiveComponent
-{
-public:
-	class USparseVolumeTexture*                   SparseVolumeTexturePreview;                        // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bAnimate : 1;                                      // 0x0578(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReversePlayback : 1;                              // 0x0578(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bBlockingStreamingRequests : 1;                    // 0x0578(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_579[0x3];                                      // 0x0579(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AnimationFrame;                                    // 0x057C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameRate;                                         // 0x0580(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimationTime;                                     // 0x0584(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESparseVolumeTexturePreviewAttribute          PreviewAttribute;                                  // 0x0588(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_589[0x3];                                      // 0x0589(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MipLevel;                                          // 0x058C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Extinction;                                        // 0x0590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_594[0x1C];                                     // 0x0594(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SparseVolumeTextureViewerComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SparseVolumeTextureViewerComponent")
-	}
-	static class USparseVolumeTextureViewerComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USparseVolumeTextureViewerComponent>();
-	}
-};
-DUMPER7_ASSERTS_USparseVolumeTextureViewerComponent;
-
-// Class Renderer.SparseVolumeTextureViewer
-// 0x0008 (0x02B8 - 0x02B0)
-class ASparseVolumeTextureViewer final : public AInfo
-{
-public:
-	class USparseVolumeTextureViewerComponent*    SparseVolumeTextureViewerComponent;                // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SparseVolumeTextureViewer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SparseVolumeTextureViewer")
-	}
-	static class ASparseVolumeTextureViewer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ASparseVolumeTextureViewer>();
-	}
-};
-DUMPER7_ASSERTS_ASparseVolumeTextureViewer;
 
 // Class Renderer.DebugViewTexelDensitySettings
 // 0x0038 (0x0068 - 0x0030)
@@ -152,14 +45,141 @@ public:
 };
 DUMPER7_ASSERTS_UDebugViewTexelDensitySettings;
 
+// Class Renderer.KuroCaptureEventManager
+// 0x0010 (0x0040 - 0x0030)
+class UKuroCaptureEventManager final : public UObject
+{
+public:
+	TMulticastInlineDelegate<void()>              OnSceneColorCaptured;                              // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+
+public:
+	static class UKuroCaptureEventManager* Get();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroCaptureEventManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroCaptureEventManager")
+	}
+	static class UKuroCaptureEventManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroCaptureEventManager>();
+	}
+};
+DUMPER7_ASSERTS_UKuroCaptureEventManager;
+
+// Class Renderer.SparseVolumeTextureViewer
+// 0x0008 (0x02B8 - 0x02B0)
+class ASparseVolumeTextureViewer final : public AInfo
+{
+public:
+	class USparseVolumeTextureViewerComponent*    SparseVolumeTextureViewerComponent;                // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SparseVolumeTextureViewer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SparseVolumeTextureViewer")
+	}
+	static class ASparseVolumeTextureViewer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ASparseVolumeTextureViewer>();
+	}
+};
+DUMPER7_ASSERTS_ASparseVolumeTextureViewer;
+
+// Class Renderer.KuroMPCDebugHudSubsystem
+// 0x0000 (0x0038 - 0x0038)
+class UKuroMPCDebugHudSubsystem final : public UWorldSubsystem
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroMPCDebugHudSubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroMPCDebugHudSubsystem")
+	}
+	static class UKuroMPCDebugHudSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroMPCDebugHudSubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UKuroMPCDebugHudSubsystem;
+
+// Class Renderer.DebugViewOverdrawSettings
+// 0x0010 (0x0040 - 0x0030)
+class UDebugViewOverdrawSettings final : public UObject
+{
+public:
+	struct FLinearColor                           OverdrawColor;                                     // 0x0030(0x0010)(ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DebugViewOverdrawSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DebugViewOverdrawSettings")
+	}
+	static class UDebugViewOverdrawSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDebugViewOverdrawSettings>();
+	}
+};
+DUMPER7_ASSERTS_UDebugViewOverdrawSettings;
+
+// Class Renderer.SparseVolumeTextureViewerComponent
+// 0x0040 (0x05D0 - 0x0590)
+class USparseVolumeTextureViewerComponent final : public UPrimitiveComponent
+{
+public:
+	class USparseVolumeTexture*                   SparseVolumeTexturePreview;                        // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bAnimate : 1;                                      // 0x0598(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReversePlayback : 1;                              // 0x0598(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bBlockingStreamingRequests : 1;                    // 0x0598(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_599[0x3];                                      // 0x0599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AnimationFrame;                                    // 0x059C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameRate;                                         // 0x05A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimationTime;                                     // 0x05A4(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESparseVolumeTexturePreviewAttribute          PreviewAttribute;                                  // 0x05A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5A9[0x3];                                      // 0x05A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MipLevel;                                          // 0x05AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Extinction;                                        // 0x05B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5B4[0x1C];                                     // 0x05B4(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SparseVolumeTextureViewerComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SparseVolumeTextureViewerComponent")
+	}
+	static class USparseVolumeTextureViewerComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USparseVolumeTextureViewerComponent>();
+	}
+};
+DUMPER7_ASSERTS_USparseVolumeTextureViewerComponent;
+
 // Class Renderer.TransvoxelCollisionMeshComponent
-// 0x0050 (0x05C0 - 0x0570)
+// 0x0050 (0x05E0 - 0x0590)
 class UTransvoxelCollisionMeshComponent final : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_570[0x8];                                      // 0x0570(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBodySetup*                             MeshBodySetup;                                     // 0x0578(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_580[0x40];                                     // 0x0580(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_590[0x8];                                      // 0x0590(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBodySetup*                             MeshBodySetup;                                     // 0x0598(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5A0[0x40];                                     // 0x05A0(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

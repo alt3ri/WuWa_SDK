@@ -18,14 +18,16 @@
 SDK_NAMESPACE_START
 
 // Class ImposterManager.ImposterStreamingManager
-// 0x02A8 (0x02F0 - 0x0048)
+// 0x02B0 (0x02F8 - 0x0048)
 class UImposterStreamingManager final : public UTickableWorldSubsystem
 {
 public:
-	uint8                                         Pad_48[0x290];                                     // 0x0048(0x0290)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 PoolHolderActor;                                   // 0x02D8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInterface*                     MasterMaterial;                                    // 0x02E0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UStaticMesh*                            ImposterPlaneMesh;                                 // 0x02E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_48[0x288];                                     // 0x0048(0x0288)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 PoolHolderActor;                                   // 0x02D0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInterface*                     MasterMaterial;                                    // 0x02D8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UStaticMesh*                            ImposterPlaneMesh;                                 // 0x02E0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialParameterCollection*           SeasonalMPC;                                       // 0x02E8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2F0[0x8];                                      // 0x02F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -44,11 +46,11 @@ public:
 DUMPER7_ASSERTS_UImposterStreamingManager;
 
 // Class ImposterManager.ImposterHISMComponent
-// 0x0010 (0x0880 - 0x0870)
+// 0x0010 (0x08A0 - 0x0890)
 class UImposterHISMComponent final : public UHierarchicalInstancedStaticMeshComponent
 {
 public:
-	uint8                                         Pad_870[0x10];                                     // 0x0870(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_890[0x10];                                     // 0x0890(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -79,11 +81,13 @@ public:
 	EImposterMappingMode                          MappingMode;                                       // 0x0064(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TiltDegrees;                                       // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           WinterLeafColor;                                   // 0x006C(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           SpringLeafColor;                                   // 0x007C(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           SummerLeafColor;                                   // 0x008C(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           AutumnLeafColor;                                   // 0x009C(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bForceImposter;                                    // 0x006C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisableShadow;                                    // 0x006D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6E[0x2];                                       // 0x006E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           WinterLeafColor;                                   // 0x0070(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           SpringLeafColor;                                   // 0x0080(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           SummerLeafColor;                                   // 0x0090(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           AutumnLeafColor;                                   // 0x00A0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -122,22 +126,22 @@ public:
 DUMPER7_ASSERTS_AImposterPoolHolder;
 
 // Class ImposterManager.KuroImposterVer2Component
-// 0x0150 (0x07B0 - 0x0660)
+// 0x0150 (0x07D0 - 0x0680)
 class UKuroImposterVer2Component final : public UStaticMeshComponent
 {
 public:
-	TWeakObjectPtr<class UStaticMeshComponent>    SourceComponent;                                   // 0x0660(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StartDistance;                                     // 0x0668(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxDistance;                                       // 0x066C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSeasonalEnabled;                                  // 0x0670(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_671[0x3];                                      // 0x0671(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           InstanceTintColor;                                 // 0x0674(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bExternalSourceVisibilityControl;                  // 0x0684(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_685[0xAB];                                     // 0x0685(0x00AB)(Fixing Size After Last Property [ Dumper-7 ])
-	class UImposterMeshData*                      CachedMeshData;                                    // 0x0730(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_738[0x30];                                     // 0x0738(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	class UImposterHISMComponent*                 BoundHISMRaw;                                      // 0x0768(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_770[0x40];                                     // 0x0770(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UStaticMeshComponent>    SourceComponent;                                   // 0x0680(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartDistance;                                     // 0x0688(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxDistance;                                       // 0x068C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSeasonalEnabled;                                  // 0x0690(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_691[0x3];                                      // 0x0691(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           InstanceTintColor;                                 // 0x0694(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExternalSourceVisibilityControl;                  // 0x06A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6A5[0xAB];                                     // 0x06A5(0x00AB)(Fixing Size After Last Property [ Dumper-7 ])
+	class UImposterMeshData*                      CachedMeshData;                                    // 0x0750(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_758[0x30];                                     // 0x0758(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	class UImposterHISMComponent*                 BoundHISMRaw;                                      // 0x0788(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_790[0x40];                                     // 0x0790(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

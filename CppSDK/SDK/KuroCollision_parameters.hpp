@@ -81,6 +81,19 @@ public:
 };
 DUMPER7_ASSERTS_KuroCollisionLibrary_CanCharacterStepUp;
 
+// Function KuroCollision.KuroCollisionLibrary.ComponentHasTag
+// 0x0020 (0x0020 - 0x0000)
+struct KuroCollisionLibrary_ComponentHasTag final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceIndex;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_ComponentHasTag;
+
 // Function KuroCollision.KuroCollisionLibrary.GetBodyInstance
 // 0x0188 (0x0188 - 0x0000)
 struct KuroCollisionLibrary_GetBodyInstance final

@@ -587,6 +587,18 @@ public:
 };
 DUMPER7_ASSERTS_FKuroCSAxisInstanceLayoutEntry;
 
+// ScriptStruct KuroComputeShader.KuroCSClothDynamicPinBinding
+// 0x0020 (0x0020 - 0x0000)
+struct FKuroCSClothDynamicPinBinding final
+{
+public:
+	class AActor*                                 MeshActor;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 PinProviderActor;                                  // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PinProviderFunctionName;                           // 0x0010(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PinProviderIndex;                                  // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroCSClothDynamicPinBinding;
+
 // ScriptStruct KuroComputeShader.KuroCSStaticBatchClothBakedBendingConstraint
 // 0x0014 (0x0014 - 0x0000)
 struct FKuroCSStaticBatchClothBakedBendingConstraint final

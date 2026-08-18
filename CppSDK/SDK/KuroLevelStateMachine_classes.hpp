@@ -10,12 +10,35 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "KuroLevelStateMachine_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 
 
 SDK_NAMESPACE_START
+
+// Class KuroLevelStateMachine.KuroLevelStateMachine
+// 0x0008 (0x02B8 - 0x02B0)
+class AKuroLevelStateMachine final : public AActor
+{
+public:
+	class UKuroLevelStateMachineComponent*        LevelStateMachineComponent;                        // 0x02B0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroLevelStateMachine")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroLevelStateMachine")
+	}
+	static class AKuroLevelStateMachine* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroLevelStateMachine>();
+	}
+};
+DUMPER7_ASSERTS_AKuroLevelStateMachine;
 
 // Class KuroLevelStateMachine.KuroLevelStateAction
 // 0x0010 (0x0040 - 0x0030)
@@ -40,6 +63,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroLevelStateAction;
+
+// Class KuroLevelStateMachine.KuroLevelPlayMontage
+// 0x0018 (0x0058 - 0x0040)
+class UKuroLevelPlayMontage final : public UKuroLevelStateAction
+{
+public:
+	class ASkeletalMeshActor*                     TargetActor;                                       // 0x0040(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           Montage;                                           // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLooping;                                          // 0x0050(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PlayRate;                                          // 0x0054(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroLevelPlayMontage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroLevelPlayMontage")
+	}
+	static class UKuroLevelPlayMontage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroLevelPlayMontage>();
+	}
+};
+DUMPER7_ASSERTS_UKuroLevelPlayMontage;
 
 // Class KuroLevelStateMachine.KuroLevelPlaySequence
 // 0x0080 (0x00C0 - 0x0040)
@@ -69,56 +119,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroLevelPlaySequence;
-
-// Class KuroLevelStateMachine.KuroLevelPlayMontage
-// 0x0018 (0x0058 - 0x0040)
-class UKuroLevelPlayMontage final : public UKuroLevelStateAction
-{
-public:
-	class ASkeletalMeshActor*                     TargetActor;                                       // 0x0040(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           Montage;                                           // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLooping;                                          // 0x0050(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PlayRate;                                          // 0x0054(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroLevelPlayMontage")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroLevelPlayMontage")
-	}
-	static class UKuroLevelPlayMontage* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroLevelPlayMontage>();
-	}
-};
-DUMPER7_ASSERTS_UKuroLevelPlayMontage;
-
-// Class KuroLevelStateMachine.KuroLevelStateMachine
-// 0x0008 (0x02B8 - 0x02B0)
-class AKuroLevelStateMachine final : public AActor
-{
-public:
-	class UKuroLevelStateMachineComponent*        LevelStateMachineComponent;                        // 0x02B0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroLevelStateMachine")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroLevelStateMachine")
-	}
-	static class AKuroLevelStateMachine* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKuroLevelStateMachine>();
-	}
-};
-DUMPER7_ASSERTS_AKuroLevelStateMachine;
 
 // Class KuroLevelStateMachine.KuroLevelStateMachineComponent
 // 0x0090 (0x02B0 - 0x0220)

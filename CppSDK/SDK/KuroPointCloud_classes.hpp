@@ -10,50 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "Niagara_classes.hpp"
 #include "KuroPointCloud_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Niagara_classes.hpp"
 
 
 SDK_NAMESPACE_START
-
-// Class KuroPointCloud.KuroPointCloudActor
-// 0x0088 (0x0338 - 0x02B0)
-class AKuroPointCloudActor final : public AActor
-{
-public:
-	class UInstancedStaticMeshComponent*          InstancedStaticMeshComponent;                      // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UKuroPointCloudCache*                   PointCloudAsset;                                   // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PointNumToStopDivide;                              // 0x02C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BoxLengthToStopDivide;                             // 0x02C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InstanceScale;                                     // 0x02C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroPointKdTree                       KdTree;                                            // 0x02D0(0x0058)(NativeAccessSpecifierPrivate)
-	TArray<float>                                 CustomData;                                        // 0x0328(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-
-public:
-	void BuildKdTreeData();
-	void ClearMark();
-	void MarkPointsInBox(const struct FBox& BoxWS);
-	void UpdateIsm();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroPointCloudActor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroPointCloudActor")
-	}
-	static class AKuroPointCloudActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKuroPointCloudActor>();
-	}
-};
-DUMPER7_ASSERTS_AKuroPointCloudActor;
 
 // Class KuroPointCloud.KuroPointCloudCache
 // 0x0210 (0x0240 - 0x0030)
@@ -113,6 +77,42 @@ public:
 };
 DUMPER7_ASSERTS_UKuroPointCloudCache;
 
+// Class KuroPointCloud.KuroPointCloudActor
+// 0x0088 (0x0338 - 0x02B0)
+class AKuroPointCloudActor final : public AActor
+{
+public:
+	class UInstancedStaticMeshComponent*          InstancedStaticMeshComponent;                      // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UKuroPointCloudCache*                   PointCloudAsset;                                   // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PointNumToStopDivide;                              // 0x02C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BoxLengthToStopDivide;                             // 0x02C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InstanceScale;                                     // 0x02C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroPointKdTree                       KdTree;                                            // 0x02D0(0x0058)(NativeAccessSpecifierPrivate)
+	TArray<float>                                 CustomData;                                        // 0x0328(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+
+public:
+	void BuildKdTreeData();
+	void ClearMark();
+	void MarkPointsInBox(const struct FBox& BoxWS);
+	void UpdateIsm();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroPointCloudActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudActor")
+	}
+	static class AKuroPointCloudActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroPointCloudActor>();
+	}
+};
+DUMPER7_ASSERTS_AKuroPointCloudActor;
+
 // Class KuroPointCloud.KuroPointCloudFunctionLibrary
 // 0x0000 (0x0030 - 0x0030)
 class UKuroPointCloudFunctionLibrary final : public UBlueprintFunctionLibrary
@@ -137,44 +137,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroPointCloudFunctionLibrary;
-
-// Class KuroPointCloud.KuroVirtualPointCloud2DQTree
-// 0x0090 (0x00C0 - 0x0030)
-class UKuroVirtualPointCloud2DQTree final : public UObject
-{
-public:
-	TArray<int32>                                 QTree;                                             // 0x0030(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FIntPoint                              QTreeBoundMin;                                     // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FIntPoint                              QTreeBoundMax;                                     // 0x0050(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldToPointCloudLocal;                            // 0x0060(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FTransform                             PointCloudLocalToWorld;                            // 0x0090(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void BuildFromPointData(const TArray<struct FIntPoint>& InPoints, const struct FTransform& InPlaneToWorld, int32 MaxHeight);
-	void Reset();
-
-	struct FQuat GetRotation() const;
-	struct FBox GetWorldBound() const;
-	void SphereQuery(const struct FVector& SphereCenter, float SphereRadius, TArray<struct FIntPoint>* OutResult) const;
-	struct FVector TransformPointToWorld(const struct FIntPoint& Point) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroVirtualPointCloud2DQTree")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroVirtualPointCloud2DQTree")
-	}
-	static class UKuroVirtualPointCloud2DQTree* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroVirtualPointCloud2DQTree>();
-	}
-};
-DUMPER7_ASSERTS_UKuroVirtualPointCloud2DQTree;
 
 // Class KuroPointCloud.KuroPointCloudInstance
 // 0x0068 (0x0098 - 0x0030)
@@ -413,6 +375,44 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroPointCloudWorldSystem;
+
+// Class KuroPointCloud.KuroVirtualPointCloud2DQTree
+// 0x0090 (0x00C0 - 0x0030)
+class UKuroVirtualPointCloud2DQTree final : public UObject
+{
+public:
+	TArray<int32>                                 QTree;                                             // 0x0030(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIntPoint                              QTreeBoundMin;                                     // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FIntPoint                              QTreeBoundMax;                                     // 0x0050(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldToPointCloudLocal;                            // 0x0060(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FTransform                             PointCloudLocalToWorld;                            // 0x0090(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void BuildFromPointData(const TArray<struct FIntPoint>& InPoints, const struct FTransform& InPlaneToWorld, int32 MaxHeight);
+	void Reset();
+
+	struct FQuat GetRotation() const;
+	struct FBox GetWorldBound() const;
+	void SphereQuery(const struct FVector& SphereCenter, float SphereRadius, TArray<struct FIntPoint>* OutResult) const;
+	struct FVector TransformPointToWorld(const struct FIntPoint& Point) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroVirtualPointCloud2DQTree")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVirtualPointCloud2DQTree")
+	}
+	static class UKuroVirtualPointCloud2DQTree* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroVirtualPointCloud2DQTree>();
+	}
+};
+DUMPER7_ASSERTS_UKuroVirtualPointCloud2DQTree;
 
 // Class KuroPointCloud.NiagaraDataInterfaceKuroPointCloud
 // 0x0018 (0x0058 - 0x0040)

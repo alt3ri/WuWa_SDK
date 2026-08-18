@@ -11,20 +11,112 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Niagara_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "KuroCurve_structs.hpp"
 #include "Engine_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "Niagara_structs.hpp"
 #include "KuroGameplay_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "KuroCurve_structs.hpp"
-#include "KuroBuildingGridSystem_structs.hpp"
-#include "InputCore_structs.hpp"
-#include "Slate_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "MovieScene_structs.hpp"
+#include "KuroBuildingGridSystem_structs.hpp"
+#include "Slate_structs.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.Get
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_Get final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroMp4PlayerPreviewSubsystem*         ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_Get;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForcePlayMP4PlayerActor
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_ForcePlayMP4PlayerActor final
+{
+public:
+	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_ForcePlayMP4PlayerActor;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForceStopMP4PlayerActor
+// 0x0008 (0x0008 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_ForceStopMP4PlayerActor final
+{
+public:
+	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_ForceStopMP4PlayerActor;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterMP4PlayerActor
+// 0x0008 (0x0008 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_RegisterMP4PlayerActor final
+{
+public:
+	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_RegisterMP4PlayerActor;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterPoolIfNeeded
+// 0x0018 (0x0018 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_RegisterPoolIfNeeded final
+{
+public:
+	class FString                                 AssetPath;                                         // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_RegisterPoolIfNeeded;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ReleaseForMP4PlayerActor
+// 0x0008 (0x0008 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_ReleaseForMP4PlayerActor final
+{
+public:
+	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_ReleaseForMP4PlayerActor;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.TryAcquireForMP4PlayerActor
+// 0x0020 (0x0020 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_TryAcquireForMP4PlayerActor final
+{
+public:
+	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMediaPlayer*                           OutPlayer;                                         // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMediaTexture*                          OutTexture;                                        // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_TryAcquireForMP4PlayerActor;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UnregisterMP4PlayerActor
+// 0x0008 (0x0008 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_UnregisterMP4PlayerActor final
+{
+public:
+	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_UnregisterMP4PlayerActor;
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UpdateDistanceAndRefresh
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMp4PlayerPreviewSubsystem_UpdateDistanceAndRefresh final
+{
+public:
+	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InDistanceToCamera;                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_UpdateDistanceAndRefresh;
 
 // Function KuroGameplay.BulletHitActorInterfaceLibrary.Execute_OnBulletHit
 // 0x0018 (0x0018 - 0x0000)
@@ -361,44 +453,6 @@ public:
 };
 DUMPER7_ASSERTS_KuroResourceSystemFunctionLibrary_TryGetAssetBlockInfo;
 
-// Function KuroGameplay.KuroSequenceEaseExecutor.UpdateEase
-// 0x0008 (0x0008 - 0x0000)
-struct KuroSequenceEaseExecutor_UpdateEase final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroSequenceEaseExecutor_UpdateEase;
-
-// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetDuration
-// 0x0004 (0x0004 - 0x0000)
-struct KuroSequenceEaseFloatExecutor_GetDuration final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetDuration;
-
-// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetStartValue
-// 0x0004 (0x0004 - 0x0000)
-struct KuroSequenceEaseFloatExecutor_GetStartValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetStartValue;
-
-// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetTargetValue
-// 0x0004 (0x0004 - 0x0000)
-struct KuroSequenceEaseFloatExecutor_GetTargetValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetTargetValue;
-
 // Function KuroGameplay.EffectSystemActor.SetOwnerEntityId
 // 0x0004 (0x0004 - 0x0000)
 struct EffectSystemActor_SetOwnerEntityId final
@@ -487,6 +541,55 @@ public:
 	class UTraceLineElement*                      LineElement;                                       // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroAIPerceptionUtilsLibrary_StartAsyncAiPerception;
+
+// Function KuroGameplay.KuroAttachLibrary.ClearKuroLocationAxisFilteredAttach
+// 0x0008 (0x0008 - 0x0000)
+struct KuroAttachLibrary_ClearKuroLocationAxisFilteredAttach final
+{
+public:
+	class AActor*                                 Child;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAttachLibrary_ClearKuroLocationAxisFilteredAttach;
+
+// Function KuroGameplay.KuroAttachLibrary.KuroAttachToActorWithLocationAxisFilter
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAttachLibrary_KuroAttachToActorWithLocationAxisFilter final
+{
+public:
+	class AActor*                                 Child;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Parent;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetLocationX;                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetLocationY;                            // 0x0021(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetLocationZ;                            // 0x0022(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0023(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAttachLibrary_KuroAttachToActorWithLocationAxisFilter;
+
+// Function KuroGameplay.KuroAttachLibrary.KuroAttachToComponentWithLocationAxisFilter
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAttachLibrary_KuroAttachToComponentWithLocationAxisFilter final
+{
+public:
+	class AActor*                                 Child;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        ParentComponent;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetLocationX;                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetLocationY;                            // 0x0021(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreTargetLocationZ;                            // 0x0022(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0023(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAttachLibrary_KuroAttachToComponentWithLocationAxisFilter;
 
 // Function KuroGameplay.KuroEffectLibrary.AddSceneComponent
 // 0x0028 (0x0028 - 0x0000)
@@ -3065,97 +3168,43 @@ public:
 };
 DUMPER7_ASSERTS_KuroMp4PlayerPreviewable_OnMp4PlayRequested;
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.Get
-// 0x0010 (0x0010 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_Get final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroMp4PlayerPreviewSubsystem*         ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_Get;
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForcePlayMP4PlayerActor
-// 0x0010 (0x0010 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_ForcePlayMP4PlayerActor final
-{
-public:
-	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_ForcePlayMP4PlayerActor;
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForceStopMP4PlayerActor
+// Function KuroGameplay.KuroSequenceEaseExecutor.UpdateEase
 // 0x0008 (0x0008 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_ForceStopMP4PlayerActor final
+struct KuroSequenceEaseExecutor_UpdateEase final
 {
 public:
-	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_ForceStopMP4PlayerActor;
+DUMPER7_ASSERTS_KuroSequenceEaseExecutor_UpdateEase;
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterMP4PlayerActor
-// 0x0008 (0x0008 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_RegisterMP4PlayerActor final
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetDuration
+// 0x0004 (0x0004 - 0x0000)
+struct KuroSequenceEaseFloatExecutor_GetDuration final
 {
 public:
-	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_RegisterMP4PlayerActor;
+DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetDuration;
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterPoolIfNeeded
-// 0x0018 (0x0018 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_RegisterPoolIfNeeded final
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetStartValue
+// 0x0004 (0x0004 - 0x0000)
+struct KuroSequenceEaseFloatExecutor_GetStartValue final
 {
 public:
-	class FString                                 AssetPath;                                         // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_RegisterPoolIfNeeded;
+DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetStartValue;
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ReleaseForMP4PlayerActor
-// 0x0008 (0x0008 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_ReleaseForMP4PlayerActor final
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetTargetValue
+// 0x0004 (0x0004 - 0x0000)
+struct KuroSequenceEaseFloatExecutor_GetTargetValue final
 {
 public:
-	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_ReleaseForMP4PlayerActor;
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.TryAcquireForMP4PlayerActor
-// 0x0020 (0x0020 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_TryAcquireForMP4PlayerActor final
-{
-public:
-	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMediaPlayer*                           OutPlayer;                                         // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMediaTexture*                          OutTexture;                                        // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_TryAcquireForMP4PlayerActor;
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UnregisterMP4PlayerActor
-// 0x0008 (0x0008 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_UnregisterMP4PlayerActor final
-{
-public:
-	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_UnregisterMP4PlayerActor;
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UpdateDistanceAndRefresh
-// 0x0010 (0x0010 - 0x0000)
-struct KuroMp4PlayerPreviewSubsystem_UpdateDistanceAndRefresh final
-{
-public:
-	class UObject*                                InMP4PlayerActor;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InDistanceToCamera;                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroMp4PlayerPreviewSubsystem_UpdateDistanceAndRefresh;
+DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetTargetValue;
 
 // Function KuroGameplay.KuroActorStreamingHandle.GetLoadedCount
 // 0x0004 (0x0004 - 0x0000)

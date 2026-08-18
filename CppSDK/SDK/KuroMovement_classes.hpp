@@ -12,9 +12,9 @@
 
 #include "CoreUObject_classes.hpp"
 #include "KuroMovement_structs.hpp"
-#include "KuroGameplay_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroGameplay_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -68,16 +68,16 @@ public:
 DUMPER7_ASSERTS_UKuroClimbObject;
 
 // Class KuroMovement.KuroDebugMovementComponent
-// 0x0270 (0x07E0 - 0x0570)
+// 0x0270 (0x0800 - 0x0590)
 class UKuroDebugMovementComponent final : public UPrimitiveComponent
 {
 public:
-	int32                                         DrawDebugCount;                                    // 0x0570(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bShowLog : 1;                                      // 0x0574(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	EKDMDrawDebugType                             bDrawDebug;                                        // 0x0575(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bRecording : 1;                                    // 0x0576(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bHasPersistentRecord : 1;                          // 0x0576(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_577[0x269];                                    // 0x0577(0x0269)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         DrawDebugCount;                                    // 0x0590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bShowLog : 1;                                      // 0x0594(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	EKDMDrawDebugType                             bDrawDebug;                                        // 0x0595(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bRecording : 1;                                    // 0x0596(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bHasPersistentRecord : 1;                          // 0x0596(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_597[0x269];                                    // 0x0597(0x0269)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class FString KuroDebugMovementBaseRecordToString(const struct FBaseRecord& Record);

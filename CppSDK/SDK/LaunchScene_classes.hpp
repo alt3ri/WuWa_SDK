@@ -17,15 +17,17 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass LaunchScene.LaunchScene_C
-// 0x0008 (0x02C0 - 0x02B8)
+// 0x0010 (0x02C8 - 0x02B8)
 class ALaunchScene_C final : public ALevelScriptActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FTimerHandle                           SharpheralStartupTimerHandle;                      // 0x02C0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_LaunchScene(int32 EntryPoint);
+	void 轮询Sharphereal_是否Startup完成();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

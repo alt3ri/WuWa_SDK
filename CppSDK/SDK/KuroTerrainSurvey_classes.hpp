@@ -47,7 +47,7 @@ DUMPER7_ASSERTS_IInterface_KuroTerrainSurveyPredictionAnimIns;
 
 // Class KuroTerrainSurvey.TerrainSurveyCreate
 // 0x0010 (0x0040 - 0x0030)
-class UTerrainSurveyCreate : public UTerrainSurveyCreateBase
+class UTerrainSurveyCreate final : public UTerrainSurveyCreateBase
 {
 public:
 	TSubclassOf<class UAnimInstance>              PredictionAnimInsClass;                            // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)

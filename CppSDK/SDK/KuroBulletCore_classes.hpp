@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_classes.hpp"
-#include "KuroBulletCore_structs.hpp"
-#include "Engine_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_classes.hpp"
+#include "KuroBulletCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -297,7 +297,7 @@ public:
 DUMPER7_ASSERTS_IBulletContext;
 
 // Class KuroBulletCore.BulletEntity
-// 0x03F0 (0x0420 - 0x0030)
+// 0x0450 (0x0480 - 0x0030)
 class alignas(0x10) UBulletEntity final : public UObject
 {
 public:
@@ -321,10 +321,10 @@ public:
 	class UTraceSphereElement*                    ObstacleTraceSphere;                               // 0x0350(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTraceBoxElement*                       ObstacleTraceBox;                                  // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTraceLineElement*                      ObstacleTraceLine;                                 // 0x0360(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_368[0x48];                                     // 0x0368(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UBulletActionBase*>              TickActions;                                       // 0x03B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<class UBulletOnHitAction*>             OnHitActions;                                      // 0x03C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3D0[0x50];                                     // 0x03D0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_368[0xA8];                                     // 0x0368(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UBulletActionBase*>              TickActions;                                       // 0x0410(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<class UBulletOnHitAction*>             OnHitActions;                                      // 0x0420(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_430[0x50];                                     // 0x0430(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnObstacleTrace(bool Result, class UTraceBaseElement* Element, double Frame, double Index_0);

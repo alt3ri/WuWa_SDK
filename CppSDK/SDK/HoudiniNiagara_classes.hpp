@@ -18,7 +18,7 @@
 SDK_NAMESPACE_START
 
 // Class HoudiniNiagara.HoudiniPointCache
-// 0x00C0 (0x00F0 - 0x0030)
+// 0x00C8 (0x00F8 - 0x0030)
 class UHoudiniPointCache final : public UObject
 {
 public:
@@ -33,16 +33,16 @@ public:
 	float                                         MaxSampleTime;                                     // 0x005C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 SourceCSVTitleRow;                                 // 0x0060(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                         AttributeArray;                                    // 0x0070(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<float>                                 FloatSampleData;                                   // 0x0088(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<float>                                 SpawnTimes;                                        // 0x0098(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<float>                                 LifeValues;                                        // 0x00A8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<int32>                                 PointTypes;                                        // 0x00B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<int32>                                 SpecialAttributeIndexes;                           // 0x00C8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FPointIndexes>                  PointValueIndexes;                                 // 0x00D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	bool                                          UseCustomCSVTitleRow;                              // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EHoudiniPointCacheFileType                    FileType;                                          // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x10];                                      // 0x0080(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 FloatSampleData;                                   // 0x0090(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<float>                                 SpawnTimes;                                        // 0x00A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<float>                                 LifeValues;                                        // 0x00B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<int32>                                 PointTypes;                                        // 0x00C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<int32>                                 SpecialAttributeIndexes;                           // 0x00D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FPointIndexes>                  PointValueIndexes;                                 // 0x00E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	bool                                          UseCustomCSVTitleRow;                              // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EHoudiniPointCacheFileType                    FileType;                                          // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool GetAttributeIndexInArrayFromString(const class FString& InAttribute, const TArray<class FString>& InAttributeArray, int32* OutAttributeIndex);

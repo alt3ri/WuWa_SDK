@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "WindowsDeviceProfileSelector_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "WindowsDeviceProfileSelector_structs.hpp"
 
 
 SDK_NAMESPACE_START

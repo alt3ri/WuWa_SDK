@@ -10,13 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "KuroBullet_structs.hpp"
-#include "SCameraConfig_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
-#include "KuroSimpleCombat_structs.hpp"
-#include "KuroGameBudget_structs.hpp"
-
 
 SDK_NAMESPACE_START
 
@@ -35,30 +28,11 @@ enum class EV8GCType : uint8
 };
 
 // ScriptStruct JsEnv.PropertyMetaRoot
-// 0x0008 (0x0008 - 0x0000)
+// 0x0001 (0x0001 - 0x0000)
 struct FPropertyMetaRoot final
 {
 public:
-	class USkeletalMesh*                          None;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          None_0;                                            // 0x0000(0x0018)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameBudgetBlueprintGroupConfig        None_1;                                            // 0x0000(0x0018)(NoDestructor, HasGetValueTypeHash)
-	struct FSCameraConfig                         None_2;                                            // 0x0000(0x0838)(HasGetValueTypeHash)
-	struct FVector2D                              None_3;                                            // 0x0000(0x0008)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBulletHitWorldEntityOperation         None_4;                                            // 0x0000(0x0058)(NoDestructor, HasGetValueTypeHash)
-	struct FIntPoint                              None_5;                                            // 0x0000(0x0008)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FInputAxisKeyMapping                   None_6;                                            // 0x0000(0x0030)(HasGetValueTypeHash)
-	struct FInputActionKeyMapping                 None_7;                                            // 0x0000(0x0030)(HasGetValueTypeHash)
-	int32                                         None_8;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 None_9;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGuid                                  None_10;                                           // 0x0000(0x0010)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   None_11;                                           // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 None_12;                                           // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FKSC_MiniMapContext                    None_13;                                           // 0x0000(0x0028)(NoDestructor, HasGetValueTypeHash)
-	struct FKSC_HeadHpContext                     None_14;                                           // 0x0000(0x0038)(NoDestructor, HasGetValueTypeHash)
-	struct FAnimNotifyEvent                       None_15;                                           // 0x0000(0x00C8)(HasGetValueTypeHash)
-	class UAnimSequenceBase*                      None_16;                                           // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimationAsset*                        None_17;                                           // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 None_18;                                           // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FPropertyMetaRoot;
 

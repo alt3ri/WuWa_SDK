@@ -51,7 +51,7 @@ DUMPER7_ASSERTS_UKuroCrowdAiBoidAnimUpdater;
 
 // Class KuroCrowdAi.KuroCrowdAiBoidActorSystem
 // 0x0530 (0x0800 - 0x02D0)
-class AKuroCrowdAiBoidActorSystem : public ABakedBoneMeshActor
+class AKuroCrowdAiBoidActorSystem final : public ABakedBoneMeshActor
 {
 public:
 	class UBakedBoneMeshComponent*                BakedBoneMeshComp;                                 // 0x02D0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

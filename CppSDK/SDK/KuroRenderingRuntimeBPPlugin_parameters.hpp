@@ -10,18 +10,187 @@
 
 #include "Basic.hpp"
 
-#include "KuroGamePartition_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "MovieScene_structs.hpp"
-#include "Renderer_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "Engine_structs.hpp"
-#include "KuroCurve_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "KuroCurve_structs.hpp"
+#include "Engine_structs.hpp"
+#include "KuroGamePartition_structs.hpp"
+#include "Renderer_structs.hpp"
+#include "MovieScene_structs.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
+
+// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawnerComponent.HasAnyTrail
+// 0x0001 (0x0001 - 0x0000)
+struct KuroCurveTrailDecalSpawnerComponent_HasAnyTrail final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCurveTrailDecalSpawnerComponent_HasAnyTrail;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawnerComponent.ManualUpdate
+// 0x0004 (0x0004 - 0x0000)
+struct KuroCurveTrailDecalSpawnerComponent_ManualUpdate final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCurveTrailDecalSpawnerComponent_ManualUpdate;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawnerComponent.ReceiveAsyncTrace
+// 0x0020 (0x0020 - 0x0000)
+struct KuroCurveTrailDecalSpawnerComponent_ReceiveAsyncTrace final
+{
+public:
+	bool                                          Result;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTraceBaseElement*                      Element;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        Frame;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        Index_0;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCurveTrailDecalSpawnerComponent_ReceiveAsyncTrace;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.DoHiddenInGame
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectActor_DoHiddenInGame final
+{
+public:
+	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectActor_DoHiddenInGame;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectActor_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectActor_EditorTick;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.EditorSetActorComponentsTickEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectActor_EditorSetActorComponentsTickEnabled final
+{
+public:
+	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectActor_EditorSetActorComponentsTickEnabled;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.GetStreamingBoundsEditor
+// 0x001C (0x001C - 0x0000)
+struct KuroEffectActor_GetStreamingBoundsEditor final
+{
+public:
+	struct FBox                                   ReturnValue;                                       // 0x0000(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectActor_GetStreamingBoundsEditor;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.GetStreamingBoundsEx
+// 0x001C (0x001C - 0x0000)
+struct KuroEffectActor_GetStreamingBoundsEx final
+{
+public:
+	struct FBox                                   ReturnValue;                                       // 0x0000(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectActor_GetStreamingBoundsEx;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroSceneRainActor.SetCurrentRain
+// 0x0014 (0x0014 - 0x0000)
+struct KuroSceneRainActor_SetCurrentRain final
+{
+public:
+	float                                         InDensity;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InGravity;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InWindSpeed;                                       // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSceneRainActor_SetCurrentRain;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroFlickerLightActor.CalculateIntensity
+// 0x0004 (0x0004 - 0x0000)
+struct KuroFlickerLightActor_CalculateIntensity final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroFlickerLightActor_CalculateIntensity;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroFlickerLightActor.ForeachPointLight
+// 0x0008 (0x0008 - 0x0000)
+struct KuroFlickerLightActor_ForeachPointLight final
+{
+public:
+	class UPointLightComponent*                   PointLightComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroFlickerLightActor_ForeachPointLight;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroEditorTickActor.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEditorTickActor_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEditorTickActor_EditorTick;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroEditorTickActor.EditorSetActorComponentsTickEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEditorTickActor_EditorSetActorComponentsTickEnabled final
+{
+public:
+	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEditorTickActor_EditorSetActorComponentsTickEnabled;
+
+// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SetTargetCapsules
+// 0x0018 (0x0018 - 0x0000)
+struct CapsuleStampConsumer_SetTargetCapsules final
+{
+public:
+	TArray<struct FCapsuleStampWorld2D>           InTargetCapsules;                                  // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bSnapImmediately;                                  // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CapsuleStampConsumer_SetTargetCapsules;
+
+// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SetTargetPoint
+// 0x0028 (0x0028 - 0x0000)
+struct CapsuleStampConsumer_SetTargetPoint final
+{
+public:
+	struct FVectorDouble                          Point;                                             // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RadiusWorld;                                       // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SoftEdgeWidthWorld;                                // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CapsuleStampConsumer_SetTargetPoint;
+
+// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SetTargetPoints
+// 0x0020 (0x0020 - 0x0000)
+struct CapsuleStampConsumer_SetTargetPoints final
+{
+public:
+	TArray<struct FVectorDouble>                  Points;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                         RadiusWorld;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SoftEdgeWidthWorld;                                // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CapsuleStampConsumer_SetTargetPoints;
+
+// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SnapToTargetAndDrawOnce
+// 0x0001 (0x0001 - 0x0000)
+struct CapsuleStampConsumer_SnapToTargetAndDrawOnce final
+{
+public:
+	bool                                          bFlush;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CapsuleStampConsumer_SnapToTargetAndDrawOnce;
 
 // Function KuroRenderingRuntimeBPPlugin.CircleStampConsumer.SetClearColor
 // 0x0010 (0x0010 - 0x0000)
@@ -69,109 +238,32 @@ public:
 };
 DUMPER7_ASSERTS_CircleStampConsumer_SetRenderTargetWorldRadius;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawner.BeginSpawner
-// 0x0060 (0x0060 - 0x0000)
-struct KuroCurveTrailDecalSpawner_BeginSpawner final
+// Function KuroRenderingRuntimeBPPlugin.CoralWindActor.SetPlayerActors
+// 0x0010 (0x0010 - 0x0000)
+struct CoralWindActor_SetPlayerActors final
 {
 public:
-	class USceneComponent*                        AttachmentComp;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroCurveTrailDecalConfig*             Config;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AttachSocketName;                                  // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             AttachTransform;                                   // 0x0020(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class AKuroCurveTrailDecalSpawner*            ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         Actors;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroCurveTrailDecalSpawner_BeginSpawner;
+DUMPER7_ASSERTS_CoralWindActor_SetPlayerActors;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawner.EndSpawner
-// 0x0020 (0x0020 - 0x0000)
-struct KuroCurveTrailDecalSpawner_EndSpawner final
+// Function KuroRenderingRuntimeBPPlugin.CoralWindActor.SetPlayerInteractor
+// 0x0008 (0x0008 - 0x0000)
+struct CoralWindActor_SetPlayerInteractor final
 {
 public:
-	class USceneComponent*                        AttachmentComp;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroCurveTrailDecalConfig*             Config;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AttachSocketName;                                  // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UCapsuleComponent*                      Capsule;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroCurveTrailDecalSpawner_EndSpawner;
+DUMPER7_ASSERTS_CoralWindActor_SetPlayerInteractor;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroEditorTickActor.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct KuroEditorTickActor_EditorTick final
+// Function KuroRenderingRuntimeBPPlugin.CoralWindActor.SetSphereInteractors
+// 0x0010 (0x0010 - 0x0000)
+struct CoralWindActor_SetSphereInteractors final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCoralSphere>                   InSpheres;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroEditorTickActor_EditorTick;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroEditorTickActor.EditorSetActorComponentsTickEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct KuroEditorTickActor_EditorSetActorComponentsTickEnabled final
-{
-public:
-	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroEditorTickActor_EditorSetActorComponentsTickEnabled;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroFloatingBillboardCloudActor.FastPoissonDiscSampling
-// 0x0028 (0x0028 - 0x0000)
-struct KuroFloatingBillboardCloudActor_FastPoissonDiscSampling final
-{
-public:
-	struct FVector2D                              Range;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         thresold;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              center;                                            // 0x000C(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector2D>                      ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroFloatingBillboardCloudActor_FastPoissonDiscSampling;
-
-// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SetTargetCapsules
-// 0x0018 (0x0018 - 0x0000)
-struct CapsuleStampConsumer_SetTargetCapsules final
-{
-public:
-	TArray<struct FCapsuleStampWorld2D>           InTargetCapsules;                                  // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bSnapImmediately;                                  // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CapsuleStampConsumer_SetTargetCapsules;
-
-// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SetTargetPoint
-// 0x0028 (0x0028 - 0x0000)
-struct CapsuleStampConsumer_SetTargetPoint final
-{
-public:
-	struct FVectorDouble                          Point;                                             // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RadiusWorld;                                       // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SoftEdgeWidthWorld;                                // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CapsuleStampConsumer_SetTargetPoint;
-
-// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SetTargetPoints
-// 0x0020 (0x0020 - 0x0000)
-struct CapsuleStampConsumer_SetTargetPoints final
-{
-public:
-	TArray<struct FVectorDouble>                  Points;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	float                                         RadiusWorld;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SoftEdgeWidthWorld;                                // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CapsuleStampConsumer_SetTargetPoints;
-
-// Function KuroRenderingRuntimeBPPlugin.CapsuleStampConsumer.SnapToTargetAndDrawOnce
-// 0x0001 (0x0001 - 0x0000)
-struct CapsuleStampConsumer_SnapToTargetAndDrawOnce final
-{
-public:
-	bool                                          bFlush;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CapsuleStampConsumer_SnapToTargetAndDrawOnce;
+DUMPER7_ASSERTS_CoralWindActor_SetSphereInteractors;
 
 // Function KuroRenderingRuntimeBPPlugin.FSRayCastingActor.P_FS_CheckFrontObstacle2_Shuffled
 // 0x00B0 (0x00B0 - 0x0000)
@@ -456,6 +548,19 @@ public:
 };
 DUMPER7_ASSERTS_KuroAnimNotifyState_K2_NotifyBegin;
 
+// Function KuroRenderingRuntimeBPPlugin.KuroAnimNotifyState.K2_NotifyBeginConditionCheck
+// 0x0018 (0x0018 - 0x0000)
+struct KuroAnimNotifyState_K2_NotifyBeginConditionCheck final
+{
+public:
+	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TotalDuration;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAnimNotifyState_K2_NotifyBeginConditionCheck;
+
 // Function KuroRenderingRuntimeBPPlugin.KuroAnimNotifyState.K2_NotifyEnd
 // 0x0018 (0x0018 - 0x0000)
 struct KuroAnimNotifyState_K2_NotifyEnd final
@@ -467,6 +572,18 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroAnimNotifyState_K2_NotifyEnd;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroAnimNotifyState.K2_NotifyEndConditionCheck
+// 0x0018 (0x0018 - 0x0000)
+struct KuroAnimNotifyState_K2_NotifyEndConditionCheck final
+{
+public:
+	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAnimNotifyState_K2_NotifyEndConditionCheck;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroAnimNotifyState.K2_NotifyTick
 // 0x0018 (0x0018 - 0x0000)
@@ -480,6 +597,19 @@ public:
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroAnimNotifyState_K2_NotifyTick;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroAnimNotifyState.K2_NotifyTickConditionCheck
+// 0x0018 (0x0018 - 0x0000)
+struct KuroAnimNotifyState_K2_NotifyTickConditionCheck final
+{
+public:
+	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameDeltaTime;                                    // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAnimNotifyState_K2_NotifyTickConditionCheck;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroAnimNotifyState.K2_PostChangeProperty
 // 0x0010 (0x0010 - 0x0000)
@@ -1716,36 +1846,32 @@ public:
 };
 DUMPER7_ASSERTS_KuroCurveTrailDecalComponent_GetNumPointsInActiveGroup;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawnerComponent.HasAnyTrail
-// 0x0001 (0x0001 - 0x0000)
-struct KuroCurveTrailDecalSpawnerComponent_HasAnyTrail final
+// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawner.BeginSpawner
+// 0x0060 (0x0060 - 0x0000)
+struct KuroCurveTrailDecalSpawner_BeginSpawner final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        AttachmentComp;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroCurveTrailDecalConfig*             Config;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AttachSocketName;                                  // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             AttachTransform;                                   // 0x0020(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class AKuroCurveTrailDecalSpawner*            ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_KuroCurveTrailDecalSpawnerComponent_HasAnyTrail;
+DUMPER7_ASSERTS_KuroCurveTrailDecalSpawner_BeginSpawner;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawnerComponent.ManualUpdate
-// 0x0004 (0x0004 - 0x0000)
-struct KuroCurveTrailDecalSpawnerComponent_ManualUpdate final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroCurveTrailDecalSpawnerComponent_ManualUpdate;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawnerComponent.ReceiveAsyncTrace
+// Function KuroRenderingRuntimeBPPlugin.KuroCurveTrailDecalSpawner.EndSpawner
 // 0x0020 (0x0020 - 0x0000)
-struct KuroCurveTrailDecalSpawnerComponent_ReceiveAsyncTrace final
+struct KuroCurveTrailDecalSpawner_EndSpawner final
 {
 public:
-	bool                                          Result;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTraceBaseElement*                      Element;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        Frame;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        Index_0;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        AttachmentComp;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroCurveTrailDecalConfig*             Config;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AttachSocketName;                                  // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_KuroCurveTrailDecalSpawnerComponent_ReceiveAsyncTrace;
+DUMPER7_ASSERTS_KuroCurveTrailDecalSpawner_EndSpawner;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroCustomShadowDepthWorldSubsystem.AddActorToRenderList
 // 0x0008 (0x0008 - 0x0000)
@@ -2036,68 +2162,18 @@ public:
 };
 DUMPER7_ASSERTS_KuroDynamicGrassManager_ShouldGrassBeHiddenByEntity;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.DoHiddenInGame
-// 0x0001 (0x0001 - 0x0000)
-struct KuroEffectActor_DoHiddenInGame final
+// Function KuroRenderingRuntimeBPPlugin.KuroFloatingBillboardCloudActor.FastPoissonDiscSampling
+// 0x0028 (0x0028 - 0x0000)
+struct KuroFloatingBillboardCloudActor_FastPoissonDiscSampling final
 {
 public:
-	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Range;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         thresold;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              center;                                            // 0x000C(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector2D>                      ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroEffectActor_DoHiddenInGame;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct KuroEffectActor_EditorTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroEffectActor_EditorTick;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.EditorSetActorComponentsTickEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct KuroEffectActor_EditorSetActorComponentsTickEnabled final
-{
-public:
-	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroEffectActor_EditorSetActorComponentsTickEnabled;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.GetStreamingBoundsEditor
-// 0x001C (0x001C - 0x0000)
-struct KuroEffectActor_GetStreamingBoundsEditor final
-{
-public:
-	struct FBox                                   ReturnValue;                                       // 0x0000(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroEffectActor_GetStreamingBoundsEditor;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroEffectActor.GetStreamingBoundsEx
-// 0x001C (0x001C - 0x0000)
-struct KuroEffectActor_GetStreamingBoundsEx final
-{
-public:
-	struct FBox                                   ReturnValue;                                       // 0x0000(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroEffectActor_GetStreamingBoundsEx;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroFlickerLightActor.CalculateIntensity
-// 0x0004 (0x0004 - 0x0000)
-struct KuroFlickerLightActor_CalculateIntensity final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroFlickerLightActor_CalculateIntensity;
-
-// Function KuroRenderingRuntimeBPPlugin.KuroFlickerLightActor.ForeachPointLight
-// 0x0008 (0x0008 - 0x0000)
-struct KuroFlickerLightActor_ForeachPointLight final
-{
-public:
-	class UPointLightComponent*                   PointLightComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroFlickerLightActor_ForeachPointLight;
+DUMPER7_ASSERTS_KuroFloatingBillboardCloudActor_FastPoissonDiscSampling;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroFloatingBillboardCloudPrefabActor.CreateDMI
 // 0x0010 (0x0010 - 0x0000)
@@ -2254,6 +2330,28 @@ public:
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroFruitTreeInteractionActor_ActivateFruitsInRadius;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroFruitTreeInteractionActor.TriggerFruitPick
+// 0x0020 (0x0020 - 0x0000)
+struct KuroFruitTreeInteractionActor_TriggerFruitPick final
+{
+public:
+	struct FVectorDouble                          OriginPoint;                                       // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WeaponRadius;                                      // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroFruitTreeInteractionActor_TriggerFruitPick;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroFruitTreeInteractionActor.TriggerTrunkShake
+// 0x0020 (0x0020 - 0x0000)
+struct KuroFruitTreeInteractionActor_TriggerTrunkShake final
+{
+public:
+	struct FVectorDouble                          OriginPoint;                                       // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroFruitTreeInteractionActor_TriggerTrunkShake;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroFruitTreeInteractionActor.TriggerWeaponInteraction
 // 0x0020 (0x0020 - 0x0000)
@@ -3747,6 +3845,89 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroInteractionPlacement_OnTriggerComponentEndOverlap;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.Get
+// 0x0010 (0x0010 - 0x0000)
+struct KuroKeepMipsSubsystem_Get final
+{
+public:
+	const class UGameInstance*                    GameInstance;                                      // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroKeepMipsSubsystem*                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_Get;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.GetForWorld
+// 0x0010 (0x0010 - 0x0000)
+struct KuroKeepMipsSubsystem_GetForWorld final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroKeepMipsSubsystem*                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_GetForWorld;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.ReleaseKeepMips
+// 0x0008 (0x0008 - 0x0000)
+struct KuroKeepMipsSubsystem_ReleaseKeepMips final
+{
+public:
+	int32                                         RequestId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_ReleaseKeepMips;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.RenewKeepMips
+// 0x000C (0x000C - 0x0000)
+struct KuroKeepMipsSubsystem_RenewKeepMips final
+{
+public:
+	int32                                         RequestId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DurationSeconds;                                   // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_RenewKeepMips;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.RequestKeepMips
+// 0x0014 (0x0014 - 0x0000)
+struct KuroKeepMipsSubsystem_RequestKeepMips final
+{
+public:
+	int32                                         TextureKeepMips;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MeshKeepMips;                                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DurationSeconds;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RequestId;                                         // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_RequestKeepMips;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.GetCurrentKeepMips
+// 0x0004 (0x0004 - 0x0000)
+struct KuroKeepMipsSubsystem_GetCurrentKeepMips final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_GetCurrentKeepMips;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.GetCurrentMeshKeepMips
+// 0x0004 (0x0004 - 0x0000)
+struct KuroKeepMipsSubsystem_GetCurrentMeshKeepMips final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_GetCurrentMeshKeepMips;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroKeepMipsSubsystem.IsActive
+// 0x0001 (0x0001 - 0x0000)
+struct KuroKeepMipsSubsystem_IsActive final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroKeepMipsSubsystem_IsActive;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroLensFlare.GetViewportSize
 // 0x0008 (0x0008 - 0x0000)
@@ -6016,6 +6197,35 @@ public:
 };
 DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_AddWeatherDataType;
 
+// Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.ApplyDreamReflectionCaptureParameters
+// 0x0020 (0x0020 - 0x0000)
+struct KuroRenderingRuntimeBPPluginBPLibrary_ApplyDreamReflectionCaptureParameters final
+{
+public:
+	class USceneCaptureComponent2D*               CaptureComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTextureRenderTarget2D*                 RenderTarget;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_ApplyDreamReflectionCaptureParameters;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.BuildDreamReflectionCaptureMatrixRows
+// 0x0058 (0x0058 - 0x0000)
+struct KuroRenderingRuntimeBPPluginBPLibrary_BuildDreamReflectionCaptureMatrixRows final
+{
+public:
+	class USceneCaptureComponent2D*               CaptureComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTextureRenderTarget2D*                 RenderTarget;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           OutWorldToCaptureClipRow0;                         // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           OutWorldToCaptureClipRow1;                         // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           OutWorldToCaptureClipRow2;                         // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           OutWorldToCaptureClipRow3;                         // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_BuildDreamReflectionCaptureMatrixRows;
+
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.CanCutBelowLastHit
 // 0x005C (0x005C - 0x0000)
 struct KuroRenderingRuntimeBPPluginBPLibrary_CanCutBelowLastHit final
@@ -6268,6 +6478,24 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_DoesDeviceSupportVariableRateShading;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.FilterWeaponSweepPosition
+// 0x0030 (0x0030 - 0x0000)
+struct KuroRenderingRuntimeBPPluginBPLibrary_FilterWeaponSweepPosition final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitPos;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WeaponTypeID;                                      // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ValidBool;                                         // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FilterStateID;                                     // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValidTimeWindow;                                   // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpeedThreshold;                                    // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlternatingPointTolerance;                         // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReverseDirectionDotThreshold;                      // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_FilterWeaponSweepPosition;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.FreezeWorldLevelStreaming
 // 0x0008 (0x0008 - 0x0000)
@@ -7277,6 +7505,17 @@ public:
 	int32                                         ActiveParticles;                                   // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_GetNiagaraParticleCount;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.GetObjectFilterStateID
+// 0x0010 (0x0010 - 0x0000)
+struct KuroRenderingRuntimeBPPluginBPLibrary_GetObjectFilterStateID final
+{
+public:
+	const class UObject*                          Object;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ExtraID;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_GetObjectFilterStateID;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.GetObjectMaskedFlags
 // 0x0010 (0x0010 - 0x0000)
@@ -9196,6 +9435,23 @@ public:
 };
 DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_UpdateFoliageDataLayer;
 
+// Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.UpdateMountainRowLoopLocation
+// 0x0068 (0x0068 - 0x0000)
+struct KuroRenderingRuntimeBPPluginBPLibrary_UpdateMountainRowLoopLocation final
+{
+public:
+	struct FVectorDouble                          BaseLocation;                                      // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        OriginY;                                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        TileLength;                                        // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        Speed;                                             // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        DeltaSeconds;                                      // 0x0030(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        InOutFlowDistance;                                 // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          OutLocation;                                       // 0x0040(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        OutDeltaY;                                         // 0x0058(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        OutLoopRelY;                                       // 0x0060(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_UpdateMountainRowLoopLocation;
+
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.UpdateOrAddCurveColorValue
 // 0x0020 (0x0020 - 0x0000)
 struct KuroRenderingRuntimeBPPluginBPLibrary_UpdateOrAddCurveColorValue final
@@ -9230,6 +9486,50 @@ public:
 	struct FVector2D                              ReturnValue;                                       // 0x0014(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_VolumeSphereInWater;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.WeaponInteractCollision
+// 0x0070 (0x0070 - 0x0000)
+struct KuroRenderingRuntimeBPPluginBPLibrary_WeaponInteractCollision final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitPos;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WeaponTypeID;                                      // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    HitComponent;                                      // 0x0018(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SweepRadius;                                       // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpeedThreshold;                                    // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValidTimeWindow;                                   // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowTrace;                                        // 0x002C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TraceDebugLifeTime;                                // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HitBool;                                           // 0x0034(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ValidBool;                                         // 0x0035(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                OutHitPoint;                                       // 0x0038(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OutPos;                                            // 0x0044(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OutPosPre;                                         // 0x0050(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 DebugInfo;                                         // 0x0060(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_WeaponInteractCollision;
+
+// Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.WeaponInteractCollisionAnyHit
+// 0x0050 (0x0050 - 0x0000)
+struct KuroRenderingRuntimeBPPluginBPLibrary_WeaponInteractCollisionAnyHit final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HitPos;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WeaponTypeID;                                      // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HitBool;                                           // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ValidBool;                                         // 0x0019(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                OutHitPoint;                                       // 0x001C(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OutPos;                                            // 0x0028(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OutPosPre;                                         // 0x0034(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 DebugInfo;                                         // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroRenderingRuntimeBPPluginBPLibrary_WeaponInteractCollisionAnyHit;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.WpBeginAdjustLoadRange
 // 0x0010 (0x0010 - 0x0000)
@@ -9433,17 +9733,6 @@ public:
 };
 DUMPER7_ASSERTS_KuroSceneInteractionActorSystem_GetCurrentState;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroSceneInteractionActorSystem.SetSequenceWithTargetLevelActor
-// 0x0018 (0x0018 - 0x0000)
-struct KuroSceneInteractionActorSystem_SetSequenceWithTargetLevelActor final
-{
-public:
-	class ALevelSequenceActor*                    LevelSequenceActor;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULevelSequence*                         InSequence;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 TargetLevelActor;                                  // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroSceneInteractionActorSystem_SetSequenceWithTargetLevelActor;
-
 // Function KuroRenderingRuntimeBPPlugin.KuroSceneInteractionActorSystem.SwitchToState
 // 0x0008 (0x0008 - 0x0000)
 struct KuroSceneInteractionActorSystem_SwitchToState final
@@ -9457,16 +9746,16 @@ public:
 };
 DUMPER7_ASSERTS_KuroSceneInteractionActorSystem_SwitchToState;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroSceneRainActor.SetCurrentRain
-// 0x0014 (0x0014 - 0x0000)
-struct KuroSceneRainActor_SetCurrentRain final
+// Function KuroRenderingRuntimeBPPlugin.KuroSceneInteractionActorSystem.SetSequenceWithTargetLevelActor
+// 0x0018 (0x0018 - 0x0000)
+struct KuroSceneInteractionActorSystem_SetSequenceWithTargetLevelActor final
 {
 public:
-	float                                         InDensity;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InGravity;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InWindSpeed;                                       // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ALevelSequenceActor*                    LevelSequenceActor;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULevelSequence*                         InSequence;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 TargetLevelActor;                                  // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroSceneRainActor_SetCurrentRain;
+DUMPER7_ASSERTS_KuroSceneInteractionActorSystem_SetSequenceWithTargetLevelActor;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroSceneTransitionComponent.TickSceneTransition
 // 0x000C (0x000C - 0x0000)
@@ -9829,14 +10118,14 @@ public:
 };
 DUMPER7_ASSERTS_KuroUiSceneSystem_EndUiSceneRendering;
 
-// Function KuroRenderingRuntimeBPPlugin.KuroUiSceneSystem.GetCurrentUiSceneRenderingSceneName
-// 0x0010 (0x0010 - 0x0000)
-struct KuroUiSceneSystem_GetCurrentUiSceneRenderingSceneName final
+// Function KuroRenderingRuntimeBPPlugin.KuroUiSceneSystem.GetAllUiSceneLoadingState
+// 0x0001 (0x0001 - 0x0000)
+struct KuroUiSceneSystem_GetAllUiSceneLoadingState final
 {
 public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroUiSceneLoadingState                      ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KuroUiSceneSystem_GetCurrentUiSceneRenderingSceneName;
+DUMPER7_ASSERTS_KuroUiSceneSystem_GetAllUiSceneLoadingState;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroUiSceneSystem.GetUiSceneLoadingState
 // 0x0018 (0x0018 - 0x0000)
@@ -9869,13 +10158,11 @@ public:
 DUMPER7_ASSERTS_KuroUiSceneSystem_GetUiSceneStates;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroUiSceneSystem.GetUiSceneWorldPositionOffset
-// 0x0020 (0x0020 - 0x0000)
+// 0x000C (0x000C - 0x0000)
 struct KuroUiSceneSystem_GetUiSceneWorldPositionOffset final
 {
 public:
-	class FString                                 ScenePath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroUiSceneSystem_GetUiSceneWorldPositionOffset;
 
@@ -9900,13 +10187,11 @@ public:
 DUMPER7_ASSERTS_KuroUiSceneSystem_PreloadUiScene;
 
 // Function KuroRenderingRuntimeBPPlugin.KuroUiSceneSystem.StartUiSceneRendering
-// 0x0018 (0x0018 - 0x0000)
+// 0x0001 (0x0001 - 0x0000)
 struct KuroUiSceneSystem_StartUiSceneRendering final
 {
 public:
-	class FString                                 ScenePath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroUiSceneSystem_StartUiSceneRendering;
 

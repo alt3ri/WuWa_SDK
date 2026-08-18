@@ -29,7 +29,7 @@ public:
 	static void ExecuteActionOnPlayingId(const int32 PlayingId, const EAudioActionType ActionType, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
 	static class UAkComponent* GetAkComponent(class USceneComponent* Parent, const class FName& SocketName, bool* bCreated);
 	static class UKuroAudioEnvironmentSubsystem* GetAudioEnvironmentSubsystem(const class UWorld* World);
-	static int32 GetSourcePlayPosition(const int32 PlayingId);
+	static int32 GetSourcePlayPosition(const int32 PlayingId, const bool bExtrapolate);
 	static bool IsAndroidApiUsingOpenSL();
 	static bool IsDolbyAtmosGameSupported();
 	static void PostEventWithMidiNote(const class UAkAudioEvent* AudioEvent, const uint8 Note, const class AActor* Actor);
@@ -143,12 +143,12 @@ public:
 DUMPER7_ASSERTS_UKuroAmbientSoundComponent;
 
 // Class KuroAudio.KuroAmbientSoundPositionsProxyComponent
-// 0x0010 (0x0730 - 0x0720)
+// 0x0010 (0x0750 - 0x0740)
 class UKuroAmbientSoundPositionsProxyComponent final : public UInstancedStaticMeshComponent
 {
 public:
-	class UKuroAmbientSoundComponent*             TargetComponent;                                   // 0x0720(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_728[0x8];                                      // 0x0728(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKuroAmbientSoundComponent*             TargetComponent;                                   // 0x0740(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_748[0x8];                                      // 0x0748(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -17,6 +17,63 @@
 
 SDK_NAMESPACE_START
 
+// Class KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface
+// 0x0000 (0x0030 - 0x0030)
+class UKuroGameBudgetAllocatorCSharpInterface final : public UObject
+{
+public:
+	static void AddAssistantActor(class AActor* AssistantActor);
+	static void AfterTickOutside(float DeltaSeconds);
+	static void ClearAssistantActors();
+	static void DestroyEnvironment();
+	static class FString GetGameBudgetDebugString(uint32 Token);
+	static float GetLastFrameGameThreadConsumeTime();
+	static void InitializeEnvironment(class UWorld* World, bool OnlyCSharpEnvironment);
+	static bool IsEnvironmentValid();
+	static void MarkActorInFighting(const class FName& GroupName, uint32 Token, bool IsInFighting);
+	static void RegisterOnceTaskCustomGroup(const class FName& GroupId, int32 Priority);
+	static void RegisterOnceTaskDefaultGroup(const class FName& GroupID, int32 Priority, int32 MaxWaitFrame);
+	static void RemoveAssistantActor(class AActor* AssistantActor);
+	static void SetActorCavernMode(const class FName& GroupName, uint32 Token, EActorCavernMode NewActorCavernMode);
+	static void SetBudgetTime(float Time);
+	static void SetCenterActor(class AActor* Actor);
+	static void SetCenterActorLocationOffset(const struct FVectorDouble& Offset);
+	static void SetDefaultTickIntervalDetailConfig(struct FGameBudgetAllocatorGroupConfig* Config, uint32 MaxTickInterval, uint32 TickReductionStartSize, uint32 TickReductionIntervalSize);
+	static void SetDefaultTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio);
+	static void SetDisableAssistantCenterActor(bool InValue);
+	static void SetGlobalCavernMode(EActorCavernMode GlobalMode);
+	static void SetGlobalMode(EGameBudgetAllocatorGlobalMode GlobalMode);
+	static void SetGroupConfig(const class FName& GroupName, const struct FGameBudgetAllocatorGroupConfig& GroupConfig);
+	static void SetMaximumFrameRate(uint32 MaxFPS);
+	static void SetPauseFrame(uint64 Frame);
+	static void SetTickIntervalDetailConfig(struct FGameBudgetAllocatorGroupConfig* Config, EGameBudgetAllocatorGlobalMode GlobalMode, EGameBudgetAllocatorActorMode ActorModel, uint32 MaxTickInterval, uint32 TickReductionStartSize, uint32 TickReductionIntervalSize);
+	static void SetTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, EGameBudgetAllocatorGlobalMode GlobalMode, EGameBudgetAllocatorActorMode ActorModel, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio);
+	static void SetUpdateCompensateEnable(bool Enabled);
+	static void SetUseBoundsCalculateDistance(const class FName& GroupName, uint32 Token, bool UseBoundsCalculateDistance);
+	static void SetUsePerformanceActorCalculateBounds(const class FName& GroupName, uint32 Token, bool UseBoundsCalculateDistance);
+	static void SetUseWasRecentlyPassVisibilityTest(const class FName& GroupTag, uint32 Token, bool InUseWasRecentlyPassVisibilityTest);
+	static void TickOutside(float DeltaSeconds);
+	static void UnregisterFunction(uint32 Token);
+	static void UpdateActor(const class FName& GroupName, uint32 Token, class AActor* Actor);
+	static void UpdateMinUpdateFIFOBudgetTime(float Time);
+	static void UpdatePerformanceActor(const class FName& GroupName, uint32 Token, class AActor* Actor);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroGameBudgetAllocatorCSharpInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroGameBudgetAllocatorCSharpInterface")
+	}
+	static class UKuroGameBudgetAllocatorCSharpInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroGameBudgetAllocatorCSharpInterface>();
+	}
+};
+DUMPER7_ASSERTS_UKuroGameBudgetAllocatorCSharpInterface;
+
 // Class KuroGameBudget.KuroGameBudgetBlueprintActor
 // 0x0108 (0x03B8 - 0x02B0)
 class AKuroGameBudgetBlueprintActor : public AActor
@@ -44,6 +101,7 @@ public:
 	void OnVisible();
 	void OverrideGameBudgetGroupType(EGameBudgetBlueprintGroup InOverrideGroupType);
 	void OverrideTickWithPaused(bool bTickWithPaused);
+	void OverrideUseWasRecentlyPassVisibilityTest(bool bUseWasRecentlyPassVisibilityTest);
 	void PauseGameBudget();
 	void RegisterOnceTickWithPaused();
 	void ResumeGameBudget();
@@ -132,62 +190,6 @@ public:
 };
 DUMPER7_ASSERTS_IInterface_KuroGameBudgetBlueprint;
 
-// Class KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface
-// 0x0000 (0x0030 - 0x0030)
-class UKuroGameBudgetAllocatorCSharpInterface final : public UObject
-{
-public:
-	static void AddAssistantActor(class AActor* AssistantActor);
-	static void AfterTickOutside(float DeltaSeconds);
-	static void ClearAssistantActors();
-	static void DestroyEnvironment();
-	static class FString GetGameBudgetDebugString(uint32 Token);
-	static float GetLastFrameGameThreadConsumeTime();
-	static void InitializeEnvironment(class UWorld* World, bool OnlyCSharpEnvironment);
-	static bool IsEnvironmentValid();
-	static void MarkActorInFighting(const class FName& GroupName, uint32 Token, bool IsInFighting);
-	static void RegisterOnceTaskCustomGroup(const class FName& GroupId, int32 Priority);
-	static void RegisterOnceTaskDefaultGroup(const class FName& GroupID, int32 Priority, int32 MaxWaitFrame);
-	static void RemoveAssistantActor(class AActor* AssistantActor);
-	static void SetActorCavernMode(const class FName& GroupName, uint32 Token, EActorCavernMode NewActorCavernMode);
-	static void SetBudgetTime(float Time);
-	static void SetCenterActor(class AActor* Actor);
-	static void SetCenterActorLocationOffset(const struct FVectorDouble& Offset);
-	static void SetDefaultTickIntervalDetailConfig(struct FGameBudgetAllocatorGroupConfig* Config, uint32 MaxTickInterval, uint32 TickReductionStartSize, uint32 TickReductionIntervalSize);
-	static void SetDefaultTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio);
-	static void SetDisableAssistantCenterActor(bool InValue);
-	static void SetGlobalCavernMode(EActorCavernMode GlobalMode);
-	static void SetGlobalMode(EGameBudgetAllocatorGlobalMode GlobalMode);
-	static void SetGroupConfig(const class FName& GroupName, const struct FGameBudgetAllocatorGroupConfig& GroupConfig);
-	static void SetMaximumFrameRate(uint32 MaxFPS);
-	static void SetPauseFrame(uint64 Frame);
-	static void SetTickIntervalDetailConfig(struct FGameBudgetAllocatorGroupConfig* Config, EGameBudgetAllocatorGlobalMode GlobalMode, EGameBudgetAllocatorActorMode ActorModel, uint32 MaxTickInterval, uint32 TickReductionStartSize, uint32 TickReductionIntervalSize);
-	static void SetTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, EGameBudgetAllocatorGlobalMode GlobalMode, EGameBudgetAllocatorActorMode ActorModel, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio);
-	static void SetUpdateCompensateEnable(bool Enabled);
-	static void SetUseBoundsCalculateDistance(const class FName& GroupName, uint32 Token, bool UseBoundsCalculateDistance);
-	static void SetUsePerformanceActorCalculateBounds(const class FName& GroupName, uint32 Token, bool UseBoundsCalculateDistance);
-	static void TickOutside(float DeltaSeconds);
-	static void UnregisterFunction(uint32 Token);
-	static void UpdateActor(const class FName& GroupName, uint32 Token, class AActor* Actor);
-	static void UpdateMinUpdateFIFOBudgetTime(float Time);
-	static void UpdatePerformanceActor(const class FName& GroupName, uint32 Token, class AActor* Actor);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroGameBudgetAllocatorCSharpInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroGameBudgetAllocatorCSharpInterface")
-	}
-	static class UKuroGameBudgetAllocatorCSharpInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroGameBudgetAllocatorCSharpInterface>();
-	}
-};
-DUMPER7_ASSERTS_UKuroGameBudgetAllocatorCSharpInterface;
-
 // Class KuroGameBudget.KuroGameBudgetBlueprintDefine
 // 0x0000 (0x0030 - 0x0030)
 class UKuroGameBudgetBlueprintDefine final : public UBlueprintFunctionLibrary
@@ -213,11 +215,11 @@ public:
 DUMPER7_ASSERTS_UKuroGameBudgetBlueprintDefine;
 
 // Class KuroGameBudget.KuroGameBudgetBoundsComponent
-// 0x0020 (0x0590 - 0x0570)
+// 0x0020 (0x05B0 - 0x0590)
 class UKuroGameBudgetBoundsComponent final : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_570[0x20];                                     // 0x0570(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_590[0x20];                                     // 0x0590(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -260,6 +262,7 @@ public:
 	void OnVisible();
 	void OverrideGameBudgetGroupType(EGameBudgetBlueprintGroup InOverrideGroupType);
 	void OverrideTickWithPaused(bool bTickWithPaused);
+	void OverrideUseWasRecentlyPassVisibilityTest(bool bUseWasRecentlyPassVisibilityTest);
 	void PauseGameBudget();
 	void RegisterOnceTickWithPaused();
 	void ResumeGameBudget();

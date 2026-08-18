@@ -74,6 +74,19 @@ public:
 };
 DUMPER7_ASSERTS_FLoginStruct;
 
+// ScriptStruct KuroSDK.PaymentStruct
+// 0x0038 (0x0038 - 0x0000)
+struct FPaymentStruct final
+{
+public:
+	class FString                                 OrderId;                                           // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPaymentType                                  PaymentType;                                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Type;                                              // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ExtraInfo;                                         // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPaymentStruct;
+
 // ScriptStruct KuroSDK.BasicInfo
 // 0x0048 (0x0048 - 0x0000)
 struct FBasicInfo final
@@ -87,18 +100,5 @@ public:
 	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FBasicInfo;
-
-// ScriptStruct KuroSDK.PaymentStruct
-// 0x0038 (0x0038 - 0x0000)
-struct FPaymentStruct final
-{
-public:
-	class FString                                 OrderId;                                           // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPaymentType                                  PaymentType;                                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Type;                                              // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ExtraInfo;                                         // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPaymentStruct;
 
 SDK_NAMESPACE_END

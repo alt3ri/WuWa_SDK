@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroComputeShader_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroComputeShader_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -25,6 +25,45 @@ public:
 	class FString                                 FilePath;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroCSBalloons_SaveParticlesToCSV;
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.TickDynamicPinManager
+// 0x0004 (0x0004 - 0x0000)
+struct KuroCSClothDynamicPinManager_TickDynamicPinManager final
+{
+public:
+	float                                         InDeltaTime;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCSClothDynamicPinManager_TickDynamicPinManager;
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.GetActorAtlasSlotIndex
+// 0x0010 (0x0010 - 0x0000)
+struct KuroCSClothDynamicPinManager_GetActorAtlasSlotIndex final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCSClothDynamicPinManager_GetActorAtlasSlotIndex;
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.GetActorAtlasTileUVOffset
+// 0x0010 (0x0010 - 0x0000)
+struct KuroCSClothDynamicPinManager_GetActorAtlasTileUVOffset final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCSClothDynamicPinManager_GetActorAtlasTileUVOffset;
+
+// Function KuroComputeShader.KuroCSClothDynamicPinManager.GetActorAtlasTileUVScale
+// 0x0008 (0x0008 - 0x0000)
+struct KuroCSClothDynamicPinManager_GetActorAtlasTileUVScale final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCSClothDynamicPinManager_GetActorAtlasTileUVScale;
 
 // Function KuroComputeShader.KuroCSClothWindComponent.CreateAtlasManager
 // 0x0008 (0x0008 - 0x0000)

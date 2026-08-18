@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "KuroMovement_structs.hpp"
-#include "KuroGameplay_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroGameplay_structs.hpp"
 
 
 SDK_NAMESPACE_START

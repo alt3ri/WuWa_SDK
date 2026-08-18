@@ -2373,6 +2373,106 @@ void UKuroMemoryLibrary::PrintUObjectMemoryInfo(class UObject* Object)
 }
 
 
+// Function KuroUtility.KuroMemProbeLibrary.GetMemProbeDir
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroMemProbeLibrary::GetMemProbeDir()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMemProbeLibrary", "GetMemProbeDir");
+
+	Params::KuroMemProbeLibrary_GetMemProbeDir Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroMemProbeLibrary.MemDumpSmaps
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Marker                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMemProbeLibrary::MemDumpSmaps(const class FString& Marker)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMemProbeLibrary", "MemDumpSmaps");
+
+	Params::KuroMemProbeLibrary_MemDumpSmaps Parms{};
+
+	Parms.Marker = std::move(Marker);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroMemProbeLibrary.MemSnapshot
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Marker                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMemProbeLibrary::MemSnapshot(const class FString& Marker)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMemProbeLibrary", "MemSnapshot");
+
+	Params::KuroMemProbeLibrary_MemSnapshot Parms{};
+
+	Parms.Marker = std::move(Marker);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroMemProbeLibrary.MemSnapshotFull
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Marker                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMemProbeLibrary::MemSnapshotFull(const class FString& Marker)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMemProbeLibrary", "MemSnapshotFull");
+
+	Params::KuroMemProbeLibrary_MemSnapshotFull Parms{};
+
+	Parms.Marker = std::move(Marker);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.AddMeshesBundleStreamedAllMipsDelegate
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -10812,6 +10912,33 @@ struct FXboxAvoidListResult UKuroStaticXSXLibrary::GetXboxAvoidList(int64 UserHa
 }
 
 
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxAvoidListAsync
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int64                                   UserHandle                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FXboxAvoidListResult& Result)>Callback                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroStaticXSXLibrary::GetXboxAvoidListAsync(int64 UserHandle, TDelegate<void(const struct FXboxAvoidListResult& Result)> Callback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroStaticXSXLibrary", "GetXboxAvoidListAsync");
+
+	Params::KuroStaticXSXLibrary_GetXboxAvoidListAsync Parms{};
+
+	Parms.UserHandle = UserHandle;
+	Parms.Callback = Callback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroUtility.KuroStaticXSXLibrary.GetXboxClassicGamertag
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -12248,6 +12375,31 @@ void UKuroTencentCOSLibrary::SetAdmissibleValue(int32 SingleLogSizeInMb)
 	Params::KuroTencentCOSLibrary_SetAdmissibleValue Parms{};
 
 	Parms.SingleLogSizeInMb = SingleLogSizeInMb;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroTencentCOSLibrary.SetCloudPath
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroTencentCOSLibrary::SetCloudPath(const class FString& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroTencentCOSLibrary", "SetCloudPath");
+
+	Params::KuroTencentCOSLibrary_SetCloudPath Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

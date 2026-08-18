@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "RoadNetRuntime_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "RoadNetRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -42,17 +42,17 @@ public:
 DUMPER7_ASSERTS_ARoadNetActor;
 
 // Class RoadNetRuntime.RoadNetComponent
-// 0x0080 (0x05F0 - 0x0570)
+// 0x0080 (0x0610 - 0x0590)
 class URoadNetComponent final : public UPrimitiveComponent
 {
 public:
-	bool                                          bDrawDebug;                                        // 0x0570(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasBeenEdited;                                    // 0x0571(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_572[0x2];                                      // 0x0572(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TileSize;                                          // 0x0574(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<int32, struct FRoadNetNode>              RoadNetNodes;                                      // 0x0580(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
-	uint32                                        RoadNetID;                                         // 0x05D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   DataBoundsBox;                                     // 0x05D4(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bDrawDebug;                                        // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasBeenEdited;                                    // 0x0591(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_592[0x2];                                      // 0x0592(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TileSize;                                          // 0x0594(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<int32, struct FRoadNetNode>              RoadNetNodes;                                      // 0x05A0(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
+	uint32                                        RoadNetID;                                         // 0x05F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   DataBoundsBox;                                     // 0x05F4(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	struct FVector GetLeaveTangentAtNode(int32 NodeID, ERoadNetCoordinateSpace CoordinateSpace) const;

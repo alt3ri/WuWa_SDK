@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "JsEnv_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "UMG_classes.hpp"
 #include "Engine_classes.hpp"
+#include "JsEnv_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -335,6 +335,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroPreloadJSCallback;
+
+// Class JsEnv.KuroProxyBpAsyncCallBack
+// 0x0050 (0x0080 - 0x0030)
+class UKuroProxyBpAsyncCallBack final : public UObject
+{
+public:
+	TDelegate<void(const class FString& Result)>  OnResolve;                                         // 0x0030(0x0028)(BlueprintVisible, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& Reason)>  OnReject;                                          // 0x0058(0x0028)(BlueprintVisible, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroProxyBpAsyncCallBack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroProxyBpAsyncCallBack")
+	}
+	static class UKuroProxyBpAsyncCallBack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroProxyBpAsyncCallBack>();
+	}
+};
+DUMPER7_ASSERTS_UKuroProxyBpAsyncCallBack;
 
 // Class JsEnv.TypeScriptBlueprint
 // 0x0000 (0x00A8 - 0x00A8)

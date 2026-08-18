@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "KuroSimpleCombat_structs.hpp"
 #include "KuroSimpleCombat_classes.hpp"
 #include "KuroBulletCore_structs.hpp"
 #include "KuroBulletCore_classes.hpp"
+#include "KuroBullet_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "KuroBullet_structs.hpp"
-#include "Engine_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -197,7 +197,7 @@ DUMPER7_ASSERTS_UActionWhirlpoolBulletKsc;
 
 // Class KuroBullet.BulletHitWorldEntityBridge
 // 0x0000 (0x0030 - 0x0030)
-class UBulletHitWorldEntityBridge : public UObject
+class UBulletHitWorldEntityBridge final : public UObject
 {
 public:
 	int32 GetCamp(int32 EntityId);

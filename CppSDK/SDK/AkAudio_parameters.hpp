@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "SlateCore_structs.hpp"
 #include "AkAudio_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "WwiseObjectUtils_structs.hpp"
 
@@ -46,6 +46,15 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AkPortalComponent_PortalPlacementValid;
+
+// Function AkAudio.AkMacInitializationSettings.MigrateMultiCoreRendering
+// 0x0001 (0x0001 - 0x0000)
+struct AkMacInitializationSettings_MigrateMultiCoreRendering final
+{
+public:
+	bool                                          NewValue;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkMacInitializationSettings_MigrateMultiCoreRendering;
 
 // Function AkAudio.AkAcousticPortal.GetCurrentState
 // 0x0001 (0x0001 - 0x0000)
@@ -82,6 +91,110 @@ public:
 	bool                                          NewValue;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AkAndroidInitializationSettings_MigrateMultiCoreRendering;
+
+// Function AkAudio.AkGameObject.PostAkEvent
+// 0x0050 (0x0050 - 0x0000)
+struct AkGameObject_PostAkEvent final
+{
+public:
+	class UAkAudioEvent*                          AkEvent;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CallbackMask;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FString                                 InEventName;                                       // 0x0038(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0048(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_AkGameObject_PostAkEvent;
+
+// Function AkAudio.AkGameObject.PostAkEventAsync
+// 0x0060 (0x0060 - 0x0000)
+struct AkGameObject_PostAkEventAsync final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          AkEvent;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayingID;                                         // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CallbackMask;                                      // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FLatentActionInfo                      LatentInfo;                                        // 0x0040(0x0020)(Parm, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkGameObject_PostAkEventAsync;
+
+// Function AkAudio.AkGameObject.PostAssociatedAkEvent
+// 0x0038 (0x0038 - 0x0000)
+struct AkGameObject_PostAssociatedAkEvent final
+{
+public:
+	int32                                         CallbackMask;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0030(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_AkGameObject_PostAssociatedAkEvent;
+
+// Function AkAudio.AkGameObject.PostAssociatedAkEventAsync
+// 0x0060 (0x0060 - 0x0000)
+struct AkGameObject_PostAssociatedAkEventAsync final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CallbackMask;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FLatentActionInfo                      LatentInfo;                                        // 0x0038(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         PlayingID;                                         // 0x0058(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_AkGameObject_PostAssociatedAkEventAsync;
+
+// Function AkAudio.AkGameObject.GetRTPCValue
+// 0x0030 (0x0030 - 0x0000)
+struct AkGameObject_GetRTPCValue final
+{
+public:
+	class UAkRtpc*                                RTPCValue;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERTPCValueType                                InputValueType;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Value;                                             // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERTPCValueType                                OutputValueType;                                   // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 RTPC;                                              // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayingID;                                         // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_AkGameObject_GetRTPCValue;
+
+// Function AkAudio.AkGameObject.SetRTPCValue
+// 0x0020 (0x0020 - 0x0000)
+struct AkGameObject_SetRTPCValue final
+{
+public:
+	class UAkRtpc*                                RTPCValue;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InterpolationTimeMs;                               // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RTPC;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkGameObject_SetRTPCValue;
+
+// Function AkAudio.AkRoomComponent.SetGeometryComponent
+// 0x0008 (0x0008 - 0x0000)
+struct AkRoomComponent_SetGeometryComponent final
+{
+public:
+	class UAkAcousticTextureSetComponent*         textureSetComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkRoomComponent_SetGeometryComponent;
+
+// Function AkAudio.AkRoomComponent.GetPrimitiveParent
+// 0x0008 (0x0008 - 0x0000)
+struct AkRoomComponent_GetPrimitiveParent final
+{
+public:
+	class UPrimitiveComponent*                    ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkRoomComponent_GetPrimitiveParent;
 
 // Function AkAudio.AkAudioEvent.D_PostAtLocation
 // 0x0068 (0x0068 - 0x0000)
@@ -213,191 +326,6 @@ public:
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_AkAudioEvent_PostOnGameObjectAndWait;
-
-// Function AkAudio.AkGameObject.PostAkEvent
-// 0x0050 (0x0050 - 0x0000)
-struct AkGameObject_PostAkEvent final
-{
-public:
-	class UAkAudioEvent*                          AkEvent;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CallbackMask;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
-	class FString                                 InEventName;                                       // 0x0038(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0048(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_AkGameObject_PostAkEvent;
-
-// Function AkAudio.AkGameObject.PostAkEventAsync
-// 0x0060 (0x0060 - 0x0000)
-struct AkGameObject_PostAkEventAsync final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAkAudioEvent*                          AkEvent;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PlayingID;                                         // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CallbackMask;                                      // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, AdvancedDisplay, NativeAccessSpecifierPublic)
-	struct FLatentActionInfo                      LatentInfo;                                        // 0x0040(0x0020)(Parm, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkGameObject_PostAkEventAsync;
-
-// Function AkAudio.AkGameObject.PostAssociatedAkEvent
-// 0x0038 (0x0038 - 0x0000)
-struct AkGameObject_PostAssociatedAkEvent final
-{
-public:
-	int32                                         CallbackMask;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0030(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_AkGameObject_PostAssociatedAkEvent;
-
-// Function AkAudio.AkGameObject.PostAssociatedAkEventAsync
-// 0x0060 (0x0060 - 0x0000)
-struct AkGameObject_PostAssociatedAkEventAsync final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CallbackMask;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> PostEventCallback; // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FLatentActionInfo                      LatentInfo;                                        // 0x0038(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         PlayingID;                                         // 0x0058(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_AkGameObject_PostAssociatedAkEventAsync;
-
-// Function AkAudio.AkGameObject.GetRTPCValue
-// 0x0030 (0x0030 - 0x0000)
-struct AkGameObject_GetRTPCValue final
-{
-public:
-	class UAkRtpc*                                RTPCValue;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERTPCValueType                                InputValueType;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Value;                                             // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERTPCValueType                                OutputValueType;                                   // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 RTPC;                                              // 0x0018(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PlayingID;                                         // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_AkGameObject_GetRTPCValue;
-
-// Function AkAudio.AkGameObject.SetRTPCValue
-// 0x0020 (0x0020 - 0x0000)
-struct AkGameObject_SetRTPCValue final
-{
-public:
-	class UAkRtpc*                                RTPCValue;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InterpolationTimeMs;                               // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RTPC;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkGameObject_SetRTPCValue;
-
-// Function AkAudio.AkSlider.SetAkSliderItemId
-// 0x0010 (0x0010 - 0x0000)
-struct AkSlider_SetAkSliderItemId final
-{
-public:
-	struct FGuid                                  ItemId;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetAkSliderItemId;
-
-// Function AkAudio.AkSlider.SetAkSliderItemProperty
-// 0x0010 (0x0010 - 0x0000)
-struct AkSlider_SetAkSliderItemProperty final
-{
-public:
-	class FString                                 ItemProperty;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetAkSliderItemProperty;
-
-// Function AkAudio.AkSlider.SetIndentHandle
-// 0x0001 (0x0001 - 0x0000)
-struct AkSlider_SetIndentHandle final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetIndentHandle;
-
-// Function AkAudio.AkSlider.SetLocked
-// 0x0001 (0x0001 - 0x0000)
-struct AkSlider_SetLocked final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetLocked;
-
-// Function AkAudio.AkSlider.SetSliderBarColor
-// 0x0010 (0x0010 - 0x0000)
-struct AkSlider_SetSliderBarColor final
-{
-public:
-	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetSliderBarColor;
-
-// Function AkAudio.AkSlider.SetSliderHandleColor
-// 0x0010 (0x0010 - 0x0000)
-struct AkSlider_SetSliderHandleColor final
-{
-public:
-	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetSliderHandleColor;
-
-// Function AkAudio.AkSlider.SetStepSize
-// 0x0004 (0x0004 - 0x0000)
-struct AkSlider_SetStepSize final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetStepSize;
-
-// Function AkAudio.AkSlider.SetValue
-// 0x0004 (0x0004 - 0x0000)
-struct AkSlider_SetValue final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_SetValue;
-
-// Function AkAudio.AkSlider.GetAkSliderItemId
-// 0x0010 (0x0010 - 0x0000)
-struct AkSlider_GetAkSliderItemId final
-{
-public:
-	struct FGuid                                  ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_GetAkSliderItemId;
-
-// Function AkAudio.AkSlider.GetAkSliderItemProperty
-// 0x0010 (0x0010 - 0x0000)
-struct AkSlider_GetAkSliderItemProperty final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_GetAkSliderItemProperty;
-
-// Function AkAudio.AkSlider.GetValue
-// 0x0004 (0x0004 - 0x0000)
-struct AkSlider_GetValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkSlider_GetValue;
 
 // Function AkAudio.AkComponent.PostTrigger
 // 0x0018 (0x0018 - 0x0000)
@@ -573,41 +501,25 @@ public:
 };
 DUMPER7_ASSERTS_AkCheckBox_IsPressed;
 
-// Function AkAudio.AkWinGDKInitializationSettings.MigrateMultiCoreRendering
-// 0x0001 (0x0001 - 0x0000)
-struct AkWinGDKInitializationSettings_MigrateMultiCoreRendering final
+// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToString
+// 0x0020 (0x0020 - 0x0000)
+struct AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToString final
 {
 public:
-	bool                                          NewValue;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAkBoolPropertyToControl               INAkBoolPropertyToControl;                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AkWinGDKInitializationSettings_MigrateMultiCoreRendering;
+DUMPER7_ASSERTS_AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToString;
 
-// Function AkAudio.AkWwiseTree.SetSearchText
-// 0x0010 (0x0010 - 0x0000)
-struct AkWwiseTree_SetSearchText final
+// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToText
+// 0x0028 (0x0028 - 0x0000)
+struct AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToText final
 {
 public:
-	class FString                                 newText;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAkBoolPropertyToControl               INAkBoolPropertyToControl;                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FText                                   ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AkWwiseTree_SetSearchText;
-
-// Function AkAudio.AkWwiseTree.GetSearchText
-// 0x0010 (0x0010 - 0x0000)
-struct AkWwiseTree_GetSearchText final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkWwiseTree_GetSearchText;
-
-// Function AkAudio.AkWwiseTree.GetSelectedItem
-// 0x0030 (0x0030 - 0x0000)
-struct AkWwiseTree_GetSelectedItem final
-{
-public:
-	struct FAkWwiseObjectDetails                  ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkWwiseTree_GetSelectedItem;
+DUMPER7_ASSERTS_AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToText;
 
 // Function AkAudio.AkGameplayStatics.AddOutput
 // 0x0030 (0x0030 - 0x0000)
@@ -1408,26 +1320,6 @@ public:
 };
 DUMPER7_ASSERTS_AkMIDIEventCallbackInfo_GetType;
 
-// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToString
-// 0x0020 (0x0020 - 0x0000)
-struct AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToString final
-{
-public:
-	struct FAkBoolPropertyToControl               INAkBoolPropertyToControl;                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToString;
-
-// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToText
-// 0x0028 (0x0028 - 0x0000)
-struct AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToText final
-{
-public:
-	struct FAkBoolPropertyToControl               INAkBoolPropertyToControl;                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FText                                   ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToText;
-
 // Function AkAudio.AkItemBoolProperties.SetSearchText
 // 0x0010 (0x0010 - 0x0000)
 struct AkItemBoolProperties_SetSearchText final
@@ -1529,15 +1421,6 @@ public:
 };
 DUMPER7_ASSERTS_AkLinuxInitializationSettings_MigrateMultiCoreRendering;
 
-// Function AkAudio.AkMacInitializationSettings.MigrateMultiCoreRendering
-// 0x0001 (0x0001 - 0x0000)
-struct AkMacInitializationSettings_MigrateMultiCoreRendering final
-{
-public:
-	bool                                          NewValue;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_AkMacInitializationSettings_MigrateMultiCoreRendering;
-
 // Function AkAudio.AkOpenHarmonyInitializationSettings.MigrateMultiCoreRendering
 // 0x0001 (0x0001 - 0x0000)
 struct AkOpenHarmonyInitializationSettings_MigrateMultiCoreRendering final
@@ -1547,23 +1430,104 @@ public:
 };
 DUMPER7_ASSERTS_AkOpenHarmonyInitializationSettings_MigrateMultiCoreRendering;
 
-// Function AkAudio.AkRoomComponent.SetGeometryComponent
-// 0x0008 (0x0008 - 0x0000)
-struct AkRoomComponent_SetGeometryComponent final
+// Function AkAudio.AkSlider.SetAkSliderItemId
+// 0x0010 (0x0010 - 0x0000)
+struct AkSlider_SetAkSliderItemId final
 {
 public:
-	class UAkAcousticTextureSetComponent*         textureSetComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ItemId;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AkRoomComponent_SetGeometryComponent;
+DUMPER7_ASSERTS_AkSlider_SetAkSliderItemId;
 
-// Function AkAudio.AkRoomComponent.GetPrimitiveParent
-// 0x0008 (0x0008 - 0x0000)
-struct AkRoomComponent_GetPrimitiveParent final
+// Function AkAudio.AkSlider.SetAkSliderItemProperty
+// 0x0010 (0x0010 - 0x0000)
+struct AkSlider_SetAkSliderItemProperty final
 {
 public:
-	class UPrimitiveComponent*                    ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ItemProperty;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AkRoomComponent_GetPrimitiveParent;
+DUMPER7_ASSERTS_AkSlider_SetAkSliderItemProperty;
+
+// Function AkAudio.AkSlider.SetIndentHandle
+// 0x0001 (0x0001 - 0x0000)
+struct AkSlider_SetIndentHandle final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_SetIndentHandle;
+
+// Function AkAudio.AkSlider.SetLocked
+// 0x0001 (0x0001 - 0x0000)
+struct AkSlider_SetLocked final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_SetLocked;
+
+// Function AkAudio.AkSlider.SetSliderBarColor
+// 0x0010 (0x0010 - 0x0000)
+struct AkSlider_SetSliderBarColor final
+{
+public:
+	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_SetSliderBarColor;
+
+// Function AkAudio.AkSlider.SetSliderHandleColor
+// 0x0010 (0x0010 - 0x0000)
+struct AkSlider_SetSliderHandleColor final
+{
+public:
+	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_SetSliderHandleColor;
+
+// Function AkAudio.AkSlider.SetStepSize
+// 0x0004 (0x0004 - 0x0000)
+struct AkSlider_SetStepSize final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_SetStepSize;
+
+// Function AkAudio.AkSlider.SetValue
+// 0x0004 (0x0004 - 0x0000)
+struct AkSlider_SetValue final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_SetValue;
+
+// Function AkAudio.AkSlider.GetAkSliderItemId
+// 0x0010 (0x0010 - 0x0000)
+struct AkSlider_GetAkSliderItemId final
+{
+public:
+	struct FGuid                                  ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_GetAkSliderItemId;
+
+// Function AkAudio.AkSlider.GetAkSliderItemProperty
+// 0x0010 (0x0010 - 0x0000)
+struct AkSlider_GetAkSliderItemProperty final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_GetAkSliderItemProperty;
+
+// Function AkAudio.AkSlider.GetValue
+// 0x0004 (0x0004 - 0x0000)
+struct AkSlider_GetValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkSlider_GetValue;
 
 // Function AkAudio.AkSurfaceReflectorSetComponent.UpdateAcousticProperties
 // 0x0010 (0x0010 - 0x0000)
@@ -1888,6 +1852,42 @@ public:
 	bool                                          NewValue;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AkWindowsInitializationSettings_MigrateMultiCoreRendering;
+
+// Function AkAudio.AkWinGDKInitializationSettings.MigrateMultiCoreRendering
+// 0x0001 (0x0001 - 0x0000)
+struct AkWinGDKInitializationSettings_MigrateMultiCoreRendering final
+{
+public:
+	bool                                          NewValue;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkWinGDKInitializationSettings_MigrateMultiCoreRendering;
+
+// Function AkAudio.AkWwiseTree.SetSearchText
+// 0x0010 (0x0010 - 0x0000)
+struct AkWwiseTree_SetSearchText final
+{
+public:
+	class FString                                 newText;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkWwiseTree_SetSearchText;
+
+// Function AkAudio.AkWwiseTree.GetSearchText
+// 0x0010 (0x0010 - 0x0000)
+struct AkWwiseTree_GetSearchText final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkWwiseTree_GetSearchText;
+
+// Function AkAudio.AkWwiseTree.GetSelectedItem
+// 0x0030 (0x0030 - 0x0000)
+struct AkWwiseTree_GetSelectedItem final
+{
+public:
+	struct FAkWwiseObjectDetails                  ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AkWwiseTree_GetSelectedItem;
 
 // Function AkAudio.AkXboxSeriesXInitializationSettings.MigrateMultiCoreRendering
 // 0x0001 (0x0001 - 0x0000)

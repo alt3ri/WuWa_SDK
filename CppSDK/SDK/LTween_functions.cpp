@@ -2178,6 +2178,25 @@ void ULTweener::Kill(bool callComplete)
 }
 
 
+// Function LTween.LTweener.KillWithCompleteCallback
+// (Native, Public, BlueprintCallable)
+
+void ULTweener::KillWithCompleteCallback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LTweener", "KillWithCompleteCallback");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LTween.LTweener.OnComplete
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:

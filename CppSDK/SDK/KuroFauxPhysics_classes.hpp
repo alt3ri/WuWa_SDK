@@ -139,11 +139,11 @@ public:
 DUMPER7_ASSERTS_UKuroFauxPhysicsAxisRotateComponent;
 
 // Class KuroFauxPhysics.KuroPrimitiveComponentVisualizer
-// 0x0030 (0x05A0 - 0x0570)
+// 0x0030 (0x05C0 - 0x0590)
 class UKuroPrimitiveComponentVisualizer : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_570[0x30];                                     // 0x0570(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_590[0x30];                                     // 0x0590(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DrawArc(const struct FVector& Base, const float Angle, const float Radius, const struct FVector& Direction, const struct FLinearColor& Color, const float Thickness, const struct FVector& Normal, int32 Sections, const float InnerRadius, const bool bDrawSides, const uint8 DepthPriority);
@@ -170,11 +170,11 @@ public:
 DUMPER7_ASSERTS_UKuroPrimitiveComponentVisualizer;
 
 // Class KuroFauxPhysics.KuroFauxPhysicsAxisRotateComponentVisualizer
-// 0x0010 (0x05B0 - 0x05A0)
+// 0x0010 (0x05D0 - 0x05C0)
 class UKuroFauxPhysicsAxisRotateComponentVisualizer final : public UKuroPrimitiveComponentVisualizer
 {
 public:
-	uint8                                         Pad_5A0[0x10];                                     // 0x05A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C0[0x10];                                     // 0x05C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -248,11 +248,11 @@ public:
 DUMPER7_ASSERTS_UKuroFauxPhysicsConeRotateComponent;
 
 // Class KuroFauxPhysics.KuroFauxPhysicsConeRotateComponentVisualizer
-// 0x0010 (0x05B0 - 0x05A0)
+// 0x0010 (0x05D0 - 0x05C0)
 class UKuroFauxPhysicsConeRotateComponentVisualizer final : public UKuroPrimitiveComponentVisualizer
 {
 public:
-	uint8                                         Pad_5A0[0x10];                                     // 0x05A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C0[0x10];                                     // 0x05C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -296,11 +296,11 @@ public:
 DUMPER7_ASSERTS_UKuroFauxPhysicsFreeRotateComponent;
 
 // Class KuroFauxPhysics.KuroFauxPhysicsFreeRotateComponentVisualizer
-// 0x0010 (0x05B0 - 0x05A0)
+// 0x0010 (0x05D0 - 0x05C0)
 class UKuroFauxPhysicsFreeRotateComponentVisualizer final : public UKuroPrimitiveComponentVisualizer
 {
 public:
-	uint8                                         Pad_5A0[0x10];                                     // 0x05A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C0[0x10];                                     // 0x05C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -531,7 +531,7 @@ public:
 DUMPER7_ASSERTS_UKuroFauxPhysicsTrackTargetComponent;
 
 // Class KuroFauxPhysics.KuroFauxPhysicsTrackTargetComponentVisualizer
-// 0x0000 (0x05A0 - 0x05A0)
+// 0x0000 (0x05C0 - 0x05C0)
 class UKuroFauxPhysicsTrackTargetComponentVisualizer final : public UKuroPrimitiveComponentVisualizer
 {
 public:

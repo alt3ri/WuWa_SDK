@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "E_Cloud_Presents_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "AkAudio_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 SDK_NAMESPACE_START

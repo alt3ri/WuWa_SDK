@@ -58,15 +58,6 @@ enum class ETranslateCountry : uint8
 	ETranslateCountry_MAX                    = 14,
 };
 
-// ScriptStruct SequenceDialogue.MovieSceneAutoTransformSectionTemplate
-// 0x0010 (0x0030 - 0x0020)
-struct FMovieSceneAutoTransformSectionTemplate final : public FMovieSceneEvalTemplate
-{
-public:
-	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMovieSceneAutoTransformSectionTemplate;
-
 // ScriptStruct SequenceDialogue.SpineData
 // 0x0018 (0x0018 - 0x0000)
 struct FSpineData final
@@ -142,12 +133,45 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneQteEventParam;
 
+// ScriptStruct SequenceDialogue.SeqAnimCurveVectorDesc
+// 0x0040 (0x0040 - 0x0000)
+struct FSeqAnimCurveVectorDesc final
+{
+public:
+	class FName                                   Group;                                             // 0x0000(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   DisplayName;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   CurveName;                                         // 0x0018(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   GizmoBaseBone;                                     // 0x0024(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                GizmoOffset;                                       // 0x0030(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          EnableVirtualBoneRot;                              // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSeqAnimCurveVectorDesc;
+
 // ScriptStruct SequenceDialogue.MovieSceneDialogueAudioSharedTrack
 // 0x0000 (0x0020 - 0x0020)
 struct FMovieSceneDialogueAudioSharedTrack final : public FMovieSceneEvalTemplate
 {
 };
 DUMPER7_ASSERTS_FMovieSceneDialogueAudioSharedTrack;
+
+// ScriptStruct SequenceDialogue.MovieSceneAutoTransformExecutionHelper
+// 0x0001 (0x0001 - 0x0000)
+struct FMovieSceneAutoTransformExecutionHelper final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMovieSceneAutoTransformExecutionHelper;
+
+// ScriptStruct SequenceDialogue.MovieSceneAutoTransformSectionTemplate
+// 0x0010 (0x0030 - 0x0020)
+struct FMovieSceneAutoTransformSectionTemplate final : public FMovieSceneEvalTemplate
+{
+public:
+	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMovieSceneAutoTransformSectionTemplate;
 
 // ScriptStruct SequenceDialogue.MovieSceneDialogueAudioSectionTemplate
 // 0x0018 (0x0038 - 0x0020)
@@ -159,15 +183,6 @@ public:
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMovieSceneDialogueAudioSectionTemplate;
-
-// ScriptStruct SequenceDialogue.MovieSceneAutoTransformExecutionHelper
-// 0x0001 (0x0001 - 0x0000)
-struct FMovieSceneAutoTransformExecutionHelper final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMovieSceneAutoTransformExecutionHelper;
 
 // ScriptStruct SequenceDialogue.DialogueStateStruct
 // 0x0001 (0x0001 - 0x0000)
@@ -349,21 +364,6 @@ public:
 	TArray<struct FVectorNameAndCurve>            VectorCurves;                                      // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMovieSceneSeqAnimDataSectionTemplate;
-
-// ScriptStruct SequenceDialogue.SeqAnimCurveVectorDesc
-// 0x0040 (0x0040 - 0x0000)
-struct FSeqAnimCurveVectorDesc final
-{
-public:
-	class FName                                   Group;                                             // 0x0000(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   DisplayName;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   CurveName;                                         // 0x0018(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   GizmoBaseBone;                                     // 0x0024(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                GizmoOffset;                                       // 0x0030(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EnableVirtualBoneRot;                              // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSeqAnimCurveVectorDesc;
 
 // ScriptStruct SequenceDialogue.SeqAnimCurveFloatDesc
 // 0x0024 (0x0024 - 0x0000)

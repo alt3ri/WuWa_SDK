@@ -17,196 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function KuroGameBudget.KuroGameBudgetBlueprintActor.AfterTick
-// 0x0004 (0x0004 - 0x0000)
-struct KuroGameBudgetBlueprintActor_AfterTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_AfterTick;
-
-// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnApplyWorldOffset
-// 0x0010 (0x0010 - 0x0000)
-struct KuroGameBudgetBlueprintActor_OnApplyWorldOffset final
-{
-public:
-	struct FVector                                InWorldOffset;                                     // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWorldShift;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OnApplyWorldOffset;
-
-// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnEnvInteractChanged
-// 0x0001 (0x0001 - 0x0000)
-struct KuroGameBudgetBlueprintActor_OnEnvInteractChanged final
-{
-public:
-	bool                                          bEnableEnvInteract;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OnEnvInteractChanged;
-
-// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideGameBudgetGroupType
-// 0x0001 (0x0001 - 0x0000)
-struct KuroGameBudgetBlueprintActor_OverrideGameBudgetGroupType final
-{
-public:
-	EGameBudgetBlueprintGroup                     InOverrideGroupType;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OverrideGameBudgetGroupType;
-
-// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideTickWithPaused
-// 0x0001 (0x0001 - 0x0000)
-struct KuroGameBudgetBlueprintActor_OverrideTickWithPaused final
-{
-public:
-	bool                                          bTickWithPaused;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OverrideTickWithPaused;
-
-// Function KuroGameBudget.KuroGameBudgetBlueprintActor.UpdateOverrideBounds
-// 0x0010 (0x0010 - 0x0000)
-struct KuroGameBudgetBlueprintActor_UpdateOverrideBounds final
-{
-public:
-	TArray<class AActor*>                         InActors;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_UpdateOverrideBounds;
-
-// Function KuroGameBudget.KuroGameBudgetBlueprintActor.UpdateOverrideBoundsFromSet
-// 0x0050 (0x0050 - 0x0000)
-struct KuroGameBudgetBlueprintActor_UpdateOverrideBoundsFromSet final
-{
-public:
-	TSet<class AActor*>                           InActors;                                          // 0x0000(0x0050)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_UpdateOverrideBoundsFromSet;
-
-// Function KuroGameBudget.GameBudgetAllocator.AfterTickOutside
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_AfterTickOutside final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_AfterTickOutside;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetCenterActor
-// 0x0008 (0x0008 - 0x0000)
-struct GameBudgetAllocator_SetCenterActor final
-{
-public:
-	class AActor*                                 CenterActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetCenterActor;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetDefaultTickIntervalDetailConfig
-// 0x00D8 (0x00D8 - 0x0000)
-struct GameBudgetAllocator_SetDefaultTickIntervalDetailConfig final
-{
-public:
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint32                                        MaxTickInterval;                                   // 0x00D0(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionStartSize;                            // 0x00D4(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionIntervalSize;                         // 0x00D6(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetDefaultTickIntervalDetailConfig;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetDefaultTickIntervalDetailScreenRadiusConfig
-// 0x00D8 (0x00D8 - 0x0000)
-struct GameBudgetAllocator_SetDefaultTickIntervalDetailScreenRadiusConfig final
-{
-public:
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         TickReductionStartScreenRatio;                     // 0x00D0(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TickReductionIntervalScreenRatio;                  // 0x00D4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetDefaultTickIntervalDetailScreenRadiusConfig;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetGlobalMode
-// 0x0001 (0x0001 - 0x0000)
-struct GameBudgetAllocator_SetGlobalMode final
-{
-public:
-	EGameBudgetAllocatorGlobalMode                Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetGlobalMode;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetGroupConfig
-// 0x00DC (0x00DC - 0x0000)
-struct GameBudgetAllocator_SetGroupConfig final
-{
-public:
-	class FName                                   GroupName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x000C(0x00D0)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetGroupConfig;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetMaximumFrameRate
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_SetMaximumFrameRate final
-{
-public:
-	uint32                                        MaxFPS;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetMaximumFrameRate;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetPauseFrame
-// 0x0008 (0x0008 - 0x0000)
-struct GameBudgetAllocator_SetPauseFrame final
-{
-public:
-	uint64                                        Frame;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetPauseFrame;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetTickIntervalDetailConfig
-// 0x00DC (0x00DC - 0x0000)
-struct GameBudgetAllocator_SetTickIntervalDetailConfig final
-{
-public:
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-	EGameBudgetAllocatorGlobalMode                GlobalMode;                                        // 0x00D0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGameBudgetAllocatorActorMode                 ActorMode;                                         // 0x00D1(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D2[0x2];                                       // 0x00D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        MaxTickInterval;                                   // 0x00D4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionStartSize;                            // 0x00D8(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionIntervalSize;                         // 0x00DA(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetTickIntervalDetailConfig;
-
-// Function KuroGameBudget.GameBudgetAllocator.SetTickIntervalDetailScreenRadiusConfig
-// 0x00DC (0x00DC - 0x0000)
-struct GameBudgetAllocator_SetTickIntervalDetailScreenRadiusConfig final
-{
-public:
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-	EGameBudgetAllocatorGlobalMode                GlobalMode;                                        // 0x00D0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGameBudgetAllocatorActorMode                 ActorMode;                                         // 0x00D1(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D2[0x2];                                       // 0x00D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TickReductionStartScreenRatio;                     // 0x00D4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TickReductionIntervalScreenRatio;                  // 0x00D8(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_SetTickIntervalDetailScreenRadiusConfig;
-
-// Function KuroGameBudget.GameBudgetAllocator.TickOutside
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_TickOutside final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_TickOutside;
-
-// Function KuroGameBudget.GameBudgetAllocator.UpdateMinUpdateFIFOBudgetTime
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime final
-{
-public:
-	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime;
-
 // Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.AddAssistantActor
 // 0x0008 (0x0008 - 0x0000)
 struct KuroGameBudgetAllocatorCSharpInterface_AddAssistantActor final
@@ -486,6 +296,18 @@ public:
 };
 DUMPER7_ASSERTS_KuroGameBudgetAllocatorCSharpInterface_SetUsePerformanceActorCalculateBounds;
 
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetUseWasRecentlyPassVisibilityTest
+// 0x0014 (0x0014 - 0x0000)
+struct KuroGameBudgetAllocatorCSharpInterface_SetUseWasRecentlyPassVisibilityTest final
+{
+public:
+	class FName                                   GroupTag;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        Token;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InUseWasRecentlyPassVisibilityTest;                // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroGameBudgetAllocatorCSharpInterface_SetUseWasRecentlyPassVisibilityTest;
+
 // Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.TickOutside
 // 0x0004 (0x0004 - 0x0000)
 struct KuroGameBudgetAllocatorCSharpInterface_TickOutside final
@@ -534,6 +356,205 @@ public:
 	class AActor*                                 Actor;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroGameBudgetAllocatorCSharpInterface_UpdatePerformanceActor;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.AfterTick
+// 0x0004 (0x0004 - 0x0000)
+struct KuroGameBudgetBlueprintActor_AfterTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_AfterTick;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnApplyWorldOffset
+// 0x0010 (0x0010 - 0x0000)
+struct KuroGameBudgetBlueprintActor_OnApplyWorldOffset final
+{
+public:
+	struct FVector                                InWorldOffset;                                     // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWorldShift;                                       // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OnApplyWorldOffset;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnEnvInteractChanged
+// 0x0001 (0x0001 - 0x0000)
+struct KuroGameBudgetBlueprintActor_OnEnvInteractChanged final
+{
+public:
+	bool                                          bEnableEnvInteract;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OnEnvInteractChanged;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideGameBudgetGroupType
+// 0x0001 (0x0001 - 0x0000)
+struct KuroGameBudgetBlueprintActor_OverrideGameBudgetGroupType final
+{
+public:
+	EGameBudgetBlueprintGroup                     InOverrideGroupType;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OverrideGameBudgetGroupType;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideTickWithPaused
+// 0x0001 (0x0001 - 0x0000)
+struct KuroGameBudgetBlueprintActor_OverrideTickWithPaused final
+{
+public:
+	bool                                          bTickWithPaused;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OverrideTickWithPaused;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideUseWasRecentlyPassVisibilityTest
+// 0x0001 (0x0001 - 0x0000)
+struct KuroGameBudgetBlueprintActor_OverrideUseWasRecentlyPassVisibilityTest final
+{
+public:
+	bool                                          bUseWasRecentlyPassVisibilityTest;                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_OverrideUseWasRecentlyPassVisibilityTest;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.UpdateOverrideBounds
+// 0x0010 (0x0010 - 0x0000)
+struct KuroGameBudgetBlueprintActor_UpdateOverrideBounds final
+{
+public:
+	TArray<class AActor*>                         InActors;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_UpdateOverrideBounds;
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.UpdateOverrideBoundsFromSet
+// 0x0050 (0x0050 - 0x0000)
+struct KuroGameBudgetBlueprintActor_UpdateOverrideBoundsFromSet final
+{
+public:
+	TSet<class AActor*>                           InActors;                                          // 0x0000(0x0050)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetBlueprintActor_UpdateOverrideBoundsFromSet;
+
+// Function KuroGameBudget.GameBudgetAllocator.AfterTickOutside
+// 0x0004 (0x0004 - 0x0000)
+struct GameBudgetAllocator_AfterTickOutside final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_AfterTickOutside;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetCenterActor
+// 0x0008 (0x0008 - 0x0000)
+struct GameBudgetAllocator_SetCenterActor final
+{
+public:
+	class AActor*                                 CenterActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetCenterActor;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetDefaultTickIntervalDetailConfig
+// 0x00D8 (0x00D8 - 0x0000)
+struct GameBudgetAllocator_SetDefaultTickIntervalDetailConfig final
+{
+public:
+	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint32                                        MaxTickInterval;                                   // 0x00D0(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        TickReductionStartSize;                            // 0x00D4(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        TickReductionIntervalSize;                         // 0x00D6(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetDefaultTickIntervalDetailConfig;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetDefaultTickIntervalDetailScreenRadiusConfig
+// 0x00D8 (0x00D8 - 0x0000)
+struct GameBudgetAllocator_SetDefaultTickIntervalDetailScreenRadiusConfig final
+{
+public:
+	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         TickReductionStartScreenRatio;                     // 0x00D0(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TickReductionIntervalScreenRatio;                  // 0x00D4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetDefaultTickIntervalDetailScreenRadiusConfig;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetGlobalMode
+// 0x0001 (0x0001 - 0x0000)
+struct GameBudgetAllocator_SetGlobalMode final
+{
+public:
+	EGameBudgetAllocatorGlobalMode                Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetGlobalMode;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetGroupConfig
+// 0x00DC (0x00DC - 0x0000)
+struct GameBudgetAllocator_SetGroupConfig final
+{
+public:
+	class FName                                   GroupName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x000C(0x00D0)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetGroupConfig;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetMaximumFrameRate
+// 0x0004 (0x0004 - 0x0000)
+struct GameBudgetAllocator_SetMaximumFrameRate final
+{
+public:
+	uint32                                        MaxFPS;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetMaximumFrameRate;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetPauseFrame
+// 0x0008 (0x0008 - 0x0000)
+struct GameBudgetAllocator_SetPauseFrame final
+{
+public:
+	uint64                                        Frame;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetPauseFrame;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetTickIntervalDetailConfig
+// 0x00DC (0x00DC - 0x0000)
+struct GameBudgetAllocator_SetTickIntervalDetailConfig final
+{
+public:
+	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	EGameBudgetAllocatorGlobalMode                GlobalMode;                                        // 0x00D0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGameBudgetAllocatorActorMode                 ActorMode;                                         // 0x00D1(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D2[0x2];                                       // 0x00D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        MaxTickInterval;                                   // 0x00D4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        TickReductionStartSize;                            // 0x00D8(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        TickReductionIntervalSize;                         // 0x00DA(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetTickIntervalDetailConfig;
+
+// Function KuroGameBudget.GameBudgetAllocator.SetTickIntervalDetailScreenRadiusConfig
+// 0x00DC (0x00DC - 0x0000)
+struct GameBudgetAllocator_SetTickIntervalDetailScreenRadiusConfig final
+{
+public:
+	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x00D0)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	EGameBudgetAllocatorGlobalMode                GlobalMode;                                        // 0x00D0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGameBudgetAllocatorActorMode                 ActorMode;                                         // 0x00D1(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D2[0x2];                                       // 0x00D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TickReductionStartScreenRatio;                     // 0x00D4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TickReductionIntervalScreenRatio;                  // 0x00D8(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_SetTickIntervalDetailScreenRadiusConfig;
+
+// Function KuroGameBudget.GameBudgetAllocator.TickOutside
+// 0x0004 (0x0004 - 0x0000)
+struct GameBudgetAllocator_TickOutside final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_TickOutside;
+
+// Function KuroGameBudget.GameBudgetAllocator.UpdateMinUpdateFIFOBudgetTime
+// 0x0004 (0x0004 - 0x0000)
+struct GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime final
+{
+public:
+	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime;
 
 // Function KuroGameBudget.KuroGameBudgetBlueprintDefine.Initialize
 // 0x0010 (0x0010 - 0x0000)
@@ -590,6 +611,15 @@ public:
 	bool                                          bTickWithPaused;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroGameBudgetComponent_OverrideTickWithPaused;
+
+// Function KuroGameBudget.KuroGameBudgetComponent.OverrideUseWasRecentlyPassVisibilityTest
+// 0x0001 (0x0001 - 0x0000)
+struct KuroGameBudgetComponent_OverrideUseWasRecentlyPassVisibilityTest final
+{
+public:
+	bool                                          bUseWasRecentlyPassVisibilityTest;                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameBudgetComponent_OverrideUseWasRecentlyPassVisibilityTest;
 
 // Function KuroGameBudget.KuroGameBudgetComponent.UpdateOverrideBounds
 // 0x0010 (0x0010 - 0x0000)

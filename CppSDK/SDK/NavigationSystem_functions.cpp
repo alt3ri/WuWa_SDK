@@ -41,6 +41,56 @@ void ANavModifierVolume::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
 }
 
 
+// Function NavigationSystem.NavRelevantComponent.SetNavigationRelevancy
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bRelevant                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNavRelevantComponent::SetNavigationRelevancy(bool bRelevant)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavRelevantComponent", "SetNavigationRelevancy");
+
+	Params::NavRelevantComponent_SetNavigationRelevancy Parms{};
+
+	Parms.bRelevant = bRelevant;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function NavigationSystem.NavModifierComponent.SetAreaClass
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UNavArea>             NewAreaClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNavModifierComponent::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavModifierComponent", "SetAreaClass");
+
+	Params::NavModifierComponent_SetAreaClass Parms{};
+
+	Parms.NewAreaClass = NewAreaClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function NavigationSystem.NavigationDataChunkTileVariantsActor.OnDataLayerStateChanged
 // (Final, Native, Protected)
 // Parameters:
@@ -1762,31 +1812,6 @@ void UNavigationSystemV1::UnregisterNavigationInvoker(class AActor* Invoker)
 }
 
 
-// Function NavigationSystem.NavRelevantComponent.SetNavigationRelevancy
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bRelevant                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UNavRelevantComponent::SetNavigationRelevancy(bool bRelevant)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavRelevantComponent", "SetNavigationRelevancy");
-
-	Params::NavRelevantComponent_SetNavigationRelevancy Parms{};
-
-	Parms.bRelevant = bRelevant;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function NavigationSystem.NavMeshTileVariantFileSubsystem.IsStreamingCompleted
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1809,31 +1834,6 @@ bool UNavMeshTileVariantFileSubsystem::IsStreamingCompleted()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function NavigationSystem.NavModifierComponent.SetAreaClass
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UNavArea>             NewAreaClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UNavModifierComponent::SetAreaClass(TSubclassOf<class UNavArea> NewAreaClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavModifierComponent", "SetAreaClass");
-
-	Params::NavModifierComponent_SetAreaClass Parms{};
-
-	Parms.NewAreaClass = NewAreaClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

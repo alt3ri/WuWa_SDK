@@ -11,29 +11,29 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
+#include "KuroCollision_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "KuroCollision_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // Class KuroCollision.CollisionClusterComponent
-// 0x0120 (0x0690 - 0x0570)
+// 0x0120 (0x06B0 - 0x0590)
 class UCollisionClusterComponent final : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_570[0x80];                                     // 0x0570(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSoftObjectPath>                StaticMeshPathNames;                               // 0x05F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<class UPhysicalMaterial*>              PhysicalMaterials;                                 // 0x0600(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FKAggregateGeom>                AggGeometries;                                     // 0x0610(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<class UBodySetup*>                     BodySetups;                                        // 0x0620(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_630[0x10];                                     // 0x0630(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UBodySetup*>                     StandaloneBodySetups;                              // 0x0640(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<int32>                                 BodySetupComplexPhysicalMaterialNums;              // 0x0650(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_660[0x10];                                     // 0x0660(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBoxSphereBounds                       RelativeBounds;                                    // 0x0670(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_68C[0x4];                                      // 0x068C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_590[0x80];                                     // 0x0590(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSoftObjectPath>                StaticMeshPathNames;                               // 0x0610(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<class UPhysicalMaterial*>              PhysicalMaterials;                                 // 0x0620(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FKAggregateGeom>                AggGeometries;                                     // 0x0630(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<class UBodySetup*>                     BodySetups;                                        // 0x0640(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_650[0x10];                                     // 0x0650(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UBodySetup*>                     StandaloneBodySetups;                              // 0x0660(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<int32>                                 BodySetupComplexPhysicalMaterialNums;              // 0x0670(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_680[0x10];                                     // 0x0680(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBoxSphereBounds                       RelativeBounds;                                    // 0x0690(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_6AC[0x4];                                      // 0x06AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -86,6 +86,7 @@ public:
 	static bool ActorHasTag(class AActor* InActor, const class FName& Tag, int32 InstanceIndex);
 	static bool CanCharacterStandOn(class UPrimitiveComponent* PrimitiveComponent, int32 InstanceIndex);
 	static bool CanCharacterStepUp(class UPrimitiveComponent* PrimitiveComponent, class APawn* Pawn, int32 InstanceIndex);
+	static bool ComponentHasTag(class UPrimitiveComponent* PrimitiveComponent, const class FName& Tag, int32 InstanceIndex);
 	static struct FBodyInstance GetBodyInstance(const class UKuroHitResult* HitResult, int32 HitIndex);
 	static class FName GetCollisionProfileName(class UPrimitiveComponent* PrimitiveComponent, int32 InstanceIndex);
 	static ECollisionResponse GetCollisionResponseToChannel(class UPrimitiveComponent* PrimitiveComponent, ECollisionChannel Channel, int32 InstanceIndex);
@@ -136,22 +137,22 @@ public:
 DUMPER7_ASSERTS_UKuroCollisionSubSystem;
 
 // Class KuroCollision.KuroLandscapeHeightfieldCollisionComponent
-// 0x0080 (0x05F0 - 0x0570)
+// 0x0080 (0x0610 - 0x0590)
 class UKuroLandscapeHeightfieldCollisionComponent final : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_570[0x8];                                      // 0x0570(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ULandscapeLayerInfoObject*>      ComponentLayerInfos;                               // 0x0578(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         SectionBaseX;                                      // 0x0588(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         SectionBaseY;                                      // 0x058C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         CollisionSizeQuads;                                // 0x0590(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         CollisionScale;                                    // 0x0594(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         SimpleCollisionSizeQuads;                          // 0x0598(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FGuid                                  HeightfieldGuid;                                   // 0x059C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FBox                                   CachedLocalBox;                                    // 0x05AC(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5C8[0x10];                                     // 0x05C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UPhysicalMaterial*>              CookedPhysicalMaterials;                           // 0x05D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5E8[0x8];                                      // 0x05E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_590[0x8];                                      // 0x0590(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ULandscapeLayerInfoObject*>      ComponentLayerInfos;                               // 0x0598(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         SectionBaseX;                                      // 0x05A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         SectionBaseY;                                      // 0x05AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         CollisionSizeQuads;                                // 0x05B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         CollisionScale;                                    // 0x05B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         SimpleCollisionSizeQuads;                          // 0x05B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FGuid                                  HeightfieldGuid;                                   // 0x05BC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FBox                                   CachedLocalBox;                                    // 0x05CC(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5E8[0x10];                                     // 0x05E8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UPhysicalMaterial*>              CookedPhysicalMaterials;                           // 0x05F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_608[0x8];                                      // 0x0608(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

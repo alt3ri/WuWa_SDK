@@ -14,7 +14,7 @@
 SDK_NAMESPACE_START
 
 // UserDefinedEnum E_Cloud_Presents.E_Cloud_Presents
-// NumValues: 0x0079
+// NumValues: 0x007E
 enum class E_Cloud_Presents : uint8
 {
 	NewEnumerator0                           = 0,
@@ -137,7 +137,12 @@ enum class E_Cloud_Presents : uint8
 	NewEnumerator122                         = 117,
 	NewEnumerator123                         = 118,
 	NewEnumerator124                         = 119,
-	E_Cloud_MAX                              = 120,
+	NewEnumerator125                         = 120,
+	NewEnumerator126                         = 121,
+	NewEnumerator127                         = 122,
+	NewEnumerator128                         = 123,
+	NewEnumerator129                         = 124,
+	E_Cloud_MAX                              = 125,
 };
 
 SDK_NAMESPACE_END

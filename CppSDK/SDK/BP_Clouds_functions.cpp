@@ -1910,4 +1910,74 @@ void ABP_Clouds_C::SwitchCloudsSub(class UPD_CloudPrefab_C* CloudPresents, float
 }
 
 
+// Function BP_Clouds.BP_Clouds_C.36 火匣
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three6_火匣()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "36 火匣");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.37 水匣
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three7_水匣()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "37 水匣");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.38 金匣
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three8_金匣()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "38 金匣");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.39 天演幻心
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three9_天演幻心()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "39 天演幻心");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.40 天演幻心二阶段
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Four0_天演幻心二阶段()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "40 天演幻心二阶段");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 SDK_NAMESPACE_END

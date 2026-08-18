@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -942,18 +942,23 @@ enum class EKSC_HeadHpContextType : uint8
 	EKSC_MAX                                 = 3,
 };
 
-// ScriptStruct KuroSimpleCombat.KSC_HitContextTextData
-// 0x0020 (0x0020 - 0x0000)
-struct FKSC_HitContextTextData final
+// ScriptStruct KuroSimpleCombat.KSCTableRowBase
+// 0x0038 (0x0040 - 0x0008)
+struct FKSCTableRowBase : public FTableRowBase
 {
 public:
-	int32                                         HitContextStyleId;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 TextContent;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CooldownSeconds;                                   // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Id;                                                // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UDataAsset>              RuntimeDA;                                         // 0x0010(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FKSC_HitContextTextData;
+DUMPER7_ASSERTS_FKSCTableRowBase;
+
+// ScriptStruct KuroSimpleCombat.KSCEntityTableRow
+// 0x0000 (0x0040 - 0x0040)
+struct FKSCEntityTableRow final : public FKSCTableRowBase
+{
+};
+DUMPER7_ASSERTS_FKSCEntityTableRow;
 
 // ScriptStruct KuroSimpleCombat.KSC_RemoveContext
 // 0x0050 (0x0050 - 0x0000)
@@ -973,29 +978,6 @@ public:
 };
 DUMPER7_ASSERTS_FKSC_RemoveContext;
 
-// ScriptStruct KuroSimpleCombat.KSC_AttrBoundLocker
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x04) FKSC_AttrBoundLocker final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FKSC_AttrBoundLocker;
-
-// ScriptStruct KuroSimpleCombat.MonsterImpactInfo
-// 0x001C (0x001C - 0x0000)
-struct FMonsterImpactInfo final
-{
-public:
-	class FName                                   EntityTypeName;                                    // 0x0000(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_EntityType                               EntityType;                                        // 0x000C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Radius;                                            // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Cooldown;                                          // 0x0014(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DamageId;                                          // 0x0018(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMonsterImpactInfo;
-
 // ScriptStruct KuroSimpleCombat.KSC_BulletTargetContext
 // 0x0040 (0x0040 - 0x0000)
 struct FKSC_BulletTargetContext final
@@ -1007,19 +989,6 @@ public:
 	struct FTransform                             TargetTrans;                                       // 0x0010(0x0030)(IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FKSC_BulletTargetContext;
-
-// ScriptStruct KuroSimpleCombat.KSCDamageRelated
-// 0x0008 (0x0008 - 0x0000)
-struct FKSCDamageRelated final
-{
-public:
-	float                                         Amplify;                                           // 0x0000(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_AttrType                                 RelatedProperty;                                   // 0x0004(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_AttrType                                 MainDamageType;                                    // 0x0005(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_AttrType                                 SubDamageType;                                     // 0x0006(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FKSCDamageRelated;
 
 // ScriptStruct KuroSimpleCombat.KSC_LandFireContext
 // 0x0060 (0x0060 - 0x0000)
@@ -1035,32 +1004,16 @@ public:
 };
 DUMPER7_ASSERTS_FKSC_LandFireContext;
 
-// ScriptStruct KuroSimpleCombat.KSC_ListenAttrEventBuff
-// 0x0010 (0x0010 - 0x0000)
-struct FKSC_ListenAttrEventBuff final
+// ScriptStruct KuroSimpleCombat.KSC_DotPeriodic_BuffOnCasterTag
+// 0x0018 (0x0018 - 0x0000)
+struct FKSC_DotPeriodic_BuffOnCasterTag final
 {
 public:
-	EKSC_AttrType                                 AttrId;                                            // 0x0000(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_ComparisonSymbols                        Comparison;                                        // 0x0001(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AttrValue;                                         // 0x0004(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ThresholdValue;                                    // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAccumulate;                                       // 0x000C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           CasterCheckTag;                                    // 0x0000(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff*                           Buff;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FKSC_ListenAttrEventBuff;
-
-// ScriptStruct KuroSimpleCombat.KSC_TagFilter
-// 0x0028 (0x0028 - 0x0000)
-struct FKSC_TagFilter final
-{
-public:
-	bool                                          IsNot;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CompareHasAll;                                     // 0x0001(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CompareTags;                                       // 0x0008(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FKSC_TagFilter;
+DUMPER7_ASSERTS_FKSC_DotPeriodic_BuffOnCasterTag;
 
 // ScriptStruct KuroSimpleCombat.KSC_SpawnEntity
 // 0x0060 (0x0060 - 0x0000)
@@ -1075,41 +1028,29 @@ public:
 };
 DUMPER7_ASSERTS_FKSC_SpawnEntity;
 
-// ScriptStruct KuroSimpleCombat.KuroResponseConfig
-// 0x00A8 (0x00A8 - 0x0000)
-struct FKuroResponseConfig final
+// ScriptStruct KuroSimpleCombat.KSC_AttrBoundLocker
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x04) FKSC_AttrBoundLocker final
 {
 public:
-	struct FKSC_TagFilter                         CheckTagFilter;                                    // 0x0000(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	int32                                         Probability;                                       // 0x0028(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ResponseCount;                                     // 0x002C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Buff_ListenEvent_Response                ResponseType;                                      // 0x0030(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  ResponseTag;                                       // 0x0038(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class UKSC_DA_Buff*                           AddBuff;                                           // 0x0058(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UKSC_DA_Buff*>                   AddMultiBuff;                                      // 0x0060(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	int32                                         BuffStackNum;                                      // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x0078(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FKSC_SpawnEntity>               SpawnEntity;                                       // 0x0080(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<int32>                                 SkillIndexTryStart;                                // 0x0090(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	int32                                         MoveStageIndex;                                    // 0x00A0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseAttrProbability;                                // 0x00A4(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_AttrType                                 ProbabilityAttr;                                   // 0x00A5(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A6[0x2];                                       // 0x00A6(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FKuroResponseConfig;
+DUMPER7_ASSERTS_FKSC_AttrBoundLocker;
 
-// ScriptStruct KuroSimpleCombat.KSC_DotPeriodic_BuffOnCasterTag
-// 0x0018 (0x0018 - 0x0000)
-struct FKSC_DotPeriodic_BuffOnCasterTag final
+// ScriptStruct KuroSimpleCombat.KSC_ListenAttrEventBuff
+// 0x0010 (0x0010 - 0x0000)
+struct FKSC_ListenAttrEventBuff final
 {
 public:
-	struct FGameplayTag                           CasterCheckTag;                                    // 0x0000(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_Buff*                           Buff;                                              // 0x0010(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 AttrId;                                            // 0x0000(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_ComparisonSymbols                        Comparison;                                        // 0x0001(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AttrValue;                                         // 0x0004(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ThresholdValue;                                    // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAccumulate;                                       // 0x000C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FKSC_DotPeriodic_BuffOnCasterTag;
+DUMPER7_ASSERTS_FKSC_ListenAttrEventBuff;
 
 // ScriptStruct KuroSimpleCombat.KSC_KuroFX
 // 0x0050 (0x0050 - 0x0000)
@@ -1141,6 +1082,18 @@ public:
 };
 DUMPER7_ASSERTS_FKSC_DamageTypeFilter;
 
+// ScriptStruct KuroSimpleCombat.KSC_TagFilter
+// 0x0028 (0x0028 - 0x0000)
+struct FKSC_TagFilter final
+{
+public:
+	bool                                          IsNot;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CompareHasAll;                                     // 0x0001(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  CompareTags;                                       // 0x0008(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKSC_TagFilter;
+
 // ScriptStruct KuroSimpleCombat.KSC_Range
 // 0x0050 (0x0050 - 0x0000)
 struct FKSC_Range final
@@ -1168,6 +1121,20 @@ public:
 	float                                         FloatValue;                                        // 0x001C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FKSC_FXParam;
+
+// ScriptStruct KuroSimpleCombat.MonsterImpactInfo
+// 0x001C (0x001C - 0x0000)
+struct FMonsterImpactInfo final
+{
+public:
+	class FName                                   EntityTypeName;                                    // 0x0000(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_EntityType                               EntityType;                                        // 0x000C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Radius;                                            // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Cooldown;                                          // 0x0014(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DamageId;                                          // 0x0018(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMonsterImpactInfo;
 
 // ScriptStruct KuroSimpleCombat.KSC_DiffTransferAddAttr
 // 0x0014 (0x0014 - 0x0000)
@@ -1287,6 +1254,19 @@ public:
 };
 DUMPER7_ASSERTS_FKSC_DA_Shape2D_WorldBounds_Item;
 
+// ScriptStruct KuroSimpleCombat.KSCDamageRelated
+// 0x0008 (0x0008 - 0x0000)
+struct FKSCDamageRelated final
+{
+public:
+	float                                         Amplify;                                           // 0x0000(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 RelatedProperty;                                   // 0x0004(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 MainDamageType;                                    // 0x0005(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 SubDamageType;                                     // 0x0006(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKSCDamageRelated;
+
 // ScriptStruct KuroSimpleCombat.KSCDamage
 // 0x0028 (0x0028 - 0x0000)
 struct FKSCDamage final
@@ -1306,17 +1286,6 @@ public:
 	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FKSCDamage;
-
-// ScriptStruct KuroSimpleCombat.KSCTableRowBase
-// 0x0038 (0x0040 - 0x0008)
-struct FKSCTableRowBase : public FTableRowBase
-{
-public:
-	int32                                         Id;                                                // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UDataAsset>              RuntimeDA;                                         // 0x0010(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FKSCTableRowBase;
 
 // ScriptStruct KuroSimpleCombat.KSCSceneSegmentTableRow
 // 0x0000 (0x0040 - 0x0040)
@@ -1347,13 +1316,6 @@ struct FKSCBuffTableRow final : public FKSCTableRowBase
 {
 };
 DUMPER7_ASSERTS_FKSCBuffTableRow;
-
-// ScriptStruct KuroSimpleCombat.KSCEntityTableRow
-// 0x0000 (0x0040 - 0x0040)
-struct FKSCEntityTableRow final : public FKSCTableRowBase
-{
-};
-DUMPER7_ASSERTS_FKSCEntityTableRow;
 
 // ScriptStruct KuroSimpleCombat.KSCShapeMaterialTableRow
 // 0x00B8 (0x00C0 - 0x0008)
@@ -1439,6 +1401,31 @@ public:
 };
 DUMPER7_ASSERTS_FKSC_EventContext;
 
+// ScriptStruct KuroSimpleCombat.KuroResponseConfig
+// 0x00A8 (0x00A8 - 0x0000)
+struct FKuroResponseConfig final
+{
+public:
+	struct FKSC_TagFilter                         CheckTagFilter;                                    // 0x0000(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         Probability;                                       // 0x0028(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ResponseCount;                                     // 0x002C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_ListenEvent_Response                ResponseType;                                      // 0x0030(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  ResponseTag;                                       // 0x0038(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           AddBuff;                                           // 0x0058(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UKSC_DA_Buff*>                   AddMultiBuff;                                      // 0x0060(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         BuffStackNum;                                      // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x0078(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FKSC_SpawnEntity>               SpawnEntity;                                       // 0x0080(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<int32>                                 SkillIndexTryStart;                                // 0x0090(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         MoveStageIndex;                                    // 0x00A0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseAttrProbability;                                // 0x00A4(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 ProbabilityAttr;                                   // 0x00A5(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A6[0x2];                                       // 0x00A6(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroResponseConfig;
+
 // ScriptStruct KuroSimpleCombat.KSC_Delay_KuroFX
 // 0x0040 (0x0040 - 0x0000)
 struct FKSC_Delay_KuroFX final
@@ -1473,6 +1460,19 @@ public:
 	TArray<struct FKSC_Delay_KuroMatFX>           TimeLineMatFX;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FKSC_TimeLineData;
+
+// ScriptStruct KuroSimpleCombat.KSC_HitContextTextData
+// 0x0020 (0x0020 - 0x0000)
+struct FKSC_HitContextTextData final
+{
+public:
+	int32                                         HitContextStyleId;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 TextContent;                                       // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CooldownSeconds;                                   // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKSC_HitContextTextData;
 
 // ScriptStruct KuroSimpleCombat.KSC_Shape2D_DamageTotalInfo
 // 0x0010 (0x0010 - 0x0000)

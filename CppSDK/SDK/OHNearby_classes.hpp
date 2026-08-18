@@ -17,13 +17,16 @@
 SDK_NAMESPACE_START
 
 // Class OHNearby.OHNearbyNotify
-// 0x0028 (0x0058 - 0x0030)
+// 0x0040 (0x0070 - 0x0030)
 class UOHNearbyNotify final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x28];                                      // 0x0030(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 State)>   OnTransferEvent;                                   // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_40[0x30];                                      // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	int32 GetLastTransferState();
+	void ResetState();
 	void SetCompleteCallback(TDelegate<void()> InCb);
 
 public:

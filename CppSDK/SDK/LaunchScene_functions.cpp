@@ -16,22 +16,8 @@
 
 SDK_NAMESPACE_START
 
-// Function LaunchScene.LaunchScene_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ALaunchScene_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LaunchScene_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function LaunchScene.LaunchScene_C.ExecuteUbergraph_LaunchScene
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -47,6 +33,34 @@ void ALaunchScene_C::ExecuteUbergraph_LaunchScene(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LaunchScene.LaunchScene_C.轮询Sharphereal 是否Startup完成
+// (BlueprintCallable, BlueprintEvent)
+
+void ALaunchScene_C::轮询Sharphereal_是否Startup完成()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LaunchScene_C", "轮询Sharphereal 是否Startup完成");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function LaunchScene.LaunchScene_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ALaunchScene_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LaunchScene_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

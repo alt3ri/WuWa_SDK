@@ -39,6 +39,26 @@ public:
 };
 DUMPER7_ASSERTS_AKuroWorldPartitionActor;
 
+// Class KuroWorldPartition.KuroCustomHLODModifier
+// 0x0000 (0x0030 - 0x0030)
+class UKuroCustomHLODModifier final : public UWorldPartitionHLODModifier
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroCustomHLODModifier")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroCustomHLODModifier")
+	}
+	static class UKuroCustomHLODModifier* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroCustomHLODModifier>();
+	}
+};
+DUMPER7_ASSERTS_UKuroCustomHLODModifier;
+
 // Class KuroWorldPartition.KuroWorldPartitionLocationComponent
 // 0x0020 (0x0240 - 0x0220)
 class UKuroWorldPartitionLocationComponent final : public USceneComponent

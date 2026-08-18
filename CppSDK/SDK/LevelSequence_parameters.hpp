@@ -17,15 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
-// 0x0020 (0x0020 - 0x0000)
-struct LevelSequenceBurnInOptions_SetBurnIn final
-{
-public:
-	struct FSoftClassPath                         InBurnInClass;                                     // 0x0000(0x0020)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequenceBurnInOptions_SetBurnIn;
-
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // 0x0028 (0x0028 - 0x0000)
 struct LevelSequenceActor_AddBinding final
@@ -232,6 +223,42 @@ public:
 };
 DUMPER7_ASSERTS_LevelSequenceActor_LoadSequence;
 
+// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
+// 0x0020 (0x0020 - 0x0000)
+struct LevelSequenceBurnInOptions_SetBurnIn final
+{
+public:
+	struct FSoftClassPath                         InBurnInClass;                                     // 0x0000(0x0020)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequenceBurnInOptions_SetBurnIn;
+
+// Function LevelSequence.LevelSequenceMediaController.SynchronizeToServer
+// 0x0004 (0x0004 - 0x0000)
+struct LevelSequenceMediaController_SynchronizeToServer final
+{
+public:
+	float                                         DesyncThresholdSeconds;                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequenceMediaController_SynchronizeToServer;
+
+// Function LevelSequence.LevelSequenceMediaController.GetMediaComponent
+// 0x0008 (0x0008 - 0x0000)
+struct LevelSequenceMediaController_GetMediaComponent final
+{
+public:
+	class UMediaComponent*                        ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequenceMediaController_GetMediaComponent;
+
+// Function LevelSequence.LevelSequenceMediaController.GetSequence
+// 0x0008 (0x0008 - 0x0000)
+struct LevelSequenceMediaController_GetSequence final
+{
+public:
+	class ALevelSequenceActor*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequenceMediaController_GetSequence;
+
 // Function LevelSequence.LevelSequence.CopyMetaData
 // 0x0010 (0x0010 - 0x0000)
 struct LevelSequence_CopyMetaData final
@@ -390,33 +417,6 @@ public:
 	class AActor*                                 ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LevelSequencePlayer_GetSpawnedActorByGuid;
-
-// Function LevelSequence.LevelSequenceMediaController.SynchronizeToServer
-// 0x0004 (0x0004 - 0x0000)
-struct LevelSequenceMediaController_SynchronizeToServer final
-{
-public:
-	float                                         DesyncThresholdSeconds;                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequenceMediaController_SynchronizeToServer;
-
-// Function LevelSequence.LevelSequenceMediaController.GetMediaComponent
-// 0x0008 (0x0008 - 0x0000)
-struct LevelSequenceMediaController_GetMediaComponent final
-{
-public:
-	class UMediaComponent*                        ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequenceMediaController_GetMediaComponent;
-
-// Function LevelSequence.LevelSequenceMediaController.GetSequence
-// 0x0008 (0x0008 - 0x0000)
-struct LevelSequenceMediaController_GetSequence final
-{
-public:
-	class ALevelSequenceActor*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequenceMediaController_GetSequence;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

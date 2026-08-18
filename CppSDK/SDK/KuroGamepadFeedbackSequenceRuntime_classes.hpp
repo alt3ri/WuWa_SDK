@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "MovieScene_classes.hpp"
 #include "KuroMath_structs.hpp"
+#include "MovieScene_classes.hpp"
 
 
 SDK_NAMESPACE_START

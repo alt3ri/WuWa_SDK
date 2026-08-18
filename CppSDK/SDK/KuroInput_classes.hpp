@@ -21,7 +21,7 @@ SDK_NAMESPACE_START
 
 // Class KuroInput.BasePlayerController
 // 0x0060 (0x06E0 - 0x0680)
-class ABasePlayerController : public APlayerController
+class ABasePlayerController final : public APlayerController
 {
 public:
 	uint8                                         Pad_680[0x60];                                     // 0x0680(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])

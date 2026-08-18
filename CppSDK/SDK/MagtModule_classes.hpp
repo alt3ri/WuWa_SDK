@@ -49,27 +49,114 @@ public:
 };
 DUMPER7_ASSERTS_AMagtActor;
 
+// Class MagtModule.MagtAdaptivePerformance
+// 0x0100 (0x0130 - 0x0030)
+class UMagtAdaptivePerformance final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(EMagtAPScenario OldScenario, EMagtAPScenario NewScenario)> OnScenarioChanged; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EMagtAPWorkloadAdvice OldAdvice, EMagtAPWorkloadAdvice NewAdvice)> OnAdviceChanged; // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName GroupName, int32 OldLevel, int32 NewLevel)> OnQualityGroupChanged; // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class UMagtAdaptivePerformanceSettings*       Settings;                                          // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_70[0xB8];                                      // 0x0070(0x00B8)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMagtAdaptivePerformanceSettings*       DefaultSettings;                                   // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UMagtAdaptivePerformance* Get();
+
+	void ApplyScenario(EMagtAPScenario Scenario);
+	void ForceEvaluation();
+	bool Initialize(class UMagtAdaptivePerformanceSettings* InSettings);
+	bool InitializeWithDefaults();
+	void ResetToDefault();
+	bool SetQualityGroupLevel(class FName GroupName, int32 Level);
+	bool Start();
+	void StartAdaptiveControl();
+	void Stop();
+	void StopAdaptiveControl();
+
+	TMap<class FName, int32> GetAllQualityGroupLevels() const;
+	EMagtAPWorkloadAdvice GetCurrentAdvice() const;
+	struct FMagtAPPerfReport GetCurrentPerfReport() const;
+	EMagtAPScenario GetCurrentScenario() const;
+	int32 GetQualityGroupLevel(class FName GroupName) const;
+	float GetRemainingCooldownTime() const;
+	bool IsInCooldown() const;
+	bool IsInitialized() const;
+	bool IsRunning() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MagtAdaptivePerformance")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MagtAdaptivePerformance")
+	}
+	static class UMagtAdaptivePerformance* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMagtAdaptivePerformance>();
+	}
+};
+DUMPER7_ASSERTS_UMagtAdaptivePerformance;
+
+// Class MagtModule.MagtAdaptivePerformanceSettings
+// 0x0090 (0x00C8 - 0x0038)
+class UMagtAdaptivePerformanceSettings final : public UDataAsset
+{
+public:
+	TArray<struct FMagtAPQualityGroup>            QualityGroups;                                     // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         FastEvaluationInterval;                            // 0x0048(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PowerUpdateInterval;                               // 0x004C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PowerJudgeInterval;                                // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PowerHistorySize;                                  // 0x0054(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CooldownTime;                                      // 0x0058(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlyAdjustDifferences;                            // 0x005C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, struct FMagtAPPowerThreshold>     PowerThresholds;                                   // 0x0060(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         CPUHighLoadingStatusThreshold;                     // 0x00B0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CPUHighLoadingLoadThreshold;                       // 0x00B4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GPUHighLoadingStatusThreshold;                     // 0x00B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GPUHighLoadingLoadThreshold;                       // 0x00BC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableOnScreenDebug;                              // 0x00C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableVerboseLogging;                             // 0x00C1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool FindQualityGroupByName(class FName GroupName, struct FMagtAPQualityGroup* OutGroup) const;
+	struct FMagtAPPowerThreshold GetPowerThreshold(int32 ThermalStatus) const;
+	bool ValidateSettings(TArray<class FString>* OutErrors) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MagtAdaptivePerformanceSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MagtAdaptivePerformanceSettings")
+	}
+	static class UMagtAdaptivePerformanceSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMagtAdaptivePerformanceSettings>();
+	}
+};
+DUMPER7_ASSERTS_UMagtAdaptivePerformanceSettings;
+
 // Class MagtModule.MagtBufferTXManager
-// 0x0030 (0x0060 - 0x0030)
+// 0x0008 (0x0038 - 0x0030)
 class UMagtBufferTXManager final : public UObject
 {
 public:
-	int32                                         HistorySize;                                       // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 BufferTXHistory;                                   // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_48[0x18];                                      // 0x0048(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void ClearHistory();
+	bool SetBufferTxAvgWindow(int32 WindowMs);
 
-	float GetAverageBufferTX() const;
-	float GetBufferTXVariance() const;
-	int32 GetHistoryCount() const;
+	float GetBufferTxAvg() const;
 	int32 GetLatestBufferTX() const;
-	int32 GetMaxBufferTX() const;
-	int32 GetMinBufferTX() const;
-	bool IsBufferTXIncreasing() const;
-	bool IsBufferTXStable() const;
 
 public:
 	static class UClass* StaticClass()
@@ -86,6 +173,39 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMagtBufferTXManager;
+
+// Class MagtModule.MagtCallbackManager
+// 0x0028 (0x0058 - 0x0030)
+class UMagtCallbackManager final : public UObject
+{
+public:
+	TMulticastInlineDelegate<void(int32 CurrentStatus, int32 PreviousStatus, const struct FMagtPerfReport& PerfReport)> OnThrottleStateChanged; // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FMagtCpuGearState& CurrentState, const struct FMagtCpuGearState& PreviousState)> OnCpuGearChanged; // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UMagtCallbackManager* GetMagtCallbackManager();
+
+	bool RegisterPerformanceCallbacks();
+	void UnregisterPerformanceCallbacks();
+
+	bool IsRegistered() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MagtCallbackManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MagtCallbackManager")
+	}
+	static class UMagtCallbackManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMagtCallbackManager>();
+	}
+};
+DUMPER7_ASSERTS_UMagtCallbackManager;
 
 // Class MagtModule.MagtMipsCounter
 // 0x00E0 (0x0110 - 0x0030)

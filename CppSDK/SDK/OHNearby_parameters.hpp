@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function OHNearby.OHNearbyNotify.GetLastTransferState
+// 0x0004 (0x0004 - 0x0000)
+struct OHNearbyNotify_GetLastTransferState final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_OHNearbyNotify_GetLastTransferState;
+
 // Function OHNearby.OHNearbyNotify.SetCompleteCallback
 // 0x0028 (0x0028 - 0x0000)
 struct OHNearbyNotify_SetCompleteCallback final

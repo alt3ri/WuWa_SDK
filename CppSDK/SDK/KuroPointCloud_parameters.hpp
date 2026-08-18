@@ -17,15 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function KuroPointCloud.KuroPointCloudActor.MarkPointsInBox
-// 0x001C (0x001C - 0x0000)
-struct KuroPointCloudActor_MarkPointsInBox final
-{
-public:
-	struct FBox                                   BoxWS;                                             // 0x0000(0x001C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroPointCloudActor_MarkPointsInBox;
-
 // Function KuroPointCloud.KuroPointCloudCache.GetMetaDataFloat
 // 0x0010 (0x0010 - 0x0000)
 struct KuroPointCloudCache_GetMetaDataFloat final
@@ -129,6 +120,15 @@ public:
 };
 DUMPER7_ASSERTS_KuroPointCloudCache_CheckConsistency;
 
+// Function KuroPointCloud.KuroPointCloudActor.MarkPointsInBox
+// 0x001C (0x001C - 0x0000)
+struct KuroPointCloudActor_MarkPointsInBox final
+{
+public:
+	struct FBox                                   BoxWS;                                             // 0x0000(0x001C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPointCloudActor_MarkPointsInBox;
+
 // Function KuroPointCloud.KuroPointCloudFunctionLibrary.BindPointCloudComponent
 // 0x0010 (0x0010 - 0x0000)
 struct KuroPointCloudFunctionLibrary_BindPointCloudComponent final
@@ -166,57 +166,6 @@ public:
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroPointCloudFunctionLibrary_SetNiagaraKuroPointCloudCollectionName;
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.BuildFromPointData
-// 0x0050 (0x0050 - 0x0000)
-struct KuroVirtualPointCloud2DQTree_BuildFromPointData final
-{
-public:
-	TArray<struct FIntPoint>                      InPoints;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FTransform                             InPlaneToWorld;                                    // 0x0010(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         MaxHeight;                                         // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_BuildFromPointData;
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetRotation
-// 0x0010 (0x0010 - 0x0000)
-struct KuroVirtualPointCloud2DQTree_GetRotation final
-{
-public:
-	struct FQuat                                  ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_GetRotation;
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetWorldBound
-// 0x001C (0x001C - 0x0000)
-struct KuroVirtualPointCloud2DQTree_GetWorldBound final
-{
-public:
-	struct FBox                                   ReturnValue;                                       // 0x0000(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_GetWorldBound;
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.SphereQuery
-// 0x0020 (0x0020 - 0x0000)
-struct KuroVirtualPointCloud2DQTree_SphereQuery final
-{
-public:
-	struct FVector                                SphereCenter;                                      // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SphereRadius;                                      // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FIntPoint>                      OutResult;                                         // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_SphereQuery;
-
-// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.TransformPointToWorld
-// 0x0014 (0x0014 - 0x0000)
-struct KuroVirtualPointCloud2DQTree_TransformPointToWorld final
-{
-public:
-	struct FIntPoint                              Point;                                             // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_TransformPointToWorld;
 
 // Function KuroPointCloud.KuroPointCloudInstance.BuildFrom2DPoints
 // 0x0050 (0x0050 - 0x0000)
@@ -582,6 +531,57 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroPointCloudWorldSystem_SetStreamingConfig;
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.BuildFromPointData
+// 0x0050 (0x0050 - 0x0000)
+struct KuroVirtualPointCloud2DQTree_BuildFromPointData final
+{
+public:
+	TArray<struct FIntPoint>                      InPoints;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FTransform                             InPlaneToWorld;                                    // 0x0010(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         MaxHeight;                                         // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_BuildFromPointData;
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetRotation
+// 0x0010 (0x0010 - 0x0000)
+struct KuroVirtualPointCloud2DQTree_GetRotation final
+{
+public:
+	struct FQuat                                  ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_GetRotation;
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.GetWorldBound
+// 0x001C (0x001C - 0x0000)
+struct KuroVirtualPointCloud2DQTree_GetWorldBound final
+{
+public:
+	struct FBox                                   ReturnValue;                                       // 0x0000(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_GetWorldBound;
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.SphereQuery
+// 0x0020 (0x0020 - 0x0000)
+struct KuroVirtualPointCloud2DQTree_SphereQuery final
+{
+public:
+	struct FVector                                SphereCenter;                                      // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SphereRadius;                                      // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FIntPoint>                      OutResult;                                         // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_SphereQuery;
+
+// Function KuroPointCloud.KuroVirtualPointCloud2DQTree.TransformPointToWorld
+// 0x0014 (0x0014 - 0x0000)
+struct KuroVirtualPointCloud2DQTree_TransformPointToWorld final
+{
+public:
+	struct FIntPoint                              Point;                                             // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVirtualPointCloud2DQTree_TransformPointToWorld;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

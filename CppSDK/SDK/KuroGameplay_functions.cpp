@@ -16,6 +16,291 @@
 
 SDK_NAMESPACE_START
 
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.Get
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UKuroMp4PlayerPreviewSubsystem*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKuroMp4PlayerPreviewSubsystem* UKuroMp4PlayerPreviewSubsystem::Get(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMp4PlayerPreviewSubsystem", "Get");
+
+	Params::KuroMp4PlayerPreviewSubsystem_Get Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForcePlayMP4PlayerActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroMp4PlayerPreviewSubsystem::ForcePlayMP4PlayerActor(class UObject* InMP4PlayerActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ForcePlayMP4PlayerActor");
+
+	Params::KuroMp4PlayerPreviewSubsystem_ForcePlayMP4PlayerActor Parms{};
+
+	Parms.InMP4PlayerActor = InMP4PlayerActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForceStopAndReleaseAll
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroMp4PlayerPreviewSubsystem::ForceStopAndReleaseAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ForceStopAndReleaseAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForceStopMP4PlayerActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMp4PlayerPreviewSubsystem::ForceStopMP4PlayerActor(class UObject* InMP4PlayerActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ForceStopMP4PlayerActor");
+
+	Params::KuroMp4PlayerPreviewSubsystem_ForceStopMP4PlayerActor Parms{};
+
+	Parms.InMP4PlayerActor = InMP4PlayerActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RefreshActiveMP4PlayerActors
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroMp4PlayerPreviewSubsystem::RefreshActiveMP4PlayerActors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "RefreshActiveMP4PlayerActors");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterMP4PlayerActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMp4PlayerPreviewSubsystem::RegisterMP4PlayerActor(class UObject* InMP4PlayerActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "RegisterMP4PlayerActor");
+
+	Params::KuroMp4PlayerPreviewSubsystem_RegisterMP4PlayerActor Parms{};
+
+	Parms.InMP4PlayerActor = InMP4PlayerActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterPoolIfNeeded
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    AssetPath                                              (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroMp4PlayerPreviewSubsystem::RegisterPoolIfNeeded(const class FString& AssetPath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "RegisterPoolIfNeeded");
+
+	Params::KuroMp4PlayerPreviewSubsystem_RegisterPoolIfNeeded Parms{};
+
+	Parms.AssetPath = std::move(AssetPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ReleaseForMP4PlayerActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMp4PlayerPreviewSubsystem::ReleaseForMP4PlayerActor(class UObject* InMP4PlayerActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ReleaseForMP4PlayerActor");
+
+	Params::KuroMp4PlayerPreviewSubsystem_ReleaseForMP4PlayerActor Parms{};
+
+	Parms.InMP4PlayerActor = InMP4PlayerActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.TryAcquireForMP4PlayerActor
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMediaPlayer**                    OutPlayer                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMediaTexture**                   OutTexture                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroMp4PlayerPreviewSubsystem::TryAcquireForMP4PlayerActor(class UObject* InMP4PlayerActor, class UMediaPlayer** OutPlayer, class UMediaTexture** OutTexture)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "TryAcquireForMP4PlayerActor");
+
+	Params::KuroMp4PlayerPreviewSubsystem_TryAcquireForMP4PlayerActor Parms{};
+
+	Parms.InMP4PlayerActor = InMP4PlayerActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutPlayer != nullptr)
+		*OutPlayer = Parms.OutPlayer;
+
+	if (OutTexture != nullptr)
+		*OutTexture = Parms.OutTexture;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UnregisterMP4PlayerActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMp4PlayerPreviewSubsystem::UnregisterMP4PlayerActor(class UObject* InMP4PlayerActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "UnregisterMP4PlayerActor");
+
+	Params::KuroMp4PlayerPreviewSubsystem_UnregisterMP4PlayerActor Parms{};
+
+	Parms.InMP4PlayerActor = InMP4PlayerActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UpdateDistanceAndRefresh
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InDistanceToCamera                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroMp4PlayerPreviewSubsystem::UpdateDistanceAndRefresh(class UObject* InMP4PlayerActor, float InDistanceToCamera)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "UpdateDistanceAndRefresh");
+
+	Params::KuroMp4PlayerPreviewSubsystem_UpdateDistanceAndRefresh Parms{};
+
+	Parms.InMP4PlayerActor = InMP4PlayerActor;
+	Parms.InDistanceToCamera = InDistanceToCamera;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroGameplay.BulletHitActorInterfaceLibrary.Execute_OnBulletHit
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -954,128 +1239,6 @@ bool UKuroResourceSystemFunctionLibrary::TryGetAssetBlockInfo(const class FStrin
 }
 
 
-// Function KuroGameplay.KuroSequenceEaseExecutor.StopEase
-// (Native, Public, BlueprintCallable)
-
-void UKuroSequenceEaseExecutor::StopEase()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSequenceEaseExecutor", "StopEase");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroGameplay.KuroSequenceEaseExecutor.UpdateEase
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroSequenceEaseExecutor::UpdateEase(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSequenceEaseExecutor", "UpdateEase");
-
-	Params::KuroSequenceEaseExecutor_UpdateEase Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetDuration
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroSequenceEaseFloatExecutor::GetDuration() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetDuration");
-
-	Params::KuroSequenceEaseFloatExecutor_GetDuration Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetStartValue
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroSequenceEaseFloatExecutor::GetStartValue() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetStartValue");
-
-	Params::KuroSequenceEaseFloatExecutor_GetStartValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetTargetValue
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroSequenceEaseFloatExecutor::GetTargetValue() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetTargetValue");
-
-	Params::KuroSequenceEaseFloatExecutor_GetTargetValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KuroGameplay.EffectSystemActor.SetOwnerEntityId
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1322,6 +1485,123 @@ void UKuroAIPerceptionUtilsLibrary::StartAsyncAiPerception(const TDelegate<void(
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroAttachLibrary.ClearKuroLocationAxisFilteredAttach
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           Child                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroAttachLibrary::ClearKuroLocationAxisFilteredAttach(class AActor* Child)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroAttachLibrary", "ClearKuroLocationAxisFilteredAttach");
+
+	Params::KuroAttachLibrary_ClearKuroLocationAxisFilteredAttach Parms{};
+
+	Parms.Child = Child;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroAttachLibrary.KuroAttachToActorWithLocationAxisFilter
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AActor*                           Child                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Parent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      SocketName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAttachmentRule                         LocationRule                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAttachmentRule                         RotationRule                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAttachmentRule                         ScaleRule                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWeldSimulatedBodies                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIgnoreTargetLocationX                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIgnoreTargetLocationY                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIgnoreTargetLocationZ                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroAttachLibrary::KuroAttachToActorWithLocationAxisFilter(class AActor* Child, class AActor* Parent, const class FName& SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, bool bIgnoreTargetLocationX, bool bIgnoreTargetLocationY, bool bIgnoreTargetLocationZ)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroAttachLibrary", "KuroAttachToActorWithLocationAxisFilter");
+
+	Params::KuroAttachLibrary_KuroAttachToActorWithLocationAxisFilter Parms{};
+
+	Parms.Child = Child;
+	Parms.Parent = Parent;
+	Parms.SocketName = SocketName;
+	Parms.LocationRule = LocationRule;
+	Parms.RotationRule = RotationRule;
+	Parms.ScaleRule = ScaleRule;
+	Parms.bWeldSimulatedBodies = bWeldSimulatedBodies;
+	Parms.bIgnoreTargetLocationX = bIgnoreTargetLocationX;
+	Parms.bIgnoreTargetLocationY = bIgnoreTargetLocationY;
+	Parms.bIgnoreTargetLocationZ = bIgnoreTargetLocationZ;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroAttachLibrary.KuroAttachToComponentWithLocationAxisFilter
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class AActor*                           Child                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USceneComponent*                  ParentComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      SocketName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAttachmentRule                         LocationRule                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAttachmentRule                         RotationRule                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAttachmentRule                         ScaleRule                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWeldSimulatedBodies                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIgnoreTargetLocationX                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIgnoreTargetLocationY                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIgnoreTargetLocationZ                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroAttachLibrary::KuroAttachToComponentWithLocationAxisFilter(class AActor* Child, class USceneComponent* ParentComponent, const class FName& SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, bool bIgnoreTargetLocationX, bool bIgnoreTargetLocationY, bool bIgnoreTargetLocationZ)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroAttachLibrary", "KuroAttachToComponentWithLocationAxisFilter");
+
+	Params::KuroAttachLibrary_KuroAttachToComponentWithLocationAxisFilter Parms{};
+
+	Parms.Child = Child;
+	Parms.ParentComponent = ParentComponent;
+	Parms.SocketName = SocketName;
+	Parms.LocationRule = LocationRule;
+	Parms.RotationRule = RotationRule;
+	Parms.ScaleRule = ScaleRule;
+	Parms.bWeldSimulatedBodies = bWeldSimulatedBodies;
+	Parms.bIgnoreTargetLocationX = bIgnoreTargetLocationX;
+	Parms.bIgnoreTargetLocationY = bIgnoreTargetLocationY;
+	Parms.bIgnoreTargetLocationZ = bIgnoreTargetLocationZ;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -8067,71 +8347,15 @@ void IKuroMp4PlayerPreviewable::OnMp4StopRequested()
 }
 
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.Get
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UKuroMp4PlayerPreviewSubsystem*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function KuroGameplay.KuroSequenceEaseExecutor.StopEase
+// (Native, Public, BlueprintCallable)
 
-class UKuroMp4PlayerPreviewSubsystem* UKuroMp4PlayerPreviewSubsystem::Get(const class UObject* WorldContextObject)
+void UKuroSequenceEaseExecutor::StopEase()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMp4PlayerPreviewSubsystem", "Get");
-
-	Params::KuroMp4PlayerPreviewSubsystem_Get Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForcePlayMP4PlayerActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroMp4PlayerPreviewSubsystem::ForcePlayMP4PlayerActor(class UObject* InMP4PlayerActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ForcePlayMP4PlayerActor");
-
-	Params::KuroMp4PlayerPreviewSubsystem_ForcePlayMP4PlayerActor Parms{};
-
-	Parms.InMP4PlayerActor = InMP4PlayerActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForceStopAndReleaseAll
-// (Final, Native, Public, BlueprintCallable)
-
-void UKuroMp4PlayerPreviewSubsystem::ForceStopAndReleaseAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ForceStopAndReleaseAll");
+		Func = Class->GetFunction("KuroSequenceEaseExecutor", "StopEase");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8142,91 +8366,22 @@ void UKuroMp4PlayerPreviewSubsystem::ForceStopAndReleaseAll()
 }
 
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ForceStopMP4PlayerActor
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroGameplay.KuroSequenceEaseExecutor.UpdateEase
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKuroMp4PlayerPreviewSubsystem::ForceStopMP4PlayerActor(class UObject* InMP4PlayerActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ForceStopMP4PlayerActor");
-
-	Params::KuroMp4PlayerPreviewSubsystem_ForceStopMP4PlayerActor Parms{};
-
-	Parms.InMP4PlayerActor = InMP4PlayerActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RefreshActiveMP4PlayerActors
-// (Final, Native, Public, BlueprintCallable)
-
-void UKuroMp4PlayerPreviewSubsystem::RefreshActiveMP4PlayerActors()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "RefreshActiveMP4PlayerActors");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterMP4PlayerActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKuroMp4PlayerPreviewSubsystem::RegisterMP4PlayerActor(class UObject* InMP4PlayerActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "RegisterMP4PlayerActor");
-
-	Params::KuroMp4PlayerPreviewSubsystem_RegisterMP4PlayerActor Parms{};
-
-	Parms.InMP4PlayerActor = InMP4PlayerActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.RegisterPoolIfNeeded
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    AssetPath                                              (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroMp4PlayerPreviewSubsystem::RegisterPoolIfNeeded(const class FString& AssetPath)
+bool UKuroSequenceEaseExecutor::UpdateEase(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "RegisterPoolIfNeeded");
+		Func = Class->GetFunction("KuroSequenceEaseExecutor", "UpdateEase");
 
-	Params::KuroMp4PlayerPreviewSubsystem_RegisterPoolIfNeeded Parms{};
+	Params::KuroSequenceEaseExecutor_UpdateEase Parms{};
 
-	Parms.AssetPath = std::move(AssetPath);
+	Parms.DeltaTime = DeltaTime;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8239,21 +8394,19 @@ bool UKuroMp4PlayerPreviewSubsystem::RegisterPoolIfNeeded(const class FString& A
 }
 
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.ReleaseForMP4PlayerActor
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetDuration
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroMp4PlayerPreviewSubsystem::ReleaseForMP4PlayerActor(class UObject* InMP4PlayerActor)
+float UKuroSequenceEaseFloatExecutor::GetDuration() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "ReleaseForMP4PlayerActor");
+		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetDuration");
 
-	Params::KuroMp4PlayerPreviewSubsystem_ReleaseForMP4PlayerActor Parms{};
-
-	Parms.InMP4PlayerActor = InMP4PlayerActor;
+	Params::KuroSequenceEaseFloatExecutor_GetDuration Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8261,60 +8414,24 @@ void UKuroMp4PlayerPreviewSubsystem::ReleaseForMP4PlayerActor(class UObject* InM
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.TryAcquireForMP4PlayerActor
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMediaPlayer**                    OutPlayer                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMediaTexture**                   OutTexture                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroMp4PlayerPreviewSubsystem::TryAcquireForMP4PlayerActor(class UObject* InMP4PlayerActor, class UMediaPlayer** OutPlayer, class UMediaTexture** OutTexture)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "TryAcquireForMP4PlayerActor");
-
-	Params::KuroMp4PlayerPreviewSubsystem_TryAcquireForMP4PlayerActor Parms{};
-
-	Parms.InMP4PlayerActor = InMP4PlayerActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutPlayer != nullptr)
-		*OutPlayer = Parms.OutPlayer;
-
-	if (OutTexture != nullptr)
-		*OutTexture = Parms.OutTexture;
 
 	return Parms.ReturnValue;
 }
 
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UnregisterMP4PlayerActor
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetStartValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroMp4PlayerPreviewSubsystem::UnregisterMP4PlayerActor(class UObject* InMP4PlayerActor)
+float UKuroSequenceEaseFloatExecutor::GetStartValue() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "UnregisterMP4PlayerActor");
+		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetStartValue");
 
-	Params::KuroMp4PlayerPreviewSubsystem_UnregisterMP4PlayerActor Parms{};
-
-	Parms.InMP4PlayerActor = InMP4PlayerActor;
+	Params::KuroSequenceEaseFloatExecutor_GetStartValue Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8322,26 +8439,24 @@ void UKuroMp4PlayerPreviewSubsystem::UnregisterMP4PlayerActor(class UObject* InM
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function KuroGameplay.KuroMp4PlayerPreviewSubsystem.UpdateDistanceAndRefresh
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetTargetValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UObject*                          InMP4PlayerActor                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InDistanceToCamera                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroMp4PlayerPreviewSubsystem::UpdateDistanceAndRefresh(class UObject* InMP4PlayerActor, float InDistanceToCamera)
+float UKuroSequenceEaseFloatExecutor::GetTargetValue() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroMp4PlayerPreviewSubsystem", "UpdateDistanceAndRefresh");
+		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetTargetValue");
 
-	Params::KuroMp4PlayerPreviewSubsystem_UpdateDistanceAndRefresh Parms{};
-
-	Parms.InMP4PlayerActor = InMP4PlayerActor;
-	Parms.InDistanceToCamera = InDistanceToCamera;
+	Params::KuroSequenceEaseFloatExecutor_GetTargetValue Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8349,6 +8464,8 @@ void UKuroMp4PlayerPreviewSubsystem::UpdateDistanceAndRefresh(class UObject* InM
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

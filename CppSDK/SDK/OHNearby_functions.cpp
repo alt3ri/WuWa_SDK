@@ -16,6 +16,50 @@
 
 SDK_NAMESPACE_START
 
+// Function OHNearby.OHNearbyNotify.GetLastTransferState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UOHNearbyNotify::GetLastTransferState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OHNearbyNotify", "GetLastTransferState");
+
+	Params::OHNearbyNotify_GetLastTransferState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function OHNearby.OHNearbyNotify.ResetState
+// (Final, Native, Public, BlueprintCallable)
+
+void UOHNearbyNotify::ResetState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("OHNearbyNotify", "ResetState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function OHNearby.OHNearbyNotify.SetCompleteCallback
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:

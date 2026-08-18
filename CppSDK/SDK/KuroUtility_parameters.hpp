@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "JsEnv_structs.hpp"
-#include "KuroUtility_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "KuroNetwork_structs.hpp"
+#include "KuroUtility_structs.hpp"
 #include "Engine_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "JsEnv_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -828,6 +828,42 @@ public:
 	class UObject*                                Object;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroMemoryLibrary_PrintUObjectMemoryInfo;
+
+// Function KuroUtility.KuroMemProbeLibrary.GetMemProbeDir
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_GetMemProbeDir final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_GetMemProbeDir;
+
+// Function KuroUtility.KuroMemProbeLibrary.MemDumpSmaps
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_MemDumpSmaps final
+{
+public:
+	class FString                                 Marker;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_MemDumpSmaps;
+
+// Function KuroUtility.KuroMemProbeLibrary.MemSnapshot
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_MemSnapshot final
+{
+public:
+	class FString                                 Marker;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_MemSnapshot;
+
+// Function KuroUtility.KuroMemProbeLibrary.MemSnapshotFull
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_MemSnapshotFull final
+{
+public:
+	class FString                                 Marker;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_MemSnapshotFull;
 
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.AddMeshesBundleStreamedAllMipsDelegate
 // 0x0030 (0x0030 - 0x0000)
@@ -3863,6 +3899,16 @@ public:
 };
 DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxAvoidList;
 
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxAvoidListAsync
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxAvoidListAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FXboxAvoidListResult& Result)> Callback;                             // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxAvoidListAsync;
+
 // Function KuroUtility.KuroStaticXSXLibrary.GetXboxClassicGamertag
 // 0x0020 (0x0020 - 0x0000)
 struct KuroStaticXSXLibrary_GetXboxClassicGamertag final
@@ -4372,6 +4418,15 @@ public:
 	int32                                         SingleLogSizeInMb;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroTencentCOSLibrary_SetAdmissibleValue;
+
+// Function KuroUtility.KuroTencentCOSLibrary.SetCloudPath
+// 0x0010 (0x0010 - 0x0000)
+struct KuroTencentCOSLibrary_SetCloudPath final
+{
+public:
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroTencentCOSLibrary_SetCloudPath;
 
 // Function KuroUtility.KuroTencentCOSLibrary.SetFilesToSend
 // 0x0010 (0x0010 - 0x0000)

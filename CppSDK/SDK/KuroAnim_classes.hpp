@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "KuroTerrainSurvey_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "KuroTerrainSurvey_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -164,16 +164,16 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstanceChar;
 
 // Class KuroAnim.KuroAdjustableBoxComponent
-// 0x0030 (0x05D0 - 0x05A0)
+// 0x0030 (0x05F0 - 0x05C0)
 class UKuroAdjustableBoxComponent final : public UBoxComponent
 {
 public:
-	TArray<class FName>                           BindSocketNames;                                   // 0x0598(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         AddExtent;                                         // 0x05A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinExtent;                                         // 0x05AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxExtent;                                         // 0x05B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAdjustBoxType                                AdjustBoxType;                                     // 0x05B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5B5[0x1B];                                     // 0x05B5(0x001B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           BindSocketNames;                                   // 0x05B8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         AddExtent;                                         // 0x05C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinExtent;                                         // 0x05CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxExtent;                                         // 0x05D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAdjustBoxType                                AdjustBoxType;                                     // 0x05D4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D5[0x1B];                                     // 0x05D5(0x001B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -234,16 +234,16 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstanceNpc;
 
 // Class KuroAnim.KuroAdjustableCapsuleComponent
-// 0x0040 (0x05D0 - 0x0590)
+// 0x0040 (0x05F0 - 0x05B0)
 class UKuroAdjustableCapsuleComponent final : public UCapsuleComponent
 {
 public:
-	TArray<class FName>                           BindSocketNames;                                   // 0x0590(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         AddRadius;                                         // 0x05A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinRadius;                                         // 0x05A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxRadius;                                         // 0x05A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAdjustCapsuleType                            AdjustCapsuleType;                                 // 0x05AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5AD[0x23];                                     // 0x05AD(0x0023)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           BindSocketNames;                                   // 0x05B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         AddRadius;                                         // 0x05C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinRadius;                                         // 0x05C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxRadius;                                         // 0x05C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAdjustCapsuleType                            AdjustCapsuleType;                                 // 0x05CC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5CD[0x23];                                     // 0x05CD(0x0023)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -477,18 +477,19 @@ public:
 	bool                                          bStateAreaSportMode;                               // 0x0C58(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bStateAreaSportModeKeep;                           // 0x0C59(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bStateVehicleDriveMoto;                            // 0x0C5A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateOverlapBaseAnim;                             // 0x0C5B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseAdditive;                                      // 0x0C5C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseOverlapLayerAdditive;                          // 0x0C5D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLowerRightTurnBlending;                      // 0x0C5E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLowerBlending;                               // 0x0C5F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateWholeBodyBlend;                              // 0x0C60(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateUseSpecialStateMachine;                      // 0x0C61(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFastBlend;                                   // 0x0C62(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseArmAdditive;                                   // 0x0C63(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLeftArmBlend;                                // 0x0C64(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateRightArmBlend;                               // 0x0C65(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C66[0x2];                                      // 0x0C66(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bCharacterStateAreaSportMode;                      // 0x0C5B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateOverlapBaseAnim;                             // 0x0C5C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAdditive;                                      // 0x0C5D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseOverlapLayerAdditive;                          // 0x0C5E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLowerRightTurnBlending;                      // 0x0C5F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLowerBlending;                               // 0x0C60(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateWholeBodyBlend;                              // 0x0C61(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateUseSpecialStateMachine;                      // 0x0C62(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFastBlend;                                   // 0x0C63(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseArmAdditive;                                   // 0x0C64(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLeftArmBlend;                                // 0x0C65(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateRightArmBlend;                               // 0x0C66(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C67[0x1];                                      // 0x0C67(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         LowerBlendAlpha;                                   // 0x0C68(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAdditiveBlendAlpha                    BlendAlphaPelvis;                                  // 0x0C6C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FAdditiveBlendAlpha                    BlendAlphaSpine;                                   // 0x0C78(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
@@ -602,7 +603,7 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstanceRole;
 
 // Class KuroAnim.AbpLogicParams
-// 0x01F0 (0x0220 - 0x0030)
+// 0x0200 (0x0230 - 0x0030)
 class UAbpLogicParams final : public UObject
 {
 public:
@@ -685,6 +686,16 @@ public:
 	struct FVector                                FloatingLocalDirectionRef;                         // 0x0204(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FloatingMoveMixRef;                                // 0x0210(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                HookTargetLocation;                                // 0x0214(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsRailSlideMove;                                  // 0x0220(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERailSlideAnimType                            RailSlideAnimType;                                 // 0x0221(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsAirRailSlideMove;                               // 0x0222(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERailSlideJumpType                            RailSlideJumpType;                                 // 0x0223(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseLandAnimation;                                 // 0x0224(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAssistedWalking;                                // 0x0225(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHelpedAssistedWalk;                               // 0x0226(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSkipEnterAssistedWalkAnim;                        // 0x0227(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AssistedWalkAnimRate;                              // 0x0228(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -886,7 +897,7 @@ DUMPER7_ASSERTS_UKuroCameraRecorder;
 
 // Class KuroAnim.KuroCameraShake
 // 0x0030 (0x01D0 - 0x01A0)
-class UKuroCameraShake : public UMatineeCameraShake
+class UKuroCameraShake final : public UMatineeCameraShake
 {
 public:
 	EAlphaBlendOption                             BlendInMode;                                       // 0x0198(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -986,7 +997,7 @@ DUMPER7_ASSERTS_UKuroMeshRecorder;
 
 // Class KuroAnim.KuroPredictionAnimInstanceRole
 // 0x0160 (0x0FC0 - 0x0E60)
-class UKuroPredictionAnimInstanceRole : public UKuroAnimInstanceRole
+class UKuroPredictionAnimInstanceRole final : public UKuroAnimInstanceRole
 {
 public:
 	uint8                                         Pad_E60[0x8];                                      // 0x0E60(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1049,7 +1060,7 @@ DUMPER7_ASSERTS_AKuroRecordCharacter;
 
 // Class KuroAnim.KuroRecordEffect
 // 0x0000 (0x02B0 - 0x02B0)
-class AKuroRecordEffect : public AActor
+class AKuroRecordEffect final : public AActor
 {
 public:
 	void OnPlay();

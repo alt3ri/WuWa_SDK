@@ -12,8 +12,8 @@
 
 #include "KuroNetwork_structs.hpp"
 #include "Engine_classes.hpp"
-#include "JsEnv_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "JsEnv_structs.hpp"
 
 
 SDK_NAMESPACE_START

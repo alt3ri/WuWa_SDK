@@ -10,11 +10,32 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 
 
 SDK_NAMESPACE_START
+
+// Class FastGeoStreaming.FastGeoWorldPartitionRuntimeCellTransformer
+// 0x0000 (0x0038 - 0x0038)
+class UFastGeoWorldPartitionRuntimeCellTransformer final : public UWorldPartitionRuntimeCellTransformer
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("FastGeoWorldPartitionRuntimeCellTransformer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"FastGeoWorldPartitionRuntimeCellTransformer")
+	}
+	static class UFastGeoWorldPartitionRuntimeCellTransformer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFastGeoWorldPartitionRuntimeCellTransformer>();
+	}
+};
+DUMPER7_ASSERTS_UFastGeoWorldPartitionRuntimeCellTransformer;
 
 // Class FastGeoStreaming.FastGeoComponentEditorProxy
 // 0x0000 (0x0030 - 0x0030)
@@ -36,14 +57,39 @@ public:
 };
 DUMPER7_ASSERTS_UFastGeoComponentEditorProxy;
 
+// Class FastGeoStreaming.FastGeoWorldSubsystem
+// 0x00A8 (0x00F0 - 0x0048)
+class UFastGeoWorldSubsystem final : public UTickableWorldSubsystem
+{
+public:
+	uint8                                         Pad_48[0xA8];                                      // 0x0048(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("FastGeoWorldSubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"FastGeoWorldSubsystem")
+	}
+	static class UFastGeoWorldSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFastGeoWorldSubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UFastGeoWorldSubsystem;
+
 // Class FastGeoStreaming.FastGeoContainer
-// 0x00E0 (0x0110 - 0x0030)
+// 0x0128 (0x0158 - 0x0030)
 class UFastGeoContainer final : public UAssetUserData
 {
 public:
 	uint8                                         Pad_30[0xA8];                                      // 0x0030(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UObject*>                        Assets;                                            // 0x00D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_E8[0x28];                                      // 0x00E8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FGuid>                          StreamingTextureGuids;                             // 0x00E8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         bTextureStreamingRotationChanged : 1;              // 0x00F8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
+	uint8                                         Pad_F9[0x5F];                                      // 0x00F9(0x005F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -104,47 +150,27 @@ public:
 };
 DUMPER7_ASSERTS_UFastGeoStaticMeshComponentEditorProxy;
 
-// Class FastGeoStreaming.FastGeoWorldPartitionRuntimeCellTransformer
-// 0x0000 (0x0038 - 0x0038)
-class UFastGeoWorldPartitionRuntimeCellTransformer final : public UWorldPartitionRuntimeCellTransformer
+// Class FastGeoStreaming.FastGeoStreamingCell
+// 0x0030 (0x0120 - 0x00F0)
+class UFastGeoStreamingCell final : public UWorldPartitionRuntimeAssetStreamingCell
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("FastGeoWorldPartitionRuntimeCellTransformer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"FastGeoWorldPartitionRuntimeCellTransformer")
-	}
-	static class UFastGeoWorldPartitionRuntimeCellTransformer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UFastGeoWorldPartitionRuntimeCellTransformer>();
-	}
-};
-DUMPER7_ASSERTS_UFastGeoWorldPartitionRuntimeCellTransformer;
-
-// Class FastGeoStreaming.FastGeoWorldSubsystem
-// 0x0058 (0x00A0 - 0x0048)
-class UFastGeoWorldSubsystem final : public UTickableWorldSubsystem
-{
-public:
-	uint8                                         Pad_48[0x58];                                      // 0x0048(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UFastGeoContainer>       FastGeoContainerPtr;                               // 0x00F0(0x0030)(ExportObject, InstancedReference, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("FastGeoWorldSubsystem")
+		STATIC_CLASS_IMPL("FastGeoStreamingCell")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"FastGeoWorldSubsystem")
+		STATIC_NAME_IMPL(L"FastGeoStreamingCell")
 	}
-	static class UFastGeoWorldSubsystem* GetDefaultObj()
+	static class UFastGeoStreamingCell* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UFastGeoWorldSubsystem>();
+		return GetDefaultObjImpl<UFastGeoStreamingCell>();
 	}
 };
-DUMPER7_ASSERTS_UFastGeoWorldSubsystem;
+DUMPER7_ASSERTS_UFastGeoStreamingCell;
 
 SDK_NAMESPACE_END

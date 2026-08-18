@@ -223,6 +223,38 @@ bool UKuroCollisionLibrary::CanCharacterStepUp(class UPrimitiveComponent* Primit
 }
 
 
+// Function KuroCollision.KuroCollisionLibrary.ComponentHasTag
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UPrimitiveComponent*              PrimitiveComponent                                     (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      Tag                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InstanceIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroCollisionLibrary::ComponentHasTag(class UPrimitiveComponent* PrimitiveComponent, const class FName& Tag, int32 InstanceIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroCollisionLibrary", "ComponentHasTag");
+
+	Params::KuroCollisionLibrary_ComponentHasTag Parms{};
+
+	Parms.PrimitiveComponent = PrimitiveComponent;
+	Parms.Tag = Tag;
+	Parms.InstanceIndex = InstanceIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroCollision.KuroCollisionLibrary.GetBodyInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

@@ -16,6 +16,31 @@
 
 SDK_NAMESPACE_START
 
+// Function KuroSimpleCombat.KSC_Buff.Debug_GetInfo
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKSC_Buff::Debug_GetInfo() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Buff", "Debug_GetInfo");
+
+	Params::KSC_Buff_Debug_GetInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroSimpleCombat.InstanceCapsuleComponent.AddNewInstanceData
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -114,31 +139,6 @@ void UInstanceCapsuleComponent::UpdateInstanceTransforms(const TArray<int32>& In
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Buff.Debug_GetInfo
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UKSC_Buff::Debug_GetInfo() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Buff", "Debug_GetInfo");
-
-	Params::KSC_Buff_Debug_GetInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -377,60 +377,6 @@ bool UKSC_AttrSet::IsAttrValueLocked(EKSC_AttrType Id) const
 }
 
 
-// Function KuroSimpleCombat.KSC_Buff_Aura.OnAttrChange
-// (Final, Native, Private)
-// Parameters:
-// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Buff_Aura::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Buff_Aura", "OnAttrChange");
-
-	Params::KSC_Buff_Aura_OnAttrChange Parms{};
-
-	Parms.AttrType = AttrType;
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Buff_Period.OnAttackSpeedChange
-// (Final, Native, Private)
-// Parameters:
-// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Buff_Period::OnAttackSpeedChange(EKSC_AttrType AttrType, int32 Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Buff_Period", "OnAttackSpeedChange");
-
-	Params::KSC_Buff_Period_OnAttackSpeedChange Parms{};
-
-	Parms.AttrType = AttrType;
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function KuroSimpleCombat.KSC_Buff_AttrDivClamped.OnAttrChange
 // (Final, Native, Private)
 // Parameters:
@@ -445,6 +391,33 @@ void UKSC_Buff_AttrDivClamped::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
 		Func = Class->GetFunction("KSC_Buff_AttrDivClamped", "OnAttrChange");
 
 	Params::KSC_Buff_AttrDivClamped_OnAttrChange Parms{};
+
+	Parms.AttrType = AttrType;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Buff_Aura.OnAttrChange
+// (Final, Native, Private)
+// Parameters:
+// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Buff_Aura::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Buff_Aura", "OnAttrChange");
+
+	Params::KSC_Buff_Aura_OnAttrChange Parms{};
 
 	Parms.AttrType = AttrType;
 	Parms.Value = Value;
@@ -512,6 +485,33 @@ void UKSC_Buff_ListenEvent::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
 }
 
 
+// Function KuroSimpleCombat.KSC_Buff_Period.OnAttackSpeedChange
+// (Final, Native, Private)
+// Parameters:
+// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Buff_Period::OnAttackSpeedChange(EKSC_AttrType AttrType, int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Buff_Period", "OnAttackSpeedChange");
+
+	Params::KSC_Buff_Period_OnAttackSpeedChange Parms{};
+
+	Parms.AttrType = AttrType;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroSimpleCombat.KSC_Buff_TransferAddAttr.OnAttrChange
 // (Final, Native, Private)
 // Parameters:
@@ -526,665 +526,6 @@ void UKSC_Buff_TransferAddAttr::OnAttrChange(EKSC_AttrType AttrType, int32 Value
 		Func = Class->GetFunction("KSC_Buff_TransferAddAttr", "OnAttrChange");
 
 	Params::KSC_Buff_TransferAddAttr_OnAttrChange Parms{};
-
-	Parms.AttrType = AttrType;
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_BuffId.AddBuffDA
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int64                             BuffId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UKSC_DA_Buff*                     Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_BuffId::AddBuffDA(const int64 BuffId, class UKSC_DA_Buff* Data)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_BuffId", "AddBuffDA");
-
-	Params::KSC_BuffId_AddBuffDA Parms{};
-
-	Parms.BuffId = BuffId;
-	Parms.Data = Data;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_BuffId.ClearBuffDA
-// (Final, Native, Public, BlueprintCallable)
-
-void UKSC_BuffId::ClearBuffDA()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_BuffId", "ClearBuffDA");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Skill.GetSkillCoolDownMax
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKSC_Skill::GetSkillCoolDownMax()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Skill", "GetSkillCoolDownMax");
-
-	Params::KSC_Skill_GetSkillCoolDownMax Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Skill.GetSkillCoolDownRemain
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKSC_Skill::GetSkillCoolDownRemain()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Skill", "GetSkillCoolDownRemain");
-
-	Params::KSC_Skill_GetSkillCoolDownRemain Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.ApplyBuffByOther
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   EntityId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::ApplyBuffByOther(class UKSC_DA_Buff* DaBuff, int32 EntityId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "ApplyBuffByOther");
-
-	Params::KSC_Entity_ApplyBuffByOther Parms{};
-
-	Parms.DaBuff = DaBuff;
-	Parms.EntityId = EntityId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.ApplyBuffSelf
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::ApplyBuffSelf(class UKSC_DA_Buff* DaBuff)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "ApplyBuffSelf");
-
-	Params::KSC_Entity_ApplyBuffSelf Parms{};
-
-	Parms.DaBuff = DaBuff;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.Dead
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   KillBy                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::Dead(int32 KillBy)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "Dead");
-
-	Params::KSC_Entity_Dead Parms{};
-
-	Parms.KillBy = KillBy;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.GetAnimComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_Anim*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UKSC_Anim* AKSC_Entity::GetAnimComponent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "GetAnimComponent");
-
-	Params::KSC_Entity_GetAnimComponent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.GetMoveComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_Move*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UKSC_Move* AKSC_Entity::GetMoveComponent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "GetMoveComponent");
-
-	Params::KSC_Entity_GetMoveComponent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.GetRenderActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* AKSC_Entity::GetRenderActor()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "GetRenderActor");
-
-	Params::KSC_Entity_GetRenderActor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.RemoveBuffSelf
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::RemoveBuffSelf(class UKSC_DA_Buff* DaBuff)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "RemoveBuffSelf");
-
-	Params::KSC_Entity_RemoveBuffSelf Parms{};
-
-	Parms.DaBuff = DaBuff;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.RemoveDaBuffImmediately
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::RemoveDaBuffImmediately(class UKSC_DA_Buff* DaBuff)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "RemoveDaBuffImmediately");
-
-	Params::KSC_Entity_RemoveDaBuffImmediately Parms{};
-
-	Parms.DaBuff = DaBuff;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.SetEntityActive
-// (Native, Public)
-// Parameters:
-// const bool                              InActive                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AKSC_Entity::SetEntityActive(const bool InActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "SetEntityActive");
-
-	Params::KSC_Entity_SetEntityActive Parms{};
-
-	Parms.InActive = InActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.SetFaction
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EKSC_Faction                            Faction                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::SetFaction(EKSC_Faction Faction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "SetFaction");
-
-	Params::KSC_Entity_SetFaction Parms{};
-
-	Parms.Faction = Faction;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.SetIgnoreFactions
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<EKSC_Faction>&             Factions                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::SetIgnoreFactions(const TArray<EKSC_Faction>& Factions)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "SetIgnoreFactions");
-
-	Params::KSC_Entity_SetIgnoreFactions Parms{};
-
-	Parms.Factions = std::move(Factions);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.SetLocationByWorld
-// (Final, Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FVectorDouble&             D_Location                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::SetLocationByWorld(const struct FVectorDouble& D_Location)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "SetLocationByWorld");
-
-	Params::KSC_Entity_SetLocationByWorld Parms{};
-
-	Parms.D_Location = std::move(D_Location);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.SetRenderActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           RenderActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::SetRenderActor(class AActor* RenderActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "SetRenderActor");
-
-	Params::KSC_Entity_SetRenderActor Parms{};
-
-	Parms.RenderActor = RenderActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.SetTransformByWorld
-// (Final, Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FTransformDouble&          D_Transform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::SetTransformByWorld(const struct FTransformDouble& D_Transform)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "SetTransformByWorld");
-
-	Params::KSC_Entity_SetTransformByWorld Parms{};
-
-	Parms.D_Transform = std::move(D_Transform);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.TryActiveSKill
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             SkillIndex                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::TryActiveSKill(const int32 SkillIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "TryActiveSKill");
-
-	Params::KSC_Entity_TryActiveSKill Parms{};
-
-	Parms.SkillIndex = SkillIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.UpdateBuffWithStackNumSelf
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   StackNum                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::UpdateBuffWithStackNumSelf(class UKSC_DA_Buff* DaBuff, int32 StackNum)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "UpdateBuffWithStackNumSelf");
-
-	Params::KSC_Entity_UpdateBuffWithStackNumSelf Parms{};
-
-	Parms.DaBuff = DaBuff;
-	Parms.StackNum = StackNum;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.AddAttr
-// (Final, Native, Public, Const)
-// Parameters:
-// EKSC_AttrType                           Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::AddAttr(EKSC_AttrType Type, int32 Delta) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "AddAttr");
-
-	Params::KSC_Entity_AddAttr Parms{};
-
-	Parms.Type = Type;
-	Parms.Delta = Delta;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.GetSceneComp
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UKSC_SceneComp*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UKSC_SceneComp* AKSC_Entity::GetSceneComp() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "GetSceneComp");
-
-	Params::KSC_Entity_GetSceneComp Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.GetSkillComp
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UKSC_SkillComp*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UKSC_SkillComp* AKSC_Entity::GetSkillComp() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "GetSkillComp");
-
-	Params::KSC_Entity_GetSkillComp Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Entity.SetAttr
-// (Final, Native, Public, Const)
-// Parameters:
-// EKSC_AttrType                           Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Entity::SetAttr(EKSC_AttrType Type, int32 Value) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Entity", "SetAttr");
-
-	Params::KSC_Entity_SetAttr Parms{};
-
-	Parms.Type = Type;
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_Entity.AssignSkillStateChange
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const TDelegate<void(int32 SkillIndex, EKSC_Skill_State State)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void AKSC_Shape2D_Entity::AssignSkillStateChange(const TDelegate<void(int32 SkillIndex, EKSC_Skill_State State)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity", "AssignSkillStateChange");
-
-	Params::KSC_Shape2D_Entity_AssignSkillStateChange Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_PlayerHeadUiHandle.OnAttrChange
-// (Final, Native, Private)
-// Parameters:
-// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_PlayerHeadUiHandle::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_PlayerHeadUiHandle", "OnAttrChange");
-
-	Params::KSC_PlayerHeadUiHandle_OnAttrChange Parms{};
 
 	Parms.AttrType = AttrType;
 	Parms.Value = Value;
@@ -2287,238 +1628,23 @@ class UKSC_BuffId* UKSC_World::GetBuffData() const
 }
 
 
-// Function KuroSimpleCombat.KSC_Shape2D_World.AddDamageEffectData
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const int32                             DamageId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FKSC_Shape2D_DamageEffect& Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::AddDamageEffectData(const int32 DamageId, const struct FKSC_Shape2D_DamageEffect& Data)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "AddDamageEffectData");
-
-	Params::KSC_Shape2D_World_AddDamageEffectData Parms{};
-
-	Parms.DamageId = DamageId;
-	Parms.Data = std::move(Data);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.AssignRelaunchPlayer
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::AssignRelaunchPlayer(const TDelegate<void()>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "AssignRelaunchPlayer");
-
-	Params::KSC_Shape2D_World_AssignRelaunchPlayer Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.AssignTeamAllDead
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::AssignTeamAllDead(const TDelegate<void()>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "AssignTeamAllDead");
-
-	Params::KSC_Shape2D_World_AssignTeamAllDead Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.AssignWorldUpdateOnce
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::AssignWorldUpdateOnce(const TDelegate<void()>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "AssignWorldUpdateOnce");
-
-	Params::KSC_Shape2D_World_AssignWorldUpdateOnce Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.ClearDamageInfo
-// (Final, Native, Public)
-
-void UKSC_Shape2D_World::ClearDamageInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "ClearDamageInfo");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.ClearDamageTotalInfo
-// (Final, Native, Public)
-
-void UKSC_Shape2D_World::ClearDamageTotalInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "ClearDamageTotalInfo");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.GetDamageInfo
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// TMap<int32, int32>*                     OutInfos                                               (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::GetDamageInfo(TMap<int32, int32>* OutInfos)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "GetDamageInfo");
-
-	Params::KSC_Shape2D_World_GetDamageInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutInfos != nullptr)
-		*OutInfos = std::move(Parms.OutInfos);
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.GetDamageTotalInfo
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// TArray<struct FKSC_Shape2D_DamageTotalInfo>*OutInfos                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::GetDamageTotalInfo(TArray<struct FKSC_Shape2D_DamageTotalInfo>* OutInfos)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "GetDamageTotalInfo");
-
-	Params::KSC_Shape2D_World_GetDamageTotalInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutInfos != nullptr)
-		*OutInfos = std::move(Parms.OutInfos);
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.InitTeamPlayerEntityIds
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// const TArray<int32>&                    PlayerEntityIds                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::InitTeamPlayerEntityIds(const TArray<int32>& PlayerEntityIds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "InitTeamPlayerEntityIds");
-
-	Params::KSC_Shape2D_World_InitTeamPlayerEntityIds Parms{};
-
-	Parms.PlayerEntityIds = std::move(PlayerEntityIds);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.RebuildWorldBounds
+// Function KuroSimpleCombat.KSC_BuffId.AddBuffDA
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UKSC_DA_WorldBounds*              DA_WorldBounds                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             BuffId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UKSC_DA_Buff*                     Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKSC_Shape2D_World::RebuildWorldBounds(class UKSC_DA_WorldBounds* DA_WorldBounds)
+void UKSC_BuffId::AddBuffDA(const int64 BuffId, class UKSC_DA_Buff* Data)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "RebuildWorldBounds");
+		Func = Class->GetFunction("KSC_BuffId", "AddBuffDA");
 
-	Params::KSC_Shape2D_World_RebuildWorldBounds Parms{};
+	Params::KSC_BuffId_AddBuffDA Parms{};
 
-	Parms.DA_WorldBounds = DA_WorldBounds;
+	Parms.BuffId = BuffId;
+	Parms.Data = Data;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2529,216 +1655,15 @@ void UKSC_Shape2D_World::RebuildWorldBounds(class UKSC_DA_WorldBounds* DA_WorldB
 }
 
 
-// Function KuroSimpleCombat.KSC_Shape2D_World.ReviveTeam
-// (Final, Native, Public)
-
-void UKSC_Shape2D_World::ReviveTeam()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "ReviveTeam");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.SetGameEnd
-// (Final, Native, Public)
-
-void UKSC_Shape2D_World::SetGameEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "SetGameEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.SetShape2DWorldDA
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_DA_Shape2D_World*            DA_ShapeWorld                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::SetShape2DWorldDA(class UKSC_DA_Shape2D_World* DA_ShapeWorld)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "SetShape2DWorldDA");
-
-	Params::KSC_Shape2D_World_SetShape2DWorldDA Parms{};
-
-	Parms.DA_ShapeWorld = DA_ShapeWorld;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.SetShapeMaterialDT
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UDataTable*                       DataTable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::SetShapeMaterialDT(class UDataTable* DataTable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "SetShapeMaterialDT");
-
-	Params::KSC_Shape2D_World_SetShapeMaterialDT Parms{};
-
-	Parms.DataTable = DataTable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.SetVictory
-// (Final, Native, Public)
-
-void UKSC_Shape2D_World::SetVictory()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "SetVictory");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_World.SetWorldOrigin
-// (Final, Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FVectorDouble&             NewOrigin                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2D_World::SetWorldOrigin(const struct FVectorDouble& NewOrigin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_World", "SetWorldOrigin");
-
-	Params::KSC_Shape2D_World_SetWorldOrigin Parms{};
-
-	Parms.NewOrigin = std::move(NewOrigin);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2DAnim.MarkAnimStateDirty
-// (Final, Native, Public)
-
-void UKSC_Shape2DAnim::MarkAnimStateDirty()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2DAnim", "MarkAnimStateDirty");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2DAnim.OnSpineAnimComplete
-// (Final, Native, Private)
-// Parameters:
-// class UTrackEntry*                      entry                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2DAnim::OnSpineAnimComplete(class UTrackEntry* entry)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2DAnim", "OnSpineAnimComplete");
-
-	Params::KSC_Shape2DAnim_OnSpineAnimComplete Parms{};
-
-	Parms.entry = entry;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2DAnim.SetBaseStateAndClearOverrideStates
-// (Final, Native, Public)
-// Parameters:
-// EKSC_Shape2D_BaseAnimState              InBaseState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Shape2DAnim::SetBaseStateAndClearOverrideStates(EKSC_Shape2D_BaseAnimState InBaseState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2DAnim", "SetBaseStateAndClearOverrideStates");
-
-	Params::KSC_Shape2DAnim_SetBaseStateAndClearOverrideStates Parms{};
-
-	Parms.InBaseState = InBaseState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_Bar.TriggerBar
+// Function KuroSimpleCombat.KSC_BuffId.ClearBuffDA
 // (Final, Native, Public, BlueprintCallable)
 
-void AKSC_Shape2D_Entity_Bar::TriggerBar()
+void UKSC_BuffId::ClearBuffDA()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_Bar", "TriggerBar");
+		Func = Class->GetFunction("KSC_BuffId", "ClearBuffDA");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2749,98 +1674,19 @@ void AKSC_Shape2D_Entity_Bar::TriggerBar()
 }
 
 
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_TeamPlayer.UseSkill
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             SkillIndex                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              IsUseMainPlayerSkill                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Shape2D_Entity_TeamPlayer::UseSkill(const int32 SkillIndex, const bool IsUseMainPlayerSkill)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_TeamPlayer", "UseSkill");
-
-	Params::KSC_Shape2D_Entity_TeamPlayer_UseSkill Parms{};
-
-	Parms.SkillIndex = SkillIndex;
-	Parms.IsUseMainPlayerSkill = IsUseMainPlayerSkill;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_SkillComp.Debug_GetAllBuffInfo
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class FString>*                  OutBuffs                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UKSC_SkillComp::Debug_GetAllBuffInfo(TArray<class FString>* OutBuffs) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_SkillComp", "Debug_GetAllBuffInfo");
-
-	Params::KSC_SkillComp_Debug_GetAllBuffInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutBuffs != nullptr)
-		*OutBuffs = std::move(Parms.OutBuffs);
-}
-
-
-// Function KuroSimpleCombat.KSC_SkillComp.GetAllBuffs
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TMap<class UKSC_DA_Buff*, int32>*       OutBuffs                                               (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UKSC_SkillComp::GetAllBuffs(TMap<class UKSC_DA_Buff*, int32>* OutBuffs) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_SkillComp", "GetAllBuffs");
-
-	Params::KSC_SkillComp_GetAllBuffs Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutBuffs != nullptr)
-		*OutBuffs = std::move(Parms.OutBuffs);
-}
-
-
-// Function KuroSimpleCombat.KSC_SkillComp.GetSkillCollDown
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function KuroSimpleCombat.KSC_Skill.GetSkillCoolDownMax
+// (Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKSC_SkillComp::GetSkillCollDown() const
+float UKSC_Skill::GetSkillCoolDownMax()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_SkillComp", "GetSkillCollDown");
+		Func = Class->GetFunction("KSC_Skill", "GetSkillCoolDownMax");
 
-	Params::KSC_SkillComp_GetSkillCollDown Parms{};
+	Params::KSC_Skill_GetSkillCoolDownMax Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2853,21 +1699,19 @@ float UKSC_SkillComp::GetSkillCollDown() const
 }
 
 
-// Function KuroSimpleCombat.KSC_Skill_BulletPierceAttack.OnBulletHits
-// (Final, Native, Public, HasOutParams)
+// Function KuroSimpleCombat.KSC_Skill.GetSkillCoolDownRemain
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// const TArray<class UKSC_SkillComp*>&    Hits                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKSC_Skill_BulletPierceAttack::OnBulletHits(const TArray<class UKSC_SkillComp*>& Hits)
+float UKSC_Skill::GetSkillCoolDownRemain()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Skill_BulletPierceAttack", "OnBulletHits");
+		Func = Class->GetFunction("KSC_Skill", "GetSkillCoolDownRemain");
 
-	Params::KSC_Skill_BulletPierceAttack_OnBulletHits Parms{};
-
-	Parms.Hits = std::move(Hits);
+	Params::KSC_Skill_GetSkillCoolDownRemain Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2875,6 +1719,1326 @@ void UKSC_Skill_BulletPierceAttack::OnBulletHits(const TArray<class UKSC_SkillCo
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_StageWaypoint.AddWaypoint
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// double                                  X                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  Y                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_StageWaypoint::AddWaypoint(double X, double Y)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_StageWaypoint", "AddWaypoint");
+
+	Params::KSC_Move_StageWaypoint_AddWaypoint Parms{};
+
+	Parms.X = X;
+	Parms.Y = Y;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_StageWaypoint.ClearWaypoints
+// (Final, Native, Public, BlueprintCallable)
+
+void UKSC_Move_StageWaypoint::ClearWaypoints()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_StageWaypoint", "ClearWaypoints");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_StageWaypoint.SetLoop
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_StageWaypoint::SetLoop(bool Loop)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_StageWaypoint", "SetLoop");
+
+	Params::KSC_Move_StageWaypoint_SetLoop Parms{};
+
+	Parms.Loop = Loop;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_StageWaypoint.StartMove
+// (Final, Native, Public, BlueprintCallable)
+
+void UKSC_Move_StageWaypoint::StartMove()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_StageWaypoint", "StartMove");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_MultiStage.AddWaypoint
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// double                                  X                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  Y                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_MultiStage::AddWaypoint(double X, double Y)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_MultiStage", "AddWaypoint");
+
+	Params::KSC_Move_MultiStage_AddWaypoint Parms{};
+
+	Parms.X = X;
+	Parms.Y = Y;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_MultiStage.SetSpline
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USplineComponent*                 SplineComp                                             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_MultiStage::SetSpline(class USplineComponent* SplineComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_MultiStage", "SetSpline");
+
+	Params::KSC_Move_MultiStage_SetSpline Parms{};
+
+	Parms.SplineComp = SplineComp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_MultiStage.SetTargetEntity
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AKSC_Entity*                      Entity                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_MultiStage::SetTargetEntity(class AKSC_Entity* Entity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_MultiStage", "SetTargetEntity");
+
+	Params::KSC_Move_MultiStage_SetTargetEntity Parms{};
+
+	Parms.Entity = Entity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_MultiStage.SetWaypointLoop
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_MultiStage::SetWaypointLoop(bool Loop)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_MultiStage", "SetWaypointLoop");
+
+	Params::KSC_Move_MultiStage_SetWaypointLoop Parms{};
+
+	Parms.Loop = Loop;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_MultiStage.SwitchStage
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   index                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_MultiStage::SwitchStage(int32 index)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_MultiStage", "SwitchStage");
+
+	Params::KSC_Move_MultiStage_SwitchStage Parms{};
+
+	Parms.index = index;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.ApplyBuffByOther
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   EntityId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::ApplyBuffByOther(class UKSC_DA_Buff* DaBuff, int32 EntityId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "ApplyBuffByOther");
+
+	Params::KSC_Entity_ApplyBuffByOther Parms{};
+
+	Parms.DaBuff = DaBuff;
+	Parms.EntityId = EntityId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.ApplyBuffSelf
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::ApplyBuffSelf(class UKSC_DA_Buff* DaBuff)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "ApplyBuffSelf");
+
+	Params::KSC_Entity_ApplyBuffSelf Parms{};
+
+	Parms.DaBuff = DaBuff;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.Dead
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   KillBy                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::Dead(int32 KillBy)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "Dead");
+
+	Params::KSC_Entity_Dead Parms{};
+
+	Parms.KillBy = KillBy;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.GetAnimComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_Anim*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKSC_Anim* AKSC_Entity::GetAnimComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "GetAnimComponent");
+
+	Params::KSC_Entity_GetAnimComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.GetMoveComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_Move*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKSC_Move* AKSC_Entity::GetMoveComponent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "GetMoveComponent");
+
+	Params::KSC_Entity_GetMoveComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.GetRenderActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* AKSC_Entity::GetRenderActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "GetRenderActor");
+
+	Params::KSC_Entity_GetRenderActor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.RemoveBuffSelf
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::RemoveBuffSelf(class UKSC_DA_Buff* DaBuff)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "RemoveBuffSelf");
+
+	Params::KSC_Entity_RemoveBuffSelf Parms{};
+
+	Parms.DaBuff = DaBuff;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.RemoveDaBuffImmediately
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::RemoveDaBuffImmediately(class UKSC_DA_Buff* DaBuff)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "RemoveDaBuffImmediately");
+
+	Params::KSC_Entity_RemoveDaBuffImmediately Parms{};
+
+	Parms.DaBuff = DaBuff;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.SetEntityActive
+// (Native, Public)
+// Parameters:
+// const bool                              InActive                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AKSC_Entity::SetEntityActive(const bool InActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "SetEntityActive");
+
+	Params::KSC_Entity_SetEntityActive Parms{};
+
+	Parms.InActive = InActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.SetFaction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EKSC_Faction                            Faction                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::SetFaction(EKSC_Faction Faction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "SetFaction");
+
+	Params::KSC_Entity_SetFaction Parms{};
+
+	Parms.Faction = Faction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.SetIgnoreFactions
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<EKSC_Faction>&             Factions                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::SetIgnoreFactions(const TArray<EKSC_Faction>& Factions)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "SetIgnoreFactions");
+
+	Params::KSC_Entity_SetIgnoreFactions Parms{};
+
+	Parms.Factions = std::move(Factions);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.SetLocationByWorld
+// (Final, Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVectorDouble&             D_Location                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::SetLocationByWorld(const struct FVectorDouble& D_Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "SetLocationByWorld");
+
+	Params::KSC_Entity_SetLocationByWorld Parms{};
+
+	Parms.D_Location = std::move(D_Location);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.SetRenderActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           RenderActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::SetRenderActor(class AActor* RenderActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "SetRenderActor");
+
+	Params::KSC_Entity_SetRenderActor Parms{};
+
+	Parms.RenderActor = RenderActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.SetTransformByWorld
+// (Final, Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FTransformDouble&          D_Transform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::SetTransformByWorld(const struct FTransformDouble& D_Transform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "SetTransformByWorld");
+
+	Params::KSC_Entity_SetTransformByWorld Parms{};
+
+	Parms.D_Transform = std::move(D_Transform);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.TryActiveSKill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             SkillIndex                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::TryActiveSKill(const int32 SkillIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "TryActiveSKill");
+
+	Params::KSC_Entity_TryActiveSKill Parms{};
+
+	Parms.SkillIndex = SkillIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.UpdateBuffWithStackNumSelf
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_Buff*                     DaBuff                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   StackNum                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::UpdateBuffWithStackNumSelf(class UKSC_DA_Buff* DaBuff, int32 StackNum)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "UpdateBuffWithStackNumSelf");
+
+	Params::KSC_Entity_UpdateBuffWithStackNumSelf Parms{};
+
+	Parms.DaBuff = DaBuff;
+	Parms.StackNum = StackNum;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.AddAttr
+// (Final, Native, Public, Const)
+// Parameters:
+// EKSC_AttrType                           Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::AddAttr(EKSC_AttrType Type, int32 Delta) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "AddAttr");
+
+	Params::KSC_Entity_AddAttr Parms{};
+
+	Parms.Type = Type;
+	Parms.Delta = Delta;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.GetSceneComp
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UKSC_SceneComp*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKSC_SceneComp* AKSC_Entity::GetSceneComp() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "GetSceneComp");
+
+	Params::KSC_Entity_GetSceneComp Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.GetSkillComp
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UKSC_SkillComp*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKSC_SkillComp* AKSC_Entity::GetSkillComp() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "GetSkillComp");
+
+	Params::KSC_Entity_GetSkillComp Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Entity.SetAttr
+// (Final, Native, Public, Const)
+// Parameters:
+// EKSC_AttrType                           Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Entity::SetAttr(EKSC_AttrType Type, int32 Value) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Entity", "SetAttr");
+
+	Params::KSC_Entity_SetAttr Parms{};
+
+	Parms.Type = Type;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_Entity.AssignSkillStateChange
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const TDelegate<void(int32 SkillIndex, EKSC_Skill_State State)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AKSC_Shape2D_Entity::AssignSkillStateChange(const TDelegate<void(int32 SkillIndex, EKSC_Skill_State State)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_Entity", "AssignSkillStateChange");
+
+	Params::KSC_Shape2D_Entity_AssignSkillStateChange Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_SceneMovement.D_SetMovementTarget
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVectorDouble&             NewMovementTarget                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_SceneMovement::D_SetMovementTarget(const struct FVectorDouble& NewMovementTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_SceneMovement", "D_SetMovementTarget");
+
+	Params::KSC_SceneMovement_D_SetMovementTarget Parms{};
+
+	Parms.NewMovementTarget = std::move(NewMovementTarget);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_SceneMovement.SetMovementDirection
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   NewMovementDirection                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_SceneMovement::SetMovementDirection(const struct FVector& NewMovementDirection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_SceneMovement", "SetMovementDirection");
+
+	Params::KSC_SceneMovement_SetMovementDirection Parms{};
+
+	Parms.NewMovementDirection = std::move(NewMovementDirection);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_SceneMovement.SetSceneSegment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_SceneSegmentContainer*    NewSceneSegment                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   GenerateCount                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_SceneMovement::SetSceneSegment(class UKSC_DA_SceneSegmentContainer* NewSceneSegment, int32 GenerateCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_SceneMovement", "SetSceneSegment");
+
+	Params::KSC_SceneMovement_SetSceneSegment Parms{};
+
+	Parms.NewSceneSegment = NewSceneSegment;
+	Parms.GenerateCount = GenerateCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_SceneMovement.SetSegmentRotation
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FRotator&                  NewSegmentRotation                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKSC_SceneMovement::SetSegmentRotation(const struct FRotator& NewSegmentRotation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_SceneMovement", "SetSegmentRotation");
+
+	Params::KSC_SceneMovement_SetSegmentRotation Parms{};
+
+	Parms.NewSegmentRotation = std::move(NewSegmentRotation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.AssignPlayerStateChange
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const TDelegate<void(bool IsAlive)>&    InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AKSC_Shape2D_Entity_Player::AssignPlayerStateChange(const TDelegate<void(bool IsAlive)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "AssignPlayerStateChange");
+
+	Params::KSC_Shape2D_Entity_Player_AssignPlayerStateChange Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.OnLifeChange
+// (Final, Native, Protected)
+// Parameters:
+// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Shape2D_Entity_Player::OnLifeChange(EKSC_AttrType AttrType, int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "OnLifeChange");
+
+	Params::KSC_Shape2D_Entity_Player_OnLifeChange Parms{};
+
+	Parms.AttrType = AttrType;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.SetEntityTransformDebug
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FTransform&                Transform                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void AKSC_Shape2D_Entity_Player::SetEntityTransformDebug(const struct FTransform& Transform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "SetEntityTransformDebug");
+
+	Params::KSC_Shape2D_Entity_Player_SetEntityTransformDebug Parms{};
+
+	Parms.Transform = std::move(Transform);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.SetIsEnable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InIsEnable                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Shape2D_Entity_Player::SetIsEnable(bool InIsEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "SetIsEnable");
+
+	Params::KSC_Shape2D_Entity_Player_SetIsEnable Parms{};
+
+	Parms.InIsEnable = InIsEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.UseSkill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             SkillIndex                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKSC_Shape2D_Entity_Player::UseSkill(const int32 SkillIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "UseSkill");
+
+	Params::KSC_Shape2D_Entity_Player_UseSkill Parms{};
+
+	Parms.SkillIndex = SkillIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.GetIsEnable
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AKSC_Shape2D_Entity_Player::GetIsEnable() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "GetIsEnable");
+
+	Params::KSC_Shape2D_Entity_Player_GetIsEnable Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KSC_Skill_BulletAttack.OnBulletHit
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FKSC_BulletTargetContext&  TargetContext                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKSC_Skill_BulletAttack::OnBulletHit(const struct FKSC_BulletTargetContext& TargetContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Skill_BulletAttack", "OnBulletHit");
+
+	Params::KSC_Skill_BulletAttack_OnBulletHit Parms{};
+
+	Parms.TargetContext = std::move(TargetContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Skill_ManualBulletAttack.OnBulletHit
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FKSC_BulletTargetContext&  TargetContext                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKSC_Skill_ManualBulletAttack::OnBulletHit(const struct FKSC_BulletTargetContext& TargetContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Skill_ManualBulletAttack", "OnBulletHit");
+
+	Params::KSC_Skill_ManualBulletAttack_OnBulletHit Parms{};
+
+	Parms.TargetContext = std::move(TargetContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_Around.SetAroundTarget
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AKSC_Entity*                      InTargetEntity                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_Around::SetAroundTarget(class AKSC_Entity* InTargetEntity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_Around", "SetAroundTarget");
+
+	Params::KSC_Move_Around_SetAroundTarget Parms{};
+
+	Parms.InTargetEntity = InTargetEntity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_Around.SetBasis
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   InBasisX                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InBasisY                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InBasisZ                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_Around::SetBasis(const struct FVector& InBasisX, const struct FVector& InBasisY, const struct FVector& InBasisZ)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_Around", "SetBasis");
+
+	Params::KSC_Move_Around_SetBasis Parms{};
+
+	Parms.InBasisX = std::move(InBasisX);
+	Parms.InBasisY = std::move(InBasisY);
+	Parms.InBasisZ = std::move(InBasisZ);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_Around.SetIndexInfo
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InTotalCount                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InAroundIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_Around::SetIndexInfo(int32 InTotalCount, int32 InAroundIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_Around", "SetIndexInfo");
+
+	Params::KSC_Move_Around_SetIndexInfo Parms{};
+
+	Parms.InTotalCount = InTotalCount;
+	Parms.InAroundIndex = InAroundIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_Spline.SetSpline
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USplineComponent*                 SplineComp                                             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_Spline::SetSpline(class USplineComponent* SplineComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_Spline", "SetSpline");
+
+	Params::KSC_Move_Spline_SetSpline Parms{};
+
+	Parms.SplineComp = SplineComp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_Spline.SetSplineHeight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_Spline::SetSplineHeight(const float Height)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_Spline", "SetSplineHeight");
+
+	Params::KSC_Move_Spline_SetSplineHeight Parms{};
+
+	Parms.Height = Height;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Move_Spline.SetSplineWide
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Width                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Move_Spline::SetSplineWide(const float Width)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Move_Spline", "SetSplineWide");
+
+	Params::KSC_Move_Spline_SetSplineWide Parms{};
+
+	Parms.Width = Width;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_StaticMeshInstanceActor.InitRenderActor
+// (Event, Public, BlueprintEvent)
+
+void AKSC_StaticMeshInstanceActor::InitRenderActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_StaticMeshInstanceActor", "InitRenderActor");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.CreateWorld
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UKSC_World>           WorldClass                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UKSC_World*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKSC_World* UKuroSimpleCombatSubsystem::CreateWorld(TSubclassOf<class UKSC_World> WorldClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "CreateWorld");
+
+	Params::KuroSimpleCombatSubsystem_CreateWorld Parms{};
+
+	Parms.WorldClass = WorldClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.DestoryWorld
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroSimpleCombatSubsystem::DestoryWorld()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "DestoryWorld");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.DestroyWorld
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroSimpleCombatSubsystem::DestroyWorld()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "DestroyWorld");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.GetKSCWorld
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_World*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKSC_World* UKuroSimpleCombatSubsystem::GetKSCWorld()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "GetKSCWorld");
+
+	Params::KuroSimpleCombatSubsystem_GetKSCWorld Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -4021,27 +4185,23 @@ bool UKSC_EventResponder::CanExecute(const struct FKSC_EventContext& Context) co
 }
 
 
-// Function KuroSimpleCombat.KSC_Shape2DMove.Launch
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Function KuroSimpleCombat.KSC_TopBossHeadUiHandle.OnAttrChange
+// (Final, Native, Private)
 // Parameters:
-// float                                   LaunchSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ResetFilter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    PlayEffect                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKSC_Shape2DMove::Launch(float LaunchSpeed, const struct FVector2D& Direction, bool ResetFilter, bool PlayEffect)
+void UKSC_TopBossHeadUiHandle::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2DMove", "Launch");
+		Func = Class->GetFunction("KSC_TopBossHeadUiHandle", "OnAttrChange");
 
-	Params::KSC_Shape2DMove_Launch Parms{};
+	Params::KSC_TopBossHeadUiHandle_OnAttrChange Parms{};
 
-	Parms.LaunchSpeed = LaunchSpeed;
-	Parms.Direction = std::move(Direction);
-	Parms.ResetFilter = ResetFilter;
-	Parms.PlayEffect = PlayEffect;
+	Parms.AttrType = AttrType;
+	Parms.Value = Value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4132,21 +4292,23 @@ void UKSC_Move_Approach::SetTargetEntity(class AKSC_Entity* Entity)
 }
 
 
-// Function KuroSimpleCombat.KSC_Move_Around.SetAroundTarget
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroSimpleCombat.KSC_PlayerHeadUiHandle.OnAttrChange
+// (Final, Native, Private)
 // Parameters:
-// class AKSC_Entity*                      InTargetEntity                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKSC_Move_Around::SetAroundTarget(class AKSC_Entity* InTargetEntity)
+void UKSC_PlayerHeadUiHandle::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_Around", "SetAroundTarget");
+		Func = Class->GetFunction("KSC_PlayerHeadUiHandle", "OnAttrChange");
 
-	Params::KSC_Move_Around_SetAroundTarget Parms{};
+	Params::KSC_PlayerHeadUiHandle_OnAttrChange Parms{};
 
-	Parms.InTargetEntity = InTargetEntity;
+	Parms.AttrType = AttrType;
+	Parms.Value = Value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4157,300 +4319,15 @@ void UKSC_Move_Around::SetAroundTarget(class AKSC_Entity* InTargetEntity)
 }
 
 
-// Function KuroSimpleCombat.KSC_Move_Around.SetBasis
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   InBasisX                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InBasisY                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InBasisZ                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_Around::SetBasis(const struct FVector& InBasisX, const struct FVector& InBasisY, const struct FVector& InBasisZ)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_Around", "SetBasis");
-
-	Params::KSC_Move_Around_SetBasis Parms{};
-
-	Parms.InBasisX = std::move(InBasisX);
-	Parms.InBasisY = std::move(InBasisY);
-	Parms.InBasisZ = std::move(InBasisZ);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_Around.SetIndexInfo
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InTotalCount                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InAroundIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_Around::SetIndexInfo(int32 InTotalCount, int32 InAroundIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_Around", "SetIndexInfo");
-
-	Params::KSC_Move_Around_SetIndexInfo Parms{};
-
-	Parms.InTotalCount = InTotalCount;
-	Parms.InAroundIndex = InAroundIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_MultiStage.AddWaypoint
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// double                                  X                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  Y                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_MultiStage::AddWaypoint(double X, double Y)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_MultiStage", "AddWaypoint");
-
-	Params::KSC_Move_MultiStage_AddWaypoint Parms{};
-
-	Parms.X = X;
-	Parms.Y = Y;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_MultiStage.SetSpline
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USplineComponent*                 SplineComp                                             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_MultiStage::SetSpline(class USplineComponent* SplineComp)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_MultiStage", "SetSpline");
-
-	Params::KSC_Move_MultiStage_SetSpline Parms{};
-
-	Parms.SplineComp = SplineComp;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_MultiStage.SetTargetEntity
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class AKSC_Entity*                      Entity                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_MultiStage::SetTargetEntity(class AKSC_Entity* Entity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_MultiStage", "SetTargetEntity");
-
-	Params::KSC_Move_MultiStage_SetTargetEntity Parms{};
-
-	Parms.Entity = Entity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_MultiStage.SetWaypointLoop
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_MultiStage::SetWaypointLoop(bool Loop)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_MultiStage", "SetWaypointLoop");
-
-	Params::KSC_Move_MultiStage_SetWaypointLoop Parms{};
-
-	Parms.Loop = Loop;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_MultiStage.SwitchStage
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   index                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_MultiStage::SwitchStage(int32 index)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_MultiStage", "SwitchStage");
-
-	Params::KSC_Move_MultiStage_SwitchStage Parms{};
-
-	Parms.index = index;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_Spline.SetSpline
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USplineComponent*                 SplineComp                                             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_Spline::SetSpline(class USplineComponent* SplineComp)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_Spline", "SetSpline");
-
-	Params::KSC_Move_Spline_SetSpline Parms{};
-
-	Parms.SplineComp = SplineComp;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_Spline.SetSplineHeight
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_Spline::SetSplineHeight(const float Height)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_Spline", "SetSplineHeight");
-
-	Params::KSC_Move_Spline_SetSplineHeight Parms{};
-
-	Parms.Height = Height;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_Spline.SetSplineWide
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const float                             Width                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_Spline::SetSplineWide(const float Width)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_Spline", "SetSplineWide");
-
-	Params::KSC_Move_Spline_SetSplineWide Parms{};
-
-	Parms.Width = Width;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_StageWaypoint.AddWaypoint
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// double                                  X                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  Y                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_Move_StageWaypoint::AddWaypoint(double X, double Y)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_StageWaypoint", "AddWaypoint");
-
-	Params::KSC_Move_StageWaypoint_AddWaypoint Parms{};
-
-	Parms.X = X;
-	Parms.Y = Y;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Move_StageWaypoint.ClearWaypoints
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_Bar.TriggerBar
 // (Final, Native, Public, BlueprintCallable)
 
-void UKSC_Move_StageWaypoint::ClearWaypoints()
+void AKSC_Shape2D_Entity_Bar::TriggerBar()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_StageWaypoint", "ClearWaypoints");
+		Func = Class->GetFunction("KSC_Shape2D_Entity_Bar", "TriggerBar");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4461,21 +4338,23 @@ void UKSC_Move_StageWaypoint::ClearWaypoints()
 }
 
 
-// Function KuroSimpleCombat.KSC_Move_StageWaypoint.SetLoop
+// Function KuroSimpleCombat.KSC_Shape2D_Entity_TeamPlayer.UseSkill
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    Loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             SkillIndex                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              IsUseMainPlayerSkill                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKSC_Move_StageWaypoint::SetLoop(bool Loop)
+void AKSC_Shape2D_Entity_TeamPlayer::UseSkill(const int32 SkillIndex, const bool IsUseMainPlayerSkill)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_StageWaypoint", "SetLoop");
+		Func = Class->GetFunction("KSC_Shape2D_Entity_TeamPlayer", "UseSkill");
 
-	Params::KSC_Move_StageWaypoint_SetLoop Parms{};
+	Params::KSC_Shape2D_Entity_TeamPlayer_UseSkill Parms{};
 
-	Parms.Loop = Loop;
+	Parms.SkillIndex = SkillIndex;
+	Parms.IsUseMainPlayerSkill = IsUseMainPlayerSkill;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4486,140 +4365,46 @@ void UKSC_Move_StageWaypoint::SetLoop(bool Loop)
 }
 
 
-// Function KuroSimpleCombat.KSC_Move_StageWaypoint.StartMove
-// (Final, Native, Public, BlueprintCallable)
-
-void UKSC_Move_StageWaypoint::StartMove()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Move_StageWaypoint", "StartMove");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_SceneMovement.D_SetMovementTarget
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVectorDouble&             NewMovementTarget                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_SceneMovement::D_SetMovementTarget(const struct FVectorDouble& NewMovementTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_SceneMovement", "D_SetMovementTarget");
-
-	Params::KSC_SceneMovement_D_SetMovementTarget Parms{};
-
-	Parms.NewMovementTarget = std::move(NewMovementTarget);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_SceneMovement.SetMovementDirection
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   NewMovementDirection                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_SceneMovement::SetMovementDirection(const struct FVector& NewMovementDirection)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_SceneMovement", "SetMovementDirection");
-
-	Params::KSC_SceneMovement_SetMovementDirection Parms{};
-
-	Parms.NewMovementDirection = std::move(NewMovementDirection);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_SceneMovement.SetSceneSegment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UKSC_DA_SceneSegmentContainer*    NewSceneSegment                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   GenerateCount                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKSC_SceneMovement::SetSceneSegment(class UKSC_DA_SceneSegmentContainer* NewSceneSegment, int32 GenerateCount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_SceneMovement", "SetSceneSegment");
-
-	Params::KSC_SceneMovement_SetSceneSegment Parms{};
-
-	Parms.NewSceneSegment = NewSceneSegment;
-	Parms.GenerateCount = GenerateCount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_SceneMovement.SetSegmentRotation
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FRotator&                  NewSegmentRotation                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void UKSC_SceneMovement::SetSegmentRotation(const struct FRotator& NewSegmentRotation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_SceneMovement", "SetSegmentRotation");
-
-	Params::KSC_SceneMovement_SetSegmentRotation Parms{};
-
-	Parms.NewSegmentRotation = std::move(NewSegmentRotation);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.AssignPlayerStateChange
+// Function KuroSimpleCombat.KSC_Shape2D_World.AddDamageEffectData
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// const TDelegate<void(bool IsAlive)>&    InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             DamageId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FKSC_Shape2D_DamageEffect& Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void AKSC_Shape2D_Entity_Player::AssignPlayerStateChange(const TDelegate<void(bool IsAlive)>& InDelegate)
+void UKSC_Shape2D_World::AddDamageEffectData(const int32 DamageId, const struct FKSC_Shape2D_DamageEffect& Data)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "AssignPlayerStateChange");
+		Func = Class->GetFunction("KSC_Shape2D_World", "AddDamageEffectData");
 
-	Params::KSC_Shape2D_Entity_Player_AssignPlayerStateChange Parms{};
+	Params::KSC_Shape2D_World_AddDamageEffectData Parms{};
+
+	Parms.DamageId = DamageId;
+	Parms.Data = std::move(Data);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.AssignRelaunchPlayer
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::AssignRelaunchPlayer(const TDelegate<void()>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "AssignRelaunchPlayer");
+
+	Params::KSC_Shape2D_World_AssignRelaunchPlayer Parms{};
 
 	Parms.InDelegate = InDelegate;
 
@@ -4632,148 +4417,21 @@ void AKSC_Shape2D_Entity_Player::AssignPlayerStateChange(const TDelegate<void(bo
 }
 
 
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.OnLifeChange
-// (Final, Native, Protected)
-// Parameters:
-// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Shape2D_Entity_Player::OnLifeChange(EKSC_AttrType AttrType, int32 Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "OnLifeChange");
-
-	Params::KSC_Shape2D_Entity_Player_OnLifeChange Parms{};
-
-	Parms.AttrType = AttrType;
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.SetEntityTransformDebug
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FTransform&                Transform                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void AKSC_Shape2D_Entity_Player::SetEntityTransformDebug(const struct FTransform& Transform)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "SetEntityTransformDebug");
-
-	Params::KSC_Shape2D_Entity_Player_SetEntityTransformDebug Parms{};
-
-	Parms.Transform = std::move(Transform);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.SetIsEnable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InIsEnable                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Shape2D_Entity_Player::SetIsEnable(bool InIsEnable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "SetIsEnable");
-
-	Params::KSC_Shape2D_Entity_Player_SetIsEnable Parms{};
-
-	Parms.InIsEnable = InIsEnable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.UseSkill
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             SkillIndex                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AKSC_Shape2D_Entity_Player::UseSkill(const int32 SkillIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "UseSkill");
-
-	Params::KSC_Shape2D_Entity_Player_UseSkill Parms{};
-
-	Parms.SkillIndex = SkillIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KSC_Shape2D_Entity_Player.GetIsEnable
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AKSC_Shape2D_Entity_Player::GetIsEnable() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Shape2D_Entity_Player", "GetIsEnable");
-
-	Params::KSC_Shape2D_Entity_Player_GetIsEnable Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroSimpleCombat.KSC_Skill_BulletAttack.OnBulletHit
+// Function KuroSimpleCombat.KSC_Shape2D_World.AssignTeamAllDead
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// const struct FKSC_BulletTargetContext&  TargetContext                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UKSC_Skill_BulletAttack::OnBulletHit(const struct FKSC_BulletTargetContext& TargetContext)
+void UKSC_Shape2D_World::AssignTeamAllDead(const TDelegate<void()>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Skill_BulletAttack", "OnBulletHit");
+		Func = Class->GetFunction("KSC_Shape2D_World", "AssignTeamAllDead");
 
-	Params::KSC_Skill_BulletAttack_OnBulletHit Parms{};
+	Params::KSC_Shape2D_World_AssignTeamAllDead Parms{};
 
-	Parms.TargetContext = std::move(TargetContext);
+	Parms.InDelegate = InDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4784,21 +4442,21 @@ void UKSC_Skill_BulletAttack::OnBulletHit(const struct FKSC_BulletTargetContext&
 }
 
 
-// Function KuroSimpleCombat.KSC_Skill_ManualBulletAttack.OnBulletHit
+// Function KuroSimpleCombat.KSC_Shape2D_World.AssignWorldUpdateOnce
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// const struct FKSC_BulletTargetContext&  TargetContext                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UKSC_Skill_ManualBulletAttack::OnBulletHit(const struct FKSC_BulletTargetContext& TargetContext)
+void UKSC_Shape2D_World::AssignWorldUpdateOnce(const TDelegate<void()>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_Skill_ManualBulletAttack", "OnBulletHit");
+		Func = Class->GetFunction("KSC_Shape2D_World", "AssignWorldUpdateOnce");
 
-	Params::KSC_Skill_ManualBulletAttack_OnBulletHit Parms{};
+	Params::KSC_Shape2D_World_AssignWorldUpdateOnce Parms{};
 
-	Parms.TargetContext = std::move(TargetContext);
+	Parms.InDelegate = InDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4809,37 +4467,312 @@ void UKSC_Skill_ManualBulletAttack::OnBulletHit(const struct FKSC_BulletTargetCo
 }
 
 
-// Function KuroSimpleCombat.KSC_StaticMeshInstanceActor.InitRenderActor
-// (Event, Public, BlueprintEvent)
+// Function KuroSimpleCombat.KSC_Shape2D_World.ClearDamageInfo
+// (Final, Native, Public)
 
-void AKSC_StaticMeshInstanceActor::InitRenderActor()
+void UKSC_Shape2D_World::ClearDamageInfo()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_StaticMeshInstanceActor", "InitRenderActor");
+		Func = Class->GetFunction("KSC_Shape2D_World", "ClearDamageInfo");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function KuroSimpleCombat.KSC_TopBossHeadUiHandle.OnAttrChange
+// Function KuroSimpleCombat.KSC_Shape2D_World.ClearDamageTotalInfo
+// (Final, Native, Public)
+
+void UKSC_Shape2D_World::ClearDamageTotalInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "ClearDamageTotalInfo");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.GetDamageInfo
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// TMap<int32, int32>*                     OutInfos                                               (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::GetDamageInfo(TMap<int32, int32>* OutInfos)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "GetDamageInfo");
+
+	Params::KSC_Shape2D_World_GetDamageInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutInfos != nullptr)
+		*OutInfos = std::move(Parms.OutInfos);
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.GetDamageTotalInfo
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// TArray<struct FKSC_Shape2D_DamageTotalInfo>*OutInfos                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::GetDamageTotalInfo(TArray<struct FKSC_Shape2D_DamageTotalInfo>* OutInfos)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "GetDamageTotalInfo");
+
+	Params::KSC_Shape2D_World_GetDamageTotalInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutInfos != nullptr)
+		*OutInfos = std::move(Parms.OutInfos);
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.InitTeamPlayerEntityIds
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const TArray<int32>&                    PlayerEntityIds                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::InitTeamPlayerEntityIds(const TArray<int32>& PlayerEntityIds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "InitTeamPlayerEntityIds");
+
+	Params::KSC_Shape2D_World_InitTeamPlayerEntityIds Parms{};
+
+	Parms.PlayerEntityIds = std::move(PlayerEntityIds);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.RebuildWorldBounds
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_WorldBounds*              DA_WorldBounds                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::RebuildWorldBounds(class UKSC_DA_WorldBounds* DA_WorldBounds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "RebuildWorldBounds");
+
+	Params::KSC_Shape2D_World_RebuildWorldBounds Parms{};
+
+	Parms.DA_WorldBounds = DA_WorldBounds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.ReviveTeam
+// (Final, Native, Public)
+
+void UKSC_Shape2D_World::ReviveTeam()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "ReviveTeam");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.SetGameEnd
+// (Final, Native, Public)
+
+void UKSC_Shape2D_World::SetGameEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "SetGameEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.SetShape2DWorldDA
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UKSC_DA_Shape2D_World*            DA_ShapeWorld                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::SetShape2DWorldDA(class UKSC_DA_Shape2D_World* DA_ShapeWorld)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "SetShape2DWorldDA");
+
+	Params::KSC_Shape2D_World_SetShape2DWorldDA Parms{};
+
+	Parms.DA_ShapeWorld = DA_ShapeWorld;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.SetShapeMaterialDT
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UDataTable*                       DataTable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::SetShapeMaterialDT(class UDataTable* DataTable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "SetShapeMaterialDT");
+
+	Params::KSC_Shape2D_World_SetShapeMaterialDT Parms{};
+
+	Parms.DataTable = DataTable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.SetVictory
+// (Final, Native, Public)
+
+void UKSC_Shape2D_World::SetVictory()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "SetVictory");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2D_World.SetWorldOrigin
+// (Final, Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVectorDouble&             NewOrigin                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2D_World::SetWorldOrigin(const struct FVectorDouble& NewOrigin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2D_World", "SetWorldOrigin");
+
+	Params::KSC_Shape2D_World_SetWorldOrigin Parms{};
+
+	Parms.NewOrigin = std::move(NewOrigin);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2DAnim.MarkAnimStateDirty
+// (Final, Native, Public)
+
+void UKSC_Shape2DAnim::MarkAnimStateDirty()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2DAnim", "MarkAnimStateDirty");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2DAnim.OnSpineAnimComplete
 // (Final, Native, Private)
 // Parameters:
-// EKSC_AttrType                           AttrType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTrackEntry*                      entry                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKSC_TopBossHeadUiHandle::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
+void UKSC_Shape2DAnim::OnSpineAnimComplete(class UTrackEntry* entry)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KSC_TopBossHeadUiHandle", "OnAttrChange");
+		Func = Class->GetFunction("KSC_Shape2DAnim", "OnSpineAnimComplete");
 
-	Params::KSC_TopBossHeadUiHandle_OnAttrChange Parms{};
+	Params::KSC_Shape2DAnim_OnSpineAnimComplete Parms{};
 
-	Parms.AttrType = AttrType;
-	Parms.Value = Value;
+	Parms.entry = entry;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4850,22 +4783,100 @@ void UKSC_TopBossHeadUiHandle::OnAttrChange(EKSC_AttrType AttrType, int32 Value)
 }
 
 
-// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.CreateWorld
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroSimpleCombat.KSC_Shape2DAnim.SetBaseStateAndClearOverrideStates
+// (Final, Native, Public)
 // Parameters:
-// TSubclassOf<class UKSC_World>           WorldClass                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UKSC_World*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EKSC_Shape2D_BaseAnimState              InBaseState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UKSC_World* UKuroSimpleCombatSubsystem::CreateWorld(TSubclassOf<class UKSC_World> WorldClass)
+void UKSC_Shape2DAnim::SetBaseStateAndClearOverrideStates(EKSC_Shape2D_BaseAnimState InBaseState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "CreateWorld");
+		Func = Class->GetFunction("KSC_Shape2DAnim", "SetBaseStateAndClearOverrideStates");
 
-	Params::KuroSimpleCombatSubsystem_CreateWorld Parms{};
+	Params::KSC_Shape2DAnim_SetBaseStateAndClearOverrideStates Parms{};
 
-	Parms.WorldClass = WorldClass;
+	Parms.InBaseState = InBaseState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Shape2DMove.Launch
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// float                                   LaunchSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ResetFilter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    PlayEffect                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKSC_Shape2DMove::Launch(float LaunchSpeed, const struct FVector2D& Direction, bool ResetFilter, bool PlayEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Shape2DMove", "Launch");
+
+	Params::KSC_Shape2DMove_Launch Parms{};
+
+	Parms.LaunchSpeed = LaunchSpeed;
+	Parms.Direction = std::move(Direction);
+	Parms.ResetFilter = ResetFilter;
+	Parms.PlayEffect = PlayEffect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_Skill_BulletPierceAttack.OnBulletHits
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const TArray<class UKSC_SkillComp*>&    Hits                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UKSC_Skill_BulletPierceAttack::OnBulletHits(const TArray<class UKSC_SkillComp*>& Hits)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_Skill_BulletPierceAttack", "OnBulletHits");
+
+	Params::KSC_Skill_BulletPierceAttack_OnBulletHits Parms{};
+
+	Parms.Hits = std::move(Hits);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSimpleCombat.KSC_SkillComp.Debug_GetAllBuffInfo
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class FString>*                  OutBuffs                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKSC_SkillComp::Debug_GetAllBuffInfo(TArray<class FString>* OutBuffs) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_SkillComp", "Debug_GetAllBuffInfo");
+
+	Params::KSC_SkillComp_Debug_GetAllBuffInfo Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4874,61 +4885,50 @@ class UKSC_World* UKuroSimpleCombatSubsystem::CreateWorld(TSubclassOf<class UKSC
 
 	Func->FunctionFlags = Flgs;
 
-	return Parms.ReturnValue;
+	if (OutBuffs != nullptr)
+		*OutBuffs = std::move(Parms.OutBuffs);
 }
 
 
-// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.DestoryWorld
-// (Final, Native, Public, BlueprintCallable)
-
-void UKuroSimpleCombatSubsystem::DestoryWorld()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "DestoryWorld");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.DestroyWorld
-// (Final, Native, Public, BlueprintCallable)
-
-void UKuroSimpleCombatSubsystem::DestroyWorld()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "DestroyWorld");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroSimpleCombat.KuroSimpleCombatSubsystem.GetKSCWorld
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroSimpleCombat.KSC_SkillComp.GetAllBuffs
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UKSC_World*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TMap<class UKSC_DA_Buff*, int32>*       OutBuffs                                               (Parm, OutParm, NativeAccessSpecifierPublic)
 
-class UKSC_World* UKuroSimpleCombatSubsystem::GetKSCWorld()
+void UKSC_SkillComp::GetAllBuffs(TMap<class UKSC_DA_Buff*, int32>* OutBuffs) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSimpleCombatSubsystem", "GetKSCWorld");
+		Func = Class->GetFunction("KSC_SkillComp", "GetAllBuffs");
 
-	Params::KuroSimpleCombatSubsystem_GetKSCWorld Parms{};
+	Params::KSC_SkillComp_GetAllBuffs Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutBuffs != nullptr)
+		*OutBuffs = std::move(Parms.OutBuffs);
+}
+
+
+// Function KuroSimpleCombat.KSC_SkillComp.GetSkillCollDown
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKSC_SkillComp::GetSkillCollDown() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KSC_SkillComp", "GetSkillCollDown");
+
+	Params::KSC_SkillComp_GetSkillCollDown Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -12,10 +12,10 @@
 
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayTasks_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "KuroGAS_structs.hpp"
 
 
@@ -778,7 +778,7 @@ DUMPER7_ASSERTS_ABaseCharacter;
 
 // Class KuroGAS.BaseGameplayAbility
 // 0x0008 (0x03C8 - 0x03C0)
-class UBaseGameplayAbility : public UGameplayAbility
+class UBaseGameplayAbility final : public UGameplayAbility
 {
 public:
 	bool                                          StartOnGiven;                                      // 0x03C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

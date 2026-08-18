@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "E_Cloud_Presents_structs.hpp"
-#include "AkAudio_structs.hpp"
+#include "Engine_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -181,6 +181,11 @@ public:
 	void Three4_天境();
 	void Three5_心湖();
 	void SwitchCloudsSub(class UPD_CloudPrefab_C* CloudPresents, float ChangeSpeed, bool InstantHide);
+	void Three6_火匣();
+	void Three7_水匣();
+	void Three8_金匣();
+	void Three9_天演幻心();
+	void Four0_天演幻心二阶段();
 
 public:
 	static class UClass* StaticClass()

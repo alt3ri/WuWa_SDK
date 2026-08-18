@@ -16,13 +16,15 @@
 SDK_NAMESPACE_START
 
 // Enum KuroBullet.EBulletHitWorldEntityOperation
-// NumValues: 0x0004
+// NumValues: 0x0006
 enum class EBulletHitWorldEntityOperation : uint8
 {
 	AddBuff                                  = 0,
 	Hit                                      = 1,
 	DodgeBullet                              = 2,
-	EBulletHitWorldEntityOperation_MAX       = 3,
+	AddBuffWithRef                           = 3,
+	RemoveBuffWithRef                        = 4,
+	EBulletHitWorldEntityOperation_MAX       = 5,
 };
 
 // Enum KuroBullet.EKSC_BuffBulletInitTrans

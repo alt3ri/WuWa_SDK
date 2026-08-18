@@ -198,9 +198,10 @@ class UKuroAudioEnvironmentSubsystem* UKuroAudioStatics::GetAudioEnvironmentSubs
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const int32                             PlayingId                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bExtrapolate                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroAudioStatics::GetSourcePlayPosition(const int32 PlayingId)
+int32 UKuroAudioStatics::GetSourcePlayPosition(const int32 PlayingId, const bool bExtrapolate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -210,6 +211,7 @@ int32 UKuroAudioStatics::GetSourcePlayPosition(const int32 PlayingId)
 	Params::KuroAudioStatics_GetSourcePlayPosition Parms{};
 
 	Parms.PlayingId = PlayingId;
+	Parms.bExtrapolate = bExtrapolate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
